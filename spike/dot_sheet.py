@@ -13,7 +13,7 @@ import pymupdf
 from .render import Renderer
 from .rows import BUILD, FUTUH, PROJECTS
 
-VARIANTS = [20, 40, 60]  # gap, dot 85%
+VARIANTS = [40, 80, 120]  # gap from each neighbour's ink, dot 85%
 
 
 def main() -> None:
@@ -34,7 +34,7 @@ def main() -> None:
     out = pymupdf.open()
     W, H = 1250, 150
     page = out.new_page(width=W, height=40 + H * len(words))
-    page.insert_text((10, 20), "print  |  preview renderer, DigitalKhatt: dot after the whole previous letter (no tucking under the zay); three gaps; KFGQPC (last column) for reference", fontsize=10)
+    page.insert_text((10, 20), "print  |  preview renderer, DigitalKhatt: dot between its neighbours' whole ink, three gaps; KFGQPC (last column) for reference", fontsize=10)
     for n, (r, w) in enumerate(words):
         y = 40 + n * H
         b = w["bbox"]

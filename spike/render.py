@@ -35,7 +35,6 @@ class Renderer:
         self.tatweel = self.font.get_nominal_glyph(0x0640)
         self.dot = self.font.get_nominal_glyph(0x06EC)
         self._paths: dict[int, str] = {}
-        self._ink: dict = {}
 
     def _path(self, gid: int) -> str:
         if gid not in self._paths:
@@ -60,29 +59,16 @@ class Renderer:
         self.font.draw_glyph_with_pen(gid, pen)
         return pen.bounds or (0, 0, 0, 0)
 
-    def _ink_x(self, gid: int, y0: float, y1: float) -> tuple[float, float] | None:
-        """Leftmost and rightmost ink of a glyph between heights y0 and y1 (outline sampled)."""
-        key = (gid, round(y0), round(y1))
-        if key not in self._ink:
-            pen = _SamplePen()
-            self.font.draw_glyph_with_pen(gid, pen)
-            xs = [x for x, y in pen.points if y0 <= y <= y1]
-            self._ink[key] = (min(xs), max(xs)) if xs else None
-        return self._ink[key]
-
-    def svg(self, text: str, size: float = 60, gap: int = 40, dot_scale: float = 0.85,
+    def svg(self, text: str, size: float = 60, gap: int = 80, dot_scale: float = 0.85,
             dot_mid: int = 230, vowel_gap: int = 50, min_open: int = 0) -> tuple[str, float, float]:
-        """The standalone dot stands after the whole of the letter before it, `gap` font units
-        from its ink; on the other side it is `gap` units from the next letter's ink at the
-        dot's own height. It takes the width it needs, but at least `min_open` units. The
-        softened hamza's vowel goes above it."""
+        """The standalone dot stands between its neighbours, `gap` font units from the whole ink
+        of each (it takes the width it needs, at least `min_open`). The softened hamza's vowel
+        goes above it."""
         infos, poss = self.shape(text)
         dx0, dy0, dx1, dy1 = self._bounds(self.dot)
         dot_w, dot_h = (dx1 - dx0) * dot_scale, (dy1 - dy0) * dot_scale
         dot_bottom, dot_top = dot_mid - dot_h / 2, dot_mid + dot_h / 2
         dot_clusters = {i.cluster for i in infos if i.codepoint == self.tatweel}
-        vowels = {i.cluster: i.codepoint for i in infos
-                  if i.cluster in dot_clusters and i.codepoint not in (self.tatweel, self.dot)}
         # pass 1: lay out with zero-width slots; pieces are (gid, x, y, cluster, advance)
         pieces, slot_at, x = [], {}, 0
         for info, pos in zip(infos, poss):
@@ -91,22 +77,15 @@ class Renderer:
                 continue
             pieces.append([info.codepoint, x + pos.x_offset, pos.y_offset, info.cluster, pos.x_advance])
             x += pos.x_advance
-        # pass 2: open each slot just enough, from the neighbours' ink in the dot's band
+        # pass 2: open each slot just enough to keep `gap` from both neighbours' ink
         dot_x: dict[int, float] = {}
         for cl, k in sorted(slot_at.items(), key=lambda kv: kv[1]):
-            top = dot_top + vowel_gap
-            if cl in vowels:
-                vb = self._bounds(vowels[cl])
-                top += vb[3] - vb[1]
-            band = (dot_bottom - gap, top + gap)
             slot_x = pieces[k][1] if k < len(pieces) else x
             left = next((p for p in reversed(pieces[:k]) if p[4] > 0), None)
             right = next((p for p in pieces[k:] if p[4] > 0), None)
-            ink_l = self._ink_x(left[0], *band) if left else None
-            L = left[1] + ink_l[1] if ink_l else slot_x
-            # The letter before the dot (on its right) keeps all its ink to itself: the dot never
-            # tucks under a tail (zay), it stands after the whole letter, as in KFGQPC's fonts.
-            # The letter after it (on the left) is measured at the dot's height only.
+            L = left[1] + self._bounds(left[0])[2] if left else slot_x
+            # The dot stands between the whole ink of its two neighbours, `gap` from each: it never
+            # tucks under a tail (zay) or into a head (waw), as in KFGQPC's fonts.
             R = right[1] + self._bounds(right[0])[0] if right else slot_x
             need = max(float(min_open), dot_w + 2 * gap - (R - L))
             for p in pieces[k:]:
@@ -135,46 +114,6 @@ class Renderer:
         svg = (f'<svg xmlns="http://www.w3.org/2000/svg" width="{w:.0f}" height="{h:.0f}">'
                f'<g transform="translate(10,{asc * scale + 5:.1f}) scale({scale},{-scale})">{body}</g></svg>')
         return svg, w, h
-
-
-class _SamplePen:
-    """Collects points along a glyph outline (curves sampled), for ink-profile checks."""
-
-    def __init__(self):
-        self.points: list[tuple[float, float]] = []
-        self._cur = (0.0, 0.0)
-
-    def moveTo(self, p):
-        self._cur = p
-        self.points.append(p)
-
-    def lineTo(self, p):
-        (x0, y0), (x1, y1) = self._cur, p
-        for t in range(1, 9):
-            self.points.append((x0 + (x1 - x0) * t / 8, y0 + (y1 - y0) * t / 8))
-        self._cur = p
-
-    def curveTo(self, *ps):
-        pts = [self._cur, *ps]
-        for t in range(1, 17):
-            u = t / 16
-            if len(pts) == 4:
-                (a, b, c, d) = pts
-                f = lambda i: (1 - u) ** 3 * a[i] + 3 * (1 - u) ** 2 * u * b[i] + 3 * (1 - u) * u ** 2 * c[i] + u ** 3 * d[i]
-            else:
-                (a, b, c) = pts[0], pts[1], pts[-1]
-                f = lambda i: (1 - u) ** 2 * a[i] + 2 * (1 - u) * u * b[i] + u ** 2 * c[i]
-            self.points.append((f(0), f(1)))
-        self._cur = ps[-1]
-
-    def qCurveTo(self, *ps):
-        self.curveTo(*ps)
-
-    def closePath(self):
-        pass
-
-    def endPath(self):
-        pass
 
 
 def to_png(svg: str, out: Path, zoom: float = 2.0) -> None:
