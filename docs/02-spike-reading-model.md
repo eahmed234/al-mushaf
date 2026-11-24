@@ -99,7 +99,7 @@ every row has its readers. Things the data showed that the model must handle:
 ### Day 2 result (2026-11-24)
 
 `python3 -m spike.farsh --show` finds **11 farsh places** with 22 variants in 1:1–2:20, and gives
-each rāwī's farsh-only text. 196 of the 220 rāwī/place pairs are settled, 26 of them by
+each rāwī's farsh-only text. **All 220 rāwī/place pairs are settled**, 14 of them by
 elimination. al-Baqarah 1–5 has no farsh at all, so the check ran on the whole passage.
 
 - **al-Futūḥ's colours can't find farsh.** Its red (#ff0000) also marks madd length (7,138 of
@@ -117,9 +117,9 @@ elimination. al-Baqarah 1–5 has no farsh at all, so the check ran on the whole
   pausal final vowels recur (قِيل, لَذَهَب, ٱلرَّحِيم).
 - **Two more reader bugs fixed upstream:** "أصحاب الصلة عدا قنبل" ignored its exception
   (6 rows book-wide).
-- **Open (24 pairs):** one row at 1:7 is labelled just "خلف", which the parser can't assign
-  to Khalaf ʿan Ḥamzah or Khalaf al-ʿĀshir. That also leaves "الجميع عدا من سيأتي" in the same
-  box unresolved.
+- **Decided:** a bare "خلف" in al-Futūḥ is Khalaf ʿan Ḥamzah (Eisa). That settled the last
+  24 pairs. Khalaf's ishmām of the ṣād is still missing from his farsh-only text, because
+  the text doesn't show it (see above).
 
 ### A second source: al-Jīqarawī on alkiraat.com
 
