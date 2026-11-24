@@ -39,18 +39,18 @@ Book profiles (2026-11-24), `spike/data/profiles.yaml`, 33 categories × 20 ruw�
 
 | Test | rows-learned | book table |
 | --- | --- | --- |
-| learn 2:1–5, predict 2:6–20 | 429 / 518 (83%) | **504 / 518 (97%)** |
+| learn 2:1–5, predict 2:6–20 | 429 / 518 (83%) | **506 / 518 (98%)** |
 | learn 2:1–12, predict 2:13–20 | 255 / 287 (89%) | **285 / 287 (99%)** |
-| no training, 2:1–20 | 442 / 666 (Ḥafṣ default) | **651 / 666 (98%)** |
+| no training, 2:1–20 | 442 / 666 (Ḥafṣ default) | **654 / 666 (98%)** |
 
 (An earlier version of these numbers was wrong: a local variable in `full_profiles` shadowed the
 `book` flag, so every run used the book table. Fixed; the table above is after the fix.)
-`python3 -m spike.book_profiles --vs-rows` now shows three disagreements with the rows: Ruways's
-idghām at 2:20 (a place entry covers it) and Idrīs's sakt (two categories). The remaining misses
-are 2:11 لَّهُمۡ (Hishām, al-Kisāʾī, Ruways), 2:13 قِيلَ (farsh), and Ḥamzah's ruwāt and Idrīs at 2:8
-ٱلۡأَخِرِ (naql in waqf, not modelled). The book table generates more waqf forms than the boxes
-show (Ḥamzah, Hishām at 2:13 ٱلسُّفَهَآءُۗ and 2:14 مُسۡتَهۡزِءُونَ): one row seems to stand for several
-forms through its label ("خمسة القياس"), which the comparison doesn't read yet.
+`python3 -m spike.book_profiles --vs-rows` now shows one disagreement with the rows: Ruways's
+idghām at 2:20 (a place entry covers it). The remaining misses are 2:11 لَّهُمۡ (Hishām, al-Kisāʾī,
+Ruways), 2:13 قِيلَ (farsh), and Ḥamzah's ruwāt and Idrīs at 2:8 ٱلۡأَخِرِ (naql in waqf, not
+modelled). Extra readings now count a row's alternatives ("A * B * C"); what's left of them is mostly
+Qālūn's ṣilah/munfaṣil combinations (constraints) and one waqf form each for Ḥamzah and Hishām at
+2:13 ٱلسُّفَهَآءُۗ.
 
 Earlier numbers: **655 / 676** row/rāwī pairs of 2:1–20 reproduced; held-out **83%** (learn 2:1–5,
 predict 2:6–20) and **89%** (learn 2:1–12, predict 2:13–20); 0 conflicts with the book's madd
@@ -83,14 +83,11 @@ tables; review list empty.
 ## Next steps, in order
 
 1. ~~Pull the books~~, ~~build the profile table~~, ~~read the remaining bābs~~ (done). For it:
-   - **Eisa reviews it by category** (page text beside the rows). Questions for him:
-     - Idrīs: al-Futūḥ's labels give him sakt (v1 p52 r7, p54 r4, p57 r2) and naql in waqf at 2:8
-       ٱلۡأَخِرِ; al-Īḍāḥ pp. 117, 121–123 gives Khalaf al-ʿĀshir neither ("وحقق همز الوقف والسكت
-       أهملا") and its editor records a sakt khulf for Idrīs by other ṭuruq. Which does the app follow?
-     - Ḥamzah's waqf on مُسۡتَهۡزِءُونَ: al-Wāfī pp. 116, 118 gives tashīl, ibdāl yāʾ (al-Akhfash) and
-       ḥadhf (rasm); the box shows two. Which two, and why?
-     - Ḥamzah's waqf on ءَأَنذَرۡتَهُمۡ: is the second hamzah "made mid by a prefix" (taḥqīq allowed,
-       al-Wāfī pp. 122–123), or only tashīl?
+   - **Eisa reviews it by category** (page text beside the rows).
+   - Answered 2026-11-24: Idrīs's sakt is an **option** (ikhtilāf; default none; `option: true`
+     in the table). Eisa plans a kubrā version later, so keep data ṭarīq-aware. Ḥamzah's waqf on
+     مُسۡتَهۡزِءُونَ: three wujūh (al-Budūr p. 22, Ghayth al-Nafʿ p. 31, al-Futūḥ v1 p59 r12, nQuran),
+     and on ءَأَنذَرۡتَهُمۡ: tashīl or taḥqīq of the second (al-Budūr p. 20, nQuran 2:6).
    - Still not in the table (`not_read_yet`): Ḥamzah's naql and sakt in waqf, rawm/ishmām and
      rasm-based takhfīf in detail, the rest of the rāʾāt and lāmāt exceptions.
    - Taqlīl and imālah are written the same; the rows' learned names for them are arbitrary.

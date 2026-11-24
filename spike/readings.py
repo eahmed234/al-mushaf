@@ -314,7 +314,8 @@ def compare(upto: int, full: dict, feats: dict, start: int = 1):
             for cat, wj in feats[r["id"]].items():
                 if not set(wj) <= set(full[rawi].get(cat, {}).get("wujuh", {})):
                     misses.append((r["id"], rawi, f"feature {cat}={'/'.join(wj)}", []))
-            book_texts[key].add(tuple(w["t"] for w in r["words"] if w["id"] in seen_words))
+            # a row with alternatives ("A * B * C") stands for each of them
+            book_texts[key].update(itertools.product(*[w.get("alts") or [w["t"]] for w in r["words"] if w["id"] in seen_words]))
             claimed_span[key] = tuple(i for i in span if i in seen_words)
     # extra readings: distinct texts (on the words the box speaks about, a pausal final vowel not
     # counting as a difference) beyond the number of readings the book gives that rawi for the span

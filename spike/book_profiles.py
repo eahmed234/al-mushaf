@@ -43,7 +43,7 @@ def load(path=PATH):
                     problems.append(f"{cat}: {r} named twice")
                 seen.append(r)
                 entry = {"wujuh": {w: [row["cite"]] for w in row["wujuh"]}, "source": "book"}
-                for k in ("cond", "place", "note", "inherited"):
+                for k in ("cond", "place", "note", "inherited", "option"):
                     if k in row:
                         entry[k] = row[k]
                 out[r][cat] = entry

@@ -10,7 +10,8 @@
 # in an earlier row of the category). Wujūh use the spike's names (spike/usul.py WUJUH) where
 # the spike has the category; categories it doesn't detect yet use descriptive names.
 # `cond` is the book's condition in short, for the occurrence tables later; `place` rows are
-# word-specific exceptions the book names, kept for spike/data/place_wujuh.yaml.
+# word-specific exceptions the book names, kept for spike/data/place_wujuh.yaml. `option: true`
+# marks an ikhtilāf the app offers as a setting (first wajh = default).
 
 durrah_rule:
   # al-Durrah gives each of the three an aṣl from the seven and names a rāwī only where he
@@ -89,15 +90,17 @@ categories:
     - {who: [khalaf_an_hamzah], wujuh: [sakt], cite: wafi 105-106}
     - {who: [khallad], wujuh: [sakt, none], cite: wafi 106}
     - {who: rest7, wujuh: [none], cite: wafi 105}
-    - {who: [ishaq, idris], wujuh: [none], cite: idah 121-123,
-       note: "\"والسكت أهملا\"; the editor records that Idrīs has a sakt khulf by other ṭuruq and that the shārḥ and most commentators take none"}
+    - {who: [ishaq], wujuh: [none], cite: idah 121-123}
+    - {who: [idris], wujuh: [none, sakt], cite: idah 121-123, option: true,
+       note: "ikhtilāf: the Durrah says \"والسكت أهملا\" and the shārḥ and most commentators take none; the editor records a sakt khulf for Idrīs on a sākin that isn't madd (al-Muṭṭawwiʿī, from al-Mubhij), which needs ishbāʿ of the muttaṣil (p. 123); al-Futūḥ gives it. An option, default none (Eisa 2026-11-24)"}
     - {who: [ibn_wardan, ibn_jammaz, ruways, rawh], wujuh: [none], inherited: true, cite: idah 40-43}
 
   sakt_mafsul:  # sakt on a sākin at a word's end before hamz al-qaṭʿ (مَنۡ ءَامَنَ)
     - {who: [khalaf_an_hamzah], wujuh: [sakt, none], cite: wafi 106}
     - {who: [khallad], wujuh: [none], cite: wafi 106}
     - {who: rest7, wujuh: [none], cite: wafi 105}
-    - {who: [ishaq, idris], wujuh: [none], cite: idah 121-123}
+    - {who: [ishaq], wujuh: [none], cite: idah 121-123}
+    - {who: [idris], wujuh: [none, sakt], cite: idah 121-123, option: true, note: "as sakt_al"}
     - {who: [ibn_wardan, ibn_jammaz, ruways, rawh], wujuh: [none], inherited: true, cite: idah 40-43}
 
   idgham_kabir:
@@ -239,8 +242,8 @@ categories:
     - {who: rest_as_wasl, wasl: ibdal_sakin}
 
   hamzatayn_waqf:  # ءَأَنذَرۡتَهُمۡ at a stop
-    - {who: [khalaf_an_hamzah, khallad], wujuh: [tahqiq, tashil], cite: wafi 116, 122-123,
-       note: "the second hamzah is a maftūḥah after a fatḥah (tashīl, p. 116); taḥqīq if it counts as made mid by a prefix (p. 122-123), which al-Wāfī shows with سأصرف, فإذا, not with hamzat al-istifhām: to check"}
+    - {who: [khalaf_an_hamzah, khallad], wujuh: [tahqiq, tashil], cite: budur 20,
+       note: "al-Budūr p. 20: stopping on ءَأَنذَرۡتَهُمۡ alone, tashīl or taḥqīq of the second (with عَلَيۡهِمۡ: Khalaf four wujūh, sakt or not × the two; Khallād two); also al-Budūr p. 41 (قُلۡ ءَأَنتُمۡ) and nQuran 2:6; al-Wāfī pp. 116, 122-123 for the rules"}
     - {who: [hisham], wujuh: [tahqiq_idkhal, tashil_idkhal], cite: wafi 84, 89, 116-117, note: "not final: as waṣl"}
     - {who: [ishaq, idris], wujuh: [tahqiq], cite: idah 117, 121}
     - {who: rest_as_wasl, wasl: hamzatayn}
@@ -257,7 +260,8 @@ categories:
     - {who: rest_as_wasl, wujuh: [tahqiq], note: "Hishām: final hamzah only (wafi 116-117)"}
 
   hamz_waqf_mid:  # a mid hamzah after a mutaḥarrik (مُسۡتَهۡزِءُونَ)
-    - {who: [khalaf_an_hamzah, khallad], wujuh: [tashil, ibdal_ya, hadhf], cite: wafi 116, 118,
+    - {who: [khalaf_an_hamzah, khallad], wujuh: [tashil, ibdal_ya, hadhf], cite: "wafi 116, 118; budur 22; ghayth-1 31",
+       note: "مُسۡتَهۡزِءُونَ: the three sound wujūh of six (tashīl toward wāw, ibdāl yāʾ after al-Akhfash, ḥadhf with ḍamm of the zāy), each with the three lengths of the waqf (Ghayth p. 31; al-Budūr p. 22); al-Futūḥ v1 p59 r12 and nQuran 2:14 give the same three",
        cond: "maftūḥah after kasr: yāʾ; after ḍamm: wāw; otherwise tashīl bayna bayna; maḍmūmah after kasr also ibdāl yāʾ (al-Akhfash) and, where the rasm has no seat, ḥadhf"}
     - {who: [hisham], wujuh: [tahqiq], cite: wafi 116-117, cond: "Hishām: final hamzah only"}
     - {who: [ishaq, idris], wujuh: [tahqiq], cite: idah 117, 121}
