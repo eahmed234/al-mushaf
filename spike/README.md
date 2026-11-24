@@ -15,3 +15,8 @@ python3 -m spike.rows --show   # print every row as full text with its ruwāt
 # side-by-side of printed rows and rebuilt text (needs the extractor's env for pymupdf):
 PYTHONPATH=../mushaf ../mushaf/.venv/bin/python -m spike.sheet v1-p052-r11 v1-p059-r12
 ```
+
+Preview rendering (`spike/render.py`): HarfBuzz shaping with DigitalKhatt Madina, outlines drawn
+as SVG. The book's standalone tas-hīl dot is stored as tatweel + U+06EC (its own letter); the
+renderer gives it its own width and puts the hamza's vowel lower-left of it, as al-Futūḥ prints
+it. `python -m spike.dot_sheet` compares it with the print (same env as `spike.sheet`).
