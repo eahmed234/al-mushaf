@@ -152,6 +152,55 @@ the features by the labels.
 Caveat: the text wujūh were learned from these same rows, so for them this checks that the
 rules compose, not that they generalise. Day 4 tests that: learn from 2:1–5, predict 2:6–20.
 
+### Day 4 result (2026-11-24)
+
+| Check | Result |
+| --- | --- |
+| Learn on 2:1–20, reproduce every row of 2:1–20 | **627 / 651** row/rāwī pairs (96%), 0 conflicts with the book's madd tables |
+| Learn on 2:1–5, predict 2:6–20 | **417 / 503** (83%) |
+| Learn on 2:1–12, predict 2:13–20 | **232 / 272** (85%) |
+| Readings the profiles allow that no box shows | 50, listed for review (`python3 -m spike.review`) |
+
+On held-out ayahs, the misses are mostly categories the training ayahs never show (imālah
+starts at 2:7). A profile stated in the book, like the madd tables, would close that gap. A
+profile learned from a few rows can't.
+
+What the model needed, beyond Day 3:
+- **New rules:**
+  - two hamzas in a word (tas-hīl, idkhāl, ibdāl);
+  - idghām without ghunnah;
+  - imālah before a final rāʾ, of ٱلنَّاسِ, of كَٰفِرِينَ, and of a final yāʾ;
+  - naql across words (Warsh's اَلِيمُۢ, اِلَىٰ);
+  - badal qaṣr where it shows (ٱلَاخِرِ).
+- **Interactions:**
+  - ṣilah takes its madd from the munfaṣil choice even with no munfaṣil in the span;
+  - ṣilah undoes the idghām into a following mīm (قُلُوبِهِمُۥ مَرَضٞ);
+  - the bare mīm before bāʾ is mīm al-jamʿ too.
+- **Q4, waqf.** The stop is an input. Waqf changes hamz categories (`<cat>_waqf`,
+  `hamz_waqf_final`, `hamz_waqf_mid`), and Ḥamzah's five qiyās forms of ٱلسُّفَهَآءُ come
+  out as one rāwī's alternatives. In the book's convention, only a quote ending an ayah is a
+  stop: a quote ending on a pause sign still shows the waṣl form (سَمۡعِهِمُۥۖ).
+- **Evidence:** al-Futūḥ doesn't state every uṣūl in every box (2:15 has no ṣilah row), so a
+  row is evidence only for words its box colours, in the category's own colour where it has one.
+- **Choices that are one variable:** Qālūn's ṣilah before a hamza and elsewhere always go
+  together.
+- **Occurrences** must be reviewed: detector candidates the book never reads differently (imālah
+  on عَلَىٰ, إِلَىٰ) are dropped. In the real model this is the occurrence table.
+- **Reader resolution:** madd-group rows ("أصحاب التوسط") now take their readers from the book's
+  tables, which adds 54 row/rāwī pairs.
+- **Upstream:** the reader parser takes a row's farsh into account when learning.
+
+**Q3, constraints.** The mechanism is simple: allowed tuples per rāwī, scoped to a place or to
+the whole riwāyah. But **al-Futūḥ alone can't supply the tuples.** Its boxes aren't exhaustive:
+Qālūn's munfaṣil × ṣilah combinations shown at 2:6 and at 2:12 contradict each other. Each
+combination a box leaves out is either forbidden or omitted, and only a taḥrīr source can say
+which. The 50 such cases are in `spike/build/review.md`. One looks like real taḥrīr: al-Dūrī
+at 2:7 shows qaṣr with fatḥ and tawassuṭ with imālah of أَبۡصَٰرِهِمۡ, never crossed.
+
+**Still unexplained (24 pairs):** imālah that is specific to a word (شَآءَ, ءَاذَانِهِم) needs
+the book's occurrence lists. Ḥamzah's waqf form ٱلۡأَخِرِ, and Hishām and al-Kisāʾī's لَّهُمۡ
+at 2:11, need a look at the print.
+
 ### A second source: al-Jīqarawī on alkiraat.com
 
 alkiraat.com has al-Jīqarawī's *al-Wujūhāt al-Qurʾāniyyah – al-ʿAsharah* (Shāṭibiyyah and

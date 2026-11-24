@@ -29,7 +29,8 @@ from .text import clusters
 
 PAUSE = set("\u06d6\u06d7\u06d8\u06d9\u06da\u06db\u06de\u06e9")  # not U+06DC, the sign of sakt
 SUKUN = {"ْ", "ۡ"}
-OPEN_TANWIN = {"ࣰ": "ً", "ࣱ": "ٌ", "ࣲ": "ٍ"}
+OPEN_TANWIN = {"\u08f0": "\u064b", "\u08f1": "\u064c", "\u08f2": "\u064d",
+               "\u065e": "\u064b", "\u0657": "\u064c", "\u0656": "\u064d"}  # KFGQPC open tanwin (mushaflab G-018)
 HAMZA_BASE = {"أ": "ا", "إ": "ا", "آ": "ا", "ٱ": "ا",
               "ؤ": "و", "ئ": "ي", "ء": ""}
 HAMZA_MARKS = {"ٔ", "ٕ"}
