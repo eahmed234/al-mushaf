@@ -1,0 +1,186 @@
+# Uṣūl profiles from the books: rāwī × category → wujūh.
+#
+# Read from the local copies (tools/book.py; books/MANIFEST.json), page by page, not from memory.
+# Pages are file pages, which here equal the printed pages and Aljam3's pages.
+#   wafi = al-Qāḍī, al-Wāfī fī Sharḥ al-Shāṭibiyyah (Aljam3 1037/2153)  — the seven
+#   idah = al-Qāḍī, al-Īḍāḥ li-Matn al-Durrah (Aljam3 16501/36683)       — the three
+# Every row is status `candidate` until Eisa reviews it by category.
+#
+# Each category lists rows; `who` names rāwīs (spike ids) or `rest7` (the seven's ruwāt not named
+# in an earlier row of the category). Wujūh use the spike's names (spike/usul.py WUJUH) where
+# the spike has the category; categories it doesn't detect yet use descriptive names.
+# `cond` is the book's condition in short, for the occurrence tables later; `place` rows are
+# word-specific exceptions the book names, kept for spike/data/place_wujuh.yaml.
+
+durrah_rule:
+  # al-Durrah gives each of the three an aṣl from the seven and names a rāwī only where he
+  # differs from it ("فإن خالفوا أذكر وإلا فأهملا"); when the aṣl's two ruwāt differ, the
+  # Durrah always names the reading. Khalaf al-ʿĀshir is named only where he differs from his
+  # own riwāyah from Ḥamzah (Khalaf ʿan Ḥamzah).
+  aṣl: {ibn_wardan: nafi, ibn_jammaz: nafi, ruways: abu_amr, rawh: abu_amr,
+        ishaq: khalaf_an_hamzah, idris: khalaf_an_hamzah}
+  cite: idah 40-43
+
+categories:
+  munfasil:
+    - {who: [bazzi, qunbul, susi], wujuh: [qasr], cite: wafi 74}
+    - {who: [qalun, duri_abuamr], wujuh: [qasr, tawassut], cite: wafi 74}
+    - {who: [warsh, khalaf_an_hamzah, khallad], wujuh: [ishba], cite: wafi 74}
+    - {who: rest7, wujuh: [tawassut], cite: wafi 74}
+    - {who: [ibn_wardan, ibn_jammaz, ruways, rawh], wujuh: [qasr], cite: idah 83}
+    - {who: [ishaq, idris], wujuh: [tawassut], cite: idah 83}
+
+  muttasil:
+    - {who: [warsh, khalaf_an_hamzah, khallad], wujuh: [ishba], cite: wafi 73-74}
+    - {who: rest7, wujuh: [tawassut], cite: wafi 73-74}
+    - {who: [ibn_wardan, ibn_jammaz, ruways, rawh, ishaq, idris], wujuh: [tawassut], cite: idah 82-83,
+       note: "the editor's footnote (p. 81 n. 4) allows three ḥarakāt for Abū Jaʿfar and Yaʿqūb, citing al-Taḥbīr"}
+
+  badal:
+    - {who: [warsh], wujuh: [qasr, tawassut, tul], cite: wafi 75-76,
+       cond: "except إسرائيل, يؤاخذ, and after a ṣaḥīḥ sākin in the same word (القرآن, مسئولا)"}
+    - {who: rest7, wujuh: [qasr], cite: wafi 75}
+    - {who: [ibn_wardan, ibn_jammaz, ruways, rawh, ishaq, idris], wujuh: [qasr], cite: idah 84}
+
+  lin_hamz:  # madd līn before a hamzah (شَيۡءٍ); not a spike category yet
+    - {who: [warsh], wujuh: [tawassut, tul], cite: wafi 83, cond: "waṣl and waqf; سوءات and الموءودة, موئلا are exceptions"}
+    - {who: rest7, wujuh: [qasr], cite: wafi 83}
+    - {who: [ibn_wardan, ibn_jammaz], wujuh: [qasr], cite: idah 84-85}
+    - {who: [ruways, rawh, ishaq, idris], wujuh: [qasr], cite: idah 84 n. 3}
+
+  silah_mim:  # mīm al-jamʿ before a mutaḥarrik other than hamz al-qaṭʿ
+    - {who: [bazzi, qunbul], wujuh: [silah], cite: wafi 51}
+    - {who: [qalun], wujuh: [sukun, silah], cite: wafi 51}
+    - {who: rest7, wujuh: [sukun], cite: wafi 52}
+    - {who: [ibn_wardan, ibn_jammaz], wujuh: [silah], cite: idah 57}
+    - {who: [ruways, rawh, ishaq, idris], wujuh: [sukun], inherited: true, cite: idah 40-43}
+
+  silah_mim_hamza:  # mīm al-jamʿ before hamz al-qaṭʿ
+    - {who: [bazzi, qunbul], wujuh: [silah], cite: wafi 51}
+    - {who: [qalun], wujuh: [sukun, silah], cite: wafi 51}
+    - {who: [warsh], wujuh: [silah], cite: wafi 52, note: "the ṣilah takes his munfaṣil (ishbāʿ)"}
+    - {who: rest7, wujuh: [sukun], cite: wafi 52}
+    - {who: [ibn_wardan, ibn_jammaz], wujuh: [silah], cite: idah 57}
+    - {who: [ruways, rawh, ishaq, idris], wujuh: [sukun], inherited: true, cite: idah 40-43}
+
+  silah_ha:  # hāʾ al-kināyah after a sākin and before a mutaḥarrik (فِيهِ هُدًى)
+    - {who: [bazzi, qunbul], wujuh: [silah], cite: wafi 68}
+    - {who: rest7, wujuh: [none], cite: wafi 68, place: "Ḥafṣ: فِيهِۦ مُهَانًا (al-Furqān) with ṣilah"}
+    - {who: [ibn_wardan, ibn_jammaz, ruways, rawh, ishaq, idris], wujuh: [none], inherited: true, cite: idah 40-43,
+       note: "al-Īḍāḥ pp. 71-78 names only word-specific readings (يؤده, ويتقه, يرضه, يأته...)"}
+
+  ibdal_sakin:  # a sākin hamzah, in waṣl
+    - {who: [warsh], wujuh: [ibdal], cite: wafi 98-99,
+       cond: "only a hamzah that is fāʾ al-fiʿl; not words from الإيواء; also a maftūḥah fāʾ after ḍammah → wāw (مؤجلا)"}
+    - {who: [susi], wujuh: [ibdal], cite: wafi 100-101,
+       cond: "every sākin hamzah except the listed kinds: jazm, bināʾ, heavier, ambiguous (رءيا), other dialect"}
+    - {who: rest7, wujuh: [tahqiq], cite: wafi 98-101}
+    - {who: [ibn_wardan, ibn_jammaz], wujuh: [ibdal], cite: idah 102, cond: "every sākin hamzah whose sukūn is original; exceptions listed pp. 102-104"}
+    - {who: [ruways, rawh], wujuh: [tahqiq], cite: idah 102, cond: "except يأجوج ومأجوج (farsh)"}
+    - {who: [ishaq, idris], wujuh: [tahqiq], inherited: true, cite: idah 40-43}
+
+  naql:  # waṣl
+    - {who: [warsh], wujuh: [naql], cite: wafi 103-104, cond: "a ṣaḥīḥ sākin or līn at a word's end before hamz al-qaṭʿ, not mīm al-jamʿ"}
+    - {who: rest7, wujuh: [none], cite: wafi 103}
+    - {who: [ibn_wardan, ibn_jammaz, ruways, rawh, ishaq, idris], wujuh: [none], cite: idah 118-120,
+       note: "word-specific naql: Ibn Wardān ءالآن and مِلْءُ, Ruways مِنۡ إِسۡتَبۡرَقٍ, Khalaf وَسۡـَٔلُوا..."}
+
+  sakt_al:  # sakt on lām al-taʿrīf before hamz (ٱلۡأَرۡضِ), and on شَيۡء
+    - {who: [khalaf_an_hamzah], wujuh: [sakt], cite: wafi 105-106}
+    - {who: [khallad], wujuh: [sakt, none], cite: wafi 106}
+    - {who: rest7, wujuh: [none], cite: wafi 105}
+    - {who: [ishaq, idris], wujuh: [none], cite: idah 121-123,
+       note: "\"والسكت أهملا\"; the editor records that Idrīs has a sakt khulf by other ṭuruq and that the shārḥ and most commentators take none"}
+    - {who: [ibn_wardan, ibn_jammaz, ruways, rawh], wujuh: [none], inherited: true, cite: idah 40-43}
+
+  sakt_mafsul:  # sakt on a sākin at a word's end before hamz al-qaṭʿ (مَنۡ ءَامَنَ)
+    - {who: [khalaf_an_hamzah], wujuh: [sakt, none], cite: wafi 106}
+    - {who: [khallad], wujuh: [none], cite: wafi 106}
+    - {who: rest7, wujuh: [none], cite: wafi 105}
+    - {who: [ishaq, idris], wujuh: [none], cite: idah 121-123}
+    - {who: [ibn_wardan, ibn_jammaz, ruways, rawh], wujuh: [none], inherited: true, cite: idah 40-43}
+
+  idgham_kabir:
+    - {who: [susi], wujuh: [idgham], cite: wafi 53-54, cond: "mithlayn across words; within a word only مناسككم, سلككم; the mutaqāribayn follow (bāb 8)"}
+    - {who: [duri_abuamr], wujuh: [izhar], cite: wafi 53}
+    - {who: rest7, wujuh: [izhar], cite: wafi 53}
+    - {who: [ruways], wujuh: [izhar], cite: idah 62-64, place: "idghām at أنساب بينهم, نسبحك كثيرا, ونذكرك كثيرا, إنك كنت; khulf at جعل (al-Naḥl), قبل لهم, وأنه هو (al-Najm), لذهب بسمعهم, الكتاب بأيديهم, الكتاب بالحق (first)"}
+    - {who: [rawh], wujuh: [izhar], cite: idah 62, place: "idghām at والصاحب بالجنب (both of Yaʿqūb)"}
+    - {who: [ibn_wardan, ibn_jammaz, ishaq, idris], wujuh: [izhar], inherited: true, cite: idah 40-43}
+
+  idgham_ghunna:  # nūn sākinah / tanwīn into wāw and yāʾ
+    - {who: [khalaf_an_hamzah], wujuh: [bila_ghunna], cite: wafi 138}
+    - {who: rest7, wujuh: [ghunna], cite: wafi 138}
+    - {who: [ishaq, idris], wujuh: [ghunna], cite: idah 137, note: "Khalaf al-ʿĀshir differs from his riwāyah here"}
+    - {who: [ibn_wardan, ibn_jammaz, ruways, rawh], wujuh: [ghunna], cite: idah 137}
+
+  hamzatayn:  # two hamzahs in one word, both maftūḥah (ءَأَنذَرۡتَهُمۡ)
+    - {who: [qalun], wujuh: [tashil_idkhal], cite: wafi 84, 89}
+    - {who: [warsh], wujuh: [tashil, ibdal], cite: wafi 84, note: "ibdāl with ishbāʿ before a sākin"}
+    - {who: [bazzi, qunbul], wujuh: [tashil], cite: wafi 84, 89}
+    - {who: [duri_abuamr, susi], wujuh: [tashil_idkhal], cite: wafi 84, 89}
+    - {who: [hisham], wujuh: [tahqiq_idkhal, tashil_idkhal], cite: wafi 84, 89}
+    - {who: rest7, wujuh: [tahqiq], cite: wafi 85, 89}
+    - {who: [ibn_wardan, ibn_jammaz], wujuh: [tashil_idkhal], cite: idah 87-88}
+    - {who: [ruways], wujuh: [tashil], cite: idah 87-88}
+    - {who: [rawh], wujuh: [tahqiq], cite: idah 87-88}
+    - {who: [ishaq, idris], wujuh: [tahqiq], cite: idah 88}
+
+  hamzatayn_kalimatayn_muttafiq:  # not a spike category yet (جَآءَ أَمۡرُنَا)
+    - {who: [duri_abuamr, susi], wujuh: [isqat_ula], cite: wafi 91-92}
+    - {who: [qalun, bazzi], wujuh: [isqat_ula], cite: wafi 92, cond: "both maftūḥah; maksūrah and maḍmūmah: tashīl of the first"}
+    - {who: [warsh, qunbul], wujuh: [tashil_thaniya, ibdal_thaniya], cite: wafi 92-93}
+    - {who: rest7, wujuh: [tahqiq], cite: wafi 94}
+    - {who: [ibn_wardan, ibn_jammaz, ruways], wujuh: [tashil_thaniya], cite: idah 96}
+    - {who: [rawh], wujuh: [tahqiq], cite: idah 96-98}
+    - {who: [ishaq, idris], wujuh: [tahqiq], cite: idah 99}
+
+  hamzatayn_kalimatayn_mukhtalif:  # not a spike category yet (ٱلسُّفَهَآءُ أَلَآ, 2:13)
+    - {who: [qalun, warsh, bazzi, qunbul, duri_abuamr, susi], wujuh: [taghyir_thaniya], cite: wafi 95-97,
+       cond: "fatḥ→kasr: tashīl like yāʾ; fatḥ→ḍamm: like wāw; ḍamm→fatḥ: ibdāl wāw; kasr→fatḥ: ibdāl yāʾ; ḍamm→kasr: tashīl like yāʾ or ibdāl wāw"}
+    - {who: rest7, wujuh: [tahqiq], cite: wafi 97}
+    - {who: [ibn_wardan, ibn_jammaz, ruways], wujuh: [taghyir_thaniya], cite: idah 98}
+    - {who: [rawh], wujuh: [tahqiq], cite: idah 98}
+    - {who: [ishaq, idris], wujuh: [tahqiq], cite: idah 99}
+
+  imala_ra:  # alif before a final rāʾ with an original kasrah (أَبۡصَٰرِهِمۡ, ٱلنَّارِ)
+    - {who: [duri_abuamr, susi, duri_kisai], wujuh: [imala], cite: wafi 151-152}
+    - {who: [warsh], wujuh: [taqlil], cite: wafi 153}
+    - {who: rest7, wujuh: [fath], cite: wafi 151-153, place: "Ḥamzah taqlīl in ٱلۡقَهَّارِ and ٱلۡبَوَارِ (wafi 153)"}
+    - {who: [ibn_wardan, ibn_jammaz], wujuh: [fath], cite: idah 144}
+    - {who: [ruways, rawh], wujuh: [fath], cite: idah 143-144}
+    - {who: [ishaq, idris], wujuh: [fath], cite: idah 142, note: "fatḥ also in ٱلۡقَهَّارِ, ٱلۡبَوَارِ, differing from his riwāyah"}
+
+  imala_kafirin:  # كَٰفِرِينَ with yāʾ
+    - {who: [duri_abuamr, susi, duri_kisai], wujuh: [imala], cite: wafi 152}
+    - {who: [warsh], wujuh: [taqlil], cite: wafi 153}
+    - {who: rest7, wujuh: [fath], cite: wafi 152}
+    - {who: [ruways], wujuh: [imala], cite: idah 143}
+    - {who: [rawh], wujuh: [fath], cite: idah 143-144, place: "imālah in al-Naml (كَٰفِرِينَ, 27:43) for both of Yaʿqūb"}
+    - {who: [ibn_wardan, ibn_jammaz], wujuh: [fath], cite: idah 144}
+    - {who: [ishaq, idris], wujuh: [fath], inherited: true, cite: idah 40-43}
+
+  imala_nas:  # ٱلنَّاسِ majrūr
+    - {who: [duri_abuamr], wujuh: [imala], cite: wafi 154}
+    - {who: [susi], wujuh: [fath], cite: wafi 154, note: "the verse reads as a khulf for Abū ʿAmr; al-Wāfī: imālah is al-Dūrī's, fatḥ al-Sūsī's, by the ṭarīq"}
+    - {who: rest7, wujuh: [fath], cite: wafi 154}
+    - {who: [ibn_wardan, ibn_jammaz], wujuh: [fath], cite: idah 144}
+    - {who: [ruways, rawh], wujuh: [fath], cite: idah 143-144}
+    - {who: [ishaq, idris], wujuh: [fath], inherited: true, cite: idah 40-43}
+
+  imala_ya:  # dhawāt al-yāʾ (هُدًى, ٱشۡتَرَىٰهُ)
+    - {who: [khalaf_an_hamzah, khallad, abul_harith, duri_kisai], wujuh: [imala], cite: wafi 139}
+    - {who: [warsh], wujuh: [fath, taqlil], cite: wafi 148-149,
+       cond: "after rāʾ: taqlīl only; ruʾūs al-āy of the eleven surahs: taqlīl only, unless with ـهَا"}
+    - {who: [duri_abuamr, susi], wujuh: [fath], cite: wafi 149-150,
+       cond: "taqlīl in fuʿlā/faʿlā/fiʿlā forms and the ruʾūs al-āy of the eleven surahs; imālah after rāʾ"}
+    - {who: rest7, wujuh: [fath], cite: wafi 139}
+    - {who: [ibn_wardan, ibn_jammaz], wujuh: [fath], cite: idah 144}
+    - {who: [ruways, rawh], wujuh: [fath], cite: idah 143-144, place: "imālah in أَعۡمَىٰ (al-Isrāʾ, first)"}
+    - {who: [ishaq, idris], wujuh: [imala], inherited: true, cite: idah 142, note: "exceptions on p. 142 (fatḥ in ʿayn of thulāthī verbs etc.)"}
+
+not_read_yet:
+  - "Ḥamzah's and Hishām's waqf on hamz (wafi 110-127; idah 117-124): hamz_waqf_final, hamz_waqf_mid, ibdal_sakin_waqf, hamzatayn_waqf"
+  - "sakt on the ḥurūf muqaṭṭaʿah (Abū Jaʿfar; idah farsh of al-Baqarah)"
+  - "rāʾāt and lāmāt (wafi 161-172; idah 145+): tarqiq_ra, taghliz_lam"
+  - "word-specific imālah: Dūrī ʿan al-Kisāʾī's ءَاذَانِهِمۡ, طُغۡيَٰنِهِمۡ (wafi 154); Ibn Dhakwān and Ḥamzah's شَآءَ, جَآءَ, زَادَ (wafi 151)"

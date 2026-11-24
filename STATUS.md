@@ -1,6 +1,6 @@
 # Status and next steps
 
-Last updated 2026-11-24, before a context compaction. Read this first in a new session, then
+Last updated 2026-11-24 (after the books were pulled and the profile table built). Read this first in a new session, then
 `docs/02-spike-reading-model.md` (the spike plan with day-by-day results) and
 `docs/03-usul-sources.md` (uṣūl books).
 
@@ -13,6 +13,10 @@ Two local git repos (no remotes, nothing pushed):
 - **`~/Projects/mushaf`**: the al-Futūḥ al-Bāhira extractor (uv). `./rebuild.sh` rebuilds all six
   volumes in about 2.5 min; outputs go to `out/vol{1..6}.jsonl` (not tracked). `docs/known-gaps.md`
   logs every fix and open gap.
+- **`books/`** (gitignored): the uṣūl books as TXT + PDF, fetched by `tools/fetch_books.py` from
+  `tools/books.tsv`; `books/MANIFEST.json` has URL, size, sha256. `python3 tools/book.py SLUG PAGE`
+  prints a page, `-s REGEX` searches (diacritics folded), `--pdf PAGE OUT.png` renders one. TXT
+  page n = PDF page n = Aljam3 page n = printed page (al-Wāfī, al-Īḍāḥ).
 - `~/Projects/mushaflab` is the old project, now only a source of inputs: the Ḥafṣ spine
   (`data/spine/hafs/v1/items.jsonl`), fonts, and KFGQPC texts.
 
@@ -29,8 +33,15 @@ Two local git repos (no remotes, nothing pushed):
 | `review.py`, `review_sheet.py` | extra readings and misses, as a list and as box-by-box pictures |
 | `render.py`, `dot_sheet.py` | preview renderer (HarfBuzz + DigitalKhatt) with the standalone tas-hīl dot |
 | `data/place_wujuh.yaml` | wujūh tied to a place, with sources (Ruways at 2:20) |
+| `data/profiles.yaml`, `book_profiles.py` | **uṣūl profiles from al-Wāfī and al-Īḍāḥ**: 20 categories × 20 ruwāt, each row with page; `readings --book` uses them |
 
-Current numbers: **655 / 676** row/rāwī pairs of 2:1–20 reproduced; held-out **83%** (learn 2:1–5,
+Book profiles (2026-11-24): with **no training rows**, `--upto 0 --test 1-20 --book` reproduces
+**617 / 666** pairs (93%); learning 2:1-5 and predicting 2:6-20 with `--book`: 481 / 518 (93%).
+On the full passage the book and the row-learned profiles miss exactly the same pairs. The
+remaining misses are not profile questions: occurrences (naql places, word-specific imālah of
+شَآءَ / زَادَ / ءَاذَانِهِمۡ), Ḥamzah's waqf on hamz, rāʾāt/lāmāt features, and Idrīs's sakt.
+
+Earlier numbers: **655 / 676** row/rāwī pairs of 2:1–20 reproduced; held-out **83%** (learn 2:1–5,
 predict 2:6–20) and **89%** (learn 2:1–12, predict 2:13–20); 0 conflicts with the book's madd
 tables; review list empty.
 
@@ -54,37 +65,32 @@ tables; review list empty.
 - Q4: waqf is an input (stop at ayah end; optional at pause signs); waqf has its own hamz categories.
 - Q5: a reading is text plus features (madd lengths, sakt, imālah against taqlīl, ishmām of the
   ṣād…), because the text can't show them.
-- Profiles learned from rows don't generalise to unseen categories. They should come from the
-  books' uṣūl chapters, which is the next step.
+- Profiles learned from rows don't generalise to unseen categories; profiles read from the books'
+  uṣūl chapters do (93% of 2:1–20 with no training rows), and agree with every row-learned
+  profile in the passage except Idrīs's sakt.
 
 ## Next steps, in order
 
-1. **Pull the uṣūl books into a local folder** instead of querying Aljam3 each time.
-   - Put them in `~/Projects/al-mushaf/books/` (gitignored: book text is not tracked) with a
-     `books/MANIFEST.json` of source URL + sha256.
-   - Use the typed TXT files (DOCX as fallback), from the Hugging Face datasets Aljam3 links to
-     (`get_book` gives `download_urls`); keep the PDF for checking OCR.
-   - Books (Aljam3 id / file id): al-Budūr 3480 / 8362 (typed; scans 4983 / 12844 and 16689);
-     al-Wāfī 1037 / 2153; al-Īḍāḥ li-Matn al-Durrah 16501 / 36683; Ghayth al-Nafʿ 1045 / 2164
-     (+ second file); al-Ḍabbāʿ's Sharḥ Itḥāf al-Bariyyah 16390; al-Buḥūr al-Zākhira 16670.
-   - Ask Eisa before downloading (file names and sizes), per the session rules.
-2. **Build the profile tables from the books.**
-   - `corpus/`-style data: one row per (rāwī or qāriʾ, category, wajh), with conditions, a
-     citation (book, page), and status `candidate`.
-   - Sources: al-Wāfī's uṣūl chapters for the seven, al-Īḍāḥ for the three; the madd tables already
-     come from al-Futūḥ vol. 1 pp. 52–53.
-   - Extract from each bāb's text, never from memory. Each row is checked against its page, and
-     Eisa reviews by category, with the page text beside the rows.
-   - Then switch `readings.py` to use book profiles (rows stay as a check) and rerun the held-out
-     test, which should improve the most.
+1. ~~Pull the books~~ (done: `books/`, `tools/`). ~~Build the profile table~~ (done:
+   `spike/data/profiles.yaml`, status candidate). Still to do for it:
+   - **Eisa reviews it by category** (page text beside the rows); open question for him: Idrīs's
+     sakt. al-Futūḥ's labels give it (v1 p52 r7, p54 r4, p57 r2); al-Īḍāḥ pp. 121–123 says the
+     Durrah has none for Khalaf al-ʿĀshir and its editor records a khulf for Idrīs by other ṭuruq.
+   - Read the bābs not yet in the table (`not_read_yet` in the file): Ḥamzah's and Hishām's waqf
+     on hamz, Abū Jaʿfar's sakt on the ḥurūf, rāʾāt and lāmāt, word-specific imālah.
+   - Taqlīl and imālah are written the same in the text; the rows' learned names are arbitrary
+     (19 apparent conflicts in `python3 -m spike.book_profiles --vs-rows` are this).
+2. **Occurrence tables**, now the main gap: the profiles are right, but the spike doesn't know
+   which places a category applies to (naql places, word-specific imālah). Build them from Ghayth
+   al-Nafʿ's per-place types (`books/ghayth-1.txt`) and the lists in al-Wāfī and al-Īḍāḥ, and
+   compare with the detectors (which over-match, e.g. imālah on عَلَىٰ). nQuran.com's per-ayah
+   pages are a spot-check source (see `docs/03-usul-sources.md`).
 3. **Read al-Futūḥ's footnotes ("تفاصيل المقطع")**: per-word statements with matn verses. They're
    already extracted as `footnote` / `text` records. Parse them into place entries like
    `data/place_wujuh.yaml`.
-4. **Occurrence tables** from Ghayth al-Nafʿ's per-place types, compared with the detectors (which
-   over-match, e.g. imālah on عَلَىٰ).
-5. **Constraints** from al-Budūr's per-place prose (e.g. p. 20: badal in ءَامَنَّا and ٱلۡأٓخِرِ must be
+4. **Constraints** from al-Budūr's per-place prose (e.g. p. 20: badal in ءَامَنَّا and ٱلۡأٓخِرِ must be
    equal), then checked against al-Futūḥ's boxes.
-6. **Spike Day 5**: the KFGQPC check for the 8, and `spike/REPORT.md` answering Q1–Q5.
+5. **Spike Day 5**: the KFGQPC check for the 8, and `spike/REPORT.md` answering Q1–Q5.
 
 Also open, lower priority: 208 numbering irregularities in the extraction (`mushaf/docs/known-gaps.md`),
 21 unreproduced pairs (word-specific imālah of شَآءَ and ءَاذَانِهِم, Ḥamzah's waqf ٱلۡأَخِرِ,

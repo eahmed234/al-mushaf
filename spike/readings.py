@@ -156,7 +156,10 @@ def row_features(rows: list[dict]) -> dict[str, dict[str, list[str]]]:
     return out
 
 
-def full_profiles(upto: int, start: int = 1):
+def full_profiles(upto: int, start: int = 1, book: bool = False):
+    """Profiles per rāwī. Learned from al-Futūḥ's rows (2:start-upto), the book's madd tables and
+    the row labels; with `book`, the uṣūl books' table (data/profiles.yaml) replaces every
+    category it covers, and the rows only fill categories the books table doesn't have yet."""
     from . import profile as P
 
     P.EXTRA_READERS.clear()
@@ -196,6 +199,10 @@ def full_profiles(upto: int, start: int = 1):
                     for w in wj:
                         q["wujuh"].setdefault(w, []).append(row["id"])
         full[r] = p
+    if book:
+        from .book_profiles import load
+        for r, cats in load().items():
+            full[r].update(cats)
     return full, gaps, conflicts, feats
 
 
@@ -332,8 +339,9 @@ def main() -> None:
     ap.add_argument("--upto", type=int, default=5)
     ap.add_argument("--show", action="store_true")
     ap.add_argument("--test", default=None, help="predict al-Baqarah A-B with profiles learned up to --upto, e.g. 6-20")
+    ap.add_argument("--book", action="store_true", help="use the uṣūl books' profiles (data/profiles.yaml)")
     a = ap.parse_args()
-    full, gaps, conflicts, feats = full_profiles(a.upto)
+    full, gaps, conflicts, feats = full_profiles(a.upto, book=a.book)
     if a.test:
         lo, hi = map(int, a.test.split("-"))
         misses, over = compare(hi, full, feats, start=lo)
