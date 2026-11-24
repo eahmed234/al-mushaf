@@ -26,6 +26,30 @@ Checked so far against the spike:
   except four places). Recorded in `spike/data/place_wujuh.yaml` with both citations.
 - Abū ʿAmr's imālah in أَبۡصَٰرِهِمۡ: al-Wāfī p. 151 (the rule) matches the corrected spike.
 
+## nQuran.com "العشر الصغرى" (seen 2026-11-24)
+
+A per-ayah database of the twenty riwāyāt, Shāṭibiyyah + Durrah, at
+`nquran.com/ar/index.php?group=tb1&tpath=2&sorano=S&aya_no=A` (server-rendered HTML, one page per
+ayah). For each word or word pair it says, per rāwī or qāriʾ, what he reads and the rest default
+("باقي الرواة"), uṣūl and farsh together, in prose:
+
+- khulf stated ("بخلف عنه"): Qālūn's ṣilah, Ruways's idghām kabīr at 2:20 (agrees with al-Futūḥ's
+  footnote and al-Īḍāḥ);
+- waqf readings: Ḥamzah's and Hishām's waqf on hamz (ibdāl with three lengths, naql, idghām, rawm);
+- things al-Futūḥ's text can't show: Warsh's tarqīq of rāʾ and taghlīẓ of lām, al-Kisāʾī's imālah
+  of hāʾ al-taʾnīth at waqf, ghunnah across ayah ends (Khalaf at "قدير يا أيها");
+- Abū ʿAmr and al-Dūrī ʿan al-Kisāʾī: imālah in وَأَبۡصَٰرِهِمۡ "بلا خلاف" (agrees with al-Wāfī p. 151).
+
+What it doesn't give: madd munfaṣil and muttaṣil lengths aren't listed per place (2:4 بِمَآ أُنزِلَ has
+no entry), and nothing is said about which wujūh combine (no taḥrīr). Other views: "طرق أداء القراء"
+(occurrences of one rule, about 230 rule ids), "مقارنة الطرق" (two ruwāt compared), and a page-image
+Ḥafṣ mushaf with hover notes (not per-riwāyah text). Footer: all rights reserved, so it's a check
+source and a possible collaborator (like alkiraat.com), not something to scrape without asking.
+
+How it fits: a third independent jamʿ source per place, already in a per-place, per-rāwī shape
+close to our occurrence tables. Most useful as a check on detectors (which places a category
+applies to) and on categories our rows can't show (tarqīq, taghlīẓ, waqf).
+
 ## How they would fit the model
 
 1. **Profiles** (rāwī × category → wujūh): from the uṣūl chapters of al-Wāfī (the seven) and
