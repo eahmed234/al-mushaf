@@ -24,6 +24,15 @@ def load(path=PATH):
         seen = []
         for row in rows:
             who = row["who"]
+            if who == "rest_as_wasl":  # waqf categories: everyone not named reads as in waṣl
+                for r in RUWAT:
+                    if r in seen:
+                        continue
+                    src = out[r].get(row.get("wasl")) if row.get("wasl") else None
+                    out[r][cat] = ({**src, "note": f"waqf as waṣl ({row['wasl']})"} if src else
+                                   {"wujuh": {w: ["waqf as waṣl"] for w in row.get("wujuh", ["tahqiq"])}, "source": "book"})
+                    seen.append(r)
+                continue
             if who == "rest7":
                 who = [r for r in SEVEN if r not in seen]
             for r in who:
@@ -43,25 +52,8 @@ def load(path=PATH):
             problems.append(f"{cat}: no row for {', '.join(missing)}")
     if problems:
         raise ValueError("profiles.yaml:\n  " + "\n  ".join(problems))
-    # waqf on hamz: the same as waṣl for everyone but Ḥamzah and Hishām (their bāb isn't read yet,
-    # so they're left to the rows); Khalaf al-ʿĀshir: "وحقق همز الوقف" (idah 121)
-    for r in RUWAT:
-        if r in WAQF_OWN:
-            continue
-        for waqf, wasl in WAQF_OF.items():
-            if r in ("ishaq", "idris"):
-                out[r][waqf] = {"wujuh": {"tahqiq": ["idah 117, 121"]}, "source": "book"}
-            elif wasl in out[r]:
-                e = out[r][wasl]
-                out[r][waqf] = {**e, "note": f"waqf as waṣl ({wasl})"}
-            else:
-                out[r][waqf] = {"wujuh": {"tahqiq": ["waqf as waṣl"]}, "source": "book"}
     return out
 
-
-WAQF_OWN = {"khalaf_an_hamzah", "khallad", "hisham"}
-WAQF_OF = {"ibdal_sakin_waqf": "ibdal_sakin", "hamzatayn_waqf": "hamzatayn",
-           "hamz_waqf_final": None, "hamz_waqf_mid": None}
 
 
 def vs_rows(book, upto=20):
@@ -75,8 +67,12 @@ def vs_rows(book, upto=20):
         for cat, e in book[r].items():
             if cat not in learned[r]:
                 continue
-            got = set(learned[r][cat]["wujuh"])
             allowed = set(e["wujuh"])
+            lw = learned[r][cat]["wujuh"]
+            # a learned wajh counts only if some row behind it isn't also behind an allowed wajh
+            # (a quote ending at a pause sign matches both the waṣl and the waqf form)
+            ok_rows = {x for w in allowed & set(lw) for x in lw[w]}
+            got = {w for w, src in lw.items() if w in allowed or set(src) - ok_rows}
             if got - allowed:
                 conflicts.append((r, cat, sorted(got - allowed), sorted(allowed), learned[r][cat]["source"]))
             elif allowed - got:

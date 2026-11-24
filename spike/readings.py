@@ -180,13 +180,13 @@ def full_profiles(upto: int, start: int = 1, book: bool = False):
         # madd lengths from the book's tables
         for cat in ("munfasil", "muttasil"):
             if r in tables.get(cat, {}):
-                book = tables[cat][r]
+                table = tables[cat][r]
                 seen = set(p.get(cat, {}).get("wujuh", {}))
                 # the text shows qasr vs not-qasr only; a conflict is a wajh the rows show that
                 # the table doesn't allow
-                if ("qasr" in seen and "qasr" not in book) or (seen - {"qasr"} and not book - {"qasr"}):
-                    conflicts.append((r, cat, "table " + "/".join(sorted(book)), "rows " + "/".join(sorted(seen))))
-                p[cat] = {"wujuh": {w: ["al-Futuh v1 pp. 52-53"] for w in sorted(book)}, "source": "book table"}
+                if ("qasr" in seen and "qasr" not in table) or (seen - {"qasr"} and not table - {"qasr"}):
+                    conflicts.append((r, cat, "table " + "/".join(sorted(table)), "rows " + "/".join(sorted(seen))))
+                p[cat] = {"wujuh": {w: ["al-Futuh v1 pp. 52-53"] for w in sorted(table)}, "source": "book table"}
         # features from labels
         for row in rows:
             if r in (row["ruwat"] or row["ruwat_min"] or []):

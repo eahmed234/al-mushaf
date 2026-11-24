@@ -26,6 +26,8 @@ reads them from the row labels.
 
 from __future__ import annotations
 
+import re
+
 from dataclasses import dataclass
 
 from .text import clusters
@@ -77,7 +79,10 @@ def detect(words: list[tuple[str, str]], stop: str | None = None) -> list[Occ]:
     if stop:
         w = dict(words).get(stop, "")
         cls = [c for c in (_core(c) for c in clusters(w)) if c]
-        if len(cls) >= 2 and cls[-1][0] == "\u0621" and cls[-2][0] == "\u0627":
+        if len(cls) >= 3 and cls[0][0] in "\u0648\u0641\u0628\u0644\u0643\u0633" and len(cls[0]) == 2 \
+                and cls[1][0] in "\u0623\u0625" and set(cls[1][1:]) & VOWELS:
+            out.append(Occ("hamz_waqf_zaid", stop, None))  # وَأَبۡصَٰرِهِمۡ: made mid by a prefix (wafi 122-123)
+        elif len(cls) >= 2 and cls[-1][0] == "\u0621" and cls[-2][0] == "\u0627":
             out.append(Occ("hamz_waqf_final", stop, None))  # ٱلسُّفَهَآءُ
         elif any(c[0] == "\u0621" and set(c[1:]) & VOWELS for c in cls[1:-1]):
             out.append(Occ("hamz_waqf_mid", stop, None))  # مُسۡتَهۡزِءُونَ
@@ -168,6 +173,14 @@ def _detect(words: list[tuple[str, str]]) -> list[Occ]:
             out.append(Occ("imala_kafirin", wid, nid))  # كَٰفِرِينَ
         if last[0] == "\u0649" and DAGGER in last and not tanwin:  # dhawat al-ya': ٱلۡهُدَىٰ
             out.append(Occ("imala_ya", wid, nid))
+        # a maḍmūmah hamzah after a kasrah inside the word (مُسۡتَهۡزِءُونَ): Abū Jaʿfar drops it (idah 110)
+        if any(c[0] == "\u0621" and DAMMA in c and KASRA in cls[k - 1] for k, c in enumerate(cls[1:-1], 1)):
+            out.append(Occ("hadhf_damm", wid, nid))
+        # word-list imālah (the books' lists, not a rule): Ḥamzah's past verbs (wafi 150-151),
+        # al-Dūrī ʿan al-Kisāʾī's words (wafi 153-154)
+        for cat, rx in WORD_IMALA:
+            if rx.match(sk):
+                out.append(Occ(cat, wid, nid))
         # muttasil: maddah on a madd letter followed by a hamza in the same word
         for k in range(len(cls) - 1):
             if MADDAH in cls[k] and cls[k + 1][0] in "ءئؤأ":
@@ -197,8 +210,23 @@ WUJUH = {
     "imala_nas": ["fath", "imala"],
     "imala_kafirin": ["fath", "taqlil", "imala"],
     "imala_ya": ["fath", "taqlil", "imala"],
+    "hadhf_damm": ["tahqiq", "hadhf"],
+    "hamz_waqf_zaid": ["tahqiq", "tashil"],
+    "imala_jaa_shaa": ["fath", "imala"],
+    "imala_zad": ["fath", "imala"],
+    "imala_fiil": ["fath", "imala"],
+    "imala_duri_kisai": ["fath", "imala"],
     **FEATURE_ONLY,
 }
+
+
+_SUF = "(?:وا|ت|تا)?(?:هم|هما|كم|كما|نا|ه|ها|ك|ني|هن|كن)?$"
+WORD_IMALA = [(c, re.compile(r)) for c, r in [
+    ("imala_jaa_shaa", "^[وف]?(?:ل)?(?:جا|شا)ء" + _SUF),          # جَآءَ, شَآءَ (past)
+    ("imala_zad", "^[وف]?زاد" + _SUF),                            # زَادَ
+    ("imala_fiil", "^[وف]?(?:خاب|خاف|طاب|ضاق|حاق|زاغ)" + _SUF),  # Ḥamzah's other past verbs
+    ("imala_duri_kisai", "^[وف]?(?:ب|ل)?(?:(?:ء?ا)ذان(?:هم|نا)|طغين(?:هم|ه)|انصاري|سارعوا|نسارع|يسرعون|يسارعون|الباري|بارئكم|الجوار)$"),
+]]
 
 
 def _imala(cat: str, cls: list[str]) -> list[str]:
@@ -209,6 +237,14 @@ def _imala(cat: str, cls: list[str]) -> list[str]:
 
     if cat == "imala_ya":
         dot(len(cls) - 2)
+    elif cat in ("imala_jaa_shaa", "imala_zad", "imala_fiil"):  # the verb's alif (شَآءَ: with maddah)
+        k = next((k for k in range(len(cls) - 1) if cls[k + 1][0] == "\u0627"), None)
+        if k is not None:
+            dot(k)
+    elif cat == "imala_duri_kisai":  # the last alif or dagger alif (ءَاذَٰنِهِمۡ: after the dhāl)
+        ks = [k for k in range(len(cls) - 1) if DAGGER in cls[k] or cls[k + 1] == "\u0627"]
+        if ks:
+            dot(ks[-1])
     elif cat == "imala_nas":
         dot(len(cls) - 3)
     else:
@@ -296,8 +332,9 @@ def apply(words: list[tuple[str, str]], occs: list[Occ], choice: dict[str, str])
                     cls[-1] = cls[-1].replace(MADDAH, "")
                 if wj.startswith("tashil"):
                     cls.append("\u0640" + vowel + TASHIL)  # the softened hamza with rawm of its vowel
-            elif o.cat == "hamz_waqf_mid" and wj not in (None, "tahqiq"):
-                k = next(k for k, c in enumerate(cls) if k and c[0] == "\u0621" and set(c[1:]) & VOWELS)
+            elif o.cat in ("hamz_waqf_mid", "hadhf_damm") and wj not in (None, "tahqiq") and \
+                    (k := next((k for k, c in enumerate(cls) if k and c[0] == "\u0621" and set(c[1:]) & VOWELS), None)):
+                # (None once another category has already dropped the hamza)
                 vowel = "".join(m for m in cls[k][1:] if m in VOWELS)
                 if wj == "tashil":
                     cls[k] = "\u0640" + TASHIL
@@ -306,6 +343,8 @@ def apply(words: list[tuple[str, str]], occs: list[Occ], choice: dict[str, str])
                     del cls[k]
                 elif wj == "ibdal_ya":
                     cls[k] = "\u064a" + vowel
+            elif o.cat == "hamz_waqf_zaid" and wj == "tashil":
+                cls[1] = "\u0627" + TASHIL + "".join(m for m in cls[1][1:] if m not in VOWELS)
             elif o.cat == "idgham_ghunna" and wj == "bila_ghunna" and o.nxt:
                 ncl = clusters(text[o.nxt])
                 ncl[0] = ncl[0][0] + SHADDA + ncl[0][1:]
