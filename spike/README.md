@@ -1,0 +1,17 @@
+# Reading-model spike
+
+Plan: `../docs/02-spike-reading-model.md`. Plain Python 3.12, standard library only.
+
+Inputs, read in place and never copied here:
+
+| Input | Path | Pinned |
+| --- | --- | --- |
+| Ḥafṣ words (KFGQPC v2.0 spine) | `../mushaflab/data/spine/hafs/v1/items.jsonl` | sha256 `1fe71d33…2d28a4` |
+| al-Futūḥ rows, vol. 1 | `../mushaf/out/vol1.jsonl` | rebuilt by `../mushaf/rebuild.sh` at the commit in `../mushaf` |
+
+```bash
+python3 -m spike.rows          # Day 1: load, rebuild elided rows, normalise; writes spike/build/rows.jsonl
+python3 -m spike.rows --show   # print every row as full text with its ruwāt
+# side-by-side of printed rows and rebuilt text (needs the extractor's env for pymupdf):
+PYTHONPATH=../mushaf ../mushaf/.venv/bin/python -m spike.sheet v1-p052-r11 v1-p059-r12
+```
