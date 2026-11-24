@@ -72,10 +72,10 @@ class Renderer:
 
     def svg(self, text: str, size: float = 60, gap: int = 40, dot_scale: float = 0.85,
             dot_mid: int = 230, vowel_gap: int = 50, min_open: int = 0) -> tuple[str, float, float]:
-        """The standalone dot is placed like a kerned glyph: `gap` font units from the ink of
-        its neighbours at the dot's own height (so it can sit over a letter's low tail, as
-        after zay), taking only the width it needs, but at least `min_open` units, so it reads
-        as a letter of its own. The softened hamza's vowel goes above it."""
+        """The standalone dot stands after the whole of the letter before it, `gap` font units
+        from its ink; on the other side it is `gap` units from the next letter's ink at the
+        dot's own height. It takes the width it needs, but at least `min_open` units. The
+        softened hamza's vowel goes above it."""
         infos, poss = self.shape(text)
         dx0, dy0, dx1, dy1 = self._bounds(self.dot)
         dot_w, dot_h = (dx1 - dx0) * dot_scale, (dy1 - dy0) * dot_scale
@@ -103,9 +103,11 @@ class Renderer:
             left = next((p for p in reversed(pieces[:k]) if p[4] > 0), None)
             right = next((p for p in pieces[k:] if p[4] > 0), None)
             ink_l = self._ink_x(left[0], *band) if left else None
-            ink_r = self._ink_x(right[0], *band) if right else None
             L = left[1] + ink_l[1] if ink_l else slot_x
-            R = right[1] + ink_r[0] if ink_r else slot_x
+            # The letter before the dot (on its right) keeps all its ink to itself: the dot never
+            # tucks under a tail (zay), it stands after the whole letter, as in KFGQPC's fonts.
+            # The letter after it (on the left) is measured at the dot's height only.
+            R = right[1] + self._bounds(right[0])[0] if right else slot_x
             need = max(float(min_open), dot_w + 2 * gap - (R - L))
             for p in pieces[k:]:
                 p[1] += need

@@ -13,7 +13,7 @@ import pymupdf
 from .render import Renderer
 from .rows import BUILD, FUTUH, PROJECTS
 
-VARIANTS = [0, 80, 160, 240]  # min_open, with D's gap 40 and dot 85%
+VARIANTS = [20, 40, 60]  # gap, dot 85%
 
 
 def main() -> None:
@@ -34,7 +34,7 @@ def main() -> None:
     out = pymupdf.open()
     W, H = 1250, 150
     page = out.new_page(width=W, height=40 + H * len(words))
-    page.insert_text((10, 20), "print  |  preview renderer, DigitalKhatt: D (gap 40, dot 85%) with a minimum width of its own", fontsize=10)
+    page.insert_text((10, 20), "print  |  preview renderer, DigitalKhatt: dot after the whole previous letter (no tucking under the zay); three gaps; KFGQPC (last column) for reference", fontsize=10)
     for n, (r, w) in enumerate(words):
         y = 40 + n * H
         b = w["bbox"]
@@ -44,13 +44,20 @@ def main() -> None:
         stored = w["t"]  # already the stored form: tatweel + U+06EC (+ the hamza's vowel)
         x = 280
         for mo in VARIANTS:
-            svg, sw, sh = R.svg(stored, size=56, gap=40, dot_scale=0.85, min_open=mo)
+            svg, sw, sh = R.svg(stored, size=56, gap=mo, dot_scale=0.85)
             sdoc = pymupdf.open(stream=svg.encode(), filetype="svg")
             pdfbytes = sdoc.convert_to_pdf()
             src = pymupdf.open("pdf", pdfbytes)
             page.show_pdf_page(pymupdf.Rect(x, y, x + 220, y + H - 20), src, 0)
-            page.insert_text((x + 5, y + H - 8), f"{'ABCDEF'[VARIANTS.index(mo)]}: at least {mo} units of its own", fontsize=9, color=(0.4, 0.4, 0.4))
+            page.insert_text((x + 5, y + H - 8), f"gap {mo}", fontsize=9, color=(0.4, 0.4, 0.4))
             x += 240
+        import html as _h
+        kf = PROJECTS / "mushaflab/data/sources/raw/kfgqpc/mirror/hafs/hafs.18.ttf"
+        ref = stored.replace("\u0640", "\u00a0")
+        page.insert_htmlbox(pymupdf.Rect(x, y + 20, x + 220, y + H - 20),
+            f"<p dir='rtl' style='font-family:q;font-size:34px;text-align:center'>{_h.escape(ref)}</p>",
+            css=f"@font-face {{font-family:q; src:url({kf.name});}}", archive=pymupdf.Archive(str(kf.parent)))
+        page.insert_text((x + 5, y + H - 8), "KFGQPC Hafs (no-break space + dot)", fontsize=9, color=(0.4, 0.4, 0.4))
     BUILD.mkdir(exist_ok=True)
     page.get_pixmap(dpi=110).save(BUILD / "dot-sheet.png")
     print(BUILD / "dot-sheet.png")
