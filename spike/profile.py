@@ -139,6 +139,35 @@ def claimed(segment: str, cat: str | None = None) -> set[str]:
     return set().union(*(ws for c, ws in seg.items() if wanted is None or c in wanted)) if seg else set()
 
 
+# which kind of difference (spike.diff) each category makes in a word's text
+CAT_KIND = {"munfasil": "madd", "silah_mim": "silah", "silah_mim_hamza": "silah", "silah_ha": "silah",
+            "ibdal_sakin": "hamz", "ibdal_sakin_waqf": "hamz", "naql": "hamz", "naql_word": "hamz",
+            "hamzatayn": "hamz", "hamzatayn_waqf": "hamz", "hamz_waqf_final": "hamz", "hamz_waqf_mid": "hamz",
+            "idgham_kabir": "idgham", "idgham_ghunna": "idgham", "sakt_huruf": "sakt", "badal": "madd",
+            "imala_ra": "imala", "imala_nas": "imala", "imala_kafirin": "imala", "imala_ya": "imala"}
+_REVIEWED: set | None = None
+
+
+def reviewed(cat: str, word: str, nxt: str | None = None) -> bool:
+    """A detector's place counts once some row of the book writes that word (or, for idgham, the
+    next word) with the category's kind of difference from Hafs. Stands in for the reviewed
+    occurrence tables of the real model: عَلَىٰ / إِلَىٰ never get an imala dot, so they drop out."""
+    global _REVIEWED
+    if _REVIEWED is None:
+        hafs = load_hafs()
+        _REVIEWED = set()
+        for l in (BUILD / "rows.jsonl").open():
+            for w in json.loads(l)["words"]:
+                if w["id"] in hafs:
+                    for t in w.get("alts") or [w["t"]]:
+                        if t != hafs[w["id"]]:
+                            _REVIEWED |= {(k, w["id"]) for k in classify(hafs[w["id"]], t)[0]}
+    kind = CAT_KIND.get(cat)
+    if kind is None or cat == "munfasil":
+        return True
+    return (kind, word) in _REVIEWED or (cat.startswith("idgham") and (kind, nxt) in _REVIEWED)
+
+
 def match_row(r: dict, hafs: dict[str, str]):
     """(matching choices, claimed categories, occurrences, words that never match) for one row,
     over every way the span can be read (stop or not at a pause sign)."""
@@ -153,7 +182,7 @@ def match_row(r: dict, hafs: dict[str, str]):
     for words, stop in sorted(ctxs, key=lambda c: c[1] is None):
         if ok:
             break
-        occs = detect(words, stop=stop)
+        occs = [o for o in detect(words, stop=stop) if reviewed(o.cat, o.word, o.nxt)]
         cats = sorted({o.cat for o in occs if o.cat in TEXT_CATS})
         claimed_cats = {o.cat for o in occs if o.word in claimed(r["segment"], o.cat) or o.nxt in claimed(r["segment"], o.cat)}
         if "silah_mim_hamza" in cats and "munfasil" not in cats:

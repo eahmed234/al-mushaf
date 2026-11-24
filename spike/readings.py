@@ -25,7 +25,7 @@ from collections import defaultdict
 
 import yaml
 
-from .profile import TEXT_CATS, claimed, context, learn, match_row, rows_in, same
+from .profile import TEXT_CATS, claimed, context, learn, match_row, reviewed, rows_in, same
 from .rows import BUILD, PROJECTS, RUWAT, load_hafs
 from .usul import WUJUH, apply, detect
 
@@ -205,12 +205,13 @@ def generate(rawi: str, span: list[str], full: dict, confirmed: set) -> list[tup
         w = full[rawi].get(c, {}).get("wujuh")
         if not w and c == "silah_mim_hamza":  # one category in the books; learned apart
             w = full[rawi].get("silah_mim", {}).get("wujuh")
-        return list(w or {"?": 0})
+        # nothing known for this rawi here: leave the word as it is (the category's first wajh,
+        # which is the Hafs text)
+        return list(w or [WUJUH[c][0]])
 
     out = []
     for words, stop in contexts(span, hafs, farsh_texts()[rawi]):
-        occs = [o for o in detect(words, stop=stop)
-                if o.cat not in TEXT_CATS or (o.cat, o.word) in confirmed or o.cat == "munfasil"]
+        occs = [o for o in detect(words, stop=stop) if reviewed(o.cat, o.word, o.nxt)]
         cats = sorted({o.cat for o in occs if o.cat in TEXT_CATS})
         if "silah_mim_hamza" in cats and "munfasil" not in cats:
             cats = sorted(cats + ["munfasil"])
@@ -259,13 +260,16 @@ def compare(upto: int, full: dict, feats: dict, start: int = 1):
     gen_cache: dict[tuple, list[dict]] = {}
     book_texts: dict[tuple, set] = defaultdict(set)
     claimed_span: dict[tuple, tuple] = {}
+    choice_cache: dict[tuple, list] = {}
     for r in rows:
         span = tuple(w["id"] for w in r["words"] if w["id"] in hafs)
         book = {w["id"]: (w.get("alts") or [w["t"]]) for w in r["words"]}
         for rawi in (r["ruwat"] or r["ruwat_min"] or []):
             key = (rawi, span)
             if key not in gen_cache:
-                gen_cache[key] = [g for _, g in generate(rawi, list(span), full, confirmed)]
+                gen_cache[key] = generate(rawi, list(span), full, confirmed)
+                choice_cache[key] = gen_cache[key]
+                gen_cache[key] = [g for _, g in gen_cache[key]]
             gens = gen_cache[key]
 
             seen_words = claimed(r["segment"])
@@ -283,8 +287,19 @@ def compare(upto: int, full: dict, feats: dict, start: int = 1):
                     misses.append((r["id"], rawi, f"feature {cat}={'/'.join(wj)}", []))
             book_texts[key].add(tuple(w["t"] for w in r["words"] if w["id"] in seen_words))
             claimed_span[key] = tuple(i for i in span if i in seen_words)
+    # extra readings: distinct texts (on the words the box speaks about, a pausal final vowel not
+    # counting as a difference) beyond the number of readings the book gives that rawi for the span
+    from .text import clusters
+
+    def unpaused(w: str) -> str:
+        cl = clusters(w)
+        if cl:
+            cl[-1] = cl[-1][0] + "".join(m for m in cl[-1][1:] if m not in "\u064e\u064f\u0650\u064b\u064c\u064d")
+        return "".join(cl)
+
     for (rawi, span), gens in gen_cache.items():
-        distinct = {tuple(g[i] for i in claimed_span[(rawi, span)]) for g in gens}
+        words = claimed_span[(rawi, span)]
+        distinct = {tuple(unpaused(g[i]) if i == span[-1] else g[i] for i in words) for g in gens}
         if len(distinct) > len(book_texts[(rawi, span)]):
             over[rawi] += len(distinct) - len(book_texts[(rawi, span)])
     return misses, over

@@ -17,6 +17,7 @@ import argparse
 import json
 import re
 import sys
+import unicodedata
 from dataclasses import dataclass, field
 from functools import lru_cache
 from pathlib import Path
@@ -132,6 +133,28 @@ def _reading_tokens(reading: str) -> list[str]:
     return [t for t in toks if t in SEPARATORS or any(not ("\u0660" <= c <= "\u0669") for c in t)]
 
 
+IMALA_DOT = "\u065c"
+
+
+def _imala_from_colour(w: dict) -> dict:
+    """al-Futuh sometimes marks imala/taqlil only by the green, with no dot in the text (2:7
+    أَبۡصَٰرِهِمۡ in Abu 'Amr's row, 2:16 بِٱلۡهُدَىٰ in al-Kisa'i's). Put the dot on the first green
+    letter (replacing its fatha), as the book does where it prints one."""
+    t = w["t"]
+    runs = [c for c in w.get("colors", []) if c.get("class") == "imala_taqlil" or c.get("hex") == "#76923c"]
+    if not runs or IMALA_DOT in t:
+        return w
+    c = runs[0]
+    k = c["s"]
+    while k < c["e"] and unicodedata.category(t[k]) == "Mn":
+        k += 1
+    j = k + 1
+    while j < len(t) and unicodedata.category(t[j]) == "Mn":
+        j += 1
+    marks = "".join(m for m in t[k + 1 : j] if m != "\u064e")
+    return {**w, "t": t[: k + 1] + marks + IMALA_DOT + t[j:], "imala_from_colour": True}
+
+
 def _quoted_words(r: dict, flags: list[str]) -> list[Word]:
     """The row's own words.
 
@@ -140,7 +163,7 @@ def _quoted_words(r: dict, flags: list[str]) -> list[Word]:
       word in any of these ways (e.g. Hamzah's waqf on hamz). The position takes the first
       alternative's anchor; al-Futuh's anchoring of the others is unreliable there.
     """
-    words = r["words"]
+    words = [_imala_from_colour(w) for w in r["words"]]
     toks = _reading_tokens(r["reading"])
     arabic = [t for t in toks if t not in SEPARATORS]
     alt_next = [False] * len(words)  # word k is followed by a separator
