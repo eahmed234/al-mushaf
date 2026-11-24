@@ -96,11 +96,22 @@ def context(span: list[str], hafs: dict[str, str], text: dict[str, str] | None =
     order = list(hafs)
     k = order.index(span[-1])
     nxt = order[k + 1] if k + 1 < len(order) else None
-    # A quote ending on a pause sign still shows the waṣl form (2:7:6 سَمۡعِهِمُۥۖ), so only an
-    # ayah end counts as a stop.
     if nxt and nxt.split(":")[:2] == span[-1].split(":")[:2]:
         return words + [(nxt, text[nxt])], None
     return words, span[-1]  # the quote ends an ayah: a stop
+
+
+PAUSE_SIGNS = set("\u06d6\u06d7\u06d8\u06d9\u06da\u06db")
+
+
+def contexts(span: list[str], hafs: dict[str, str], text: dict[str, str] | None = None):
+    """Every way the span can be read: at a pause sign the reader may stop or go on, and the book
+    shows either (2:7:6 سَمۡعِهِمُۥۖ goes on; 2:20:19 وَأَبۡصَٰرِهِمۡۚ stops)."""
+    words, stop = context(span, hafs, text)
+    out = [(words, stop)]
+    if span and stop is None and PAUSE_SIGNS & set(hafs[span[-1]]):
+        out.append((words[: len(span)], span[-1]))
+    return out
 
 
 _CLAIMED: dict[str, dict[str, set[str]]] | None = None
@@ -129,30 +140,39 @@ def claimed(segment: str, cat: str | None = None) -> set[str]:
 
 
 def match_row(r: dict, hafs: dict[str, str]):
-    """(matching choices, occurrences, words that never match) for one row."""
+    """(matching choices, claimed categories, occurrences, words that never match) for one row,
+    over every way the span can be read (stop or not at a pause sign)."""
     span = [w["id"] for w in r["words"] if w["id"] in hafs]
     readers = r["ruwat"] or r["ruwat_min"] or []
-    words, stop = context(span, hafs, farsh_texts().get(readers[0]) if readers else None)
-    occs = detect(words, stop=stop)
-    seen_words = claimed(r["segment"])
-    cats = sorted({o.cat for o in occs if o.cat in TEXT_CATS})
-    claimed_cats = {o.cat for o in occs if o.word in claimed(r["segment"], o.cat) or o.nxt in claimed(r["segment"], o.cat)}
-    if "silah_mim_hamza" in cats and "munfasil" not in cats:
-        cats = sorted(cats + ["munfasil"])  # the silah's madd follows the munfasil wajh
     book = {w["id"]: (w.get("alts") or [w["t"]]) for w in r["words"]}
+    seen_words = claimed(r["segment"])
     last = span[-1] if span else None
-    ok, misses = [], defaultdict(int)
-    for combo in itertools.product(*(WUJUH[c] for c in cats)):
-        choice = dict(zip(cats, combo))
-        gen = apply(words, occs, choice)
-        bad = [i for i in span if i in seen_words and not any(same(gen[i], t, i == last, i == span[0]) for t in book[i])]
-        if not bad:
-            ok.append(choice)
-        for i in bad:
-            misses[i] += 1
-    n = max(1, len(list(itertools.product(*(WUJUH[c] for c in cats)))))
-    never = [i for i, m in misses.items() if m == n]
-    return ok, [c for c in cats if c in claimed_cats or c == "munfasil"], occs, never
+    ok, all_cats, all_occs, never_sets = [], set(), [], []
+    # if the print fits a stop at a pause sign, it is a stop: don't also learn the waṣl reading
+    ctxs = contexts(span, hafs, farsh_texts().get(readers[0]) if readers else None)
+    for words, stop in sorted(ctxs, key=lambda c: c[1] is None):
+        if ok:
+            break
+        occs = detect(words, stop=stop)
+        cats = sorted({o.cat for o in occs if o.cat in TEXT_CATS})
+        claimed_cats = {o.cat for o in occs if o.word in claimed(r["segment"], o.cat) or o.nxt in claimed(r["segment"], o.cat)}
+        if "silah_mim_hamza" in cats and "munfasil" not in cats:
+            cats = sorted(cats + ["munfasil"])  # the silah's madd follows the munfasil wajh
+        misses = defaultdict(int)
+        combos = list(itertools.product(*(WUJUH[c] for c in cats)))
+        for combo in combos:
+            choice = dict(zip(cats, combo))
+            gen = apply(words, occs, choice)
+            bad = [i for i in span if i in seen_words and not any(same(gen[i], t, i == last, i == span[0]) for t in book[i])]
+            if not bad:
+                ok.append({c: choice[c] for c in cats if c in claimed_cats or c == "munfasil"})
+            for i in bad:
+                misses[i] += 1
+        all_cats |= {c for c in cats if c in claimed_cats or c == "munfasil"}
+        all_occs += occs
+        never_sets.append({i for i, m in misses.items() if m == len(combos)})
+    never = sorted(set.intersection(*never_sets)) if never_sets else []
+    return ok, sorted(all_cats), all_occs, never
 
 
 def learn(upto: int, start: int = 1):
@@ -166,7 +186,9 @@ def learn(upto: int, start: int = 1):
             gaps.append((r["id"], r["label"], never))
             continue
         for c in cats:
-            seen = sorted({ch[c] for ch in ok})
+            seen = sorted({ch[c] for ch in ok if c in ch})
+            if not seen:
+                continue
             if len(seen) == len(WUJUH[c]) and len(seen) > 1:
                 continue  # the text can't tell this category's wujūh apart here
             for rawi in readers:

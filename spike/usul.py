@@ -232,6 +232,7 @@ def apply(words: list[tuple[str, str]], occs: list[Occ], choice: dict[str, str])
     by_word: dict[str, list[Occ]] = {}
     for o in occs:
         by_word.setdefault(o.word, []).append(o)
+    prev = None
     for wid, w in words:
         cls = clusters(text[wid])
         for o in by_word.get(wid, []):
@@ -273,7 +274,8 @@ def apply(words: list[tuple[str, str]], occs: list[Occ], choice: dict[str, str])
                 ncl = clusters(text[o.nxt])
                 ncl[0] = ncl[0][0] + SHADDA + ncl[0][1:]
                 text[o.nxt] = "".join(ncl)
-            elif o.cat == "naql_word" and wj == "naql":
+            elif o.cat == "naql_word" and wj == "naql" and not (prev and text[prev].rstrip("\u0653").endswith((SMALL_WAW, SMALL_YEH))):
+                # (no naql after a word that now ends in a silah madd: ءَأَنذَرۡتَهُمُۥٓ أَمۡ)
                 vowel = "".join(m for m in cls[0][1:] if m in (FATHA, DAMMA, KASRA))
                 rest = "".join(m for m in cls[0][1:] if m not in (FATHA, DAMMA, KASRA))
                 cls[0] = "\u0627" + vowel + rest  # the hamza goes; the word before takes its vowel
@@ -313,4 +315,5 @@ def apply(words: list[tuple[str, str]], occs: list[Occ], choice: dict[str, str])
             elif o.cat == "sakt_huruf" and wj == "sakt":
                 cls = [c + SMALL_SIN if k < len(cls) - 1 else c for k, c in enumerate(cls)]
         text[wid] = "".join(cls)
+        prev = wid
     return text

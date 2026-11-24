@@ -18,6 +18,7 @@ import json
 import re
 import sys
 from dataclasses import dataclass, field
+from functools import lru_cache
 from pathlib import Path
 
 from .text import drop_shadda_first, normalize
@@ -48,8 +49,10 @@ def wid(s: str) -> tuple[int, int, int]:
 # Hafs words
 
 
+@lru_cache(maxsize=1)
 def load_hafs() -> dict[str, str]:
-    """Word id -> normalised Hafs text, for the passage, in Qur'an order."""
+    """Word id -> normalised Hafs text, for the passage, in Qur'an order (cached: treat as
+    read-only)."""
     out: dict[str, str] = {}
     for line in SPINE.open():
         it = json.loads(line)

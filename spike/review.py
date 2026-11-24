@@ -10,47 +10,41 @@
 
 from __future__ import annotations
 
-import itertools
 import json
 from collections import defaultdict
 
-from .profile import TEXT_CATS, claimed, context, farsh_texts, rows_in, same
-from .readings import compare, confirmed_occurrences, full_profiles
+from .profile import claimed, rows_in, same
+from .readings import compare, confirmed_occurrences, full_profiles, generate
 from .rows import BUILD, load_hafs
-from .usul import apply, detect
 
 
 def extras(full):
-    hafs, ft, conf = load_hafs(), farsh_texts(), confirmed_occurrences()
+    """Per rawi and box: the wujūh combinations (of the categories where the rawi has several)
+    that some quote in the box shows, and those the profile allows that none shows."""
+    hafs, conf = load_hafs(), confirmed_occurrences()
     by = defaultdict(list)
     for r in rows_in(20):
         span = tuple(w["id"] for w in r["words"] if w["id"] in hafs)
         for rawi in (r["ruwat"] or r["ruwat_min"] or []):
-            by[(rawi, span, r["segment"])].append(r)
+            by[(rawi, r["segment"])].append((span, r))
     out = []
-    for (rawi, span, seg), rs in by.items():
-        words, stop = context(list(span), hafs, ft[rawi])
-        occs = [o for o in detect(words, stop=stop) if o.cat not in TEXT_CATS or (o.cat, o.word) in conf or o.cat == "munfasil"]
-        cats = sorted({o.cat for o in occs if o.cat in TEXT_CATS})
-        multi = [c for c in cats if len(full[rawi].get(c, {}).get("wujuh", {})) > 1]
-        if not multi:
-            continue
-        seen = [i for i in span if i in claimed(seg)]
-        gens = {}
-        for combo in itertools.product(*[list(full[rawi].get(c, {}).get("wujuh", {"?": 0})) for c in cats]):
-            ch = dict(zip(cats, combo))
-            if "silah_mim" in ch and "silah_mim_hamza" in ch and set(full[rawi]["silah_mim"]["wujuh"]) == set(full[rawi].get("silah_mim_hamza", {}).get("wujuh", {})):
-                ch["silah_mim_hamza"] = ch["silah_mim"]
-            g = apply(words, occs, ch)
-            gens.setdefault(tuple(g[i] for i in seen), {c: ch[c] for c in multi})
-        shown = []
-        for key, ch in gens.items():
-            if any(all(any(same(g, t, i == span[-1], i == span[0]) for t in ({w["id"]: (w.get("alts") or [w["t"]]) for w in r["words"]})[i])
-                       for g, i in zip(key, seen)) for r in rs):
-                shown.append(ch)
-        missing = [ch for k, ch in gens.items() if ch not in shown]
+    for (rawi, seg), items in by.items():
+        shown, allowed = [], []
+        for span, r in items:
+            seen = [i for i in span if i in claimed(seg)]
+            book = {w["id"]: (w.get("alts") or [w["t"]]) for w in r["words"]}
+            for ch, g in generate(rawi, list(span), full, conf):
+                multi = {c: w for c, w in ch.items() if len(full[rawi].get(c, {}).get("wujuh", {})) > 1}
+                if not multi:
+                    continue
+                if multi not in allowed:
+                    allowed.append(multi)
+                if all(any(same(g[i], t, i == span[-1], i == span[0]) for t in book[i]) for i in seen) and multi not in shown:
+                    shown.append(multi)
+        missing = [a for a in allowed if not any(all(s.get(c) == w for c, w in a.items() if c in s) for s in shown)]
         if missing and shown:
-            out.append((rawi, span[0], span[-1], seg, shown, missing))
+            spans = sorted({i for span, _ in items for i in span}, key=list(hafs).index)
+            out.append((rawi, spans[0], spans[-1], seg, shown, missing))
     return out
 
 
@@ -66,7 +60,8 @@ def main() -> None:
              "## 1. Combinations a box doesn't show", "",
              "For each rāwī and box: the wujūh combinations the box shows, and those the profile allows that it doesn't.",
              "A taḥrīr source decides whether each missing one is **forbidden** (a constraint) or an **omission**.", ""]
-    for rawi, a, b, seg, shown, missing in sorted(extras(full), key=lambda x: (x[0], x[1])):
+    ex = sorted(extras(full), key=lambda x: (x[1], x[0]))
+    for rawi, a, b, seg, shown, missing in ex:
         lines.append(f"- **{rawi}**, {a}–{b} (box {seg})")
         lines.append(f"  - shown: " + " · ".join(fmt(c) for c in shown))
         lines.append(f"  - not shown: " + " · ".join(fmt(c) for c in missing))
@@ -77,6 +72,9 @@ def main() -> None:
         else:
             lines.append(f"- {rid} **{rawi}**: {what}")
     (BUILD / "review.md").write_text("\n".join(lines) + "\n")
+    (BUILD / "review.json").write_text(json.dumps(
+        [{"rawi": r, "from": a, "to": b, "box": seg, "shown": sh, "missing": mi} for r, a, b, seg, sh, mi in ex],
+        ensure_ascii=False, indent=1))
     print(BUILD / "review.md")
 
 

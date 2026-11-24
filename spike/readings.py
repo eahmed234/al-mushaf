@@ -18,6 +18,7 @@ from __future__ import annotations
 
 import argparse
 import itertools
+from functools import lru_cache
 import json
 import re
 from collections import defaultdict
@@ -114,22 +115,39 @@ def label_features(label: str, madd_cat: str | None) -> dict[str, list[str]]:
     return out
 
 
+def _skel(word: str) -> str:
+    """Letters only (for matching a word a label names against the Hafs word)."""
+    import unicodedata
+
+    return "".join(c for c in word if unicodedata.category(c) != "Mn" and c not in "\u0640\u0671").replace("\u0627", "")
+
+
 def row_features(rows: list[dict]) -> dict[str, dict[str, list[str]]]:
     """row id -> features, with كالسابق inheriting from the row above in the segment."""
     hafs = load_hafs()
     out, prev = {}, {}
     for r in rows:
         span = [w["id"] for w in r["words"] if w["id"] in hafs]
-        cats = {o.cat for o in detect([(i, hafs[i]) for i in span])}
+        occs = detect([(i, hafs[i]) for i in span])
+        cats = {o.cat for o in occs}
         madd_cat = "munfasil" if cats & {"munfasil", "silah_mim_hamza"} else ("muttasil" if "muttasil" in cats else None)
         f = label_features(r["label"], madd_cat)
-        imala_cats = sorted(c for c in cats if c.startswith("imala_"))
-        if len(imala_cats) == 1:
-            for phrase, wj in (("التقليل", "taqlil"), ("تقليل", "taqlil"), ("الإمالة", "imala"), ("إمالة", "imala"),
-                               ("الفتح", "fath"), ("وفتح", "fath")):
-                if phrase in r["label"]:
-                    f[imala_cats[0]] = [wj]
-                    break
+        imala_occs = [o for o in occs if o.cat.startswith("imala_")]
+        for phrase, wj in (("التقليل", "taqlil"), ("تقليل", "taqlil"), ("الإمالة", "imala"), ("إمالة", "imala"),
+                           ("الفتح", "fath"), ("وفتح", "fath")):
+            k = r["label"].find(phrase)
+            if k < 0:
+                continue
+            # "إمالة (شَآءَ)": the label names its word; it counts only for an occurrence on that word
+            named = re.match(r"\s*\(([^)]+)\)", r["label"][k + len(phrase):])
+            if named:
+                target = _skel(named.group(1))
+                hits = [o for o in imala_occs if _skel(hafs[o.word]) == target]
+            else:
+                hits = imala_occs if len({o.cat for o in imala_occs}) == 1 else []
+            for o in hits:
+                f[o.cat] = [wj]
+            break
         if "كالسابق" in r["label"] and r["segment"] == prev.get("segment"):
             f = {**prev["features"], **f}
         out[r["id"]] = f
@@ -175,7 +193,39 @@ def full_profiles(upto: int, start: int = 1):
     return full, gaps, conflicts, feats
 
 
-def confirmed_occurrences() -> set[tuple[str, str]]:
+def generate(rawi: str, span: list[str], full: dict, confirmed: set) -> list[tuple[dict, dict]]:
+    """Every (choice, text) a rawi's profile gives for a span: farsh first, then the uṣūl rules,
+    over each way the span can be read (stop or not at a pause sign). Only reviewed occurrences;
+    silah before a hamza tied to silah elsewhere unless the profile separates them."""
+    from .profile import contexts, farsh_texts
+
+    hafs = load_hafs()
+
+    def wujuh(c):
+        w = full[rawi].get(c, {}).get("wujuh")
+        if not w and c == "silah_mim_hamza":  # one category in the books; learned apart
+            w = full[rawi].get("silah_mim", {}).get("wujuh")
+        return list(w or {"?": 0})
+
+    out = []
+    for words, stop in contexts(span, hafs, farsh_texts()[rawi]):
+        occs = [o for o in detect(words, stop=stop)
+                if o.cat not in TEXT_CATS or (o.cat, o.word) in confirmed or o.cat == "munfasil"]
+        cats = sorted({o.cat for o in occs if o.cat in TEXT_CATS})
+        if "silah_mim_hamza" in cats and "munfasil" not in cats:
+            cats = sorted(cats + ["munfasil"])
+        tie = "silah_mim" in cats and "silah_mim_hamza" in cats and set(wujuh("silah_mim")) == set(wujuh("silah_mim_hamza"))
+        free = [c for c in cats if not (tie and c == "silah_mim_hamza")]
+        for combo in itertools.product(*[wujuh(c) for c in free]):
+            ch = dict(zip(free, combo))
+            if tie:
+                ch["silah_mim_hamza"] = ch["silah_mim"]
+            out.append((ch, apply(words, occs, ch)))
+    return out
+
+
+@lru_cache(maxsize=1)
+def confirmed_occurrences() -> frozenset[tuple[str, str]]:
     """(category, word) pairs some row of the passage reads with a non-default wajh: a stand-in
     for the reviewed occurrence tables of the real model (detector candidates the book never
     reads differently, like imala on عَلَىٰ, are dropped)."""
@@ -187,7 +237,7 @@ def confirmed_occurrences() -> set[tuple[str, str]]:
             seen = {ch.get(o.cat) for ch in ok} - {None}
             if seen and WUJUH.get(o.cat, [None])[0] not in seen:  # every match reads it differently
                 out.add((o.cat, o.word))
-    return out
+    return frozenset(out)
 
 
 def compare(upto: int, full: dict, feats: dict, start: int = 1):
@@ -215,32 +265,7 @@ def compare(upto: int, full: dict, feats: dict, start: int = 1):
         for rawi in (r["ruwat"] or r["ruwat_min"] or []):
             key = (rawi, span)
             if key not in gen_cache:
-                ft = {i: t.split(" / ")[0] for i, t in farsh_text[rawi].items()}
-                words, stop = context(list(span), hafs, ft)
-                occs = detect(words, stop=stop)
-                cats = sorted({o.cat for o in occs if o.cat in TEXT_CATS})
-                if "silah_mim_hamza" in cats and "munfasil" not in cats:
-                    cats = sorted(cats + ["munfasil"])
-                def wujuh(c):
-                    w = full[rawi].get(c, {}).get("wujuh")
-                    if not w and c == "silah_mim_hamza":  # one category in the books; learned apart
-                        w = full[rawi].get("silah_mim", {}).get("wujuh")
-                    return list(w or {"?": 0})
-
-                # reviewed occurrences only: a candidate no row anywhere reads differently is dropped
-                occs = [o for o in occs if o.cat not in TEXT_CATS or (o.cat, o.word) in confirmed or o.cat == "munfasil"]
-                cats = sorted({o.cat for o in occs if o.cat in TEXT_CATS} | ({"munfasil"} if "silah_mim_hamza" in cats else set()))
-                # tied choices: silah before a hamza is the same choice as silah elsewhere, unless the
-                # rawi's profile says otherwise (Warsh)
-                tie = "silah_mim" in cats and "silah_mim_hamza" in cats and set(wujuh("silah_mim")) == set(wujuh("silah_mim_hamza"))
-                free = [c for c in cats if not (tie and c == "silah_mim_hamza")]
-                gens = []
-                for combo in itertools.product(*[wujuh(c) for c in free]):
-                    ch = dict(zip(free, combo))
-                    if tie:
-                        ch["silah_mim_hamza"] = ch["silah_mim"]
-                    gens.append(apply(words, occs, ch))
-                gen_cache[key] = gens
+                gen_cache[key] = [g for _, g in generate(rawi, list(span), full, confirmed)]
             gens = gen_cache[key]
 
             seen_words = claimed(r["segment"])
