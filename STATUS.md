@@ -33,7 +33,7 @@ Two local git repos (no remotes, nothing pushed):
 | `review.py`, `review_sheet.py` | extra readings and misses, as a list and as box-by-box pictures |
 | `render.py`, `dot_sheet.py` | preview renderer (HarfBuzz + DigitalKhatt) with the standalone tas-hīl dot |
 | `data/place_wujuh.yaml` | wujūh tied to a place, with sources (Ruways at 2:20) |
-| `data/profiles.yaml`, `book_profiles.py` | **uṣūl profiles from al-Wāfī and al-Īḍāḥ**: 20 categories × 20 ruwāt, each row with page; `readings --book` uses them |
+| `data/profiles.yaml`, `book_profiles.py` | **uṣūl profiles from al-Wāfī and al-Īḍāḥ** (checked against al-Budūr, Ghayth al-Nafʿ, nQuran where they disagreed): 33 categories × 20 ruwāt, each row with page; `readings --book` uses them |
 
 Book profiles (2026-11-24), `spike/data/profiles.yaml`, 33 categories × 20 ruwāt:
 
@@ -65,6 +65,8 @@ tables; review list empty.
 - "الجميع عدا من سيأتي" and "الجميع عدا أصحاب X" still cover a rāwī whom another row names for
   one wajh, for his other wajh (Qālūn's iskān at 2:3, 2:18). Applied only with khulf evidence.
 - Ruways: no idghām kabīr, except a khulf at the places al-Īḍāḥ lists (2:20 here).
+- Where ṭuruq or commentators differ (ikhtilāf), the wajh is an app option with the book's
+  preferred reading as default (first case: Idrīs's sakt). A kubrā version comes later.
 - Glyph 135 is the tas-hīl dot; glyph 383 is lām-alif with maddah; #76923c is the imālah green.
 
 ### What the spike has shown so far (Q1–Q5)
