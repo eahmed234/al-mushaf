@@ -70,11 +70,12 @@ class Renderer:
             self._ink[key] = (min(xs), max(xs)) if xs else None
         return self._ink[key]
 
-    def svg(self, text: str, size: float = 60, gap: int = 40, dot_scale: float = 0.8,
-            dot_mid: int = 230, vowel_gap: int = 50) -> tuple[str, float, float]:
+    def svg(self, text: str, size: float = 60, gap: int = 40, dot_scale: float = 0.85,
+            dot_mid: int = 230, vowel_gap: int = 50, min_open: int = 0) -> tuple[str, float, float]:
         """The standalone dot is placed like a kerned glyph: `gap` font units from the ink of
         its neighbours at the dot's own height (so it can sit over a letter's low tail, as
-        after zay), taking only the width it needs. The softened hamza's vowel goes above it."""
+        after zay), taking only the width it needs, but at least `min_open` units, so it reads
+        as a letter of its own. The softened hamza's vowel goes above it."""
         infos, poss = self.shape(text)
         dx0, dy0, dx1, dy1 = self._bounds(self.dot)
         dot_w, dot_h = (dx1 - dx0) * dot_scale, (dy1 - dy0) * dot_scale
@@ -105,7 +106,7 @@ class Renderer:
             ink_r = self._ink_x(right[0], *band) if right else None
             L = left[1] + ink_l[1] if ink_l else slot_x
             R = right[1] + ink_r[0] if ink_r else slot_x
-            need = max(0.0, dot_w + 2 * gap - (R - L))
+            need = max(float(min_open), dot_w + 2 * gap - (R - L))
             for p in pieces[k:]:
                 p[1] += need
             x += need
