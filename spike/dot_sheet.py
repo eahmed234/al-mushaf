@@ -13,7 +13,7 @@ import pymupdf
 from .render import Renderer
 from .rows import BUILD, FUTUH, PROJECTS
 
-SIDES = [30]
+VARIANTS = [(20, 0.7), (40, 0.7), (20, 0.85), (40, 0.85)]
 
 
 def main() -> None:
@@ -32,9 +32,9 @@ def main() -> None:
     words = words[:3]
     R = Renderer()
     out = pymupdf.open()
-    W, H = 600, 150
+    W, H = 1250, 150
     page = out.new_page(width=W, height=40 + H * len(words))
-    page.insert_text((10, 20), "print (left)  |  stored text drawn by the preview renderer (right)", fontsize=10)
+    page.insert_text((10, 20), "print  |  preview renderer, DigitalKhatt: gap from neighbouring ink (font units) and dot size; vowel above the dot", fontsize=10)
     for n, (r, w) in enumerate(words):
         y = 40 + n * H
         b = w["bbox"]
@@ -43,14 +43,14 @@ def main() -> None:
         # stored form: the dot as its own letter (tatweel + U+06EC), in place of "letter + U+06EC"
         stored = w["t"]  # already the stored form: tatweel + U+06EC (+ the hamza's vowel)
         x = 280
-        for side, vy in ((30, -200),):
-            svg, sw, sh = R.svg(stored, size=56, dot_side=side, vowel_y=vy)
+        for side, sc in VARIANTS:
+            svg, sw, sh = R.svg(stored, size=56, gap=side, dot_scale=sc)
             sdoc = pymupdf.open(stream=svg.encode(), filetype="svg")
             pdfbytes = sdoc.convert_to_pdf()
             src = pymupdf.open("pdf", pdfbytes)
-            page.show_pdf_page(pymupdf.Rect(x, y, x + 270, y + H - 20), src, 0)
-            page.insert_text((x + 5, y + H - 8), "preview renderer, DigitalKhatt", fontsize=8, color=(0.5, 0.5, 0.5))
-            x += 290
+            page.show_pdf_page(pymupdf.Rect(x, y, x + 220, y + H - 20), src, 0)
+            page.insert_text((x + 5, y + H - 8), f"{'ABCDEF'[VARIANTS.index((side, sc))]}: gap {side}, dot {sc:.0%}", fontsize=9, color=(0.4, 0.4, 0.4))
+            x += 240
     BUILD.mkdir(exist_ok=True)
     page.get_pixmap(dpi=110).save(BUILD / "dot-sheet.png")
     print(BUILD / "dot-sheet.png")

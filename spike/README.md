@@ -18,5 +18,5 @@ PYTHONPATH=../mushaf ../mushaf/.venv/bin/python -m spike.sheet v1-p052-r11 v1-p0
 
 Preview rendering (`spike/render.py`): HarfBuzz shaping with DigitalKhatt Madina, outlines drawn
 as SVG. The book's standalone tas-hīl dot is stored as tatweel + U+06EC (its own letter); the
-renderer gives it its own width and puts the hamza's vowel lower-left of it, as al-Futūḥ prints
-it. `python -m spike.dot_sheet` compares it with the print (same env as `spike.sheet`).
+renderer spaces it like a kerned glyph (a set gap from its neighbours' ink at the dot's height)
+and puts the hamza's vowel above it. `python -m spike.dot_sheet` compares it with the print (same env as `spike.sheet`).
