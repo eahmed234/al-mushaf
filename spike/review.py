@@ -13,7 +13,7 @@ from __future__ import annotations
 import json
 from collections import defaultdict
 
-from .profile import claimed, rows_in, same
+from .profile import claimed, quote_starts, rows_in, same
 from .readings import compare, confirmed_occurrences, full_profiles, generate
 from .rows import BUILD, load_hafs
 
@@ -33,13 +33,14 @@ def extras(full):
         for span, r in items:
             seen = [i for i in span if i in claimed(seg)]
             book = {w["id"]: (w.get("alts") or [w["t"]]) for w in r["words"]}
+            starts = quote_starts(r)
             for ch, g in generate(rawi, list(span), full, conf):
                 multi = {c: w for c, w in ch.items() if len(full[rawi].get(c, {}).get("wujuh", {})) > 1}
                 if not multi:
                     continue
                 if multi not in allowed:
                     allowed.append(multi)
-                if all(any(same(g[i], t, i == span[-1], i == span[0]) for t in book[i]) for i in seen) and multi not in shown:
+                if all(any(same(g[i], t, i == span[-1], i in starts) for t in book[i]) for i in seen) and multi not in shown:
                     shown.append(multi)
         missing = [a for a in allowed if not any(all(s.get(c) == w for c, w in a.items() if c in s) for s in shown)]
         if missing and shown:

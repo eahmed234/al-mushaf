@@ -25,7 +25,7 @@ from collections import defaultdict
 
 import yaml
 
-from .profile import TEXT_CATS, claimed, context, learn, match_row, reviewed, rows_in, same
+from .profile import TEXT_CATS, claimed, context, learn, match_row, quote_starts, reviewed, rows_in, same
 from .rows import BUILD, PROJECTS, RUWAT, load_hafs
 from .usul import WUJUH, apply, detect
 
@@ -156,6 +156,11 @@ def row_features(rows: list[dict]) -> dict[str, dict[str, list[str]]]:
 
 
 def full_profiles(upto: int, start: int = 1):
+    from . import profile as P
+
+    P.EXTRA_READERS.clear()
+    prof, _ = learn(upto, start)  # first pass, to know who has a second wajh
+    P.EXTRA_READERS.update(P.khulf_convention(prof, upto, start))
     prof, gaps = learn(upto, start)
     rows = rows_in(upto, start)
     feats = row_features(rows)
@@ -273,9 +278,10 @@ def compare(upto: int, full: dict, feats: dict, start: int = 1):
             gens = gen_cache[key]
 
             seen_words = claimed(r["segment"])
+            starts = quote_starts(r)
 
             def bad(g):
-                return [i for i in span if i in seen_words and not any(same(g[i], t, i == span[-1], i == span[0]) for t in book[i])]
+                return [i for i in span if i in seen_words and not any(same(g[i], t, i == span[-1], i in starts) for t in book[i])]
 
             scored = sorted(gens, key=lambda g: len(bad(g)))
             if not scored or bad(scored[0]):

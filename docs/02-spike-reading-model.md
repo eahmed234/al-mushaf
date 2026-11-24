@@ -201,6 +201,25 @@ at 2:7 shows qaṣr with fatḥ and tawassuṭ with imālah of أَبۡصَٰر�
 the book's occurrence lists. Ḥamzah's waqf form ٱلۡأَخِرِ, and Hishām and al-Kisāʾī's لَّهُمۡ
 at 2:11, need a look at the print.
 
+### Review with Eisa (2026-11-24)
+
+Most of the first review list was errors in my data, not taḥrīr:
+- **Rows the extractor dropped:** the 2:20 box's row 6 (أصحاب التوسط) and 849 other rows
+  book-wide (number cells that didn't read as digits). Fixed upstream.
+- **Imālah marked only by colour:** Abū ʿAmr on أَبۡصَٰرِهِمۡ (2:7) and al-Kisāʾī on بِٱلۡهُدَىٰ
+  (2:16) have the green but no dot. The dot is now added from the colour (#76923c mapped).
+- **Places must be ones the book confirms:** عَلَىٰ and إِلَىٰ had taught some ruwāt "fatḥ".
+- **The quote boundary** is at the first word a "…" row quotes, not at the start of the rebuilt
+  row.
+- **A reading convention (Eisa):** "الجميع عدا من سيأتي" still covers a rāwī whom a following
+  row names for one wajh, for his *other* wajh (2:3: row 1 includes Qālūn's iskān). The spike
+  applies it only where there is evidence of khulf: one box showing the rāwī with both wujūh,
+  or the book's madd table giving him two. So it adds Qālūn (2:3, 2:10, 2:14, 2:15) and
+  al-Dūrī's qaṣr (2:14), but not Ruways at 2:20.
+
+After these: **651 / 672** row/rāwī pairs reproduced on 2:1–20, held-out 82–87%, and 3 review
+entries (Qālūn at 2:18, and Ruways's idghām kabīr at 2:2 and 2:20).
+
 ### A second source: al-Jīqarawī on alkiraat.com
 
 alkiraat.com has al-Jīqarawī's *al-Wujūhāt al-Qurʾāniyyah – al-ʿAsharah* (Shāṭibiyyah and

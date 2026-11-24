@@ -68,6 +68,70 @@ def rows_in(upto: int, start: int = 1) -> list[dict]:
         if ids and all(i.startswith("2:") and start <= int(i.split(":")[1]) <= upto for i in ids):
             out.append(r)
     _madd_groups(out)
+    for r in out:
+        extra = EXTRA_READERS.get(r["id"])
+        if extra:
+            r["ruwat"] = sorted(set(r["ruwat"] or r["ruwat_min"] or []) | extra)
+            r["ruwat_min"] = r["ruwat"]
+            r["khulf_added"] = sorted(extra)
+    return out
+
+
+# "الجميع عدا من سيأتي" still covers a rawi named in a following row for his *other* wajh
+# (Eisa, 2026-11-24: at 2:3 row 1 includes Qalun's iskan, though row 2 names him for silah).
+# Filled by `khulf_convention` from a first pass of the profiles: row id -> rawis to add.
+EXTRA_READERS: dict[str, set[str]] = {}
+
+
+def khulf_convention(prof, upto: int, start: int = 1) -> dict[str, set[str]]:
+    """For each "الجميع عدا من سيأتي" row: the rawis its following rows (same sub-segment) name
+    who also have, in their own profile, the wajh row 1 shows for every category where the two
+    rows differ. Those rawis read row 1 too."""
+    hafs = load_hafs()
+    rows = rows_in(upto, start)
+    # khulf evidence: categories where some box shows the rawi with two different wujūh
+    # (Qalun's iskan and silah in the 2:4 box); a wajh seen only in other boxes is not enough
+    # (Ruways's izhar at 2:2 says nothing about his idgham at 2:20)
+    per_box: dict[tuple, set] = defaultdict(set)
+    matches = {r["id"]: match_row(r, hafs)[0] for r in rows}
+    for r in rows:
+        ok = matches[r["id"]]
+        for c in {c for ch in ok for c in ch}:
+            vals = {ch.get(c) for ch in ok}
+            if len(vals) == 1:
+                for rawi in (r["ruwat"] or r["ruwat_min"] or []):
+                    per_box[(rawi, r["segment"], c)] |= vals
+    khulf = {(rawi, c) for (rawi, _, c), v in per_box.items() if len(v) > 1}
+    # and the book's madd tables, which state two wujūh outright (al-Duri: qasr and tawassut, v1 p. 52)
+    from .readings import madd_tables
+
+    for cat, per in madd_tables().items():
+        khulf |= {(rawi, cat) for rawi, ws in per.items() if len(ws) > 1}
+    out: dict[str, set[str]] = {}
+    for k, r in enumerate(rows):
+        if "عدا من سيأتي" not in r["label"]:
+            continue
+        ok1 = matches[r["id"]]
+        if not ok1:
+            continue
+        add = set()
+        for later in rows[k + 1 :]:
+            if later["segment"] != r["segment"] or later["n"] == "1":
+                break
+            okl = matches[later["id"]]
+            for rawi in (later["ruwat"] or later["ruwat_min"] or []):
+                if rawi in (r["ruwat"] or []):
+                    continue
+                # a choice of row 1 that the rawi's profile has, wherever the two rows differ
+                for c1 in ok1:
+                    if any(all(c1.get(c) == cl.get(c) or c1.get(c) in prof.get(rawi, {}).get(c, {})
+                               for c in set(c1) | set(cl)) for cl in okl):
+                        diff = [c for c in c1 if any(c1.get(c) != cl.get(c) for cl in okl)]
+                        if diff and all(c1[c] in prof.get(rawi, {}).get(c, {}) and (rawi, c) in khulf for c in diff):
+                            add.add(rawi)
+                            break
+        if add:
+            out[r["id"]] = add
     return out
 
 
@@ -168,6 +232,14 @@ def reviewed(cat: str, word: str, nxt: str | None = None) -> bool:
     return (kind, word) in _REVIEWED or (cat.startswith("idgham") and (kind, nxt) in _REVIEWED)
 
 
+def quote_starts(r: dict) -> set[str]:
+    """Words where a quote begins: the row's first word, and in a "..." row the first word it
+    quotes itself. The book drops the idgham shadda a word gets from the word before there."""
+    ids = [w["id"] for w in r["words"] if w["id"]]
+    first_quoted = next((w["id"] for w in r["words"] if w["src"] == "quote" and w["id"]), None)
+    return {x for x in (ids[0] if ids else None, first_quoted) if x}
+
+
 def match_row(r: dict, hafs: dict[str, str]):
     """(matching choices, claimed categories, occurrences, words that never match) for one row,
     over every way the span can be read (stop or not at a pause sign)."""
@@ -176,6 +248,7 @@ def match_row(r: dict, hafs: dict[str, str]):
     book = {w["id"]: (w.get("alts") or [w["t"]]) for w in r["words"]}
     seen_words = claimed(r["segment"])
     last = span[-1] if span else None
+    starts = quote_starts(r)
     ok, all_cats, all_occs, never_sets = [], set(), [], []
     # if the print fits a stop at a pause sign, it is a stop: don't also learn the waṣl reading
     ctxs = contexts(span, hafs, farsh_texts().get(readers[0]) if readers else None)
@@ -192,7 +265,7 @@ def match_row(r: dict, hafs: dict[str, str]):
         for combo in combos:
             choice = dict(zip(cats, combo))
             gen = apply(words, occs, choice)
-            bad = [i for i in span if i in seen_words and not any(same(gen[i], t, i == last, i == span[0]) for t in book[i])]
+            bad = [i for i in span if i in seen_words and not any(same(gen[i], t, i == last, i in starts) for t in book[i])]
             if not bad:
                 ok.append({c: choice[c] for c in cats if c in claimed_cats or c == "munfasil"})
             for i in bad:
