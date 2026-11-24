@@ -16,6 +16,9 @@ python3 -m spike.farsh --show  # Day 2: farsh places, variants, readers; farsh-o
 python3 -m spike.readings --show  # Day 3: uṣūl profiles per rāwī, checked against every row of 2:1–5
 python3 -m spike.readings --upto 20               # Day 4: learn on 2:1–20, check every row
 python3 -m spike.readings --upto 5 --test 6-20    # Day 4: learn on 2:1–5, predict 2:6–20
+python3 -m spike.book_profiles                   # uṣūl profiles from al-Wāfī / al-Īḍāḥ (data/profiles.yaml)
+python3 -m spike.book_profiles --vs-rows         # compare them with the profiles learned from rows
+python3 -m spike.readings --upto 0 --test 1-20 --book   # predict 2:1–20 from the book profiles alone
 python3 -m spike.review                           # Day 4: extra readings and misses, for review
 PYTHONPATH=../mushaf ../mushaf/.venv/bin/python -m spike.review_sheet   # the review as box-by-box pictures
 # side-by-side of printed rows and rebuilt text (needs the extractor's env for pymupdf):
