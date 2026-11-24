@@ -121,6 +121,37 @@ elimination. al-Baqarah 1–5 has no farsh at all, so the check ran on the whole
   24 pairs. Khalaf's ishmām of the ṣād is still missing from his farsh-only text, because
   the text doesn't show it (see above).
 
+### Day 3 result (2026-11-24)
+
+`python3 -m spike.readings --show` builds each rāwī's uṣūl profile and checks it against every
+row of al-Baqarah 1–5. **All 139 row/rāwī pairs are reproduced**: the text by the uṣūl rules,
+the features by the labels.
+
+- **Rules** (`spike/usul.py`): detectors over the Ḥafṣ text and transforms for each text-changing
+  category: munfaṣil (qaṣr drops the maddah), ṣilat al-mīm (separately before a hamza), ṣilat
+  al-hāʾ, ibdāl of a sākin hamza, naql on the article (keeping the badal maddah), idghām kabīr,
+  and sakt on the separate letters. Categories the text can't show are features: muttaṣil,
+  badal, sakt on «أل» and on the mafṣūl, tarqīq of rāʾ, taghlīẓ of lām, ghunnah.
+- **Profiles** come from three sources, each kept with the profile:
+  - text wujūh are learned from the rows that reproduce them (row ids);
+  - munfaṣil and muttaṣil lengths come from al-Futūḥ's own tables (vol. 1 pp. 52–53);
+  - other features come from the labels, read with a small vocabulary (كالسابق inherits the
+    row above's features).
+- **Composition worked without special cases.** ṣilah before a hamza takes the munfaṣil's
+  maddah unless it's qaṣr (عَلَيۡهِمُۥٓ), naql keeps the badal maddah (وَبِٱلَآخِرَةِ), and idghām
+  kabīr changes two words.
+- **Labels depend on context.** A bare "الإشباع" means the madd the row's text contains, and after
+  "عدا" it is an exception.
+- **The text-only comparison was too forgiving at first.** Ibdāl and the sakt sign (U+06DC) were
+  being treated as style, so `diff.py` now flags a hamza on one side only, and U+06DC as sakt.
+- **Over-generation: 3 readings** for Qālūn and al-Dūrī that combine munfaṣil and mīm wujūh
+  in ways no row shows. Day 4 checks whether taḥrīr constraints remove exactly these.
+- **Upstream fixes:** anchoring ties now move forward (251 rows re-anchored, e.g. Āl ʿImrān's
+  الٓمٓ was taken as 2:1); "أبا جعفر" is recognised.
+
+Caveat: the text wujūh were learned from these same rows, so for them this checks that the
+rules compose, not that they generalise. Day 4 tests that: learn from 2:1–5, predict 2:6–20.
+
 ### A second source: al-Jīqarawī on alkiraat.com
 
 alkiraat.com has al-Jīqarawī's *al-Wujūhāt al-Qurʾāniyyah – al-ʿAsharah* (Shāṭibiyyah and

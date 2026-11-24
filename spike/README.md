@@ -1,6 +1,6 @@
 # Reading-model spike
 
-Plan: `../docs/02-spike-reading-model.md`. Plain Python 3.12, standard library only.
+Plan: `../docs/02-spike-reading-model.md`. Plain Python 3.12 with PyYAML (to read the book tables in ../mushaf/futuh/readers.yaml).
 
 Inputs, read in place and never copied here:
 
@@ -13,6 +13,7 @@ Inputs, read in place and never copied here:
 python3 -m spike.rows          # Day 1: load, rebuild elided rows, normalise; writes spike/build/rows.jsonl
 python3 -m spike.rows --show   # print every row as full text with its ruwāt
 python3 -m spike.farsh --show  # Day 2: farsh places, variants, readers; farsh-only text per rāwī
+python3 -m spike.readings --show  # Day 3: uṣūl profiles per rāwī, checked against every row of 2:1–5
 # side-by-side of printed rows and rebuilt text (needs the extractor's env for pymupdf):
 PYTHONPATH=../mushaf ../mushaf/.venv/bin/python -m spike.sheet v1-p052-r11 v1-p059-r12
 ```

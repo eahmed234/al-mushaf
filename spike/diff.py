@@ -11,6 +11,7 @@ Rules (each removes one uṣūl kind from both words before comparing):
   (imala's dot replaces the fatha of its letter)
   imala    the imalah/taqlil dot below U+065C
   idgham   a shaddah on the first letter (assimilation from the word before)
+  sakt     the small sin U+06DC after a letter (a pause without breath)
   final_vowel  the last letter's vowel dropped: a pausal form where a quote stops, or the
            first word of an idgham kabir
   hamz     hamza in any form (incl. idkhal: a dagger alef on a hamza), the tas-hil dot U+06EC on or after a hamza place, the
@@ -26,7 +27,7 @@ import unicodedata
 
 from .text import clusters
 
-PAUSE = set("ۖۗۘۙۚۛۜ۞۩")
+PAUSE = set("\u06d6\u06d7\u06d8\u06d9\u06da\u06db\u06de\u06e9")  # not U+06DC, the sign of sakt
 SUKUN = {"ْ", "ۡ"}
 OPEN_TANWIN = {"ࣰ": "ً", "ࣱ": "ٌ", "ࣲ": "ٍ"}
 HAMZA_BASE = {"أ": "ا", "إ": "ا", "آ": "ا", "ٱ": "ا",
@@ -60,6 +61,9 @@ def _strip(word: str) -> tuple[list[dict], set[str]]:
         if "ٓ" in ms:
             kinds.add("madd")
             ms = [m for m in ms if m != "ٓ"]
+        if "\u06dc" in ms:
+            kinds.add("sakt")  # the small sin after a letter: a pause without breath
+            ms = [m for m in ms if m != "\u06dc"]
         imala_here = "ٜ" in ms
         if imala_here:
             kinds.add("imala")  # the dot replaces the fatha
@@ -127,6 +131,8 @@ def classify(hafs: str, other: str) -> tuple[set[str], bool]:
             residue = True
             continue
         near_hamza = x["hamza"] or y["hamza"] or x.get("hamza_next") or y.get("hamza_next")
+        if x["hamza"] != y["hamza"]:
+            kinds.add("hamz")  # a hamza on one side only: ibdal (يُؤۡمِنُونَ / يُومِنُونَ)
         mx, my = list(x["marks"]), list(y["marks"])
         if k == 0 and ("ّ" in mx) != ("ّ" in my):
             kinds.add("idgham")
