@@ -96,6 +96,31 @@ every row has its readers. Things the data showed that the model must handle:
   to another qāriʾ (Ḥamzah after Warsh at 2:17). That holds only if the book always quotes every
   word where the two differ. The KFGQPC check will show whether it does.
 
+### Day 2 result (2026-11-24)
+
+`python3 -m spike.farsh --show` finds **11 farsh places** with 22 variants in 1:1–2:20, and gives
+each rāwī's farsh-only text. 196 of the 220 rāwī/place pairs are settled, 26 of them by
+elimination. al-Baqarah 1–5 has no farsh at all, so the check ran on the whole passage.
+
+- **al-Futūḥ's colours can't find farsh.** Its red (#ff0000) also marks madd length (7,138 of
+  21,706 red runs book-wide cover only madd marks), ṣilah, and Ḥamzah's waqf forms. The book is
+  organised by place, and its red means "this differs here".
+- **Farsh is found from the letters instead** (`spike/diff.py`). Rules remove the uṣūl kinds
+  (madd, ṣilah, imālah, idghām, hamz, and a pausal final vowel); whatever is left is farsh.
+  On this passage the residue is exactly مَلِكِ, the sīn in (ٱل)صِّرَٰطَ, عَلَيۡهُمۡ, يُخَٰدِعُونَ,
+  يُكَذِّبُونَ and the ishmām of قِيلَ. This is the first evidence for Q2: the uṣūl were
+  recognisable by rule.
+- **Some differences are invisible in the text.** Ishmām of the ṣād in صِرَٰطَ (1:7, Khalaf's
+  row) prints the same letters as pure ṣād; only the colour and the label "بالإشمام" show it.
+  Readings therefore need features taken from the row labels, not only from text (Q5).
+- **What "2:8:11 missing fatḥah" really was:** a pausal form. The quote stops there, and
+  pausal final vowels recur (قِيل, لَذَهَب, ٱلرَّحِيم).
+- **Two more reader bugs fixed upstream:** "أصحاب الصلة عدا قنبل" ignored its exception
+  (6 rows book-wide).
+- **Open (24 pairs):** one row at 1:7 is labelled just "خلف", which the parser can't assign
+  to Khalaf ʿan Ḥamzah or Khalaf al-ʿĀshir. That also leaves "الجميع عدا من سيأتي" in the same
+  box unresolved.
+
 ### A second source: al-Jīqarawī on alkiraat.com
 
 alkiraat.com has al-Jīqarawī's *al-Wujūhāt al-Qurʾāniyyah – al-ʿAsharah* (Shāṭibiyyah and

@@ -82,6 +82,7 @@ class Word:
     raw: str  # as extracted
     src: str  # "quote" (this row prints it), "above" (inherited from the row above), "hafs"
     alts: list[str] = field(default_factory=list)  # several ways one rawi reads this word
+    classes: list[str] = field(default_factory=list)  # al-Futuh colour classes on the word
 
 
 @dataclass
@@ -99,6 +100,23 @@ class Row:
     full: list[Word] = field(default_factory=list)
     base: str | None = None  # id of the row it builds on, or "hafs"
     flags: list[str] = field(default_factory=list)
+
+
+# al-Futuh prints the khilaf of farsh in red, but uses the same red (#ff0000) on the madd of the
+# ishba' rows (2:4 بِمَآ, 2:5 أُوْلَـٰٓئِكَ): 7,138 of 21,706 red runs book-wide cover only
+# madd marks. Those are classed "madd_red", not farsh.
+_MADD_MARKS = set("\u0627\u0622\u0653\u0670\u0640\u0649\u0648\u064a")
+
+
+def _classes(w: dict) -> list[str]:
+    out = []
+    for c in w.get("colors", []):
+        cls = c.get("class") or "unmapped"
+        if cls == "farsh" and set(w["t"][c["s"] : c["e"]]) <= _MADD_MARKS:
+            cls = "madd_red"
+        if cls not in out:
+            out.append(cls)
+    return out
 
 
 SEPARATORS = {"*", "–", "-"}
@@ -144,15 +162,17 @@ def _quoted_words(r: dict, flags: list[str]) -> list[Word]:
                 group.append(words[k])
             alts = [normalize(x["t"]) for x in group]
             first = next((x.get("spine") for x in group if x.get("spine")), None)
-            out.append(Word(first, alts[0], " * ".join(x["t"] for x in group), "quote", alts))
+            cls = list(dict.fromkeys(c for x in group for c in _classes(x)))
+            out.append(Word(first, alts[0], " * ".join(x["t"] for x in group), "quote", alts, cls))
             k += 1
             continue
         raw = w["t"]
         if w.get("split") and out and out[-1].id == w.get("spine") and not out[-1].alts:
             out[-1].raw += raw
             out[-1].t = normalize(out[-1].raw)
+            out[-1].classes += [c for c in _classes(w) if c not in out[-1].classes]
         else:
-            out.append(Word(w.get("spine"), normalize(raw), raw, "quote"))
+            out.append(Word(w.get("spine"), normalize(raw), raw, "quote", classes=_classes(w)))
         k += 1
     return out
 
@@ -238,7 +258,7 @@ def rebuild(rows: list[Row], hafs: dict[str, str]) -> None:
                 r.flags.append("elided-without-row-above")
                 base: dict[str, Word] = {}
             else:
-                base = {w.id: Word(w.id, w.t, w.raw, "above", w.alts) for w in prev.full if w.id in order}
+                base = {w.id: Word(w.id, w.t, w.raw, "above", w.alts, w.classes) for w in prev.full if w.id in order}
                 r.base = prev.id
             for k, w in enumerate(quoted):
                 old = base.get(w.id)
@@ -247,7 +267,7 @@ def rebuild(rows: list[Row], hafs: dict[str, str]) -> None:
                 if k == 0 and old and w.t != old.t and drop_shadda_first(old.t) == w.t:
                     r.flags.append(f"boundary:{w.id}")
                     continue
-                base[w.id] = Word(w.id, w.t, w.raw, "quote", w.alts)
+                base[w.id] = Word(w.id, w.t, w.raw, "quote", w.alts, w.classes)
             r.full = sorted(base.values(), key=lambda w: order[w.id])
             prev = r
 
@@ -274,7 +294,8 @@ def main() -> None:
             f.write(json.dumps({
                 "id": r.id, "segment": r.segment, "n": r.n, "label": r.label, "elided": r.elided,
                 "base": r.base, "ruwat": r.ruwat, "ruwat_min": r.ruwat_min, "ruwat_max": r.ruwat_max,
-                "flags": r.flags, "words": [{"id": w.id, "t": w.t, "src": w.src, **({"alts": w.alts} if w.alts else {})} for w in r.full],
+                "flags": r.flags, "words": [{"id": w.id, "t": w.t, "src": w.src, **({"alts": w.alts} if w.alts else {}),
+                           **({"classes": w.classes} if w.classes else {})} for w in r.full],
             }, ensure_ascii=False) + "\n")
     if a.show:
         seg = None
