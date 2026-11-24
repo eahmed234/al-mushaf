@@ -18,6 +18,7 @@ python3 -m spike.readings --upto 20               # Day 4: learn on 2:1–20, ch
 python3 -m spike.readings --upto 5 --test 6-20    # Day 4: learn on 2:1–5, predict 2:6–20
 python3 -m spike.book_profiles                   # uṣūl profiles from al-Wāfī / al-Īḍāḥ (data/profiles.yaml)
 python3 -m spike.book_profiles --vs-rows         # compare them with the profiles learned from rows
+PYTHONPATH=../mushaf ../mushaf/.venv/bin/python -m spike.review_profiles   # review sheet: rows beside the cited pages (build/profile_review.html)
 python3 -m spike.readings --upto 0 --test 1-20 --book   # predict 2:1–20 from the book profiles alone
 python3 -m spike.review                           # Day 4: extra readings and misses, for review
 PYTHONPATH=../mushaf ../mushaf/.venv/bin/python -m spike.review_sheet   # the review as box-by-box pictures
