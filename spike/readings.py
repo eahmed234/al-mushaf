@@ -24,6 +24,7 @@ import re
 from collections import defaultdict
 
 import yaml
+from pathlib import Path
 
 from .profile import TEXT_CATS, claimed, context, learn, match_row, quote_starts, reviewed, rows_in, same
 from .rows import BUILD, PROJECTS, RUWAT, load_hafs
@@ -198,6 +199,9 @@ def full_profiles(upto: int, start: int = 1):
     return full, gaps, conflicts, feats
 
 
+PLACE_WUJUH = yaml.safe_load((Path(__file__).parent / "data" / "place_wujuh.yaml").read_text()) or []
+
+
 def generate(rawi: str, span: list[str], full: dict, confirmed: set) -> list[tuple[dict, dict]]:
     """Every (choice, text) a rawi's profile gives for a span: farsh first, then the uṣūl rules,
     over each way the span can be read (stop or not at a pause sign). Only reviewed occurrences;
@@ -214,12 +218,24 @@ def generate(rawi: str, span: list[str], full: dict, confirmed: set) -> list[tup
         # which is the Hafs text)
         return list(w or [WUJUH[c][0]])
 
+    places = [e for e in PLACE_WUJUH if e["rawi"] == rawi]
     out = []
     for words, stop in contexts(span, hafs, farsh_texts()[rawi]):
         occs = [o for o in detect(words, stop=stop) if reviewed(o.cat, o.word, o.nxt)]
         cats = sorted({o.cat for o in occs if o.cat in TEXT_CATS})
         if "silah_mim_hamza" in cats and "munfasil" not in cats:
             cats = sorted(cats + ["munfasil"])
+        # place-tied wujuh: at the place the entry's wujuh, elsewhere its `elsewhere`
+        here = {e["category"]: e for e in places if any(o.cat == e["category"] and o.word == e["word"] for o in occs)}
+        elsewhere = {e["category"]: e for e in places if e["category"] not in here}
+
+        def wujuh(c, _w=wujuh):  # noqa: E731
+            if c in here:
+                return list(here[c]["wujuh"])
+            if c in elsewhere:
+                return list(elsewhere[c]["elsewhere"])
+            return _w(c)
+
         tie = "silah_mim" in cats and "silah_mim_hamza" in cats and set(wujuh("silah_mim")) == set(wujuh("silah_mim_hamza"))
         free = [c for c in cats if not (tie and c == "silah_mim_hamza")]
         for combo in itertools.product(*[wujuh(c) for c in free]):

@@ -107,17 +107,25 @@ def khulf_convention(prof, upto: int, start: int = 1) -> dict[str, set[str]]:
 
     for cat, per in madd_tables().items():
         khulf |= {(rawi, cat) for rawi, ws in per.items() if len(ws) > 1}
+    # and place entries that give two wujuh (a footnote's "بخلاف عنه")
+    from .readings import PLACE_WUJUH
+
+    khulf |= {(e["rawi"], e["category"]) for e in PLACE_WUJUH if len(e["wujuh"]) > 1}
     out: dict[str, set[str]] = {}
     for k, r in enumerate(rows):
-        if "عدا من سيأتي" not in r["label"]:
-            continue
+        if "الجميع عدا" not in r["label"]:
+            continue  # "الجميع عدا من سيأتي", and "الجميع عدا أصحاب X" (Eisa: 2:18 includes Qalun)
         ok1 = matches[r["id"]]
         if not ok1:
             continue
         add = set()
+        # the other rows of the same sub-segment
+        sub = []
         for later in rows[k + 1 :]:
             if later["segment"] != r["segment"] or later["n"] == "1":
                 break
+            sub.append(later)
+        for later in sub:
             okl = matches[later["id"]]
             for rawi in (later["ruwat"] or later["ruwat_min"] or []):
                 if rawi in (r["ruwat"] or []):

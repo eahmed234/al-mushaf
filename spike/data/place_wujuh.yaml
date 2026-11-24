@@ -1,0 +1,10 @@
+# Wujūh tied to particular places, overriding a rawi's profile there. Each entry cites its source.
+#   rawi, category, word: the place; wujuh: what the rawi reads there;
+#   elsewhere: what the rawi reads at other places of that category.
+- rawi: ruways
+  category: idgham_kabir
+  word: "2:20:17"
+  wujuh: [izhar, idgham]
+  elsewhere: [izhar]
+  source: "al-Futuh v1 pdf p. 62, fn 1: (لَذَهَب بِّسَمۡعِهِمۡ) قرأها السوسي، ورويس بخلاف عنه بالإدغام الكبير"
+  confirmed: "Eisa 2026-11-24 (khulf at 2:20; in general no idgham kabir)"

@@ -30,37 +30,14 @@ WORDS = {
 }
 
 
-# My triage, so each question says what kind it is (C = Claude's reading of the evidence)
-NOTES = {
-    ("qalun", "single"): "Qālūn is named only in the ṣilah row; the first row (الجميع عدا من سيأتي) then excludes him. "
-                         "Is his iskān implied here (an omission), or does the box mean ṣilah only?",
-    ("qalun", "combo"): "Qālūn's munfaṣil × ṣilah combinations shown differ from box to box. Omission, or a taḥrīr per place?",
-    ("duri_abuamr", "munfasil"): "Only tawassuṭ shown for al-Dūrī here, though he has qaṣr and tawassuṭ (book table, v1 p. 52). Omission?",
-    ("imala_ya", "2:16"): "Row 'الكسائي واندرج العاشر: بالإمالة' says imālah, but its text has no imālah dot. Print check: is the dot "
-                          "missing in the book, or did the extraction lose it? (This one row causes all the 2:16 entries.)",
-    ("duri_abuamr", "imala"): "al-Dūrī: qaṣr comes with fatḥ and tawassuṭ with imālah of أَبۡصَٰرِهِمۡ (2:7); at 2:20 only imālah. "
-                              "Looks like real taḥrīr (imālah tied to tawassuṭ?).",
-    ("susi", "imala"): "al-Sūsī: fatḥ of أَبۡصَٰرِهِمۡ at 2:7, imālah at 2:20 (with idghām kabīr). Khulf, or imālah only with idghām?",
-    ("ruways", "idgham"): "Ruways: idghām kabīr at 2:20 (لَذَهَب بِّسَمۡعِهِمۡ), not at 2:2. A word-listed idghām, not a free choice?",
-    ("warsh", "badal"): "Not a question: the label states all three badal lengths; the print gives one text for them.",
-}
-
-
+# The question each entry asks (neutral: the data can't answer it; Eisa can)
 def note_for(it: dict) -> str:
-    r, a = it["rawi"], it["from"]
-    cats = {c for ch in it["missing"] for c in ch}
-    if r == "qalun":
-        return NOTES[("qalun", "combo" if "munfasil" in cats else "single")]
-    if a.startswith("2:16:"):
-        return NOTES[("imala_ya", "2:16")]
-    if r == "duri_abuamr":
-        return NOTES[("duri_abuamr", "imala" if any(c.startswith("imala") for c in cats) else "munfasil")]
-    if r == "susi":
-        return NOTES[("susi", "imala")]
-    if r == "ruways":
-        return NOTES[("ruways", "idgham")]
-    if r == "warsh" and "badal" in cats:
-        return NOTES[("warsh", "badal")]
+    if it["rawi"] == "qalun":
+        return ("Row 1 is 'الجميع عدا أصحاب الصلة'. Does it also cover Qālūn's iskān here, "
+                "as 'الجميع عدا من سيأتي' does?")
+    if it["rawi"] == "ruways":
+        return ("Ruways: idghām kabīr at 2:20 (لَذَهَب بِّسَمۡعِهِمۡ), izhār at 2:2 (فِيهِ هُدٗى). "
+                "Is his idghām limited to listed words (so izhār at 2:2 and idghām only at 2:20), or a khulf?")
     return ""
 
 
