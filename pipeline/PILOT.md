@@ -111,3 +111,21 @@ precision** per rāwī. By kind of row (rāwī-units found / in the gold set):
 Sonnet 5.5 subagents. For farsh, the milestone's subject, the pilot is at the bar. For uṣūl, the
 reviewed profile table stays the source; al-Budūr's uṣūl rows are a check against it, with the
 disagreements going to Eisa, as docs/05 already plans for two-source agreement.
+
+## Rule pilot: al-Wāfī and al-Īḍāḥ uṣūl (2026-11-25)
+
+Eisa: al-Budūr states an aṣl once and reminds now and then, so what is aṣl and where it applies
+comes from the uṣūl sections of al-Wāfī (pp. 25–198) and al-Īḍāḥ (pp. 30–186). Pilot: al-Wāfī pp.
+50–53, 67–72 and al-Īḍāḥ pp. 54–60, 71–74 (mīm al-jamʿ, the hāʾ of عليهم, hāʾ al-kināyah), one
+Sonnet subagent, instructions `prompt_rules.md`, check `python3 -m pipeline.rules`.
+
+- 136 rules (al-Wāfī 100, al-Īḍāḥ 36), 0 rejected; ~138k tokens, **~6.6k a page** (no word lists).
+  The whole of both sections (331 pages) at that rate: ~2.2M tokens.
+- Against the profile table: 43/45 rāwī-wajh pairs agree; the two are the book's waqf statement
+  ("all stop on the mīm with sukūn") set against a waṣl profile — the check now skips waqf rows.
+- Most rows fell outside the 35 categories, which is the point: the hāʾ of عليهم/إليهم/لديهم, mīm
+  al-jamʿ before a sākin (Abū ʿAmr's kasr, Yaʿqūb's itbāʿ), hāʾ al-kināyah's listed words (يؤده،
+  نوله، يرضه، أرجئه…), the ṣād of الصراط. These are the rules al-Budūr's places looked like farsh for.
+- Fixed in the instructions: the ṣilah of hāʾ al-kināyah went to a new name instead of `silah_ha`;
+  new names now reused across both books. After the full run, new categories get consolidated
+  into data/profiles.yaml (reviewed), each with its word list.
