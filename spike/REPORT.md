@@ -13,8 +13,9 @@ category; what it did need, and what the spike got wrong first, is in "What didn
 
 | Check | Result |
 | --- | --- |
-| al-Futūḥ rows of 1:1–2:20 reproduced, book profiles, no training rows | **654 / 666** row/rāwī pairs (98%) |
-| Predict 2:6–20 (2:13–20) after seeing 2:1–5 (2:1–12) | **506 / 518** (98%), **285 / 287** (99%) |
+| al-Futūḥ rows of 1:1–2:20 reproduced, book profiles, no training rows | **661 / 666** row/rāwī pairs (99%) |
+| Predict 2:6–20 (2:13–20) after seeing 2:1–5 (2:1–12) | **513 / 518** (99%), **285 / 287** (99%) |
+| All rows of 1:1–2:20, book profiles plus the rows | **674 / 676**; the two left are one farsh entry |
 | Same, with profiles learned from the rows instead of the books | 429 / 518 (83%), 255 / 287 (89%) |
 | Readings generated that no row of the box gives (full passage) | 3 |
 | KFGQPC, eight riwāyāt, whole passage, word by word | **2,047 / 2,056** words (99.6%); Ḥafṣ and Shuʿbah 100% |
@@ -27,13 +28,18 @@ the plan expected; most of it is loading and checking, not the resolver).
 
 ## Q1. Does the format express every wajh al-Futūḥ lists?
 
-Yes, with nine exceptions in 676 row/rāwī pairs, none of them a missing kind of fact:
+Yes. Of 676 row/rāwī pairs, two are left, and they are data, not model: the farsh entry for the
+ishmām of قِيلَ (2:13, Abū al-Ḥārith and al-Dūrī ʿan al-Kisāʾī) prints a form the entry doesn't
+carry yet. Seven others were the print, settled by Eisa on 2026-11-24 with the page beside them:
 
-| Row | Rāwī | Word | What the print shows | Status |
-| --- | --- | --- | --- | --- |
-| v1-p055-r12, r13, r15 | Khallād, Idrīs, Khalaf | 2:8:8 ٱلۡأٓخِرِ | ٱلۡأَخِرِ, mid-ayah | not explained yet; to check with Eisa |
-| v1-p057-r13, r14 | Hishām, Abū al-Ḥārith, al-Dūrī ʿan al-Kisāʾī, Ruways | 2:11:3 لَهُمۡ | لَّهُمۡ (a shadda) | not explained yet; to check |
-| v1-p058-r5 | Abū al-Ḥārith, al-Dūrī ʿan al-Kisāʾī | 2:13:2 قِيلَ | ق۬ـِيل | the ishmām farsh entry's form; data, not model |
+- 2:8 ٱلۡأٓخِرِ in the sakt rows (Khallād, Idrīs, Khalaf) is printed ٱلۡأَخِرِ: al-Futūḥ's way of
+  printing the sakt form. A print convention, applied when comparing (`readings.sakt_print`).
+- 2:11 لَّهُمۡ in row 10 (Hishām, al-Kisāʾī; Ruways inherits it): the typesetter carried row 9's
+  shadda (al-Sūsī's idghām kabīr). A print error, corrected on load (`data/print_errors.yaml`) and
+  logged in `mushaf/docs/known-gaps.md`.
+
+With no training rows, three more pairs miss: Warsh's naql across words (عَذَابٌ أَلِيمٌ, خَلَوۡاْ إِلَىٰ),
+whose places still come from the row gate (the occurrence table for naql isn't built).
 
 Earlier "misses" that turned out to be data (dropped rows, imālah marked only by colour, labels read
 wrongly) are fixed in the extraction and logged in `mushaf/docs/known-gaps.md`.

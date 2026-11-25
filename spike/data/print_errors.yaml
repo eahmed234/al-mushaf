@@ -1,0 +1,9 @@
+# Errors in al-Futūḥ's print, corrected when its rows are loaded (spike/rows.py). Each one is
+# confirmed by Eisa against the page; the extraction keeps the print as it is
+# (mushaf/docs/known-gaps.md lists them too).
+- row: v1-p057-r13
+  printed: "لَّهُمۡ"
+  read: "لَهُمۡ"
+  where: "2:11:3, vol. 1 p. 57 row 10 (Hishām and al-Kisāʾī; row 11, Ruways, inherits it)"
+  why: "the shadda of row 9's idghām kabīr (al-Sūsī) carried over by the typesetter, uncoloured"
+  confirmed: "Eisa 2026-11-24"

@@ -239,6 +239,12 @@ def allowed(rawi: str, choice: dict) -> bool:
     return True
 
 
+def sakt_print(word: str) -> str:
+    """How al-Futūḥ prints a word with sakt on al-: the hamzah after ٱلۡ with its fatḥah and no
+    maddah (ٱلۡأٓخِرِ → ٱلۡأَخِرِ). A print convention (Eisa 2026-11-24), applied only when comparing."""
+    return re.sub("(\u0671\u0644\u06e1)\u0623\u0653", "\\1\u0623\u064e", word)
+
+
 def waqf_forms(word: str, rawi: str):
     from .waqf import forms
     return forms(word, rawi)
@@ -357,8 +363,12 @@ def compare(upto: int, full: dict, feats: dict, start: int = 1):
             seen_words = claimed(r["segment"])
             starts = quote_starts(r)
 
+            sakt_row = feats[r["id"]].get("sakt_al") == ["sakt"]
+
             def bad(g):
-                return [i for i in span if i in seen_words and not any(same(g[i], t, i == span[-1], i in starts) for t in book[i])]
+                return [i for i in span if i in seen_words and not any(
+                    same(g[i], t, i == span[-1], i in starts)
+                    or sakt_row and same(sakt_print(g[i]), t, i == span[-1], i in starts) for t in book[i])]
 
             scored = sorted(gens, key=lambda g: len(bad(g)))
             if not scored or bad(scored[0]):

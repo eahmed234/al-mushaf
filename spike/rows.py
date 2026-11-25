@@ -239,7 +239,24 @@ def load_rows() -> list[Row]:
             ruwat=r.get("ruwat"), ruwat_min=r.get("ruwat_min") or [], ruwat_max=r.get("ruwat_max") or [],
             quoted=_quoted_words(r, flags), flags=flags,
         ))
+        for e in PRINT_ERRORS.get(r["id"], []):  # print errors Eisa confirmed
+            for w in rows[-1].quoted:
+                if w.t == normalize(e["printed"]):
+                    w.t = normalize(e["read"])
+                    w.alts = [normalize(e["read"]) if a == normalize(e["printed"]) else a for a in w.alts]
+                    rows[-1].flags.append("print_error:" + e["read"])
     return rows
+
+
+def _print_errors() -> dict[str, list[dict]]:
+    import yaml
+    out: dict[str, list[dict]] = {}
+    for e in yaml.safe_load((Path(__file__).parent / "data" / "print_errors.yaml").read_text()) or []:
+        out.setdefault(e["row"], []).append(e)
+    return out
+
+
+PRINT_ERRORS = _print_errors()
 
 
 # ---------------------------------------------------------------------------------------------

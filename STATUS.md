@@ -42,9 +42,9 @@ Book profiles (2026-11-24), `spike/data/profiles.yaml`, 34 categories × 20 ruw�
 
 | Test | rows-learned | book table |
 | --- | --- | --- |
-| learn 2:1–5, predict 2:6–20 | 429 / 518 (83%) | **506 / 518 (98%)** |
+| learn 2:1–5, predict 2:6–20 | 429 / 518 (83%) | **513 / 518 (99%)** |
 | learn 2:1–12, predict 2:13–20 | 255 / 287 (89%) | **285 / 287 (99%)** |
-| no training, 2:1–20 | 442 / 666 (Ḥafṣ default) | **654 / 666 (98%)** |
+| no training, 2:1–20 | 442 / 666 (Ḥafṣ default) | **661 / 666 (99%)** |
 
 (An earlier version of these numbers was wrong: a local variable in `full_profiles` shadowed the
 `book` flag, so every run used the book table. Fixed; the table above is after the fix.)
@@ -70,6 +70,8 @@ tables; review list empty.
 - Ruways: no idghām kabīr, except a khulf at the places al-Īḍāḥ lists (2:20 here).
 - Where ṭuruq or commentators differ (ikhtilāf), the wajh is an app option with the book's
   preferred reading as default (first case: Idrīs's sakt). A kubrā version comes later.
+- al-Futūḥ prints the sakt form of ٱلۡأٓخِرِ as ٱلۡأَخِرِ (a print convention); row 10 at 2:11 has a
+  print error (a carried-over shadda), corrected in `spike/data/print_errors.yaml`.
 - Glyph 135 is the tas-hīl dot; glyph 383 is lām-alif with maddah; #76923c is the imālah green.
 
 ### What the spike has shown so far (Q1–Q5)
