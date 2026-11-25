@@ -1,6 +1,6 @@
 """Print crops beside the preview renderer's standalone dot at a few side bearings.
 
-    PYTHONPATH=../mushaf ../mushaf/.venv/bin/python -m spike.dot_sheet
+    PYTHONPATH=../mushaf ../mushaf/.venv/bin/python -m checks.sheets.dot_sheet
 """
 
 from __future__ import annotations
@@ -11,13 +11,14 @@ import sys
 import pymupdf
 
 from .render import Renderer
-from .rows import BUILD, FUTUH, PROJECTS, SOURCES
+from mushaf_data.paths import BUILD, ROOT, SOURCES
+from ..futuh.rows import FUTUH, MUSHAF, RUWAT
 
 VARIANTS = [40, 80, 120]  # gap from each neighbour's ink, dot 85%
 
 
 def main() -> None:
-    sys.path.insert(0, str(PROJECTS / "mushaf"))
+    sys.path.insert(0, str(MUSHAF))
     from futuh.run import volume_pdf
 
     doc = pymupdf.open(volume_pdf(1))

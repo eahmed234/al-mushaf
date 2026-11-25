@@ -1,5 +1,5 @@
 *.pdf
 __pycache__/
-spike/build/
+build/
 books/
 sources/

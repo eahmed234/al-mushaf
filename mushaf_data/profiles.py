@@ -1,17 +1,17 @@
-"""Uṣūl profiles from the books (data/profiles.yaml), expanded to every rāwī.
+"""Uṣūl profiles from the books (data/profiles.yaml), expanded to every rāwī; wujūh tied to a
+place (data/place_wujuh.yaml).
 
-    python3 -m spike.book_profiles            check coverage and print the table
-    python3 -m spike.book_profiles --vs-rows  compare with the profiles learned from al-Futūḥ's rows
+    python3 -m mushaf_data.profiles   check coverage and print the table
 """
-import argparse
 from pathlib import Path
 
 import yaml
 
-from .rows import RUWAT
+from .paths import DATA
+from .ruwat import RUWAT, SEVEN
 
-PATH = Path(__file__).parent / "data" / "profiles.yaml"
-SEVEN = RUWAT[:14]
+PATH = DATA / "profiles.yaml"
+PLACES = DATA / "place_wujuh.yaml"
 
 
 def load(path=PATH):
@@ -35,6 +35,8 @@ def load(path=PATH):
                 continue
             if who == "rest7":
                 who = [r for r in SEVEN if r not in seen]
+            if not str(row.get("cite", "")).strip():
+                problems.append(f"{cat}: a row for {', '.join(who)} cites no page")
             for r in who:
                 if r not in out:
                     problems.append(f"{cat}: unknown rāwī {r}")
@@ -42,7 +44,7 @@ def load(path=PATH):
                 if r in seen:
                     problems.append(f"{cat}: {r} named twice")
                 seen.append(r)
-                entry = {"wujuh": {w: [row["cite"]] for w in row["wujuh"]}, "source": "book"}
+                entry = {"wujuh": {w: [row.get("cite")] for w in row["wujuh"]}, "source": "book"}
                 for k in ("cond", "place", "note", "inherited", "option"):
                     if k in row:
                         entry[k] = row[k]
@@ -56,44 +58,13 @@ def load(path=PATH):
 
 
 
-def vs_rows(book, upto=20):
-    """Where the rows of al-Futūḥ (2:1-upto) show a wajh the book profile doesn't allow, or the
-    book allows wujūh the rows never show (expected: the passage is short)."""
-    from .readings import full_profiles
-
-    learned, _, _, _ = full_profiles(upto)
-    conflicts, unseen = [], []
-    for r in RUWAT:
-        for cat, e in book[r].items():
-            if cat not in learned[r]:
-                continue
-            allowed = set(e["wujuh"])
-            lw = learned[r][cat]["wujuh"]
-            # a learned wajh counts only if some row behind it isn't also behind an allowed wajh
-            # (a quote ending at a pause sign matches both the waṣl and the waqf form)
-            ok_rows = {x for w in allowed & set(lw) for x in lw[w]}
-            got = {w for w, src in lw.items() if w in allowed or set(src) - ok_rows}
-            if got - allowed:
-                conflicts.append((r, cat, sorted(got - allowed), sorted(allowed), learned[r][cat]["source"]))
-            elif allowed - got:
-                unseen.append((r, cat, sorted(allowed - got)))
-    return conflicts, unseen
+def place_wujuh(path=PLACES) -> list[dict]:
+    """Wujūh tied to one place: at `word` the entry's `wujuh`, elsewhere its `elsewhere`."""
+    return yaml.safe_load(Path(path).read_text(encoding="utf-8")) or []
 
 
 def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--vs-rows", action="store_true")
-    a = ap.parse_args()
     book = load()
-    if a.vs_rows:
-        conflicts, unseen = vs_rows(book)
-        print(f"{len(conflicts)} conflicts (rows show a wajh the book doesn't give):")
-        for c in conflicts:
-            print("  ", *c)
-        print(f"{len(unseen)} book wujūh the passage's rows don't show:")
-        for u in unseen:
-            print("  ", *u)
-        return
     cats = list(next(iter(book.values())).keys())
     print(f"{len(cats)} categories × {len(RUWAT)} ruwāt, all covered")
     for cat in cats:

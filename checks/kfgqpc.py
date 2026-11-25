@@ -7,10 +7,10 @@ letters and compares what a reading changes:
   letters (hamzah as a letter, ṣilah's small wāw/yāʾ included), maddahs (madd), shaddas (idghām),
   imālah marks (our U+065C dot; KFGQPC's U+06EA under a dagger alif), tas-hīl dots.
 
-For each ayah the spike's readings for the rāwī are tried and the closest kept (KFGQPC prints one
+For each ayah the engine's readings for the rāwī are tried and the closest kept (KFGQPC prints one
 wajh per place); what still differs is listed by kind.
 
-    python3 -m spike.kfgqpc_check [--show N]
+    python3 -m checks.kfgqpc [--show N]
 """
 import argparse
 import collections
@@ -19,10 +19,12 @@ import json
 import re
 from pathlib import Path
 
-from .readings import full_profiles, generate, confirmed_occurrences
-from .rows import load_hafs
+from .futuh.readings import full_profiles, generate, confirmed_occurrences
+from mushaf_data.paths import SOURCES
 
-MIRROR = Path(__file__).resolve().parent.parent / "sources/kfgqpc/mirror"
+from .futuh.rows import load_hafs
+
+MIRROR = SOURCES / "kfgqpc/mirror"
 FILES = {"hafs": "hafs/hafsData_v18.json", "shuba": "shouba/ShoubaData08.json",
          "warsh": "warsh/warshData_v10.json", "qalun": "qaloon/QaloonData_v10.json",
          "bazzi": "bazzi/BazziData_v07.json", "qunbul": "qumbul/QumbulData_v07.json",
@@ -89,10 +91,8 @@ def skel(w: str) -> str:
     return re.sub("[\u0621\u0627\u06e5\u06e6\u0648\u064a]", "", letters(norm(w)))
 
 
-def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--show", type=int, default=0)
-    a = ap.parse_args()
+def run(show: int = 0, out=print) -> dict:
+    """{rawi: (words that agree, words compared)} and "all": the total."""
     hafs = load_hafs()
     ids = [w for w in hafs if not w.startswith("B:")]
     full, _, _, _ = full_profiles(20, book=True)
@@ -102,6 +102,7 @@ def main():
         s, ay, _ = w.split(":")
         ayahs.setdefault((s, ay), []).append(w)
     total = collections.Counter()
+    res = {}
     for rawi in FILES:
         kw = kwords(rawi)
         # align the spine's words with KFGQPC's on letters
@@ -132,11 +133,21 @@ def main():
                     kinds[kd] += 1
                     shown.append((w, g[w], pair[w], kd))
         n = same + diff
-        print(f"{rawi:12} {same}/{n} words agree ({same / n:.1%}); {unaligned} unaligned; differences: {dict(kinds)}")
-        for x in shown[: a.show]:
-            print("     ", *x)
+        res[rawi] = (same, n)
+        out(f"{rawi:12} {same}/{n} words agree ({same / n:.1%}); {unaligned} unaligned; differences: {dict(kinds)}")
+        for x in shown[:show]:
+            out("     ", *x)
         total.update({"same": same, "diff": diff})
-    print(f"all eight: {total['same']}/{total['same'] + total['diff']} words agree")
+    res["all"] = (total["same"], total["same"] + total["diff"])
+    out(f"all eight: {res['all'][0]}/{res['all'][1]} words agree")
+    return res
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--show", type=int, default=0)
+    a = ap.parse_args()
+    run(a.show)
 
 
 if __name__ == "__main__":

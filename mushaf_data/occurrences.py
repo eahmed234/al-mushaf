@@ -6,8 +6,8 @@ spine's ۞ items and surah starts) by matching its words. A list names words, no
 grammatical conditions (ٱلنَّاسِ in the jarr, a kasrah on the rāʾ) stay with the detectors, and the
 list decides which words are mumāl at all (it drops عَلَىٰ, إِلَىٰ).
 
-    python3 -m spike.occurrences            build build/imala_table.json and compare with the detectors
-    python3 -m spike.occurrences --show 20  list disagreements
+    python3 -m mushaf_data.occurrences            build build/imala_table.json and compare with the detectors
+    python3 -m mushaf_data.occurrences --show 20  list disagreements
 """
 import argparse
 import json
@@ -16,11 +16,11 @@ import sys
 from functools import lru_cache
 from pathlib import Path
 
-from .rows import SPINE, BUILD
-from .usul import detect
+from tools import book
 
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "tools"))
-import book  # noqa: E402
+from .paths import BUILD, SPINE
+from .spine import words as hafs_all
+from .usul import detect
 
 OUT = BUILD / "imala_table.json"
 # an alif, alif maqṣūrah, dagger alif or tāʾ marbūṭah (al-Kisāʾī's hāʾ al-taʾnīth)
@@ -52,7 +52,6 @@ def tokens(text: str) -> set:
 @lru_cache(maxsize=1)
 def quarters():
     """Word-id lists in order: a quarter starts at each ۞ of the spine and at each surah."""
-    from .waqf_check import hafs_all
     h = hafs_all()
     starts = set()
     for line in SPINE.open():
@@ -92,8 +91,8 @@ def lists():
     return out
 
 
-def build():
-    from .waqf_check import hafs_all
+def build(L: list | None = None, write: bool = True):
+    """Tie al-Budūr's lists (`lists()` unless given) to quarters: ({quarter: record}, pages not tied)."""
     h = hafs_all()
     qs = quarters()
     qskel = [{} for _ in qs]
@@ -103,7 +102,7 @@ def build():
                 for k in skels(h[wid]):
                     qskel[i].setdefault(k, []).append(wid)
     qall = [{k for w in q for k in skels(h[w]) if len(k) >= 3} for q in qs]
-    L = lists()
+    L = lists() if L is None else L
     # score of list j against quarter i: its longer words among the rubʿ's imālah candidates, and
     # the commentary just before it (the end of that rubʿ) among all the rubʿ's words
     S = []
@@ -141,8 +140,10 @@ def build():
         else:
             i -= 1
     unmatched.reverse()
-    OUT.write_text(json.dumps({str(k): v for k, v in tbl.items()}, ensure_ascii=False, indent=1))
-    table.cache_clear()
+    if write:
+        OUT.parent.mkdir(exist_ok=True)
+        OUT.write_text(json.dumps({str(k): v for k, v in tbl.items()}, ensure_ascii=False, indent=1))
+        table.cache_clear()
     return tbl, unmatched
 
 
@@ -190,7 +191,6 @@ def listed(word_id: str, hafs_word: str):
 
 @lru_cache(maxsize=1)
 def ayah_last() -> set:
-    from .waqf_check import hafs_all
     last = {}
     for w in hafs_all():
         s, a, n = w.split(":")
@@ -215,7 +215,6 @@ def imala_excluded(hafs_word: str, word_id: str = "") -> bool:
 
 
 def compare(tbl, show=0):
-    from .waqf_check import hafs_all
     h = hafs_all()
     qs = quarters()
     named_n = dropped = unseen = 0

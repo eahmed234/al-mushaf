@@ -1,13 +1,13 @@
 """Day 3: full profiles (text wujūh from the rows, features from the labels and the book's madd
 tables) and generated readings, compared with every row of the passage part.
 
-    python3 -m spike.readings [--upto AYAH] [--show]
+    python3 -m checks.readings [--upto AYAH] [--show]
 
 A Reading here is the text of a span plus a set of features (madd lengths, sakt, tarqiq ...):
 what the text alone can't show (Q5).
 
 Sources:
-- text wujūh: learned from the rows (`spike.profile`), each with its row ids;
+- text wujūh: learned from the rows (`checks.futuh.learn`), each with its row ids;
 - munfasil / muttasil lengths: al-Futuh's own tables, vol. 1 pp. 52-53, as recorded with their
   citation in ../mushaf/futuh/readers.yaml (`madd_tables`);
 - other features: the row labels, read with the small vocabulary below (book usage), with
@@ -26,17 +26,16 @@ from collections import defaultdict
 import yaml
 from pathlib import Path
 
-from .profile import TEXT_CATS, claimed, context, learn, match_row, quote_starts, reviewed, rows_in, same
-from .rows import BUILD, PROJECTS, RUWAT, load_hafs
-from .usul import WUJUH, apply, detect
+from .learn import TEXT_CATS, claimed, context, learn, match_row, quote_starts, reviewed, rows_in, same
+from .rows import BUILD, MUSHAF, RUWAT, load_hafs
+from mushaf_data import generate as G
+from mushaf_data.constraints import CONSTRAINTS, allowed  # noqa: F401 (used by checks)
+from mushaf_data.generate import CHOICE_FEATURES, WAQF_HAMZ_CATS, WAQF_RAWI  # noqa: F401
+from mushaf_data.profiles import place_wujuh
+from mushaf_data.ruwat import QARI
+from mushaf_data.usul import WUJUH, apply, detect
 
-QARI = {
-    "nafi": ["qalun", "warsh"], "ibn_kathir": ["bazzi", "qunbul"], "abu_amr": ["duri_abuamr", "susi"],
-    "ibn_amir": ["hisham", "ibn_dhakwan"], "asim": ["shuba", "hafs"], "hamzah": ["khalaf_an_hamzah", "khallad"],
-    "kisai": ["abul_harith", "duri_kisai"], "abu_jafar": ["ibn_wardan", "ibn_jammaz"], "yaqub": ["ruways", "rawh"],
-    "khalaf_ashir": ["ishaq", "idris"],
-}
-READERS_YAML = PROJECTS / "mushaf/futuh/readers.yaml"
+READERS_YAML = MUSHAF / "futuh/readers.yaml"
 
 # label phrase -> (category, wujuh); first match per category wins, longest phrases first
 LABEL = [
@@ -169,7 +168,7 @@ def full_profiles(upto: int, start: int = 1, book: bool = False):
     """Profiles per rāwī. Learned from al-Futūḥ's rows (2:start-upto), the book's madd tables and
     the row labels; with `book`, the uṣūl books' table (data/profiles.yaml) replaces every
     category it covers, and the rows only fill categories the books table doesn't have yet."""
-    from . import profile as P
+    from . import learn as P
 
     P.EXTRA_READERS.clear()
     prof, _ = learn(upto, start)  # first pass, to know who has a second wajh
@@ -209,34 +208,19 @@ def full_profiles(upto: int, start: int = 1, book: bool = False):
                         q["wujuh"].setdefault(w, []).append(row["id"])
         full[r] = p
     if book:
-        from .book_profiles import load
+        from mushaf_data.profiles import load
         for r, cats in load().items():
             full[r].update(cats)
         # a place entry's wujūh are the rāwī's too (label features are checked against the profile;
         # generation still uses the place entry itself)
-        for e in yaml.safe_load((Path(__file__).parent / "data" / "place_wujuh.yaml").read_text()) or []:
+        for e in place_wujuh():
             q = full[e["rawi"]].setdefault(e["category"], {"wujuh": {}, "source": "place"})
             for w in list(e["wujuh"]) + list(e.get("elsewhere", [])):
                 q["wujuh"].setdefault(w, ["data/place_wujuh.yaml"])
     return full, gaps, conflicts, feats
 
 
-PLACE_WUJUH = yaml.safe_load((Path(__file__).parent / "data" / "place_wujuh.yaml").read_text()) or []
-CHOICE_FEATURES = {"muttasil", "sakt_al", "sakt_mafsul", "lin_hamz", "madd_arid"}
-WAQF_RAWI = {"khalaf_an_hamzah", "khallad", "hisham"}
-WAQF_HAMZ_CATS = {"ibdal_sakin_waqf", "hamzatayn_waqf", "hamz_waqf_final", "hamz_waqf_mid", "hamz_waqf_zaid"}
-CONSTRAINTS = yaml.safe_load((Path(__file__).parent / "data" / "constraints.yaml").read_text()) or []
-
-
-def allowed(rawi: str, choice: dict) -> bool:
-    """False if the choice breaks a taḥrīr constraint (data/constraints.yaml) for this rāwī."""
-    for c in CONSTRAINTS:
-        if "cats" not in c or c.get("enforced") is False:
-            continue
-        if rawi in c["rawi"] and all(k in choice for k in c["cats"]):
-            if [choice[k] for k in c["cats"]] not in c["allowed"]:
-                return False
-    return True
+PLACE_WUJUH = place_wujuh()
 
 
 def sakt_print(word: str) -> str:
@@ -245,70 +229,12 @@ def sakt_print(word: str) -> str:
     return re.sub("(\u0671\u0644\u06e1)\u0623\u0653", "\\1\u0623\u064e", word)
 
 
-def waqf_forms(word: str, rawi: str):
-    from .waqf import forms
-    return forms(word, rawi)
+def generate(rawi: str, span: list[str], full: dict, confirmed=None) -> list[tuple[dict, dict]]:
+    """The engine's readings (mushaf_data.generate) with this check's stand-ins: the rāwī's farsh
+    from al-Futūḥ's rows, and the row gate for where a category applies (`learn.reviewed`)."""
+    from .learn import farsh_texts, reviewed
 
-
-def generate(rawi: str, span: list[str], full: dict, confirmed: set) -> list[tuple[dict, dict]]:
-    """Every (choice, text) a rawi's profile gives for a span: farsh first, then the uṣūl rules,
-    over each way the span can be read (stop or not at a pause sign). Only reviewed occurrences;
-    silah before a hamza tied to silah elsewhere unless the profile separates them."""
-    from .profile import contexts, farsh_texts
-
-    hafs = load_hafs()
-
-    def wujuh(c):
-        w = full[rawi].get(c, {}).get("wujuh")
-        if not w and c == "silah_mim_hamza":  # one category in the books; learned apart
-            w = full[rawi].get("silah_mim", {}).get("wujuh")
-        # nothing known for this rawi here: leave the word as it is (the category's first wajh,
-        # which is the Hafs text)
-        return list(w or [WUJUH[c][0]])
-
-    places = [e for e in PLACE_WUJUH if e["rawi"] == rawi]
-    out = []
-    own_waqf = rawi in WAQF_RAWI  # Ḥamzah's ruwāt and Hishām: the waqf chapter (spike.waqf)
-    for words, stop in contexts(span, hafs, farsh_texts()[rawi]):
-        occs = [o for o in detect(words, stop=stop) if reviewed(o.cat, o.word, o.nxt)]
-        if own_waqf:
-            occs = [o for o in occs if o.cat not in WAQF_HAMZ_CATS]
-        # text categories and the features detected here (no text change, but taḥrīr ties them)
-        cats = sorted({o.cat for o in occs if o.cat in TEXT_CATS or o.cat in CHOICE_FEATURES})
-        if "silah_mim_hamza" in cats and "munfasil" not in cats:
-            cats = sorted(cats + ["munfasil"])
-        # place-tied wujuh: at the place the entry's wujuh, elsewhere its `elsewhere`
-        here = {e["category"]: e for e in places if any(o.cat == e["category"] and o.word == e["word"] for o in occs)}
-        elsewhere = {e["category"]: e for e in places if e["category"] not in here}
-
-        def wujuh(c, _w=wujuh):  # noqa: E731
-            if c in here:
-                return list(here[c]["wujuh"])
-            if c in elsewhere:
-                return list(elsewhere[c]["elsewhere"])
-            return _w(c)
-
-        tie = "silah_mim" in cats and "silah_mim_hamza" in cats and set(wujuh("silah_mim")) == set(wujuh("silah_mim_hamza"))
-        free = [c for c in cats if not (tie and c == "silah_mim_hamza")]
-        for combo in itertools.product(*[wujuh(c) for c in free]):
-            ch = dict(zip(free, combo))
-            if tie:
-                ch["silah_mim_hamza"] = ch["silah_mim"]
-            if not allowed(rawi, ch):
-                continue
-            text = apply(words, occs, ch)
-            ch = {**ch, "_stop": stop}  # which way the span is read (stop at its end or go on)
-            if own_waqf and stop:
-                al = "sakt_al" in {o.cat for o in occs if o.word == stop}
-                for lab, w in waqf_forms(text[stop], rawi):
-                    c2 = {**ch, "waqf": lab}
-                    if al:  # the stop on ٱلۡأَرۡضِ: naql, or the hamzah kept (with sakt or not, as in waṣl)
-                        c2["waqf_al"] = "naql" if lab.startswith("naql") else ch.get("sakt_al", "none")
-                    if allowed(rawi, c2):
-                        out.append((c2, {**text, stop: w}))
-            else:
-                out.append((ch, text))
-    return out
+    return G.generate(rawi, span, full, farsh=farsh_texts()[rawi], gate=reviewed, hafs=load_hafs())
 
 
 @lru_cache(maxsize=1)
@@ -331,9 +257,9 @@ def compare(upto: int, full: dict, feats: dict, start: int = 1):
     """For each row and each rawi it names: is the row's text one the rawi's profile generates
     (farsh from the farsh entries, then the uṣūl rules), and are its label features within the
     profile? A miss records, for the closest generated reading, each word that still differs
-    and how (`spike.diff`). Also counts readings the profile generates for a span that no row
+    and how (`mushaf_data.diff`). Also counts readings the profile generates for a span that no row
     gives that rawi (over-generation: constraints needed)."""
-    from .diff import describe
+    from mushaf_data.diff import describe
     from .farsh import load_places, resolve_farsh
 
     hafs = load_hafs()
@@ -395,7 +321,7 @@ def compare(upto: int, full: dict, feats: dict, start: int = 1):
             seg_of[key] = r["segment"]
     # extra readings: distinct texts (on the words the box speaks about, a pausal final vowel not
     # counting as a difference) beyond the number of readings the book gives that rawi for the span
-    from .text import clusters
+    from mushaf_data.text import clusters
 
     def unpaused(w: str) -> str:
         cl = clusters(w)
@@ -436,13 +362,59 @@ def compare(upto: int, full: dict, feats: dict, start: int = 1):
 EXTRAS: list = []
 
 
+def check(upto: int = 20, book: bool = True, test: tuple[int, int] | None = None) -> dict:
+    """Every row/rāwī pair of al-Baqarah 1..upto (or, with `test`, of lo..hi, profiles learned on
+    1..upto): is the row's reading one the rāwī's profile generates?"""
+    full, gaps, conflicts, feats = full_profiles(upto, book=book)
+    lo, hi = test or (1, upto)
+    misses, over = compare(hi, full, feats, start=lo)
+    rows = rows_in(hi, lo)
+    pairs = sum(len(r["ruwat"] or r["ruwat_min"] or []) for r in rows)
+    bad = {(m[0], m[1]) for m in misses}
+    return {"rows": len(rows), "pairs": pairs, "reproduced": pairs - len(bad), "misses": misses,
+            "extras": sum(over.values()), "over": dict(over), "conflicts": conflicts, "full": full}
+
+
+def vs_rows(book, upto=20):
+    """Where the rows of al-Futūḥ (2:1-upto) show a wajh the book profile doesn't allow, or the
+    book allows wujūh the rows never show (expected: the passage is short)."""
+    learned, _, _, _ = full_profiles(upto)
+    conflicts, unseen = [], []
+    for r in RUWAT:
+        for cat, e in book[r].items():
+            if cat not in learned[r]:
+                continue
+            allowed = set(e["wujuh"])
+            lw = learned[r][cat]["wujuh"]
+            # a learned wajh counts only if some row behind it isn't also behind an allowed wajh
+            # (a quote ending at a pause sign matches both the waṣl and the waqf form)
+            ok_rows = {x for w in allowed & set(lw) for x in lw[w]}
+            got = {w for w, src in lw.items() if w in allowed or set(src) - ok_rows}
+            if got - allowed:
+                conflicts.append((r, cat, sorted(got - allowed), sorted(allowed), learned[r][cat]["source"]))
+            elif allowed - got:
+                unseen.append((r, cat, sorted(allowed - got)))
+    return conflicts, unseen
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--upto", type=int, default=5)
     ap.add_argument("--show", action="store_true")
     ap.add_argument("--test", default=None, help="predict al-Baqarah A-B with profiles learned up to --upto, e.g. 6-20")
     ap.add_argument("--book", action="store_true", help="use the uṣūl books' profiles (data/profiles.yaml)")
+    ap.add_argument("--vs-rows", action="store_true", help="where the book profiles and the rows of 2:1-20 disagree")
     a = ap.parse_args()
+    if a.vs_rows:
+        from mushaf_data.profiles import load
+        conflicts, unseen = vs_rows(load())
+        print(f"{len(conflicts)} conflicts (rows show a wajh the book doesn't give):")
+        for c in conflicts:
+            print("  ", *c)
+        print(f"{len(unseen)} book wujūh the passage's rows don't show:")
+        for u in unseen:
+            print("  ", *u)
+        return
     full, gaps, conflicts, feats = full_profiles(a.upto, book=a.book)
     if a.test:
         lo, hi = map(int, a.test.split("-"))

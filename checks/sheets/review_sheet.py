@@ -1,8 +1,8 @@
 """The review questions as pictures: for each box, the printed box beside the questions about it.
 
-    PYTHONPATH=../mushaf ../mushaf/.venv/bin/python -m spike.review_sheet   # spike/build/review-NN.png
+    PYTHONPATH=../mushaf ../mushaf/.venv/bin/python -m checks.sheets.review_sheet   # build/review-NN.png
 
-Reads spike/build/review.json (written by `python3 -m spike.review`).
+Reads build/review.json (written by `python3 -m checks.review`).
 """
 
 from __future__ import annotations
@@ -14,7 +14,8 @@ from collections import defaultdict
 
 import pymupdf
 
-from .rows import BUILD, FUTUH, PROJECTS, SOURCES
+from mushaf_data.paths import BUILD, ROOT, SOURCES
+from ..futuh.rows import FUTUH, MUSHAF, RUWAT
 
 FONT = SOURCES / "kfgqpc/mirror/hafs/hafs.18.ttf"
 NAMES = {
@@ -46,7 +47,7 @@ def fmt(ch: dict) -> str:
 
 
 def main() -> None:
-    sys.path.insert(0, str(PROJECTS / "mushaf"))
+    sys.path.insert(0, str(MUSHAF))
     from futuh.run import volume_pdf
 
     doc = pymupdf.open(volume_pdf(1))

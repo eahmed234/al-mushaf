@@ -1,6 +1,6 @@
 """Review sheet for the book profile table: each category's rows beside the book pages they cite.
 
-    PYTHONPATH=../mushaf ../mushaf/.venv/bin/python -m spike.review_profiles
+    PYTHONPATH=../mushaf ../mushaf/.venv/bin/python -m checks.sheets.review_profiles
 
 Writes build/profile_review.html (one file, pages embedded as JPEG). Each row can be marked
 right / wrong with a note; "Copy answers" gives JSON to paste back.
@@ -14,12 +14,13 @@ from pathlib import Path
 import pymupdf
 import yaml
 
-from .rows import RUWAT
+from mushaf_data.paths import BUILD, ROOT, SOURCES
+from ..futuh.rows import FUTUH, MUSHAF, RUWAT
 
-ROOT = Path(__file__).resolve().parent.parent
-BOOKS = ROOT / "books"
-OUT = Path(__file__).parent / "build" / "profile_review.html"
-TABLE = Path(__file__).parent / "data" / "profiles.yaml"
+from mushaf_data.paths import BOOKS, DATA
+
+OUT = BUILD / "profile_review.html"
+TABLE = DATA / "profiles.yaml"
 
 BOOK_NAMES = {"wafi": "الوافي", "idah": "الإيضاح", "budur": "البدور الزاهرة", "ghayth-1": "غيث النفع"}
 RAWI_AR = dict(zip(RUWAT, ["قالون", "ورش", "البزي", "قنبل", "الدوري (أبو عمرو)", "السوسي", "هشام",
@@ -205,7 +206,7 @@ ul {{ font:13px system-ui,sans-serif; direction:ltr; text-align:left; color:var(
 <button id="copy">Copy answers</button></header>
 <nav><a href="#durrah_rule">منهج الدرة</a>{nav}</nav>
 <main>
-<p class="intro">{n_cats} categories, {n_rows} rows from <code>spike/data/profiles.yaml</code>, each beside the
+<p class="intro">{n_cats} categories, {n_rows} rows from <code>data/profiles.yaml</code>, each beside the
 pages it cites (file page = printed page). Mark each row ✓ or ✗ and add a note where needed; marks are kept in
 this browser. "Copy answers" puts them on the clipboard as JSON to paste back to Claude.
 Pages from al-Īḍāḥ pp. 40–43 (the Durrah rule) are shown once, below.</p>

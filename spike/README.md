@@ -1,5 +1,9 @@
 # Reading-model spike
 
+> **Closed.** The code below is at the tag `spike-end` (`git checkout spike-end`). It now lives in
+> `mushaf_data/` (the engine), `checks/` and `data/`; the results are tests (`python3 -m unittest`,
+> see the top README). This file and `REPORT.md` are the record.
+
 Plan: `../docs/02-spike-reading-model.md`. Plain Python 3.12 with PyYAML (to read the book tables in ../mushaf/futuh/readers.yaml).
 
 Inputs (set up with `tools/fetch_sources.py` and `tools/build_spine.py`, see the top README):

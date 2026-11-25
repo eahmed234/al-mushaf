@@ -8,8 +8,9 @@ Last updated 2026-11-24 (after the books were pulled and the profile table built
 
 Two local git repos (no remotes, nothing pushed):
 
-- **`~/Projects/al-mushaf`** (this repo). Docs, and the reading-model spike in `spike/`
-  (Python 3.12 + PyYAML; commands in `spike/README.md`).
+- **`~/Projects/al-mushaf`** (this repo). Docs; the engine in `mushaf_data/`, checks in `checks/`,
+  facts in `data/`, tests in `tests/` (Python 3.12 + PyYAML; commands in the README). The spike's
+  code as reported is tagged `spike-end` (`spike/REPORT.md`).
 - **`~/Projects/mushaf`**: the al-Futūḥ al-Bāhira extractor (uv). `./rebuild.sh` rebuilds all six
   volumes in about 2.5 min; outputs go to `out/vol{1..6}.jsonl` (not tracked). `docs/known-gaps.md`
   logs every fix and open gap.
@@ -40,7 +41,7 @@ Two local git repos (no remotes, nothing pushed):
 | `data/constraints.yaml` | taḥrīr as allowed tuples, from the books (Warsh: badal × līn, badal × dhawāt al-yāʾ); `readings` filters combinations by it |
 | `data/profiles.yaml`, `book_profiles.py` | **uṣūl profiles from al-Wāfī and al-Īḍāḥ** (checked against al-Budūr, Ghayth al-Nafʿ, nQuran where they disagreed): 33 categories × 20 ruwāt, each row with page; `readings --book` uses them |
 
-Book profiles (2026-11-24), `spike/data/profiles.yaml`, 34 categories × 20 ruwāt (reviewed by Eisa):
+Book profiles (2026-11-24), `data/profiles.yaml`, 34 categories × 20 ruwāt (reviewed by Eisa):
 
 | Test | rows-learned | book table |
 | --- | --- | --- |
@@ -50,7 +51,7 @@ Book profiles (2026-11-24), `spike/data/profiles.yaml`, 34 categories × 20 ruw�
 
 (An earlier version of these numbers was wrong: a local variable in `full_profiles` shadowed the
 `book` flag, so every run used the book table. Fixed; the table above is after the fix.)
-`python3 -m spike.book_profiles --vs-rows` now shows one disagreement with the rows: Ruways's
+`python3 -m checks.futuh.readings --vs-rows` now shows one disagreement with the rows: Ruways's
 idghām at 2:20 (a place entry covers it). The remaining misses are 2:11 لَّهُمۡ (Hishām, al-Kisāʾī,
 Ruways), 2:13 قِيلَ (farsh), and Ḥamzah's ruwāt and Idrīs at 2:8 ٱلۡأَخِرِ (naql in waqf, not
 modelled). Extra readings now count a row's alternatives ("A * B * C"); what's left of them is mostly
@@ -73,7 +74,7 @@ tables; review list empty.
 - Where ṭuruq or commentators differ (ikhtilāf), the wajh is an app option with the book's
   preferred reading as default (first case: Idrīs's sakt). A kubrā version comes later.
 - al-Futūḥ prints the sakt form of ٱلۡأٓخِرِ as ٱلۡأَخِرِ (a print convention); row 10 at 2:11 has a
-  print error (a carried-over shadda), corrected in `spike/data/print_errors.yaml`.
+  print error (a carried-over shadda), corrected in `data/corrections/futuh_print_errors.yaml`.
 - Data layer (docs/05): subagents on the plan for now (no API billing); pilot bar 98%; farsh from
   al-Budūr first, al-Wāfī / al-Īḍāḥ second; this repo stands alone (no mushaflab dependency).
 - Glyph 135 is the tas-hīl dot; glyph 383 is lām-alif with maddah; #76923c is the imālah green.
@@ -95,10 +96,10 @@ tables; review list empty.
 
 1. ~~Pull the books~~, ~~build the profile table~~, ~~read the remaining bābs~~, ~~Eisa's review~~
    (all 160 rows right, 2026-11-24; notes applied: Warsh's tarbīʿ and badal × dhawāt al-yāʾ in
-   `spike/data/constraints.yaml`, dhawāt al-rāʾ split out as `imala_ya_ra`, Ibn Dhakwān's زَادَ as
+   `data/constraints.yaml`, dhawāt al-rāʾ split out as `imala_ya_ra`, Ibn Dhakwān's زَادَ as
    uṣūl with khulf (Eisa corrected an earlier "farsh"), imālah only at 2:10). New rows since the review (`imala_ya_ra`) are candidates.
    - Idrīs's sakt is an option (ikhtilāf; default none). A kubrā version comes later.
-   - **Waqf of Ḥamzah and Hishām: its own chapter, `spike/waqf.py`** (2026-11-24). Every form a
+   - **Waqf of Ḥamzah and Hishām: its own chapter, `mushaf_data/waqf.py`** (2026-11-24). Every form a
      stop allows, by the hamzah's position and seat, each rule citing al-Wāfī pp. 105–127 (and
      al-Budūr p. 34 for خَٰسِـِٔينَ): ibdāl, naql, idghām after wāw/yāʾ, tas-hīl after an alif with
      madd/qaṣr, the five qiyās forms after an alif at the end, rawm, the nine mutaḥarrik cases with
@@ -116,7 +117,7 @@ tables; review list empty.
      feature, not a text choice, in the spike.
    - Still not in the table (`not_read_yet`): Ḥamzah's naql and sakt in waqf, the rest of the
      rāʾāt and lāmāt exceptions.
-2. **Occurrence tables** (started 2026-11-24, imālah done). `spike/occurrences.py` reads al-Budūr's
+2. **Occurrence tables** (started 2026-11-24, imālah done). `mushaf_data/occurrences.py` reads al-Budūr's
    end-of-rubʿ "الممال" lists (complete for the ten; Ghayth al-Nafʿ's lists leave out word-list
    imālah like فَزَادَهُمُ, شَآءَ, ءَاذَانِهِمۡ), ties them to quarters of the Ḥafṣ spine (۞ items) by a
    monotonic alignment on their words and the commentary before them: **171 of 175 lists tied**,
@@ -154,10 +155,18 @@ tables; review list empty.
    hamzah (the spike doesn't stop on those with naql yet), madd degrees (wujūh are not degrees).
    Next for taḥrīr: read al-Budūr's and al-Ḍabbāʿ's taḥrīr beyond this passage as the occurrence
    work reaches further.
-5. ~~**Spike Day 5**~~ (done 2026-11-24): `spike/kfgqpc_check.py` (eight riwāyāt, 2,047 / 2,056
+5. ~~**Spike Day 5**~~ (done 2026-11-24): `checks/kfgqpc.py` (eight riwāyāt, 2,047 / 2,056
    words agree) and **`spike/REPORT.md`**, answering Q1–Q5 with the numbers, what didn't work,
    the format as it ended up, and what to change before building for real. The spike is closed;
    next is the data layer as its own thing (REPORT.md, "Before building for real").
+6. **Data layer** (docs/05). ~~Milestone 0~~ (done 2026-11-24): the spike split into
+   `mushaf_data/` (engine: generation takes farsh and the occurrence gate as inputs, so al-Futūḥ
+   is only a check), `checks/`, `data/`, and 25 `unittest` tests with the spike's numbers, each
+   with a planted error. The planted errors found: a profile row without a cite crashed the
+   loader instead of being reported (fixed); **shuffled imālah lists still tie 131 of 175
+   quarters**, so the tie count is weak evidence that a list sits on its own rubʿ (to tighten
+   in milestone 5). The KFGQPC check still takes its profiles from the al-Futūḥ merge.
+   Next: milestone 1, the pipeline and the subagent pilot.
 
 Also open, lower priority: 208 numbering irregularities in the extraction (`mushaf/docs/known-gaps.md`),
 the unreproduced pairs listed above, and the alkiraat.com contact message (typed in the form,

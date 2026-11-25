@@ -1,10 +1,10 @@
-"""Check spike.waqf against every waqf form al-Futūḥ prints for Ḥamzah's ruwāt and Hishām.
+"""Check mushaf_data.waqf against every waqf form al-Futūḥ prints for Ḥamzah's ruwāt and Hishām.
 
-    python3 -m spike.waqf_check [--show N] [--rawi hisham]
+    python3 -m checks.waqf_check [--show N] [--rawi hisham]
 
 Test set: rows of out/vol1-6.jsonl naming khalaf_an_hamzah, khallad or hisham whose label says
 waqf, with words coloured as waqf (#c00000); the first such word's spine id is the Ḥafṣ word.
-A row's forms are 'covered' when every form it prints is one spike.waqf generates.
+A row's forms are 'covered' when every form it prints is one mushaf_data.waqf generates.
 """
 import argparse
 import collections
@@ -13,24 +13,17 @@ import re
 from functools import lru_cache
 from pathlib import Path
 
-from .rows import SPINE
-from .text import normalize, clusters
-from .waqf import forms, forms_initial, is_hamza, PAUSE, TATWEEL, SUKUN
+from mushaf_data.paths import SPINE
 
-OUT = Path("/home/eahmed/Projects/mushaf/out")
+from .futuh.rows import MUSHAF
+from mushaf_data.spine import words as hafs_all
+from mushaf_data.text import normalize, clusters
+from mushaf_data.waqf import forms, forms_initial, is_hamza, PAUSE, TATWEEL, SUKUN
+
+OUT = MUSHAF / "out"  # al-Futūḥ vols 1-6, from ../mushaf
 
 
 @lru_cache(maxsize=1)
-def hafs_all() -> dict[str, str]:
-    out = {}
-    for line in SPINE.open():
-        it = json.loads(line)
-        if it["kind"] == "word":
-            cps = " ".join(cl["cps"] for cl in it["clusters"]).split()
-            out[it["id"]] = normalize("".join(chr(int(c[2:], 16)) for c in cps))
-    return out
-
-
 def key(w: str) -> str:
     """Comparison form: normalised; no pause signs, stretch tatweel or a final sukūn; the
     final letter's vowel kept (rawm forms differ by it)."""
@@ -116,11 +109,8 @@ def test_set():
             yield r["id"], who, target, h[target], texts, r["readers"], False
 
 
-def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--show", type=int, default=0)
-    ap.add_argument("--rawi", default=None)
-    a = ap.parse_args()
+def run(rawi_filter: str | None = None) -> dict:
+    """Every test row: are all the waqf forms it prints among the ones `forms` generates?"""
     n = covered = 0
     misses = []
     by_label = collections.Counter()
@@ -129,8 +119,8 @@ def main():
         if not any(is_hamza(c) for c in clusters(hafs)):
             skipped += 1  # the Ḥafṣ word has no hamzah: a farsh difference or a misaligned row
             continue
-        rawi = a.rawi if a.rawi in who else who[0]
-        if a.rawi and a.rawi not in who:
+        rawi = rawi_filter if rawi_filter in who else who[0]
+        if rawi_filter and rawi_filter not in who:
             continue
         gen = {key(t): lab for lab, t in (forms_initial(hafs, rawi) if initial else forms(hafs, rawi))}
         n += 1
@@ -149,6 +139,18 @@ def main():
                 by_label[gen[key(b)]] += 1
         else:
             misses.append((rid, rawi, target, hafs, miss, sorted(gen), re.sub(r"\s+", " ", label)[:90]))
+    return {"rows": n, "covered": covered, "skipped": skipped, "dot_lost": dot_lost, "end_before": end_before,
+            "misses": misses, "by_label": by_label}
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--show", type=int, default=0)
+    ap.add_argument("--rawi", default=None)
+    a = ap.parse_args()
+    r = run(a.rawi)
+    n, covered, skipped, dot_lost, end_before, misses, by_label = (
+        r[k] for k in ("rows", "covered", "skipped", "dot_lost", "end_before", "misses", "by_label"))
     print(f"{n} rows; all printed forms generated in {covered} ({covered / max(n, 1):.0%}); "
           f"{skipped} skipped (Ḥafṣ word without a hamzah); {dot_lost} differ only by a tas-hīl dot not extracted; "
           f"{end_before} only add a vowel to the last letter (naql from the next word, not this word's waqf)")

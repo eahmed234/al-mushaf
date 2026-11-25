@@ -1,12 +1,12 @@
 """Day 2: farsh places, found from the letters, and a farsh-only resolver.
 
-    python3 -m spike.farsh            # writes spike/build/farsh.json, prints a summary
-    python3 -m spike.farsh --show     # every place with its variants and readers, and each
+    python3 -m checks.farsh            # writes build/farsh.json, prints a summary
+    python3 -m checks.farsh --show     # every place with its variants and readers, and each
                                       # rawi's farsh-only differences from Hafs
 
 al-Futuh's colours can't be used to find farsh: its red also marks madd length, silah and
 Hamzah's waqf forms (see docs). Instead each word a row gives is classified against the Hafs
-word (`spike.diff`): what the uṣūl rules don't explain is a farsh residue. A farsh place is a
+word (`mushaf_data.diff`): what the uṣūl rules don't explain is a farsh residue. A farsh place is a
 word with a residue in some row. Its *variants* are the readings that differ in farsh (two
 rows whose words differ only in uṣūl are the same variant); each variant keeps the plainest
 word that carries it (fewest uṣūl kinds), and its readers.
@@ -19,8 +19,8 @@ import json
 import sys
 from dataclasses import dataclass, field
 
-from .diff import classify
-from .rows import BUILD, RUWAT, load_hafs
+from mushaf_data.diff import classify
+from .rows import BUILD, RUWAT, load_hafs, rows_path
 
 
 @dataclass
@@ -51,7 +51,7 @@ class Place:
 
 def load_places() -> tuple[dict[str, Place], dict[str, str]]:
     hafs = load_hafs()
-    rows = [json.loads(l) for l in (BUILD / "rows.jsonl").open()]
+    rows = [json.loads(l) for l in rows_path().open()]
 
     def texts(w):
         return w.get("alts") or [w["t"]]

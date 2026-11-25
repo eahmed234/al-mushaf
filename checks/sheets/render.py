@@ -6,7 +6,7 @@ own letter); here it is shaped as ZWNJ tatweel U+06EC ZWNJ (so neighbours keep t
 non-joining forms), the tatweel is not drawn, and it gets the width `dot_advance`; the dot is
 centred in that width at mid-letter height.
 
-    ../mushaf/.venv/bin/python -m spike.render "TEXT" out.png
+    ../mushaf/.venv/bin/python -m checks.sheets.render "TEXT" out.png
 """
 
 from __future__ import annotations
@@ -19,7 +19,8 @@ import pymupdf
 import uharfbuzz as hb
 from fontTools.pens.svgPathPen import SVGPathPen
 
-from .rows import PROJECTS, SOURCES
+from mushaf_data.paths import BUILD, ROOT, SOURCES
+from ..futuh.rows import FUTUH, MUSHAF, RUWAT
 
 DK = SOURCES / "digitalkhatt/digitalkhatt-js/hb-madina.otf"
 STANDALONE_DOT = "ـ۬"  # internal encoding of the book's standalone tas-hil dot

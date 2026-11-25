@@ -41,12 +41,12 @@ The reading model, as the spike left it:
 
 ```
 words         the Ḥafṣ spine (surah:ayah:word → text); to become riwāyah-neutral (docs/04)
-farsh         per place: the options and who reads each              (spike/farsh.py, from al-Futūḥ for now)
-profiles      rāwī × uṣūl category → wujūh, each row citing a page  (spike/data/profiles.yaml)
-occurrences   where a category applies: a detector + the books' lists (spike/usul.py, spike/occurrences.py)
-constraints   taḥrīr as allowed tuples over categories and features  (spike/data/constraints.yaml)
-place wujūh   wujūh tied to one place (Ruways at 2:20)               (spike/data/place_wujuh.yaml)
-waqf          Ḥamzah's and Hishām's stop on hamz, by rule            (spike/waqf.py)
+farsh         per place: the options and who reads each              (checks/futuh/farsh.py, from al-Futūḥ for now)
+profiles      rāwī × uṣūl category → wujūh, each row citing a page  (data/profiles.yaml)
+occurrences   where a category applies: a detector + the books' lists (mushaf_data/usul.py, mushaf_data/occurrences.py)
+constraints   taḥrīr as allowed tuples over categories and features  (data/constraints.yaml)
+place wujūh   wujūh tied to one place (Ruways at 2:20)               (data/place_wujuh.yaml)
+waqf          Ḥamzah's and Hishām's stop on hamz, by rule            (mushaf_data/waqf.py)
 reading       per word: text + the choices that made it (madd lengths, sakt, imālah…)
 ```
 
@@ -85,15 +85,15 @@ Decisions are Eisa's (for Eisa and Yusuf). Each is recorded where it applies.
 
 | Decision | Where |
 | --- | --- |
-| The book's standalone tas-hīl dot is stored as tatweel + U+06EC; drawn centred between its neighbours' ink, vowel above | `STATUS.md`, `spike/render.py` |
+| The book's standalone tas-hīl dot is stored as tatweel + U+06EC; drawn centred between its neighbours' ink, vowel above | `STATUS.md`, `checks/sheets/render.py` |
 | A bare "خلف" in al-Futūḥ is Khalaf ʿan Ḥamzah | `../mushaf/futuh/readers.yaml` |
-| "الجميع عدا من سيأتي / عدا أصحاب X" still covers a rāwī another row names for one wajh, for his other wajh (with khulf evidence) | `spike/profile.py` (`khulf_convention`) |
-| Ruways: no idghām kabīr except al-Īḍāḥ's places (khulf at 2:20) | `spike/data/place_wujuh.yaml` |
-| Ibn Dhakwān's زَادَ is uṣūl with khulf in the whole Qurʾān; imālah only at 2:10 (a place entry) | `spike/data/profiles.yaml`, `spike/data/place_wujuh.yaml` |
-| Ikhtilāf between ṭuruq is an **option**, book's preferred wajh first (Idrīs's sakt); data stays ṭarīq-aware for a later kubrā version | `spike/data/profiles.yaml` (`option: true`) |
-| The uṣūl profile table (160 rows) is right; notes applied: tarbīʿ, dhawāt al-rāʾ split out | `spike/data/profiles.yaml` (`review:`) |
-| Ḥamzah's and Hishām's waqf is its own chapter | `spike/waqf.py` |
-| al-Futūḥ prints the sakt form of ٱلۡأٓخِرِ as ٱلۡأَخِرِ (a convention); 2:11 row 10's shadda is a print error | `spike/readings.py` (`sakt_print`), `spike/data/print_errors.yaml` |
+| "الجميع عدا من سيأتي / عدا أصحاب X" still covers a rāwī another row names for one wajh, for his other wajh (with khulf evidence) | `checks/futuh/learn.py` (`khulf_convention`) |
+| Ruways: no idghām kabīr except al-Īḍāḥ's places (khulf at 2:20) | `data/place_wujuh.yaml` |
+| Ibn Dhakwān's زَادَ is uṣūl with khulf in the whole Qurʾān; imālah only at 2:10 (a place entry) | `data/profiles.yaml`, `data/place_wujuh.yaml` |
+| Ikhtilāf between ṭuruq is an **option**, book's preferred wajh first (Idrīs's sakt); data stays ṭarīq-aware for a later kubrā version | `data/profiles.yaml` (`option: true`) |
+| The uṣūl profile table (160 rows) is right; notes applied: tarbīʿ, dhawāt al-rāʾ split out | `data/profiles.yaml` (`review:`) |
+| Ḥamzah's and Hishām's waqf is its own chapter | `mushaf_data/waqf.py` |
+| al-Futūḥ prints the sakt form of ٱلۡأٓخِرِ as ٱلۡأَخِرِ (a convention); 2:11 row 10's shadda is a print error | `checks/futuh/readings.py` (`sakt_print`), `data/corrections/futuh_print_errors.yaml` |
 | Finish the spike (Day 5) before building out sources | `spike/REPORT.md` |
 | Waqf marks are per edition; features are marked, colour optional; the word spine becomes riwāyah-neutral | [`docs/04-scope-decisions.md`](docs/04-scope-decisions.md) |
 
@@ -112,57 +112,74 @@ redistributable, so they stay there); everything else runs without it.
 
 ## The code
 
-Plain Python 3.12 + PyYAML. Scripts that render or read PDFs use the extractor's environment
-(`PYTHONPATH=../mushaf ../mushaf/.venv/bin/python`) for pymupdf and HarfBuzz.
+Plain Python 3.12 + PyYAML; tests use the standard library's `unittest`. Scripts that render or
+read PDFs use the extractor's environment (`PYTHONPATH=.:../mushaf ../mushaf/.venv/bin/python`)
+for pymupdf and HarfBuzz.
 
-### `spike/`: the reading model and its checks
+The spike's code was split into the engine and its checks on 2026-11-24 (milestone 0 of
+docs/05); the spike as reported is tagged `spike-end`.
+
+### `mushaf_data/`: the engine (no al-Futūḥ)
 
 | File | Does |
 | --- | --- |
+| `paths.py`, `ruwat.py` | where things are; the twenty ruwāt and their qurrāʾ |
 | `text.py` | one internal encoding for Qurʾānic text (`normalize`, `clusters`) |
-| `rows.py` | loads al-Futūḥ's rows for the passage, rebuilds elided ("…") rows, applies print errors; the Ḥafṣ spine |
+| `spine.py` | the Ḥafṣ word spine from `sources/` (whole Qurʾān, and the spike's passage) |
 | `diff.py` | classifies how a word differs from Ḥafṣ (madd, ṣilah, imālah, idghām, hamz, sakt, style; the rest is farsh) |
-| `farsh.py` | farsh places and variants from the rows (11 places in the passage) |
 | `usul.py` | **detectors and transforms** per uṣūl category: where each applies, and what each wajh does to the text; `WUJUH` lists the categories |
-| `book_profiles.py` | loads `data/profiles.yaml`, expands it to every rāwī, applies the Durrah's aṣl rule; `--vs-rows` compares with the rows |
-| `readings.py` | **generation**: farsh, then uṣūl choices (text and features) under the constraints, per stop context; `compare` checks every row; `--book` uses the book profiles |
-| `profile.py` | learning from rows (the spike's first approach), stop contexts, the occurrence gate |
+| `profiles.py` | loads `data/profiles.yaml` (every category covers the twenty once, every row cites a page) and `data/place_wujuh.yaml` |
+| `constraints.py` | taḥrīr: `allowed(rawi, choice)`, and `validate()` for `data/constraints.yaml` |
 | `waqf.py` | Ḥamzah's and Hishām's waqf forms by the hamzah's position and seat, rasm forms, هَٰٓؤُلَآءِ |
 | `occurrences.py` | al-Budūr's per-rubʿ imālah lists tied to the spine; the imālah gate (al-Wāfī's exceptions) |
-| `waqf_check.py` | checks `waqf.py` against every waqf form in al-Futūḥ vols 1–6 |
-| `kfgqpc_check.py` | checks generation against KFGQPC's eight riwāyāt |
-| `review_profiles.py` | the review sheet: each profile category beside the pages it cites |
-| `review.py`, `review_sheet.py`, `sheet.py` | review lists and side-by-side pictures of al-Futūḥ's boxes |
-| `render.py`, `dot_sheet.py`, `dot_options.py` | preview renderer (HarfBuzz + DigitalKhatt) and the tas-hīl dot work |
+| `generate.py` | **generation**: farsh, then uṣūl choices (text and features) under the constraints, per stop context. Farsh and the occurrence gate are inputs until the data layer has them |
 
-### `spike/data/`: the data
+### `checks/`: the engine against other sources
+
+| File | Does |
+| --- | --- |
+| `futuh/rows.py` | al-Futūḥ's rows for the passage (from `../mushaf`), elided rows rebuilt, print errors corrected; `build/rows.jsonl` |
+| `futuh/farsh.py`, `futuh/learn.py` | the stand-ins: farsh and the occurrence gate from the rows; profiles learned from rows (the spike's first approach) |
+| `futuh/readings.py` | `check()`: every row/rāwī pair reproduced? label features, extra readings |
+| `futuh/review.py` | extra readings and misses, for review |
+| `waqf.py` | the waqf chapter against every waqf form in al-Futūḥ vols 1–6 |
+| `kfgqpc.py` | generation against KFGQPC's eight riwāyāt, word by word |
+| `sheets/` | side-by-side pictures and the profile review sheet (`review_profiles.py`); the preview renderer (HarfBuzz + DigitalKhatt) and the tas-hīl dot work |
+
+### `data/`: the facts
 
 | File | Holds |
 | --- | --- |
 | `profiles.yaml` | 35 categories × 20 ruwāt: wujūh, page citation, conditions, place exceptions, options; reviewed |
 | `constraints.yaml` | taḥrīr tuples (tarbīʿ, badal × dhawāt al-yāʾ, badal × ʿāriḍ, Khallād's sakt × stop…), each cited, enforced or not |
 | `place_wujuh.yaml` | wujūh tied to one place |
-| `print_errors.yaml` | al-Futūḥ print errors Eisa confirmed, corrected on load |
+| `corrections/futuh_print_errors.yaml` | al-Futūḥ print errors Eisa confirmed, corrected on load |
 
 ### `tools/`
 
-`fetch_books.py` and `books.tsv` (the book list), `book.py` (page reader and search).
+`fetch_sources.py` and `sources.tsv` (texts and fonts), `build_spine.py` (the Ḥafṣ spine),
+`fetch_books.py` and `books.tsv` (the books), `book.py` (page reader and search).
 
-### Running the checks
+### Tests and checks
 
 ```bash
-python3 -m spike.rows                               # rebuild the passage's rows (spike/build/rows.jsonl)
-python3 -m spike.readings --upto 20 --book          # every row of 1:1–2:20, book profiles
-python3 -m spike.readings --upto 0 --test 1-20 --book   # from the books alone
-python3 -m spike.readings --upto 5 --test 6-20 --book   # unseen ayahs
-python3 -m spike.book_profiles                      # the profile table, expanded
-python3 -m spike.waqf_check                         # waqf chapter vs al-Futūḥ vols 1–6
-python3 -m spike.kfgqpc_check                       # vs KFGQPC's eight riwāyāt
-python3 -m spike.occurrences                        # imālah lists vs detectors, whole Qurʾān
-PYTHONPATH=../mushaf ../mushaf/.venv/bin/python -m spike.review_profiles   # review sheet (HTML)
+python3 -m unittest                                 # everything (about a minute); skips what isn't set up
+python3 -m unittest tests.test_data tests.test_engine   # the data and the engine alone (seconds)
 ```
 
-All of them finish in seconds. Full list: [`spike/README.md`](spike/README.md).
+Each test has a twin that plants an error (a wrong profile row, a missing constraint, a changed
+word, a broken waqf rule, shuffled lists) and checks that it's caught. Tests that need
+`../mushaf` or `books/` skip without them. The checks also run on their own:
+
+```bash
+python3 -m checks.futuh.readings --upto 20 --book          # every row of 1:1–2:20: 674/676
+python3 -m checks.futuh.readings --upto 0 --test 1-20 --book   # from the books alone: 661/666
+python3 -m checks.waqf                                     # waqf chapter vs al-Futūḥ vols 1–6: 806/871
+python3 -m checks.kfgqpc                                   # vs KFGQPC's eight riwāyāt: 2,047/2,056
+python3 -m mushaf_data.occurrences                         # imālah lists vs detectors: 171/175 tied
+python3 -m mushaf_data.profiles                            # the profile table, expanded
+PYTHONPATH=.:../mushaf ../mushaf/.venv/bin/python -m checks.sheets.review_profiles   # review sheet (HTML)
+```
 
 ## How we work
 

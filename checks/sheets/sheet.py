@@ -1,7 +1,7 @@
 """Side-by-side check of rebuilt rows: the printed rows (this one and the one above) next to the
 full text the spike rebuilt. Quoted words black, inherited words grey, alternatives in braces.
 
-    python3 -m spike.sheet ROW_ID [ROW_ID ...]   # writes spike/build/sheet.png
+    python3 -m checks.sheet ROW_ID [ROW_ID ...]   # writes build/sheet.png
 """
 
 from __future__ import annotations
@@ -13,10 +13,11 @@ from pathlib import Path
 
 import pymupdf
 
-from .rows import BUILD, FUTUH, PROJECTS, SOURCES
+from mushaf_data.paths import BUILD, ROOT, SOURCES
+from ..futuh.rows import FUTUH, MUSHAF, RUWAT
 
 FONT = SOURCES / "kfgqpc/mirror/hafs/hafs.18.ttf"
-PDF_DIR = PROJECTS / "mushaf"
+PDF_DIR = MUSHAF
 
 
 def main(ids: list[str]) -> None:

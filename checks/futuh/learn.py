@@ -1,7 +1,7 @@
 """Day 3: learn each rawi's uṣūl profile from al-Futuh's rows, then generate readings from it
 and compare them with the book.
 
-    python3 -m spike.profile [--upto AYAH] [--show]
+    python3 -m checks.profile [--upto AYAH] [--show]
 
 For every row, every combination of wujūh for the text-changing categories in the row's span is
 applied to the Hafs words; the combinations that give exactly the row's text are kept. Each
@@ -18,11 +18,10 @@ import json
 import re
 from collections import defaultdict
 
-from .diff import classify
-from .rows import BUILD, RUWAT, load_hafs
-from .usul import FEATURE_ONLY, WUJUH, apply, detect
-
-TEXT_CATS = [c for c in WUJUH if c not in FEATURE_ONLY]
+from mushaf_data.diff import classify
+from .rows import BUILD, RUWAT, load_hafs, rows_path
+from mushaf_data.generate import TEXT_CATS, context, contexts
+from mushaf_data.usul import WUJUH, apply, detect
 
 
 def same(a: str, b: str, pausal_ok: bool, first: bool = False) -> bool:
@@ -62,7 +61,7 @@ def _madd_groups(rows: list[dict]) -> None:
 def rows_in(upto: int, start: int = 1) -> list[dict]:
     """Rows whose words all lie in al-Baqarah start..upto."""
     out = []
-    for l in (BUILD / "rows.jsonl").open():
+    for l in rows_path().open():
         r = json.loads(l)
         ids = [w["id"] for w in r["words"] if w["id"] and w["id"][0].isdigit()]
         if ids and all(i.startswith("2:") and start <= int(i.split(":")[1]) <= upto for i in ids):
@@ -157,35 +156,6 @@ def farsh_texts() -> dict[str, dict[str, str]]:
     return _FARSH
 
 
-def context(span: list[str], hafs: dict[str, str], text: dict[str, str] | None = None):
-    """The span's words plus the next word of the mushaf (context only, never compared), and the
-    stop: the span's last word if the quote ends an ayah (where the book shows pausal forms),
-    else None (the reading goes on: silah, idgham and naql still look ahead)."""
-    text = text or hafs
-    words = [(i, text[i]) for i in span]
-    if not span:
-        return words, None
-    order = list(hafs)
-    k = order.index(span[-1])
-    nxt = order[k + 1] if k + 1 < len(order) else None
-    if nxt and nxt.split(":")[:2] == span[-1].split(":")[:2]:
-        return words + [(nxt, text[nxt])], None
-    return words, span[-1]  # the quote ends an ayah: a stop
-
-
-PAUSE_SIGNS = set("\u06d6\u06d7\u06d8\u06d9\u06da\u06db")
-
-
-def contexts(span: list[str], hafs: dict[str, str], text: dict[str, str] | None = None):
-    """Every way the span can be read: at a pause sign the reader may stop or go on, and the book
-    shows either (2:7:6 سَمۡعِهِمُۥۖ goes on; 2:20:19 وَأَبۡصَٰرِهِمۡۚ stops)."""
-    words, stop = context(span, hafs, text)
-    out = [(words, stop)]
-    if span and stop is None and PAUSE_SIGNS & set(hafs[span[-1]]):
-        out.append((words[: len(span)], span[-1]))
-    return out
-
-
 _CLAIMED: dict[str, dict[str, set[str]]] | None = None
 # a category's claim needs its own colour where al-Futuh's key gives one (vol. 1 p. 12)
 CAT_COLOURS = {"silah_mim": {"sila_mim"}, "silah_mim_hamza": {"sila_mim"}, "imala_ra": {"imala_taqlil", "unmapped"},
@@ -200,7 +170,7 @@ def claimed(segment: str, cat: str | None = None) -> set[str]:
     global _CLAIMED
     if _CLAIMED is None:
         _CLAIMED = {}
-        for l in (BUILD / "rows.jsonl").open():
+        for l in rows_path().open():
             r = json.loads(l)
             seg = _CLAIMED.setdefault(r["segment"], {})
             for w in r["words"]:
@@ -211,7 +181,7 @@ def claimed(segment: str, cat: str | None = None) -> set[str]:
     return set().union(*(ws for c, ws in seg.items() if wanted is None or c in wanted)) if seg else set()
 
 
-# which kind of difference (spike.diff) each category makes in a word's text
+# which kind of difference (mushaf_data.diff) each category makes in a word's text
 CAT_KIND = {"munfasil": "madd", "silah_mim": "silah", "silah_mim_hamza": "silah", "silah_ha": "silah",
             "ibdal_sakin": "hamz", "ibdal_sakin_waqf": "hamz", "naql": "hamz", "naql_word": "hamz",
             "hamzatayn": "hamz", "hamzatayn_waqf": "hamz", "hamz_waqf_final": "hamz", "hamz_waqf_mid": "hamz",
@@ -228,7 +198,7 @@ def reviewed(cat: str, word: str, nxt: str | None = None) -> bool:
     if _REVIEWED is None:
         hafs = load_hafs()
         _REVIEWED = set()
-        for l in (BUILD / "rows.jsonl").open():
+        for l in rows_path().open():
             for w in json.loads(l)["words"]:
                 if w["id"] in hafs:
                     for t in w.get("alts") or [w["t"]]:
@@ -239,8 +209,8 @@ def reviewed(cat: str, word: str, nxt: str | None = None) -> bool:
         return True
     if cat.startswith("imala_"):
         # the books' rule, not the rows: every detected place except the five words al-Wāfī
-        # excepts (pp. 142-143); al-Budūr's per-rubʿ lists check it (spike.occurrences)
-        from .occurrences import imala_excluded
+        # excepts (pp. 142-143); al-Budūr's per-rubʿ lists check it (mushaf_data.occurrences)
+        from mushaf_data.occurrences import imala_excluded
         return not imala_excluded(load_hafs().get(word, ""), word)
     return (kind, word) in _REVIEWED or (cat.startswith("idgham") and (kind, nxt) in _REVIEWED)
 

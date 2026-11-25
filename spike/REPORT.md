@@ -1,5 +1,8 @@
 # Reading-model spike: report
 
+> Paths below are as of the tag `spike-end`. The code has since moved to `mushaf_data/` (the
+> engine), `checks/` (al-Futūḥ, KFGQPC) and `data/`, with the same results as tests (README).
+
 2026-11-24. Passage: al-Fātiḥah and al-Baqarah 1–20, all twenty ruwāt of the Shāṭibiyyah and the
 Durrah. The question (docs/02-spike-reading-model.md): can one data format — farsh places, uṣūl
 profiles and occurrences, taḥrīr constraints — produce every valid reading of a passage for any

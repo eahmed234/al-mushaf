@@ -1,8 +1,8 @@
 """Day 1: load the Hafs words and al-Futuh's rows for the passage, rebuild elided rows into
 full readings, and normalise the encoding.
 
-    python3 -m spike.rows           # writes spike/build/rows.jsonl and prints a summary
-    python3 -m spike.rows --show    # also prints every row as full text with its ruwat
+    python3 -m checks.futuh.rows           # writes build/rows.jsonl and prints a summary
+    python3 -m checks.futuh.rows --show    # also prints every row as full text with its ruwat
 
 How elided rows are rebuilt (al-Futuh's jam' convention, read from usage, not stated in the
 book): a row whose quote starts with "..." repeats the row above it in the same segment and
@@ -22,58 +22,21 @@ from dataclasses import dataclass, field
 from functools import lru_cache
 from pathlib import Path
 
-from .text import drop_shadda_first, normalize
+from mushaf_data.text import drop_shadda_first, normalize
 
-HERE = Path(__file__).resolve().parent
-PROJECTS = HERE.parents[1]
-SOURCES = HERE.parent / "sources"  # tools/fetch_sources.py + tools/build_spine.py
-SPINE = SOURCES / "spine/hafs.jsonl"
-FUTUH = PROJECTS / "mushaf/out/vol1.jsonl"
-BUILD = HERE / "build"
+from mushaf_data.paths import BUILD, DATA, ROOT, SPINE
+from mushaf_data.ruwat import RUWAT
+from mushaf_data.spine import in_passage, wid
+from mushaf_data.spine import passage as load_hafs
 
-RUWAT = [  # the 20, in the qurra' order
-    "qalun", "warsh", "bazzi", "qunbul", "duri_abuamr", "susi", "hisham", "ibn_dhakwan",
-    "shuba", "hafs", "khalaf_an_hamzah", "khallad", "abul_harith", "duri_kisai",
-    "ibn_wardan", "ibn_jammaz", "ruways", "rawh", "ishaq", "idris",
-]
+# al-Futūḥ's rows come from the extractor in ../mushaf (optional: only the checks need it; its
+# output can't be copied here because the book isn't redistributable)
+MUSHAF = ROOT.parent / "mushaf"
+FUTUH = MUSHAF / "out/vol1.jsonl"
 
 
-def in_passage(surah: int, ayah: int) -> bool:
-    return surah == 1 or (surah == 2 and ayah <= 20)
-
-
-def wid(s: str) -> tuple[int, int, int]:
-    a, b, c = s.split(":")
-    return int(a), int(b), int(c)
-
-
-# ---------------------------------------------------------------------------------------------
-# Hafs words
-
-
-@lru_cache(maxsize=1)
-def load_hafs() -> dict[str, str]:
-    """Word id -> normalised Hafs text, for the passage, in Qur'an order (cached: treat as
-    read-only)."""
-    out: dict[str, str] = {}
-    for line in SPINE.open():
-        it = json.loads(line)
-        if it["kind"] != "word":
-            continue
-        s, a, _ = wid(it["id"])
-        if not in_passage(s, a):
-            continue
-        cps = " ".join(cl["cps"] for cl in it["clusters"]).split()
-        out[it["id"]] = normalize("".join(chr(int(c[2:], 16)) for c in cps))
-    # The basmalah before al-Baqarah: not a word of the surah, but recited at the junction.
-    # Same text as 1:1; ordered between 1:7 and 2:1.
-    ordered: dict[str, str] = {}
-    for k, v in out.items():
-        if k == "2:1:1":
-            for n in range(1, 5):
-                ordered[f"B:2:{n}"] = out[f"1:1:{n}"]
-        ordered[k] = v
-    return ordered
+def available() -> bool:
+    return FUTUH.exists()
 
 
 # ---------------------------------------------------------------------------------------------
@@ -252,7 +215,7 @@ def load_rows() -> list[Row]:
 def _print_errors() -> dict[str, list[dict]]:
     import yaml
     out: dict[str, list[dict]] = {}
-    for e in yaml.safe_load((Path(__file__).parent / "data" / "print_errors.yaml").read_text()) or []:
+    for e in yaml.safe_load((DATA / "corrections" / "futuh_print_errors.yaml").read_text()) or []:
         out.setdefault(e["row"], []).append(e)
     return out
 
@@ -325,10 +288,11 @@ def ruwat_text(r: Row) -> str:
     return "?"
 
 
-def main() -> None:
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--show", action="store_true")
-    a = ap.parse_args()
+ROWS = BUILD / "rows.jsonl"
+
+
+def write_rows() -> list[Row]:
+    """Load the passage's rows, rebuild elided ones, write build/rows.jsonl."""
     hafs = load_hafs()
     rows = load_rows()
     rebuild(rows, hafs)
@@ -341,6 +305,22 @@ def main() -> None:
                 "flags": r.flags, "words": [{"id": w.id, "t": w.t, "src": w.src, **({"alts": w.alts} if w.alts else {}),
                            **({"classes": w.classes} if w.classes else {})} for w in r.full],
             }, ensure_ascii=False) + "\n")
+    return rows
+
+
+def rows_path() -> Path:
+    """build/rows.jsonl, rebuilt when al-Futūḥ's output, the corrections or the spine are newer."""
+    deps = [FUTUH, DATA / "corrections" / "futuh_print_errors.yaml", SPINE, Path(__file__)]
+    if not ROWS.exists() or any(d.stat().st_mtime > ROWS.stat().st_mtime for d in deps):
+        write_rows()
+    return ROWS
+
+
+def main() -> None:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--show", action="store_true")
+    a = ap.parse_args()
+    rows = write_rows()
     if a.show:
         seg = None
         for r in rows:

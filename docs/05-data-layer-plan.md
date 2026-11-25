@@ -20,14 +20,15 @@ Eisa's time goes only to what the sources disagree on.
 data/
   spine/          riwāyah-neutral word slots (Ḥafṣ ids + added slots, docs/04)
   farsh/          per surah: places, options (text per slot), readers, cites
-  profiles.yaml   from spike/data (reviewed)
+  profiles.yaml   reviewed (from the spike)
   occurrences/    per category: the places a rule applies to, from the books' lists
-  constraints/    taḥrīr tuples, cited
-  waqf/           Ḥamzah/Hishām (rules from spike/waqf.py) + rasm word lists
+  constraints.yaml taḥrīr tuples, cited (a folder once it grows)
+  waqf/           Ḥamzah/Hishām rasm word lists (the rules are code: mushaf_data/waqf.py)
   marks/          pause signs per edition (Madinah, IndoPak, Habṭī)
   counts/         ayah ends per riwāyah's count
   corrections/    print errors in the checks' sources (Eisa-confirmed)
-mushaf_data/      the engine: load, generate, explain (ported from spike/, with tests)
+mushaf_data/      the engine: load, generate, explain (ported from the spike)
+checks/           the engine against al-Futūḥ (../mushaf, optional) and KFGQPC; review sheets
 pipeline/         extraction jobs: prompts, batch runner, validators, review sheets
 tests/            the spike's checks as tests, plus a planted error for each
 ```
@@ -118,7 +119,7 @@ plus the checks, means only disagreements reach him.
 
 | # | Milestone | Done when |
 | --- | --- | --- |
-| 0 | **Package skeleton**: `mushaf_data/` and `tests/` from the spike (encoding, detectors, transforms, waqf, generation); `data/` from `spike/data` | the spike's checks pass as tests, each with a planted error caught |
+| 0 | ~~**Package skeleton**~~ (done 2026-11-24): `mushaf_data/`, `checks/`, `data/`, `tests/` from the spike | the spike's checks pass as tests, each with a planted error caught: 25 tests, same numbers |
 | 1 | **Pipeline + pilot**: `pipeline/` (prompt, schema, batch runner, validators, review sheet); the model pilot | model chosen, token cost measured, Eisa approves the sheet format |
 | 2 | **Farsh, al-Baqarah**: al-Budūr + al-Wāfī/al-Īḍāḥ, agreed against al-Futūḥ and KFGQPC | every place of al-Baqarah has options for all twenty; disagreements reviewed |
 | 3 | **Spine**: riwāyah-neutral slots from the farsh that adds or drops words | Ḥafṣ is one projection; KFGQPC's eight align without gaps |

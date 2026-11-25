@@ -1,6 +1,6 @@
 """Day 3: uṣūl as rules. Detectors find where a category applies in the Hafs text; each wajh is
 a transform of the word (and sometimes its neighbour). Profiles (which wujūh a rawi has) are not
-written here: they are learned from al-Futuh's rows (`spike.profile`).
+written here: they are learned from al-Futuh's rows (`checks.futuh.learn`).
 
 Categories that change the written text (the ones a text comparison can check):
 

@@ -1,6 +1,6 @@
 """Ways to write the book's standalone tas-hil dot, rendered beside the print.
 
-    PYTHONPATH=../mushaf ../mushaf/.venv/bin/python -m spike.dot_options
+    PYTHONPATH=../mushaf ../mushaf/.venv/bin/python -m checks.sheets.dot_options
 """
 
 from __future__ import annotations
@@ -11,7 +11,8 @@ import sys
 
 import pymupdf
 
-from .rows import BUILD, FUTUH, PROJECTS, SOURCES
+from mushaf_data.paths import BUILD, ROOT, SOURCES
+from ..futuh.rows import FUTUH, MUSHAF, RUWAT
 
 FONTS = {
     "KFGQPC Hafs v18": SOURCES / "kfgqpc/mirror/hafs/hafs.18.ttf",
@@ -28,7 +29,7 @@ OPTIONS = [
 
 
 def main() -> None:
-    sys.path.insert(0, str(PROJECTS / "mushaf"))
+    sys.path.insert(0, str(MUSHAF))
     from futuh.run import volume_pdf
 
     doc = pymupdf.open(volume_pdf(1))
