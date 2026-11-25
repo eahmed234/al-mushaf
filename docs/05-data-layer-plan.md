@@ -121,7 +121,7 @@ plus the checks, means only disagreements reach him.
 | --- | --- | --- |
 | 0 | ~~**Package skeleton**~~ (done 2026-11-24): `mushaf_data/`, `checks/`, `data/`, `tests/` from the spike | the spike's checks pass as tests, each with a planted error caught: 25 tests, same numbers |
 | 1 | **Pipeline + pilot** (built 2026-11-25, `pipeline/PILOT.md`): `pipeline/` (prompt, schema, packer, validator, gold set, scorer, review sheet); the model pilot | done 2026-11-25: Sonnet 5.5 (farsh 100% in every run, uṣūl ~93%, against the gold set Eisa reviewed); ~13–16k tokens a page; sheet format used for Eisa's review |
-| 2 | **Farsh, al-Baqarah**: al-Budūr + al-Wāfī/al-Īḍāḥ, agreed against al-Futūḥ and KFGQPC | every place of al-Baqarah has options for all twenty; disagreements reviewed |
+| 2 | **Farsh, al-Baqarah** (started 2026-11-25): al-Budūr extracted (147 places), checked against KFGQPC (304 agree, 72 words disagree); second reading from al-Wāfī/al-Īḍāḥ for the disputed words only | every place of al-Baqarah has options for all twenty; disagreements reviewed |
 | 3 | **Spine**: riwāyah-neutral slots from the farsh that adds or drops words | Ḥafṣ is one projection; KFGQPC's eight align without gaps |
 | 4 | **Farsh, the rest**, surah by surah in batches | as milestone 2, whole Qurʾān |
 | 5 | **Occurrences**: "المدغم" lists, naql, the hamz categories, hāʾ al-taʾnīth; the row gate removed | each category's table checked against al-Futūḥ book-wide |

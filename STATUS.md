@@ -180,6 +180,16 @@ tables; review list empty.
    one instruction defect it found itself (bare "خلف" in a statement about Ḥamzah is Khalaf ʿan
    Ḥamzah) fixed. Decision: Sonnet for milestone 2 (farsh, al-Baqarah); uṣūl rows only check the
    reviewed profile table.
+   Milestone 2 started (2026-11-25): al-Budūr pp. 26–58 extracted by three Sonnet subagents
+   (1,072 rows, 0 rejected, ~630k tokens); with the reviewed gold for pp. 16–25,
+   `data/farsh/002.yaml` has **147 farsh places** for al-Baqarah, 3 flagged for coverage
+   (two points in one statement). Checked against KFGQPC's seven other riwāyāt
+   (`checks/farsh.py`, spelling conventions folded): 304 (word, rāwī) pairs agree; 39 words where
+   KFGQPC differs and the table doesn't say so (mostly a farsh the book states once and doesn't
+   restate: وهو/فهو, خطوات, يأمركم; and uṣūl the differ can't fold), 33 the other way (mostly
+   hamz farsh the differ calls uṣūl: هزوا، النبيين، الصابئين). Report: `python3 -m checks.farsh
+   --report` → build/farsh_check_002.md. The al-Futūḥ check is too noisy over the whole surah
+   until it compares with the engine's full readings (needs occurrence tables, milestone 5).
 
 Also open, lower priority: 208 numbering irregularities in the extraction (`mushaf/docs/known-gaps.md`),
 the unreproduced pairs listed above, and the alkiraat.com contact message (typed in the form,

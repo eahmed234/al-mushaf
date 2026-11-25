@@ -187,12 +187,13 @@ def _junction_basmalah(rows: list[dict]) -> None:
                     w["spine"] = f"B:{surah}:{wid(w['spine'])[2]}"
 
 
-def load_rows() -> list[Row]:
+def load_rows(pred=in_passage) -> list[Row]:
+    """al-Futūḥ's rows whose ayahs `pred(surah, ayah)` accepts (default: the spike's passage)."""
     rows = []
     raw = []
     for line in FUTUH.open():
         r = json.loads(line)
-        if r["type"] == "row" and any(in_passage(a["surah"], a["ayah"]) for a in r.get("ayahs", [])):
+        if r["type"] == "row" and any(a.get("surah") and a.get("ayah") and pred(a["surah"], a["ayah"]) for a in r.get("ayahs", [])):
             raw.append(r)
     _junction_basmalah(raw)
     for r in raw:
