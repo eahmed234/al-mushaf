@@ -18,7 +18,8 @@ review:
   # His notes, applied here or in data/constraints.yaml:
   #   badal and lin_hamz (Warsh): tarbīʿ → constraints.yaml (al-Ḍabbāʿ pp. 201-202)
   #   imala_ya (Abū ʿAmr): his rule is under dhawāt al-rāʾ → split out as imala_ya_ra
-  #   imala_zad (Ibn Dhakwān): treat as farsh
+  #   imala_zad (Ibn Dhakwān): first treated as farsh; Eisa 2026-11-24: he has khulf in the whole
+  #   Qurʾān, so it is uṣūl (fatḥ and imālah), with imālah only at 2:10 (a place entry)
   #   waqf of Ḥamzah and Hishām: needs its own chapter with its exceptions (STATUS next steps)
   status: reviewed
   by: Eisa
@@ -215,7 +216,7 @@ categories:
 
   imala_zad:  # past زَادَ
     - {who: [khalaf_an_hamzah, khallad], wujuh: [imala], cite: wafi 150}
-    - {who: [ibn_dhakwan], wujuh: [fath], cite: wafi 151, place: "farsh for him (Eisa): imālah at فَزَادَهُمُ ٱللَّهُ مَرَضٗا (2:10), the first in the Qurʾān; fatḥ and imālah at the other places (data/place_wujuh.yaml)"}
+    - {who: [ibn_dhakwan], wujuh: [fath, imala], cite: wafi 151, place: "imālah only at فَزَادَهُمُ ٱللَّهُ مَرَضٗا (2:10), the first in the Qurʾān (data/place_wujuh.yaml); khulf at every other place, so uṣūl (Eisa 2026-11-24)"}
     - {who: rest7, wujuh: [fath], cite: wafi 150-151}
     - {who: [ishaq, idris], wujuh: [fath], cite: idah 141-142}
     - {who: [ibn_wardan, ibn_jammaz], wujuh: [fath], cite: idah 144}

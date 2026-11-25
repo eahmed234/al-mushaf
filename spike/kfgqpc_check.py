@@ -22,7 +22,7 @@ from pathlib import Path
 from .readings import full_profiles, generate, confirmed_occurrences
 from .rows import load_hafs
 
-MIRROR = Path("/home/eahmed/Projects/mushaflab/data/sources/raw/kfgqpc/mirror")
+MIRROR = Path(__file__).resolve().parent.parent / "sources/kfgqpc/mirror"
 FILES = {"hafs": "hafs/hafsData_v18.json", "shuba": "shouba/ShoubaData08.json",
          "warsh": "warsh/warshData_v10.json", "qalun": "qaloon/QaloonData_v10.json",
          "bazzi": "bazzi/BazziData_v07.json", "qunbul": "qumbul/QumbulData_v07.json",

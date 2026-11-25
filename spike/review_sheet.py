@@ -14,9 +14,9 @@ from collections import defaultdict
 
 import pymupdf
 
-from .rows import BUILD, FUTUH, PROJECTS
+from .rows import BUILD, FUTUH, PROJECTS, SOURCES
 
-FONT = PROJECTS / "mushaflab/data/sources/raw/kfgqpc/mirror/hafs/hafs.18.ttf"
+FONT = SOURCES / "kfgqpc/mirror/hafs/hafs.18.ttf"
 NAMES = {
     "qalun": "Qālūn", "warsh": "Warsh", "bazzi": "al-Bazzī", "qunbul": "Qunbul", "duri_abuamr": "al-Dūrī (Abū ʿAmr)",
     "susi": "al-Sūsī", "hisham": "Hishām", "ibn_dhakwan": "Ibn Dhakwān", "shuba": "Shuʿbah", "hafs": "Ḥafṣ",

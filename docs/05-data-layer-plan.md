@@ -130,12 +130,22 @@ plus the checks, means only disagreements reach him.
 
 Milestones 2–6 can overlap once milestone 1 is done: each is a batch job plus its review.
 
-## Decisions needed
+## Decisions (Eisa, 2026-11-24)
 
-1. **API billing for batch jobs** (recommended), or subagents on the plan only.
-2. **The pilot's bar** for choosing a model (suggested: ≥98% agreement with reviewed pages, no
-   invented quotes).
-3. **Farsh priority**: al-Budūr as the primary source with al-Wāfī / al-Īḍāḥ as the second
-   reading (recommended, since al-Budūr covers all ten per place), or the other way round.
-4. **Repo layout**: `data/` + `mushaf_data/` + `pipeline/` in this repo (recommended), the spike
-   kept as it is for reference.
+1. **Subagents for now**, on the Claude Code plan; no separate API billing yet. The pipeline's
+   requests are written so the same prompt, schema and validators can move to Message Batches
+   later without change.
+2. **The pilot's bar: 98%** of rows agreeing with reviewed pages, no invented quotes.
+3. **Farsh priority: al-Budūr primary**, al-Wāfī / al-Īḍāḥ the second reading.
+4. **This repo stands alone**: nothing it needs may come from the archived mushaflab. Sources are
+   listed with URL and sha256 (`tools/sources.tsv`), fetched into a gitignored `sources/`, and
+   the Ḥafṣ spine is built here from KFGQPC's official text. `../mushaf` (the al-Futūḥ extractor,
+   active) stays a separate, optional dependency used only by the checks; its outputs can't be
+   copied here because the book isn't redistributable.
+
+### What subagents change
+
+Each subagent gets a chunk of pages (about twenty), the same frozen instructions, schema and
+reader table, and writes one JSON file per page into `pipeline/out/`; the validators and review
+sheets are scripts as before. The pilot compares models through the subagents' `model` setting
+(Haiku, Sonnet) against the same 30 reviewed pages, and records the tokens each run used.

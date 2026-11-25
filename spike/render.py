@@ -19,9 +19,9 @@ import pymupdf
 import uharfbuzz as hb
 from fontTools.pens.svgPathPen import SVGPathPen
 
-from .rows import PROJECTS
+from .rows import PROJECTS, SOURCES
 
-DK = PROJECTS / "mushaflab/fonts/digitalkhatt/hb-madina.otf"
+DK = SOURCES / "digitalkhatt/digitalkhatt-js/hb-madina.otf"
 STANDALONE_DOT = "ـ۬"  # internal encoding of the book's standalone tas-hil dot
 _DOT_LETTER = re.compile("\u0640[\u064b-\u065f\u0670\u06d6-\u06ed]*\u06ec[\u064b-\u065f\u0670\u06d6-\u06ed]*")
 

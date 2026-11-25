@@ -131,7 +131,7 @@ idghām on the next word, ṣād with small sīn for Qunbul's sīn, imālah as U
 ```
 books/                      the sources, local, gitignored (MANIFEST.json: URL, size, sha256)
 spike/data/profiles.yaml    rāwī × category → wujūh, with cite, cond, place, option, inherited
-spike/data/place_wujuh.yaml wujūh tied to a place (Ruways 2:20; Ibn Dhakwān's زَادَ as farsh)
+spike/data/place_wujuh.yaml wujūh tied to a place (Ruways 2:20; Ibn Dhakwān's زَادَ at 2:10)
 spike/data/constraints.yaml allowed tuples per rāwī over categories (text and features)
 spike/usul.py               detectors and transforms per category (the occurrence rule)
 spike/occurrences.py        al-Budūr's per-rubʿ lists tied to the spine (imālah)

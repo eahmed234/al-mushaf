@@ -2,11 +2,11 @@
 
 Plan: `../docs/02-spike-reading-model.md`. Plain Python 3.12 with PyYAML (to read the book tables in ../mushaf/futuh/readers.yaml).
 
-Inputs, read in place and never copied here:
+Inputs (set up with `tools/fetch_sources.py` and `tools/build_spine.py`, see the top README):
 
 | Input | Path | Pinned |
 | --- | --- | --- |
-| Ḥafṣ words (KFGQPC v2.0 spine) | `../mushaflab/data/spine/hafs/v1/items.jsonl` | sha256 `1fe71d33…2d28a4` |
+| Ḥafṣ words (KFGQPC v2.0 spine) | `../sources/spine/hafs.jsonl` | built by `tools/build_spine.py` from the sha256-pinned KFGQPC zip (`tools/sources.tsv`) |
 | al-Futūḥ rows, vol. 1 | `../mushaf/out/vol1.jsonl` | rebuilt by `../mushaf/rebuild.sh` at the commit in `../mushaf` |
 
 ```bash

@@ -11,7 +11,7 @@ import sys
 import pymupdf
 
 from .render import Renderer
-from .rows import BUILD, FUTUH, PROJECTS
+from .rows import BUILD, FUTUH, PROJECTS, SOURCES
 
 VARIANTS = [40, 80, 120]  # gap from each neighbour's ink, dot 85%
 
@@ -52,7 +52,7 @@ def main() -> None:
             page.insert_text((x + 5, y + H - 8), f"gap {mo}", fontsize=9, color=(0.4, 0.4, 0.4))
             x += 240
         import html as _h
-        kf = PROJECTS / "mushaflab/data/sources/raw/kfgqpc/mirror/hafs/hafs.18.ttf"
+        kf = SOURCES / "kfgqpc/mirror/hafs/hafs.18.ttf"
         ref = stored.replace("\u0640", "\u00a0")
         page.insert_htmlbox(pymupdf.Rect(x, y + 20, x + 220, y + H - 20),
             f"<p dir='rtl' style='font-family:q;font-size:34px;text-align:center'>{_h.escape(ref)}</p>",

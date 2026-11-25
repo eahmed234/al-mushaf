@@ -17,8 +17,10 @@ Two local git repos (no remotes, nothing pushed):
   `tools/books.tsv`; `books/MANIFEST.json` has URL, size, sha256. `python3 tools/book.py SLUG PAGE`
   prints a page, `-s REGEX` searches (diacritics folded), `--pdf PAGE OUT.png` renders one. TXT
   page n = PDF page n = Aljam3 page n = printed page (al-Wāfī, al-Īḍāḥ).
-- `~/Projects/mushaflab` is the old project, now only a source of inputs: the Ḥafṣ spine
-  (`data/spine/hafs/v1/items.jsonl`), fonts, and KFGQPC texts.
+- **`sources/`** (gitignored): KFGQPC texts and fonts and DigitalKhatt, fetched by
+  `tools/fetch_sources.py` from `tools/sources.tsv` (URL, sha256, licence); the Ḥafṣ spine is
+  built from KFGQPC's official text by `tools/build_spine.py` (identical, word for word, to the
+  one the spike was built on). Nothing comes from the archived `~/Projects/mushaflab`.
 
 ### The spike (passage: al-Fātiḥah + al-Baqarah 1–20)
 
@@ -34,7 +36,7 @@ Two local git repos (no remotes, nothing pushed):
 | `occurrences.py` | al-Budūr's per-rubʿ "الممال" lists tied to the spine; the imālah gate (al-Wāfī pp. 142–143) |
 | `waqf.py`, `waqf_check.py` | Ḥamzah's and Hishām's waqf on hamz, by rule (al-Wāfī pp. 105–127); checked against al-Futūḥ vols 1–6 (93% of 871 rows) |
 | `render.py`, `dot_sheet.py` | preview renderer (HarfBuzz + DigitalKhatt) with the standalone tas-hīl dot |
-| `data/place_wujuh.yaml` | wujūh tied to a place, with sources (Ruways at 2:20; Ibn Dhakwān's زَادَ, farsh) |
+| `data/place_wujuh.yaml` | wujūh tied to a place, with sources (Ruways at 2:20; Ibn Dhakwān's زَادَ at 2:10) |
 | `data/constraints.yaml` | taḥrīr as allowed tuples, from the books (Warsh: badal × līn, badal × dhawāt al-yāʾ); `readings` filters combinations by it |
 | `data/profiles.yaml`, `book_profiles.py` | **uṣūl profiles from al-Wāfī and al-Īḍāḥ** (checked against al-Budūr, Ghayth al-Nafʿ, nQuran where they disagreed): 33 categories × 20 ruwāt, each row with page; `readings --book` uses them |
 
@@ -72,6 +74,8 @@ tables; review list empty.
   preferred reading as default (first case: Idrīs's sakt). A kubrā version comes later.
 - al-Futūḥ prints the sakt form of ٱلۡأٓخِرِ as ٱلۡأَخِرِ (a print convention); row 10 at 2:11 has a
   print error (a carried-over shadda), corrected in `spike/data/print_errors.yaml`.
+- Data layer (docs/05): subagents on the plan for now (no API billing); pilot bar 98%; farsh from
+  al-Budūr first, al-Wāfī / al-Īḍāḥ second; this repo stands alone (no mushaflab dependency).
 - Glyph 135 is the tas-hīl dot; glyph 383 is lām-alif with maddah; #76923c is the imālah green.
 
 ### What the spike has shown so far (Q1–Q5)
@@ -92,7 +96,7 @@ tables; review list empty.
 1. ~~Pull the books~~, ~~build the profile table~~, ~~read the remaining bābs~~, ~~Eisa's review~~
    (all 160 rows right, 2026-11-24; notes applied: Warsh's tarbīʿ and badal × dhawāt al-yāʾ in
    `spike/data/constraints.yaml`, dhawāt al-rāʾ split out as `imala_ya_ra`, Ibn Dhakwān's زَادَ as
-   farsh). New rows since the review (`imala_ya_ra`) are candidates.
+   uṣūl with khulf (Eisa corrected an earlier "farsh"), imālah only at 2:10). New rows since the review (`imala_ya_ra`) are candidates.
    - Idrīs's sakt is an option (ikhtilāf; default none). A kubrā version comes later.
    - **Waqf of Ḥamzah and Hishām: its own chapter, `spike/waqf.py`** (2026-11-24). Every form a
      stop allows, by the hamzah's position and seat, each rule citing al-Wāfī pp. 105–127 (and

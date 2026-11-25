@@ -29,13 +29,13 @@ spike's checks as its tests. See "What comes next".
 
 ## How it fits together
 
-Three local repositories (no remotes yet):
+This repo stands alone: everything it needs comes from public sources it fetches itself (Setup,
+below). One sibling repository is an optional dependency, used only by the checks:
 
 | Repo | What it is | Role here |
 | --- | --- | --- |
 | **`al-mushaf`** (this one) | docs, the reading-model spike, the book tools | the project |
 | `../mushaf` | extractor for *al-Futūḥ al-Bāhira* (6 vols): glyph-level text, colours, rows, reader lists | the main jamʿ source, used as a **check** |
-| `../mushaflab` | the earlier attempt (see the postmortem) | only inputs: the Ḥafṣ word spine (KFGQPC v2.0), fonts, KFGQPC texts |
 
 The reading model, as the spike left it:
 
@@ -89,13 +89,26 @@ Decisions are Eisa's (for Eisa and Yusuf). Each is recorded where it applies.
 | A bare "خلف" in al-Futūḥ is Khalaf ʿan Ḥamzah | `../mushaf/futuh/readers.yaml` |
 | "الجميع عدا من سيأتي / عدا أصحاب X" still covers a rāwī another row names for one wajh, for his other wajh (with khulf evidence) | `spike/profile.py` (`khulf_convention`) |
 | Ruways: no idghām kabīr except al-Īḍāḥ's places (khulf at 2:20) | `spike/data/place_wujuh.yaml` |
-| Ibn Dhakwān's زَادَ is farsh (imālah at 2:10, both elsewhere) | `spike/data/place_wujuh.yaml` |
+| Ibn Dhakwān's زَادَ is uṣūl with khulf in the whole Qurʾān; imālah only at 2:10 (a place entry) | `spike/data/profiles.yaml`, `spike/data/place_wujuh.yaml` |
 | Ikhtilāf between ṭuruq is an **option**, book's preferred wajh first (Idrīs's sakt); data stays ṭarīq-aware for a later kubrā version | `spike/data/profiles.yaml` (`option: true`) |
 | The uṣūl profile table (160 rows) is right; notes applied: tarbīʿ, dhawāt al-rāʾ split out | `spike/data/profiles.yaml` (`review:`) |
 | Ḥamzah's and Hishām's waqf is its own chapter | `spike/waqf.py` |
 | al-Futūḥ prints the sakt form of ٱلۡأٓخِرِ as ٱلۡأَخِرِ (a convention); 2:11 row 10's shadda is a print error | `spike/readings.py` (`sakt_print`), `spike/data/print_errors.yaml` |
 | Finish the spike (Day 5) before building out sources | `spike/REPORT.md` |
 | Waqf marks are per edition; features are marked, colour optional; the word spine becomes riwāyah-neutral | [`docs/04-scope-decisions.md`](docs/04-scope-decisions.md) |
+
+## Setup
+
+```bash
+python3 -I tools/fetch_sources.py   # KFGQPC texts and fonts, DigitalKhatt: into sources/ (gitignored), sha256-checked
+python3 tools/build_spine.py        # the Ḥafṣ word spine from KFGQPC's official text: sources/spine/hafs.jsonl
+python3 -I tools/fetch_books.py     # the uṣūl books (TXT + PDF) into books/ (gitignored)
+```
+
+`tools/sources.tsv` lists each source with its URL, sha256 and licence; `fetch_sources.py
+--from DIR` copies a file from a local folder instead of downloading it when the checksum
+matches. The checks against al-Futūḥ need `../mushaf` (its extracted rows aren't
+redistributable, so they stay there); everything else runs without it.
 
 ## The code
 

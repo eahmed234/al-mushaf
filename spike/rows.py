@@ -26,7 +26,8 @@ from .text import drop_shadda_first, normalize
 
 HERE = Path(__file__).resolve().parent
 PROJECTS = HERE.parents[1]
-SPINE = PROJECTS / "mushaflab/data/spine/hafs/v1/items.jsonl"
+SOURCES = HERE.parent / "sources"  # tools/fetch_sources.py + tools/build_spine.py
+SPINE = SOURCES / "spine/hafs.jsonl"
 FUTUH = PROJECTS / "mushaf/out/vol1.jsonl"
 BUILD = HERE / "build"
 

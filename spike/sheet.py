@@ -13,9 +13,9 @@ from pathlib import Path
 
 import pymupdf
 
-from .rows import BUILD, FUTUH, PROJECTS
+from .rows import BUILD, FUTUH, PROJECTS, SOURCES
 
-FONT = PROJECTS / "mushaflab/data/sources/raw/kfgqpc/mirror/hafs/hafs.18.ttf"
+FONT = SOURCES / "kfgqpc/mirror/hafs/hafs.18.ttf"
 PDF_DIR = PROJECTS / "mushaf"
 
 
