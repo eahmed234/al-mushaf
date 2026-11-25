@@ -1,6 +1,6 @@
 # Status and next steps
 
-Last updated 2026-11-24 (after the books were pulled and the profile table built). Read this first in a new session, then
+Last updated 2026-11-24 (after the books were pulled and the profile table built). Read this first in a new session (the overview for newcomers is `README.md`), then
 `docs/02-spike-reading-model.md` (the spike plan with day-by-day results) and
 `docs/03-usul-sources.md` (uṣūl books).
 
