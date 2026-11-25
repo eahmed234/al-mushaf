@@ -51,7 +51,8 @@ Rules:
   الأول"), split the rows by place.
 - Waqf statements ("ولو وقف عليه حمزة…") are `usul` rows with `condition: "waqf"`.
 - A reference that gives readers the readings of another place ("فيه لحمزة وقفا ما في بناء") is a
-  row with those readers, the category of the rule it points to, and the reference as `reading`;
+  row with those readers, the category of the rule it points to, the reference as `reading`, and
+  `khulf: []` (the wujūh are stated at the place it points to);
   split it when it points to different rules for different readers ("فيه لورش وحمزة ما في عذاب
   أليم": Warsh's naql, Ḥamzah's sakt). A reference that names no readers ("سبق", "تقدم") is not a row.
 - A wajh that leaves a rule ("تركه", "عدم السكت", "التحقيق بلا سكت") takes that rule's category.
@@ -63,8 +64,9 @@ Rules:
   reading is what he reads instead, in the book's words.
 - The rubʿ's closing list "الممال" is statements too: each word in it gives rows (who has imālah,
   who taqlīl), `kind: usul`, an imālah category.
-- A wajh at a stop that is another rule (naql, sakt) takes that rule's category, with
-  `condition: "waqf"`. Rawm, ishmām and sukūn with a length at a stop are wujūh of the same rule
+- A wajh at a stop that is another rule (naql to lām al-taʿrīf or across words, sakt) takes that
+  rule's category, with `condition: "waqf"`. Naql inside the word at a final hamzah (شيء) is
+  hamz_waqf_final. Rawm, ishmām and sukūn with a length at a stop are wujūh of the same rule
   (one row each), not taḥrīr.
 - A rule stated in general, or about a word outside HAFS WORDS, is a row too when it names readers
   and a reading: `place: []`, and the word, the book's example or the passage in `place_text`
@@ -138,8 +140,10 @@ al-Budūr's groups (p. 11):
 | الكوفيون | shuba, hafs, khalaf_an_hamzah, khallad, abul_harith, duri_kisai, ishaq, idris |
 | الأصحاب | khalaf_an_hamzah, khallad, abul_harith, duri_kisai, ishaq, idris |
 
-Bare "خلف" (or "خلف في اختياره / عن نفسه / العاشر") is Khalaf al-ʿĀshir; Khalaf the rāwī of
-Ḥamzah is always "خلف عن حمزة". "الدوري" after أبي عمرو / البصري is al-Kisāʾī's (duri_kisai);
+Bare "خلف" (or "خلف في اختياره / عن نفسه / العاشر") is Khalaf al-ʿĀshir (al-Budūr p. 11), **except
+inside a statement about Ḥamzah's ruwāt**: "لخلف وخلاد"، "لخلف وحده" after Ḥamzah or Khallād is
+named, "ولخلف وجهان" in a passage about Ḥamzah's sakt or waqf — there it is Khalaf ʿan Ḥamzah
+(the page says so outright at "لخلف وخلاد عن حمزة"). "الدوري" after أبي عمرو / البصري is al-Kisāʾī's (duri_kisai);
 otherwise Abū ʿAmr's. "الثلاثة الأصحاب" = الأصحاب.
 
 The twenty ids: qalun, warsh, bazzi, qunbul, duri_abuamr, susi, hisham, ibn_dhakwan, shuba, hafs, khalaf_an_hamzah, khallad, abul_harith, duri_kisai, ibn_wardan, ibn_jammaz, ruways, rawh, ishaq, idris.
@@ -180,7 +184,7 @@ The twenty ids: qalun, warsh, bazzi, qunbul, duri_abuamr, susi, hisham, ibn_dhak
 | hadhf_damm | dropping the hamzah of مستهزءون and the like in waṣl and waqf (Abū Jaʿfar); Ḥamzah's at a stop is hamz_waqf_mid |
 | ibdal_sakin_waqf | ibdāl of a sākin hamzah at a stop (Ḥamzah) |
 | hamzatayn_waqf | two hamzahs at a stop |
-| hamz_waqf_final | a final hamzah at a stop (Ḥamzah, Hishām): after an alif (السماء: ibdāl, tas-hīl with rawm) or another sākin (شيء: naql, idghām) |
+| hamz_waqf_final | a final hamzah at a stop (Ḥamzah, Hishām): after an alif (السماء: ibdāl, tas-hīl with rawm) or another sākin in the same word (شيء: naql, idghām; this naql is hamz_waqf_final, not naql) |
 | hamz_waqf_zaid | a hamzah after a prefix letter (و ف ب ل ك ها يا) at a stop. After lām al-taʿrīf, or at the start of a word after a sākin (عذاب أليم), the waqf wujūh are sakt_al / sakt_mafsul / naql |
 | hamz_waqf_mid | a middle hamzah at a stop (Ḥamzah), after a mutaḥarrik or an alif (مستهزءون، أضاءت). A hamzah before the alif of fatḥ tanwīn (بناءً) is middle: the stop is on the alif |
 

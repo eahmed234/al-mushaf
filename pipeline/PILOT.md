@@ -83,3 +83,31 @@ Sonnet v2 against the reviewed gold: **96.3% recall, 95.6% precision** per rāw�
 mostly the conventions above (the run predates them) and the errors Eisa marked (silah_mim at
 عليهم ءأنذرتهم; Hishām's بناء as a final hamzah) plus two omissions (Khallād's taḥqīq at أنذرتهم
 أم, Warsh's qaṣr at 2:8). A run on the v3 instructions measures the bar.
+
+## Run 3: Sonnet on the v3 instructions (2026-11-25)
+
+236 rows, 0 rejected, ~164k tokens, 7.6 min. Against the reviewed gold set: **95.4% recall, 96.7%
+precision** per rāwī. By kind of row (rāwī-units found / in the gold set):
+
+| Run | farsh | uṣūl | taḥrīr | ittifāq |
+| --- | --- | --- | --- | --- |
+| Haiku v1 | 100/100 | 248/314 | 2/25 | 80/80 |
+| Sonnet v1 | 100/100 | 294/314 | 5/25 | 60/80 |
+| Sonnet v2 | 100/100 | 295/314 | 25/25 | 80/80 |
+| Sonnet v3 | 100/100 | 292/314 | 23/25 | 80/80 |
+
+- **Farsh is right in every run**, Haiku's included (a small sample: the passage's nine farsh
+  places, 100 rāwī-units).
+- **Uṣūl stays near 93%**. What's missed changes from run to run (the general rows on p. 16 and
+  Qālūn's munfaṣil at عليهم أنذرتهم in v3, others in v2), so it is variance, not one rule.
+- **One instruction defect, found by the subagent itself**: al-Budūr's p. 11 rule (bare "خلف" is
+  Khalaf al-ʿĀshir) doesn't hold inside a statement about Ḥamzah's ruwāt, where "لخلف وخلاد" is
+  Khalaf ʿan Ḥamzah (the page says "لخلف وخلاد عن حمزة"). Fixed in the instructions and
+  data/readers.yaml, with two smaller ones: references carry no khulf, and naql inside شيء at a stop
+  is hamz_waqf_final.
+
+## Decision for milestone 2
+
+Sonnet 5.5 subagents. For farsh, the milestone's subject, the pilot is at the bar. For uṣūl, the
+reviewed profile table stays the source; al-Budūr's uṣūl rows are a check against it, with the
+disagreements going to Eisa, as docs/05 already plans for two-source agreement.

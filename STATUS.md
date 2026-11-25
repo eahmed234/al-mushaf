@@ -175,8 +175,11 @@ tables; review list empty.
    (`pipeline/PILOT.md`). Sonnet 5.5 subagents: 96.9% recall / 95.8% precision per rāwī against
    Claude's gold set (99% on who reads what); Haiku 5.5 out (87% / 80%, more tokens). ~13k tokens
    a page. Eisa reviewed the 59 rows (2026-11-25): gold set and instructions v3
-   (`pipeline/PILOT.md`, "Eisa's review"); Sonnet v2 against it: 96.3% / 95.6%. Next: Sonnet on
-   the v3 instructions to measure the 98% bar, then milestone 2 (farsh, al-Baqarah).
+   (`pipeline/PILOT.md`, "Eisa's review"); Sonnet v2 against it: 96.3% / 95.6%. Sonnet on the
+   v3 instructions: 95.4% / 96.7% overall, **farsh 100% in every run**, uṣūl ~93% (variance);
+   one instruction defect it found itself (bare "خلف" in a statement about Ḥamzah is Khalaf ʿan
+   Ḥamzah) fixed. Decision: Sonnet for milestone 2 (farsh, al-Baqarah); uṣūl rows only check the
+   reviewed profile table.
 
 Also open, lower priority: 208 numbering irregularities in the extraction (`mushaf/docs/known-gaps.md`),
 the unreproduced pairs listed above, and the alkiraat.com contact message (typed in the form,
