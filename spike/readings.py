@@ -133,6 +133,15 @@ def row_features(rows: list[dict]) -> dict[str, dict[str, list[str]]]:
         cats = {o.cat for o in occs}
         madd_cat = "munfasil" if cats & {"munfasil", "silah_mim_hamza"} else ("muttasil" if "muttasil" in cats else None)
         f = label_features(r["label"], madd_cat)
+        body = re.sub(r"\s+", " ", r["label"])
+        present = [c for c in ("sakt_al", "sakt_mafsul") if c in cats]
+        if re.search(r"(ترك|عدم) السكت", body):
+            for c in present:
+                f[c] = ["none"]
+        elif re.search(r"(?<!ترك )(?<!عدم )السكت(?! وقف)(?! بين)(?! على الحروف)(?! على الأحرف)", body) and "على المفصول" not in body \
+                and "«أل»" not in body:
+            for c in present:
+                f.setdefault(c, ["sakt"])
         imala_occs = [o for o in occs if o.cat.startswith("imala_")]
         for phrase, wj in (("التقليل", "taqlil"), ("تقليل", "taqlil"), ("الإمالة", "imala"), ("إمالة", "imala"),
                            ("الفتح", "fath"), ("وفتح", "fath")):
@@ -213,6 +222,7 @@ def full_profiles(upto: int, start: int = 1, book: bool = False):
 
 
 PLACE_WUJUH = yaml.safe_load((Path(__file__).parent / "data" / "place_wujuh.yaml").read_text()) or []
+CHOICE_FEATURES = {"muttasil", "sakt_al", "sakt_mafsul", "lin_hamz", "madd_arid"}
 WAQF_RAWI = {"khalaf_an_hamzah", "khallad", "hisham"}
 WAQF_HAMZ_CATS = {"ibdal_sakin_waqf", "hamzatayn_waqf", "hamz_waqf_final", "hamz_waqf_mid", "hamz_waqf_zaid"}
 CONSTRAINTS = yaml.safe_load((Path(__file__).parent / "data" / "constraints.yaml").read_text()) or []
@@ -257,7 +267,8 @@ def generate(rawi: str, span: list[str], full: dict, confirmed: set) -> list[tup
         occs = [o for o in detect(words, stop=stop) if reviewed(o.cat, o.word, o.nxt)]
         if own_waqf:
             occs = [o for o in occs if o.cat not in WAQF_HAMZ_CATS]
-        cats = sorted({o.cat for o in occs if o.cat in TEXT_CATS})
+        # text categories and the features detected here (no text change, but taḥrīr ties them)
+        cats = sorted({o.cat for o in occs if o.cat in TEXT_CATS or o.cat in CHOICE_FEATURES})
         if "silah_mim_hamza" in cats and "munfasil" not in cats:
             cats = sorted(cats + ["munfasil"])
         # place-tied wujuh: at the place the entry's wujuh, elsewhere its `elsewhere`
@@ -282,8 +293,13 @@ def generate(rawi: str, span: list[str], full: dict, confirmed: set) -> list[tup
             text = apply(words, occs, ch)
             ch = {**ch, "_stop": stop}  # which way the span is read (stop at its end or go on)
             if own_waqf and stop:
+                al = "sakt_al" in {o.cat for o in occs if o.word == stop}
                 for lab, w in waqf_forms(text[stop], rawi):
-                    out.append(({**ch, "waqf": lab}, {**text, stop: w}))
+                    c2 = {**ch, "waqf": lab}
+                    if al:  # the stop on ٱلۡأَرۡضِ: naql, or the hamzah kept (with sakt or not, as in waṣl)
+                        c2["waqf_al"] = "naql" if lab.startswith("naql") else ch.get("sakt_al", "none")
+                    if allowed(rawi, c2):
+                        out.append((c2, {**text, stop: w}))
             else:
                 out.append((ch, text))
     return out
@@ -349,9 +365,16 @@ def compare(upto: int, full: dict, feats: dict, start: int = 1):
                 g = scored[0] if scored else {i: hafs[i] for i in span}
                 diffs = [(i, g[i], book[i][0], describe(g[i], book[i][0])) for i in bad(g)]
                 misses.append((r["id"], rawi, "text", diffs))
-            for cat, wj in feats[r["id"]].items():
+            # label features: a reading whose text is the row's must also have the label's wujūh
+            # (features detected in the span are choices); others: within the profile
+            want = feats[r["id"]]
+            text_ok = [ch for ch, g in choice_cache[key] if not bad(g)]
+            for cat, wj in want.items():
                 if not set(wj) <= set(full[rawi].get(cat, {}).get("wujuh", {})):
                     misses.append((r["id"], rawi, f"feature {cat}={'/'.join(wj)}", []))
+            chosen = {c: wj for c, wj in want.items() if any(c in ch for ch in text_ok)}
+            if text_ok and chosen and not any(all(ch.get(c) in wj for c, wj in chosen.items() if c in ch) for ch in text_ok):
+                misses.append((r["id"], rawi, "features together " + ",".join(f"{c}={'/'.join(w)}" for c, w in chosen.items()), []))
             # a row with alternatives ("A * B * C") stands for each of them
             book_texts[key].update(itertools.product(*[w.get("alts") or [w["t"]] for w in r["words"] if w["id"] in seen_words]))
             claimed_span[key] = tuple(i for i in span if i in seen_words)

@@ -19,8 +19,8 @@
   source: "al-Ḍabbāʿ p. 246: no taqlīl on qaṣr of the badal, no fatḥ on its tawassuṭ, both on its madd; al-Budūr p. 30 (2:34 ءَادَمَ … أَبَىٰ), the same either order"
   status: candidate
 
-# Waqf of Ḥamzah's ruwāt: the waqf form goes with the sakt they read in waṣl. Not enforced yet:
-# sakt is a feature the spike reads from labels, not a text choice in generation.
+# Waqf of Ḥamzah's ruwāt: the waqf form goes with the sakt they read in waṣl. Sakt is a choice in
+# generation now (2026-11-24); Khalaf's mafṣūl one still waits on stops at a word starting with a hamzah.
 - id: khallad_sakt_al_waqf
   rawi: [khallad]
   cats: [sakt_al, waqf_al]  # waqf_al: the stop on a word with lām al-taʿrīf before a hamzah (ٱلۡأَرۡضِ)
@@ -28,7 +28,7 @@
   cite: wafi 106; budur 41; budur 25
   source: "al-Budūr p. 25: those who read al- without sakt in waṣl all take naql at the stop; al-Wāfī p. 106: reading Khallād with sakt on al- and shayʾ, the stop on ٱلۡأَرۡضِ is naql or sakt; without it, naql only (the muḥaqqiqūn reject plain taḥqīq). al-Budūr p. 41 (قُلۡ ءَأَنتُمۡ): Khallād, no sakt: tas-hīl or taḥqīq of the second hamzah; naql: tas-hīl only"
   status: candidate
-  enforced: false
+  enforced: true
 
 - id: khalaf_sakt_mafsul_waqf
   rawi: [khalaf_an_hamzah]
@@ -56,7 +56,7 @@
   cite: budur 21-22
   source: "al-Budūr p. 21 (2:8 بِمُؤۡمِنِينَ): Warsh six wujūh: qaṣr of both badals with the three of the ʿāriḍ, their tawassuṭ with tawassuṭ or madd of the ʿāriḍ, their madd with madd; p. 22 (مُسۡتَهۡزِءُونَ) the same reasoning"
   status: candidate
-  enforced: false
+  enforced: true
 
 - id: badal_equal
   rawi: [warsh]

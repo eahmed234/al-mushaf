@@ -60,6 +60,10 @@ categories:
     - {who: [ibn_wardan, ibn_jammaz], wujuh: [qasr], cite: idah 84-85}
     - {who: [ruways, rawh, ishaq, idris], wujuh: [qasr], cite: idah 84 n. 3}
 
+  madd_arid:  # madd ʿāriḍ li-l-sukūn at a stop (ٱلۡعَٰلَمِينَ, نَسۡتَعِينُ): every qāriʾ
+    - {who: rest7, wujuh: [qasr, tawassut, ishba], cite: budur 15, note: "'لجميع القراء ثلاثة أوجه'; rawm only with qaṣr (p. 15)"}
+    - {who: [ibn_wardan, ibn_jammaz, ruways, rawh, ishaq, idris], wujuh: [qasr, tawassut, ishba], cite: budur 15}
+
   silah_mim:  # mīm al-jamʿ before a mutaḥarrik other than hamz al-qaṭʿ
     - {who: [bazzi, qunbul], wujuh: [silah], cite: wafi 51}
     - {who: [qalun], wujuh: [sukun, silah], cite: wafi 51}

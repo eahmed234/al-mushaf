@@ -37,6 +37,7 @@ FATHA, DAMMA, KASRA = "َ", "ُ", "ِ"
 TANWIN = {"\u064b", "\u064c", "\u064d", "\u08f0", "\u08f1", "\u08f2", "\u0656", "\u0657", "\u065e"}  # incl. KFGQPC open tanwin
 VOWELS = {FATHA, DAMMA, KASRA} | TANWIN
 DAGGER, IMALA, TASHIL = "\u0670", "\u065c", "\u06ec"
+HAMZA_ABOVE = "\u0654"
 SMALL_WAW, SMALL_YEH, SMALL_SIN = "ۥ", "ۦ", "ۜ"
 HAMZA_START = ("أ", "إ", "ء", "آ")
 PAUSE = set("\u06d6\u06d7\u06d8\u06d9\u06da\u06db\u06de\u06e9")  # not U+06DC, the sign of sakt
@@ -47,6 +48,8 @@ FEATURE_ONLY = {
     "sakt_mafsul": ["none", "sakt"],
     "tarqiq_ra": ["tafkhim", "tarqiq"],
     "taghliz_lam": ["tarqiq", "taghliz"],
+    "lin_hamz": ["qasr", "tawassut", "tul"],     # līn before a hamzah in its word (شَيۡءٍ)
+    "madd_arid": ["qasr", "tawassut", "ishba"],  # madd letter before the last letter at a stop
 }
 
 
@@ -79,6 +82,15 @@ def detect(words: list[tuple[str, str]], stop: str | None = None) -> list[Occ]:
     if stop:
         w = dict(words).get(stop, "")
         cls = [c for c in (_core(c) for c in clusters(w)) if c]
+        # madd ʿāriḍ: a madd letter (or dagger alif) before the last letter, which the stop makes
+        # sākin (ٱلۡعَٰلَمِينَ, نَسۡتَعِينُ); not before a hamzah (that is muttaṣil)
+        if len(cls) >= 3 and cls[-1][0] not in "\u0621\u0623\u0624\u0626" and HAMZA_ABOVE not in cls[-1]:
+            pm, pp = cls[-2], cls[-3]
+            if (pm[0] == "\u0627" and not set(pm[1:]) & VOWELS and FATHA in pp) or \
+                    (pm[0] == "\u0648" and not set(pm[1:]) & VOWELS and SUKUN not in pm and DAMMA in pp) or \
+                    (pm[0] == "\u064a" and not set(pm[1:]) & VOWELS and SUKUN not in pm and KASRA in pp) or \
+                    (DAGGER in pm):
+                out.append(Occ("madd_arid", stop, None))
         if len(cls) >= 3 and cls[0][0] in "\u0648\u0641\u0628\u0644\u0643\u0633" and len(cls[0]) == 2 \
                 and cls[1][0] in "\u0623\u0625" and set(cls[1][1:]) & VOWELS:
             out.append(Occ("hamz_waqf_zaid", stop, None))  # وَأَبۡصَٰرِهِمۡ: made mid by a prefix (wafi 122-123)
@@ -182,6 +194,20 @@ def _detect(words: list[tuple[str, str]]) -> list[Occ]:
         for cat, rx in WORD_IMALA:
             if rx.match(sk):
                 out.append(Occ(cat, wid, nid))
+        # sakt on شَيۡء (wafi 105-106) and līn before a hamzah (شَيۡءٍ, سَوۡءَةَ)
+        sk_letters = "".join(c[0] for c in cls)
+        if sk_letters.startswith("\u0634\u064a") and len(cls) >= 3 and SUKUN in cls[1] and \
+                (cls[2][0] in "\u0621\u0640" or "\u0654" in cls[2]):
+            out.append(Occ("sakt_al", wid, nid))
+        for k in range(1, len(cls) - 1):
+            if cls[k][0] in "\u0648\u064a" and SUKUN in cls[k] and FATHA in cls[k - 1] and \
+                    (cls[k + 1][0] in "\u0621\u0623\u0626\u0624\u0640" and ("\u0654" in cls[k + 1] or cls[k + 1][0] != "\u0640")):
+                out.append(Occ("lin_hamz", wid, nid))
+                break
+        # sakt on a sākin at a word's end before a hamzah starting the next (مَنۡ ءَامَنَ, عَذَابٌ أَلِيمٌ)
+        if nw and nw[0] in "\u0623\u0625\u0621\u0622" and (SUKUN in last or set(last[1:]) & TANWIN) and \
+                last[0] not in "\u0627\u0649":
+            out.append(Occ("sakt_mafsul", wid, nid))
         # muttasil: maddah on a madd letter followed by a hamza in the same word
         for k in range(len(cls) - 1):
             if MADDAH in cls[k] and cls[k + 1][0] in "ءئؤأ":

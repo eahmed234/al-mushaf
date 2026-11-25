@@ -125,10 +125,18 @@ tables; review list empty.
    reads a span one way (stop at a final pause sign or go on), and spreads one rāwī's wujūh over
    rows of different lengths. Counting per reading way and per box: **22 → 3** extras on the full
    passage (al-Dūrī at 2:19–20, Qālūn at 2:20). Book-only runs show more (Qālūn's iskān) because
-   the "الجميع عدا من سيأتي" convention is computed from the rows. Next for taḥrīr: model the
-   features (madd degrees, ʿāriḍ, sakt) as choices so these constraints can be enforced, and read
-   al-Budūr's taḥrīr beyond this passage (al-Ḍabbāʿ for the Shāṭibiyyah) as the occurrence work
-   reaches further.
+   the "الجميع عدا من سيأتي" convention is computed from the rows.
+   **Features as choices** (2026-11-24): sakt on al- and shayʾ, sakt on the mafṣūl, muttaṣil, līn
+   before hamz, and madd ʿāriḍ at a stop (al-Budūr p. 15: three wujūh for all) are detected and
+   generated as choices with the text categories. Each row's label features must now hold on a
+   reading whose text is the row's (a bare "السكت" means the sakt places in the row); before, they
+   only had to be in the profile. Checked: 94 madd/badal and 19 sakt label statements in 2:1–20, no
+   new misses, and a corrupted label is caught. Enforced: Warsh badal × madd ʿāriḍ (exactly al-Budūr's
+   six wujūh at 2:8), Warsh badal × līn, badal × dhawāt al-yāʾ, Khallād's sakt on al- × his stop
+   (naql only without sakt). Not yet: Khalaf's mafṣūl sakt × a stop on a word starting with a
+   hamzah (the spike doesn't stop on those with naql yet), madd degrees (wujūh are not degrees).
+   Next for taḥrīr: read al-Budūr's and al-Ḍabbāʿ's taḥrīr beyond this passage as the occurrence
+   work reaches further.
 5. **Spike Day 5**: the KFGQPC check for the 8, and `spike/REPORT.md` answering Q1–Q5.
 
 Also open, lower priority: 208 numbering irregularities in the extraction (`mushaf/docs/known-gaps.md`),
