@@ -31,6 +31,7 @@ Two local git repos (no remotes, nothing pushed):
 | `profile.py` | learns text wujūh per rāwī from rows; contexts (stop at ayah end, optional at pause signs); reviewed places; claims by colour; the khulf convention |
 | `readings.py` | full profiles (rows + book madd tables + label features), generation, comparison, held-out test |
 | `review.py`, `review_sheet.py` | extra readings and misses, as a list and as box-by-box pictures |
+| `occurrences.py` | al-Budūr's per-rubʿ "الممال" lists tied to the spine; the imālah gate (al-Wāfī pp. 142–143) |
 | `waqf.py`, `waqf_check.py` | Ḥamzah's and Hishām's waqf on hamz, by rule (al-Wāfī pp. 105–127); checked against al-Futūḥ vols 1–6 (93% of 871 rows) |
 | `render.py`, `dot_sheet.py` | preview renderer (HarfBuzz + DigitalKhatt) with the standalone tas-hīl dot |
 | `data/place_wujuh.yaml` | wujūh tied to a place, with sources (Ruways at 2:20; Ibn Dhakwān's زَادَ, farsh) |
@@ -109,11 +110,21 @@ tables; review list empty.
      feature, not a text choice, in the spike.
    - Still not in the table (`not_read_yet`): Ḥamzah's naql and sakt in waqf, the rest of the
      rāʾāt and lāmāt exceptions.
-2. **Occurrence tables**, now the main gap: the profiles are right, but the spike doesn't know
-   which places a category applies to (naql places, word-specific imālah). Build them from Ghayth
-   al-Nafʿ's per-place types (`books/ghayth-1.txt`) and the lists in al-Wāfī and al-Īḍāḥ, and
-   compare with the detectors (which over-match, e.g. imālah on عَلَىٰ). nQuran.com's per-ayah
-   pages are a spot-check source (see `docs/03-usul-sources.md`).
+2. **Occurrence tables** (started 2026-11-24, imālah done). `spike/occurrences.py` reads al-Budūr's
+   end-of-rubʿ "الممال" lists (complete for the ten; Ghayth al-Nafʿ's lists leave out word-list
+   imālah like فَزَادَهُمُ, شَآءَ, ءَاذَانِهِمۡ), ties them to quarters of the Ḥafṣ spine (۞ items) by a
+   monotonic alignment on their words and the commentary before them: **171 of 175 lists tied**,
+   a list covering back to its rubʿ's ۞ (juzʾ ʿAmma rubʿs span surahs), "رءوس الآي" as a class.
+   Checked against the detectors over the whole Qurʾān: 1,468 detector hits on listed words; the
+   ~1,000 unlisted are ~800 عَلَى / إِلَىٰ / حَتَّىٰ / لَدَى, which al-Wāfī pp. 142–143 excepts by name
+   (with مَا زَكَىٰ, al-Nūr 21), and the rest list or alignment misses. So the **imālah gate is now
+   the book's rule**: every detected place except those five words (`occurrences.imala_excluded`),
+   replacing "some al-Futūḥ row shows it"; passage results unchanged. The lists also exposed
+   detector gaps, now fixed: alif maqṣūrah without a dagger alif (عِيسَى, تُبۡلَى), tanwīn before it
+   at a stop (مُّسَمّٗى), kasr tanwīn on the rāʾ (قَرَارٖ). Still to do: al-Kisāʾī's hāʾ al-taʾnīth at
+   a stop (not a spike category yet; most of the listed-but-undetected words), word-specific
+   imālah outside the passage (عِمۡرَٰنَ…), and the same for idghām (al-Budūr's "المدغم" lists), naql
+   and the hamz categories, which still use the row gate.
 3. **Read al-Futūḥ's footnotes ("تفاصيل المقطع")**: per-word statements with matn verses. They're
    already extracted as `footnote` / `text` records. Parse them into place entries like
    `data/place_wujuh.yaml`.

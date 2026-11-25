@@ -91,6 +91,9 @@ def detect(words: list[tuple[str, str]], stop: str | None = None) -> list[Occ]:
                     (pm[0] == "\u064a" and not set(pm[1:]) & VOWELS and SUKUN not in pm and KASRA in pp) or \
                     (DAGGER in pm):
                 out.append(Occ("madd_arid", stop, None))
+        # tanwīn before a final alif maqṣūrah (هُدٗى, مُّسَمّٗى, سُدًى): imālah only at a stop
+        if len(cls) >= 2 and cls[-1][0] == "\u0649" and set(cls[-2][1:]) & TANWIN:
+            out.append(Occ("imala_ya_ra" if cls[-2][0] == "\u0631" else "imala_ya", stop, None))
         if len(cls) >= 3 and cls[0][0] in "\u0648\u0641\u0628\u0644\u0643\u0633" and len(cls[0]) == 2 \
                 and cls[1][0] in "\u0623\u0625" and set(cls[1][1:]) & VOWELS:
             out.append(Occ("hamz_waqf_zaid", stop, None))  # وَأَبۡصَٰرِهِمۡ: made mid by a prefix (wafi 122-123)
@@ -174,7 +177,7 @@ def _detect(words: list[tuple[str, str]]) -> list[Occ]:
         for k in range(len(cls) - 1):
             alif_here = DAGGER in cls[k] or (k + 1 < len(cls) and cls[k + 1] == "\u0627")
             ra_at = k + 1 if DAGGER in cls[k] else k + 2
-            if alif_here and ra_at < len(cls) and cls[ra_at][0] == "\u0631" and KASRA in cls[ra_at] \
+            if alif_here and ra_at < len(cls) and cls[ra_at][0] == "\u0631" and (KASRA in cls[ra_at] or set(cls[ra_at][1:]) & {"\u064d", "\u0656", "\u08f2"}) \
                     and all(c[0] in "\u0647\u0645\u0643\u06e5" for c in cls[ra_at + 1 :]):
                 out.append(Occ("imala_ra", wid, nid))
                 break
@@ -183,7 +186,9 @@ def _detect(words: list[tuple[str, str]]) -> list[Occ]:
             out.append(Occ("imala_nas", wid, nid))
         if "\u0643\u0641\u0631\u064a\u0646" in sk and any(DAGGER in c and c[0] == "\u0643" for c in cls):
             out.append(Occ("imala_kafirin", wid, nid))  # كَٰفِرِينَ
-        if last[0] == "\u0649" and DAGGER in last and not tanwin:  # dhawat al-ya': ٱلۡهُدَىٰ
+        alif_maqsura = last[0] == "\u0649" and not set(last[1:]) & VOWELS and len(cls) >= 2 and \
+            (DAGGER in last or FATHA in cls[-2] or DAGGER in cls[-2])  # ٱلۡهُدَىٰ, عِيسَى, تُبۡلَى
+        if alif_maqsura and not tanwin and not set(cls[-2][1:]) & TANWIN:  # dhawat al-ya'
             ra = len(cls) >= 2 and cls[-2][0] == "\u0631"  # after rāʾ (ذِكۡرَىٰ): its own rule (wafi 147-148)
             out.append(Occ("imala_ya_ra" if ra else "imala_ya", wid, nid))
         # a maḍmūmah hamzah after a kasrah inside the word (مُسۡتَهۡزِءُونَ): Abū Jaʿfar drops it (idah 110)

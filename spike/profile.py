@@ -237,6 +237,11 @@ def reviewed(cat: str, word: str, nxt: str | None = None) -> bool:
     kind = CAT_KIND.get(cat)
     if kind is None or cat == "munfasil":
         return True
+    if cat.startswith("imala_"):
+        # the books' rule, not the rows: every detected place except the five words al-Wāfī
+        # excepts (pp. 142-143); al-Budūr's per-rubʿ lists check it (spike.occurrences)
+        from .occurrences import imala_excluded
+        return not imala_excluded(load_hafs().get(word, ""), word)
     return (kind, word) in _REVIEWED or (cat.startswith("idgham") and (kind, nxt) in _REVIEWED)
 
 
