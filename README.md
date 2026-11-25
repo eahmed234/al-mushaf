@@ -167,7 +167,7 @@ All of them finish in seconds. Full list: [`spike/README.md`](spike/README.md).
 
 ## What comes next
 
-From `spike/REPORT.md`, "Before building for real", and `docs/04-scope-decisions.md`:
+The plan is [`docs/05-data-layer-plan.md`](docs/05-data-layer-plan.md). In short, from `spike/REPORT.md` and `docs/04-scope-decisions.md`:
 
 1. **Build the data layer apart from the spike**, sources first: farsh from al-Budūr and the farsh
    chapters (not from al-Futūḥ's rows), occurrence tables per category from the books' lists
@@ -194,6 +194,7 @@ Lower priority: 208 numbering irregularities in the al-Futūḥ extraction
 | [`docs/02-spike-reading-model.md`](docs/02-spike-reading-model.md) | the spike's plan and its day-by-day results |
 | [`docs/03-usul-sources.md`](docs/03-usul-sources.md) | the uṣūl books and the checking sources |
 | [`docs/04-scope-decisions.md`](docs/04-scope-decisions.md) | waqf marks, marking without colour, ḥadhf and ziyādah |
+| [`docs/05-data-layer-plan.md`](docs/05-data-layer-plan.md) | the plan for building the data layer: who does what, the batch pipeline, cost, order of work |
 | [`spike/REPORT.md`](spike/REPORT.md) | the spike's answers, numbers, and what to change before building |
 | [`STATUS.md`](STATUS.md) | the running state and ordered next steps |
 
