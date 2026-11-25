@@ -1,0 +1,53 @@
+# Proposed merge of the `new:` category names from the uṣūl run (al-Wāfī pp. 25–198, al-Īḍāḥ
+# pp. 30–186; 2026-11-25) into one category per rule. A proposal for Eisa to review: nothing here
+# is in data/profiles.yaml yet. `into`: an existing category (the row is one of its rules or its
+# listed words) or a proposed one (`proposed: true`). Taxonomy only; the rules themselves stay as
+# read from the pages, with their citations.
+
+istiadha: {proposed: true, what: "the istiʿādhah: its wording and whether aloud", from: [istiadha_jahr, istiadha_lafz]}
+basmalah: {proposed: true, what: "basmalah between surahs, at a surah's start, al-Anfāl/Barāʾah, al-arbaʿ al-zuhr, the start of a juzʾ",
+           from: [basmalah, basmalah_zahr, basmala_bayna_surtayn, basmala_arbaa_zuhr, basmala_awwal_sura, anfal_bara_a,
+                  basmala_ruus_ajza, basmala_awjuh_surtayn]}
+farsh_fatiha: {into: "data/farsh/001.yaml", what: "مالك and الصراط are farsh of al-Fātiḥah (the Shāṭibiyyah states them there)",
+               from: [maliki_yawm, sirat, fatiha_farsh]}
+ha_jam: {proposed: true, what: "the vowel of the hāʾ of the plural pronoun after yāʾ (عليهم، إليهم، لديهم; Yaʿqūb's wider set)",
+         from: [damm_ha_alayhim, ha_jam_damm_kasr]}
+mim_jam_sakin: {proposed: true, what: "mīm al-jamʿ and the hāʾ before it when a sākin follows (عليهمُ القتال، قلوبهمِ العجل; Yaʿqūb's itbāʿ)",
+                from: [mim_before_sakin, mim_jam_before_sakin, ha_before_mim_jam]}
+silah_mim: {into: silah_mim, what: "with an attached pronoun (أنلزمكموها): a listed note", from: [mim_with_pronoun]}
+silah_ha: {into: silah_ha, what: "hāʾ al-kināyah's listed words: iskān, qaṣr, ṣilah (يؤده، نوله، أرجئه، أهله امكثوا…)",
+           from: [ha_kinaya_iskan, arjih_hamz, kasr_ha_ahlihi]}
+idgham_kabir: {into: idgham_kabir, what: "its rawm/ishmām and the madd before the merged letter; the mīm before bāʾ", from: [idgham_kabir_ishmam_rawm, madd_before_idgham_kabir, mim_before_ba_ikhfa]}
+madd_lazim: {proposed: true, what: "madd lāzim, the ḥurūf of the openings (ع: tawassuṭ or ishbāʿ; الم ٱللَّه), آلآن, هاتين/اللذين",
+             from: [madd_lazim, madd_fawatih, madd_fawatih_mim_wasl, madd_fawatih_ayn, madd_hatayn_allathayn, fawatih_two_letter_qasr,
+                    fawatih_alif_qasr, madd_aalaan_first_alif]}
+madd_hamz_mughayyar: {proposed: true, what: "the madd before a changed hamzah (tas-hīl, ibdāl): its length", from: [madd_qabl_hamz_mughayyar, madd_before_tashil]}
+hamzatayn: {into: hamzatayn, what: "with hamzat al-waṣl (ءآلذكرين), istifhām / ikhbār and the repeated istifhām (listed), ها أنتم",
+            from: [hamzat_wasl_istifham, istifham_ikhbar, istifham_mukarrar, haa_antum]}
+hamz_mufrad: {proposed: true, what: "the single hamzah's listed words (يؤده is silah_ha; here: مؤجلا، لئلا، النبيء، اللائي، يألتكم، عادا الأولى، جزءا…)",
+              from: [ibdal_maftuha_baad_damm, yaltikum_hamza_zaida, ibdal_ya_lialla, hamz_mutaharrik, hamz_waw_ula_qalun, juz_hadhf_idgham,
+                     ibdal_idgham_ya, tashil_hamz_mufrad, laai, laai_yainasna_hamza, li_alla, nabi_ibdal, ad_ula]}
+naql: {into: naql, what: "beginning after naql (ٱلۡأُولَىٰ), مَالِيَهۡ هَلَكَ", from: [ibtida_lam_naql, idgham_ha_maliyah]}
+hamz_waqf: {into: "hamz_waqf_*", what: "Ḥamzah's / Hishām's waqf: rawm and ishmām after naql, رئيا، أنبئهم، following the rasm, Khalaf al-ʿĀshir's taḥqīq",
+            from: [rawm_ishmam_waqf_hamz, ibdal_idgham_riya, ha_anbihim_waqf, waqf_hamza_rasm, hamz_waqf_all]}
+sakt_mafsul: {into: sakt_mafsul, what: "no sakt at all (the Durrah's three)", from: [sakt_mutlaq]}
+idgham_saghir: {proposed: true, what: "idghām ṣaghīr: إذ، قد، tāʾ al-taʾnīth، هل وبل، the letters of close articulation (اركب معنا، يلهث ذلك، نبذتها…), mithlayn",
+                from: [idgham_saghir, idgham_lam_hal_bal, idgham_ba_jazm_fa, idgham_dhal_ta_nabadhtuha, idgham_ra_lam, idgham_dal_tha_yurid,
+                       idgham_idh, idgham_dal_dhal_kahyas, idgham_dhal_ta_akhadhtu, idgham_qad, idgham_tha_ta_uritstum, idgham_tha_ta_labithtu,
+                       idgham_dhal_ta_udhtu, idgham_ta_tanith, idgham_yasin_nun, idgham_hal_bal, idgham_sin_mim_tasm, idgham_tha_dhal_yalhath,
+                       idgham_ba_mim_irkab, idgham_mithlayn, idgham_saghir_unlisted_words, idgham_harf_qarib, idgham_mutaqaribayn_ta]}
+nun_sakina: {proposed: true, what: "nūn sākinah and tanwīn: iẓhār, iqlāb, ikhfāʾ (Abū Jaʿfar's ikhfāʾ before غ خ)",
+             from: [nun_halq_ikhfa, izhar_nun_waw_ya, izhar_halqi, iqlab, ikhfa, ikhfa_nun_ta]}
+imala_words: {proposed: true, what: "imālah / taqlīl of named words and classes beyond the existing imala_* (alifs of taʾnīth، ruʾūs al-āy، رأى، التوراة، يس، تراءا، نأى، أنا، هار…)",
+              from: [imala_alif_tanith, imala_ruya, imala_tawrat, imala_rasm_ya, imala_yasin, fath_bab_imala, imala_kisai_only, imala_ras_ay,
+                     imala_shuba_hk_words, imala_taraa, imala_naa, imala_ana, taqlil_duri_abuamr_words, imala_har, imala_misc_words,
+                     imala_ibn_dhakwan_khulf, fath_dhiafa]}
+imala_ha_tanith: {proposed: true, what: "al-Kisāʾī's imālah of hāʾ al-taʾnīth and what precedes it at a stop", from: [imala_ha_tanith]}
+ra_lam: {into: "tarqiq_ra / taghliz_lam", what: "the Durrah's rāʾāt and lāmāt (كقالون), rāʾ at a stop with rawm, the lām of ٱللَّه", from: [ra_lam_kaqalun, ra_waqf_rawm, lafz_allah_lam]}
+waqf_rasm: {proposed: true, what: "stops on the rasm: hāʾ al-sakt, tāʾ al-taʾnīth written tāʾ, يا أبت، ويكأن، كأين، مال، أيا ما، أيه، dropped yāʾ",
+            from: [waqf_ya_abati, waqf_ha_sakt_ma, waqf_ha_sakt_huwa_hiya, waqf_ha_sakt_hunna, waqf_ha_sakt_ya_mutakallim, waqf_ha_sakt_wasl,
+                   waqf_ha_sakt_nudba, waqf_ha_sakt_thumma, ha_sakt_hadhf_wasl, waqf_ayya, waqf_ya_mahdhufa, waqf_lam_mal, waqf_wayka, waqf_rasm,
+                   waqf_ta_taanith, waqf_ya_abat, waqf_kaayyin, waqf_mal, waqf_ayyuha, waqf_ayyan_ma, ha_sakt_waqf]}
+rawm_ishmam: {proposed: true, what: "rawm and ishmām at a stop (who, and where not)", from: [rawm_ishmam]}
+ya_idafa: {proposed: true, what: "yāʾāt al-iḍāfah: opened or sukūn, per word", from: [ya_idafa, yaat_idafa]}
+ya_zaida: {proposed: true, what: "yāʾāt al-zawāʾid: kept in waṣl / in both / dropped, per word", from: [ya_zaida, zawaid]}

@@ -129,3 +129,25 @@ Sonnet subagent, instructions `prompt_rules.md`, check `python3 -m pipeline.rule
 - Fixed in the instructions: the ṣilah of hāʾ al-kināyah went to a new name instead of `silah_ha`;
   new names now reused across both books. After the full run, new categories get consolidated
   into data/profiles.yaml (reviewed), each with its word list.
+
+## The full uṣūl run (2026-11-25)
+
+al-Wāfī pp. 25–198 and al-Īḍāḥ pp. 30–186 (331 pages), 11 Sonnet subagents: **1,187 rules**
+(al-Wāfī 772, al-Īḍāḥ 415), 0 rejected, ~1.5M tokens (~4.5k a page).
+
+- **Against the profile table** (general waṣl rules only; listed words and single places are a
+  rāwī's exceptions, not his general rule): al-Wāfī 183/264 pairs agree, al-Īḍāḥ 73/81. The
+  disagreements are category boundaries, not contradictions: a bāb's rule for all readers set
+  against a narrower category (p. 68: everyone's ṣilah between two mutaḥarriks against Ibn
+  Kathīr's `silah_ha`; pp. 165–168: rāʾ rules for all against Warsh's `tarqiq_ra`; p. 103: the
+  obligatory ibdāl of آمن against `hamzatayn`). A few imālah rows (p. 141 Khalaf al-ʿĀshir, p. 153)
+  to look at with the page.
+- **678 rows in 136 new names**, proposed merged into 24 families (`categories_proposal.yaml`):
+  istiʿādhah, basmalah, the hāʾ of عليهم, mīm al-jamʿ before a sākin, madd lāzim, idghām ṣaghīr,
+  nūn sākinah, imālah of named words, al-Kisāʾī's hāʾ al-taʾnīth, stops on the rasm, rawm and
+  ishmām, the two yāʾāt; listed words go into their existing category (silah_ha, hamzatayn, naql…).
+- **For review**: rows where an agent assumed readers the page doesn't name (a few pp. 113–124,
+  178); apparent contradictions kept as stated (al-Īḍāḥ pp. 50/52 basmalah for Abū Jaʿfar; al-Wāfī
+  pp. 146/147 تراءا); Warsh's līn "qaṣr" written as tawassuṭ (p. 82, the agent's reading).
+- Rows are in `pipeline/out/rules/` (gitignored: they quote the books); the merged categories go
+  into data/ after review.

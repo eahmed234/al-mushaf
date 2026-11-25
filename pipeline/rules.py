@@ -54,8 +54,8 @@ def against_profiles(rows: list[dict]) -> dict:
         if str(cat).startswith("new:"):
             new[cat] += 1
             continue
-        if r["wajh"] is None or cat not in WUJUH or r["condition"] == "waqf":
-            continue  # the profile table is waṣl; waqf has its own categories
+        if r["wajh"] is None or cat not in WUJUH or r["condition"] == "waqf" or r["scope"] != "all":
+            continue  # the profile is a rāwī's general waṣl rule: listed words and single places are its exceptions
         for x in r["readers"]:
             p = prof[x].get(cat, {}).get("wujuh", {})
             if r["wajh"] not in p:
