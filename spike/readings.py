@@ -280,6 +280,7 @@ def generate(rawi: str, span: list[str], full: dict, confirmed: set) -> list[tup
             if not allowed(rawi, ch):
                 continue
             text = apply(words, occs, ch)
+            ch = {**ch, "_stop": stop}  # which way the span is read (stop at its end or go on)
             if own_waqf and stop:
                 for lab, w in waqf_forms(text[stop], rawi):
                     out.append(({**ch, "waqf": lab}, {**text, stop: w}))
@@ -324,6 +325,8 @@ def compare(upto: int, full: dict, feats: dict, start: int = 1):
     book_texts: dict[tuple, set] = defaultdict(set)
     claimed_span: dict[tuple, tuple] = {}
     choice_cache: dict[tuple, list] = {}
+    box_rows: dict[tuple, list] = {}  # (rawi, segment) -> readings {word id: text} of its rows
+    seg_of: dict[tuple, str] = {}
     for r in rows:
         span = tuple(w["id"] for w in r["words"] if w["id"] in hafs)
         book = {w["id"]: (w.get("alts") or [w["t"]]) for w in r["words"]}
@@ -352,6 +355,11 @@ def compare(upto: int, full: dict, feats: dict, start: int = 1):
             # a row with alternatives ("A * B * C") stands for each of them
             book_texts[key].update(itertools.product(*[w.get("alts") or [w["t"]] for w in r["words"] if w["id"] in seen_words]))
             claimed_span[key] = tuple(i for i in span if i in seen_words)
+            # every reading of the box's rows for this rāwī, word by word (alternatives expanded)
+            for combo in itertools.product(*[w.get("alts") or [w["t"]] for w in r["words"] if w["id"] in seen_words]):
+                box_rows.setdefault((rawi, r["segment"]), []).append(
+                    dict(zip([w["id"] for w in r["words"] if w["id"] in seen_words], combo)))
+            seg_of[key] = r["segment"]
     # extra readings: distinct texts (on the words the box speaks about, a pausal final vowel not
     # counting as a difference) beyond the number of readings the book gives that rawi for the span
     from .text import clusters
@@ -362,12 +370,37 @@ def compare(upto: int, full: dict, feats: dict, start: int = 1):
             cl[-1] = cl[-1][0] + "".join(m for m in cl[-1][1:] if m not in "\u064e\u064f\u0650\u064b\u064c\u064d")
         return "".join(cl)
 
+    EXTRAS.clear()
     for (rawi, span), gens in gen_cache.items():
         words = claimed_span[(rawi, span)]
-        distinct = {tuple(unpaused(g[i]) if i == span[-1] else g[i] for i in words) for g in gens}
-        if len(distinct) > len(book_texts[(rawi, span)]):
-            over[rawi] += len(distinct) - len(book_texts[(rawi, span)])
+        booked = {tuple(unpaused(t) if i == span[-1] else t for i, t in zip(words, bt)) for bt in book_texts[(rawi, span)]}
+        # a box reads its span one way, stopping at a final pause sign or going on (2:20:19 stops,
+        # 2:7:6 goes on): count the readings of the way that gives the most of the box's rows
+        by_ctx: dict = {}
+        for ch, g in choice_cache[(rawi, span)]:
+            tup = tuple(unpaused(g[i]) if i == span[-1] else g[i] for i in words)
+            by_ctx.setdefault(ch.get("_stop"), {})[tup] = ch
+        ctx = max(by_ctx, key=lambda c: (len(set(by_ctx[c]) & booked), -len(by_ctx[c])))
+        distinct = by_ctx[ctx]
+        # attested: some row of the same box for this rāwī reads the same on the words they share
+        # (a box spreads one rāwī's wujūh over rows of different lengths: 2:16 Warsh, 2:12 Qālūn)
+        others = box_rows.get((rawi, seg_of.get((rawi, span))), [])
+
+        def attested(tup):
+            g = dict(zip(words, tup))
+            return tup in booked or any(
+                (common := set(g) & set(o)) and all(same(g[i], o[i], i == span[-1]) for i in common) for o in others)
+
+        unattested = [(tup, ch) for tup, ch in distinct.items() if not attested(tup)]
+        n = min(len(unattested), max(0, len(distinct) - len(book_texts[(rawi, span)])))
+        if n:
+            over[rawi] += n
+            for tup, ch in unattested:  # the readings no row gives (for review)
+                EXTRAS.append((rawi, span[0], span[-1], ch))
     return misses, over
+
+
+EXTRAS: list = []
 
 
 def main() -> None:

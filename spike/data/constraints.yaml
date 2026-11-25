@@ -25,8 +25,8 @@
   rawi: [khallad]
   cats: [sakt_al, waqf_al]  # waqf_al: the stop on a word with lām al-taʿrīf before a hamzah (ٱلۡأَرۡضِ)
   allowed: [[sakt, naql], [sakt, sakt], [none, naql]]
-  cite: wafi 106; budur 41
-  source: "al-Wāfī p. 106: reading Khallād with sakt on al- and shayʾ, the stop on ٱلۡأَرۡضِ is naql or sakt; without it, naql only (the muḥaqqiqūn reject plain taḥqīq). al-Budūr p. 41 (قُلۡ ءَأَنتُمۡ): Khallād, no sakt: tas-hīl or taḥqīq of the second hamzah; naql: tas-hīl only"
+  cite: wafi 106; budur 41; budur 25
+  source: "al-Budūr p. 25: those who read al- without sakt in waṣl all take naql at the stop; al-Wāfī p. 106: reading Khallād with sakt on al- and shayʾ, the stop on ٱلۡأَرۡضِ is naql or sakt; without it, naql only (the muḥaqqiqūn reject plain taḥqīq). al-Budūr p. 41 (قُلۡ ءَأَنتُمۡ): Khallād, no sakt: tas-hīl or taḥqīq of the second hamzah; naql: tas-hīl only"
   status: candidate
   enforced: false
 
@@ -34,8 +34,8 @@
   rawi: [khalaf_an_hamzah]
   cats: [sakt_mafsul, waqf_initial]  # waqf_initial: the stop on a word starting with a hamzah after a sākin (مَنۡ ءَامَنَ)
   allowed: [[sakt, naql], [sakt, sakt], [none, naql], [none, none]]
-  cite: wafi 106
-  source: "al-Wāfī p. 106: Khalaf stopping on مَنۡ ءَامَنَ has naql, sakt (Abū al-Fatḥ's way, with sakt on the mafṣūl) or neither (Ibn Ghalbūn's, without it); Khallād naql or neither"
+  cite: wafi 106; budur 21
+  source: "al-Budūr p. 21 (عَذَابٌ أَلِيمٌ, 2:10): Khalaf three at the stop (sakt, naql, neither), Khallād two (naql, taḥqīq without sakt); al-Wāfī p. 106: Khalaf stopping on مَنۡ ءَامَنَ has naql, sakt (Abū al-Fatḥ's way, with sakt on the mafṣūl) or neither (Ibn Ghalbūn's, without it); Khallād naql or neither"
   status: candidate
   enforced: false
 
@@ -45,3 +45,28 @@
   cite: budur 65
   status: candidate
   enforced: true
+
+# al-Budūr's per-place taḥrīr for al-Fātiḥah and al-Baqarah 1-20 (pp. 15-26). Each is about a
+# feature the spike doesn't model as text yet (madd degrees, madd ʿāriḍ at a stop), so recorded,
+# not enforced; checked against al-Futūḥ when those features are modelled.
+- id: warsh_badal_arid
+  rawi: [warsh]
+  cats: [badal, madd_arid]  # madd_arid: madd ʿāriḍ li-l-sukūn at the stop (بِمُؤۡمِنِينَ)
+  allowed: [[qasr, qasr], [qasr, tawassut], [qasr, ishba], [tawassut, tawassut], [tawassut, ishba], [tul, ishba]]
+  cite: budur 21-22
+  source: "al-Budūr p. 21 (2:8 بِمُؤۡمِنِينَ): Warsh six wujūh: qaṣr of both badals with the three of the ʿāriḍ, their tawassuṭ with tawassuṭ or madd of the ʿāriḍ, their madd with madd; p. 22 (مُسۡتَهۡزِءُونَ) the same reasoning"
+  status: candidate
+  enforced: false
+
+- id: badal_equal
+  rawi: [warsh]
+  note: "a badal with its hamzah kept and one changed by naql (ءَامَنَّا … ٱلۡأٓخِرِ) take the same wajh: 'المعتمد وجوب التسوية' (al-Budūr p. 20). The spike makes one choice per category per span, so this holds already."
+  cite: budur 20
+  status: candidate
+  enforced: implicit
+
+- id: madd_degrees
+  note: "muttaṣil and munfaṣil in degrees: Qālūn and al-Dūrī with muttaṣil 2½ alifs take munfaṣil 2½ or qaṣr, with 2 alifs qaṣr only; ʿĀṣim's munfaṣil follows his muttaṣil (2½ or 2); Ibn ʿĀmir, al-Kisāʾī, Khalaf 2 in both; Warsh and Ḥamzah 3 in both (al-Budūr pp. 18-19). The spike's madd wujūh are qaṣr / tawassuṭ / ishbāʿ, not degrees."
+  cite: budur 18-19
+  status: candidate
+  enforced: false

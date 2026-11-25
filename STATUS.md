@@ -117,8 +117,18 @@ tables; review list empty.
 3. **Read al-Futūḥ's footnotes ("تفاصيل المقطع")**: per-word statements with matn verses. They're
    already extracted as `footnote` / `text` records. Parse them into place entries like
    `data/place_wujuh.yaml`.
-4. **Constraints** from al-Budūr's per-place prose (e.g. p. 20: badal in ءَامَنَّا and ٱلۡأٓخِرِ must be
-   equal), then checked against al-Futūḥ's boxes.
+4. **Constraints from al-Budūr** (2026-11-24, for 1:1–2:20). al-Budūr pp. 15–26 state taḥrīr only
+   for features the spike doesn't model as text: madd degrees (pp. 18–19), badal against madd
+   ʿāriḍ at a stop (pp. 21–22), sakt against waqf (pp. 21, 25), and badal equality (p. 20, which
+   one choice per span already gives). All are in `data/constraints.yaml`, not enforced. The
+   "extra readings" the spike counted were mostly the comparison, not missing taḥrīr: a box
+   reads a span one way (stop at a final pause sign or go on), and spreads one rāwī's wujūh over
+   rows of different lengths. Counting per reading way and per box: **22 → 3** extras on the full
+   passage (al-Dūrī at 2:19–20, Qālūn at 2:20). Book-only runs show more (Qālūn's iskān) because
+   the "الجميع عدا من سيأتي" convention is computed from the rows. Next for taḥrīr: model the
+   features (madd degrees, ʿāriḍ, sakt) as choices so these constraints can be enforced, and read
+   al-Budūr's taḥrīr beyond this passage (al-Ḍabbāʿ for the Shāṭibiyyah) as the occurrence work
+   reaches further.
 5. **Spike Day 5**: the KFGQPC check for the 8, and `spike/REPORT.md` answering Q1–Q5.
 
 Also open, lower priority: 208 numbering irregularities in the extraction (`mushaf/docs/known-gaps.md`),
