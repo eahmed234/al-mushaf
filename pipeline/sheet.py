@@ -24,6 +24,9 @@ from .score import match, rows, units
 from .validate import pages as page_texts
 
 OUT = BUILD / "extract_review.html"
+# the waqf categories cover more than the profile review's section names say (Eisa, 2026-11-25)
+CAT_AR = {**CAT_AR, "hamz_waqf_final": "وقفاً: الهمز المتطرف", "hamz_waqf_mid": "وقفاً: الهمز المتوسط",
+          "sakt_al": "السكت على المفصول الخاص (أل وشيء)", "sakt_mafsul": "السكت على المفصول العام"}
 KIND_AR = {"farsh": "فرش", "usul": "أصول", "tahrir": "تحرير", "ittifaq": "اتفاق"}
 COND_AR = {"wasl": "وصلاً", "waqf": "وقفاً", None: ""}
 

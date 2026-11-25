@@ -7,8 +7,8 @@ cost, with the review sheet for Eisa to approve.
 
 - **Pages**: al-Budūr al-Zāhirah pp. 16–25, the first rubʿ (1:7–2:25), packed with the Ḥafṣ words
   of the quarter (`pipeline.pack`). p. 15 is the worked example in the instructions, not scored.
-- **Gold set**: 161 rows (485 rāwī-units) read by Claude (Opus) from the pages, checked by the
-  validator; stored as offsets (`pipeline/gold/budur/`). **Not yet reviewed by Eisa.**
+- **Gold set**: read by Claude (Opus) from the pages, checked by the validator, stored as offsets
+  (`pipeline/gold/budur/`); **reviewed by Eisa on 2026-11-25** (v3: 196 rows, 519 rāwī-units).
 - **Runs**: one Claude Code subagent per model, the same instructions (`prompt.md`), all ten pages,
   then the validator once to fix rejected quotes.
 - **Score** (`pipeline.score`): per rāwī at a place: category (or kind), khulf, and which reading
@@ -59,3 +59,27 @@ taḥrīr; "جميع القراء" is ittifāq; quotes unique on the page), appl
 `PYTHONPATH=.:../mushaf ../mushaf/.venv/bin/python -m pipeline.sheet pipeline/out/sonnet-v2/budur --against pipeline/gold/budur`
 → `build/extract_review.html`. Tick "differences only" for the 59 rows to judge: 45 only in the
 run, 14 only in the gold set.
+
+## Eisa's review (2026-11-25)
+
+59 rows marked (`pipeline/reviews/budur-16-25-sonnet-v2.json`): 46 ✓, 13 ✗. Applied to the gold
+set (v3) and the instructions (v3):
+
+- **General rules and words elsewhere are rows** (✓ on Sonnet's p. 16 rows and the munfaṣil ×
+  muttaṣil combinations, pp. 18–19), reversing my v2 convention.
+- **References and "leaving a rule" take the rule's category**: "ما فى لفظ الآخر لخلف وخلاد" is
+  the mafṣūl khāṣ (sakt_al); "تركه" at عذاب أليم the mafṣūl ʿām (sakt_mafsul).
+- **The five wujūh at السفهاء are uṣūl, not taḥrīr**, and tas-hīl with madd splits by rāwī:
+  tawassuṭ for Hishām, ṭūl for Ḥamzah (p. 22).
+- **At a stop on fatḥ tanwīn the stop is on the alif**: شيئا has no "with sukūn" wujūh, and
+  بناءً's hamzah is middle (hamz_waqf_mid), not final.
+- **The sheet's labels for the waqf categories were too narrow** ("after an alif", "after a
+  mutaḥarrik"); widened in the sheet and noted in data/profiles.yaml.
+- **Madd lengths are three** (qaṣr 1, tawassuṭ 2, ṭūl 3 alifs; al-Shāṭibī's way, p. 18); the
+  four-degree way with its fractions waits for the kubrā version (data/constraints.yaml,
+  madd_degrees).
+
+Sonnet v2 against the reviewed gold: **96.3% recall, 95.6% precision** per rāwī. What's left is
+mostly the conventions above (the run predates them) and the errors Eisa marked (silah_mim at
+عليهم ءأنذرتهم; Hishām's بناء as a final hamzah) plus two omissions (Khallād's taḥqīq at أنذرتهم
+أم, Warsh's qaṣr at 2:8). A run on the v3 instructions measures the bar.

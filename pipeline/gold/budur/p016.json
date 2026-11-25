@@ -219,6 +219,122 @@
     65,
     82
    ]
+  },
+  {
+   "place": [],
+   "kind": "usul",
+   "category": "munfasil",
+   "readers": [
+    "bazzi",
+    "qunbul",
+    "ibn_wardan",
+    "ibn_jammaz"
+   ],
+   "khulf": [],
+   "reading": "القصر فقط",
+   "condition": null,
+   "scope": "here",
+   "place_text": "عليكم أنفسكم",
+   "span": [
+    16,
+    338,
+    383
+   ]
+  },
+  {
+   "place": [],
+   "kind": "usul",
+   "category": "munfasil",
+   "readers": [
+    "qalun"
+   ],
+   "khulf": [
+    "qalun"
+   ],
+   "reading": "القصر",
+   "condition": null,
+   "scope": "here",
+   "place_text": "عليكم أنفسكم",
+   "span": [
+    16,
+    384,
+    408
+   ]
+  },
+  {
+   "place": [],
+   "kind": "usul",
+   "category": "munfasil",
+   "readers": [
+    "qalun"
+   ],
+   "khulf": [
+    "qalun"
+   ],
+   "reading": "المد",
+   "condition": null,
+   "scope": "here",
+   "place_text": "عليكم أنفسكم",
+   "span": [
+    16,
+    384,
+    408
+   ]
+  },
+  {
+   "place": [],
+   "kind": "usul",
+   "category": "silah_mim_hamza",
+   "readers": [
+    "warsh"
+   ],
+   "khulf": [],
+   "reading": "بصلة ميم الجمع",
+   "condition": null,
+   "scope": "all",
+   "place_text": "عليكم أنفسكم",
+   "span": [
+    16,
+    458,
+    508
+   ]
+  },
+  {
+   "place": [],
+   "kind": "usul",
+   "category": "munfasil",
+   "readers": [
+    "warsh"
+   ],
+   "khulf": [],
+   "reading": "فيمد مدا مشبعا على قاعدته",
+   "condition": null,
+   "scope": "here",
+   "place_text": "عليكم أنفسكم",
+   "span": [
+    16,
+    556,
+    581
+   ]
+  },
+  {
+   "place": [],
+   "kind": "usul",
+   "category": "silah_ha",
+   "readers": [
+    "bazzi",
+    "qunbul"
+   ],
+   "khulf": [],
+   "reading": "وصلها بواو لفظية",
+   "condition": null,
+   "scope": "all",
+   "place_text": "هاء الضمير بعد ساكن غير الياء (منه، اجتباه)",
+   "span": [
+    16,
+    1269,
+    1285
+   ]
   }
  ]
 }

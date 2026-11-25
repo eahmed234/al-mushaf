@@ -78,6 +78,11 @@ tables; review list empty.
 - Data layer (docs/05): subagents on the plan for now (no API billing); pilot bar 98%; farsh from
   al-Budūr first, al-Wāfī / al-Īḍāḥ second; this repo stands alone (no mushaflab dependency).
 - Glyph 135 is the tas-hīl dot; glyph 383 is lām-alif with maddah; #76923c is the imālah green.
+- Madd lengths are three: qaṣr 1, tawassuṭ 2, ṭūl 3 alifs (al-Shāṭibī's way, al-Budūr p. 18); the
+  four-degree way and its fractions wait for the kubrā version (2026-11-25).
+- Extraction conventions from the pilot review (2026-11-25, `pipeline/PILOT.md`): general rules
+  and words elsewhere are rows; references and "leaving a rule" take the rule's category (mafṣūl
+  khāṣ = sakt_al, mafṣūl ʿām = sakt_mafsul); at a stop on fatḥ tanwīn the stop is on the alif.
 
 ### What the spike has shown so far (Q1–Q5)
 
@@ -169,8 +174,9 @@ tables; review list empty.
    Milestone 1 (2026-11-25): `pipeline/` built and piloted on al-Budūr pp. 16–25
    (`pipeline/PILOT.md`). Sonnet 5.5 subagents: 96.9% recall / 95.8% precision per rāwī against
    Claude's gold set (99% on who reads what); Haiku 5.5 out (87% / 80%, more tokens). ~13k tokens
-   a page. Waiting on Eisa: the review sheet (59 rows where run and gold differ), which also
-   reviews the gold set.
+   a page. Eisa reviewed the 59 rows (2026-11-25): gold set and instructions v3
+   (`pipeline/PILOT.md`, "Eisa's review"); Sonnet v2 against it: 96.3% / 95.6%. Next: Sonnet on
+   the v3 instructions to measure the 98% bar, then milestone 2 (farsh, al-Baqarah).
 
 Also open, lower priority: 208 numbering irregularities in the extraction (`mushaf/docs/known-gaps.md`),
 the unreproduced pairs listed above, and the alkiraat.com contact message (typed in the form,

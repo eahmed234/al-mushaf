@@ -50,9 +50,15 @@ Rules:
 - When the readers differ between the places a statement covers (one rāwī only "في الموضع
   الأول"), split the rows by place.
 - Waqf statements ("ولو وقف عليه حمزة…") are `usul` rows with `condition: "waqf"`.
-- A reference that gives readers the readings of another place ("فيه لورش وحمزة ما في عذاب
-  أليم", "فيه لحمزة وقفا ما في بناء") is one row with those readers, `category: null`, and the
-  reference as `reading`. A reference that names no readers ("سبق", "تقدم") is not a row.
+- A reference that gives readers the readings of another place ("فيه لحمزة وقفا ما في بناء") is a
+  row with those readers, the category of the rule it points to, and the reference as `reading`;
+  split it when it points to different rules for different readers ("فيه لورش وحمزة ما في عذاب
+  أليم": Warsh's naql, Ḥamzah's sakt). A reference that names no readers ("سبق", "تقدم") is not a row.
+- A wajh that leaves a rule ("تركه", "عدم السكت", "التحقيق بلا سكت") takes that rule's category.
+- When the same wajh has a different length for different readers ("فإن حمزة يمد بمقدار ثلاث ألفات
+  وهشاما بمقدار ألفين"), split it by reader.
+- Write only the wujūh the page states. Don't add combinations it doesn't list ("مع السكون"); at a
+  stop on fatḥ tanwīn there is no sukūn, rawm or ishmām (the stop is on the alif).
 - A statement that only says what a rāwī doesn't have ("ليس لورش فيه مد بدل") is a row: the
   reading is what he reads instead, in the book's words.
 - The rubʿ's closing list "الممال" is statements too: each word in it gives rows (who has imālah,
@@ -60,11 +66,12 @@ Rules:
 - A wajh at a stop that is another rule (naql, sakt) takes that rule's category, with
   `condition: "waqf"`. Rawm, ishmām and sukūn with a length at a stop are wujūh of the same rule
   (one row each), not taḥrīr.
-- A named word outside HAFS WORDS ("أنبئهم بالبقرة وننبئهم بالقدر") is a row with `place: []` and
-  the word(s) in `place_text`.
-- Not rows: rules stated in general with no particular word (a word after "نحو", "مثل", "كـ" is an
-  example, not a place), definitions, the degrees of madd (مراتب), references back ("سبق",
-  "تقدم") that don't restate readers.
+- A rule stated in general, or about a word outside HAFS WORDS, is a row too when it names readers
+  and a reading: `place: []`, and the word, the book's example or the passage in `place_text`
+  ("أنبئهم بالبقرة وننبئهم بالقدر"، "نحو عليكم أنفسكم"، "من بما أنزل إليك إلى المفلحون"). The book's
+  combinations of munfaṣil and muttaṣil lengths are `tahrir` rows.
+- Not rows: definitions, explanations that name no readers, the bare list of madd degrees
+  (مراتب), references back ("سبق", "تقدم") that don't restate readers.
 
 ## Reader names (data/readers.yaml)
 
@@ -151,8 +158,8 @@ The twenty ids: qalun, warsh, bazzi, qunbul, duri_abuamr, susi, hisham, ibn_dhak
 | silah_ha | ṣilah of hāʾ al-ḍamīr (فيه، منه) |
 | ibdal_sakin | ibdāl of a sākin hamzah (يؤمنون) |
 | naql | naql of a hamzah's vowel to a sākin before it |
-| sakt_al | sakt on lām al-taʿrīf before a hamzah, and on شيء |
-| sakt_mafsul | sakt on a sākin at a word's end before a hamzah |
+| sakt_al | sakt on the mafṣūl khāṣ: lām al-taʿrīf before a hamzah (ٱلۡأَرۡضِ), and شيء |
+| sakt_mafsul | sakt on the mafṣūl ʿām: a sākin at a word's end before a hamzah (عذاب أليم، عليهم أنذرتهم) |
 | idgham_kabir | idghām kabīr (al-Sūsī's and those who agree) |
 | idgham_ghunna | idghām of nūn/tanwīn with or without ghunnah |
 | hamzatayn | two hamzahs in one word (ءأنذرتهم) |
@@ -173,9 +180,9 @@ The twenty ids: qalun, warsh, bazzi, qunbul, duri_abuamr, susi, hisham, ibn_dhak
 | hadhf_damm | dropping the hamzah of مستهزءون and the like in waṣl and waqf (Abū Jaʿfar); Ḥamzah's at a stop is hamz_waqf_mid |
 | ibdal_sakin_waqf | ibdāl of a sākin hamzah at a stop (Ḥamzah) |
 | hamzatayn_waqf | two hamzahs at a stop |
-| hamz_waqf_final | a final hamzah at a stop (Ḥamzah, Hishām): ibdāl, tas-hīl with rawm, and naql or idghām after a sākin yāʾ/wāw (شيء) |
+| hamz_waqf_final | a final hamzah at a stop (Ḥamzah, Hishām): after an alif (السماء: ibdāl, tas-hīl with rawm) or another sākin (شيء: naql, idghām) |
 | hamz_waqf_zaid | a hamzah after a prefix letter (و ف ب ل ك ها يا) at a stop. After lām al-taʿrīf, or at the start of a word after a sākin (عذاب أليم), the waqf wujūh are sakt_al / sakt_mafsul / naql |
-| hamz_waqf_mid | a middle hamzah at a stop (Ḥamzah) |
+| hamz_waqf_mid | a middle hamzah at a stop (Ḥamzah), after a mutaḥarrik or an alif (مستهزءون، أضاءت). A hamzah before the alif of fatḥ tanwīn (بناءً) is middle: the stop is on the alif |
 
 ## Worked example (page 15, not one you will be given)
 

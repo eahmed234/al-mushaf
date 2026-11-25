@@ -8,13 +8,34 @@
     "2:14:9"
    ],
    "kind": "usul",
-   "category": null,
+   "category": "naql",
    "readers": [
-    "warsh",
+    "warsh"
+   ],
+   "khulf": [],
+   "reading": "ما فى عذاب أليم",
+   "condition": null,
+   "scope": "here",
+   "span": [
+    22,
+    953,
+    1011
+   ]
+  },
+  {
+   "place": [
+    "2:14:8",
+    "2:14:9"
+   ],
+   "kind": "usul",
+   "category": "sakt_mafsul",
+   "readers": [
     "khalaf_an_hamzah",
     "khallad"
    ],
-   "khulf": [],
+   "khulf": [
+    "khalaf_an_hamzah"
+   ],
    "reading": "ما فى عذاب أليم",
    "condition": null,
    "scope": "here",
@@ -319,6 +340,52 @@
     22,
     588,
     655
+   ]
+  },
+  {
+   "place": [
+    "2:13:12",
+    "2:13:16"
+   ],
+   "kind": "usul",
+   "category": "hamz_waqf_final",
+   "readers": [
+    "hisham"
+   ],
+   "khulf": [
+    "hisham"
+   ],
+   "reading": "التسهيل مع الروم والمد بقدر ألفين (توسط)",
+   "condition": "waqf",
+   "scope": "here",
+   "span": [
+    22,
+    884,
+    903
+   ]
+  },
+  {
+   "place": [
+    "2:13:12",
+    "2:13:16"
+   ],
+   "kind": "usul",
+   "category": "hamz_waqf_final",
+   "readers": [
+    "khalaf_an_hamzah",
+    "khallad"
+   ],
+   "khulf": [
+    "khalaf_an_hamzah",
+    "khallad"
+   ],
+   "reading": "التسهيل مع الروم والمد بقدر ثلاث ألفات (طول)",
+   "condition": "waqf",
+   "scope": "here",
+   "span": [
+    22,
+    853,
+    883
    ]
   }
  ]

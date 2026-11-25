@@ -276,7 +276,7 @@ categories:
     - {who: [ishaq, idris], wujuh: [tahqiq], cite: idah 117, 121}
     - {who: rest_as_wasl, wasl: hamzatayn}
 
-  hamz_waqf_final:  # a final hamzah after an alif (شَآءَ, ٱلسَّمَآءِ)
+  hamz_waqf_final:  # a final hamzah after an alif (شَآءَ, ٱلسَّمَآءِ); after another sākin (شَيۡءٖ: naql, idghām, al-Budūr p. 24) not in this table yet
     - {who: [khalaf_an_hamzah, khallad, hisham], wujuh: [ibdal_madd, ibdal_qasr, tashil_rawm_madd, tashil_rawm_qasr], cite: wafi 114-115, 117, 124-127,
        cond: "ibdāl alif with qaṣr, tawassuṭ or madd; tashīl with rawm only for a maḍmūmah or maksūrah"}
     - {who: [ishaq, idris], wujuh: [tahqiq], cite: idah 117, 121}
@@ -287,7 +287,7 @@ categories:
     - {who: [ishaq, idris], wujuh: [tahqiq], cite: idah 117, 121}
     - {who: rest_as_wasl, wujuh: [tahqiq], note: "Hishām: final hamzah only (wafi 116-117)"}
 
-  hamz_waqf_mid:  # a mid hamzah after a mutaḥarrik (مُسۡتَهۡزِءُونَ)
+  hamz_waqf_mid:  # a mid hamzah after a mutaḥarrik (مُسۡتَهۡزِءُونَ); after an alif (أَضَآءَتۡ, and بِنَآءٗ at a stop, where the hamzah is mid before the tanwīn's alif: tas-hīl with madd or qaṣr, al-Budūr pp. 23-24, Eisa 2026-11-25) not in this table yet
     - {who: [khalaf_an_hamzah, khallad], wujuh: [tashil, ibdal_ya, hadhf], cite: "wafi 116, 118; budur 22; ghayth-1 31",
        note: "مُسۡتَهۡزِءُونَ: the three sound wujūh of six (tashīl toward wāw, ibdāl yāʾ after al-Akhfash, ḥadhf with ḍamm of the zāy), each with the three lengths of the waqf (Ghayth p. 31; al-Budūr p. 22); al-Futūḥ v1 p59 r12 and nQuran 2:14 give the same three",
        cond: "maftūḥah after kasr: yāʾ; after ḍamm: wāw; otherwise tashīl bayna bayna; maḍmūmah after kasr also ibdāl yāʾ (al-Akhfash) and, where the rasm has no seat, ḥadhf"}

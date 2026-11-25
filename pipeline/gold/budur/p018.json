@@ -1,0 +1,132 @@
+{
+ "book": "budur",
+ "page": 18,
+ "rows": [
+  {
+   "place": [],
+   "kind": "tahrir",
+   "category": null,
+   "readers": [
+    "qalun",
+    "bazzi",
+    "qunbul",
+    "duri_abuamr",
+    "susi",
+    "ibn_wardan",
+    "ibn_jammaz",
+    "ruways",
+    "rawh"
+   ],
+   "khulf": [],
+   "reading": "بقصر المنفصل جاز لك في المتصل مده ثلاث حركات على المذهب الأول",
+   "condition": null,
+   "scope": "here",
+   "place_text": "بما أنزل إليك إلى أولئك هم المفلحون",
+   "span": [
+    18,
+    1316,
+    1377
+   ]
+  },
+  {
+   "place": [],
+   "kind": "tahrir",
+   "category": null,
+   "readers": [
+    "qalun",
+    "duri_abuamr"
+   ],
+   "khulf": [],
+   "reading": "بمد المنفصل ثلاث حركات تعين في المتصل مده كذلك",
+   "condition": null,
+   "scope": "here",
+   "place_text": "بما أنزل إليك إلى أولئك هم المفلحون",
+   "span": [
+    18,
+    1443,
+    1506
+   ]
+  },
+  {
+   "place": [],
+   "kind": "tahrir",
+   "category": null,
+   "readers": [
+    "shuba",
+    "hafs"
+   ],
+   "khulf": [],
+   "reading": "بعد المنفصل خمس حركات مددت المتصل خمسا كذلك",
+   "condition": null,
+   "scope": "here",
+   "place_text": "بما أنزل إليك إلى أولئك هم المفلحون",
+   "span": [
+    18,
+    1582,
+    1658
+   ]
+  },
+  {
+   "place": [],
+   "kind": "tahrir",
+   "category": null,
+   "readers": [
+    "hisham",
+    "ibn_dhakwan",
+    "abul_harith",
+    "duri_kisai",
+    "ishaq",
+    "idris"
+   ],
+   "khulf": [],
+   "reading": "إلا المد بقدر ألفين فقط على كلا المذهبين",
+   "condition": null,
+   "scope": "here",
+   "place_text": "بما أنزل إليك إلى أولئك هم المفلحون",
+   "span": [
+    18,
+    1724,
+    1801
+   ]
+  },
+  {
+   "place": [],
+   "kind": "tahrir",
+   "category": null,
+   "readers": [
+    "warsh",
+    "khalaf_an_hamzah",
+    "khallad"
+   ],
+   "khulf": [],
+   "reading": "إلا المدبقدر ثلاث ألفات",
+   "condition": null,
+   "scope": "here",
+   "place_text": "بما أنزل إليك إلى أولئك هم المفلحون",
+   "span": [
+    18,
+    1831,
+    1894
+   ]
+  },
+  {
+   "place": [],
+   "kind": "tahrir",
+   "category": null,
+   "readers": [
+    "qalun",
+    "duri_abuamr"
+   ],
+   "khulf": [],
+   "reading": "مددت المنفصل ثلاثا أو قصرته",
+   "condition": null,
+   "scope": "here",
+   "place_text": "إن الذين كفروا سواء عليهم إلى وعلى أبصارهم غشاوة",
+   "span": [
+    18,
+    2129,
+    2175
+   ]
+  }
+ ]
+}

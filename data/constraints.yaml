@@ -68,5 +68,6 @@
 - id: madd_degrees
   note: "muttaṣil and munfaṣil in degrees: Qālūn and al-Dūrī with muttaṣil 2½ alifs take munfaṣil 2½ or qaṣr, with 2 alifs qaṣr only; ʿĀṣim's munfaṣil follows his muttaṣil (2½ or 2); Ibn ʿĀmir, al-Kisāʾī, Khalaf 2 in both; Warsh and Ḥamzah 3 in both (al-Budūr pp. 18-19). The spike's madd wujūh are qaṣr / tawassuṭ / ishbāʿ, not degrees."
   cite: budur 18-19
-  status: candidate
+  status: decided
+  decision: "Madd lengths are three: qaṣr 1, tawassuṭ 2, ṭūl 3 alifs, al-Shāṭibī's two degrees above qaṣr (al-Budūr p. 18); the rest of the book speaks only of qaṣr and madd. Under that model this constraint holds by itself (muttaṣil is never qaṣr; who has two degrees has them in both). The four-degree way with its fractions (fuwayq) waits for the kubrā version (Eisa 2026-11-25)."
   enforced: false

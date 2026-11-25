@@ -210,6 +210,90 @@
     2189,
     2348
    ]
+  },
+  {
+   "place": [],
+   "kind": "tahrir",
+   "category": null,
+   "readers": [
+    "bazzi",
+    "qunbul",
+    "susi",
+    "ibn_wardan",
+    "ibn_jammaz"
+   ],
+   "khulf": [],
+   "reading": "قصرت المنفصل فقط لأن مذهبهم فيه القصر لا غير",
+   "condition": null,
+   "scope": "here",
+   "place_text": "إن الذين كفروا سواء عليهم إلى وعلى أبصارهم غشاوة",
+   "span": [
+    19,
+    27,
+    71
+   ]
+  },
+  {
+   "place": [],
+   "kind": "tahrir",
+   "category": null,
+   "readers": [
+    "hisham",
+    "ibn_dhakwan",
+    "abul_harith",
+    "duri_kisai",
+    "ishaq",
+    "idris"
+   ],
+   "khulf": [],
+   "reading": "مددت المنفصل كذلك",
+   "condition": null,
+   "scope": "here",
+   "place_text": "إن الذين كفروا سواء عليهم إلى وعلى أبصارهم غشاوة",
+   "span": [
+    19,
+    74,
+    151
+   ]
+  },
+  {
+   "place": [],
+   "kind": "tahrir",
+   "category": null,
+   "readers": [
+    "shuba",
+    "hafs"
+   ],
+   "khulf": [],
+   "reading": "تعين مد المنفصل خمسا",
+   "condition": null,
+   "scope": "here",
+   "place_text": "إن الذين كفروا سواء عليهم إلى وعلى أبصارهم غشاوة",
+   "span": [
+    19,
+    208,
+    277
+   ]
+  },
+  {
+   "place": [],
+   "kind": "tahrir",
+   "category": null,
+   "readers": [
+    "warsh",
+    "khalaf_an_hamzah",
+    "khallad"
+   ],
+   "khulf": [],
+   "reading": "ليس لهما في المدين إلا الإشباع على كلا المذهبين",
+   "condition": null,
+   "scope": "here",
+   "place_text": "إن الذين كفروا سواء عليهم إلى وعلى أبصارهم غشاوة",
+   "span": [
+    19,
+    347,
+    417
+   ]
   }
  ]
 }

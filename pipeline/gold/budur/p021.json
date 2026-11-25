@@ -690,7 +690,7 @@
     "khalaf_an_hamzah",
     "khallad"
    ],
-   "reading": "التسهيل مع الروم والمد",
+   "reading": "التسهيل مع الروم والقصر",
    "condition": "waqf",
    "scope": "all",
    "span": [
@@ -701,28 +701,24 @@
   },
   {
    "place": [
-    "2:13:12",
-    "2:13:16"
+    "2:8:8"
    ],
    "kind": "usul",
-   "category": "hamz_waqf_final",
+   "category": "sakt_al",
    "readers": [
-    "hisham",
     "khalaf_an_hamzah",
     "khallad"
    ],
    "khulf": [
-    "hisham",
-    "khalaf_an_hamzah",
     "khallad"
    ],
-   "reading": "التسهيل مع الروم والقصر",
-   "condition": "waqf",
-   "scope": "all",
+   "reading": "ما فى لفظ الآخر لخلف وخلاد عن حمزة وصلا ووقفا",
+   "condition": null,
+   "scope": "here",
    "span": [
     21,
-    1653,
-    1696
+    160,
+    213
    ]
   }
  ]

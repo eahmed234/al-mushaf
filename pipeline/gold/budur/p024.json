@@ -416,12 +416,15 @@
     "2:23:14"
    ],
    "kind": "usul",
-   "category": null,
+   "category": "hamz_waqf_mid",
    "readers": [
     "khalaf_an_hamzah",
     "khallad"
    ],
-   "khulf": [],
+   "khulf": [
+    "khalaf_an_hamzah",
+    "khallad"
+   ],
    "reading": "ما في بناء",
    "condition": "waqf",
    "scope": "here",
@@ -677,6 +680,342 @@
     24,
     311,
     398
+   ]
+  },
+  {
+   "place": [],
+   "kind": "usul",
+   "category": "lin_hamz",
+   "readers": [
+    "warsh"
+   ],
+   "khulf": [
+    "warsh"
+   ],
+   "reading": "التوسط مع السكون المحض",
+   "condition": "waqf",
+   "scope": "here",
+   "place_text": "شيء مرفوعا",
+   "span": [
+    24,
+    401,
+    495
+   ]
+  },
+  {
+   "place": [],
+   "kind": "usul",
+   "category": "lin_hamz",
+   "readers": [
+    "warsh"
+   ],
+   "khulf": [
+    "warsh"
+   ],
+   "reading": "التوسط مع الروم",
+   "condition": "waqf",
+   "scope": "here",
+   "place_text": "شيء مرفوعا",
+   "span": [
+    24,
+    401,
+    495
+   ]
+  },
+  {
+   "place": [],
+   "kind": "usul",
+   "category": "lin_hamz",
+   "readers": [
+    "warsh"
+   ],
+   "khulf": [
+    "warsh"
+   ],
+   "reading": "التوسط مع الإشمام",
+   "condition": "waqf",
+   "scope": "here",
+   "place_text": "شيء مرفوعا",
+   "span": [
+    24,
+    401,
+    495
+   ]
+  },
+  {
+   "place": [],
+   "kind": "usul",
+   "category": "lin_hamz",
+   "readers": [
+    "warsh"
+   ],
+   "khulf": [
+    "warsh"
+   ],
+   "reading": "الطول مع السكون المحض",
+   "condition": "waqf",
+   "scope": "here",
+   "place_text": "شيء مرفوعا",
+   "span": [
+    24,
+    401,
+    495
+   ]
+  },
+  {
+   "place": [],
+   "kind": "usul",
+   "category": "lin_hamz",
+   "readers": [
+    "warsh"
+   ],
+   "khulf": [
+    "warsh"
+   ],
+   "reading": "الطول مع الروم",
+   "condition": "waqf",
+   "scope": "here",
+   "place_text": "شيء مرفوعا",
+   "span": [
+    24,
+    401,
+    495
+   ]
+  },
+  {
+   "place": [],
+   "kind": "usul",
+   "category": "lin_hamz",
+   "readers": [
+    "warsh"
+   ],
+   "khulf": [
+    "warsh"
+   ],
+   "reading": "الطول مع الإشمام",
+   "condition": "waqf",
+   "scope": "here",
+   "place_text": "شيء مرفوعا",
+   "span": [
+    24,
+    401,
+    495
+   ]
+  },
+  {
+   "place": [],
+   "kind": "usul",
+   "category": "hamz_waqf_final",
+   "readers": [
+    "khalaf_an_hamzah",
+    "khallad"
+   ],
+   "khulf": [
+    "khalaf_an_hamzah",
+    "khallad"
+   ],
+   "reading": "النقل مع السكون المحض",
+   "condition": "waqf",
+   "scope": "here",
+   "place_text": "شيء مرفوعا",
+   "span": [
+    24,
+    1087,
+    1147
+   ]
+  },
+  {
+   "place": [],
+   "kind": "usul",
+   "category": "hamz_waqf_final",
+   "readers": [
+    "khalaf_an_hamzah",
+    "khallad"
+   ],
+   "khulf": [
+    "khalaf_an_hamzah",
+    "khallad"
+   ],
+   "reading": "النقل مع الإشمام",
+   "condition": "waqf",
+   "scope": "here",
+   "place_text": "شيء مرفوعا",
+   "span": [
+    24,
+    1087,
+    1147
+   ]
+  },
+  {
+   "place": [],
+   "kind": "usul",
+   "category": "hamz_waqf_final",
+   "readers": [
+    "khalaf_an_hamzah",
+    "khallad"
+   ],
+   "khulf": [
+    "khalaf_an_hamzah",
+    "khallad"
+   ],
+   "reading": "النقل مع الروم",
+   "condition": "waqf",
+   "scope": "here",
+   "place_text": "شيء مرفوعا",
+   "span": [
+    24,
+    1087,
+    1147
+   ]
+  },
+  {
+   "place": [],
+   "kind": "usul",
+   "category": "hamz_waqf_final",
+   "readers": [
+    "khalaf_an_hamzah",
+    "khallad"
+   ],
+   "khulf": [
+    "khalaf_an_hamzah",
+    "khallad"
+   ],
+   "reading": "الإدغام مع السكون المحض",
+   "condition": "waqf",
+   "scope": "here",
+   "place_text": "شيء مرفوعا",
+   "span": [
+    24,
+    1087,
+    1147
+   ]
+  },
+  {
+   "place": [],
+   "kind": "usul",
+   "category": "hamz_waqf_final",
+   "readers": [
+    "khalaf_an_hamzah",
+    "khallad"
+   ],
+   "khulf": [
+    "khalaf_an_hamzah",
+    "khallad"
+   ],
+   "reading": "الإدغام مع الإشمام",
+   "condition": "waqf",
+   "scope": "here",
+   "place_text": "شيء مرفوعا",
+   "span": [
+    24,
+    1087,
+    1147
+   ]
+  },
+  {
+   "place": [],
+   "kind": "usul",
+   "category": "hamz_waqf_final",
+   "readers": [
+    "khalaf_an_hamzah",
+    "khallad"
+   ],
+   "khulf": [
+    "khalaf_an_hamzah",
+    "khallad"
+   ],
+   "reading": "الإدغام مع الروم",
+   "condition": "waqf",
+   "scope": "here",
+   "place_text": "شيء مرفوعا",
+   "span": [
+    24,
+    1087,
+    1147
+   ]
+  },
+  {
+   "place": [],
+   "kind": "usul",
+   "category": "lin_hamz",
+   "readers": [
+    "warsh"
+   ],
+   "khulf": [
+    "warsh"
+   ],
+   "reading": "التوسط",
+   "condition": "waqf",
+   "scope": "here",
+   "place_text": "شيئا منصوبا",
+   "span": [
+    24,
+    498,
+    564
+   ]
+  },
+  {
+   "place": [],
+   "kind": "usul",
+   "category": "lin_hamz",
+   "readers": [
+    "warsh"
+   ],
+   "khulf": [
+    "warsh"
+   ],
+   "reading": "الطول",
+   "condition": "waqf",
+   "scope": "here",
+   "place_text": "شيئا منصوبا",
+   "span": [
+    24,
+    498,
+    564
+   ]
+  },
+  {
+   "place": [],
+   "kind": "usul",
+   "category": "hamz_waqf_final",
+   "readers": [
+    "khalaf_an_hamzah",
+    "khallad"
+   ],
+   "khulf": [
+    "khalaf_an_hamzah",
+    "khallad"
+   ],
+   "reading": "النقل",
+   "condition": "waqf",
+   "scope": "here",
+   "place_text": "شيئا منصوبا",
+   "span": [
+    24,
+    708,
+    754
+   ]
+  },
+  {
+   "place": [],
+   "kind": "usul",
+   "category": "hamz_waqf_final",
+   "readers": [
+    "khalaf_an_hamzah",
+    "khallad"
+   ],
+   "khulf": [
+    "khalaf_an_hamzah",
+    "khallad"
+   ],
+   "reading": "الإدغام",
+   "condition": "waqf",
+   "scope": "here",
+   "place_text": "شيئا منصوبا",
+   "span": [
+    24,
+    708,
+    754
    ]
   }
  ]
