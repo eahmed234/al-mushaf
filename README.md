@@ -146,6 +146,19 @@ docs/05); the spike as reported is tagged `spike-end`.
 | `kfgqpc.py` | generation against KFGQPC's eight riwāyāt, word by word |
 | `sheets/` | side-by-side pictures and the profile review sheet (`review_profiles.py`); the preview renderer (HarfBuzz + DigitalKhatt) and the tas-hīl dot work |
 
+### `pipeline/`: reading the books into rows (docs/05)
+
+| File | Does |
+| --- | --- |
+| `prompt.md`, `schema.json` | the frozen instructions (reader names, categories, a worked example) and the output shape |
+| `pack.py` | a page's text, the start of the next, and the Ḥafṣ words it speaks about → `pipeline/work/` (gitignored) |
+| `validate.py` | rejects rows whose quote isn't on the page, unknown ruwāt, bad places; quotes become offsets |
+| `gold.py`, `gold/` | the gold set: reviewed rows stored as offsets into the page (no book text in the repo) |
+| `score.py` | a run against the gold set: recall, precision, what was missed and what was added |
+| `sheet.py` | the review sheet: each page's rows beside the page image, ✓/✗ marks back as JSON |
+
+Runs write to `pipeline/out/RUN/` (gitignored: they hold quotes from the book).
+
 ### `data/`: the facts
 
 | File | Holds |
@@ -154,6 +167,7 @@ docs/05); the spike as reported is tagged `spike-end`.
 | `constraints.yaml` | taḥrīr tuples (tarbīʿ, badal × dhawāt al-yāʾ, badal × ʿāriḍ, Khallād's sakt × stop…), each cited, enforced or not |
 | `place_wujuh.yaml` | wujūh tied to one place |
 | `corrections/futuh_print_errors.yaml` | al-Futūḥ print errors Eisa confirmed, corrected on load |
+| `readers.yaml` | how the books name the twenty (qurrāʾ, ruwāt, al-Budūr's groups from its p. 11) |
 
 ### `tools/`
 

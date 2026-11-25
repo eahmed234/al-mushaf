@@ -1,0 +1,396 @@
+{
+ "book": "budur",
+ "page": 23,
+ "rows": [
+  {
+   "place": [
+    "2:15:2"
+   ],
+   "kind": "usul",
+   "category": "hamz_waqf_final",
+   "readers": [
+    "hisham",
+    "khalaf_an_hamzah",
+    "khallad"
+   ],
+   "khulf": [
+    "hisham",
+    "khalaf_an_hamzah",
+    "khallad"
+   ],
+   "reading": "إبدالها ياء مضمومة مع الروم",
+   "condition": "waqf",
+   "scope": "all",
+   "span": [
+    23,
+    3,
+    42
+   ]
+  },
+  {
+   "place": [
+    "2:17:7"
+   ],
+   "kind": "usul",
+   "category": "hamz_waqf_mid",
+   "readers": [
+    "khalaf_an_hamzah",
+    "khallad"
+   ],
+   "khulf": [
+    "khalaf_an_hamzah",
+    "khallad"
+   ],
+   "reading": "تسهيل مع المد",
+   "condition": "waqf",
+   "scope": "all",
+   "span": [
+    23,
+    49,
+    112
+   ]
+  },
+  {
+   "place": [
+    "2:17:7"
+   ],
+   "kind": "usul",
+   "category": "hamz_waqf_mid",
+   "readers": [
+    "khalaf_an_hamzah",
+    "khallad"
+   ],
+   "khulf": [
+    "khalaf_an_hamzah",
+    "khallad"
+   ],
+   "reading": "تسهيل مع القصر",
+   "condition": "waqf",
+   "scope": "all",
+   "span": [
+    23,
+    49,
+    112
+   ]
+  },
+  {
+   "place": [
+    "2:17:7"
+   ],
+   "kind": "usul",
+   "category": "hamz_waqf_mid",
+   "readers": [
+    "hisham"
+   ],
+   "khulf": [],
+   "reading": "إلا التحقيق",
+   "condition": "waqf",
+   "scope": "all",
+   "span": [
+    23,
+    226,
+    259
+   ]
+  },
+  {
+   "place": [
+    "2:18:6"
+   ],
+   "kind": "ittifaq",
+   "category": null,
+   "readers": [
+    "qalun",
+    "warsh",
+    "bazzi",
+    "qunbul",
+    "duri_abuamr",
+    "susi",
+    "hisham",
+    "ibn_dhakwan",
+    "shuba",
+    "hafs",
+    "khalaf_an_hamzah",
+    "khallad",
+    "abul_harith",
+    "duri_kisai",
+    "ibn_wardan",
+    "ibn_jammaz",
+    "ruways",
+    "rawh",
+    "ishaq",
+    "idris"
+   ],
+   "khulf": [],
+   "reading": "يفتح الياء وكسر الجيم",
+   "condition": null,
+   "scope": "here",
+   "span": [
+    23,
+    321,
+    387
+   ]
+  },
+  {
+   "place": [
+    "2:17:17"
+   ],
+   "kind": "usul",
+   "category": "tarqiq_ra",
+   "readers": [
+    "warsh"
+   ],
+   "khulf": [],
+   "reading": "بترقيق الراء",
+   "condition": null,
+   "scope": "all",
+   "span": [
+    23,
+    403,
+    423
+   ]
+  },
+  {
+   "place": [
+    "2:19:4"
+   ],
+   "kind": "usul",
+   "category": null,
+   "readers": [
+    "khalaf_an_hamzah",
+    "khallad",
+    "hisham"
+   ],
+   "khulf": [],
+   "reading": "ما في السفهاء من الأوجه",
+   "condition": "waqf",
+   "scope": "here",
+   "span": [
+    23,
+    1146,
+    1203
+   ]
+  },
+  {
+   "place": [
+    "2:19:5"
+   ],
+   "kind": "usul",
+   "category": "silah_ha",
+   "readers": [
+    "bazzi",
+    "qunbul"
+   ],
+   "khulf": [],
+   "reading": "وصل الهاء",
+   "condition": null,
+   "scope": "here",
+   "span": [
+    23,
+    1206,
+    1233
+   ]
+  },
+  {
+   "place": [
+    "2:19:6",
+    "2:19:7",
+    "2:19:8",
+    "2:19:9"
+   ],
+   "kind": "usul",
+   "category": "idgham_ghunna",
+   "readers": [
+    "khalaf_an_hamzah"
+   ],
+   "khulf": [],
+   "reading": "بلاغنة",
+   "condition": null,
+   "scope": "here",
+   "span": [
+    23,
+    1259,
+    1282
+   ]
+  },
+  {
+   "place": [
+    "2:19:6",
+    "2:19:7",
+    "2:19:8",
+    "2:19:9"
+   ],
+   "kind": "usul",
+   "category": "idgham_ghunna",
+   "readers": [
+    "qalun",
+    "warsh",
+    "bazzi",
+    "qunbul",
+    "duri_abuamr",
+    "susi",
+    "hisham",
+    "ibn_dhakwan",
+    "shuba",
+    "hafs",
+    "khallad",
+    "abul_harith",
+    "duri_kisai",
+    "ibn_wardan",
+    "ibn_jammaz",
+    "ruways",
+    "rawh",
+    "ishaq",
+    "idris"
+   ],
+   "khulf": [],
+   "reading": "مع الغنة",
+   "condition": null,
+   "scope": "here",
+   "span": [
+    23,
+    1283,
+    1300
+   ]
+  },
+  {
+   "place": [
+    "2:20:6"
+   ],
+   "kind": "usul",
+   "category": "hamz_waqf_final",
+   "readers": [
+    "khalaf_an_hamzah",
+    "khallad",
+    "hisham"
+   ],
+   "khulf": [
+    "khalaf_an_hamzah",
+    "khallad",
+    "hisham"
+   ],
+   "reading": "القصر",
+   "condition": "waqf",
+   "scope": "all",
+   "span": [
+    23,
+    1310,
+    1371
+   ]
+  },
+  {
+   "place": [
+    "2:20:6"
+   ],
+   "kind": "usul",
+   "category": "hamz_waqf_final",
+   "readers": [
+    "khalaf_an_hamzah",
+    "khallad",
+    "hisham"
+   ],
+   "khulf": [
+    "khalaf_an_hamzah",
+    "khallad",
+    "hisham"
+   ],
+   "reading": "التوسط",
+   "condition": "waqf",
+   "scope": "all",
+   "span": [
+    23,
+    1310,
+    1371
+   ]
+  },
+  {
+   "place": [
+    "2:20:6"
+   ],
+   "kind": "usul",
+   "category": "hamz_waqf_final",
+   "readers": [
+    "khalaf_an_hamzah",
+    "khallad",
+    "hisham"
+   ],
+   "khulf": [
+    "khalaf_an_hamzah",
+    "khallad",
+    "hisham"
+   ],
+   "reading": "المد",
+   "condition": "waqf",
+   "scope": "all",
+   "span": [
+    23,
+    1310,
+    1371
+   ]
+  },
+  {
+   "place": [
+    "2:20:11"
+   ],
+   "kind": "usul",
+   "category": "taghliz_lam",
+   "readers": [
+    "warsh"
+   ],
+   "khulf": [],
+   "reading": "غلظ اللام",
+   "condition": null,
+   "scope": "here",
+   "span": [
+    23,
+    1462,
+    1475
+   ]
+  },
+  {
+   "place": [
+    "2:20:19"
+   ],
+   "kind": "usul",
+   "category": "hamz_waqf_zaid",
+   "readers": [
+    "khalaf_an_hamzah",
+    "khallad"
+   ],
+   "khulf": [
+    "khalaf_an_hamzah",
+    "khallad"
+   ],
+   "reading": "تحقيق الهمزة",
+   "condition": "waqf",
+   "scope": "all",
+   "span": [
+    23,
+    1489,
+    1543
+   ]
+  },
+  {
+   "place": [
+    "2:20:19"
+   ],
+   "kind": "usul",
+   "category": "hamz_waqf_zaid",
+   "readers": [
+    "khalaf_an_hamzah",
+    "khallad"
+   ],
+   "khulf": [
+    "khalaf_an_hamzah",
+    "khallad"
+   ],
+   "reading": "تسهيلها",
+   "condition": "waqf",
+   "scope": "all",
+   "span": [
+    23,
+    1489,
+    1543
+   ]
+  }
+ ]
+}

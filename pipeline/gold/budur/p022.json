@@ -1,0 +1,325 @@
+{
+ "book": "budur",
+ "page": 22,
+ "rows": [
+  {
+   "place": [
+    "2:14:8",
+    "2:14:9"
+   ],
+   "kind": "usul",
+   "category": null,
+   "readers": [
+    "warsh",
+    "khalaf_an_hamzah",
+    "khallad"
+   ],
+   "khulf": [],
+   "reading": "ما فى عذاب أليم",
+   "condition": null,
+   "scope": "here",
+   "span": [
+    22,
+    953,
+    1011
+   ]
+  },
+  {
+   "place": [
+    "2:14:16"
+   ],
+   "kind": "usul",
+   "category": "badal",
+   "readers": [
+    "warsh"
+   ],
+   "khulf": [
+    "warsh"
+   ],
+   "reading": "القصر",
+   "condition": "wasl",
+   "scope": "here",
+   "span": [
+    22,
+    1014,
+    1071
+   ]
+  },
+  {
+   "place": [
+    "2:14:16"
+   ],
+   "kind": "usul",
+   "category": "badal",
+   "readers": [
+    "warsh"
+   ],
+   "khulf": [
+    "warsh"
+   ],
+   "reading": "التوسط",
+   "condition": "wasl",
+   "scope": "here",
+   "span": [
+    22,
+    1014,
+    1071
+   ]
+  },
+  {
+   "place": [
+    "2:14:16"
+   ],
+   "kind": "usul",
+   "category": "badal",
+   "readers": [
+    "warsh"
+   ],
+   "khulf": [
+    "warsh"
+   ],
+   "reading": "المد",
+   "condition": "wasl",
+   "scope": "here",
+   "span": [
+    22,
+    1014,
+    1071
+   ]
+  },
+  {
+   "place": [
+    "2:14:16"
+   ],
+   "kind": "tahrir",
+   "category": null,
+   "readers": [
+    "warsh"
+   ],
+   "khulf": [],
+   "reading": "فإذا كان يقرأ بمد البدل فلا يقف هنا إلا بالمد",
+   "condition": "waqf",
+   "scope": "all",
+   "span": [
+    22,
+    1089,
+    1151
+   ]
+  },
+  {
+   "place": [
+    "2:14:16"
+   ],
+   "kind": "usul",
+   "category": "hamz_waqf_mid",
+   "readers": [
+    "khalaf_an_hamzah",
+    "khallad"
+   ],
+   "khulf": [
+    "khalaf_an_hamzah",
+    "khallad"
+   ],
+   "reading": "تسهيل الهمزة بينها وبين الواو",
+   "condition": "waqf",
+   "scope": "here",
+   "span": [
+    22,
+    1441,
+    1469
+   ]
+  },
+  {
+   "place": [
+    "2:14:16"
+   ],
+   "kind": "usul",
+   "category": "hamz_waqf_mid",
+   "readers": [
+    "khalaf_an_hamzah",
+    "khallad"
+   ],
+   "khulf": [
+    "khalaf_an_hamzah",
+    "khallad"
+   ],
+   "reading": "إبدالها ياء خالصة",
+   "condition": "waqf",
+   "scope": "here",
+   "span": [
+    22,
+    1441,
+    1469
+   ]
+  },
+  {
+   "place": [
+    "2:14:16"
+   ],
+   "kind": "usul",
+   "category": "hamz_waqf_mid",
+   "readers": [
+    "khalaf_an_hamzah",
+    "khallad"
+   ],
+   "khulf": [
+    "khalaf_an_hamzah",
+    "khallad"
+   ],
+   "reading": "حذف الهمزة مع ضم الزاي",
+   "condition": "waqf",
+   "scope": "here",
+   "span": [
+    22,
+    1441,
+    1469
+   ]
+  },
+  {
+   "place": [
+    "2:14:16"
+   ],
+   "kind": "usul",
+   "category": "hadhf_damm",
+   "readers": [
+    "ibn_wardan",
+    "ibn_jammaz"
+   ],
+   "khulf": [],
+   "reading": "بالحذف وضم الزاي",
+   "condition": null,
+   "scope": "here",
+   "span": [
+    22,
+    1677,
+    1701
+   ]
+  },
+  {
+   "place": [
+    "2:15:2"
+   ],
+   "kind": "usul",
+   "category": "hamz_waqf_final",
+   "readers": [
+    "hisham",
+    "khalaf_an_hamzah",
+    "khallad"
+   ],
+   "khulf": [
+    "hisham",
+    "khalaf_an_hamzah",
+    "khallad"
+   ],
+   "reading": "إبدال الهمزة ياء ساكنة",
+   "condition": "waqf",
+   "scope": "all",
+   "span": [
+    22,
+    1806,
+    1845
+   ]
+  },
+  {
+   "place": [
+    "2:15:2"
+   ],
+   "kind": "usul",
+   "category": "hamz_waqf_final",
+   "readers": [
+    "hisham",
+    "khalaf_an_hamzah",
+    "khallad"
+   ],
+   "khulf": [
+    "hisham",
+    "khalaf_an_hamzah",
+    "khallad"
+   ],
+   "reading": "تسهيلها مع الروم",
+   "condition": "waqf",
+   "scope": "all",
+   "span": [
+    22,
+    1846,
+    1877
+   ]
+  },
+  {
+   "place": [
+    "2:15:2"
+   ],
+   "kind": "usul",
+   "category": "hamz_waqf_final",
+   "readers": [
+    "hisham",
+    "khalaf_an_hamzah",
+    "khallad"
+   ],
+   "khulf": [
+    "hisham",
+    "khalaf_an_hamzah",
+    "khallad"
+   ],
+   "reading": "إبدالها ياء مضمومة ثم تسكن",
+   "condition": "waqf",
+   "scope": "all",
+   "span": [
+    22,
+    1880,
+    1915
+   ]
+  },
+  {
+   "place": [
+    "2:15:2"
+   ],
+   "kind": "usul",
+   "category": "hamz_waqf_final",
+   "readers": [
+    "hisham",
+    "khalaf_an_hamzah",
+    "khallad"
+   ],
+   "khulf": [
+    "hisham",
+    "khalaf_an_hamzah",
+    "khallad"
+   ],
+   "reading": "مع الإشمام",
+   "condition": "waqf",
+   "scope": "all",
+   "span": [
+    22,
+    2007,
+    2037
+   ]
+  },
+  {
+   "place": [
+    "2:13:12",
+    "2:13:16"
+   ],
+   "kind": "usul",
+   "category": "hamz_waqf_final",
+   "readers": [
+    "hisham",
+    "khalaf_an_hamzah",
+    "khallad"
+   ],
+   "khulf": [
+    "hisham",
+    "khalaf_an_hamzah",
+    "khallad"
+   ],
+   "reading": "خمسة أوجه",
+   "condition": "waqf",
+   "scope": "all",
+   "span": [
+    22,
+    588,
+    655
+   ]
+  }
+ ]
+}

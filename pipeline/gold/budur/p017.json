@@ -1,0 +1,208 @@
+{
+ "book": "budur",
+ "page": 17,
+ "rows": [
+  {
+   "place": [
+    "2:3:2"
+   ],
+   "kind": "usul",
+   "category": "ibdal_sakin",
+   "readers": [
+    "warsh",
+    "susi",
+    "ibn_wardan",
+    "ibn_jammaz"
+   ],
+   "khulf": [],
+   "reading": "بإبدال همزه واوا ساكنة",
+   "condition": null,
+   "scope": "all",
+   "span": [
+    17,
+    9,
+    68
+   ]
+  },
+  {
+   "place": [
+    "2:3:2"
+   ],
+   "kind": "usul",
+   "category": "ibdal_sakin_waqf",
+   "readers": [
+    "khalaf_an_hamzah",
+    "khallad"
+   ],
+   "khulf": [],
+   "reading": "بإبدال همزة يؤمنون عند الوقف فقط",
+   "condition": "waqf",
+   "scope": "all",
+   "span": [
+    17,
+    490,
+    532
+   ]
+  },
+  {
+   "place": [
+    "2:3:5"
+   ],
+   "kind": "usul",
+   "category": "taghliz_lam",
+   "readers": [
+    "warsh"
+   ],
+   "khulf": [],
+   "reading": "بتفخيم اللام",
+   "condition": null,
+   "scope": "all",
+   "span": [
+    17,
+    582,
+    602
+   ]
+  },
+  {
+   "place": [
+    "2:3:7"
+   ],
+   "kind": "usul",
+   "category": "silah_mim",
+   "readers": [
+    "bazzi",
+    "qunbul",
+    "ibn_wardan",
+    "ibn_jammaz",
+    "qalun"
+   ],
+   "khulf": [
+    "qalun"
+   ],
+   "reading": "بصلة الميم",
+   "condition": "wasl",
+   "scope": "here",
+   "span": [
+    17,
+    888,
+    943
+   ]
+  },
+  {
+   "place": [
+    "2:3:7"
+   ],
+   "kind": "usul",
+   "category": "silah_mim",
+   "readers": [
+    "warsh",
+    "duri_abuamr",
+    "susi",
+    "hisham",
+    "ibn_dhakwan",
+    "shuba",
+    "hafs",
+    "khalaf_an_hamzah",
+    "khallad",
+    "abul_harith",
+    "duri_kisai",
+    "ruways",
+    "rawh",
+    "ishaq",
+    "idris"
+   ],
+   "khulf": [],
+   "reading": "بالإسكان",
+   "condition": null,
+   "scope": "here",
+   "span": [
+    17,
+    944,
+    961
+   ]
+  },
+  {
+   "place": [
+    "2:4:3"
+   ],
+   "kind": "usul",
+   "category": "munfasil",
+   "readers": [
+    "qalun",
+    "duri_abuamr",
+    "susi",
+    "bazzi",
+    "qunbul",
+    "ibn_wardan",
+    "ibn_jammaz",
+    "ruways",
+    "rawh"
+   ],
+   "khulf": [
+    "qalun",
+    "duri_abuamr"
+   ],
+   "reading": "بقصره",
+   "condition": null,
+   "scope": "here",
+   "span": [
+    17,
+    1024,
+    1130
+   ]
+  },
+  {
+   "place": [
+    "2:4:3"
+   ],
+   "kind": "usul",
+   "category": "munfasil",
+   "readers": [
+    "warsh",
+    "hisham",
+    "ibn_dhakwan",
+    "shuba",
+    "hafs",
+    "khalaf_an_hamzah",
+    "khallad",
+    "abul_harith",
+    "duri_kisai",
+    "ishaq",
+    "idris",
+    "qalun",
+    "duri_abuamr"
+   ],
+   "khulf": [
+    "qalun",
+    "duri_abuamr"
+   ],
+   "reading": "بمده",
+   "condition": null,
+   "scope": "here",
+   "span": [
+    17,
+    1133,
+    1194
+   ]
+  },
+  {
+   "place": [],
+   "kind": "usul",
+   "category": "ibdal_sakin",
+   "readers": [
+    "ibn_wardan",
+    "ibn_jammaz"
+   ],
+   "khulf": [],
+   "reading": "قلا إبدال له فيهما",
+   "condition": null,
+   "scope": "here",
+   "place_text": "أنبئهم (البقرة)، ننبئهم (القمر)",
+   "span": [
+    17,
+    398,
+    485
+   ]
+  }
+ ]
+}

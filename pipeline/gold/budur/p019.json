@@ -1,0 +1,215 @@
+{
+ "book": "budur",
+ "page": 19,
+ "rows": [
+  {
+   "place": [
+    "2:4:10"
+   ],
+   "kind": "usul",
+   "category": "naql",
+   "readers": [
+    "warsh"
+   ],
+   "khulf": [],
+   "reading": "بنقل حركة الهمزة إلى الساكن قبلها وحذف الهمزة",
+   "condition": null,
+   "scope": "all",
+   "span": [
+    19,
+    1062,
+    1115
+   ]
+  },
+  {
+   "place": [
+    "2:4:10"
+   ],
+   "kind": "usul",
+   "category": "badal",
+   "readers": [
+    "warsh"
+   ],
+   "khulf": [
+    "warsh"
+   ],
+   "reading": "القصر",
+   "condition": null,
+   "scope": "all",
+   "span": [
+    19,
+    1355,
+    1397
+   ]
+  },
+  {
+   "place": [
+    "2:4:10"
+   ],
+   "kind": "usul",
+   "category": "badal",
+   "readers": [
+    "warsh"
+   ],
+   "khulf": [
+    "warsh"
+   ],
+   "reading": "التوسط",
+   "condition": null,
+   "scope": "all",
+   "span": [
+    19,
+    1355,
+    1397
+   ]
+  },
+  {
+   "place": [
+    "2:4:10"
+   ],
+   "kind": "usul",
+   "category": "badal",
+   "readers": [
+    "warsh"
+   ],
+   "khulf": [
+    "warsh"
+   ],
+   "reading": "الإشباع",
+   "condition": null,
+   "scope": "all",
+   "span": [
+    19,
+    1355,
+    1397
+   ]
+  },
+  {
+   "place": [
+    "2:4:10"
+   ],
+   "kind": "usul",
+   "category": "tarqiq_ra",
+   "readers": [
+    "warsh"
+   ],
+   "khulf": [],
+   "reading": "بترقيق راء بالآخرة",
+   "condition": null,
+   "scope": "here",
+   "span": [
+    19,
+    1774,
+    1802
+   ]
+  },
+  {
+   "place": [
+    "2:4:10"
+   ],
+   "kind": "usul",
+   "category": "sakt_al",
+   "readers": [
+    "khalaf_an_hamzah",
+    "khallad"
+   ],
+   "khulf": [
+    "khallad"
+   ],
+   "reading": "بالسكت على لام التعريف",
+   "condition": "wasl",
+   "scope": "here",
+   "span": [
+    19,
+    1893,
+    1953
+   ]
+  },
+  {
+   "place": [
+    "2:4:10"
+   ],
+   "kind": "usul",
+   "category": "sakt_al",
+   "readers": [
+    "khalaf_an_hamzah",
+    "khallad"
+   ],
+   "khulf": [
+    "khalaf_an_hamzah",
+    "khallad"
+   ],
+   "reading": "السكت",
+   "condition": "waqf",
+   "scope": "here",
+   "span": [
+    19,
+    1956,
+    2004
+   ]
+  },
+  {
+   "place": [
+    "2:4:10"
+   ],
+   "kind": "usul",
+   "category": "naql",
+   "readers": [
+    "khalaf_an_hamzah",
+    "khallad"
+   ],
+   "khulf": [
+    "khalaf_an_hamzah",
+    "khallad"
+   ],
+   "reading": "النقل",
+   "condition": "waqf",
+   "scope": "here",
+   "span": [
+    19,
+    1956,
+    2004
+   ]
+  },
+  {
+   "place": [
+    "2:4:10"
+   ],
+   "kind": "usul",
+   "category": null,
+   "readers": [
+    "abul_harith",
+    "duri_kisai"
+   ],
+   "khulf": [],
+   "reading": "أمال ما قبل هاء التأنيث",
+   "condition": "waqf",
+   "scope": "here",
+   "span": [
+    19,
+    2068,
+    2134
+   ]
+  },
+  {
+   "place": [
+    "2:4:10",
+    "2:4:12"
+   ],
+   "kind": "tahrir",
+   "category": null,
+   "readers": [
+    "warsh"
+   ],
+   "khulf": [],
+   "reading": "ستة أوجه",
+   "condition": null,
+   "scope": "here",
+   "span": [
+    19,
+    2189,
+    2348
+   ]
+  }
+ ]
+}

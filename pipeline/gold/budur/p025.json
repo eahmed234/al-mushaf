@@ -1,0 +1,266 @@
+{
+ "book": "budur",
+ "page": 25,
+ "rows": [
+  {
+   "place": [
+    "2:2:6",
+    "2:5:3",
+    "2:16:5"
+   ],
+   "kind": "usul",
+   "category": "imala_ya",
+   "readers": [
+    "khalaf_an_hamzah",
+    "khallad",
+    "abul_harith",
+    "duri_kisai",
+    "ishaq",
+    "idris"
+   ],
+   "khulf": [],
+   "reading": "أمال",
+   "condition": null,
+   "scope": "here",
+   "span": [
+    25,
+    358,
+    411
+   ]
+  },
+  {
+   "place": [
+    "2:2:6",
+    "2:5:3",
+    "2:16:5"
+   ],
+   "kind": "usul",
+   "category": "imala_ya",
+   "readers": [
+    "warsh"
+   ],
+   "khulf": [
+    "warsh"
+   ],
+   "reading": "قللها",
+   "condition": null,
+   "scope": "here",
+   "span": [
+    25,
+    413,
+    432
+   ]
+  },
+  {
+   "place": [
+    "2:7:8",
+    "2:20:19"
+   ],
+   "kind": "usul",
+   "category": "imala_ra",
+   "readers": [
+    "duri_abuamr",
+    "susi",
+    "duri_kisai"
+   ],
+   "khulf": [],
+   "reading": "أمالها",
+   "condition": null,
+   "scope": "here",
+   "span": [
+    25,
+    435,
+    473
+   ]
+  },
+  {
+   "place": [
+    "2:7:8",
+    "2:20:19"
+   ],
+   "kind": "usul",
+   "category": "imala_ra",
+   "readers": [
+    "warsh"
+   ],
+   "khulf": [],
+   "reading": "قللهما",
+   "condition": null,
+   "scope": "here",
+   "span": [
+    25,
+    476,
+    508
+   ]
+  },
+  {
+   "place": [
+    "2:19:19",
+    "2:24:13"
+   ],
+   "kind": "usul",
+   "category": "imala_kafirin",
+   "readers": [
+    "duri_abuamr",
+    "susi",
+    "duri_kisai",
+    "ruways"
+   ],
+   "khulf": [],
+   "reading": "أمالهما",
+   "condition": null,
+   "scope": "here",
+   "span": [
+    25,
+    499,
+    555
+   ]
+  },
+  {
+   "place": [
+    "2:19:19",
+    "2:24:13"
+   ],
+   "kind": "usul",
+   "category": "imala_kafirin",
+   "readers": [
+    "warsh"
+   ],
+   "khulf": [],
+   "reading": "قللهما",
+   "condition": null,
+   "scope": "here",
+   "span": [
+    25,
+    550,
+    576
+   ]
+  },
+  {
+   "place": [
+    "2:8:2"
+   ],
+   "kind": "usul",
+   "category": "imala_nas",
+   "readers": [
+    "duri_abuamr"
+   ],
+   "khulf": [],
+   "reading": "أماله",
+   "condition": null,
+   "scope": "here",
+   "span": [
+    25,
+    580,
+    618
+   ]
+  },
+  {
+   "place": [
+    "2:10:4"
+   ],
+   "kind": "usul",
+   "category": "imala_zad",
+   "readers": [
+    "ibn_dhakwan",
+    "khalaf_an_hamzah",
+    "khallad"
+   ],
+   "khulf": [],
+   "reading": "أماله",
+   "condition": null,
+   "scope": "here",
+   "span": [
+    25,
+    621,
+    649
+   ]
+  },
+  {
+   "place": [
+    "2:20:15"
+   ],
+   "kind": "usul",
+   "category": "imala_jaa_shaa",
+   "readers": [
+    "ibn_dhakwan",
+    "khalaf_an_hamzah",
+    "khallad",
+    "ishaq",
+    "idris"
+   ],
+   "khulf": [],
+   "reading": "أماله",
+   "condition": null,
+   "scope": "here",
+   "span": [
+    25,
+    652,
+    682
+   ]
+  },
+  {
+   "place": [
+    "2:15:6",
+    "2:19:12"
+   ],
+   "kind": "usul",
+   "category": "imala_duri_kisai",
+   "readers": [
+    "duri_kisai"
+   ],
+   "khulf": [],
+   "reading": "أمالهما",
+   "condition": null,
+   "scope": "here",
+   "span": [
+    25,
+    683,
+    716
+   ]
+  },
+  {
+   "place": [
+    "2:7:9"
+   ],
+   "kind": "usul",
+   "category": null,
+   "readers": [
+    "abul_harith",
+    "duri_kisai"
+   ],
+   "khulf": [],
+   "reading": "أمالها بلا خلاف",
+   "condition": null,
+   "scope": "here",
+   "span": [
+    25,
+    719,
+    748
+   ]
+  },
+  {
+   "place": [
+    "2:25:31"
+   ],
+   "kind": "usul",
+   "category": null,
+   "readers": [
+    "abul_harith",
+    "duri_kisai"
+   ],
+   "khulf": [
+    "abul_harith",
+    "duri_kisai"
+   ],
+   "reading": "أمالها بالخلاف",
+   "condition": null,
+   "scope": "here",
+   "span": [
+    25,
+    751,
+    771
+   ]
+  }
+ ]
+}

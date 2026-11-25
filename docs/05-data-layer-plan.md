@@ -120,7 +120,7 @@ plus the checks, means only disagreements reach him.
 | # | Milestone | Done when |
 | --- | --- | --- |
 | 0 | ~~**Package skeleton**~~ (done 2026-11-24): `mushaf_data/`, `checks/`, `data/`, `tests/` from the spike | the spike's checks pass as tests, each with a planted error caught: 25 tests, same numbers |
-| 1 | **Pipeline + pilot**: `pipeline/` (prompt, schema, batch runner, validators, review sheet); the model pilot | model chosen, token cost measured, Eisa approves the sheet format |
+| 1 | **Pipeline + pilot** (built 2026-11-25, `pipeline/PILOT.md`): `pipeline/` (prompt, schema, packer, validator, gold set, scorer, review sheet); the model pilot | model chosen (Sonnet 5.5: 96.9% / 95.8% per rāwī against an unreviewed gold), token cost measured (~13k a page); **waiting on Eisa**: the sheet format and the 59 rows where run and gold differ |
 | 2 | **Farsh, al-Baqarah**: al-Budūr + al-Wāfī/al-Īḍāḥ, agreed against al-Futūḥ and KFGQPC | every place of al-Baqarah has options for all twenty; disagreements reviewed |
 | 3 | **Spine**: riwāyah-neutral slots from the farsh that adds or drops words | Ḥafṣ is one projection; KFGQPC's eight align without gaps |
 | 4 | **Farsh, the rest**, surah by surah in batches | as milestone 2, whole Qurʾān |

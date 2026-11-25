@@ -1,0 +1,59 @@
+# How the books name the twenty ruwāt: a name or group → ruwāt ids (mushaf_data/ruwat.py).
+# Terminology, not qirāʾāt facts. This is al-Budūr's usage (its "مصطلح الكتاب", p. 11); books
+# differ: a bare "خلف" is Khalaf al-ʿĀshir in al-Budūr but Khalaf ʿan Ḥamzah in al-Futūḥ
+# (../mushaf/futuh/readers.yaml). Each book read by the pipeline gets its own section or file.
+# Used by the extraction instructions (pipeline/prompt.md) and the validators.
+
+qurra:   # a qāriʾ's name means both his ruwāt
+  نافع: [qalun, warsh]
+  ابن كثير: [bazzi, qunbul]
+  المكي: [bazzi, qunbul]
+  أبو عمرو: [duri_abuamr, susi]
+  البصري: [duri_abuamr, susi]        # al-Budūr p. 11: "للبصرى والدورى" = Abū ʿAmr and al-Dūrī ʿan al-Kisāʾī
+  ابن عامر: [hisham, ibn_dhakwan]
+  الشامي: [hisham, ibn_dhakwan]
+  عاصم: [shuba, hafs]
+  حمزة: [khalaf_an_hamzah, khallad]
+  الكسائي: [abul_harith, duri_kisai]
+  علي: [abul_harith, duri_kisai]     # al-Kisāʾī (ʿAlī b. Ḥamzah)
+  أبو جعفر: [ibn_wardan, ibn_jammaz]
+  يعقوب: [ruways, rawh]
+  خلف: [ishaq, idris]                # bare "خلف" is Khalaf al-ʿĀshir (al-Budūr p. 11)
+  خلف في اختياره: [ishaq, idris]
+  خلف عن نفسه: [ishaq, idris]
+  خلف العاشر: [ishaq, idris]
+
+ruwat:
+  قالون: [qalun]
+  ورش: [warsh]
+  البزي: [bazzi]
+  قنبل: [qunbul]
+  الدوري عن أبي عمرو: [duri_abuamr]
+  دوري أبي عمرو: [duri_abuamr]
+  دوري البصري: [duri_abuamr]
+  السوسي: [susi]
+  هشام: [hisham]
+  ابن ذكوان: [ibn_dhakwan]
+  شعبة: [shuba]
+  أبو بكر: [shuba]
+  حفص: [hafs]
+  خلف عن حمزة: [khalaf_an_hamzah]
+  خلاد: [khallad]
+  أبو الحارث: [abul_harith]
+  الدوري عن الكسائي: [duri_kisai]
+  دوري الكسائي: [duri_kisai]
+  دوري علي: [duri_kisai]
+  الدوري: [duri_abuamr]              # unqualified; but after أبو عمرو / البصري it is al-Kisāʾī's (al-Budūr p. 11)
+  ابن وردان: [ibn_wardan]
+  ابن جماز: [ibn_jammaz]
+  رويس: [ruways]
+  روح: [rawh]
+  إسحاق: [ishaq]
+  إدريس: [idris]
+
+groups:  # al-Budūr p. 11
+  المدنيان: [qalun, warsh, ibn_wardan, ibn_jammaz]           # Nāfiʿ and Abū Jaʿfar
+  البصريان: [duri_abuamr, susi, ruways, rawh]                 # Abū ʿAmr and Yaʿqūb
+  الأخوان: [khalaf_an_hamzah, khallad, abul_harith, duri_kisai]   # Ḥamzah and al-Kisāʾī
+  الكوفيون: [shuba, hafs, khalaf_an_hamzah, khallad, abul_harith, duri_kisai, ishaq, idris]
+  الأصحاب: [khalaf_an_hamzah, khallad, abul_harith, duri_kisai, ishaq, idris]   # Ḥamzah, al-Kisāʾī, Khalaf

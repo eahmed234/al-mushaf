@@ -166,7 +166,11 @@ tables; review list empty.
    loader instead of being reported (fixed); **shuffled imālah lists still tie 131 of 175
    quarters**, so the tie count is weak evidence that a list sits on its own rubʿ (to tighten
    in milestone 5). The KFGQPC check still takes its profiles from the al-Futūḥ merge.
-   Next: milestone 1, the pipeline and the subagent pilot.
+   Milestone 1 (2026-11-25): `pipeline/` built and piloted on al-Budūr pp. 16–25
+   (`pipeline/PILOT.md`). Sonnet 5.5 subagents: 96.9% recall / 95.8% precision per rāwī against
+   Claude's gold set (99% on who reads what); Haiku 5.5 out (87% / 80%, more tokens). ~13k tokens
+   a page. Waiting on Eisa: the review sheet (59 rows where run and gold differ), which also
+   reviews the gold set.
 
 Also open, lower priority: 208 numbering irregularities in the extraction (`mushaf/docs/known-gaps.md`),
 the unreproduced pairs listed above, and the alkiraat.com contact message (typed in the form,

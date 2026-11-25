@@ -1,0 +1,28 @@
+{
+  "$comment": "One extraction result: the statements of one book page. See pipeline/prompt.md.",
+  "type": "object",
+  "required": ["book", "page", "rows"],
+  "properties": {
+    "book": {"type": "string"},
+    "page": {"type": "integer"},
+    "rows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["place", "kind", "category", "readers", "khulf", "reading", "condition", "scope", "quote"],
+        "properties": {
+          "place": {"type": "array", "items": {"type": "string"}},
+          "place_text": {"type": "string"},
+          "kind": {"enum": ["farsh", "usul", "tahrir", "ittifaq"]},
+          "category": {"type": ["string", "null"]},
+          "readers": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+          "khulf": {"type": "array", "items": {"type": "string"}},
+          "reading": {"type": "string"},
+          "condition": {"enum": ["wasl", "waqf", null]},
+          "scope": {"enum": ["here", "all"]},
+          "quote": {"type": "string"}
+        }
+      }
+    }
+  }
+}
