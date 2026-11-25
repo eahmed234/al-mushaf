@@ -213,6 +213,8 @@ def full_profiles(upto: int, start: int = 1, book: bool = False):
 
 
 PLACE_WUJUH = yaml.safe_load((Path(__file__).parent / "data" / "place_wujuh.yaml").read_text()) or []
+WAQF_RAWI = {"khalaf_an_hamzah", "khallad", "hisham"}
+WAQF_HAMZ_CATS = {"ibdal_sakin_waqf", "hamzatayn_waqf", "hamz_waqf_final", "hamz_waqf_mid", "hamz_waqf_zaid"}
 CONSTRAINTS = yaml.safe_load((Path(__file__).parent / "data" / "constraints.yaml").read_text()) or []
 
 
@@ -223,6 +225,11 @@ def allowed(rawi: str, choice: dict) -> bool:
             if [choice[k] for k in c["cats"]] not in c["allowed"]:
                 return False
     return True
+
+
+def waqf_forms(word: str, rawi: str):
+    from .waqf import forms
+    return forms(word, rawi)
 
 
 def generate(rawi: str, span: list[str], full: dict, confirmed: set) -> list[tuple[dict, dict]]:
@@ -243,8 +250,11 @@ def generate(rawi: str, span: list[str], full: dict, confirmed: set) -> list[tup
 
     places = [e for e in PLACE_WUJUH if e["rawi"] == rawi]
     out = []
+    own_waqf = rawi in WAQF_RAWI  # Ḥamzah's ruwāt and Hishām: the waqf chapter (spike.waqf)
     for words, stop in contexts(span, hafs, farsh_texts()[rawi]):
         occs = [o for o in detect(words, stop=stop) if reviewed(o.cat, o.word, o.nxt)]
+        if own_waqf:
+            occs = [o for o in occs if o.cat not in WAQF_HAMZ_CATS]
         cats = sorted({o.cat for o in occs if o.cat in TEXT_CATS})
         if "silah_mim_hamza" in cats and "munfasil" not in cats:
             cats = sorted(cats + ["munfasil"])
@@ -267,7 +277,12 @@ def generate(rawi: str, span: list[str], full: dict, confirmed: set) -> list[tup
                 ch["silah_mim_hamza"] = ch["silah_mim"]
             if not allowed(rawi, ch):
                 continue
-            out.append((ch, apply(words, occs, ch)))
+            text = apply(words, occs, ch)
+            if own_waqf and stop:
+                for lab, w in waqf_forms(text[stop], rawi):
+                    out.append(({**ch, "waqf": lab}, {**text, stop: w}))
+            else:
+                out.append((ch, text))
     return out
 
 
