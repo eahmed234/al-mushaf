@@ -148,7 +148,10 @@ tables; review list empty.
    hamzah (the spike doesn't stop on those with naql yet), madd degrees (wujūh are not degrees).
    Next for taḥrīr: read al-Budūr's and al-Ḍabbāʿ's taḥrīr beyond this passage as the occurrence
    work reaches further.
-5. **Spike Day 5**: the KFGQPC check for the 8, and `spike/REPORT.md` answering Q1–Q5.
+5. ~~**Spike Day 5**~~ (done 2026-11-24): `spike/kfgqpc_check.py` (eight riwāyāt, 2,047 / 2,056
+   words agree) and **`spike/REPORT.md`**, answering Q1–Q5 with the numbers, what didn't work,
+   the format as it ended up, and what to change before building for real. The spike is closed;
+   next is the data layer as its own thing (REPORT.md, "Before building for real").
 
 Also open, lower priority: 208 numbering irregularities in the extraction (`mushaf/docs/known-gaps.md`),
 the unreproduced pairs listed above, and the alkiraat.com contact message (typed in the form,
