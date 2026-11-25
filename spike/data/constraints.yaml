@@ -18,3 +18,30 @@
   cond: "not for the ruʾūs al-āy of the eleven surahs (taqlīl with every badal), nor عَادًا ٱلۡأُولَىٰ and ءَآلۡـَٰٔنَ (dabba 246 n. 1)"
   source: "al-Ḍabbāʿ p. 246: no taqlīl on qaṣr of the badal, no fatḥ on its tawassuṭ, both on its madd; al-Budūr p. 30 (2:34 ءَادَمَ … أَبَىٰ), the same either order"
   status: candidate
+
+# Waqf of Ḥamzah's ruwāt: the waqf form goes with the sakt they read in waṣl. Not enforced yet:
+# sakt is a feature the spike reads from labels, not a text choice in generation.
+- id: khallad_sakt_al_waqf
+  rawi: [khallad]
+  cats: [sakt_al, waqf_al]  # waqf_al: the stop on a word with lām al-taʿrīf before a hamzah (ٱلۡأَرۡضِ)
+  allowed: [[sakt, naql], [sakt, sakt], [none, naql]]
+  cite: wafi 106; budur 41
+  source: "al-Wāfī p. 106: reading Khallād with sakt on al- and shayʾ, the stop on ٱلۡأَرۡضِ is naql or sakt; without it, naql only (the muḥaqqiqūn reject plain taḥqīq). al-Budūr p. 41 (قُلۡ ءَأَنتُمۡ): Khallād, no sakt: tas-hīl or taḥqīq of the second hamzah; naql: tas-hīl only"
+  status: candidate
+  enforced: false
+
+- id: khalaf_sakt_mafsul_waqf
+  rawi: [khalaf_an_hamzah]
+  cats: [sakt_mafsul, waqf_initial]  # waqf_initial: the stop on a word starting with a hamzah after a sākin (مَنۡ ءَامَنَ)
+  allowed: [[sakt, naql], [sakt, sakt], [none, naql], [none, none]]
+  cite: wafi 106
+  source: "al-Wāfī p. 106: Khalaf stopping on مَنۡ ءَامَنَ has naql, sakt (Abū al-Fatḥ's way, with sakt on the mafṣūl) or neither (Ibn Ghalbūn's, without it); Khallād naql or neither"
+  status: candidate
+  enforced: false
+
+- id: hamzah_hishm_two_tashil
+  rawi: [khalaf_an_hamzah, khallad, hisham]
+  note: "two tas-hīls after an alif in one word take the same length (هَٰٓؤُلَآءِ: 13 wujūh, al-Budūr p. 65); enforced inside spike/waqf.py"
+  cite: budur 65
+  status: candidate
+  enforced: true

@@ -291,5 +291,5 @@ categories:
     - {who: rest_as_wasl, wujuh: [tahqiq]}
 
 not_read_yet:
-  - "rasm-based takhfīf for the listed words (wafi 119-120: شُرَكَٰٓؤُاْ … al-Futūḥ's 'سبعة الرسمي'); هَٰٓؤُلَآءِ's wujūh (Ghayth al-Nafʿ p. 38)"
+  - "rasm and هَٰٓؤُلَآءِ: done in spike/waqf.py (al-Budūr pp. 65, 91-92, 142, 209)"
   - "rāʾāt exceptions and the rest of the lāmāt (wafi 162-172)"

@@ -31,7 +31,7 @@ Two local git repos (no remotes, nothing pushed):
 | `profile.py` | learns text wujūh per rāwī from rows; contexts (stop at ayah end, optional at pause signs); reviewed places; claims by colour; the khulf convention |
 | `readings.py` | full profiles (rows + book madd tables + label features), generation, comparison, held-out test |
 | `review.py`, `review_sheet.py` | extra readings and misses, as a list and as box-by-box pictures |
-| `waqf.py`, `waqf_check.py` | Ḥamzah's and Hishām's waqf on hamz, by rule (al-Wāfī pp. 105–127); checked against al-Futūḥ vols 1–6 (95%) |
+| `waqf.py`, `waqf_check.py` | Ḥamzah's and Hishām's waqf on hamz, by rule (al-Wāfī pp. 105–127); checked against al-Futūḥ vols 1–6 (93% of 871 rows) |
 | `render.py`, `dot_sheet.py` | preview renderer (HarfBuzz + DigitalKhatt) with the standalone tas-hīl dot |
 | `data/place_wujuh.yaml` | wujūh tied to a place, with sources (Ruways at 2:20; Ibn Dhakwān's زَادَ, farsh) |
 | `data/constraints.yaml` | taḥrīr as allowed tuples, from the books (Warsh: badal × līn, badal × dhawāt al-yāʾ); `readings` filters combinations by it |
@@ -97,12 +97,16 @@ tables; review list empty.
      madd/qaṣr, the five qiyās forms after an alif at the end, rawm, the nine mutaḥarrik cases with
      al-Akhfash and rasm ḥadhf, hamzah made mid by a prefix or lām al-taʿrīf (taḥqīq or takhfīf),
      يَوۡمَئِذٖ, fatḥ tanwīn, Hishām's final hamzah only, naql from the next word.
-     `python3 -m spike.waqf_check` tests it against every waqf form al-Futūḥ prints for them in
-     all six volumes: **582 of 613 rows (95%)** have every printed form generated; the rest are
-     print quirks (split or dotless forms), Ḥamzah's farsh in the same word (يُؤَدِّهِۦ), and
-     هَٰٓؤُلَآءِ. Still to add: rasm-based takhfīf for the listed words (al-Wāfī pp. 119–120,
-     al-Futūḥ's "سبعة الرسمي"), هَٰٓؤُلَآءِ (Ghayth al-Nafʿ p. 38), and constraints between the
-     waqf forms and the rest of the reading (e.g. sakt against naql on ٱلۡأَرۡضِ).
+     Also the rasm forms where the rasm seats the final hamzah on a wāw or yāʾ (al-Wāfī
+     pp. 119–120; al-Budūr pp. 91–92 "سبعة الرسم", p. 209 "أربعة الرسم", pp. 142, 171, 218 for
+     يَبۡدَؤُاْ / ٱلۡمَلَؤُاْ), hāʾ al-tanbīh as a prefix, and the 13 wujūh of هَٰٓؤُلَآءِ (al-Budūr p. 65:
+     the two tas-hīls take one length). `python3 -m spike.waqf_check` tests it against every waqf
+     form al-Futūḥ prints for them in all six volumes: **806 of 871 rows (93%)** have every printed
+     form generated (all 12 of شُرَكَٰٓؤُاْ's "خمسة القياس وسبعة الرسمي" included); the rest are print
+     quirks (split, dotless or vowel-less forms), Ḥamzah's farsh in the same word (يُؤَدِّهِۦ), and
+     rows the extraction tags with the wrong ayah. Sakt-with-waqf constraints (al-Wāfī p. 106,
+     al-Budūr p. 41) are recorded in `data/constraints.yaml` but not enforced: sakt is a label
+     feature, not a text choice, in the spike.
    - Still not in the table (`not_read_yet`): Ḥamzah's naql and sakt in waqf, the rest of the
      rāʾāt and lāmāt exceptions.
 2. **Occurrence tables**, now the main gap: the profiles are right, but the spike doesn't know

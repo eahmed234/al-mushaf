@@ -64,9 +64,14 @@ def key(w: str) -> str:
     return "".join(cl)
 
 
+def skel_strict(w: str) -> str:
+    return re.sub("[^\u0628-\u064a]|[\u0627\u0623\u0625\u0624\u0626\u0621\u0649]", "", normalize(w))
+
+
 def skel(w: str) -> str:
     """Letters only, without hamzah seats or alifs: to tell which word a printed form is."""
-    return re.sub("[^\u0628-\u064a]|[\u0627\u0623\u0625\u0624\u0626\u0621\u0649]", "", normalize(w))
+    # wāw and yāʾ too: rasm forms read the seat as a letter (شُرَكَٰٓؤُاْ → شُرَكَٰو)
+    return re.sub("[^\u0628-\u064a]|[\u0627\u0623\u0625\u0624\u0626\u0621\u0649\u0648\u064a]", "", normalize(w))
 
 
 def test_set():
@@ -89,11 +94,19 @@ def test_set():
             sp = ws[0]["spine"]
             a, b, c = sp.split(":")
             near = [f"{a}:{b}:{n}" for n in range(max(1, int(c) - 3), int(c) + 4)]
+            for ay in r.get("ayahs", []):  # and every word of the row's ayahs
+                n = 1
+                while f"{ay['surah']}:{ay['ayah']}:{n}" in h:
+                    near.append(f"{ay['surah']}:{ay['ayah']}:{n}")
+                    n += 1
             near = [x for x in near if x in h]
-            match = [x for x in near if skel(h[x]) == skel(texts[0])]
+            match = [x for x in near if any(skel_strict(h[x]) == skel_strict(t) for t in texts)] or \
+                [x for x in near if skel(h[x]) == skel(texts[0])]
             if not match:
                 continue
-            target = min(match, key=lambda x: abs(int(x.split(":")[2]) - int(c)))
+            # prefer a word with a hamzah, then the nearest
+            target = min(match, key=lambda x: (not any(is_hamza(q) for q in clusters(h[x])),
+                                               x.split(":")[:2] != [a, b], abs(int(x.split(":")[2]) - int(c))))
             texts = [t for t in texts if skel(t) == skel(h[target])]
             cl = clusters(h[target])
             initial = bool(cl) and is_hamza(cl[0]) and any(t[:1] == "\u0627" and not is_hamza(clusters(t)[0]) for t in texts) \

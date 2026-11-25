@@ -95,16 +95,36 @@ def _options_(cls: list[str], k: int, final: bool, rawi: str) -> list[tuple[str,
             # after an alif at the end: ibdāl alif with qaṣr / tawassuṭ / madd (pp. 114-115),
             # tas-hīl with rawm, madd or qaṣr, for marfūʿ and majrūr (pp. 125-127)
             pa = p if MADDAH in p else p + MADDAH
-            out += [("ibdal_madd", [pa]), ("ibdal_qasr", [p.replace(MADDAH, "")])]
+            # a dagger alif left at the end is written in full (شُرَكَٰٓؤُاْ → شُرَكَا, شُرَكَآ)
+            fa = ([p.replace(DAGGER, "").replace(MADDAH, ""), "\u0627" + MADDAH] if DAGGER in p else [pa])
+            fq = ([p.replace(DAGGER, "").replace(MADDAH, ""), "\u0627"] if DAGGER in p else [p.replace(MADDAH, "")])
+            out += [("ibdal_madd", fa), ("ibdal_qasr", fq)]
             if rawm_ok:
-                out += [("tashil_rawm_madd", [pa, tashil(hv)]),
-                        ("tashil_rawm_qasr", [p.replace(MADDAH, ""), tashil(hv)])]
+                out += [("tashil_rawm_madd", fa + [tashil(hv)]),
+                        ("tashil_rawm_qasr", fq + [tashil(hv)])]
+            # rasm: the hamzah written on a wāw (جَزَٰٓؤُاْ) or a yāʾ (تِلۡقَآيِٕ) is read as that
+            # letter: wāw with the three lengths, sukūn or ishmām, and rawm with qaṣr ("سبعة الرسم",
+            # al-Budūr pp. 91-92); yāʾ with the three lengths and rawm with qaṣr ("أربعة الرسم",
+            # al-Budūr p. 209); only the listed words, which are the ones the rasm writes so
+            # (al-Wāfī pp. 119-120)
+            seat = "\u0648" if h[0] == "\u0624" else "\u064a" if h[0] == "\u064a" and HAMZA_BELOW in h else None
+            if seat:
+                pq = p.replace(MADDAH, "")
+                out += [("rasm_madd", [pa, seat]), ("rasm_qasr", [pq, seat])]
+                if rawm_ok:
+                    out.append(("rasm_rawm_qasr", [pq, seat + hv]))
+                if seat == "\u0648":
+                    out += [("rasm_ishmam_madd", [pa, seat + DAMMA]), ("rasm_ishmam_qasr", [pq, seat + DAMMA])]
             return out
         if pv and not p_sakin:
             # after a ḥarakah: ibdāl to the madd letter of that ḥarakah (pp. 110-112)
             out.append(("ibdal", [p, VOWEL_LETTER[pv]]))
             if rawm_ok:
                 out.append(("tashil_rawm", [p, tashil(hv)]))  # p. 126
+            if final and h[0] == "\u0624":
+                # rasm wāw after a ḥarakah (يَبۡدَؤُاْ, ٱلۡمَلَؤُاْ): wāw with sukūn, ishmām or rawm
+                # (al-Budūr pp. 142, 171, 218)
+                out += [("rasm", [p, "\u0648"]), ("rasm_rawm", [p, "\u0648" + (hv or DAMMA)])]
             return out
     if p_sakin or p_is_alif:
         if p_is_alif:
@@ -144,6 +164,8 @@ def _prefix_end(cls: list[str]) -> int:
     """Index of the first letter after the zāʾid prefixes (p. 123): و ف ب ل ك س with a vowel,
     then lām al-taʿrīf (ٱلۡ). -1 if none."""
     i = 0
+    if len(cls) > 2 and cls[0][0] in "\u0647\u064a" and DAGGER in cls[0]:  # هَٰٓؤُلَآءِ, يَٰٓـَٔادَمُ (p. 123)
+        return 1
     while i < len(cls) - 1 and cls[i][0] in PREFIXES and vowel(cls[i]) and (i == 0 or SHADDA not in cls[i]):
         i += 1
     if i + 1 < len(cls) and cls[i][0] == "\u0671" and cls[i + 1][0] == "\u0644" and SUKUN in cls[i + 1]:
@@ -203,12 +225,19 @@ def forms(word: str, rawi: str) -> list[tuple[str, str]]:
         choices.append([(k, lab, rep) for lab, rep in opts])
     out = []
     for combo in itertools.product(*choices):
+        # two tas-hīls after an alif go with the same length (هَٰٓؤُلَآءِ: al-Budūr p. 65)
+        lens = {lab.rsplit("_", 1)[-1] for _, lab, _ in combo if lab.startswith("tashil") and lab.rsplit("_", 1)[-1] in ("madd", "qasr")}
+        if len(lens) > 1:
+            continue
         new = list(cls)
         labels = []
         for k, lab, rep in sorted(combo, key=lambda c: -c[0]):
             labels.append(lab)
             if rep is not None:
-                new[k - 1:k + 1] = rep
+                tail = 1
+                while k + tail < len(new) and new[k + tail][0] == "\u0627" and "\u0652" in new[k + tail]:
+                    tail += 1  # جَزَٰٓؤُاْ: the rasm alif after the hamzah goes with it
+                new[k - 1:k + tail] = rep
         text = "".join(new)
         out.append(("+".join(reversed(labels)), text))
     return out

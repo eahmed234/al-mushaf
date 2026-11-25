@@ -221,6 +221,8 @@ CONSTRAINTS = yaml.safe_load((Path(__file__).parent / "data" / "constraints.yaml
 def allowed(rawi: str, choice: dict) -> bool:
     """False if the choice breaks a taḥrīr constraint (data/constraints.yaml) for this rāwī."""
     for c in CONSTRAINTS:
+        if "cats" not in c or c.get("enforced") is False:
+            continue
         if rawi in c["rawi"] and all(k in choice for k in c["cats"]):
             if [choice[k] for k in c["cats"]] not in c["allowed"]:
                 return False
