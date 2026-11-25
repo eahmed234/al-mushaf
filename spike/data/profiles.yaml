@@ -252,6 +252,9 @@ categories:
     - {who: rest7, wujuh: [tahqiq], cite: wafi 98-103, note: "no such rule in bāb al-hamz al-mufrad; الصابئون is farsh"}
     - {who: [ruways, rawh, ishaq, idris], wujuh: [tahqiq], cite: idah 109 n. 1}
 
+  # Ḥamzah's ruwāt and Hishām at a stop: spike/waqf.py (the whole bāb, al-Wāfī pp. 105-127, by
+  # position and seat, checked against al-Futūḥ's waqf forms in all six volumes) replaces their rows
+  # below in generation; the rows stay as the summary Eisa reviewed.
   # waqf on hamz: rows only for those whose waqf differs; everyone else (rest_as_wasl) reads at a
   # stop as in waṣl (al-Wāfī p. 99: Warsh's ibdāl "وصلا ووقفا"), Khalaf al-ʿĀshir with taḥqīq
   # ("وحقق همز الوقف", idah 117, 121).
@@ -288,6 +291,5 @@ categories:
     - {who: rest_as_wasl, wujuh: [tahqiq]}
 
 not_read_yet:
-  - "Ḥamzah's naql and sakt at a stop (wafi 105-106): the spike has no waqf category for them yet"
-  - "Hishām's and Ḥamzah's rawm/ishmām details and rasm-based takhfīf (wafi 118-127), beyond the wujūh above"
+  - "rasm-based takhfīf for the listed words (wafi 119-120: شُرَكَٰٓؤُاْ … al-Futūḥ's 'سبعة الرسمي'); هَٰٓؤُلَآءِ's wujūh (Ghayth al-Nafʿ p. 38)"
   - "rāʾāt exceptions and the rest of the lāmāt (wafi 162-172)"

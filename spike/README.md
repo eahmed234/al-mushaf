@@ -20,6 +20,7 @@ python3 -m spike.book_profiles                   # uṣūl profiles from al-Wāf
 python3 -m spike.book_profiles --vs-rows         # compare them with the profiles learned from rows
 PYTHONPATH=../mushaf ../mushaf/.venv/bin/python -m spike.review_profiles   # review sheet: rows beside the cited pages (build/profile_review.html)
 python3 -m spike.readings --upto 0 --test 1-20 --book   # predict 2:1–20 from the book profiles alone
+python3 -m spike.waqf_check [--show N]              # Ḥamzah/Hishām waqf rules against al-Futūḥ, vols 1-6
 python3 -m spike.review                           # Day 4: extra readings and misses, for review
 PYTHONPATH=../mushaf ../mushaf/.venv/bin/python -m spike.review_sheet   # the review as box-by-box pictures
 # side-by-side of printed rows and rebuilt text (needs the extractor's env for pymupdf):

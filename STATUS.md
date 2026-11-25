@@ -31,6 +31,7 @@ Two local git repos (no remotes, nothing pushed):
 | `profile.py` | learns text wujūh per rāwī from rows; contexts (stop at ayah end, optional at pause signs); reviewed places; claims by colour; the khulf convention |
 | `readings.py` | full profiles (rows + book madd tables + label features), generation, comparison, held-out test |
 | `review.py`, `review_sheet.py` | extra readings and misses, as a list and as box-by-box pictures |
+| `waqf.py`, `waqf_check.py` | Ḥamzah's and Hishām's waqf on hamz, by rule (al-Wāfī pp. 105–127); checked against al-Futūḥ vols 1–6 (95%) |
 | `render.py`, `dot_sheet.py` | preview renderer (HarfBuzz + DigitalKhatt) with the standalone tas-hīl dot |
 | `data/place_wujuh.yaml` | wujūh tied to a place, with sources (Ruways at 2:20; Ibn Dhakwān's زَادَ, farsh) |
 | `data/constraints.yaml` | taḥrīr as allowed tuples, from the books (Warsh: badal × līn, badal × dhawāt al-yāʾ); `readings` filters combinations by it |
@@ -90,12 +91,18 @@ tables; review list empty.
    `spike/data/constraints.yaml`, dhawāt al-rāʾ split out as `imala_ya_ra`, Ibn Dhakwān's زَادَ as
    farsh). New rows since the review (`imala_ya_ra`) are candidates.
    - Idrīs's sakt is an option (ikhtilāf; default none). A kubrā version comes later.
-   - **Waqf of Ḥamzah and Hishām needs its own chapter** (Eisa): the bāb is long and full of
-     exceptions (al-Wāfī pp. 110–127: rasm-based takhfīf, rawm/ishmām, hamz made mid by a
-     prefix, idghām after a zāʾid wāw/yāʾ, the 25 wujūh of هَٰٓؤُلَآءِ in Ghayth al-Nafʿ…). The five
-     categories in the table are only the main rules. Plan: a `waqf_hamzah` module with its own
-     data (rule by position and seat, then per-word exceptions from al-Budūr / Ghayth al-Nafʿ),
-     checked against every Ḥamzah/Hishām waqf row in al-Futūḥ.
+   - **Waqf of Ḥamzah and Hishām: its own chapter, `spike/waqf.py`** (2026-11-24). Every form a
+     stop allows, by the hamzah's position and seat, each rule citing al-Wāfī pp. 105–127 (and
+     al-Budūr p. 34 for خَٰسِـِٔينَ): ibdāl, naql, idghām after wāw/yāʾ, tas-hīl after an alif with
+     madd/qaṣr, the five qiyās forms after an alif at the end, rawm, the nine mutaḥarrik cases with
+     al-Akhfash and rasm ḥadhf, hamzah made mid by a prefix or lām al-taʿrīf (taḥqīq or takhfīf),
+     يَوۡمَئِذٖ, fatḥ tanwīn, Hishām's final hamzah only, naql from the next word.
+     `python3 -m spike.waqf_check` tests it against every waqf form al-Futūḥ prints for them in
+     all six volumes: **582 of 613 rows (95%)** have every printed form generated; the rest are
+     print quirks (split or dotless forms), Ḥamzah's farsh in the same word (يُؤَدِّهِۦ), and
+     هَٰٓؤُلَآءِ. Still to add: rasm-based takhfīf for the listed words (al-Wāfī pp. 119–120,
+     al-Futūḥ's "سبعة الرسمي"), هَٰٓؤُلَآءِ (Ghayth al-Nafʿ p. 38), and constraints between the
+     waqf forms and the rest of the reading (e.g. sakt against naql on ٱلۡأَرۡضِ).
    - Still not in the table (`not_read_yet`): Ḥamzah's naql and sakt in waqf, the rest of the
      rāʾāt and lāmāt exceptions.
 2. **Occurrence tables**, now the main gap: the profiles are right, but the spike doesn't know
