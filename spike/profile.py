@@ -216,7 +216,7 @@ CAT_KIND = {"munfasil": "madd", "silah_mim": "silah", "silah_mim_hamza": "silah"
             "ibdal_sakin": "hamz", "ibdal_sakin_waqf": "hamz", "naql": "hamz", "naql_word": "hamz",
             "hamzatayn": "hamz", "hamzatayn_waqf": "hamz", "hamz_waqf_final": "hamz", "hamz_waqf_mid": "hamz",
             "idgham_kabir": "idgham", "idgham_ghunna": "idgham", "sakt_huruf": "sakt", "badal": "madd",
-            "imala_ra": "imala", "imala_nas": "imala", "imala_kafirin": "imala", "imala_ya": "imala"}
+            "imala_ra": "imala", "imala_nas": "imala", "imala_kafirin": "imala", "imala_ya": "imala", "imala_ya_ra": "imala"}
 _REVIEWED: set | None = None
 
 

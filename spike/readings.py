@@ -203,10 +203,26 @@ def full_profiles(upto: int, start: int = 1, book: bool = False):
         from .book_profiles import load
         for r, cats in load().items():
             full[r].update(cats)
+        # a place entry's wujūh are the rāwī's too (label features are checked against the profile;
+        # generation still uses the place entry itself)
+        for e in yaml.safe_load((Path(__file__).parent / "data" / "place_wujuh.yaml").read_text()) or []:
+            q = full[e["rawi"]].setdefault(e["category"], {"wujuh": {}, "source": "place"})
+            for w in list(e["wujuh"]) + list(e.get("elsewhere", [])):
+                q["wujuh"].setdefault(w, ["data/place_wujuh.yaml"])
     return full, gaps, conflicts, feats
 
 
 PLACE_WUJUH = yaml.safe_load((Path(__file__).parent / "data" / "place_wujuh.yaml").read_text()) or []
+CONSTRAINTS = yaml.safe_load((Path(__file__).parent / "data" / "constraints.yaml").read_text()) or []
+
+
+def allowed(rawi: str, choice: dict) -> bool:
+    """False if the choice breaks a taḥrīr constraint (data/constraints.yaml) for this rāwī."""
+    for c in CONSTRAINTS:
+        if rawi in c["rawi"] and all(k in choice for k in c["cats"]):
+            if [choice[k] for k in c["cats"]] not in c["allowed"]:
+                return False
+    return True
 
 
 def generate(rawi: str, span: list[str], full: dict, confirmed: set) -> list[tuple[dict, dict]]:
@@ -249,6 +265,8 @@ def generate(rawi: str, span: list[str], full: dict, confirmed: set) -> list[tup
             ch = dict(zip(free, combo))
             if tie:
                 ch["silah_mim_hamza"] = ch["silah_mim"]
+            if not allowed(rawi, ch):
+                continue
             out.append((ch, apply(words, occs, ch)))
     return out
 

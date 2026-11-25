@@ -32,10 +32,11 @@ Two local git repos (no remotes, nothing pushed):
 | `readings.py` | full profiles (rows + book madd tables + label features), generation, comparison, held-out test |
 | `review.py`, `review_sheet.py` | extra readings and misses, as a list and as box-by-box pictures |
 | `render.py`, `dot_sheet.py` | preview renderer (HarfBuzz + DigitalKhatt) with the standalone tas-hīl dot |
-| `data/place_wujuh.yaml` | wujūh tied to a place, with sources (Ruways at 2:20) |
+| `data/place_wujuh.yaml` | wujūh tied to a place, with sources (Ruways at 2:20; Ibn Dhakwān's زَادَ, farsh) |
+| `data/constraints.yaml` | taḥrīr as allowed tuples, from the books (Warsh: badal × līn, badal × dhawāt al-yāʾ); `readings` filters combinations by it |
 | `data/profiles.yaml`, `book_profiles.py` | **uṣūl profiles from al-Wāfī and al-Īḍāḥ** (checked against al-Budūr, Ghayth al-Nafʿ, nQuran where they disagreed): 33 categories × 20 ruwāt, each row with page; `readings --book` uses them |
 
-Book profiles (2026-11-24), `spike/data/profiles.yaml`, 33 categories × 20 ruwāt:
+Book profiles (2026-11-24), `spike/data/profiles.yaml`, 34 categories × 20 ruwāt (reviewed by Eisa):
 
 | Test | rows-learned | book table |
 | --- | --- | --- |
@@ -84,18 +85,19 @@ tables; review list empty.
 
 ## Next steps, in order
 
-1. ~~Pull the books~~, ~~build the profile table~~, ~~read the remaining bābs~~ (done). For it:
-   - **Eisa reviews it by category** (page text beside the rows).
-   - Answered 2026-11-24: Idrīs's sakt is an **option** (ikhtilāf; default none; `option: true`
-     in the table). Eisa plans a kubrā version later, so keep data ṭarīq-aware. Ḥamzah's waqf on
-     مُسۡتَهۡزِءُونَ: three wujūh (al-Budūr p. 22, Ghayth al-Nafʿ p. 31, al-Futūḥ v1 p59 r12, nQuran),
-     and on ءَأَنذَرۡتَهُمۡ: tashīl or taḥqīq of the second (al-Budūr p. 20, nQuran 2:6).
-   - Still not in the table (`not_read_yet`): Ḥamzah's naql and sakt in waqf, rawm/ishmām and
-     rasm-based takhfīf in detail, the rest of the rāʾāt and lāmāt exceptions.
-   - Taqlīl and imālah are written the same; the rows' learned names for them are arbitrary.
-   - Word-list imālah (Ḥamzah's verbs, al-Dūrī ʿan al-Kisāʾī's words) and Abū Jaʿfar's ḥadhf of a
-     maḍmūmah hamzah after kasr are new detectors in `usul.py`, from al-Wāfī pp. 150–154 and
-     al-Īḍāḥ pp. 109–110, 141–144.
+1. ~~Pull the books~~, ~~build the profile table~~, ~~read the remaining bābs~~, ~~Eisa's review~~
+   (all 160 rows right, 2026-11-24; notes applied: Warsh's tarbīʿ and badal × dhawāt al-yāʾ in
+   `spike/data/constraints.yaml`, dhawāt al-rāʾ split out as `imala_ya_ra`, Ibn Dhakwān's زَادَ as
+   farsh). New rows since the review (`imala_ya_ra`) are candidates.
+   - Idrīs's sakt is an option (ikhtilāf; default none). A kubrā version comes later.
+   - **Waqf of Ḥamzah and Hishām needs its own chapter** (Eisa): the bāb is long and full of
+     exceptions (al-Wāfī pp. 110–127: rasm-based takhfīf, rawm/ishmām, hamz made mid by a
+     prefix, idghām after a zāʾid wāw/yāʾ, the 25 wujūh of هَٰٓؤُلَآءِ in Ghayth al-Nafʿ…). The five
+     categories in the table are only the main rules. Plan: a `waqf_hamzah` module with its own
+     data (rule by position and seat, then per-word exceptions from al-Budūr / Ghayth al-Nafʿ),
+     checked against every Ḥamzah/Hishām waqf row in al-Futūḥ.
+   - Still not in the table (`not_read_yet`): Ḥamzah's naql and sakt in waqf, the rest of the
+     rāʾāt and lāmāt exceptions.
 2. **Occurrence tables**, now the main gap: the profiles are right, but the spike doesn't know
    which places a category applies to (naql places, word-specific imālah). Build them from Ghayth
    al-Nafʿ's per-place types (`books/ghayth-1.txt`) and the lists in al-Wāfī and al-Īḍāḥ, and

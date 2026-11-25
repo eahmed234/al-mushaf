@@ -4,7 +4,7 @@
 # Pages are file pages, which here equal the printed pages and Aljam3's pages.
 #   wafi = al-Qāḍī, al-Wāfī fī Sharḥ al-Shāṭibiyyah (Aljam3 1037/2153)  — the seven
 #   idah = al-Qāḍī, al-Īḍāḥ li-Matn al-Durrah (Aljam3 16501/36683)       — the three
-# Every row is status `candidate` until Eisa reviews it by category.
+# Reviewed by Eisa 2026-11-24 (see `review:`); rows added later are candidates until reviewed.
 #
 # Each category lists rows; `who` names rāwīs (spike ids) or `rest7` (the seven's ruwāt not named
 # in an earlier row of the category). Wujūh use the spike's names (spike/usul.py WUJUH) where
@@ -12,6 +12,17 @@
 # `cond` is the book's condition in short, for the occurrence tables later; `place` rows are
 # word-specific exceptions the book names, kept for spike/data/place_wujuh.yaml. `option: true`
 # marks an ikhtilāf the app offers as a setting (first wajh = default).
+
+review:
+  # Eisa reviewed all 160 rows on 2026-11-24 (review sheet, spike/review_profiles.py): all right.
+  # His notes, applied here or in data/constraints.yaml:
+  #   badal and lin_hamz (Warsh): tarbīʿ → constraints.yaml (al-Ḍabbāʿ pp. 201-202)
+  #   imala_ya (Abū ʿAmr): his rule is under dhawāt al-rāʾ → split out as imala_ya_ra
+  #   imala_zad (Ibn Dhakwān): treat as farsh
+  #   waqf of Ḥamzah and Hishām: needs its own chapter with its exceptions (STATUS next steps)
+  status: reviewed
+  by: Eisa
+  date: 2026-11-24
 
 durrah_rule:
   # al-Durrah gives each of the three an aṣl from the seven and names a rāwī only where he
@@ -176,11 +187,20 @@ categories:
     - {who: [warsh], wujuh: [fath, taqlil], cite: wafi 148-149,
        cond: "after rāʾ: taqlīl only; ruʾūs al-āy of the eleven surahs: taqlīl only, unless with ـهَا"}
     - {who: [duri_abuamr, susi], wujuh: [fath], cite: wafi 149-150,
-       cond: "taqlīl in fuʿlā/faʿlā/fiʿlā forms and the ruʾūs al-āy of the eleven surahs; imālah after rāʾ"}
+       cond: "taqlīl in fuʿlā/faʿlā/fiʿlā forms and the ruʾūs al-āy of the eleven surahs; his imālah is in dhawāt al-rāʾ (imala_ya_ra)",
+       note: "Eisa: Abū ʿAmr's rule is generally under dhawāt al-rāʾ"}
     - {who: rest7, wujuh: [fath], cite: wafi 139}
     - {who: [ibn_wardan, ibn_jammaz], wujuh: [fath], cite: idah 144}
     - {who: [ruways, rawh], wujuh: [fath], cite: idah 143-144, place: "imālah in أَعۡمَىٰ (al-Isrāʾ, first)"}
     - {who: [ishaq, idris], wujuh: [imala], inherited: true, cite: idah 142, note: "exceptions on p. 142 (fatḥ in ʿayn of thulāthī verbs etc.)"}
+
+  imala_ya_ra:  # dhawāt al-rāʾ: a final alif after rāʾ (ٱلنَّصَٰرَىٰ, ذِكۡرَىٰ)
+    - {who: [duri_abuamr, susi, khalaf_an_hamzah, khallad, abul_harith, duri_kisai], wujuh: [imala], cite: wafi 147-148}
+    - {who: [warsh], wujuh: [taqlil], cite: wafi 148, place: "وَلَوۡ أَرَىٰكَهُمۡ (al-Anfāl): fatḥ and taqlīl"}
+    - {who: rest7, wujuh: [fath], cite: wafi 147-148}
+    - {who: [ibn_wardan, ibn_jammaz], wujuh: [fath], cite: idah 144}
+    - {who: [ruways, rawh], wujuh: [fath], cite: idah 143-144}
+    - {who: [ishaq, idris], wujuh: [imala], inherited: true, cite: idah 40-43}
 
   imala_jaa_shaa:  # past جَآءَ, شَآءَ
     - {who: [khalaf_an_hamzah, khallad, ibn_dhakwan], wujuh: [imala], cite: wafi 150-151}
@@ -191,7 +211,7 @@ categories:
 
   imala_zad:  # past زَادَ
     - {who: [khalaf_an_hamzah, khallad], wujuh: [imala], cite: wafi 150}
-    - {who: [ibn_dhakwan], wujuh: [fath, imala], cite: wafi 151, place: "imālah only at فَزَادَهُمُ ٱللَّهُ مَرَضٗا (2:10), the first in the Qurʾān"}
+    - {who: [ibn_dhakwan], wujuh: [fath], cite: wafi 151, place: "farsh for him (Eisa): imālah at فَزَادَهُمُ ٱللَّهُ مَرَضٗا (2:10), the first in the Qurʾān; fatḥ and imālah at the other places (data/place_wujuh.yaml)"}
     - {who: rest7, wujuh: [fath], cite: wafi 150-151}
     - {who: [ishaq, idris], wujuh: [fath], cite: idah 141-142}
     - {who: [ibn_wardan, ibn_jammaz], wujuh: [fath], cite: idah 144}

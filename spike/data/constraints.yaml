@@ -1,0 +1,20 @@
+# Taḥrīr: which wujūh of different categories go together in one reading (allowed tuples).
+# Read from the books' pages, not from memory. A constraint applies when every one of its
+# categories occurs in the passage being read; the order of the places doesn't matter.
+
+- id: warsh_badal_lin  # tarbīʿ (Eisa's review note on badal and lin_hamz)
+  rawi: [warsh]
+  cats: [badal, lin_hamz]
+  allowed: [[qasr, tawassut], [tawassut, tawassut], [tul, tawassut], [tul, tul]]
+  cite: dabba 201-202
+  source: "al-Ḍabbāʿ, Sharḥ Itḥāf al-Bariyyah, v. 49: وفي بدل أجر الثلاثة عندما توسط لينا وامددن إن تطولا; p. 202: the same whether the līn comes first or the badal (e.g. شَيۡـٔٗا … ٱلۡأٓخِرَةِ)"
+  status: candidate
+
+- id: warsh_badal_dhawat_ya
+  rawi: [warsh]
+  cats: [badal, imala_ya]
+  allowed: [[qasr, fath], [tawassut, taqlil], [tul, fath], [tul, taqlil]]
+  cite: dabba 246; budur 30
+  cond: "not for the ruʾūs al-āy of the eleven surahs (taqlīl with every badal), nor عَادًا ٱلۡأُولَىٰ and ءَآلۡـَٰٔنَ (dabba 246 n. 1)"
+  source: "al-Ḍabbāʿ p. 246: no taqlīl on qaṣr of the badal, no fatḥ on its tawassuṭ, both on its madd; al-Budūr p. 30 (2:34 ءَادَمَ … أَبَىٰ), the same either order"
+  status: candidate

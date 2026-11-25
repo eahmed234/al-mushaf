@@ -172,7 +172,8 @@ def _detect(words: list[tuple[str, str]]) -> list[Occ]:
         if "\u0643\u0641\u0631\u064a\u0646" in sk and any(DAGGER in c and c[0] == "\u0643" for c in cls):
             out.append(Occ("imala_kafirin", wid, nid))  # كَٰفِرِينَ
         if last[0] == "\u0649" and DAGGER in last and not tanwin:  # dhawat al-ya': ٱلۡهُدَىٰ
-            out.append(Occ("imala_ya", wid, nid))
+            ra = len(cls) >= 2 and cls[-2][0] == "\u0631"  # after rāʾ (ذِكۡرَىٰ): its own rule (wafi 147-148)
+            out.append(Occ("imala_ya_ra" if ra else "imala_ya", wid, nid))
         # a maḍmūmah hamzah after a kasrah inside the word (مُسۡتَهۡزِءُونَ): Abū Jaʿfar drops it (idah 110)
         if any(c[0] == "\u0621" and DAMMA in c and KASRA in cls[k - 1] for k, c in enumerate(cls[1:-1], 1)):
             out.append(Occ("hadhf_damm", wid, nid))
@@ -212,6 +213,7 @@ WUJUH = {
     "imala_ya": ["fath", "taqlil", "imala"],
     "hadhf_damm": ["tahqiq", "hadhf"],
     "hamz_waqf_zaid": ["tahqiq", "tashil"],
+    "imala_ya_ra": ["fath", "taqlil", "imala"],
     "imala_jaa_shaa": ["fath", "imala"],
     "imala_zad": ["fath", "imala"],
     "imala_fiil": ["fath", "imala"],
@@ -235,7 +237,7 @@ def _imala(cat: str, cls: list[str]) -> list[str]:
     def dot(k):
         cls[k] = cls[k][0] + "".join(m for m in cls[k][1:] if m != FATHA) + IMALA
 
-    if cat == "imala_ya":
+    if cat in ("imala_ya", "imala_ya_ra"):
         dot(len(cls) - 2)
     elif cat in ("imala_jaa_shaa", "imala_zad", "imala_fiil"):  # the verb's alif (شَآءَ: with maddah)
         k = next((k for k in range(len(cls) - 1) if cls[k + 1][0] == "\u0627"), None)
