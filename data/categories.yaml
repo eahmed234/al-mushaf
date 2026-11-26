@@ -1,0 +1,330 @@
+# Categories of the reading model, one per rule, for all twenty ruwāt (Shāṭibiyyah and Durrah
+# together). Revised 2026-11-26 from Eisa's review of the uṣūl run (pipeline/reviews/
+# categories-2026-11-26.json). `rows`: the category names the extraction used that belong here.
+# kind: rule = a rāwī's general wujūh plus listed words; per_word = stored per word, like farsh.
+istiadha:
+  what: 'the istiʿādhah: its wording, aloud or silent'
+  kind: rule
+  rows:
+  - istiadha_jahr
+  - istiadha_lafz
+basmalah:
+  what: the basmalah between surahs and at a surah's start; al-Anfāl/Barāʾah; the start of a juzʾ (one wording for all twenty)
+  kind: rule
+  rows:
+  - basmalah
+  - basmalah_zahr
+  - basmala_bayna_surtayn
+  - basmala_arbaa_zuhr
+  - basmala_awwal_sura
+  - anfal_bara_a
+  - basmala_ruus_ajza
+  - basmala_awjuh_surtayn
+ha_mim_jam:
+  what: 'the hāʾ and mīm of the plural pronoun: the hāʾ''s vowel after yāʾ (عليهم، إليهم، لديهم…) and both before a sākin (عليهمُ القتال، قلوبهمِ
+    العجل; itbāʿ)'
+  kind: rule
+  rows:
+  - damm_ha_alayhim
+  - ha_jam_damm_kasr
+  - mim_before_sakin
+  - mim_jam_before_sakin
+  - ha_before_mim_jam
+  note: 'ha_jam and mim_jam_sakin combined (Eisa 2026-11-26: the same letters in the same words)'
+silah_mim:
+  what: ṣilah of mīm al-jamʿ before a consonant (and with an attached pronoun)
+  kind: rule
+  rows:
+  - silah_mim
+  - mim_with_pronoun
+silah_mim_hamza:
+  what: ṣilah of mīm al-jamʿ before hamzat al-qaṭʿ
+  kind: rule
+  rows:
+  - silah_mim_hamza
+silah_ha:
+  what: 'hāʾ al-kināyah: ṣilah, qaṣr, iskān; its listed words'
+  kind: rule
+  rows:
+  - silah_ha
+  - ha_kinaya_iskan
+  - arjih_hamz
+  - kasr_ha_ahlihi
+idgham_kabir:
+  what: 'idghām kabīr (al-Sūsī, Yaʿqūb''s places): what merges, rawm/ishmām, the madd before it'
+  kind: rule
+  rows:
+  - idgham_kabir
+  - idgham_kabir_ishmam_rawm
+  - madd_before_idgham_kabir
+  - mim_before_ba_ikhfa
+munfasil:
+  what: 'madd munfaṣil (lengths: qaṣr 1, tawassuṭ 2, ṭūl 3 alifs; Eisa 2026-11-25)'
+  kind: rule
+  rows:
+  - munfasil
+muttasil:
+  what: 'madd muttaṣil (lengths: qaṣr 1, tawassuṭ 2, ṭūl 3 alifs; Eisa 2026-11-25)'
+  kind: rule
+  rows:
+  - muttasil
+badal:
+  what: 'madd al-badal (lengths: qaṣr 1, tawassuṭ 2, ṭūl 3 alifs; Eisa 2026-11-25)'
+  kind: rule
+  rows:
+  - badal
+lin_hamz:
+  what: 'līn before a hamzah (lengths: qaṣr 1, tawassuṭ 2, ṭūl 3 alifs; Eisa 2026-11-25)'
+  kind: rule
+  rows:
+  - lin_hamz
+madd_arid:
+  what: 'madd ʿāriḍ at a stop (lengths: qaṣr 1, tawassuṭ 2, ṭūl 3 alifs; Eisa 2026-11-25)'
+  kind: rule
+  rows:
+  - madd_arid
+madd_lazim:
+  what: madd lāzim and the openings' letters
+  kind: rule
+  rows:
+  - madd_lazim
+  - madd_fawatih
+  - madd_fawatih_mim_wasl
+  - madd_fawatih_ayn
+  - madd_hatayn_allathayn
+  - fawatih_two_letter_qasr
+  - fawatih_alif_qasr
+  - madd_aalaan_first_alif
+madd_hamz_mughayyar:
+  what: the madd before a changed hamzah
+  kind: rule
+  rows:
+  - madd_qabl_hamz_mughayyar
+  - madd_before_tashil
+hamzatayn:
+  what: two hamzahs in one word, with hamzat al-waṣl, istifhām/ikhbār (listed words)
+  kind: rule
+  rows:
+  - hamzatayn
+  - hamzat_wasl_istifham
+  - istifham_ikhbar
+  - istifham_mukarrar
+  - haa_antum
+hamzatayn_kalimatayn_muttafiq:
+  what: two hamzahs across words, same vowel
+  kind: rule
+  rows:
+  - hamzatayn_kalimatayn_muttafiq
+hamzatayn_kalimatayn_mukhtalif:
+  what: two hamzahs across words, different vowels
+  kind: rule
+  rows:
+  - hamzatayn_kalimatayn_mukhtalif
+ibdal_sakin:
+  what: ibdāl of the sākin hamzah, and its listed exceptions
+  kind: rule
+  rows:
+  - ibdal_sakin
+hamz_mufrad:
+  what: the single moving hamzah's listed words (مؤجلا، لئلا، النبيء، اللائي…)
+  kind: rule
+  rows:
+  - ibdal_maftuha_baad_damm
+  - yaltikum_hamza_zaida
+  - ibdal_ya_lialla
+  - hamz_mutaharrik
+  - hamz_waw_ula_qalun
+  - juz_hadhf_idgham
+  - ibdal_idgham_ya
+  - tashil_hamz_mufrad
+  - laai
+  - laai_yainasna_hamza
+  - li_alla
+  - nabi_ibdal
+  - ad_ula
+naql:
+  what: naql of a hamzah's vowel to the sākin before it (mafṣūl ʿām and khāṣ), beginning after naql
+  kind: rule
+  rows:
+  - naql
+  - ibtida_lam_naql
+  - idgham_ha_maliyah
+sakt_al:
+  what: 'sakt on the mafṣūl khāṣ: lām al-taʿrīf and شيء'
+  kind: rule
+  rows:
+  - sakt_al
+sakt_mafsul:
+  what: sakt on the mafṣūl ʿām; for the Durrah, no sakt at all
+  kind: rule
+  rows:
+  - sakt_mafsul
+  - sakt_mutlaq
+  note: the Shāṭibiyyah's and the Durrah's sakt in one category (Eisa 2026-11-26)
+hadhf_damm:
+  what: dropping the hamzah of مستهزءون and the like
+  kind: rule
+  rows:
+  - hadhf_damm
+hamz_waqf:
+  what: 'Ḥamzah''s and Hishām''s stop on the hamzah: sākin, final, middle, after a prefix, two hamzahs; rawm/ishmām; following the rasm'
+  kind: rule
+  rows:
+  - hamz_waqf_final
+  - hamz_waqf_mid
+  - hamz_waqf_zaid
+  - hamzatayn_waqf
+  - ibdal_sakin_waqf
+  - rawm_ishmam_waqf_hamz
+  - ibdal_idgham_riya
+  - ha_anbihim_waqf
+  - waqf_hamza_rasm
+  - hamz_waqf_all
+  note: one rule table; the existing five categories are its parts. A backup source may come for this chapter (Eisa 2026-11-26)
+idgham_ghunna:
+  what: idghām of nūn/tanwīn into و ي with or without ghunnah
+  kind: rule
+  rows:
+  - idgham_ghunna
+nun_sakina:
+  what: 'nūn sākinah and tanwīn: iẓhār, iqlāb, ikhfāʾ'
+  kind: rule
+  rows:
+  - nun_halq_ikhfa
+  - izhar_nun_waw_ya
+  - izhar_halqi
+  - iqlab
+  - ikhfa
+  - ikhfa_nun_ta
+imala:
+  what: 'imālah and taqlīl, one rule table: the existing imala_* parts and the named words'
+  kind: rule
+  rows:
+  - imala_ra
+  - imala_kafirin
+  - imala_nas
+  - imala_ya
+  - imala_ya_ra
+  - imala_jaa_shaa
+  - imala_zad
+  - imala_fiil
+  - imala_duri_kisai
+  - imala_alif_tanith
+  - imala_ruya
+  - imala_tawrat
+  - imala_rasm_ya
+  - imala_yasin
+  - fath_bab_imala
+  - imala_kisai_only
+  - imala_ras_ay
+  - imala_shuba_hk_words
+  - imala_taraa
+  - imala_naa
+  - imala_ana
+  - taqlil_duri_abuamr_words
+  - imala_har
+  - imala_misc_words
+  - imala_ibn_dhakwan_khulf
+  - fath_dhiafa
+imala_ha_tanith:
+  what: al-Kisāʾī's imālah of hāʾ al-taʾnīth at a stop
+  kind: rule
+  rows:
+  - imala_ha_tanith
+tarqiq_ra:
+  what: 'the rāʾ: tarqīq and tafkhīm, for all twenty (Warsh''s tarqīq is part of it)'
+  kind: rule
+  rows:
+  - tarqiq_ra
+  - ra_lam_kaqalun
+  - ra_waqf_rawm
+  note: the Durrah's rāʾāt in the same category (Eisa 2026-11-26)
+taghliz_lam:
+  what: 'the lām: Warsh''s taghlīẓ, the lām of ٱللَّه'
+  kind: rule
+  rows:
+  - taghliz_lam
+  - lafz_allah_lam
+sakt_huruf:
+  what: sakt on the ḥurūf of the openings (Abū Jaʿfar)
+  kind: rule
+  rows:
+  - sakt_huruf
+waqf_rasm:
+  what: 'stops on the rasm: hāʾ al-sakt, tāʾ written tāʾ, مال، ويكأن، كأين، أيا ما، أيه، dropped yāʾ'
+  kind: rule
+  rows:
+  - waqf_ya_abati
+  - waqf_ha_sakt_ma
+  - waqf_ha_sakt_huwa_hiya
+  - waqf_ha_sakt_hunna
+  - waqf_ha_sakt_ya_mutakallim
+  - waqf_ha_sakt_wasl
+  - waqf_ha_sakt_nudba
+  - waqf_ha_sakt_thumma
+  - ha_sakt_hadhf_wasl
+  - waqf_ayya
+  - waqf_ya_mahdhufa
+  - waqf_lam_mal
+  - waqf_wayka
+  - waqf_rasm
+  - waqf_ta_taanith
+  - waqf_ya_abat
+  - waqf_kaayyin
+  - waqf_mal
+  - waqf_ayyuha
+  - waqf_ayyan_ma
+  - ha_sakt_waqf
+rawm_ishmam:
+  what: rawm and ishmām at a stop
+  kind: rule
+  rows:
+  - rawm_ishmam
+idgham_saghir:
+  what: 'idghām ṣaghīr: إذ، قد، tāʾ al-taʾnīth، هل وبل، close letters, mithlayn'
+  kind: per_word
+  rows:
+  - idgham_saghir
+  - idgham_lam_hal_bal
+  - idgham_ba_jazm_fa
+  - idgham_dhal_ta_nabadhtuha
+  - idgham_ra_lam
+  - idgham_dal_tha_yurid
+  - idgham_idh
+  - idgham_dal_dhal_kahyas
+  - idgham_dhal_ta_akhadhtu
+  - idgham_qad
+  - idgham_tha_ta_uritstum
+  - idgham_tha_ta_labithtu
+  - idgham_dhal_ta_udhtu
+  - idgham_ta_tanith
+  - idgham_yasin_nun
+  - idgham_hal_bal
+  - idgham_sin_mim_tasm
+  - idgham_tha_dhal_yalhath
+  - idgham_ba_mim_irkab
+  - idgham_mithlayn
+  - idgham_saghir_unlisted_words
+  - idgham_harf_qarib
+  - idgham_mutaqaribayn_ta
+  note: 'per word, stored like farsh (Eisa 2026-11-26: neater as farsh)'
+ya_idafa:
+  what: 'yāʾāt al-iḍāfah: opened or sukūn'
+  kind: per_word
+  rows:
+  - ya_idafa
+  - yaat_idafa
+  note: 'per word, stored like farsh (Eisa 2026-11-26: neater as farsh)'
+ya_zaida:
+  what: 'yāʾāt al-zawāʾid: kept or dropped'
+  kind: per_word
+  rows:
+  - ya_zaida
+  - zawaid
+  note: 'per word, stored like farsh (Eisa 2026-11-26: neater as farsh)'
+to_farsh:
+  what: 'مالك، الصراط: farsh of al-Fātiḥah, stored with the rest of the farsh (Eisa 2026-11-26)'
+  rows:
+  - maliki_yawm
+  - sirat
+  - fatiha_farsh
