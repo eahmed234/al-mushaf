@@ -28,6 +28,10 @@ from .usul import WUJUH
 
 DIR = DATA / "usul"
 CASE = {"silah_ha": 1, "tarqiq_ra": 1}  # Ibn Kathīr's ṣilah after a sākin; Warsh's condition for the rāʾ
+# engine categories that aren't a profiles.yaml category: the table case that gives them. naql_word
+# (a sākin at a word's end before the next word's hamzah, عَذَابٌ أَلِيمٌ) is the naql table's first
+# case, the same rule as the article's (wafi 103); without it the engine read it as Ḥafṣ
+ENGINE_ONLY = {"naql_word": ("naql", 0)}
 
 
 @lru_cache(maxsize=1)
@@ -47,6 +51,8 @@ def where() -> dict[str, tuple[str, int]]:
         for old in v.get("rows", []):
             if old in prof_cats:
                 out[old] = (c, next((i for i, n in enumerate(names) if n.startswith(old + ":")), CASE.get(old, 0)))
+    for old, ck in ENGINE_ONLY.items():
+        out.setdefault(old, ck)
     return out
 
 

@@ -44,7 +44,8 @@ class Rows(unittest.TestCase):
         with mock.patch.object(profiles, "load", lambda *a, **k: usul_tables.profiles("kubra")):
             r = self.readings.check(20, book=True)
             b = self.readings.check(0, book=True, test=(1, 20))
-        self.assertEqual((r["reproduced"], r["pairs"], b["reproduced"], b["pairs"]), (674, 676, 661, 666))
+        # 661 → 664 from the books alone once naql across words reached the engine (usul_tables.ENGINE_ONLY)
+        self.assertEqual((r["reproduced"], r["pairs"], b["reproduced"], b["pairs"]), (674, 676, 664, 666))
         self.assertEqual(r["conflicts"], [])
 
     def test_planted_profile_error_is_caught(self):

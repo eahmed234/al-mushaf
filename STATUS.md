@@ -218,10 +218,20 @@ tables; review list empty.
   307, 0/0). Missing: mostly the yāʾāt (uṣūl tables) and a few words (يقبل، ميكائيل، البر، تقولون 2:140;
   وضعت، ويعلمه، لتحسبوه، قرح 3:140, متم 3:158 for Qālūn, تكتمونه). `compare N` sets the two tables side by side.
 
+- **Sources used up for 1-3, and a first API (2026-11-27, docs/06)**: al-Ḍabbāʿ read (pp. 153-296,
+  225 taḥrīr statements, `pipeline/tahrir.py` → data/tahrir/dabba.yaml; al-Budūr's 69 per place in
+  data/tahrir/budur.yaml); the al-Budūr uṣūl crosscheck now runs through Āl ʿImrān (1,659 agree, 64
+  differ) and found Hishām's maḍmūmah (wafi 90-91) and the ويولج النهار entry (wafi 152), fixed.
+  `naql_word` linked to the naql table (al-Futūḥ book-only 661 → 664/666). `mushaf_data/api.py`
+  (read / choices / count / who / explain): KFGQPC's eight, sūrahs 1-3, 99.1% of words, 625 farsh
+  words with no text. The storage gaps it found, in docs/06: farsh options have no text; one table
+  case per engine category; listed words not anchored; al-Budūr `recurs` as forms.
+
 Next, in order:
-1. docs/05 milestone 4, continued from the books: al-Nisāʾ onward (wafi 243-, idah 231-), in batches (al-Budūr, then the farsh chapters
+1. docs/06 §4: option text for the farsh of 1-3, per-word table cases in the engine, anchored lists.
+2. docs/05 milestone 4, continued from the books: al-Nisāʾ onward (wafi 243-, idah 231-), in batches (al-Budūr, then the farsh chapters
    as the second reading); new slots go to data/spine/slots.yaml as they turn up.
-2. Then milestones 5- (occurrences, constraints, marks and counts, the engine's API).
+3. Then milestones 5- (occurrences, constraints, marks and counts, the engine's API).
 
 Working notes: subagents get their own scratch folders; reviewed data stands until Eisa rules;
 book text is never committed (quotes are offsets; pipeline/out and pipeline/work are gitignored).
