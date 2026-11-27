@@ -379,7 +379,8 @@ filled_notes:
 - 'Durrah ruwāt for the waqf case (stopping on the first hamzah): no row of al-Īḍāḥ speaks of it (asl: Ibn Wardān, Ibn Jammāz, Ruways, Rawḥ, Isḥāq,
   Idrīs left empty).'
 options:
-- about: هؤلاء إن، البغاء إن
+- id: warsh_ya
+  about: هؤلاء إن، البغاء إن
   ruwat:
   - warsh
   reads: the second hamzah as a yāʾ with kasrah

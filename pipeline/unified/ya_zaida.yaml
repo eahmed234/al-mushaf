@@ -1171,7 +1171,8 @@ filled_notes:
 - 'يهديني (wafi 197, all fourteen keep): the waqf state is not stated.'
 - Abū Jaʿfar's 'كأصله' words (idah 181) take Nāfiʿ's reading where the Wāfī rows name Qālūn and Warsh alike; no row separates them.
 kubra:
-- about: التلاق، التناد
+- id: qalun_talaq
+  about: التلاق، التناد
   ruwat:
   - qalun
   reads: kept_wasl

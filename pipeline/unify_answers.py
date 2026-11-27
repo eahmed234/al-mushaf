@@ -5,7 +5,8 @@
 
 Where Eisa said "check budur", al-Budūr's place notes decided it (pages cited). Policy answers add
 `options` (ahl al-adāʾ views, off by default) and `kubra` (other ṭuruq, for the kubrā version) to the
-tables. Safe to run twice.
+tables, each with an `id` (offered as `<table>:<id>`, mushaf_data.usul_tables) and, where an engine
+category can carry it, `adds` (the wujūh it adds there). Safe to run twice.
 """
 from __future__ import annotations
 
@@ -64,7 +65,7 @@ def apply() -> list[str]:
     c["note"] = ("basmala is keeping the basmalah (three ways: join all, cut all, cut the sūrah's end and join the "
                  "basmalah to the next; joining it to the end and stopping on it is not allowed, wafi 49); sakt and "
                  "waṣl are the two ways of dropping it (Eisa 2026-11-26)")
-    t["options"] = [{"about": "al-arbaʿ al-zuhr (القيامة، المطففين، البلد، الهمزة)", "view": "ahl al-adāʾ",
+    t["options"] = [{"id": "arba_zuhr", "about": "al-arbaʿ al-zuhr (القيامة، المطففين، البلد، الهمزة)", "view": "ahl al-adāʾ",
                      "ruwat": ["warsh", "duri_abuamr", "susi", "hisham", "ibn_dhakwan"],
                      "reads": "basmala before them for those who make sakt elsewhere, sakt for those who make waṣl",
                      "cite": ["wafi 47"], "default": "off"}]
@@ -140,18 +141,18 @@ def apply() -> list[str]:
     q = listed(t, lambda x: "التلاق" in x["words"])[0]
     q["ruwat"]["qalun"] = ["dropped"]
     q["note"] = "Qālūn: dropped (the verifiers, wafi 196); the poem's kept-in-waṣl is for the kubrā (Eisa)"
-    t["kubra"] = [{"about": "التلاق، التناد", "ruwat": ["qalun"], "reads": "kept_wasl", "cite": ["wafi 196"],
+    t["kubra"] = [{"id": "qalun_talaq", "about": "التلاق، التناد", "ruwat": ["qalun"], "reads": "kept_wasl", "cite": ["wafi 196"],
                    "why": "the poem's khulf; the verifiers drop it"}]
     save("ya_zaida", t)
 
     # policy: ahl al-adāʾ views become options, off by default
     for c, opt in {
-        "badal": {"about": "عاداً الأولى", "ruwat": ["warsh"], "reads": "qaṣr only", "cite": ["wafi 78"]},
-        "hamz_waqf": {"about": "stopping by the rasm (شركاء، يبدو، تلقاء …)", "ruwat": ["khalaf_an_hamzah", "khallad"],
+        "badal": {"id": "aadan_ula_qasr", "about": "عاداً الأولى", "ruwat": ["warsh"], "reads": "qaṣr only", "cite": ["wafi 78"]},
+        "hamz_waqf": {"id": "rasm", "about": "stopping by the rasm (شركاء، يبدو، تلقاء …)", "ruwat": ["khalaf_an_hamzah", "khallad"],
                       "reads": "follow the muṣḥaf's spelling: yāʾ, wāw or ḥadhf", "cite": ["wafi 118", "wafi 119", "wafi 120"]},
-        "hamzatayn_kalimatayn_muttafiq": {"about": "هؤلاء إن، البغاء إن", "ruwat": ["warsh"],
+        "hamzatayn_kalimatayn_muttafiq": {"id": "warsh_ya", "about": "هؤلاء إن، البغاء إن", "ruwat": ["warsh"],
                                           "reads": "the second hamzah as a yāʾ with kasrah", "cite": ["wafi 94"]},
-        "imala_ha_tanith": {"about": "hāʾ al-taʾnīth after every letter but the alif", "ruwat": ["abul_harith", "duri_kisai"],
+        "imala_ha_tanith": {"id": "kisai_all_letters", "about": "hāʾ al-taʾnīth after every letter but the alif", "ruwat": ["abul_harith", "duri_kisai"],
                             "reads": "imālah", "cite": ["wafi 159"]},
     }.items():
         t = load(c)
@@ -160,14 +161,15 @@ def apply() -> list[str]:
 
     # policy: other ṭuruq go to the kubrā version
     t = load("muttasil")
-    t["kubra"] = [{"about": "the muttaṣil", "ruwat": ["ibn_wardan", "ibn_jammaz", "ruways", "rawh"],
+    t["kubra"] = [{"id": "three_harakat", "about": "the muttaṣil", "ruwat": ["ibn_wardan", "ibn_jammaz", "ruways", "rawh"],
                    "reads": "three ḥarakāt (1½ alifs), al-Taḥbīr", "cite": ["idah 81 n. 4"]}]
     save("muttasil", t)
     for c in ("sakt_al", "sakt_mafsul"):
         t = load(c)
         for case in t["cases"]:
             assert case["ruwat"]["idris"]["wujuh"] == ["none"]
-        t["kubra"] = [{"about": "sakt on a sākin that is not a madd", "ruwat": ["idris"],
+        t["kubra"] = [{"id": "idris_sakt", "about": "sakt on a sākin that is not a madd", "ruwat": ["idris"],
+                       "adds": {"category": c, "wujuh": ["sakt"]},
                        "reads": "sakt (al-Muṭṭawwiʿī, from al-Mubhij)", "cite": ["idah 121", "idah 122", "idah 123"]}]
         save(c, t)
     return list(ANSWERS)

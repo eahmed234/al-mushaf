@@ -122,11 +122,8 @@ cases:
     idris:
       wujuh:
       - none
-      - sakt
       cite:
-      - idah 121-123
-      via: reviewed
-      option: true
+      - idah 121
 - case: شيء / شيئاً before what follows it, in waṣl
   ruwat:
     qalun:
@@ -255,25 +252,19 @@ listed:
 filled_notes:
 - The book says nothing of waqf here (Warsh's naql on the same words is in the naql category).
 kubra:
-- about: sakt on a sākin that is not a madd
+- id: idris_sakt
+  about: sakt on a sākin that is not a madd
   ruwat:
   - idris
+  adds:
+    category: sakt_al
+    wujuh:
+    - sakt
   reads: sakt (al-Muṭṭawwiʿī, from al-Mubhij)
   cite:
   - idah 121
   - idah 122
   - idah 123
-disagreements:
-- rawi: idris
-  case: lām al-taʿrīf before a hamzat qaṭʿ (الأولى, الآخرة, الإنسان), in waṣl
-  category: sakt_al
-  table:
-  - none
-  reviewed:
-  - none
-  - sakt
-  kept: reviewed
-  why: al-Futūḥ's rows and al-Budūr's statements side with the reviewed table (cross-checks 2026-11-26)
 notes:
 - 'wafi 106 puts Khallād with Khalaf on the sakt of both (the row says sakt); the reviewed profile gives Khallād two wujūh (sakt and none) with
   the same page. Table follows the row; the profile''s second wajh is left here. — re-read (wafi 106): wafi 106: Khallād has no sakt on the first

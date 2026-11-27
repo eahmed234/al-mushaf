@@ -87,7 +87,8 @@ open:
 - The rows give the Durrah's six as one group at idah 81 and 82; idah 83 repeats it for Khalaf al-ʿĀshir only.
 filled_notes: []
 kubra:
-- about: the muttaṣil
+- id: three_harakat
+  about: the muttaṣil
   ruwat:
   - ibn_wardan
   - ibn_jammaz

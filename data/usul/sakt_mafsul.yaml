@@ -123,11 +123,8 @@ cases:
     idris:
       wujuh:
       - none
-      - sakt
       cite:
-      - idah 121-123
-      via: reviewed
-      option: true
+      - idah 121
 listed:
 - words:
   - من آمن
@@ -139,25 +136,19 @@ listed:
   - wafi 106
 filled_notes: []
 kubra:
-- about: sakt on a sākin that is not a madd
+- id: idris_sakt
+  about: sakt on a sākin that is not a madd
   ruwat:
   - idris
+  adds:
+    category: sakt_mafsul
+    wujuh:
+    - sakt
   reads: sakt (al-Muṭṭawwiʿī, from al-Mubhij)
   cite:
   - idah 121
   - idah 122
   - idah 123
-disagreements:
-- rawi: idris
-  case: sakt on a sākin at the end of a word before a hamzah beginning the next (من آمن, عذاب أليم)
-  category: sakt_mafsul
-  table:
-  - none
-  reviewed:
-  - none
-  - sakt
-  kept: reviewed
-  why: al-Futūḥ's rows and al-Budūr's statements side with the reviewed table (cross-checks 2026-11-26)
 notes:
 - 'Khalaf ʿan Ḥamzah: wafi 105 gives him a qalīl sakt with khulf; wafi 106 says "فلا يسكت على الساكن المفصول … لخلف ولا لخلاد" (no sakt for either).
   The two pages disagree; table lists both wujūh (sakt first, as the khulf row has it), unresolved. — answered: Eisa: wafi 105 defines the sakt;

@@ -183,7 +183,8 @@ open:
 - 'wafi 75: hamzah "ثابت أو مغير"; Warsh''s three wujūh and the khulf marker are for Warsh only.'
 filled_notes: []
 options:
-- about: عاداً الأولى
+- id: aadan_ula_qasr
+  about: عاداً الأولى
   ruwat:
   - warsh
   reads: qaṣr only

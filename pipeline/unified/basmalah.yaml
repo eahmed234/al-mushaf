@@ -797,7 +797,8 @@ filled_notes:
 - 'Start of Barāʾah: no basmalah (wafi 48). No Durrah row, so the six are empty.'
 - 'Obligatory-basmalah case: no Durrah row, so the six are empty.'
 options:
-- about: al-arbaʿ al-zuhr (القيامة، المطففين، البلد، الهمزة)
+- id: arba_zuhr
+  about: al-arbaʿ al-zuhr (القيامة، المطففين، البلد، الهمزة)
   view: ahl al-adāʾ
   ruwat:
   - warsh

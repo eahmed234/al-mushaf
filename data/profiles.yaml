@@ -107,8 +107,8 @@ categories:
     - {who: [khallad], wujuh: [sakt, none], cite: wafi 106}
     - {who: rest7, wujuh: [none], cite: wafi 105}
     - {who: [ishaq], wujuh: [none], cite: idah 121-123}
-    - {who: [idris], wujuh: [none, sakt], cite: idah 121-123, option: true,
-       note: "ikhtilāf: the Durrah says \"والسكت أهملا\" and the shārḥ and most commentators take none; the editor records a sakt khulf for Idrīs on a sākin that isn't madd (al-Muṭṭawwiʿī, from al-Mubhij), which needs ishbāʿ of the muttaṣil (p. 123); al-Futūḥ gives it. An option, default none (Eisa 2026-11-24)"}
+    - {who: [idris], wujuh: [none], cite: idah 121-123,
+       note: "the Durrah says \"والسكت أهملا\" and the shārḥ and most commentators take none; the editor records a sakt khulf for Idrīs on a sākin that isn't madd (al-Muṭṭawwiʿī, from al-Mubhij), which needs ishbāʿ of the muttaṣil (p. 123); al-Futūḥ gives it. Was an option, default none (Eisa 2026-11-24); other ṭuruq go to the kubrā (Eisa 2026-11-26): data/usul sakt_al kubra idris_sakt"}
     - {who: [ibn_wardan, ibn_jammaz, ruways, rawh], wujuh: [none], inherited: true, cite: idah 40-43}
 
   sakt_mafsul:  # sakt on a sākin at a word's end before hamz al-qaṭʿ (مَنۡ ءَامَنَ)
@@ -116,7 +116,7 @@ categories:
     - {who: [khallad], wujuh: [none], cite: wafi 106}
     - {who: rest7, wujuh: [none], cite: wafi 105}
     - {who: [ishaq], wujuh: [none], cite: idah 121-123}
-    - {who: [idris], wujuh: [none, sakt], cite: idah 121-123, option: true, note: "as sakt_al"}
+    - {who: [idris], wujuh: [none], cite: idah 121-123, note: "as sakt_al: the sakt is for the kubrā (Eisa 2026-11-26)"}
     - {who: [ibn_wardan, ibn_jammaz, ruways, rawh], wujuh: [none], inherited: true, cite: idah 40-43}
 
   idgham_kabir:

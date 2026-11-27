@@ -895,7 +895,8 @@ filled_notes:
   pp. 116, 122-123), no row of this category; wafi 85 gives Warsh tashīl (a must, ''أوجبوا'') for أنت and أرأيت when stopping, listed. Hishām
   (profile cite wafi 84): idkhāl with taḥqīq or tashīl, ''not final: as wasl''.'
 options:
-- about: stopping by the rasm (شركاء، يبدو، تلقاء …)
+- id: rasm
+  about: stopping by the rasm (شركاء، يبدو، تلقاء …)
   ruwat:
   - khalaf_an_hamzah
   - khallad

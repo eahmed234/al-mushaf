@@ -108,9 +108,14 @@ open:
   only.'
 filled_notes: []
 kubra:
-- about: sakt on a sākin that is not a madd
+- id: idris_sakt
+  about: sakt on a sākin that is not a madd
   ruwat:
   - idris
+  adds:
+    category: sakt_mafsul
+    wujuh:
+    - sakt
   reads: sakt (al-Muṭṭawwiʿī, from al-Mubhij)
   cite:
   - idah 121

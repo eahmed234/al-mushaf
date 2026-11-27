@@ -127,7 +127,8 @@ cases:
 listed: []
 filled_notes: []
 kubra:
-- about: the muttaṣil
+- id: three_harakat
+  about: the muttaṣil
   ruwat:
   - ibn_wardan
   - ibn_jammaz

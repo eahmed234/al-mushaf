@@ -513,7 +513,8 @@ filled_notes:
 - 'Every case: al-Wāfī 158-160 speaks only of al-Kisāʾī (Abū l-Ḥārith, al-Dūrī); no row for the other twelve of the fourteen or for the six Durrah
   ruwāt, so they are left empty (wafi 158-160).'
 options:
-- about: hāʾ al-taʾnīth after every letter but the alif
+- id: kisai_all_letters
+  about: hāʾ al-taʾnīth after every letter but the alif
   ruwat:
   - abul_harith
   - duri_kisai

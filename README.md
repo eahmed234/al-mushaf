@@ -17,8 +17,8 @@ of a passage for any rāwī, checked against books. The passage was al-Fātiḥa
 
 | Check | Result |
 | --- | --- |
-| al-Futūḥ al-Bāhira's rows of 1:1–2:20 reproduced | **674 / 676** row/rāwī pairs (the two left are one farsh entry) |
-| Same, from the book profiles alone, no rows seen | **661 / 666** (99%) |
+| al-Futūḥ al-Bāhira's rows of 1:1–2:20 reproduced | **674 / 676** row/rāwī pairs in the kubrā edition (the two left are one farsh entry); 666 in the sughrā, which leaves out Idrīs's sakt from al-Mubhij (8 rows) |
+| Same, from the book profiles alone, no rows seen | **661 / 666** (99%) kubrā; 653 sughrā |
 | Unseen ayahs (learn 2:1–5, predict 2:6–20) | **513 / 518** (99%), against 83% with profiles learned from rows |
 | KFGQPC's eight published riwāyāt, word by word | **2,047 / 2,056** words (99.6%) |
 | Ḥamzah's and Hishām's waqf forms, al-Futūḥ vols 1–6 | every printed form generated in **806 / 871** rows (93%) |
@@ -191,8 +191,8 @@ word, a broken waqf rule, shuffled lists) and checks that it's caught. Tests tha
 `../mushaf` or `books/` skip without them. The checks also run on their own:
 
 ```bash
-python3 -m checks.futuh.readings --upto 20 --book          # every row of 1:1–2:20: 674/676
-python3 -m checks.futuh.readings --upto 0 --test 1-20 --book   # from the books alone: 661/666
+python3 -m checks.futuh.readings --upto 20 --book          # every row of 1:1–2:20: 666/676 (sughrā)
+python3 -m checks.futuh.readings --upto 0 --test 1-20 --book   # from the books alone: 653/666 (sughrā)
 python3 -m checks.waqf                                     # waqf chapter vs al-Futūḥ vols 1–6: 806/871
 python3 -m checks.kfgqpc                                   # vs KFGQPC's eight riwāyāt: 2,047/2,056
 python3 -m mushaf_data.occurrences                         # imālah lists vs detectors: 171/175 tied

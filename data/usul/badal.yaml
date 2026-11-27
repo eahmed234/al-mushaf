@@ -217,7 +217,8 @@ listed:
   why: see open
 filled_notes: []
 options:
-- about: عاداً الأولى
+- id: aadan_ula_qasr
+  about: عاداً الأولى
   ruwat:
   - warsh
   reads: qaṣr only

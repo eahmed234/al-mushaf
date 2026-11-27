@@ -187,9 +187,14 @@ open:
 filled_notes:
 - The book says nothing of waqf here (Warsh's naql on the same words is in the naql category).
 kubra:
-- about: sakt on a sākin that is not a madd
+- id: idris_sakt
+  about: sakt on a sākin that is not a madd
   ruwat:
   - idris
+  adds:
+    category: sakt_al
+    wujuh:
+    - sakt
   reads: sakt (al-Muṭṭawwiʿī, from al-Mubhij)
   cite:
   - idah 121

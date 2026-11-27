@@ -114,7 +114,7 @@ tables; review list empty.
   uṣūl sections read (1,187 rules), unified into **`data/usul/`**: 36 categories (`data/categories.yaml`),
   one table each for all twenty ruwāt in one vocabulary; unstated = as Ḥafṣ (Durrah: as its aṣl);
   reviewed profile wujūh kept where a fresh reading disagreed (recorded under `disagreements`).
-  Through the engine: al-Futūḥ 674/676, KFGQPC 2,047/2,056 (tests). al-Budūr's statements in
+  Through the engine: al-Futūḥ 674/676 in the kubrā edition, 666 in the sughrā (Idrīs's sakt), KFGQPC 2,047/2,056 (tests). al-Budūr's statements in
   al-Baqarah agree on 1,216/1,356 (`python3 -m pipeline.crosscheck_budur`, build/crosscheck_budur.md).
 - **Uṣūl review done (2026-11-26)**: the 200 `open` lines were mostly notes; `pipeline/open_sort.yaml`
   sorted them (3 policies, 15 questions, 34 page gaps re-read and applied by `pipeline.unify_gaps`),
@@ -125,15 +125,20 @@ tables; review list empty.
   Eisa may bring a backup source for Ḥamzah's waqf. Warsh's hamzatayn keeps tashīl first
   (Eisa), against al-Wāfī's verse order (`order_exception` in hamzatayn).
 
+- **Editions and options (2026-11-26)**: `usul_tables.profiles(edition, options)`: the sughrā (default)
+  leaves out the `kubra` entries, the kubrā adds them; `options` are switched on by id
+  (`usul_tables.extras()` lists them). Entries with `adds` reach the engine (Idrīs's sakt); the others
+  (basmalah, badal at one word, Ḥamzah's rasm waqf, the yāʾāt, three ḥarakāt) are recorded and
+  reported `modelled: False` until the engine has those categories (milestone 8).
+
 Next, in order:
-1. Engine support for `options` and `kubra` (today they are recorded, not offered).
-2. Class al-Baqarah's 147 farsh places as covered by a rule (data/usul) or true farsh; fix the
+1. Class al-Baqarah's 147 farsh places as covered by a rule (data/usul) or true farsh; fix the
    crosscheck's case selection (faʿlā imālah, ʿayn/lām of the sākin hamzah, hamzatayn darbs).
-3. al-Fātiḥah's farsh (مالك, الصراط) into data/farsh/001.yaml; the per-word chapters (idghām ṣaghīr,
+2. al-Fātiḥah's farsh (مالك, الصراط) into data/farsh/001.yaml; the per-word chapters (idghām ṣaghīr,
    the yāʾāt) anchored to places in farsh format.
-4. The al-Baqarah farsh disagreements with KFGQPC: review sheet, second reading of the disputed
+3. The al-Baqarah farsh disagreements with KFGQPC: review sheet, second reading of the disputed
    words from al-Wāfī / al-Īḍāḥ's farsh chapters.
-5. Then docs/05 milestones 3- (riwāyah-neutral spine, the rest of the farsh, occurrences, constraints).
+4. Then docs/05 milestones 3- (riwāyah-neutral spine, the rest of the farsh, occurrences, constraints).
 
 Working notes: subagents get their own scratch folders; reviewed data stands until Eisa rules;
 book text is never committed (quotes are offsets; pipeline/out and pipeline/work are gitignored).
