@@ -69,15 +69,26 @@ class AslOrFarsh(unittest.TestCase):
     def test_every_place_is_classed(self):
         places = yaml.safe_load((DATA / "farsh" / "002.yaml").read_text(encoding="utf-8"))
         kinds = [e["class"]["kind"] for e in places]
-        self.assertEqual((kinds.count("rule"), kinds.count("farsh"), kinds.count("unclear")), (21, 126, 0))
+        self.assertEqual((kinds.count("rule"), kinds.count("farsh"), kinds.count("unclear")), (21, 128, 0))
         for e in places:
             c = e["class"]
             self.assertTrue(c.get("rule") if c["kind"] == "rule" else c.get("farsh"), e["place"])
 
     def test_the_file_matches_the_classifier(self):
         from pipeline.farsh_class import classify
-        for e in yaml.safe_load((DATA / "farsh" / "002.yaml").read_text(encoding="utf-8")):
-            self.assertEqual(e["class"], classify(e, "002"), e["place"])
+        for s in ("001", "002"):
+            for e in yaml.safe_load((DATA / "farsh" / f"{s}.yaml").read_text(encoding="utf-8")):
+                self.assertEqual(e["class"], classify(e, s), e["place"])
+
+    def test_fatiha(self):
+        """al-Budūr p. 15: مالك, and الصراط / صراط as two places (Khallād's ishmām is in the first)."""
+        f = {tuple(e["place"]): e for e in yaml.safe_load((DATA / "farsh" / "001.yaml").read_text(encoding="utf-8"))}
+        self.assertEqual(set(f), {("1:4:1",), ("1:6:2",), ("1:7:1",), ("1:7:4", "1:7:7")})
+        self.assertTrue(all("review" not in e for e in f.values()))
+        who = lambda p, reading: next(o["readers"] for o in f[p]["options"] if reading in o["reading"])  # noqa: E731
+        self.assertIn("khallad", who(("1:6:2",), "مثل خلف"))
+        self.assertIn("khallad", who(("1:7:1",), "الخالصة"))
+        self.assertEqual(f[("1:7:4", "1:7:7")]["class"]["kind"], "rule")
 
     def test_planted_rule_pointing_at_no_case_is_refused(self):
         from pipeline import farsh_class
@@ -101,3 +112,22 @@ class CrosscheckCases(unittest.TestCase):
         self.assertEqual(case_for("ibdal_sakin", "ٱلذِّئۡبُ", 0), 1)       # ʿayn
         self.assertEqual(case_for("hamzatayn", "أَئِنَّكُمۡ", 0), 1)       # second maksūrah
         self.assertNotEqual(key("أَزۡكَىٰ"), key("زكى"))                   # planted collision
+
+
+class Anchors(unittest.TestCase):
+    """The word-by-word chapters' listed words anchored to Ḥafṣ places (2026-11-27)."""
+
+    def test_most_entries_anchor(self):
+        n = {"all": 0, "some": 0, "none": 0}
+        for c in ("ya_idafa", "ya_zaida", "idgham_saghir"):
+            for x in yaml.safe_load((DATA / "usul" / f"{c}.yaml").read_text(encoding="utf-8"))["listed"]:
+                n[x["anchor"]] += 1
+                self.assertEqual(bool(x["places"]), x["anchor"] != "none")
+        self.assertGreaterEqual(n["all"], 96)
+
+    def test_phrases(self):
+        from pipeline.anchor import find
+        self.assertTrue(find("ولا تخزون في ضيفي"))            # a phrase
+        self.assertTrue(find("يا عبادي لا خوف"))             # the vocative joined in Ḥafṣ
+        self.assertTrue(find("فارهبون"))                      # Ḥafṣ without the zāʾidah yāʾ
+        self.assertEqual(find("ولا تخزون في الأرض"), [])      # planted: no such phrase

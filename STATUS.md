@@ -143,12 +143,21 @@ tables; review list empty.
   khulf taqlīl on the faʿlā words (wafi 150), and the alif dropped before a sākin in waṣl with
   al-Sūsī's khulf on the rāʾ (wafi 155-156), a new case pair in the imālah table.
 
+- **al-Fātiḥah's farsh and the word chapters (2026-11-27)**: data/farsh/001.yaml has مالك and الصراط /
+  صراط (al-Budūr p. 15, the rows of the instructions' worked example, validated; `extracted`, not
+  yet reviewed), classed farsh with wafi 50-51 / idah 52-54; عليهم is the rule. A place whose rows
+  name different words is now split per word (Khallād's ishmām is in the first الصراط only): this
+  also split 2:184 (فدية طعام / مسكين, no longer flagged) and 2:197 (جدال, now flagged: al-Budūr
+  leaves Ibn Kathīr, Abū ʿAmr and Yaʿqūb unstated there). Against KFGQPC the farsh agrees (its
+  other differences are the basmalah's numbering); against al-Futūḥ only الصراط's ishmām and
+  Ruways at 1:7:1 differ, both as al-Budūr states. The yāʾāt and idghām ṣaghīr tables' listed
+  words are anchored to Ḥafṣ places (`pipeline/anchor.py`, run by unify_merge): 96 of 121 entries
+  fully, the rest keep their `unanchored` forms.
+
 Next, in order:
-1. al-Fātiḥah's farsh (مالك, الصراط) into data/farsh/001.yaml; the per-word chapters (idghām ṣaghīr,
-   the yāʾāt) anchored to places in farsh format.
-2. The al-Baqarah farsh disagreements with KFGQPC: review sheet, second reading of the disputed
+1. The al-Baqarah farsh disagreements with KFGQPC: review sheet, second reading of the disputed
    words from al-Wāfī / al-Īḍāḥ's farsh chapters.
-3. Then docs/05 milestones 3- (riwāyah-neutral spine, the rest of the farsh, occurrences, constraints).
+2. Then docs/05 milestones 3- (riwāyah-neutral spine, the rest of the farsh, occurrences, constraints).
 
 Working notes: subagents get their own scratch folders; reviewed data stands until Eisa rules;
 book text is never committed (quotes are offsets; pipeline/out and pipeline/work are gitignored).

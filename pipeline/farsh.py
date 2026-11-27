@@ -54,6 +54,25 @@ def places(farsh: list[tuple[int, dict, str]]) -> list[list[tuple[int, dict, str
     return groups
 
 
+def split(groups: list[list]) -> list[list]:
+    """A group whose rows don't all name the same words is one place per set of words sharing the
+    same rows (الصراط / صراط: Khallād's ishmām is in the first only, al-Budūr p. 15). Each row then
+    keeps only the words of its place."""
+    out = []
+    for g in groups:
+        if len({tuple(r["place"]) for _, r, _ in g}) == 1:
+            out.append(g)
+            continue
+        ids = sorted({i for _, r, _ in g for i in r["place"]})
+        by: dict[tuple, list] = defaultdict(list)
+        for i in ids:
+            by[tuple(n for n, (_, r, _) in enumerate(g) if i in r["place"])].append(i)
+        for rows_, words_ in by.items():
+            out.append([(p, {**r, "place": [i for i in r["place"] if i in words_]}, src)
+                        for n, (p, r, src) in enumerate(g) if n in rows_])
+    return out
+
+
 def coverage(options: list[dict]) -> dict:
     """Per condition (waṣl/unstated apart from waqf-only options): each of the twenty once.
     A khulf rāwī named once, at a point with two options, has the other as his second wajh. When
@@ -93,7 +112,7 @@ def build(slug: str, pages: list[int], run: Path) -> tuple[dict[int, list], list
     h = words()
     by_surah: dict[int, list] = defaultdict(list)
     flagged = []
-    for g in places(farsh):
+    for g in split(places(farsh)):
         ids = sorted({i for _, r, _ in g for i in r["place"]}, key=lambda w: tuple(int(x) for x in w.split(":")))
         options = []
         for p, r, src in g:

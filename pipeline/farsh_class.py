@@ -26,11 +26,13 @@ from mushaf_data.spine import words
 from tools import book
 
 # the surah's farsh chapter in each book (PDF pages)
-CHAPTERS = {"002": {"wafi": range(199, 232), "idah": range(187, 223)}}
+CHAPTERS = {"001": {"wafi": range(50, 53), "idah": range(52, 56)},  # سورة أم القرآن
+            "002": {"wafi": range(199, 232), "idah": range(187, 223)}}
 # Places whose readings an uṣūl table gives (checked by hand, 2026-11-26): place → [(table, case
 # prefix)]. al-Budūr states these at the place; the books' uṣūl chapters hold the rule.
 YA = "Eisa (category review 2026-11-26): the yāʾāt could be farsh; the tables list them word by word"
-RULES = {"002": {
+RULES = {"001": {"1:7:4": [("ha_mim_jam", "hāʾ after a sākin yāʾ")]},  # the books state the rule in this chapter
+         "002": {
     "2:6:5": [("ha_mim_jam", "hāʾ after a sākin yāʾ")], "2:38:14": [("ha_mim_jam", "hāʾ after a sākin yāʾ")],
     "2:79:5": [("ha_mim_jam", "hāʾ after a sākin yāʾ")],
     "2:61:38": [("ha_mim_jam", "hāʾ before the plural mīm before a sākin, after a sākin yāʾ"),
@@ -50,7 +52,9 @@ NOTES = {"002": {**{p: YA for p in ("2:30:24", "2:124:18", "2:125:18", "2:152:1"
                  "2:142:20": "first treated at al-Fātiḥah (الصراط)"}}
 # the chapter pages, checked by hand, where the token match misses the book's spelling or catches
 # the commentary's prose; they replace the matched pages
-PAGES = {"002": {"2:34:3": ["idah 188", "idah 193"], "2:61:52": ["wafi 204"], "2:177:18": ["wafi 204"],
+PAGES = {"001": {"1:4:1": ["wafi 50", "idah 52", "idah 53"], "1:6:2": ["wafi 50", "wafi 51", "idah 53", "idah 54"],
+                 "1:7:1": ["wafi 50", "wafi 51", "idah 53", "idah 54"]},
+         "002": {"2:34:3": ["idah 188", "idah 193"], "2:61:52": ["wafi 204"], "2:177:18": ["wafi 204"],
                  "2:81:7": ["wafi 205"], "2:98:8": ["wafi 207"], "2:143:44": ["wafi 212"], "2:233:55": ["wafi 220"],
                  "2:259:53": ["wafi 223"], "2:282:66": ["wafi 229", "idah 220"],
                  "2:142:20": ["wafi 50", "wafi 51"],  # الصراط: al-Fātiḥah's farsh
