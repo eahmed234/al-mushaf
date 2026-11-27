@@ -129,6 +129,13 @@ def mark_base(entry: dict) -> None:
     for o in entry["options"]:
         if "hafs" in o["readers"]:
             o["base"] = True
+    # a later aspect with one option whose ruwāt all read the base: the base restated for them
+    # (فنادته 3:39, al-Budūr p. 64: Warsh "يقرؤه بالتاء الساكنة بعد الدال")
+    base = [set(o["readers"]) for o in entry["options"] if o.get("base")]
+    for k in {o.get("aspect", 0) for o in entry["options"]} - {0}:
+        opts = [o for o in entry["options"] if o.get("aspect", 0) == k]
+        if len(opts) == 1 and any(set(opts[0]["readers"]) <= b for b in base):
+            opts[0]["base"] = True
 
 
 def split(groups: list[list]) -> list[list]:
@@ -150,7 +157,29 @@ def split(groups: list[list]) -> list[list]:
     return out
 
 
-def coverage(options: list[dict]) -> dict:
+def aspects(options: list[dict]) -> None:
+    """Rows that name a rāwī a second time at the place, outside his khulf, are another aspect of
+    the word (أني: the hamzah's vowel, then the yāʾ al-iḍāfah; تحسبن: tāʾ or yāʾ, then the sīn).
+    Each option goes to the first aspect where its ruwāt aren't named yet; a later aspect may name
+    only some ruwāt (زكريا: rafʿ or naṣb for those who read it with hamz). Sets `aspect` (0 is left
+    out of the file)."""
+    named: dict[bool, list[set[str]]] = {False: [], True: []}  # waqf-only options apart, as in coverage
+    khulf: dict[bool, list[set[str]]] = {False: [], True: []}
+    for o in options:
+        c = o.get("condition") == "waqf"
+        mine, kh = set(o["readers"]), set(o["khulf"])
+        k = next((i for i, (n, kk) in enumerate(zip(named[c], khulf[c])) if not (mine & n) - (kh & kk)), None)
+        if k is None:
+            named[c].append(set())
+            khulf[c].append(set())
+            k = len(named[c]) - 1
+        named[c][k] |= mine
+        khulf[c][k] |= kh
+        if k:
+            o["aspect"] = k
+
+
+def coverage(options: list[dict], full: bool = True) -> dict:
     """Per condition (waṣl/unstated apart from waqf-only options): each of the twenty once.
     A khulf rāwī named once, at a point with two options, has the other as his second wajh. When
     no option is Ḥafṣ's and some ruwāt are left unnamed, they read as Ḥafṣ: the book leaves out
@@ -171,7 +200,7 @@ def coverage(options: list[dict]) -> dict:
                     other = next(o for o in opts if x not in o["readers"])
                     other.setdefault("implied", []).append(x)
                     count[x] += 1
-        missing = [x for x in RUWAT if not count[x]]
+        missing = [x for x in RUWAT if not count[x]] if full else []
         if cond == "main" and missing and "hafs" in missing:
             options.append({"readers": missing, "khulf": [], "reading": "كحفص (الباقون، غير مذكورين)",
                             "cite": opts[0]["cite"], "from": "implied"})
@@ -203,7 +232,16 @@ def build(slug: str, pages: list[int], run: Path) -> tuple[dict[int, list], list
             options.append(o)
         options = merge(options)
         add_second(ids[0], options)
-        cov = coverage(options)
+        aspects(options)
+        cov = {"missing": [], "twice": []}
+        for k in sorted({o.get("aspect", 0) for o in options}):
+            part = [o for o in options if o.get("aspect", 0) == k]
+            n = len(part)
+            c = coverage(part, full=(k == 0))
+            options += part[n:]  # the implied "as Ḥafṣ" option coverage adds
+            cov["missing"] += c["missing"]
+            cov["twice"] += c["twice"]
+        options.sort(key=lambda o: o.get("aspect", 0))
         scope = "all" if any(r["scope"] == "all" for _, r, _ in g) else "here"
         entry = {"place": ids, "words": " ".join(h[i] for i in ids), "scope": scope,
                  "status": "checked" if all(src == "gold" for _, _, src in g) else "extracted",
@@ -235,6 +273,8 @@ HEADER = """# Farsh of surah {s}: each place's options, read from {book} ({pages
 # Option text per slot (the reading written out) comes next; `reading` is the book's own words.
 # base: the option that is the muṣḥaf text's own reading (Ḥafṣ's); farsh is the other options.
 # recurs: the books give the farsh wherever the word occurs (forms, page).
+# aspect: a further aspect of the word, its own set of options (أني: the hamzah, then the yāʾ);
+#   a rāwī reads one option of each aspect that names him.
 # second: ruwāt al-Budūr leaves unstated (or a khulf it leaves out), added to an option from al-Wāfī / al-Īḍāḥ (pages).
 # class: rule = an uṣūl table (data/usul) gives the place (al-Budūr restates it here); farsh = the
 #   surah's farsh chapter of al-Wāfī / al-Īḍāḥ treats it (pages); pipeline/farsh_class.py.

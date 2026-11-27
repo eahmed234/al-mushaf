@@ -181,8 +181,22 @@ tables; review list empty.
   basmalah missing from four files is their count (milestone 7). Ibn ʿĀmir, the Kūfīs and the
   Durrah have no KFGQPC text: their slot differences come with the farsh (milestone 4).
 
+- **Milestone 4 started (2026-11-27): Āl ʿImrān.** al-Budūr pp. 58-75, three Sonnet readers (604
+  rows, 0 rejected) → data/farsh/003.yaml, 98 places, none flagged. New in pipeline.farsh: a place
+  may have more than one *aspect* (أني: the hamzah, then the yāʾ; تحسبن: tāʾ/yāʾ, then the sīn), each
+  rāwī once per aspect; a later aspect restating the base for some ruwāt is `base`. Classing
+  (pipeline.farsh_class) now also: anchored yāʾāt / idghām ṣaghīr words when the readings speak of
+  them, hāʾ al-taʾnīth stops, earlier entries that `recurs`, and earlier farsh chapters that give
+  the word "حيث وقع": 81 farsh, 8 rule, 9 unclear (تفرقوا, تمنون: al-Bazzī's tāʾāt; مؤجلا: hamz_mufrad;
+  رءوف, تقاة, يحكم, تحسبوه, ينزل, نعمت: spelling or a list the search misses), for review.
+  checks.farsh now runs on any sūrah (the rāwī's spine projection) and explains by pattern:
+  hamzatayn, Abū ʿAmr's mīm, Warsh's naql, al-Sūsī's idghām, opening letters, a mark KFGQPC leaves
+  out, stops, places of several words. Āl ʿImrān: 307 agree, 0 unexplained (al-Baqarah 418, 0).
+  New recurring farsh: بيوت (wafi 218), ها أنتم (wafi 235), النبوة (wafi 204).
+  Cost: ~160k tokens a reader for six pages (~27k a page).
+
 Next, in order:
-1. docs/05 milestone 4: the rest of the farsh, sūrah by sūrah (al-Budūr, then the farsh chapters
+1. docs/05 milestone 4, continued: al-Nisāʾ (al-Budūr pp. 75-89) onward (al-Budūr, then the farsh chapters
    as the second reading); new slots go to data/spine/slots.yaml as they turn up.
 2. Then milestones 5- (occurrences, constraints, marks and counts, the engine's API).
 

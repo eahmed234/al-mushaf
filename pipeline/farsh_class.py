@@ -20,14 +20,15 @@ from functools import lru_cache
 
 import yaml
 
-from mushaf_data.occurrences import skels, tokens
+from mushaf_data.occurrences import skel as skel_of, skels, tokens
 from mushaf_data.paths import DATA
 from mushaf_data.spine import words
 from tools import book
 
 # the surah's farsh chapter in each book (PDF pages)
 CHAPTERS = {"001": {"wafi": range(50, 53), "idah": range(52, 56)},  # سورة أم القرآن
-            "002": {"wafi": range(199, 232), "idah": range(187, 223)}}
+            "002": {"wafi": range(199, 232), "idah": range(187, 223)},
+            "003": {"wafi": range(231, 243), "idah": range(223, 231)}}
 # Places whose readings an uṣūl table gives (checked by hand, 2026-11-26): place → [(table, case
 # prefix)]. al-Budūr states these at the place; the books' uṣūl chapters hold the rule.
 YA = "Eisa (category review 2026-11-26): the yāʾāt could be farsh; the tables list them word by word"
@@ -67,10 +68,15 @@ PAGES = {"001": {"1:4:1": ["wafi 50", "idah 52", "idah 53"], "1:6:2": ["wafi 50"
 RECUR = {
     "2:29:16": {"forms": ["وهو", "فهو", "لهو"], "cite": ["wafi 201"]},     # وها هو بعد الواو والفا ولامها
     "2:74:7": {"forms": ["وهي", "فهي", "لهي"], "cite": ["wafi 201"]},
-    "2:67:7": {"forms": ["يأمركم", "ويأمركم", "يأمرهم", "تأمرهم", "ينصركم", "يشعركم"], "cite": ["wafi 202", "wafi 203"]},
+    "2:67:7": {"forms": ["يأمركم", "ويأمركم", "يأمرهم", "تأمرهم", "ينصركم", "يشعركم"], "cite": ["wafi 202", "wafi 203"],
+               "skip": "\u0631\u06e1"},  # a rāʾ already sākin in Ḥafṣ (إِن يَنصُرۡكُمُ, 3:160): nothing to read
     "2:168:11": {"forms": ["خطوات"], "cite": ["wafi 213"]},
     "1:7:1": {"forms": ["صراط", "الصراط", "بالصراط"], "cite": ["wafi 50", "wafi 51"]},  # Khallād's ishmām: 1:6:2 only
-    "2:61:52": {"forms": ["النبيين", "النبين", "النبيون", "النبي", "نبي", "نبيا", "بالنبيين", "بالنبين"], "cite": ["wafi 204"]},
+    "2:61:52": {"forms": ["النبيين", "النبين", "النبيون", "النبي", "نبي", "نبيا", "بالنبيين", "بالنبين", "النبوة"],
+                "cite": ["wafi 204"]},
+    "2:189:13": {"forms": ["البيوت", "بيوت", "بيوتكم", "بيوتهم", "بيوتنا", "بيوتهن", "بيوتكن", "بيوتا"],
+                 "cite": ["wafi 218"]},  # حيث وقع وكيف نزل
+    "3:66:1": {"forms": ["هأنتم"], "cite": ["wafi 235"]},  # حيث وقع في القرآن الكريم
     "2:91:24": {"forms": ["أنبياء", "الأنبياء"], "cite": ["wafi 204"]},
 }
 ARABIC = re.compile(r"[ء-يٰ-ۓۥۦـً-ْٓ-ٟ۟-ۭ]+")
@@ -92,7 +98,57 @@ def chapter_tokens(surah: str) -> dict[str, set[str]]:
                 if READING.search(window):
                     for k in tokens(m.group()):
                         out[k].add(f"{slug} {p}")
+                        out[core(k)].add(f"{slug} {p}")
+                    out[short(m.group())].add(f"{slug} {p}")
     return out
+
+
+GENERAL = re.compile(r"حيث (?:وقع|وقعت|اتي|جاء|نزل|ذكر|ورد)|كيف (?:وقع|اتي|جاء|نزل)|في جميع القران|في القران الكريم")
+EARLIER = {"wafi": [*range(50, 53), *range(199, 420)], "idah": [*range(52, 56), *range(187, 436)]}
+
+
+@lru_cache(maxsize=None)
+def general_tokens(slug: str) -> dict[str, list[int]]:
+    """core skeleton → pages of the book's farsh where the word is said to hold wherever it occurs
+    (حيث وقع، كيف أتى …, within NEAR characters)."""
+    out: dict[str, list[int]] = defaultdict(list)
+    for p in EARLIER[slug]:
+        try:
+            text = book.fold(book.page(slug, p))
+        except IndexError:
+            break
+        for m in re.finditer(r"\S+", text):
+            if GENERAL.search(text[max(0, m.start() - NEAR): m.end() + NEAR]):
+                for k in tokens(m.group()):
+                    if p not in out[core(k)]:
+                        out[core(k)].append(p)
+    return out
+
+
+def core(k: str) -> str:
+    """A skeleton without prefix letters and the article (وبالزبر, والزبر → زبر)."""
+    c = re.sub("^[وفبكل]{0,2}ل(?=...)", "", k)
+    return c if len(c) >= 3 else k
+
+
+def earlier_general(entry: dict, surah: str) -> list[str]:
+    """Pages of an earlier sūrah's farsh where the place's word is given for every occurrence."""
+    h = words()
+    start = {slug: min(r) for slug, r in CHAPTERS.get(surah, {}).items()}
+    out = []
+    for slug in ("wafi", "idah"):
+        g = general_tokens(slug)
+        for i in entry["place"]:
+            for k in skels(h[i]):
+                for p in g.get(core(k), []):
+                    if p < start.get(slug, 10 ** 6) and f"{slug} {p}" not in out:
+                        out.append(f"{slug} {p}")
+    return out[:4]
+
+
+def short(w: str) -> str:
+    """A key that keeps the alif, for words whose skeleton is too short (إن، أن: ن)."""
+    return "#" + re.sub("[^\u0621-\u064a]", "", book.fold(w)).replace("\u0621", "\u0627")
 
 
 @lru_cache(maxsize=1)
@@ -127,6 +183,68 @@ def case_name(table: str, prefix: str | None) -> str:
     return f"{table}: {hit[0]}"
 
 
+TOPIC = {"ya_idafa": "الياء|ياء|ياءه|ياءها", "ya_zaida": "الياء|ياء|ياءه",
+         "idgham_saghir": "إدغام|أدغم|الإدغام|بالإدغام|إظهار|أظهر|بالإظهار"}
+
+
+# how the Ḥafṣ word ends: a yāʾ al-iḍāfah, or the kasrah left where a yāʾ zāʾidah is dropped
+END = {"ya_idafa": "\u064a[\u064e\u06e1\u0653\u0670]*[\u06d6-\u06dc]*$",
+       "ya_zaida": "\u0650[\u06e5\u06e6]?[\u06d6-\u06dc]*$"}
+
+
+@lru_cache(maxsize=1)
+def anchored() -> dict[str, str]:
+    """word id → "table: case" for the listed words of the anchored word chapters (pipeline.anchor)."""
+    out = {}
+    for t in ("ya_idafa", "ya_zaida", "idgham_saghir"):
+        tab = yaml.safe_load((DATA / "usul" / f"{t}.yaml").read_text(encoding="utf-8"))
+        for x in tab.get("listed") or []:
+            for p in x.get("places") or []:
+                out.setdefault(p, f"{t}: {x.get('case', '')}")
+    return out
+
+
+def auto_rule(entry: dict) -> str | None:
+    """An uṣūl table gives the place without a hand entry: its words are listed in an anchored word
+    chapter, or every option is a stop on hāʾ al-taʾnīth written with a tāʾ (رحمت، امرأت)."""
+    said = " ".join(o["reading"] for o in entry["options"])
+    for p in entry["place"]:
+        t = anchored().get(p, "")
+        # an anchored word matches wherever it is written, so the place's readings must speak of the
+        # table's matter (يكذبون 2:10 is a yāʾ zāʾidah only in al-Qaṣaṣ)
+        tab = t.split(":")[0]
+        if t and re.search(TOPIC[tab], said) and re.search(END.get(tab, ""), words()[p]):
+            return t
+    h = words()
+    opts = [o for o in entry["options"] if not o.get("base")]
+    if opts and all(re.search("وقف|يقف", o["reading"]) and re.search("بالهاء|بالتاء", o["reading"]) for o in opts) \
+            and all(re.search("\u062a[\u064e\u064f\u0650\u064b-\u064d]*[\u06d6-\u06dc]*$", h[p]) for p in entry["place"]):
+        return case_name("waqf_rasm", "hāʾ al-taʾnīth written with a tāʾ")
+    return None
+
+
+def scope_all(e: dict) -> dict:
+    """al-Budūr's own "حيث وقع" (scope all): the entry's words recur, cited from its pages."""
+    h = words()
+    return {"forms": sorted({h[p] for p in e["place"]}), "cite": sorted({o["cite"] for o in e["options"]})}
+
+
+def recurs_from(entry: dict) -> tuple[str, list[str]] | None:
+    """An entry elsewhere whose farsh the books give wherever the word occurs (`recurs`) covers the
+    place: (its first word id, its cites)."""
+    from .anchor import find
+
+    for f in sorted((DATA / "farsh").glob("*.yaml")):
+        for e in yaml.safe_load(f.read_text(encoding="utf-8")) or []:
+            rec = e.get("recurs") or (scope_all(e) if e.get("scope") == "all" else None)
+            if not rec or e["place"] == entry["place"]:
+                continue
+            hits = {w for form in rec["forms"] for w in find(form, ya=False)}
+            if set(entry["place"]) & hits:
+                return e["place"][0], list(rec["cite"])
+    return None
+
+
 def classify(entry: dict, surah: str) -> dict:
     """kind: rule (an uṣūl table gives the place, RULES), farsh (the farsh chapter treats it), or
     unclear. `farsh` lists the chapter pages the word appears on (a match can be the commentary's
@@ -134,15 +252,29 @@ def classify(entry: dict, surah: str) -> dict:
     h = words()
     first = entry["place"][0]
     ks = {k for i in entry["place"] for k in skels(h[i]) if len(k) >= 2}
+    ks |= {short(h[i]) for i in entry["place"] if len(skel_of(h[i])) < 2}
+    ks |= {core(k) for k in list(ks) if not k.startswith("#")}
     pages = PAGES.get(surah, {}).get(first) or sorted({p for k in ks for p in chapter_tokens(surah).get(k, ())},
                                                       key=lambda s: (s.split()[0], int(s.split()[1])))
     rules = RULES.get(surah, {}).get(first)
     part = PART.get(surah, {}).get(first)
+    auto = None if rules else auto_rule(entry)
+    if auto:
+        rules = [auto]
+    rec = None if (rules or pages) else recurs_from(entry)
+    if rec:
+        pages = rec[1]
+    elif not (rules or pages):
+        pages = earlier_general(entry, surah)
+        if pages:
+            rec = ("an earlier farsh chapter, given wherever the word occurs", pages)
     out = {"kind": "rule" if rules else "farsh" if pages else "unclear"}
+    if rec:
+        out["recurs_from"] = rec[0]
     if pages and not rules:
         out["farsh"] = pages
     if rules or part:
-        out["rule"] = [case_name(t, c) for t, c in rules or part]
+        out["rule"] = [r if isinstance(r, str) else case_name(*r) for r in rules or part]
     if first in NOTES.get(surah, {}):
         out["note"] = NOTES[surah][first]
     return out

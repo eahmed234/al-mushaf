@@ -44,7 +44,8 @@ def knorm(w: str) -> str:
     w = re.sub("(?<=[\u0621-\u064a])\u06ed", "\u064e", w)  # al-Dūrī's text: a low mark in place of the fatḥah (imālah)
     w = w.replace("\u0635\u0650\u06dc", "\u0633\u0650").replace("\u0635\u06dc", "\u0633")  # صۜ is read with sīn
     w = re.sub(f"([\u0627\u0649])([{TANWIN_F}])", "\\2\\1", w)  # tanwīn written after the alif
-    w = re.sub("^([\u0648\u0641\u0628\u0643][\u064e\u0650]?)\u0627\u064e?\u0644", "\\1\u0671\u0644", w)  # وَالسَّمَآءَ: the waṣl alif unmarked
+    w = re.sub("\u0627([\u064e\u064b\u08f0\u0657]\u06e2?)(?=[\u06d6-\u06dc]*$)", "\\1\u0627", w)  # أَمَداَۢ: the same before iqlāb
+    w = re.sub("^((?:[\u0648\u0641\u0628\u0643\u0644][\u064e\u0650]?){1,2})\u0627\u064e?\u0644", "\\1\u0671\u0644", w)  # وَالسَّمَآءَ، وَبِالَّذِي: the waṣl alif unmarked
     return w
 
 
@@ -87,7 +88,9 @@ def entries(surah: int) -> dict[str, list[dict]]:
     for f in sorted((DATA / "farsh").glob("*.yaml")):
         for e in yaml.safe_load(f.read_text(encoding="utf-8")) or []:
             ws = set(e["place"] + e.get("also", []))
-            ws |= {w for form in (e.get("recurs") or {}).get("forms", []) for w in find(form, ya=False)}
+            rec = e.get("recurs") or {}
+            ws |= {w for form in rec.get("forms", []) for w in find(form, ya=False)
+                   if not (rec.get("skip") and re.search(rec["skip"], words()[w]))}
             for w in ws:
                 if int(w.split(":")[0]) == surah and e not in out[w]:
                     out[w].append(e)
@@ -112,6 +115,13 @@ def places(surah: int) -> dict[str, dict]:
     return out
 
 
+def waqf_only(o: dict) -> bool:
+    """An option read only at a stop (hāʾ al-sakt, hāʾ for a tāʾ, a stop on the yāʾ): KFGQPC's
+    waṣl text can't show it."""
+    return o.get("condition") == "waqf" or bool(re.match("^\\s*(?:و)?(?:وقف|يقف|إذا وقف|في الوقف)", o["reading"])) \
+        or "وقف" in o["reading"][:12]
+
+
 def table(surah: int) -> dict[str, set[str]]:
     """word id → ruwāt the table lets differ from Ḥafṣ there: every entry at the word, its own and
     a recurring one (وهو at 2:91: Yaʿqūb's hāʾ al-sakt there, and the hāʾ's sukūn from 2:29)."""
@@ -119,17 +129,30 @@ def table(surah: int) -> dict[str, set[str]]:
     for w, es in entries(surah).items():
         for e in es:
             for o in e["options"]:
-                if "hafs" not in o["readers"]:
+                if "hafs" not in o["readers"] and not o.get("base") and not waqf_only(o):
                     out[w] |= set(o["readers"]) | set(o.get("implied", []))
     return out
 
 
-def kfgqpc_farsh(rawi: str, ids: list[str], listed: set[str] = frozenset()) -> set[str]:
+ALIGNED: dict[tuple[str, str], str] = {}  # (rāwī, word id) → KFGQPC's word, from the last alignment
+
+
+def kfgqpc_farsh(rawi: str, ids: list[str], listed: set[str] = frozenset(), surah: int | None = None) -> set[str]:
     """Word ids where the rāwī's KFGQPC text differs from Ḥafṣ by farsh. At a word where the farsh
     table has this rāwī differ (`listed`), any difference mushaf_data.diff sees counts: a farsh word's change can look
     like hamz, madd or a last vowel (ٱلنَّبِيٓـِٕۧنَ, بَارِئۡكُمۡ, إِنِّيَ)."""
     h = words()
-    kw = kwords(rawi)
+    if surah is None:
+        kw = kwords(rawi)
+    else:  # one sūrah, the rāwī's projection of the spine (an added slot has no Ḥafṣ word: left out)
+        from mushaf_data.spine import projection
+
+        from .spine import kwords as kw_surah
+        kw = kw_surah(rawi)[surah]
+        if surah == 1 and rawi in ("qalun", "warsh", "duri_abuamr", "susi"):
+            ids = [w for w in ids if not w.startswith("1:1:")]  # the basmalah: not numbered in their count
+        mine = set(projection(rawi))
+        ids = [w for w in ids if w in mine]
     sm = difflib.SequenceMatcher(None, [skel(h[w]) for w in ids], [skel(x) for x in kw], autojunk=False)
     out = set()
     nxt = {a: b for a, b in zip(ids, ids[1:])}
@@ -144,6 +167,7 @@ def kfgqpc_farsh(rawi: str, ids: list[str], listed: set[str] = frozenset()) -> s
                 # vowel dropped into the next word)
                 final = inside and h.get(n, "")[:1] not in "أإءآؤئ" and not (
                     rawi == "susi" and b[-1:] not in "\u064e\u064f\u0650\u064b\u064c\u064d")
+                ALIGNED[(rawi, w)] = kw[j1 + k]
                 if differs(prep(h[w]), b, final=final) or (w in listed and any(classify(prep(h[w]), b))):
                     out.add(w)
         elif tag in ("replace", "insert", "delete"):
@@ -188,13 +212,49 @@ KNOWN = {
     **{(w, "table_only"): "Qālūn's khulf: KFGQPC prints his other wajh (dropped)" for w in ("2:186:9", "2:186:11")},
     ("2:173:14", "table_only"): "a two-word place: the difference is on فَمَنُ (2:173:13)",
     ("2:177:1", "table_only"): "a two-word place: the difference is on ٱلۡبِرُّ (2:177:2)",
+    ("3:143:3", "table_only"): "al-Bazzī: \"المقروء به من طريقه إنما هو التخفيف\" (budur 70), the same as Ḥafṣ",
 }
+
+
+HAMZAS = "\u0621\u0623\u0625\u0622\u0624\u0626"
+MARKS_RE = re.compile("[\u064b-\u065f\u0670\u06d6-\u06ed\u08f0-\u08f2]")
+
+
+def explain(w: str, rawi: str, k: str, kf_word: str | None) -> str | None:
+    """Why a disagreement isn't a farsh one, by pattern (2026-11-27, from al-Baqarah and Āl ʿImrān):
+    uṣūl the diff doesn't recognise, or a mark KFGQPC leaves out. None: unexplained."""
+    h = words()
+    a = h[w]
+    ids = list(h)
+    nxt = h.get(ids[ids.index(w) + 1], "") if k == "kfgqpc_only" else ""
+    s, ay, n = map(int, w.split(":"))
+    if k != "kfgqpc_only" or kf_word is None:
+        return None
+    b = kf_word
+    if ay == 1 and n == 1 and "\u0653" in a:
+        return "KFGQPC's marks on the opening letters"
+    if re.match(f"^[\u0648\u0641]?[\u064e]?[{HAMZAS}][\u064e\u064f\u0650]?[{HAMZAS}]", a):
+        return f"{USUL}: hamzatayn"
+    if rawi in ("duri_abuamr", "susi") and a.endswith("\u0645\u064f") and b.rstrip("\u06d6\u06d7\u06d8\u06d9\u06da\u06db").endswith("\u0645\u0650"):
+        return f"{USUL}: Abū ʿAmr's kasr of the mīm al-jamʿ (wafi 52)"
+    pa, pb = prep(a), prep(normalize(knorm(b)))
+    bare = lambda x: MARKS_RE.sub("", x).replace("\u0671", "\u0627")  # noqa: E731  (ٱ as KFGQPC's plain ا)
+    if rawi == "warsh" and nxt[:1] in HAMZAS and bare(pa) == bare(pb):
+        return f"{USUL}: Warsh's naql (the hamzah's vowel on the last letter)"
+    if rawi == "susi" and pb.count("\u0651") > pa.count("\u0651") and bare(fold_idgham(pa)) == bare(fold_idgham(pb)):
+        return f"{USUL}: al-Sūsī's idghām kabīr"
+    if "\u06e0" in a and nxt[:1] not in HAMZAS and pa.replace("\u06e0", "") == pb:
+        return "أنا before a word without a hamzah: all drop its alif in waṣl (wafi 222); KFGQPC doesn't mark it"
+    if bare(pa) == bare(pb) and set(MARKS_RE.findall(pb)) <= set(MARKS_RE.findall(pa)) \
+            and len(MARKS_RE.findall(pb)) <= len(MARKS_RE.findall(pa)):
+        return "a mark KFGQPC leaves out (same letters, fewer marks)"
+    return None
 
 
 def check(surah: int = 2, upto: int | None = None, source: str = "kfgqpc") -> dict:
     h = words()
-    ids = [w for w in h if w.split(":")[0] in ("1", "2")]  # kwords gives al-Fātiḥah and al-Baqarah
-    scope = [w for w in ids if int(w.split(":")[0]) == surah and (upto is None or int(w.split(":")[1]) <= upto)]
+    ids = [w for w in h if int(w.split(":")[0]) == surah]
+    scope = [w for w in ids if upto is None or int(w.split(":")[1]) <= upto]
     tab = table(surah)
     res = {"both": [], "kfgqpc_only": [], "table_only": []}
     fu = futuh_farsh(surah) if source == "futuh" else None
@@ -203,15 +263,31 @@ def check(surah: int = 2, upto: int | None = None, source: str = "kfgqpc") -> di
         if rawi == "hafs":
             continue
         mine = {w for w, rs in tab.items() if rawi in rs}
-        kf = (fu.get(rawi, set()) if fu is not None else kfgqpc_farsh(rawi, ids, mine)) & set(scope)
+        kf = (fu.get(rawi, set()) if fu is not None else kfgqpc_farsh(rawi, ids, mine, surah)) & set(scope)
         tb = {w for w in scope if rawi in tab.get(w, ())}
         res["both"] += [(w, rawi) for w in sorted(kf & tb)]
         res["kfgqpc_only"] += [(w, rawi) for w in sorted(kf - tb)]
         res["table_only"] += [(w, rawi) for w in sorted(tb - kf)]
     if fu is None:
-        res["explained"] = [(w, r, k) for k in ("kfgqpc_only", "table_only") for w, r in res[k] if (w, k) in KNOWN]
+        kf_of = defaultdict(set)
+        for w, r in res["both"] + res["kfgqpc_only"]:
+            kf_of[r].add(w)
+        ent = entries(surah)
+        why = {}
         for k in ("kfgqpc_only", "table_only"):
-            res[k] = [(w, r) for w, r in res[k] if (w, k) not in KNOWN]
+            for w, r in res[k]:
+                if (w, k) in KNOWN:
+                    why[(w, r, k)] = KNOWN[(w, k)]
+                elif k == "table_only" and any(o in kf_of[r] for e in ent.get(w, []) for o in e["place"] if o != w):
+                    why[(w, r, k)] = "a place of several words: the difference shows on another of them"
+                else:
+                    x = explain(w, r, k, ALIGNED.get((r, w)))
+                    if x:
+                        why[(w, r, k)] = x
+        res["explained"] = [(w, r, k) for (w, r, k) in why]
+        res["why"] = why
+        for k in ("kfgqpc_only", "table_only"):
+            res[k] = [(w, r) for w, r in res[k] if (w, r, k) not in why]
     return res
 
 
@@ -240,7 +316,7 @@ def report(surah: int, r: dict, who: str) -> None:
             by[(w, k)].append(rawi)
         lines += [f"## Read and explained, not farsh disagreements ({len(by)} words)", ""]
         for (w, k), rs in sorted(by.items(), key=lambda x: tuple(int(n) for n in x[0][0].split(":"))):
-            lines.append(f"- **{w}** {h[w]} — {', '.join(rs)} ({k.replace('_', ' ')}): {KNOWN[(w, k)]}")
+            lines.append(f"- **{w}** {h[w]} — {', '.join(rs)} ({k.replace('_', ' ')}): {r['why'][(w, rs[0], k)]}")
         lines.append("")
     out = BUILD / f"farsh_check_{surah:03d}.md"
     out.parent.mkdir(exist_ok=True)

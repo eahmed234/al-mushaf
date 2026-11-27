@@ -172,3 +172,37 @@ class Anchors(unittest.TestCase):
         self.assertTrue(find("يا عبادي لا خوف"))             # the vocative joined in Ḥafṣ
         self.assertTrue(find("فارهبون"))                      # Ḥafṣ without the zāʾidah yāʾ
         self.assertEqual(find("ولا تخزون في الأرض"), [])      # planted: no such phrase
+
+
+class AlImran(unittest.TestCase):
+    """Milestone 4, first batch: al-Budūr pp. 58-75 (2026-11-27)."""
+
+    def places(self):
+        return {e["place"][0]: e for e in yaml.safe_load((DATA / "farsh" / "003.yaml").read_text(encoding="utf-8"))}
+
+    def test_no_place_flagged(self):
+        self.assertEqual([p for p, e in self.places().items() if "review" in e], [])
+
+    def test_two_aspects_of_one_word(self):
+        """تحسبن 3:169: tāʾ or yāʾ, then the sīn's vowel: each rāwī once per aspect."""
+        e = self.places()["3:169:2"]
+        self.assertEqual({o.get("aspect", 0) for o in e["options"]}, {0, 1})
+
+    def test_a_restatement_is_the_base(self):
+        """فنادته 3:39: al-Budūr p. 64 restates Warsh reading as Ḥafṣ."""
+        e = self.places()["3:39:1"]
+        self.assertTrue(all(o.get("base") for o in e["options"] if o["readers"] == ["warsh"]))
+
+    def test_anchored_words_need_their_topic(self):
+        """يكذبون 2:10 is a yāʾ zāʾidah only in al-Qaṣaṣ: still farsh here; وخافون 3:175 is the yāʾ."""
+        from pipeline.farsh_class import classify
+        b = {e["place"][0]: e for e in yaml.safe_load((DATA / "farsh" / "002.yaml").read_text(encoding="utf-8"))}
+        self.assertEqual(classify(b["2:10:12"], "002")["kind"], "farsh")
+        self.assertTrue(classify(self.places()["3:175:8"], "003")["rule"][0].startswith("ya_zaida"))
+
+    @needs.sources
+    def test_against_kfgqpc(self):
+        from checks import farsh
+        r = farsh.check(3)
+        self.assertGreaterEqual(len(r["both"]), 307)
+        self.assertEqual((r["kfgqpc_only"], r["table_only"]), ([], []))
