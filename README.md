@@ -165,7 +165,9 @@ Runs write to `pipeline/out/RUN/` (gitignored: they hold quotes from the book).
 
 | File | Holds |
 | --- | --- |
-| `profiles.yaml` | 35 categories × 20 ruwāt: wujūh, page citation, conditions, place exceptions, options; reviewed |
+| `profiles.yaml` | 35 categories × 20 ruwāt: wujūh, page citation, conditions, place exceptions, options; reviewed (what the engine reads) |
+| `categories.yaml` | the 36 categories, one per rule for all twenty (Eisa 2026-11-26), and which extraction names belong to each |
+| `usul/*.yaml` | the uṣūl from al-Wāfī and al-Īḍāḥ, one table per category: every case with all twenty ruwāt in one vocabulary, listed words, cites, disagreements, open questions (`mushaf_data/usul_tables.py`) |
 | `constraints.yaml` | taḥrīr tuples (tarbīʿ, badal × dhawāt al-yāʾ, badal × ʿāriḍ, Khallād's sakt × stop…), each cited, enforced or not |
 | `place_wujuh.yaml` | wujūh tied to one place |
 | `corrections/futuh_print_errors.yaml` | al-Futūḥ print errors Eisa confirmed, corrected on load |

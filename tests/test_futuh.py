@@ -26,6 +26,13 @@ class Rows(unittest.TestCase):
         r = self.readings.check(0, book=True, test=(1, 20))
         self.assertEqual((r["reproduced"], r["pairs"]), (661, 666))
 
+    def test_unified_usul_tables_give_the_same(self):
+        """data/usul/ in place of the profile table: the same rows reproduced."""
+        from mushaf_data import usul_tables
+        with mock.patch.object(profiles, "load", usul_tables.profiles):
+            r = self.readings.check(20, book=True)
+        self.assertEqual((r["reproduced"], r["pairs"]), (674, 676))
+
     def test_planted_profile_error_is_caught(self):
         real = profiles.load
 

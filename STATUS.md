@@ -80,6 +80,11 @@ tables; review list empty.
 - Glyph 135 is the tas-hīl dot; glyph 383 is lām-alif with maddah; #76923c is the imālah green.
 - Madd lengths are three: qaṣr 1, tawassuṭ 2, ṭūl 3 alifs (al-Shāṭibī's way, al-Budūr p. 18); the
   four-degree way and its fractions wait for the kubrā version (2026-11-25).
+- The Shāṭibiyyah's and the Durrah's uṣūl are one set of rules (2026-11-26): `data/categories.yaml`
+  (36 categories), `data/usul/` one table per category for all twenty in one vocabulary. Unstated
+  reads as Ḥafṣ (a Durrah rāwī: as his aṣl). Where a fresh reading disagreed with the reviewed
+  profile, the reviewed wujūh stand (al-Futūḥ and al-Budūr sided with them each time), recorded
+  under `disagreements`. Idghām ṣaghīr and the yāʾāt are per word; مالك / الصراط are farsh.
 - Extraction conventions from the pilot review (2026-11-25, `pipeline/PILOT.md`): general rules
   and words elsewhere are rows; references and "leaving a rule" take the rule's category (mafṣūl
   khāṣ = sakt_al, mafṣūl ʿām = sakt_mafsul); at a stop on fatḥ tanwīn the stop is on the alif.
