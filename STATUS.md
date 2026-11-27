@@ -165,8 +165,9 @@ tables; review list empty.
   farsh check is still noisy: 655 agree; it needs full engine readings.)
 
 Next, in order:
-1. Two flagged al-Baqarah places for Eisa: أمانيهم 2:111 (Abū Jaʿfar named twice) and جدال 2:197
-   (al-Budūr leaves Ibn Kathīr, Abū ʿAmr and Yaʿqūb unstated); the al-Fātiḥah rows (extracted, not reviewed).
+1. The al-Fātiḥah rows for Eisa's review (extracted, not reviewed). (al-Baqarah's two flagged places
+   are settled, 2026-11-27: أمانيهم was one reading in two clauses, now merged; جدال takes Ibn Kathīr,
+   Abū ʿAmr and Yaʿqūb into the fatḥ from wafi 218 and idah 214, recorded as `second`.)
 2. Then docs/05 milestones 3- (riwāyah-neutral spine, the rest of the farsh, occurrences, constraints).
 
 Working notes: subagents get their own scratch folders; reviewed data stands until Eisa rules;

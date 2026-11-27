@@ -5,6 +5,7 @@
 # scope: all = the book says it holds wherever the word occurs; `also` lists the same word, written
 #   the same way, elsewhere in the surah (prefixed forms are not matched yet).
 # Option text per slot (the reading written out) comes next; `reading` is the book's own words.
+# second: ruwāt al-Budūr leaves unstated, added to an option from al-Wāfī / al-Īḍāḥ (pages).
 # class: rule = an uṣūl table (data/usul) gives the place (al-Budūr restates it here); farsh = the
 #   surah's farsh chapter of al-Wāfī / al-Īḍāḥ treats it (pages); pipeline/farsh_class.py.
 - place: ['2:6:5']
@@ -970,12 +971,7 @@
   options:
   - readers: [ibn_wardan, ibn_jammaz]
     khulf: []
-    reading: بتخفيف الياء ساكنة
-    cite: budur 38
-    from: run
-  - readers: [ibn_wardan, ibn_jammaz]
-    khulf: []
-    reading: ويلزمه كسر الهاء
+    reading: بتخفيف الياء ساكنة، ويلزمه كسر الهاء
     cite: budur 38
     from: run
   - readers: [qalun, warsh, bazzi, qunbul, duri_abuamr, susi, hisham, ibn_dhakwan, shuba, hafs, khalaf_an_hamzah, khallad, abul_harith, duri_kisai, ruways, rawh, ishaq, idris]
@@ -983,8 +979,6 @@
     reading: بضم الياء مشددة مع ضم الحاء
     cite: budur 38
     from: run
-  review:
-    twice: [ibn_wardan, ibn_jammaz]
   class:
     kind: farsh
     farsh: [idah 197]
@@ -1882,13 +1876,14 @@
     reading: وانفرد بتنوين جدال مع الرفع
     cite: budur 47
     from: run
-  - readers: [qalun, warsh, hisham, ibn_dhakwan, shuba, hafs, khalaf_an_hamzah, khallad, abul_harith, duri_kisai, ishaq, idris]
+  - readers: [qalun, warsh, bazzi, qunbul, duri_abuamr, susi, hisham, ibn_dhakwan, shuba, hafs, khalaf_an_hamzah, khallad, abul_harith, duri_kisai, ruways, rawh, ishaq, idris]
     khulf: []
     reading: بالفتح بلا تنوين في الثلاث
     cite: budur 47
     from: run
-  review:
-    missing: [bazzi, qunbul, duri_abuamr, susi, ruways, rawh]
+    second:
+      readers: [bazzi, qunbul, duri_abuamr, susi, ruways, rawh]
+      cite: [wafi 218, idah 214]
   class:
     kind: farsh
     farsh: [idah 213, idah 214, wafi 218]

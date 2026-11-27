@@ -72,6 +72,39 @@ def phrases(ids: list[str]) -> list[list[str]]:
 AS_FARSH = {(53, "2:258:21"): "أنا before a hamzat qaṭʿ: Nāfiʿ's alif in waṣl is farsh (wafi 222)"}
 
 
+def merge(options: list[dict]) -> list[dict]:
+    """Rows at one place naming the same ruwāt, without khulf and under the same condition, are one
+    reading told in two clauses (أمانيهم, al-Budūr p. 38: "بتخفيف الياء ساكنة، ويلزمه كسر الهاء")."""
+    out: list[dict] = []
+    for o in options:
+        prev = next((p for p in out if p["readers"] == o["readers"] and not p["khulf"] and not o["khulf"]
+                     and p.get("condition") == o.get("condition")), None)
+        if prev:
+            prev["reading"] = f"{prev['reading']}، {o['reading']}"
+            if o["cite"] != prev["cite"]:
+                prev["cite"] = f"{prev['cite']}; {o['cite']}"
+        else:
+            out.append(o)
+    return out
+
+
+# A second reading (al-Wāfī / al-Īḍāḥ) where al-Budūr leaves ruwāt unstated at a place, checked by
+# hand: first word id → (ruwāt, a phrase of the option they join, cites)
+SECOND = {
+    "2:197:13": (["bazzi", "qunbul", "duri_abuamr", "susi", "ruways", "rawh"], "بالفتح بلا تنوين",
+                 ["wafi 218", "idah 214"]),  # جدال: "ولا خلاف في جدال أنه بالفتح"; Yaʿqūb idah 214 n. 1
+}
+
+
+def add_second(first: str, options: list[dict]) -> None:
+    if first not in SECOND:
+        return
+    who, phrase, cites = SECOND[first]
+    o = next(o for o in options if phrase in o["reading"])
+    o["readers"] = [x for x in RUWAT if x in set(o["readers"]) | set(who)]
+    o["second"] = {"readers": who, "cite": cites}
+
+
 def split(groups: list[list]) -> list[list]:
     """A group whose rows don't all name the same words is one place per set of words sharing the
     same rows (الصراط / صراط: Khallād's ishmām is in the first only, al-Budūr p. 15). Each row then
@@ -142,6 +175,8 @@ def build(slug: str, pages: list[int], run: Path) -> tuple[dict[int, list], list
             if r["condition"]:
                 o["condition"] = r["condition"]
             options.append(o)
+        options = merge(options)
+        add_second(ids[0], options)
         cov = coverage(options)
         scope = "all" if any(r["scope"] == "all" for _, r, _ in g) else "here"
         entry = {"place": ids, "words": " ".join(h[i] for i in ids), "scope": scope,
@@ -172,6 +207,7 @@ HEADER = """# Farsh of surah {s}: each place's options, read from {book} ({pages
 # scope: all = the book says it holds wherever the word occurs; `also` lists the same word, written
 #   the same way, elsewhere in the surah (prefixed forms are not matched yet).
 # Option text per slot (the reading written out) comes next; `reading` is the book's own words.
+# second: ruwāt al-Budūr leaves unstated, added to an option from al-Wāfī / al-Īḍāḥ (pages).
 # class: rule = an uṣūl table (data/usul) gives the place (al-Budūr restates it here); farsh = the
 #   surah's farsh chapter of al-Wāfī / al-Īḍāḥ treats it (pages); pipeline/farsh_class.py.
 """

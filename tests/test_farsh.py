@@ -97,6 +97,19 @@ class AslOrFarsh(unittest.TestCase):
             c = e["class"]
             self.assertTrue(c.get("rule") if c["kind"] == "rule" else c.get("farsh"), e["place"])
 
+    def test_no_place_left_flagged(self):
+        """أمانيهم (one reading in two clauses) and جدال (wafi 218, idah 214) settled 2026-11-27."""
+        for s in ("001", "002"):
+            flagged = [e["place"] for e in yaml.safe_load((DATA / "farsh" / f"{s}.yaml").read_text(encoding="utf-8"))
+                       if "review" in e]
+            self.assertEqual(flagged, [], s)
+
+    def test_planted_merge_keeps_khulf_apart(self):
+        from pipeline.farsh import merge
+        o = [{"readers": ["qalun"], "khulf": ["qalun"], "reading": "a", "cite": "x"},
+             {"readers": ["qalun"], "khulf": ["qalun"], "reading": "b", "cite": "x"}]
+        self.assertEqual(len(merge(o)), 2)  # Qālūn's two wujūh are not one reading
+
     def test_the_file_matches_the_classifier(self):
         from pipeline.farsh_class import classify
         for s in ("001", "002"):
