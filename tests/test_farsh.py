@@ -125,6 +125,11 @@ class AslOrFarsh(unittest.TestCase):
         self.assertIn("khallad", who(("1:6:2",), "مثل خلف"))
         self.assertIn("khallad", who(("1:7:1",), "الخالصة"))
         self.assertEqual(f[("1:7:4", "1:7:7")]["class"]["kind"], "rule")
+        # reviewed 2026-11-27: Khallād has both wujūh at 1:6 (wafi 51 n. 1), and the pure ṣād is the base
+        first = f[("1:6:2",)]
+        self.assertTrue(all("khallad" in o["khulf"] for o in first["options"] if "khallad" in o["readers"]))
+        self.assertEqual([o["reading"] for o in first["options"] if o.get("base")], ["بالصاد الخالصة"])
+        self.assertTrue(all(e["status"] == "checked" for e in f.values()))
 
     def test_planted_rule_pointing_at_no_case_is_refused(self):
         from pipeline import farsh_class

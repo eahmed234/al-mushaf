@@ -164,11 +164,14 @@ tables; review list empty.
   apart in build/farsh_check_002.md. No farsh word needed a second reading. (Against al-Futūḥ the
   farsh check is still noisy: 655 agree; it needs full engine readings.)
 
+- **al-Fātiḥah reviewed (2026-11-27)**: the p. 15 rows are gold (pipeline/gold/budur/p015.json), all
+  places `checked`. Khallād at the first الصراط has both wujūh, ishmām and the pure ṣād (wafi 51 n. 1;
+  dabba 162; buhur 48), with a taḥrīr against his sakt on al- (constraint khallad_sirat_sakt_al,
+  candidate, not enforced: no farsh choice in the engine yet). Each place's Ḥafṣ option is marked
+  `base` (Eisa: the pure ṣād is the aṣl, the other readings are the farsh).
+
 Next, in order:
-1. The al-Fātiḥah rows for Eisa's review (extracted, not reviewed). (al-Baqarah's two flagged places
-   are settled, 2026-11-27: أمانيهم was one reading in two clauses, now merged; جدال takes Ibn Kathīr,
-   Abū ʿAmr and Yaʿqūb into the fatḥ from wafi 218 and idah 214, recorded as `second`.)
-2. Then docs/05 milestones 3- (riwāyah-neutral spine, the rest of the farsh, occurrences, constraints).
+1. Then docs/05 milestones 3- (riwāyah-neutral spine, the rest of the farsh, occurrences, constraints).
 
 Working notes: subagents get their own scratch folders; reviewed data stands until Eisa rules;
 book text is never committed (quotes are offsets; pipeline/out and pipeline/work are gitignored).

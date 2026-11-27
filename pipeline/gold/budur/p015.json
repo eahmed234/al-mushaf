@@ -1,0 +1,191 @@
+{
+ "book": "budur",
+ "page": 15,
+ "rows": [
+  {
+   "place": [
+    "1:4:1"
+   ],
+   "kind": "farsh",
+   "category": null,
+   "readers": [
+    "shuba",
+    "hafs",
+    "abul_harith",
+    "duri_kisai",
+    "ruways",
+    "rawh",
+    "ishaq",
+    "idris"
+   ],
+   "khulf": [],
+   "reading": "بإثبات ألف بعد الميم لفظا",
+   "condition": null,
+   "scope": "here",
+   "span": [
+    15,
+    1495,
+    1561
+   ]
+  },
+  {
+   "place": [
+    "1:4:1"
+   ],
+   "kind": "farsh",
+   "category": null,
+   "readers": [
+    "qalun",
+    "warsh",
+    "bazzi",
+    "qunbul",
+    "duri_abuamr",
+    "susi",
+    "hisham",
+    "ibn_dhakwan",
+    "khalaf_an_hamzah",
+    "khallad",
+    "ibn_wardan",
+    "ibn_jammaz"
+   ],
+   "khulf": [],
+   "reading": "يحذفها",
+   "condition": null,
+   "scope": "here",
+   "span": [
+    15,
+    1562,
+    1577
+   ]
+  },
+  {
+   "place": [
+    "1:6:2",
+    "1:7:1"
+   ],
+   "kind": "farsh",
+   "category": null,
+   "readers": [
+    "qunbul",
+    "ruways"
+   ],
+   "khulf": [],
+   "reading": "بالسين",
+   "condition": null,
+   "scope": "all",
+   "span": [
+    15,
+    1599,
+    1635
+   ]
+  },
+  {
+   "place": [
+    "1:6:2",
+    "1:7:1"
+   ],
+   "kind": "farsh",
+   "category": null,
+   "readers": [
+    "khalaf_an_hamzah"
+   ],
+   "khulf": [],
+   "reading": "بالصاد مشمة صوت الزاى",
+   "condition": null,
+   "scope": "all",
+   "span": [
+    15,
+    1638,
+    1690
+   ]
+  },
+  {
+   "place": [
+    "1:6:2"
+   ],
+   "kind": "farsh",
+   "category": null,
+   "readers": [
+    "khallad"
+   ],
+   "khulf": [],
+   "reading": "مثل خلف في الموضع الأول خاصة",
+   "condition": null,
+   "scope": "here",
+   "span": [
+    15,
+    1692,
+    1730
+   ]
+  },
+  {
+   "place": [
+    "1:6:2"
+   ],
+   "kind": "farsh",
+   "category": null,
+   "readers": [
+    "qalun",
+    "warsh",
+    "bazzi",
+    "duri_abuamr",
+    "susi",
+    "hisham",
+    "ibn_dhakwan",
+    "shuba",
+    "hafs",
+    "abul_harith",
+    "duri_kisai",
+    "ibn_wardan",
+    "ibn_jammaz",
+    "rawh",
+    "ishaq",
+    "idris"
+   ],
+   "khulf": [],
+   "reading": "بالصاد الخالصة",
+   "condition": null,
+   "scope": "all",
+   "span": [
+    15,
+    1776,
+    1814
+   ]
+  },
+  {
+   "place": [
+    "1:7:1"
+   ],
+   "kind": "farsh",
+   "category": null,
+   "readers": [
+    "qalun",
+    "warsh",
+    "bazzi",
+    "duri_abuamr",
+    "susi",
+    "hisham",
+    "ibn_dhakwan",
+    "shuba",
+    "hafs",
+    "khallad",
+    "abul_harith",
+    "duri_kisai",
+    "ibn_wardan",
+    "ibn_jammaz",
+    "rawh",
+    "ishaq",
+    "idris"
+   ],
+   "khulf": [],
+   "reading": "بالصاد الخالصة",
+   "condition": null,
+   "scope": "all",
+   "span": [
+    15,
+    1776,
+    1814
+   ]
+  }
+ ]
+}

@@ -71,3 +71,14 @@
   status: decided
   decision: "Madd lengths are three: qaṣr 1, tawassuṭ 2, ṭūl 3 alifs, al-Shāṭibī's two degrees above qaṣr (al-Budūr p. 18); the rest of the book speaks only of qaṣr and madd. Under that model this constraint holds by itself (muttaṣil is never qaṣr; who has two degrees has them in both). The four-degree way with its fractions (fuwayq) waits for the kubrā version (Eisa 2026-11-25)."
   enforced: false
+
+# Khallād's ishmām in the first الصراط (1:6) goes with no sakt on al- and shayʾ (Abū al-Fatḥ's ṭarīq);
+# the pure ṣād with the sakt (Ibn Ghalbūn's). The engine has no farsh choice for it yet.
+- id: khallad_sirat_sakt_al
+  rawi: [khallad]
+  cats: [sirat_1_6, sakt_al]  # sirat_1_6: the farsh choice at 1:6:2 (ishmam / sad)
+  allowed: [[ishmam, none], [sad, sakt]]
+  cite: dabba 162; buhur 48; wafi 51
+  source: "al-Ḍabbāʿ p. 162 n. 1 (from al-Mutawallī's al-Rawḍ al-Naḍīr) and al-Buḥūr p. 48 (from al-Ḍabbāʿ's Irshād al-Murīd): al-Dānī read with Abū al-Fatḥ Fāris the ishmām without sakt, with Abū al-Ḥasan Ṭāhir ibn Ghalbūn the sakt without ishmām; so ishmām with no sakt, or no ishmām with sakt. al-Wāfī p. 51 n. 1: both wujūh for Khallād here"
+  status: candidate
+  enforced: false

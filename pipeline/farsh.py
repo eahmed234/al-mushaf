@@ -96,13 +96,39 @@ SECOND = {
 }
 
 
+# A khulf the other books give where al-Budūr names one wajh, checked by hand: first word id →
+# (rāwī, a phrase of the option that is his second wajh, cites)
+KHULF = {
+    # Khallād at 1:6 الصراط: ishmām and the pure ṣād (wafi 51 n. 1: "فاقتصار الناظم على الإشمام لخلاد
+    # فيه قصور"; dabba 162 n. 1; buhur 48), Eisa 2026-11-27
+    "1:6:2": ("khallad", "بالصاد الخالصة", ["wafi 51", "dabba 162", "buhur 48"]),
+}
+
+
 def add_second(first: str, options: list[dict]) -> None:
-    if first not in SECOND:
-        return
-    who, phrase, cites = SECOND[first]
-    o = next(o for o in options if phrase in o["reading"])
-    o["readers"] = [x for x in RUWAT if x in set(o["readers"]) | set(who)]
-    o["second"] = {"readers": who, "cite": cites}
+    if first in SECOND:
+        who, phrase, cites = SECOND[first]
+        o = next(o for o in options if phrase in o["reading"])
+        o["readers"] = [x for x in RUWAT if x in set(o["readers"]) | set(who)]
+        o["second"] = {"readers": who, "cite": cites}
+    if first in KHULF:
+        rawi, phrase, cites = KHULF[first]
+        for o in options:
+            if rawi in o["readers"]:
+                o["khulf"] = [x for x in RUWAT if x in set(o["khulf"]) | {rawi}]
+        o = next(o for o in options if phrase in o["reading"] and rawi not in o["readers"])
+        o["readers"] = [x for x in RUWAT if x in set(o["readers"]) | {rawi}]
+        o["khulf"] = [x for x in RUWAT if x in set(o["khulf"]) | {rawi}]
+        o["second"] = {"readers": [rawi], "cite": cites}
+
+
+def mark_base(entry: dict) -> None:
+    """The option with Ḥafṣ is the muṣḥaf text's own reading: `base`. For a word read differently
+    wherever it occurs (`recurs`), only the other options are farsh (Eisa 2026-11-27: the pure ṣād
+    of ṣirāṭ is the aṣl, what Qunbul, Ruways, Khalaf and Khallād read is the farsh)."""
+    for o in entry["options"]:
+        if "hafs" in o["readers"]:
+            o["base"] = True
 
 
 def split(groups: list[list]) -> list[list]:
@@ -207,7 +233,9 @@ HEADER = """# Farsh of surah {s}: each place's options, read from {book} ({pages
 # scope: all = the book says it holds wherever the word occurs; `also` lists the same word, written
 #   the same way, elsewhere in the surah (prefixed forms are not matched yet).
 # Option text per slot (the reading written out) comes next; `reading` is the book's own words.
-# second: ruwāt al-Budūr leaves unstated, added to an option from al-Wāfī / al-Īḍāḥ (pages).
+# base: the option that is the muṣḥaf text's own reading (Ḥafṣ's); farsh is the other options.
+# recurs: the books give the farsh wherever the word occurs (forms, page).
+# second: ruwāt al-Budūr leaves unstated (or a khulf it leaves out), added to an option from al-Wāfī / al-Īḍāḥ (pages).
 # class: rule = an uṣūl table (data/usul) gives the place (al-Budūr restates it here); farsh = the
 #   surah's farsh chapter of al-Wāfī / al-Īḍāḥ treats it (pages); pipeline/farsh_class.py.
 """
@@ -227,6 +255,7 @@ def main():
             for e in entries:
                 e["class"] = classify(e, f"{s:03d}")
         for e in entries:
+            mark_base(e)
             if e["place"][0] in RECUR:
                 e["recurs"] = RECUR[e["place"][0]]
         f = OUT / f"{s:03d}.yaml"

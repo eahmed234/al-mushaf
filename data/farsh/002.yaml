@@ -5,7 +5,9 @@
 # scope: all = the book says it holds wherever the word occurs; `also` lists the same word, written
 #   the same way, elsewhere in the surah (prefixed forms are not matched yet).
 # Option text per slot (the reading written out) comes next; `reading` is the book's own words.
-# second: ruwāt al-Budūr leaves unstated, added to an option from al-Wāfī / al-Īḍāḥ (pages).
+# base: the option that is the muṣḥaf text's own reading (Ḥafṣ's); farsh is the other options.
+# recurs: the books give the farsh wherever the word occurs (forms, page).
+# second: ruwāt al-Budūr leaves unstated (or a khulf it leaves out), added to an option from al-Wāfī / al-Īḍāḥ (pages).
 # class: rule = an uṣūl table (data/usul) gives the place (al-Budūr restates it here); farsh = the
 #   surah's farsh chapter of al-Wāfī / al-Īḍāḥ treats it (pages); pipeline/farsh_class.py.
 - place: ['2:6:5']
@@ -23,6 +25,7 @@
     reading: بكسرها
     cite: budur 20
     from: gold
+    base: true
   class:
     kind: rule
     rule: ['ha_mim_jam: hāʾ after a sākin yāʾ, before a mutaḥarrik (عليهم، إليهم، لديهم)']
@@ -41,6 +44,7 @@
     reading: بفتح الياء وإسكان الخاء بلا ألف وفتح الدال
     cite: budur 21
     from: gold
+    base: true
   class:
     kind: farsh
     farsh: [idah 189, wafi 199, wafi 200]
@@ -54,6 +58,7 @@
     reading: بفتح الياء وسكون الكاف وتخفيف الذال
     cite: budur 21
     from: gold
+    base: true
   - readers: [qalun, warsh, bazzi, qunbul, duri_abuamr, susi, hisham, ibn_dhakwan, ibn_wardan, ibn_jammaz, ruways, rawh]
     khulf: []
     reading: بضم الياء وفتح الكاف وتشديد الذال
@@ -77,6 +82,7 @@
     reading: بكسرة خالصة
     cite: budur 21
     from: gold
+    base: true
   class:
     kind: farsh
     farsh: [idah 189, idah 190, wafi 201]
@@ -95,6 +101,7 @@
     reading: بضم التاء وفتح الجيم على البناء للمفعول
     cite: budur 27
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [wafi 229]
@@ -115,6 +122,7 @@
     cite: budur 27
     from: run
     condition: waqf
+    base: true
   class:
     kind: rule
     rule: ['waqf_rasm: نون هنّ (the doubled nūn after the pronoun hāʾ): hāʾ al-sakt at a stop']
@@ -133,6 +141,7 @@
     reading: بالضم
     cite: budur 27
     from: run
+    base: true
   - readers: [ruways, rawh]
     khulf: []
     reading: ووقف عليه يعقوب بهاء السكت
@@ -167,6 +176,7 @@
     reading: كحفص (الباقون، غير مذكورين)
     cite: budur 28
     from: implied
+    base: true
   class:
     kind: rule
     rule: [ya_idafa]
@@ -187,6 +197,7 @@
     reading: بكسرها
     cite: budur 30
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [idah 188, idah 193]
@@ -205,6 +216,7 @@
     reading: بحذف الألف وتشديد اللام
     cite: budur 30
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [idah 194]
@@ -223,6 +235,7 @@
     reading: برفع آدم ونصب كلمات
     cite: budur 30
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [idah 211, wafi 202]
@@ -241,6 +254,7 @@
     reading: بالرفع والتنوين
     cite: budur 30
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [idah 194]
@@ -259,6 +273,7 @@
     reading: كحفص (الباقون، غير مذكورين)
     cite: budur 30
     from: implied
+    base: true
   class:
     kind: rule
     rule: ['ha_mim_jam: hāʾ after a sākin yāʾ, before a mutaḥarrik (عليهم، إليهم، لديهم)']
@@ -277,6 +292,7 @@
     reading: بالحذف كذلك
     cite: budur 30
     from: run
+    base: true
   class:
     kind: rule
     rule: [ya_zaida]
@@ -296,6 +312,7 @@
     reading: بالياء التحتية على التذكير
     cite: budur 32
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [wafi 202]
@@ -314,6 +331,7 @@
     reading: بإثباته
     cite: budur 32
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [idah 194, wafi 202]
@@ -337,6 +355,7 @@
     reading: كحفص (الباقون، غير مذكورين)
     cite: budur 32
     from: implied
+    base: true
   class:
     kind: farsh
     farsh: [wafi 202]
@@ -360,6 +379,7 @@
     reading: بالنون المفتوحة والفاء المكسورة
     cite: budur 32
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [wafi 203]
@@ -410,12 +430,14 @@
     cite: budur 33
     from: run
     condition: wasl
+    base: true
   - readers: [qalun, warsh, bazzi, qunbul, hisham, ibn_dhakwan, shuba, hafs, ibn_wardan, ibn_jammaz]
     khulf: []
     reading: بكسر الهاء وإسكان الميم
     cite: budur 33
     from: run
     condition: waqf
+    base: true
   class:
     kind: rule
     rule: ['ha_mim_jam: hāʾ before the plural mīm before a sākin, after a sākin yāʾ, in waṣl (عليهمُ القتال)', 'ha_mim_jam: mīm after a hāʾ that follows a kasrah or sākin yāʾ, before a sākin, in waṣl (عليهمِ
@@ -435,6 +457,7 @@
     reading: بالياء المشددة
     cite: budur 34
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [wafi 204]
@@ -456,6 +479,7 @@
     reading: باثباتها
     cite: budur 34
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [wafi 204]
@@ -479,6 +503,7 @@
     reading: بالضمة الكاملة
     cite: budur 34
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [idah 195, wafi 203]
@@ -495,6 +520,7 @@
     reading: بالواو بدلا من الهمزة وصلا ووقفا مع ضم الزاي
     cite: budur 34
     from: run
+    base: true
   - readers: [ishaq, idris]
     khulf: []
     reading: بإسكان الزاى مع الهمز وصلا ووقفا
@@ -544,6 +570,7 @@
     reading: وضحها الباقون
     cite: budur 34
     from: run
+    base: true
   - readers: [ruways, rawh]
     khulf: []
     reading: ووقف عليه يعقوب بهاء السكت
@@ -572,6 +599,7 @@
     reading: بتاء الخطاب
     cite: budur 35
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [idah 197, idah 198, idah 200, wafi 205, wafi 212]
@@ -597,6 +625,7 @@
     reading: بتشديدها
     cite: budur 35
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [idah 196, idah 197]
@@ -615,6 +644,7 @@
     reading: كحفص (الباقون، غير مذكورين)
     cite: budur 35
     from: implied
+    base: true
   class:
     kind: rule
     rule: ['ha_mim_jam: hāʾ after a sākin yāʾ, before a mutaḥarrik (عليهم، إليهم، لديهم)']
@@ -633,6 +663,7 @@
     reading: بحذف الألف على الإفراد
     cite: budur 35
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [wafi 205]
@@ -651,6 +682,7 @@
     reading: بتاء الخطاب
     cite: budur 35
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [idah 197, wafi 205]
@@ -669,6 +701,7 @@
     reading: يضم الحاء وإسكان السين
     cite: budur 35
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [idah 195, idah 198, wafi 205]
@@ -682,6 +715,7 @@
     reading: بتخفيف الظاء
     cite: budur 35
     from: run
+    base: true
   - readers: [qalun, warsh, bazzi, qunbul, duri_abuamr, susi, hisham, ibn_dhakwan, ibn_wardan, ibn_jammaz, ruways, rawh]
     khulf: []
     reading: بتشديدها
@@ -705,6 +739,7 @@
     reading: بضم الهمزة وفتح السين وإثبات ألف بعدها
     cite: budur 35
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [idah 194, idah 196, wafi 206, wafi 207]
@@ -718,6 +753,7 @@
     reading: بضم التاء وفتح الفاء وألف بعدها
     cite: budur 35
     from: run
+    base: true
   - readers: [bazzi, qunbul, duri_abuamr, susi, hisham, ibn_dhakwan, khalaf_an_hamzah, khallad, ishaq, idris]
     khulf: []
     reading: بفتح التاء وسكون الفاء وحذف الألف بعدها
@@ -741,6 +777,7 @@
     reading: بتاء الخطاب
     cite: budur 36
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [idah 197, idah 198, idah 200, wafi 205, wafi 212]
@@ -759,6 +796,7 @@
     reading: بضمها
     cite: budur 36
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [wafi 206]
@@ -777,6 +815,7 @@
     reading: بفتح النون وتشديد الزاي
     cite: budur 36
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [wafi 206, wafi 207]
@@ -817,6 +856,7 @@
     cite: budur 36
     from: run
     condition: waqf
+    base: true
   class:
     kind: rule
     rule: ['waqf_rasm: ما istifhāmiyyah after a preposition (لم عم فيم مم بم): hāʾ al-sakt at a stop']
@@ -835,6 +875,7 @@
     reading: بالياء بدلا من الهمز
     cite: budur 36
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [wafi 204]
@@ -856,6 +897,7 @@
     reading: بياء الغيب
     cite: budur 37
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [idah 194, idah 197, idah 201, wafi 211]
@@ -869,6 +911,7 @@
     reading: بكسر الجيم والراء بلا همز
     cite: budur 37
     from: run
+    base: true
   - readers: [bazzi, qunbul]
     khulf: []
     reading: كذلك ولكن مع فتح الجيم
@@ -902,6 +945,7 @@
     reading: من غير همز ولا ياء
     cite: budur 37
     from: run
+    base: true
   - readers: [bazzi, qunbul, hisham, ibn_dhakwan, shuba, khalaf_an_hamzah, khallad, abul_harith, duri_kisai, ishaq, idris]
     khulf: []
     reading: بهمزة مكسورة بعد الألف وياء ساكنة بعدها
@@ -925,6 +969,7 @@
     reading: بتشديد النون وفتحها ونصب الشياطين
     cite: budur 37
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [idah 207, wafi 204, wafi 207, wafi 208, wafi 209, wafi 216, wafi 217, wafi 231]
@@ -943,6 +988,7 @@
     reading: بفتحهما
     cite: budur 38
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [wafi 208]
@@ -961,6 +1007,7 @@
     reading: بضم النون وكسر السين من غير همز
     cite: budur 38
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [idah 198, wafi 208]
@@ -979,6 +1026,7 @@
     reading: بضم الياء مشددة مع ضم الحاء
     cite: budur 38
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [idah 197]
@@ -997,6 +1045,7 @@
     reading: كحفص (الباقون، غير مذكورين)
     cite: budur 38
     from: implied
+    base: true
   class:
     kind: farsh
     farsh: [wafi 201]
@@ -1015,6 +1064,7 @@
     reading: كحفص (الباقون، غير مذكورين)
     cite: budur 39
     from: implied
+    base: true
   class:
     kind: farsh
     farsh: [idah 194]
@@ -1033,6 +1083,7 @@
     reading: بإثباتها
     cite: budur 39
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [wafi 208]
@@ -1051,6 +1102,7 @@
     reading: برفعه
     cite: budur 39
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [idah 192, idah 198, idah 199, idah 200, idah 213, idah 214, wafi 203, wafi 206, wafi 208, wafi 209, wafi 213, wafi 216, wafi 218, wafi 222, wafi 223, wafi 225, wafi 230]
@@ -1069,6 +1121,7 @@
     reading: بضم التاء ورفع اللام
     cite: budur 39
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [idah 198, wafi 209]
@@ -1092,6 +1145,7 @@
     reading: بكسر الهاء وياء بعده
     cite: budur 39
     from: run
+    base: true
   - readers: [hisham]
     khulf: []
     reading: بفتح الحاء وألف بعدها
@@ -1111,6 +1165,7 @@
     reading: بإسكان الياء مع حذفها لالتقاء الساكنين
     cite: budur 40
     from: run
+    base: true
   - readers: [qalun, warsh, bazzi, qunbul, duri_abuamr, susi, hisham, ibn_dhakwan, shuba, abul_harith, duri_kisai, ibn_wardan, ibn_jammaz, ruways, rawh, ishaq, idris]
     khulf: []
     reading: يفتحها
@@ -1135,6 +1190,7 @@
     reading: بكسرها
     cite: budur 40
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [idah 199, wafi 209, wafi 211]
@@ -1149,6 +1205,7 @@
     cite: budur 40
     from: run
     condition: wasl
+    base: true
   - readers: [bazzi, qunbul, duri_abuamr, susi, ibn_dhakwan, shuba, khalaf_an_hamzah, khallad, abul_harith, duri_kisai, ruways, rawh, ishaq, idris]
     khulf: []
     reading: باسكانها
@@ -1173,6 +1230,7 @@
     reading: بفتح الميم وتشديد التاء
     cite: budur 40
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [wafi 211]
@@ -1196,6 +1254,7 @@
     reading: بالكسرة الكاملة على الأصل
     cite: budur 40
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [idah 199, idah 200, wafi 211]
@@ -1214,6 +1273,7 @@
     reading: بحذف الهمزة مع تشديد الصاد
     cite: budur 40
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [wafi 211]
@@ -1232,6 +1292,7 @@
     reading: ضمها
     cite: budur 40
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [wafi 201]
@@ -1245,6 +1306,7 @@
     reading: بتاء الخطاب
     cite: budur 40
     from: run
+    base: true
   - readers: [qalun, warsh, bazzi, qunbul, duri_abuamr, susi, shuba, ibn_wardan, ibn_jammaz, rawh]
     khulf: []
     reading: بياء الغيب
@@ -1273,6 +1335,7 @@
     reading: بالصاد الخالصة
     cite: budur 42
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [wafi 50, wafi 51]
@@ -1292,6 +1355,7 @@
     reading: بإثباتها
     cite: budur 42
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [wafi 212]
@@ -1310,6 +1374,7 @@
     reading: بياء الغيبة
     cite: budur 42
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [idah 194, idah 197, idah 201, wafi 211]
@@ -1328,6 +1393,7 @@
     reading: بكسر اللام وياء ساكنة بعدها
     cite: budur 42
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [wafi 212]
@@ -1346,6 +1412,7 @@
     reading: بالتاء على الخطاب
     cite: budur 42
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [idah 197, idah 198, idah 200, wafi 205, wafi 212]
@@ -1364,6 +1431,7 @@
     reading: كحفص (الباقون، غير مذكورين)
     cite: budur 42
     from: implied
+    base: true
   class:
     kind: rule
     rule: ['hamz_mufrad: hamzah after a lām-alif']
@@ -1382,6 +1450,7 @@
     reading: بإسكانها
     cite: budur 42
     from: run
+    base: true
   class:
     kind: rule
     rule: [ya_idafa]
@@ -1401,6 +1470,7 @@
     reading: بالحذف في الحالين
     cite: budur 42
     from: run
+    base: true
   class:
     kind: rule
     rule: [ya_zaida]
@@ -1420,6 +1490,7 @@
     reading: بالتاء الفوقية وتخفيف الطاء وفتح العين
     cite: budur 43
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [idah 202, idah 209, wafi 212, wafi 217, wafi 229]
@@ -1438,6 +1509,7 @@
     reading: بفتح الياء وألف بعدها على الجمع
     cite: budur 43
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [wafi 212]
@@ -1456,6 +1528,7 @@
     reading: بياء الغيبة
     cite: budur 43
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [idah 199, idah 201, wafi 213]
@@ -1474,6 +1547,7 @@
     reading: بفتحها
     cite: budur 43
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [wafi 213]
@@ -1492,6 +1566,7 @@
     reading: يفتحها فيهما
     cite: budur 43
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [idah 196, idah 199, idah 201, idah 203, idah 206, wafi 203, wafi 205, wafi 206, wafi 209, wafi 215, wafi 220, wafi 221, wafi 222, wafi 227, wafi 229]
@@ -1510,6 +1585,7 @@
     reading: كحفص (الباقون، غير مذكورين)
     cite: budur 43
     from: implied
+    base: true
   class:
     kind: farsh
     farsh: [idah 207, idah 210, idah 211, wafi 213]
@@ -1531,6 +1607,7 @@
     reading: بالتخفيف
     cite: budur 44
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [idah 203, idah 205]
@@ -1544,6 +1621,7 @@
     reading: بكسر النون وضم الطاء
     cite: budur 44
     from: run
+    base: true
   - readers: [ibn_wardan, ibn_jammaz]
     khulf: []
     reading: النون وكسر الطاء
@@ -1570,6 +1648,7 @@
     reading: بنصب الراء
     cite: budur 44
     from: run
+    base: true
   - readers: [qalun, warsh, bazzi, qunbul, duri_abuamr, susi, hisham, ibn_dhakwan, shuba, abul_harith, duri_kisai, ibn_wardan, ibn_jammaz, ruways, rawh, ishaq, idris]
     khulf: []
     reading: برفعها
@@ -1593,6 +1672,7 @@
     reading: بفتح النون مشددة ونصب راء البر
     cite: budur 44
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [idah 207, wafi 204, wafi 207, wafi 208, wafi 209, wafi 216, wafi 217, wafi 231]
@@ -1611,6 +1691,7 @@
     reading: بياء مشددة
     cite: budur 44
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [wafi 204]
@@ -1629,6 +1710,7 @@
     reading: بإسكان الواو وتخفيف الصاد
     cite: budur 45
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [idah 208, wafi 216, wafi 217]
@@ -1647,6 +1729,7 @@
     reading: بتنوين فدية ورفع طعام
     cite: budur 45
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [wafi 217]
@@ -1665,6 +1748,7 @@
     reading: وإفراد مساكين وكسر نونه منونة
     cite: budur 45
     from: run
+    base: true
   - readers: [hisham]
     khulf: []
     reading: بجمع مساكين كقراءة نافع ومن معه
@@ -1688,6 +1772,7 @@
     reading: بالتاء الفوقية وتخفيف الطاء وفتح العين
     cite: budur 45
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [idah 202, wafi 212]
@@ -1706,6 +1791,7 @@
     reading: بالإسكان
     cite: budur 46
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [idah 208, idah 209]
@@ -1724,6 +1810,7 @@
     reading: بإسكان الكاف وتخفيف الميم
     cite: budur 46
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [idah 208, wafi 217]
@@ -1759,6 +1846,7 @@
     reading: بحذفهما في الحالين
     cite: budur 46
     from: run
+    base: true
   class:
     kind: rule
     rule: [ya_zaida]
@@ -1785,6 +1873,7 @@
     reading: بالإسكان في الحالين
     cite: budur 46
     from: run
+    base: true
   class:
     kind: rule
     rule: [ya_idafa]
@@ -1799,6 +1888,7 @@
     reading: بضم الباء
     cite: budur 47
     from: run
+    base: true
   - readers: [qalun, bazzi, qunbul, hisham, ibn_dhakwan, shuba, khalaf_an_hamzah, khallad, abul_harith, duri_kisai, ishaq, idris]
     khulf: []
     reading: بكسرها
@@ -1822,6 +1912,7 @@
     reading: بفتح النون مشددة ونصب البر
     cite: budur 47
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [idah 207, wafi 204, wafi 207, wafi 208, wafi 209, wafi 216, wafi 217, wafi 231]
@@ -1840,6 +1931,7 @@
     reading: بإثبات الألف فيها
     cite: budur 47
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [wafi 218]
@@ -1863,6 +1955,7 @@
     reading: بالفتح بلا تنوين في الثلاث
     cite: budur 47
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [idah 213, idah 214, wafi 218]
@@ -1884,6 +1977,7 @@
     second:
       readers: [bazzi, qunbul, duri_abuamr, susi, ruways, rawh]
       cite: [wafi 218, idah 214]
+    base: true
   class:
     kind: farsh
     farsh: [idah 213, idah 214, wafi 218]
@@ -1908,6 +2002,7 @@
     reading: كحفص (الباقون، غير مذكورين)
     cite: budur 47
     from: implied
+    base: true
   class:
     kind: rule
     rule: [ya_zaida]
@@ -1927,6 +2022,7 @@
     reading: بكسرها
     cite: budur 48
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [wafi 204, wafi 218, wafi 231]
@@ -1945,6 +2041,7 @@
     reading: برفعها
     cite: budur 48
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [idah 213, wafi 207]
@@ -1958,6 +2055,7 @@
     reading: بضم التاء وفتح الجيم
     cite: budur 48
     from: run
+    base: true
   - readers: [hisham, ibn_dhakwan, khalaf_an_hamzah, khallad, abul_harith, duri_kisai, ruways, rawh, ishaq, idris]
     khulf: []
     reading: بفتح التاء وكسر الجيم
@@ -1981,6 +2079,7 @@
     reading: بفتح الياء وضم الكاف
     cite: budur 48
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [idah 214]
@@ -1999,6 +2098,7 @@
     reading: بنصبها
     cite: budur 48
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [wafi 218, idah 215]
@@ -2019,6 +2119,7 @@
     cite: budur 48
     from: run
     condition: waqf
+    base: true
   class:
     kind: rule
     rule: ['waqf_rasm: hāʾ al-taʾnīth written with a tāʾ (رحمة قسم)']
@@ -2037,6 +2138,7 @@
     reading: بالباء الموحدة
     cite: budur 49
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [idah 215, wafi 219]
@@ -2055,6 +2157,7 @@
     reading: بالنصب
     cite: budur 49
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [idah 214, idah 215, wafi 219]
@@ -2073,6 +2176,7 @@
     reading: بالتحقيق
     cite: budur 49
     from: run
+    base: true
   - readers: [bazzi]
     khulf: [bazzi]
     reading: التحقيق (الطريق الثاني للبزى)
@@ -2096,6 +2200,7 @@
     reading: بسكون الطاء وضم الهاء مخففة
     cite: budur 49
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [wafi 219]
@@ -2114,6 +2219,7 @@
     reading: بفتحها
     cite: budur 50
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [idah 214, idah 215, wafi 219]
@@ -2137,6 +2243,7 @@
     reading: بفتح الراء مشددة
     cite: budur 50
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [idah 214, idah 215]
@@ -2155,6 +2262,7 @@
     reading: بمدها
     cite: budur 51
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [wafi 220]
@@ -2173,6 +2281,7 @@
     reading: بفتح التاء من غير ألف ولا مد
     cite: budur 51
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [wafi 220]
@@ -2186,6 +2295,7 @@
     reading: بفتح الدال
     cite: budur 51
     from: run
+    base: true
   - readers: [qalun, warsh, bazzi, qunbul, duri_abuamr, susi, hisham, shuba, ruways, rawh]
     khulf: []
     reading: بسكونها
@@ -2209,6 +2319,7 @@
     reading: بنصبها
     cite: budur 51
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [idah 214, idah 216, wafi 220]
@@ -2237,6 +2348,7 @@
     reading: بالتخفيف والنصب
     cite: budur 51
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [idah 216, idah 217, wafi 221]
@@ -2255,6 +2367,7 @@
     reading: بالسين
     cite: budur 52
     from: run
+    base: true
   - readers: [ibn_dhakwan, khallad]
     khulf: [ibn_dhakwan, khallad]
     reading: بالصاد
@@ -2283,6 +2396,7 @@
     reading: بضم التاء وفتح الجيم
     cite: budur 52
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [wafi 229]
@@ -2301,6 +2415,7 @@
     reading: بفتحها
     cite: budur 52
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [idah 218, wafi 221]
@@ -2319,6 +2434,7 @@
     reading: أسكنها
     cite: budur 52
     from: run
+    base: true
   class:
     kind: rule
     rule: [ya_idafa]
@@ -2338,6 +2454,7 @@
     reading: بضمها
     cite: budur 52
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [idah 218, wafi 221, wafi 222]
@@ -2356,6 +2473,7 @@
     reading: بفتح الدال وإسكان الفاء من غير ألف
     cite: budur 52
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [idah 218, wafi 200, wafi 221]
@@ -2374,6 +2492,7 @@
     reading: بضمها
     cite: budur 53
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [wafi 206]
@@ -2392,6 +2511,7 @@
     reading: بالرفع مع التنوين في الثلاثة
     cite: budur 53
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [wafi 202, wafi 222]
@@ -2420,6 +2540,7 @@
     reading: كسر الهاء وياء بعدها
     cite: budur 53
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [idah 199, idah 200, wafi 209]
@@ -2439,12 +2560,14 @@
     cite: budur 53
     from: run
     condition: wasl
+    base: true
   - readers: [bazzi, qunbul, duri_abuamr, susi, hisham, ibn_dhakwan, shuba, hafs, khalaf_an_hamzah, khallad, abul_harith, duri_kisai, ruways, rawh, ishaq, idris]
     khulf: []
     reading: وإثباتها وقفا
     cite: budur 53
     from: run
     condition: waqf
+    base: true
   class:
     kind: farsh
     farsh: [wafi 222]
@@ -2470,6 +2593,7 @@
     reading: بإثباتها في الحالين
     cite: budur 54
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [wafi 223]
@@ -2483,6 +2607,7 @@
     reading: بالزاى المعجمة
     cite: budur 54
     from: run
+    base: true
   - readers: [qalun, warsh, bazzi, qunbul, duri_abuamr, susi, ibn_wardan, ibn_jammaz, ruways, rawh]
     khulf: []
     reading: بالراء المهملة
@@ -2506,6 +2631,7 @@
     reading: بهمزة قطع مفتوحة وصلا وابتداء
     cite: budur 54
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [idah 189, idah 209, idah 214, idah 218, idah 219, wafi 199, wafi 204, wafi 205, wafi 210, wafi 211, wafi 222, wafi 223, wafi 228]
@@ -2529,6 +2655,7 @@
     reading: بكسرة كاملة
     cite: budur 54
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [idah 199, idah 200, wafi 211]
@@ -2547,6 +2674,7 @@
     reading: بضم الصاد
     cite: budur 54
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [idah 218]
@@ -2570,6 +2698,7 @@
     reading: بإسكان الزاى و بالهمز منونا
     cite: budur 54
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [idah 189, idah 190, wafi 223]
@@ -2588,6 +2717,7 @@
     reading: بتخفيف العين وإثبات الألف
     cite: budur 54
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [idah 217, wafi 221]
@@ -2606,6 +2736,7 @@
     reading: بالرفع مع التنوين
     cite: budur 54
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [idah 194]
@@ -2626,6 +2757,7 @@
     cite: budur 55
     from: run
     condition: waqf
+    base: true
   class:
     kind: rule
     rule: ['waqf_rasm: hāʾ al-taʾnīth written with a tāʾ (رحمة قسم)']
@@ -2639,6 +2771,7 @@
     reading: بفتح الراء
     cite: budur 55
     from: run
+    base: true
   - readers: [qalun, warsh, bazzi, qunbul, duri_abuamr, susi, khalaf_an_hamzah, khallad, abul_harith, duri_kisai, ibn_wardan, ibn_jammaz, ruways, rawh, ishaq, idris]
     khulf: []
     reading: بالضم
@@ -2662,6 +2795,7 @@
     reading: بضمها
     cite: budur 55
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [idah 190, idah 191, idah 200, idah 207, idah 210, wafi 223, wafi 227, wafi 228]
@@ -2686,6 +2820,7 @@
     reading: بفتح التاء
     cite: budur 55
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [wafi 230]
@@ -2706,6 +2841,7 @@
     reading: بكسر النون والعين
     cite: budur 55
     from: run
+    base: true
   - readers: [ibn_wardan, ibn_jammaz]
     khulf: []
     reading: بكسر النون وإسكان العين
@@ -2744,6 +2880,7 @@
     reading: بالياء ورفع الراء
     cite: budur 56
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [wafi 227]
@@ -2757,6 +2894,7 @@
     reading: بفتح السين
     cite: budur 56
     from: run
+    base: true
   - readers: [qalun, warsh, bazzi, qunbul, duri_abuamr, susi, abul_harith, duri_kisai, ruways, rawh, ishaq, idris]
     khulf: []
     reading: بكسرها
@@ -2780,6 +2918,7 @@
     reading: بإسكان الهمزة وفتح الذال
     cite: budur 56
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [idah 219, idah 220, wafi 228]
@@ -2798,6 +2937,7 @@
     reading: بإسكانها
     cite: budur 56
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [idah 208]
@@ -2816,6 +2956,7 @@
     reading: بفتحها
     cite: budur 56
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [idah 219, wafi 228]
@@ -2829,6 +2970,7 @@
     reading: بتخفيف الصاد
     cite: budur 56
     from: run
+    base: true
   - readers: [qalun, warsh, bazzi, qunbul, duri_abuamr, susi, hisham, ibn_dhakwan, khalaf_an_hamzah, khallad, abul_harith, duri_kisai, ibn_wardan, ibn_jammaz, ruways, rawh, ishaq, idris]
     khulf: []
     reading: بتشديدها
@@ -2852,6 +2994,7 @@
     reading: بضم التاء وفتح الجيم
     cite: budur 56
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [wafi 229]
@@ -2870,6 +3013,7 @@
     reading: بضمها
     cite: budur 56
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [wafi 201]
@@ -2888,6 +3032,7 @@
     reading: بفتحها
     cite: budur 57
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [wafi 229, idah 220]
@@ -2906,6 +3051,7 @@
     reading: بفتح الذال وتشديد الكاف مع نصب الراء
     cite: budur 57
     from: run
+    base: true
   - readers: [khalaf_an_hamzah, khallad]
     khulf: []
     reading: بفتح الذال وتشديد الكاف مع رفع الراء
@@ -2924,6 +3070,7 @@
     reading: بنصب التاء فيهما
     cite: budur 57
     from: run
+    base: true
   - readers: [qalun, warsh, bazzi, qunbul, duri_abuamr, susi, hisham, ibn_dhakwan, khalaf_an_hamzah, khallad, abul_harith, duri_kisai, ibn_wardan, ibn_jammaz, ruways, rawh, ishaq, idris]
     khulf: []
     reading: بالرفع
@@ -2947,6 +3094,7 @@
     reading: بالتشديد مع الفتح
     cite: budur 57
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [idah 214, idah 215]
@@ -2965,6 +3113,7 @@
     reading: بكسر الراء وفتح الهاء وألف بعدها
     cite: budur 57
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [idah 220, idah 221, wafi 229]
@@ -2978,6 +3127,7 @@
     reading: برفع الراء والباء من الفعلين
     cite: budur 58
     from: run
+    base: true
   - readers: [qalun, warsh, bazzi, qunbul, duri_abuamr, susi, khalaf_an_hamzah, khallad, abul_harith, duri_kisai, ishaq, idris]
     khulf: []
     reading: بجزمهما
@@ -3001,6 +3151,7 @@
     reading: بضم الكاف والتاء على الجمع
     cite: budur 58
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [wafi 229, wafi 230]
@@ -3019,6 +3170,7 @@
     reading: بالنون
     cite: budur 58
     from: run
+    base: true
   class:
     kind: farsh
     farsh: [idah 220, idah 221]

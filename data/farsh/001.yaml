@@ -5,75 +5,83 @@
 # scope: all = the book says it holds wherever the word occurs; `also` lists the same word, written
 #   the same way, elsewhere in the surah (prefixed forms are not matched yet).
 # Option text per slot (the reading written out) comes next; `reading` is the book's own words.
-# second: ruwāt al-Budūr leaves unstated, added to an option from al-Wāfī / al-Īḍāḥ (pages).
+# base: the option that is the muṣḥaf text's own reading (Ḥafṣ's); farsh is the other options.
+# recurs: the books give the farsh wherever the word occurs (forms, page).
+# second: ruwāt al-Budūr leaves unstated (or a khulf it leaves out), added to an option from al-Wāfī / al-Īḍāḥ (pages).
 # class: rule = an uṣūl table (data/usul) gives the place (al-Budūr restates it here); farsh = the
 #   surah's farsh chapter of al-Wāfī / al-Īḍāḥ treats it (pages); pipeline/farsh_class.py.
 - place: ['1:4:1']
   words: مَٰلِكِ
   scope: here
-  status: extracted
+  status: checked
   options:
   - readers: [shuba, hafs, abul_harith, duri_kisai, ruways, rawh, ishaq, idris]
     khulf: []
     reading: بإثبات ألف بعد الميم لفظا
     cite: budur 15
-    from: run
+    from: gold
+    base: true
   - readers: [qalun, warsh, bazzi, qunbul, duri_abuamr, susi, hisham, ibn_dhakwan, khalaf_an_hamzah, khallad, ibn_wardan, ibn_jammaz]
     khulf: []
     reading: يحذفها
     cite: budur 15
-    from: run
+    from: gold
   class:
     kind: farsh
     farsh: [wafi 50, idah 52, idah 53]
 - place: ['1:6:2']
   words: ٱلصِّرَٰطَ
   scope: all
-  status: extracted
+  status: checked
   options:
   - readers: [qunbul, ruways]
     khulf: []
     reading: بالسين
     cite: budur 15
-    from: run
+    from: gold
   - readers: [khalaf_an_hamzah]
     khulf: []
     reading: بالصاد مشمة صوت الزاى
     cite: budur 15
-    from: run
+    from: gold
   - readers: [khallad]
-    khulf: []
+    khulf: [khallad]
     reading: مثل خلف في الموضع الأول خاصة
     cite: budur 15
-    from: run
-  - readers: [qalun, warsh, bazzi, duri_abuamr, susi, hisham, ibn_dhakwan, shuba, hafs, abul_harith, duri_kisai, ibn_wardan, ibn_jammaz, rawh, ishaq, idris]
-    khulf: []
+    from: gold
+  - readers: [qalun, warsh, bazzi, duri_abuamr, susi, hisham, ibn_dhakwan, shuba, hafs, khallad, abul_harith, duri_kisai, ibn_wardan, ibn_jammaz, rawh, ishaq, idris]
+    khulf: [khallad]
     reading: بالصاد الخالصة
     cite: budur 15
-    from: run
+    from: gold
+    second:
+      readers: [khallad]
+      cite: [wafi 51, dabba 162, buhur 48]
+    base: true
   class:
     kind: farsh
     farsh: [wafi 50, wafi 51, idah 53, idah 54]
 - place: ['1:7:1']
   words: صِرَٰطَ
   scope: all
-  status: extracted
+  status: checked
   options:
   - readers: [qunbul, ruways]
     khulf: []
     reading: بالسين
     cite: budur 15
-    from: run
+    from: gold
   - readers: [khalaf_an_hamzah]
     khulf: []
     reading: بالصاد مشمة صوت الزاى
     cite: budur 15
-    from: run
+    from: gold
   - readers: [qalun, warsh, bazzi, duri_abuamr, susi, hisham, ibn_dhakwan, shuba, hafs, khallad, abul_harith, duri_kisai, ibn_wardan, ibn_jammaz, rawh, ishaq, idris]
     khulf: []
     reading: بالصاد الخالصة
     cite: budur 15
-    from: run
+    from: gold
+    base: true
   class:
     kind: farsh
     farsh: [wafi 50, wafi 51, idah 53, idah 54]
@@ -95,6 +103,7 @@
     reading: بكسرها
     cite: budur 16
     from: gold
+    base: true
   class:
     kind: rule
     rule: ['ha_mim_jam: hāʾ after a sākin yāʾ, before a mutaḥarrik (عليهم، إليهم، لديهم)']
