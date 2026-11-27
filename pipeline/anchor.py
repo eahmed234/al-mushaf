@@ -46,14 +46,17 @@ def _same(book: str, hafs: str) -> bool:
     return book == hafs or (hafs[:1] in PREFIX and hafs[1:] == book) or (len(hafs) > 2 and all(c in PREFIX for c in hafs[:2]) and hafs[2:] == book)
 
 
-def same(book: str, hafs: str) -> bool:
-    """Equal skeletons, the Ḥafṣ word perhaps with a prefix; a final yāʾ in one and not the other
-    is allowed (the Ḥafṣ text drops the yāʾāt al-zawāʾid the book writes: آتاني / ءَاتَىٰنِ)."""
+def same(book: str, hafs: str, ya: bool = True) -> bool:
+    """Equal skeletons, the Ḥafṣ word perhaps with a prefix; with `ya`, a final yāʾ in one and not
+    the other is allowed (the Ḥafṣ text drops the yāʾāt al-zawāʾid the book writes: آتاني / ءَاتَىٰنِ)."""
+    if not ya:
+        return _same(book, hafs)
     return any(_same(b, f) for b in {book, book.rstrip("ي")} for f in {hafs, hafs.rstrip("ي")} if b and f)
 
 
-def find(phrase: str) -> list[str]:
-    """Word ids where the phrase starts. Brackets and the book's notes are left out."""
+def find(phrase: str, ya: bool = True) -> list[str]:
+    """Word ids where the phrase starts. Brackets and the book's notes are left out. `ya=False`:
+    no allowance for a final yāʾ (for words that aren't the yāʾāt)."""
     toks = [skel(t) for t in re.sub(r"\([^)]*\)", " ", phrase).split()]
     toks = [t for t in toks if t]
     while "ي" in toks[:-1]:  # the vocative يا is joined to its word in the Ḥafṣ text (يَٰعِبَادِ)
@@ -63,9 +66,9 @@ def find(phrase: str) -> list[str]:
         return []
     order, sk, by = _index()
     out = []
-    first = by.get(toks[0], []) + by.get(toks[0].rstrip("ي"), []) + by.get(toks[0] + "ي", [])
+    first = by.get(toks[0], []) + (by.get(toks[0].rstrip("ي"), []) + by.get(toks[0] + "ي", []) if ya else [])
     for i in sorted(set(first)):
-        if all(i + j < len(sk) and same(t, sk[i + j]) for j, t in enumerate(toks)):
+        if all(i + j < len(sk) and same(t, sk[i + j], ya) for j, t in enumerate(toks)):
             out.append(order[i])
     return sorted(set(out), key=lambda w: tuple(int(x) for x in w.split(":")))
 

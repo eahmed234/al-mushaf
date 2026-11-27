@@ -22,7 +22,8 @@ from mushaf_data.paths import DATA
 from mushaf_data.ruwat import RUWAT
 from mushaf_data.spine import words
 
-from .farsh_class import CHAPTERS, classify
+from .anchor import find
+from .farsh_class import CHAPTERS, RECUR, classify
 from .gold import GOLD
 from .pack import parse_pages
 from .score import rows
@@ -52,6 +53,23 @@ def places(farsh: list[tuple[int, dict, str]]) -> list[list[tuple[int, dict, str
         else:
             groups.append([item])
     return groups
+
+
+def phrases(ids: list[str]) -> list[list[str]]:
+    """Runs of consecutive word ids (ما هي at 2:68:7-8 is one phrase)."""
+    runs: list[list[str]] = []
+    for i in ids:
+        s, a, w = map(int, i.split(":"))
+        if runs and runs[-1][-1].split(":")[:2] == [str(s), str(a)] and int(runs[-1][-1].split(":")[2]) == w - 1:
+            runs[-1].append(i)
+        else:
+            runs.append([i])
+    return runs
+
+
+# rows the extraction filed under uṣūl that the books treat as farsh (checked by hand, 2026-11-27):
+# (page, first word id) → why
+AS_FARSH = {(53, "2:258:21"): "أنا before a hamzat qaṭʿ: Nāfiʿ's alif in waṣl is farsh (wafi 222)"}
 
 
 def split(groups: list[list]) -> list[list]:
@@ -107,6 +125,9 @@ def coverage(options: list[dict]) -> dict:
 
 def build(slug: str, pages: list[int], run: Path) -> tuple[dict[int, list], list, list]:
     allrows = collect(slug, pages, run)
+    for p, r, _ in allrows:
+        if r["place"] and (p, r["place"][0]) in AS_FARSH:
+            r["kind"], r["category"] = "farsh", None
     farsh = [x for x in allrows if x[1]["kind"] == "farsh" and x[1]["place"]]
     elsewhere = [x for x in allrows if x[1]["kind"] == "farsh" and not x[1]["place"]]
     h = words()
@@ -126,10 +147,15 @@ def build(slug: str, pages: list[int], run: Path) -> tuple[dict[int, list], list
         entry = {"place": ids, "words": " ".join(h[i] for i in ids), "scope": scope,
                  "status": "checked" if all(src == "gold" for _, _, src in g) else "extracted",
                  "options": options}
-        if scope == "all":  # the same word elsewhere in the surah, written the same way
+        if scope == "all":  # the same word (or phrase) elsewhere in the surah, written the same way
             surah = ids[0].split(":")[0]
-            texts = {h[i] for i in ids}
-            also = [w for w, t in h.items() if t in texts and w not in ids and w.split(":")[0] == surah]
+            runs = phrases(ids)
+            if all(len(r) == 1 for r in runs):
+                texts = {h[i] for i in ids}
+                also = [w for w, t in h.items() if t in texts and w not in ids and w.split(":")[0] == surah]
+            else:
+                also = sorted({w for r in runs for w in find(" ".join(h[i] for i in r))
+                               if w not in ids and w.split(":")[0] == surah}, key=lambda w: tuple(map(int, w.split(":"))))
             if also:
                 entry["also"] = also
         if cov["missing"] or cov["twice"]:
@@ -164,6 +190,9 @@ def main():
         if f"{s:03d}" in CHAPTERS:  # aṣl or farsh, from the books' farsh chapters and data/usul
             for e in entries:
                 e["class"] = classify(e, f"{s:03d}")
+        for e in entries:
+            if e["place"][0] in RECUR:
+                e["recurs"] = RECUR[e["place"][0]]
         f = OUT / f"{s:03d}.yaml"
         f.write_text(HEADER.format(s=s, book=a.slug, pages=a.pages)
                      + yaml.safe_dump(entries, allow_unicode=True, sort_keys=False, width=200, default_flow_style=None), encoding="utf-8")

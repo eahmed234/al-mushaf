@@ -76,6 +76,9 @@
   class:
     kind: farsh
     farsh: [wafi 50, wafi 51, idah 53, idah 54]
+  recurs:
+    forms: [صراط, الصراط, بالصراط]
+    cite: [wafi 50, wafi 51]
 - place: ['1:7:4', '1:7:7']
   words: عَلَيۡهِمۡ عَلَيۡهِمۡ
   scope: here

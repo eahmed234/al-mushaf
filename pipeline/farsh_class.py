@@ -60,7 +60,19 @@ PAGES = {"001": {"1:4:1": ["wafi 50", "idah 52", "idah 53"], "1:6:2": ["wafi 50"
                  "2:142:20": ["wafi 50", "wafi 51"],  # الصراط: al-Fātiḥah's farsh
                  **{p: ["wafi 201"] for p in ("2:29:16", "2:112:6", "2:137:17", "2:282:48")},  # وها هو
                  "2:91:24": ["wafi 204"], "2:273:12": ["wafi 227", "wafi 228", "idah 219"], "2:280:4": ["idah 208"],
-                 "2:214:18": ["wafi 218", "idah 215"]}}
+                 "2:214:18": ["wafi 218", "idah 215"], "2:258:21": ["wafi 222"]}}
+# Farsh the books state for every occurrence ("حيث وقع"); al-Budūr gives it at the first place
+# (checked by hand, 2026-11-27): place → the forms it covers and the page. Expanded to places by
+# pipeline.anchor.find wherever the farsh is read (checks.farsh; the engine later).
+RECUR = {
+    "2:29:16": {"forms": ["وهو", "فهو", "لهو"], "cite": ["wafi 201"]},     # وها هو بعد الواو والفا ولامها
+    "2:74:7": {"forms": ["وهي", "فهي", "لهي"], "cite": ["wafi 201"]},
+    "2:67:7": {"forms": ["يأمركم", "ويأمركم", "يأمرهم", "تأمرهم", "ينصركم", "يشعركم"], "cite": ["wafi 202", "wafi 203"]},
+    "2:168:11": {"forms": ["خطوات"], "cite": ["wafi 213"]},
+    "1:7:1": {"forms": ["صراط", "الصراط", "بالصراط"], "cite": ["wafi 50", "wafi 51"]},  # Khallād's ishmām: 1:6:2 only
+    "2:61:52": {"forms": ["النبيين", "النبين", "النبيون", "النبي", "نبي", "نبيا", "بالنبيين", "بالنبين"], "cite": ["wafi 204"]},
+    "2:91:24": {"forms": ["أنبياء", "الأنبياء"], "cite": ["wafi 204"]},
+}
 ARABIC = re.compile(r"[ء-يٰ-ۓۥۦـً-ْٓ-ٟ۟-ۭ]+")
 
 

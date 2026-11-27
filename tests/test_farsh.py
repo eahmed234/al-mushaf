@@ -42,10 +42,33 @@ class Coverage(unittest.TestCase):
 @needs.sources
 class AgainstKFGQPC(unittest.TestCase):
     def test_al_baqarah(self):
+        """Every disagreement read: none left unexplained (checks.farsh.KNOWN), 2026-11-27."""
         from checks import farsh
         r = farsh.check(2)
-        self.assertGreaterEqual(len(r["both"]), 304)
-        self.assertLessEqual(len(r["kfgqpc_only"]), 86)
+        self.assertGreaterEqual(len(r["both"]), 418)
+        self.assertEqual((r["kfgqpc_only"], r["table_only"]), ([], []))
+
+    def test_al_fatiha(self):
+        from checks import farsh
+        r = farsh.check(1)
+        self.assertEqual((len(r["both"]), r["kfgqpc_only"], r["table_only"]), (8, [], []))
+
+    def test_recurring_farsh_reaches_later_places(self):
+        """وهو at 2:85:19 is covered by the entry at 2:29:16 (wafi 201: وها هو بعد الواو والفا ولامها)."""
+        from checks import farsh
+        self.assertIn("qalun", farsh.table(2).get("2:85:19", set()))
+
+    def test_planted_new_disagreement_is_unexplained(self):
+        from checks import farsh
+        real = farsh.table
+
+        def plus_one(surah):
+            t = real(surah)
+            t["2:2:1"] = t.get("2:2:1", set()) | {"warsh"}  # ذَٰلِكَ: no farsh
+            return t
+        with mock.patch.object(farsh, "table", plus_one):
+            r = farsh.check(2, 5)
+        self.assertIn(("2:2:1", "warsh"), r["table_only"])
 
     def test_planted_missing_entry_is_caught(self):
         from checks import farsh
@@ -69,7 +92,7 @@ class AslOrFarsh(unittest.TestCase):
     def test_every_place_is_classed(self):
         places = yaml.safe_load((DATA / "farsh" / "002.yaml").read_text(encoding="utf-8"))
         kinds = [e["class"]["kind"] for e in places]
-        self.assertEqual((kinds.count("rule"), kinds.count("farsh"), kinds.count("unclear")), (21, 128, 0))
+        self.assertEqual((kinds.count("rule"), kinds.count("farsh"), kinds.count("unclear")), (21, 129, 0))
         for e in places:
             c = e["class"]
             self.assertTrue(c.get("rule") if c["kind"] == "rule" else c.get("farsh"), e["place"])

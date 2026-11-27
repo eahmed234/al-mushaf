@@ -141,6 +141,9 @@
   class:
     kind: farsh
     farsh: [wafi 201]
+  recurs:
+    forms: [وهو, فهو, لهو]
+    cite: [wafi 201]
 - place: ['2:30:24']
   words: إِنِّيٓ
   scope: here
@@ -434,6 +437,9 @@
   class:
     kind: farsh
     farsh: [wafi 204]
+  recurs:
+    forms: [النبيين, النبين, النبيون, النبي, نبي, نبيا, بالنبيين, بالنبين]
+    cite: [wafi 204]
 - place: ['2:62:7']
   words: وَٱلصَّٰبِـِٔينَ
   scope: here
@@ -475,6 +481,9 @@
   class:
     kind: farsh
     farsh: [idah 195, wafi 203]
+  recurs:
+    forms: [يأمركم, ويأمركم, يأمرهم, تأمرهم, ينصركم, يشعركم]
+    cite: [wafi 202, wafi 203]
 - place: ['2:67:13']
   words: هُزُوٗاۖ
   scope: here
@@ -515,10 +524,7 @@
     cite: budur 34
     from: run
     condition: waqf
-  also: ['2:17:8', '2:30:26', '2:32:7', '2:33:18', '2:57:11', '2:63:12', '2:68:22', '2:69:7', '2:75:16', '2:77:6', '2:80:21', '2:102:2', '2:102:37', '2:102:53', '2:102:61', '2:102:68', '2:106:1', '2:109:18',
-    '2:114:15', '2:116:8', '2:120:24', '2:133:11', '2:134:6', '2:141:6', '2:142:5', '2:144:16', '2:145:25', '2:148:8', '2:150:10', '2:159:11', '2:169:9', '2:172:7', '2:174:14', '2:181:4', '2:185:41', '2:187:27',
-    '2:189:5', '2:194:13', '2:204:12', '2:209:5', '2:211:15', '2:213:28', '2:228:11', '2:235:39', '2:236:7', '2:237:12', '2:240:19', '2:253:25', '2:253:32', '2:253:46', '2:253:51', '2:255:14', '2:255:28',
-    '2:267:7', '2:275:33', '2:278:7', '2:282:76', '2:284:2', '2:284:10', '2:286:8', '2:286:11', '2:286:34']
+  also: ['2:102:61', '2:140:16']
   class:
     kind: rule
     rule: ['waqf_rasm: هو، هي (the detached pronoun): hāʾ al-sakt at a stop']
@@ -547,6 +553,9 @@
     kind: farsh
     farsh: [idah 188, idah 192, idah 193, idah 194, idah 195, idah 197, idah 201, idah 203, idah 206, idah 208, idah 219, wafi 201, wafi 202, wafi 203, wafi 204, wafi 206, wafi 207, wafi 209, wafi 210,
       wafi 212, wafi 214, wafi 219, wafi 225, wafi 227]
+  recurs:
+    forms: [وهي, فهي, لهي]
+    cite: [wafi 201]
 - place: ['2:74:37']
   words: تَعۡمَلُونَ
   scope: here
@@ -828,6 +837,9 @@
   class:
     kind: farsh
     farsh: [wafi 204]
+  recurs:
+    forms: [أنبياء, الأنبياء]
+    cite: [wafi 204]
 - place: ['2:96:25']
   words: يَعۡمَلُونَ
   scope: here
@@ -1507,6 +1519,9 @@
   class:
     kind: farsh
     farsh: [idah 207, idah 210, idah 211, wafi 213]
+  recurs:
+    forms: [خطوات]
+    cite: [wafi 213]
 - place: ['2:173:4']
   words: ٱلۡمَيۡتَةَ
   scope: here
@@ -2413,6 +2428,31 @@
   class:
     kind: farsh
     farsh: [idah 199, idah 200, wafi 209]
+- place: ['2:258:21']
+  words: أَنَا۠
+  scope: here
+  status: extracted
+  options:
+  - readers: [qalun, warsh, ibn_wardan, ibn_jammaz]
+    khulf: []
+    reading: بإثبات ألف أنا وصلا ووقفا
+    cite: budur 53
+    from: run
+  - readers: [bazzi, qunbul, duri_abuamr, susi, hisham, ibn_dhakwan, shuba, hafs, khalaf_an_hamzah, khallad, abul_harith, duri_kisai, ruways, rawh, ishaq, idris]
+    khulf: []
+    reading: بحذفها وصلا
+    cite: budur 53
+    from: run
+    condition: wasl
+  - readers: [bazzi, qunbul, duri_abuamr, susi, hisham, ibn_dhakwan, shuba, hafs, khalaf_an_hamzah, khallad, abul_harith, duri_kisai, ruways, rawh, ishaq, idris]
+    khulf: []
+    reading: وإثباتها وقفا
+    cite: budur 53
+    from: run
+    condition: waqf
+  class:
+    kind: farsh
+    farsh: [wafi 222]
 - place: ['2:259:42']
   words: يَتَسَنَّهۡۖ
   scope: here

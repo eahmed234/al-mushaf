@@ -154,9 +154,19 @@ tables; review list empty.
   words are anchored to Ḥafṣ places (`pipeline/anchor.py`, run by unify_merge): 96 of 121 entries
   fully, the rest keep their `unanchored` forms.
 
+- **al-Baqarah's farsh against KFGQPC, done (2026-11-27)**: 418 (word, rāwī) pairs agree (was 304),
+  nothing unexplained. The disagreements were (a) farsh al-Budūr states once that the books give for
+  every occurrence (وهو/فهو/وهي wafi 201, يأمركم wafi 203, خطوات wafi 213, النبيء wafi 204, صراط
+  wafi 50-51): entries now carry `recurs` (forms, page) and the checker expands them; (b) أنا at 2:258
+  filed as uṣūl, now farsh (wafi 222); (c) the checker dropping a farsh word's difference that looks
+  like hamz or a last vowel. The 28 words left are read and explained in `checks.farsh.KNOWN`
+  (uṣūl the diff doesn't know, KFGQPC conventions, stops, Qālūn's khulf, two-word places), listed
+  apart in build/farsh_check_002.md. No farsh word needed a second reading. (Against al-Futūḥ the
+  farsh check is still noisy: 655 agree; it needs full engine readings.)
+
 Next, in order:
-1. The al-Baqarah farsh disagreements with KFGQPC: review sheet, second reading of the disputed
-   words from al-Wāfī / al-Īḍāḥ's farsh chapters.
+1. Two flagged al-Baqarah places for Eisa: أمانيهم 2:111 (Abū Jaʿfar named twice) and جدال 2:197
+   (al-Budūr leaves Ibn Kathīr, Abū ʿAmr and Yaʿqūb unstated); the al-Fātiḥah rows (extracted, not reviewed).
 2. Then docs/05 milestones 3- (riwāyah-neutral spine, the rest of the farsh, occurrences, constraints).
 
 Working notes: subagents get their own scratch folders; reviewed data stands until Eisa rules;
