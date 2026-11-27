@@ -1015,11 +1015,14 @@ listed:
   ruwat:
     ruways:
     - istifham_istifham
+    - tashil
     rawh:
     - istifham_istifham
+    - tahqiq
   cite:
   - idah 93
   - idah 94
+  note: 'the second id is the second hamzah: Ruways tashīl, Rawḥ taḥqīq, no idkhāl (idah 93)'
 open:
 - 'Hishām, second maftūḥah (wafi 84): the row gives tashīl or taḥqīq; the idkhāl comes from wafi 89 (idkhāl before maftūḥah and maksūrah for Qālūn,
   Abū ʿAmr, Hishām) and agrees with the reviewed profile row, which gives [taḥqīq+idkhāl, tashīl+idkhāl].'

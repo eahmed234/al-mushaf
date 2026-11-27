@@ -95,47 +95,74 @@ cases:
       - qasr
       - tawassut
       - ishba
-      cite: &id006
+      cite:
       - wafi 82
+      - wafi 83
     warsh:
       wujuh: *id005
-      cite: *id006
+      cite:
+      - wafi 82
+      - wafi 83
     bazzi:
       wujuh: *id005
-      cite: *id006
+      cite:
+      - wafi 82
+      - wafi 83
     qunbul:
       wujuh: *id005
-      cite: *id006
+      cite:
+      - wafi 82
+      - wafi 83
     duri_abuamr:
       wujuh: *id005
-      cite: *id006
+      cite:
+      - wafi 82
+      - wafi 83
     susi:
       wujuh: *id005
-      cite: *id006
+      cite:
+      - wafi 82
+      - wafi 83
     hisham:
       wujuh: *id005
-      cite: *id006
+      cite:
+      - wafi 82
+      - wafi 83
     ibn_dhakwan:
       wujuh: *id005
-      cite: *id006
+      cite:
+      - wafi 82
+      - wafi 83
     shuba:
       wujuh: *id005
-      cite: *id006
+      cite:
+      - wafi 82
+      - wafi 83
     hafs:
       wujuh: *id005
-      cite: *id006
+      cite:
+      - wafi 82
+      - wafi 83
     khalaf_an_hamzah:
       wujuh: *id005
-      cite: *id006
+      cite:
+      - wafi 82
+      - wafi 83
     khallad:
       wujuh: *id005
-      cite: *id006
+      cite:
+      - wafi 82
+      - wafi 83
     abul_harith:
       wujuh: *id005
-      cite: *id006
+      cite:
+      - wafi 82
+      - wafi 83
     duri_kisai:
       wujuh: *id005
-      cite: *id006
+      cite:
+      - wafi 82
+      - wafi 83
     ibn_wardan:
       wujuh:
       - qasr

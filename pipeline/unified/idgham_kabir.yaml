@@ -585,10 +585,12 @@ cases:
       via: as_hafs
     susi:
       wujuh:
+      - idgham
       - rawm
       - ishmam
       cite:
       - wafi 65
+      - wafi 66
     hisham:
       wujuh:
       - izhar
@@ -1017,16 +1019,27 @@ listed:
   why: one wajh
 - words:
   - جَعَلَ
-  - لَّا قِبَلَ هُم بِمَا
-  - وَأَنَّهُ هُوَ
   case: mithlayn, both vowelled, across two words (waṣl)
-  ruwat:
+  ruwat: &id017
     ruways:
     - idgham
     - izhar
-  cite:
+  cite: &id018
   - idah 63
-  why: khulf; words as the row has them
+  - idah 64
+  note: the eight places of al-Naḥl
+- words:
+  - لَا قِبَلَ لَهُم بِهَا
+  case: mithlayn, both vowelled, across two words (waṣl)
+  ruwat: *id017
+  cite: *id018
+  note: al-Naml 37 (printed هُم بِمَا on idah 63, بِهَا on 64)
+- words:
+  - وَأَنَّهُ هُوَ
+  case: mithlayn, both vowelled, across two words (waṣl)
+  ruwat: *id017
+  cite: *id018
+  note: the four places of al-Najm
 - words:
   - لَذَهَبَ بِسَمْعِهِمْ
   - الْكِتَبَ بِأَيْدِيهِمْ
@@ -1493,10 +1506,13 @@ listed:
   - يعلم ما
   - أعلم بكم
   case: 'first mudgham carrying a damma or kasra: rawm and ishmām'
-  ruwat: {}
+  ruwat:
+    susi:
+    - idgham
   cite:
   - wafi 65
-  why: the four forms excepted from rawm and ishmām; what al-Sūsī reads there is not in the rows
+  - wafi 66
+  why: 'the four forms: idghām maḥḍ only, no ishmām, and no rawm on al-Shāṭibī''s view (wafi 66)'
 open:
 - 'Every case is stated for al-Sūsī or Yaʿqūb''s places only. The other twelve of the Shāṭibiyyah and al-Dūrī: iẓhār (wafi 53, "ليس له من طريق
   النظم وأصله إلا الإظهار"; the words "من طريق النظم" leave other routes outside this book).'

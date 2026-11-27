@@ -22,15 +22,18 @@ wujuh:
 - id: nohamz_silah
   ar: ترك الهمز مع صلة الهاء
   en: no hamzah, ṣilah (أرجئه)
-- id: hamz_silah
-  ar: همز ساكن مع صلة الهاء
-  en: sākin hamzah, ṣilah (أرجئه)
 - id: nohamz_sukun
   ar: ترك الهمز مع إسكان الهاء
   en: no hamzah, sukūn of the hāʾ (أرجئه)
 - id: kasr_ha
   ar: كسر الهاء
   en: kasr of the hāʾ (أهله)
+- id: hamz_damm_silah
+  ar: همز ساكن مع ضم الهاء وصلتها
+  en: sākin hamzah, ḍamm of the hāʾ, ṣilah
+- id: nohamz_kasr_silah
+  ar: ترك الهمز مع كسر الهاء وصلتها
+  en: no hamzah, kasr of the hāʾ, ṣilah
 cases:
 - case: hāʾ between two mutaḥarriks, in waṣl (له ما في السموات)
   ruwat:
@@ -411,7 +414,7 @@ listed:
   - idah 76
 - words:
   - فألقه إليهم
-  - فَأَلْقِة
+  - فَأَلْقِهْ
   case: hāʾ between two mutaḥarriks
   ruwat:
     qalun:
@@ -580,24 +583,24 @@ listed:
   - idah 79
 - words:
   - أرجئه
-  - أرجة
-  - أَرْجِة
+  - أرجه
+  - أَرْجِهْ
   case: hāʾ between two mutaḥarriks
   ruwat:
     qalun:
     - nohamz_kasr_qasr
     warsh:
-    - nohamz_silah
+    - nohamz_kasr_silah
     bazzi:
-    - hamz_silah
+    - hamz_damm_silah
     qunbul:
-    - hamz_silah
+    - hamz_damm_silah
     duri_abuamr:
     - hamz_damm_qasr
     susi:
     - hamz_damm_qasr
     hisham:
-    - hamz_silah
+    - hamz_damm_silah
     ibn_dhakwan:
     - hamz_kasr_qasr
     shuba:
@@ -609,9 +612,9 @@ listed:
     khallad:
     - nohamz_sukun
     abul_harith:
-    - nohamz_silah
+    - nohamz_kasr_silah
     duri_kisai:
-    - nohamz_silah
+    - nohamz_kasr_silah
     ibn_wardan:
     - nohamz_kasr_qasr
     ibn_jammaz:
@@ -631,6 +634,7 @@ listed:
   - idah 76
   - idah 78
   - idah 79
+  note: the Durrah's nohamz_silah leaves the hāʾ's vowel unstated (idah 74, 78)
 - words:
   - بيده
   - بِيَدِهِ

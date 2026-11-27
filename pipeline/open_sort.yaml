@@ -1,0 +1,441 @@
+# How the 200 `open` lines of the unified uṣūl tables (pipeline/unified/*.yaml) are sorted (2026-11-26).
+# Most were working notes, not questions (Eisa: "most of the questions don't look like questions").
+# Keys are `category#index` into that table's `open` list. Read by pipeline.unify_merge:
+#   policies   one ruling Eisa makes that settles every line it covers
+#   questions  the line reworded as a question; stays in `questions` until Eisa answers
+#   gaps       the extraction missed or cut something: re-read the page (pipeline/work/gaps/), then
+#              the finding goes in `resolved` below and the line becomes a note or a question
+#   noise      lines the fill script wrote that the table already settles (see `why`)
+#   anything not keyed here is a note: kept with the table under `notes`, not asked.
+
+policies:
+  ahl_adaa:
+    q: 'Views the book reports only from "some ahl al-adāʾ" (not the text of the poem or its usual reading): make
+      them app options (off by default), or leave them out?'
+    covers:
+    - badal#1
+    - basmalah#6
+    - hamz_waqf#8
+    - hamzatayn_kalimatayn_muttafiq#2
+    - imala_ha_tanith#0
+  footnotes:
+    q: 'Wujūh that only an editor''s footnote records from another ṭarīq (al-Taḥbīr''s three ḥarakāt in the muttaṣil
+      for Abū Jaʿfar and Yaʿqūb, idah 81 n. 4; Idrīs''s sakt from al-Mubhij, idah 121-123): options for the kubrā
+      version only, or leave them out?'
+    covers:
+    - muttasil#0
+    - sakt_al#2
+    - sakt_mafsul#3
+  order:
+    q: Where a rāwī has two or more wujūh and the book states no preference, should the first one listed in the
+      book be the default?
+    covers:
+    - hamz_mufrad#2
+    - hamz_mufrad#5
+    - hamzatayn#2
+    - hamzatayn_kalimatayn_mukhtalif#1
+    - hamzatayn_kalimatayn_muttafiq#1
+    - hamzatayn_kalimatayn_muttafiq#3
+    - munfasil#2
+    - rawm_ishmam#1
+    - silah_mim#0
+
+questions:
+  basmalah#0: 'Abū ʿAmr between two sūrahs: wafi 46 gives al-Dūrī and al-Sūsī waṣl and sakt only, but idah 50 says
+    Yaʿqūb has "basmalah, sakt, waṣl like Abū ʿAmr", which gives Abū ʿAmr the basmalah too. The table has two wujūh
+    for Abū ʿAmr and three for Yaʿqūb. Is that right?'
+  basmalah#2: 'Abū Jaʿfar between two sūrahs: idah 50 gives him the basmalah "قولا واحدا", but idah 52 says he follows
+    his aṣl in "the three wujūh of the basmalah" (Nāfiʿ: Qālūn the basmalah, Warsh two wujūh, wafi 45-46). Basmalah
+    only, or his aṣl''s wujūh?'
+  ha_mim_jam#3: 'Khalaf and Khallād stopping on the plural hāʾ: wafi 52 says Ḥamzah reads the hāʾ with kasr at waqf;
+    wafi 53 says Khalaf and Khallād read it with ḍamm (mīm sākin). The table gives both, kasr first. Which is right,
+    or both?'
+  hamz_waqf#3: 'Ḥamzah stopping on مستهزءون: wafi 121 gives ḥadhf only, while the reviewed table (al-Budūr 22, Ghayth
+    31) gives three wujūh: tashīl, ibdāl to yāʾ, ḥadhf. The three are kept for now. Confirm the three?'
+  hamzatayn#1: 'Hishām with a second hamzah maksūrah: wafi 89 gives taḥqīq with or without idkhāl; the reviewed
+    table (wafi 84) gives taḥqīq with idkhāl and tashīl with idkhāl. Which?'
+  istiadha#0: 'Jahr or ikhfāʾ of the istiʿādhah for Qālūn, Warsh, Khalaf and Khallād: wafi 41 and 44 give jahr for
+    all fourteen, and wafi 44 seems to prefer it; wafi 43-44 also report ikhfāʾ from Nāfiʿ and Ḥamzah. The table
+    gives those four [jahr, ikhfāʾ]. Should jahr be the default and ikhfāʾ an option?'
+  istiadha#1: 'Khalaf ʿan Ḥamzah: jahr at the start of al-Fātiḥah and ikhfāʾ elsewhere (wafi 44). Should that be
+    his default, or one option beside plain jahr?'
+  madd_lazim#1: 'Abū Jaʿfar on the first alif of آلآن and on الم أحسب الناس: his aṣl''s two ruwāt differ here (Qālūn
+    and Warsh), and the Durrah rows don''t say whom Ibn Wardān and Ibn Jammāz follow. Qālūn''s reading, Warsh''s,
+    or leave it to a farsh page?'
+  rawm_ishmam#0: wafi 174 calls rawm and ishmām a "ṭarīq jamīl" for Abū ʿAmr and the Kūfīs, and says most ahl al-adāʾ
+    also take it for the others as istiḥbāb. Should rawm and ishmām be offered as options for all fourteen?
+  sakt_mafsul#0: 'Khalaf ʿan Ḥamzah''s sakt on the mafṣūl: wafi 105 gives him a little sakt with khulf; wafi 106
+    says neither Khalaf nor Khallād makes sakt on the mafṣūl. The table gives Khalaf both (sakt first). Which?'
+  silah_ha#6: 'بيده (Ruways) and ترزقانه (Ibn Wardān): idah 76 says qaṣr, and idah 79 says ikhtilās of the hāʾ''s
+    vowel. The table reads them as one wajh, qaṣr. Is the ikhtilās a separate wajh?'
+  ya_zaida#2: 'ولا تخزون في ضيفي: idah 180 says everyone drops the yāʾ in both states except Yaʿqūb, but the row
+    just before on the same page has Abū Jaʿfar keeping it in waṣl. Does Abū Jaʿfar keep it in waṣl?'
+  ya_zaida#3: 'Qālūn at التلاق and التناد: the poem gives him khulf (kept or dropped), but "the verifiers" say dropped
+    only (wafi 196). The table gives [kept in waṣl, dropped]. Dropped only?'
+gaps:
+  basmalah#1: idah 50, 52 — what are the "five wujūh" Yaʿqūb follows his aṣl in?
+  ha_mim_jam#0: wafi 51 — does the rule for the plural hāʾ after a yāʾ reach Ḥamzah's other words (فيهم…), or only
+    عليهم، إليهم، لديهم?
+  ha_mim_jam#1: 'idah 56-57, wafi 51-52 — the words with the yāʾ dropped (فتاتهم…): what do the Shāṭibiyyah ruwāt
+    read?'
+  hamz_mufrad#0: idah 105, wafi 99 — what Abū Jaʿfar reads at الفؤاد، فؤادك، بسؤال (excepted from his ibdāl)
+  hamz_mufrad#1: idah 105 — the thirteen words of Abū Jaʿfar's ibdāl of a hamzah maftūḥah after kasrah to yāʾ
+  hamz_mufrad#4: 'idah 117, wafi 107-108 — عادا الأولى: Abū Jaʿfar''s "three wujūh like Qālūn", which three?'
+  hamzatayn#5: 'idah 93 — Yaʿqūb''s Naml (أئنا): Ruways tashīl, Rawḥ taḥqīq, no idkhāl; put it in listed'
+  hamzatayn_kalimatayn_muttafiq#0: wafi 97 — is "whoever changes the first has only taḥqīq of the second" the waqf/ibtidāʾ
+    case?
+  idgham_kabir#2: wafi (تأمنا) — what the aṣl (Abū ʿAmr; Khalaf ʿan Ḥamzah) reads in تأمنا, for Yaʿqūb's and Khalaf's
+    "كأصله" (idah 66)
+  idgham_kabir#4: idah 63 — the words جعل، لا قبل لهم بها، وأنه هو are split oddly in the extraction; re-read
+  idgham_kabir#6: wafi 64 — "فإن كان ما قبل الميم متحركا امتنع تسكينها" reads as the reverse of the rule; re-read
+  idgham_kabir#7: 'wafi 65 — case 7: is plain idghām without rawm or ishmām also a wajh for al-Sūsī, and what does
+    he read in the four excepted forms?'
+  idgham_saghir#0: wafi 134 — إذ before which letters; the quote is cut off after "نحو"
+  idgham_saghir#1: wafi 129-133 — name the other letters of قد and of هل وبل
+  idgham_saghir#3: 'wafi 136 — عذت، فنبذتها، أورثتموها: is Hishām among "الباقون"?'
+  idgham_saghir#5: 'idah 135 — فيغفر لمن يشاء: Khalaf al-ʿĀshir''s idghām of the rāʾ in the lām'
+  imala#8: 'wafi 152-153 — أنصارى for al-Dūrī ʿan al-Kisāʾī: which place has imālah?'
+  imala_ha_tanith#1: wafi 158 — the tenth letter (the row names nine)
+  lin_hamz#0: idah 84 — do al-Wāfī's waqf wujūh of the līn apply to the Durrah's three?
+  lin_hamz#1: 'wafi 82 — Warsh''s two wujūh: the quote says ṭūl and qaṣr, the row says tawassuṭ and ṭūl'
+  madd_arid#0: wafi 82 — case 2 "إلا وجه الثلاثة وقفاً" reads unclearly
+  madd_hamz_mughayyar#0: idah 113 — which words the rule is limited to beyond the three listed
+  madd_lazim#3: 'wafi 80-81 — case 4: the quote is cut off; is the second wajh qaṣr?'
+  naql#0: 'idah 117, 119 — من أجل: do both of Abū Jaʿfar''s ruwāt read naql there?'
+  rawm_ishmam#2: wafi 177 — which "three places" the second case means
+  sakt_al#1: wafi 105-106 — does Khallād's sakt cover both lām al-taʿrīf and شيء?
+  silah_ha#2: 'idah 71-72 — يؤده، نوله، نصله، نؤته: Ibn Jammāz sukūn and ishbāʿ, is it khulf?'
+  silah_ha#5: 'wafi 70-71 — أرجئه: the hāʾ''s vowel for Warsh, Ibn Kathīr, al-Kisāʾī, Hishām'
+  silah_ha#7: idah — فألقه، أرجه spelled with a tāʾ marbūṭah in the data; re-read the spelling
+  tarqiq_ra#1: idah 146-147 — do Yaʿqūb's two (and Khalaf's) have the khulf in فرق، القطر، مصر?
+  waqf_rasm#0: wafi 180 — the first class (hāʾ al-taʾnīth written with hāʾ) is not a row
+  ya_idafa#2: wafi 186-187 — the counts (eight places, four places) don't match the words extracted
+  ya_idafa#6: 'wafi 184, 191-192 — not before a hamzah: is there a default for the fourteen?'
+  ya_zaida#4: 'wafi 193-194 — Ḥamzah at أتمدونن: kept in both states, or kept in waṣl only?'
+noise:
+  why:
+    idgham_kabir: Cases 5-9 are how al-Sūsī makes his idghām; Ruways and Rawḥ read iẓhār outside their listed words
+      (idah 62, 65), stated in cases 1-4, so iẓhār here follows from that, not from Ḥafṣ.
+    ya_zaida: the Yaʿqūb list overlaps other entries; the duplicates are merged when the gaps are applied.
+  lines:
+  - idgham_kabir#11
+  - idgham_kabir#12
+  - idgham_kabir#13
+  - idgham_kabir#14
+  - idgham_kabir#15
+  - idgham_kabir#16
+  - idgham_kabir#17
+  - idgham_kabir#18
+  - idgham_kabir#19
+  - idgham_kabir#20
+  - ya_zaida#7
+
+# Findings of the gap re-read (pipeline.unify_gaps, from pipeline/work/gaps/): each gap becomes a note,
+# or a question where the books leave a choice.
+resolved:
+  basmalah#1:
+    pages:
+    - idah 50
+    - idah 52
+    finding: 'Idah 50 says Yaʿqūb has three wujūh between two surahs like Abū ʿAmr: basmalah, sakt, waṣl. Idah 52
+      calls these ''the five wujūh'' because the basmalah has three permitted ways of joining/separating (faṣl of
+      all; faṣl of the first with waṣl of the second to the third; waṣl of all; the fourth, waṣl of the first two
+      and stop at the third, is forbidden, footnote 1), and with sakt and waṣl that makes five. The five are not
+      a new set of rows.'
+    becomes: note
+  ha_mim_jam#0:
+    pages:
+    - wafi 51
+    - idah 55
+    finding: Al-Wāfī p.51 states Ḥamzah's ḍamm of the hāʾ only for the three words عليهم، إليهم، لديهم ('هذه الكلمات'),
+      and says the rest read these three with kasr. It says nothing about فيهم or other words with a plural hāʾ
+      after a yāʾ for Ḥamzah or Khalaf, so the page neither extends the rule nor excludes it. Al-Īḍāḥ p.55 gives
+      Yaʿqūb the general rule (ḍamm of every plural hāʾ after a sākin yāʾ, e.g. فيهم) which is a separate row.
+    becomes: note
+  ha_mim_jam#1:
+    pages:
+    - idah 56
+    - idah 57
+    - wafi 51
+    - wafi 52
+    finding: Idah 56 gives Ruways ḍamm of the hāʾ in the fifteen dropped-yāʾ words; idah 57 says everyone other
+      than Ruways reads kasr in all of them, and Abū Jaʿfar and Khalaf (al-ʿĀshir) read kasr in everything Yaʿqūb
+      damms, with Rawḥ named too. Wafi 51-52 say nothing about these words (wafi 51 gives the Shāṭibiyyah hāʾ only
+      for عليهم، إليهم، لديهم), so the Shāṭibiyyah ruwāt are not settled by the pages.
+    becomes: note
+  hamz_mufrad#0:
+    pages:
+    - idah 105
+    - wafi 99
+    finding: Idah 105 says الفؤاد, فؤادك and بسؤال fall outside the ibdāl because the hamzah is not the fāʾ of the
+      word, and that Abū Jaʿfar (and others) read it with taḥqīq. Wafi 99 gives the same three conditions for Warsh
+      and names فؤاد and سؤال as not changed.
+    becomes: note
+  hamz_mufrad#1:
+    pages:
+    - idah 105
+    - idah 106
+    finding: 'Idah 105-106 give the thirteen words: nine in the first list (قرئ in al-Aʿrāf and al-Inshiqāq; استهزئ;
+      ناشئة; رئاء; لنبوئنهم; ليبطئن; شانئك; خاسئا; ملئت) and, per the idah 106 footnote (''تلك تسع، وتكملتها فيما
+      يلي''), الخاطئة, مائة, فئة and موطئا (the last with khulf). The first nine are the case''s words; the other
+      four are already in later rows.'
+    becomes: note
+  hamz_mufrad#4:
+    pages:
+    - idah 117
+    - wafi 107
+    - wafi 108
+    finding: Al-Īḍāḥ p.117 (footnote 2) says Abū Jaʿfar has three wujūh in عادا الأولى like Qālūn, except that he
+      puts a sākin wāw in place of the hamzah, and does not name the three. Al-Wāfī 107-108 gives Qālūn naql in
+      waṣl, a sākin hamzah for the wāw, and two ways of starting on الأولى (with hamzat waṣl or on the lām), but
+      does not call them a set of three for Qālūn. The page does not say which three.
+    becomes: note
+  hamzatayn#5:
+    pages:
+    - idah 93
+    - idah 94
+    finding: For Yaʿqūb's Naml (أإذا كنا ترابا وآباؤنا أإنا) idah 93 says istifhām in both words, with the second
+      hamzah eased and no alif for Ruways and pronounced (taḥqīq) with no alif for Rawḥ. Idah 94 repeats that Naml
+      is istifhām in both. (The gap line itself concerns Isḥāq/Idrīs أذهبتم, a different note; this change is for
+      Naml as tasked.)
+    becomes: note
+  hamzatayn_kalimatayn_muttafiq#0:
+    pages:
+    - wafi 97
+    finding: 'The sentence is a general remark (''two things to note'') after the waqf/ibtidāʾ paragraph, not part
+      of it: whoever changes the first of two agreeing hamzahs (tashīl or ḥadhf) has only taḥqīq of the second,
+      and whoever changes the second (tashīl or ibdāl) has only taḥqīq of the first, since no reader changes both.
+      The page''s own waqf/ibtidāʾ statement is the preceding paragraph (second hamzah must be taḥqīq when starting
+      on it).'
+    becomes: note
+  idgham_kabir#2:
+    pages:
+    - wafi 294
+    - idah 65
+    - idah 66
+    finding: Wafi 294 says تأمنا is read by all seven with ikhfāʾ (iẓhār with ikhtilās of the first nūn's vowel),
+      and that some transmitters also merge with ishmām; both are valid for all seven, ishmām being the more famous.
+      Idah 66 says Yaʿqūb and Khalaf follow their aṣl (Abū ʿAmr; Khalaf ʿan Ḥamzah), with fn. citing the Shāṭibiyyah
+      verse. So the aṣl rows have two wujūh, the book not choosing between them.
+    becomes: question
+    q: 'تأمنا (wafi 294): every reader has either ikhfāʾ of the first nūn''s vowel (ikhtilās) or idghām with ishmām,
+      and the book calls ishmām the more famous. Should ishmām be the default and ikhtilās the option? (Yaʿqūb and
+      Khalaf al-ʿĀshir follow their aṣl here, idah 66.)'
+  idgham_kabir#4:
+    pages:
+    - idah 63
+    - idah 64
+    finding: 'Idah 63-64 gives Ruways idghām/iẓhār khulf in three groups: جَعَلَ in all eight places of al-Naḥl
+      (each as جَعَلَ لَكُم ...), قبل in al-Naml 27:37 (printed ''لَّا قِبَلَ هُم بِمَا'' on p.63 and ''بِهَا''
+      on p.64), and وَأَنَّهُ هُوَ in the four places of al-Najm (43, 44, 48, 49).'
+    becomes: note
+  idgham_kabir#6:
+    pages:
+    - wafi 64
+    finding: The same page says just before that the mīm is made sākin and hidden when a vowelled letter precedes
+      it (أعلم بكم, علم بالقلم). The sentence 'if what precedes the mīm is vowelled, its sukūn is prevented' therefore
+      contradicts the rule given a line earlier, and its examples (إبراهيم بنيه، اليوم بجالوت، أولوا الأرحام بعضهم)
+      are the ones the table takes as iẓhār. The page's own rule and examples settle that متحركا is a slip for ساكنا;
+      the table (Sūsī ikhfāʾ after a vowelled letter, others iẓhār) is right.
+    becomes: note
+  idgham_kabir#7:
+    pages:
+    - wafi 65
+    - wafi 66
+    finding: 'Wafi 66 says al-Sūsī has two madhhabs: pure idghām (maḥḍ, no ishmām or rawm), or pure idghām with
+      ishmām outside the four forms, or rawm. So plain idghām is a wajh for a damma or kasra. In the four excepted
+      forms (باء with باء, باء with ميم, ميم with ميم, ميم with باء) ishmām is impossible and he has pure idghām
+      without ishmām on both madhhabs, with no rawm either on al-Shāṭibī''s view (rawm only on other muḥaqqiqīn''s
+      view).'
+    becomes: note
+  idgham_saghir#0:
+    pages:
+    - wafi 134
+    finding: Wafi 134 says all readers merge the dhāl of إذ into ذ (e.g. إذ ذهب) and into ظ (e.g. إذ ظلمتم). The
+      quote is not cut off; the page names both letters, so the row covers ذ and ظ.
+    becomes: note
+  idgham_saghir#1:
+    pages:
+    - wafi 130
+    - wafi 131
+    - wafi 133
+    finding: Wafi 130 (the extraction prints الذال as 'النال') says the eight letters of دال قد are س ذ ض ظ ز ج
+      ص ش; the table's named cases are ض ظ and ذ ز, so the four others are س ج ص ش. Wafi 133 says the eight letters
+      of هل وبل are ت ث ظ ز س ن ط ض; the table names ث س, ت, and ن ض, so the three others are ظ ز ط.
+    becomes: note
+  idgham_saghir#3:
+    pages:
+    - wafi 136
+    finding: Wafi 136 names Ḥamzah, al-Kisāʾī and Abū ʿAmr for the idghām of the dhāl in عذت and فنبذتها, and Abū
+      ʿAmr, Hishām, Ḥamzah, al-Kisāʾī for the thāʾ in أورثتموها; everyone else reads iẓhār. So Hishām is among 'الباقون'
+      (iẓhār) for عذت and فنبذتها, and is named for idghām in أورثتموها, which is how the table already has him.
+    becomes: note
+  idgham_saghir#5:
+    pages:
+    - idah 135
+    finding: Idah 135 says Khalaf (al-ʿĀshir) agrees with his aṣl in jazm of the rāʾ in فيغفر and of the bāʾ in
+      ويعذب, and in idghām of the bāʾ in the mīm. The page names idghām only for the bāʾ, and says nothing separate
+      about the rāʾ before the lām; for it he follows his aṣl, i.e. Khalaf ʿan Ḥamzah, whose rāʾ-before-lām row
+      (wafi 136) gives idghām only to Abū ʿAmr.
+    becomes: note
+  imala#8:
+    pages:
+    - wafi 152
+    - wafi 153
+    - wafi 154
+    finding: Wafi 152 gives من أنصارى as an example of the general rule that the alif before a rāʾ with an ʿāriḍ
+      kasrah is not imāled. Wafi 153-154 then lists أنصارى among the words al-Dūrī ʿan al-Kisāʾī alone imāles, naming
+      'من أنصارى إلى الله' in Āl ʿImrān and al-Ṣaff. So 152 is the general rule and 153-154 the specific exception
+      for al-Dūrī ʿan al-Kisāʾī.
+    becomes: note
+  imala_ha_tanith#1:
+    pages:
+    - wafi 158
+    - wafi 160
+    finding: Wafi 158 lists the ten excepted letters by the verse 'حق ضغاط عص خطا', and its commentary then names
+      nine with examples (ح ق ض ا ط ع ص خ ظ). The verse word ضغاط contains غ, which the commentary's list leaves
+      out, so the tenth is غ (the extracted verse reads 'خطا', so ظ is attested only through the commentary's list).
+    becomes: note
+  lin_hamz#0:
+    pages:
+    - idah 84
+    - idah 85
+    finding: Idah 84 gives Abū Jaʿfar qaṣr (no madd at all) of the līn letter before a hamzah, for the examples
+      شيئا and سوءة, with no condition of waqf or of a final hamzah; the editor's note 3 says the three agree on
+      this qaṣr, and then quotes the Shāṭibiyyah verses (which carry the waqf wujūh) only as the comparison. Idah
+      85 note 1 says the three follow their aṣl in madd lāzim and the madd ʿāriḍ lil-sukūn, which the Durrah leaves
+      unmentioned; it does not name līn. So the page gives the six qaṣr alone, and nothing carries al-Wāfī's waqf
+      wujūh over to them.
+    becomes: note
+  lin_hamz#1:
+    pages:
+    - wafi 82
+    finding: Wafi 82 explains that the naẓm's 'ṭūl and qaṣr' for Warsh means ṭūl (six) and tawassuṭ, with qaṣr there
+      meaning the shorter madd, not two ḥarakāt. The exceptions ابنى آدم and ولو آمن are excluded by the word 'in
+      one word' (the hamzah is in the next word); Warsh does naql there, so they are not līn-before-hamzah.
+    becomes: note
+  madd_arid#0:
+    pages:
+    - wafi 82
+    - wafi 83
+    finding: The sentence is on wafi 83 (continuing 82). For words with a līn letter and no hamzah after it, Warsh
+      and the others have the three wujūh at waqf only and nothing in waṣl (the OCR 'الا وجه' stands for الأوجه).
+      So the three wujūh for all fourteen at waqf are right.
+    becomes: note
+  madd_hamz_mughayyar#0:
+    pages:
+    - idah 112
+    - idah 113
+    finding: 'Idah 112-113 gives the توسط/قصر of the madd letter for Abū Jaʿfar in exactly three words: إسرائيل
+      (112, with this reason), كأين (112) and التى (113, ''وله التوسط والقصر في حرف المد أيضا''). The other tashīl
+      words on those pages (أرأيت, هأنتم) carry no madd statement, and no page says the rule is limited to the three.'
+    becomes: note
+  madd_lazim#3:
+    pages:
+    - wafi 80
+    - wafi 81
+    finding: 'Wafi 80-81 say that for الم الله in waṣl, where the mīm gets a fatḥah, two wujūh are allowed for all
+      the readers: the full ishbāʿ out of respect for the original sākin, and qaṣr because the mīm''s vowel is incidental.
+      So the second wajh is qaṣr, stated in words, not only by the row''s tag.'
+    becomes: note
+  naql#0:
+    pages:
+    - idah 117
+    - idah 119
+    finding: 'Idah 117 footnote 2 says the ''no naql except'' rule does not cover Abū Jaʿfar''s naql in من أجل (المائدة):
+      it is his own reading (انفرادته), named for Abū Jaʿfar without splitting his ruwāt. Idah 119''s ''في جميع
+      ذلك بالتحقيق'' for Ibn Jammāz refers to the الآن group just listed (tied to Ibn Wardān), and ردءا is then
+      given to Abū Jaʿfar as a whole with naql, so there is no conflict.'
+    becomes: note
+  rawm_ishmam#2:
+    pages:
+    - wafi 177
+    finding: 'Wafi 177 names the three places in order: first hāʾ al-taʾnīth (read as hāʾ at waqf, e.g. رحمة), second
+      mīm al-jamʿ (for those who join it with wāw), third ʿāriḍ al-shakl (a vowel that is incidental, from naql
+      or two sākins). The rows'' gloss is right; the page also says a mīm read with sukūn cannot take rawm or ishmām
+      at all.'
+    becomes: note
+  sakt_al#1:
+    pages:
+    - wafi 105
+    - wafi 106
+    finding: Wafi 106 gives Khallād no sakt at all on the first route (Abū al-Fatḥ) and sakt on ال and شيء/شيئا
+      only on the second route (Ibn Ghalbūn), with no sakt on the separated sākin on either; so he has khulf in
+      both words together. Khalaf has sakt on ال and شيء on both routes (the 'قليل' is the shortness of the sakt).
+    becomes: note
+  silah_ha#2:
+    pages:
+    - idah 71
+    - idah 72
+    - wafi 69
+    finding: Idah 71-72 give the sukūn in يؤده، نوله، نصله، نؤته to the hamzah-symbol, Abū Jaʿfar (both ruwāt),
+      then Yaʿqūb qaṣr, then Ibn Jammāz ishbāʿ ('وامدد جد') in the same words. The book never says whether Ibn Jammāz's
+      ishbāʿ replaces the sukūn he would take from Abū Jaʿfar or sits beside it, and it does not use the word khulf.
+      Wafi 69 gives Hishām qaṣr and ishbāʿ ('بالقصر والإشباع في كل منها').
+    becomes: question
+    q: 'يؤده، نوله، نصله، نؤته for Ibn Jammāz: idah 71-72 give Abū Jaʿfar''s two ruwāt sukūn, then give Ibn Jammāz
+      ishbāʿ (وامدد جد), without saying whether it replaces the sukūn. Ishbāʿ only, or both?'
+  silah_ha#5:
+    pages:
+    - wafi 71
+    finding: Wafi 71 says Warsh and al-Kisāʾī read أرجئه with no hamzah, kasr of the hāʾ and ishbāʿ, while Ibn Kathīr
+      and Hishām read sākin hamzah with ḍamm of the hāʾ and ishbāʿ. Qālūn, Abū ʿAmr and Ibn Dhakwān are as the table
+      has them; ʿĀṣim and Ḥamzah are without hamzah (iskān).
+    becomes: note
+  silah_ha#7:
+    pages:
+    - idah 72
+    - idah 74
+    - idah 77
+    - idah 80
+    finding: Idah 72 and 74 print فَأَلْقِة and أرجة with a final tāʾ-like mark, but idah 77 (فَأَلْقِهُ) and idah
+      80 (فَأَلْقِهِ، أَرجِه, and 'فألقه، وأرجه') write the words with a plain hāʾ. The tāʾ form is a print or extraction
+      garble; the words are فألقه and أرجه.
+    becomes: note
+  tarqiq_ra#1:
+    pages:
+    - idah 146
+    - idah 147
+    finding: Idah 146 says Abū Jaʿfar reads all rāʾāt and lāmāt like Qālūn (rāʾs he makes tafkhīm and tarqīq as
+      Qālūn does). Idah 147 then says it is known by agreement (الوفاق) that Yaʿqūb and Khalaf likewise follow their
+      aṣl. The pages do not single out فرق، القطر، مصر, so no separate rule for them.
+    becomes: note
+  waqf_rasm#0:
+    pages:
+    - wafi 180
+    finding: 'Wafi 180 divides the taʾnīth hāʾ into two classes: those written with hāʾ (فيما رحمة من الله، نعمة
+      فمن الله، بقية) and those written with a long tāʾ. For the first class it says there is no disagreement among
+      the readers: the stop is with hāʾ, following the rasm. The second class is the existing row.'
+    becomes: note
+  ya_idafa#2:
+    pages:
+    - wafi 186
+    finding: 'Wafi 186 lists the eight places for Nāfiʿ and Abū ʿAmr: two in Yūsuf (إني أحدهما, إلي الآخر), حتى
+      يأذن لي, ضيفي, يسر لي, من دوني, and اجعل لي آية in both آل عمران and مريم, which is one word in two places,
+      so eight places are seven words. The four places (Nāfiʿ, Abū ʿAmr, Bazzī) are ولكني أراكم in Hūd and al-Aḥqāf,
+      من تحتي, and إلي أراكم بخير: four places, three words.'
+    becomes: note
+  ya_idafa#6:
+    pages:
+    - wafi 191
+    - wafi 192
+    finding: 'Wafi 191-192 (and 184) give no blanket case default, but for every one of the thirty places they name
+      who opens the yāʾ and say the rest (''وأسكنها غيره'' / ''وسكن هذه الياءات غير حفص'') have sukūn. Exceptions
+      are محياي (all but Qālūn open; Warsh both) and يا عبادي لا خوف (Shuʿbah opens; Ḥafṣ, Ḥamzah, Kisāʾī, Ibn Kathīr
+      drop; others sākinah). So for the fourteen the unnamed default is sukūn, not ''opened'' as the table has it.
+      ومالي لا أعبد: Ḥamzah sukūn, the others open in waṣl (wafi 192), now in its entry.'
+    becomes: note
+  ya_zaida#4:
+    pages:
+    - wafi 193
+    - wafi 194
+    finding: 'Wafi 193 says Ḥamzah departs from his aṣl and keeps the first zāʾidah yāʾ of al-Naml (أتمدونن) in
+      waṣl and in waqf. Wafi 194 repeats it: ''حيث أثبتها في الحالين كما سبق''. The two pages agree.'
+    becomes: note
+  sakt_al#0:
+    pages:
+    - wafi 106
+    finding: 'wafi 106: Khallād has no sakt on the first route and sakt on ال and شيء on the second, so the reviewed
+      table''s two wujūh [sakt, none] are right in both words.'
+    becomes: note
+    by: sakt_al#1

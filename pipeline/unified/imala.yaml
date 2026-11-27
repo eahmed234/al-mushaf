@@ -1460,7 +1460,6 @@ listed:
   - ولا طائر
   - مضار
   - بضار
-  - من أنصارى
   - وسار
   - النهار
   case: 'imala_ra: the alif before a final majrūr rāʾ (الأبصار، الدار)'
@@ -1873,13 +1872,15 @@ listed:
   cite:
   - wafi 152
 - words:
-  - أنصارى
+  - من أنصارى إلى الله
   case: 'imala_duri_kisai: words al-Dūrī ʿan al-Kisāʾī alone imāles'
   ruwat:
     duri_kisai:
     - imala
   cite:
   - wafi 153
+  - wafi 154
+  note: Āl ʿImrān and al-Ṣaff
 - words:
   - سارعوا
   - نسارع

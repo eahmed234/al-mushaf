@@ -177,6 +177,114 @@ cases:
       cite:
       - idah 40-43
       via: asl_unstated
+- case: hāʾ al-taʾnīth written with a hāʾ (رحمة من الله، بقية)
+  ruwat:
+    qalun:
+      wujuh:
+      - ha
+      cite:
+      - wafi 180
+    warsh:
+      wujuh:
+      - ha
+      cite:
+      - wafi 180
+    bazzi:
+      wujuh:
+      - ha
+      cite:
+      - wafi 180
+    qunbul:
+      wujuh:
+      - ha
+      cite:
+      - wafi 180
+    duri_abuamr:
+      wujuh:
+      - ha
+      cite:
+      - wafi 180
+    susi:
+      wujuh:
+      - ha
+      cite:
+      - wafi 180
+    hisham:
+      wujuh:
+      - ha
+      cite:
+      - wafi 180
+    ibn_dhakwan:
+      wujuh:
+      - ha
+      cite:
+      - wafi 180
+    shuba:
+      wujuh:
+      - ha
+      cite:
+      - wafi 180
+    hafs:
+      wujuh:
+      - ha
+      cite:
+      - wafi 180
+    khalaf_an_hamzah:
+      wujuh:
+      - ha
+      cite:
+      - wafi 180
+    khallad:
+      wujuh:
+      - ha
+      cite:
+      - wafi 180
+    abul_harith:
+      wujuh:
+      - ha
+      cite:
+      - wafi 180
+    duri_kisai:
+      wujuh:
+      - ha
+      cite:
+      - wafi 180
+    ibn_wardan:
+      wujuh:
+      - ha
+      cite:
+      - idah 40-43
+      via: asl_unstated
+    ibn_jammaz:
+      wujuh:
+      - ha
+      cite:
+      - idah 40-43
+      via: asl_unstated
+    ruways:
+      wujuh:
+      - ha
+      cite:
+      - idah 40-43
+      via: asl_unstated
+    rawh:
+      wujuh:
+      - ha
+      cite:
+      - idah 40-43
+      via: asl_unstated
+    ishaq:
+      wujuh:
+      - ha
+      cite:
+      - idah 40-43
+      via: asl_unstated
+    idris:
+      wujuh:
+      - ha
+      cite:
+      - idah 40-43
+      via: asl_unstated
 - case: hāʾ al-taʾnīth written with a tāʾ (رحمة قسم)
   ruwat:
     qalun:

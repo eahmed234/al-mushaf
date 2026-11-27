@@ -84,6 +84,13 @@ def grid(ruwat: dict, label: dict) -> str:
 
 def main():
     sections, n = [], 0
+    pol = yaml.safe_load((ROOT / "pipeline/open_sort.yaml").read_text(encoding="utf-8"))["policies"]
+    items = "".join(f'<article class="rule open" id="policy-{esc(k)}" data-id="policy:{esc(k)}"><p class="q">{linked(p["q"])}</p>'
+                    f'<p class="note">Settles: {esc(", ".join(p["covers"]))}</p><div class="foot">{marks("policy:" + k, "الجواب")}</div></article>'
+                    for k, p in pol.items())
+    sections.append(f'<details class="family" id="policies" open><summary><span class="fname">policies</span>'
+                    f'<span class="ftarget">{len(pol)} أسئلة، كل منها يحسم عدة أبواب</span><span class="fcount"></span></summary>{items}</details>')
+    n += len(pol)
     for f in sorted((ROOT / "data/usul").glob("*.yaml")):
         t = yaml.safe_load(f.read_text(encoding="utf-8"))
         cat = t.get("category", f.stem)
@@ -115,17 +122,30 @@ def main():
                             f'table {esc("/".join(map(str, d.get("table") or [])) if isinstance(d.get("table"), list) else d.get("table"))}, '
                             f'reviewed {esc("/".join(map(str, d.get("reviewed") or [])))} → kept <b>{esc(d.get("kept"))}</b></li>' for d in dis)
             parts.append(f'<details class="listed"><summary>الخلاف مع الجدول المراجَع ({len(dis)})</summary><ul class="en-list">{items}</ul></details>')
-        for j, q in enumerate(t.get("open") or []):
-            qid = f"{cat}#open{j}"
-            parts.append(f'<article class="rule open" data-id="{esc(qid)}"><p class="q">{linked(str(q))}</p><div class="foot">{marks(qid, "الجواب")}</div></article>')
+        for q in t.get("questions") or []:
+            if q.get("policy"):
+                continue  # answered once at the top
+            parts.append(f'<article class="rule open" data-id="{esc(q["id"])}"><p class="q">{linked(q["q"])}</p>'
+                         f'<details class="was"><summary>the original note</summary><p class="note">{linked(q["from"])}</p></details>'
+                         f'<div class="foot">{marks(q["id"], "الجواب")}</div></article>')
             n += 1
+        pol = [q for q in t.get("questions") or [] if q.get("policy")]
+        if pol:
+            parts.append('<p class="note">Settled by a policy question at the top: '
+                         + ", ".join(f'<a href="#policy-{esc(q["policy"])}">{esc(q["policy"])}</a>' for q in pol) + "</p>")
+        if t.get("gaps"):
+            parts.append(f'<details class="listed"><summary>pages being re-read ({len(t["gaps"])})</summary><ul class="en-list">'
+                         + "".join(f'<li>{linked(g["reread"])}</li>' for g in t["gaps"]) + "</ul></details>")
+        if t.get("notes"):
+            parts.append(f'<details class="listed"><summary>notes ({len(t["notes"])})</summary><ul class="en-list">'
+                         + "".join(f'<li>{linked(str(x))}</li>' for x in t["notes"]) + "</ul></details>")
         prof = src["head"].get("reviewed_profile_rows") or {}
         if prof:
             rows = "".join(f'<li><code>{esc(p)}</code>: ' + "؛ ".join(
                 f'{esc(r["who"] if isinstance(r["who"], str) else "، ".join(NAME.get(x, x) for x in r["who"]))} → {esc("/".join(r.get("wujuh") or []))} ({esc(r.get("cite", ""))})'
                 for r in rs) + "</li>" for p, rs in prof.items())
             parts.append(f'<details class="listed"><summary>جدول الأصول المراجَع (للمقارنة)</summary><ul>{rows}</ul></details>')
-        n_open = len(t.get("open") or [])
+        n_open = len([q for q in t.get("questions") or [] if not q.get("policy")])
         sections.append(f'<details class="family" id="{esc(cat)}"><summary><span class="fname">{esc(cat)}</span>'
                         f'<span class="ftarget">{len(t.get("cases") or [])} حالات · {len(listed)} كلمات · {n_open} أسئلة</span>'
                         f'<span class="fcount"></span></summary>{"".join(parts)}</details>')

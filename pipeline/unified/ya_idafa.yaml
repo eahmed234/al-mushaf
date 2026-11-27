@@ -573,74 +573,88 @@ cases:
   ruwat:
     qalun:
       wujuh:
-      - opened
-      cite: []
-      via: as_hafs
+      - sukun
+      cite:
+      - wafi 191
+      - wafi 192
     warsh:
       wujuh:
-      - opened
-      cite: []
-      via: as_hafs
+      - sukun
+      cite:
+      - wafi 191
+      - wafi 192
     bazzi:
       wujuh:
-      - opened
-      cite: []
-      via: as_hafs
+      - sukun
+      cite:
+      - wafi 191
+      - wafi 192
     qunbul:
       wujuh:
-      - opened
-      cite: []
-      via: as_hafs
+      - sukun
+      cite:
+      - wafi 191
+      - wafi 192
     duri_abuamr:
       wujuh:
-      - opened
-      cite: []
-      via: as_hafs
+      - sukun
+      cite:
+      - wafi 191
+      - wafi 192
     susi:
       wujuh:
-      - opened
-      cite: []
-      via: as_hafs
+      - sukun
+      cite:
+      - wafi 191
+      - wafi 192
     hisham:
       wujuh:
-      - opened
-      cite: []
-      via: as_hafs
+      - sukun
+      cite:
+      - wafi 191
+      - wafi 192
     ibn_dhakwan:
       wujuh:
-      - opened
-      cite: []
-      via: as_hafs
+      - sukun
+      cite:
+      - wafi 191
+      - wafi 192
     shuba:
       wujuh:
-      - opened
-      cite: []
-      via: as_hafs
+      - sukun
+      cite:
+      - wafi 191
+      - wafi 192
     hafs:
       wujuh:
-      - opened
-      cite: []
-      via: as_hafs
+      - sukun
+      cite:
+      - wafi 191
+      - wafi 192
     khalaf_an_hamzah:
       wujuh:
-      - opened
-      cite: []
-      via: as_hafs
+      - sukun
+      cite:
+      - wafi 191
+      - wafi 192
     khallad:
       wujuh:
-      - opened
-      cite: []
-      via: as_hafs
+      - sukun
+      cite:
+      - wafi 191
+      - wafi 192
     abul_harith:
       wujuh:
-      - opened
-      cite: []
-      via: as_hafs
+      - sukun
+      cite:
+      - wafi 191
+      - wafi 192
     duri_kisai:
       wujuh:
-      - opened
-      cite: []
-      via: as_hafs
+      - sukun
+      cite:
+      - wafi 191
+      - wafi 192
     ibn_wardan:
       wujuh:
       - opened
@@ -1586,10 +1600,34 @@ listed:
   - ومالي لا أعبد
   case: yāʾ al-iḍāfah not before a hamzah (the thirty)
   ruwat:
+    qalun:
+    - opened
+    warsh:
+    - opened
+    bazzi:
+    - opened
+    qunbul:
+    - opened
+    duri_abuamr:
+    - opened
+    susi:
+    - opened
+    hisham:
+    - opened
+    ibn_dhakwan:
+    - opened
+    shuba:
+    - opened
+    hafs:
+    - opened
     khalaf_an_hamzah:
     - sukun
     khallad:
     - sukun
+    abul_harith:
+    - opened
+    duri_kisai:
+    - opened
   cite:
   - wafi 192
 open:

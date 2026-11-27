@@ -48,10 +48,12 @@ cases:
       cite: &id006
       - wafi 105
     khallad:
-      wujuh: &id007
+      wujuh:
       - sakt
-      cite: &id008
+      - none
+      cite:
       - wafi 106
+      option: true
     abul_harith:
       wujuh: *id001
       cite: *id002
@@ -77,14 +79,14 @@ cases:
       cite: *id004
       via: asl
     ishaq:
+      wujuh: &id007
+      - none
+      cite: &id008
+      - idah 121
+    idris:
       wujuh: &id009
       - none
       cite: &id010
-      - idah 121
-    idris:
-      wujuh: &id011
-      - none
-      cite: &id012
       - idah 121
 - case: شيء / شيئاً before what follows it, in waṣl
   ruwat:
@@ -122,8 +124,12 @@ cases:
       wujuh: *id005
       cite: *id006
     khallad:
-      wujuh: *id007
-      cite: *id008
+      wujuh:
+      - sakt
+      - none
+      cite:
+      - wafi 106
+      option: true
     abul_harith:
       wujuh: *id001
       cite: *id002
@@ -147,11 +153,11 @@ cases:
       cite: *id004
       via: asl
     ishaq:
+      wujuh: *id007
+      cite: *id008
+    idris:
       wujuh: *id009
       cite: *id010
-    idris:
-      wujuh: *id011
-      cite: *id012
 listed:
 - words:
   - الأولى
