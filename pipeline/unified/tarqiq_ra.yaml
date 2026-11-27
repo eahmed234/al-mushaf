@@ -1,374 +1,2159 @@
 category: tarqiq_ra
-what: "the rāʾ: tarqīq and tafkhīm, for all twenty (Warsh's tarqīq is one of the conditions)"
+what: 'the rāʾ: tarqīq and tafkhīm, for all twenty (Warsh''s tarqīq is one of the conditions)'
 wujuh:
-  - {id: tafkhim, ar: "تفخيم", en: "tafkhīm"}
-  - {id: tarqiq, ar: "ترقيق", en: "tarqīq"}
-  - {id: as_wasl, ar: "كحكمها عند الوصل", en: "as in waṣl (rawm)"}
+- id: tafkhim
+  ar: تفخيم
+  en: tafkhīm
+- id: tarqiq
+  ar: ترقيق
+  en: tarqīq
+- id: as_wasl
+  ar: كحكمها عند الوصل
+  en: as in waṣl (rawm)
 cases:
-  - case: "every rāʾ not under a tarqīq condition below (the aṣl: tafkhīm)"
-    ruwat:
-      qalun: {wujuh: [tafkhim], cite: [wafi 170]}
-      warsh: {wujuh: [tafkhim], cite: [wafi 170]}
-      bazzi: {wujuh: [tafkhim], cite: [wafi 170]}
-      qunbul: {wujuh: [tafkhim], cite: [wafi 170]}
-      duri_abuamr: {wujuh: [tafkhim], cite: [wafi 170]}
-      susi: {wujuh: [tafkhim], cite: [wafi 170]}
-      hisham: {wujuh: [tafkhim], cite: [wafi 170]}
-      ibn_dhakwan: {wujuh: [tafkhim], cite: [wafi 170]}
-      shuba: {wujuh: [tafkhim], cite: [wafi 170]}
-      hafs: {wujuh: [tafkhim], cite: [wafi 170]}
-      khalaf_an_hamzah: {wujuh: [tafkhim], cite: [wafi 170]}
-      khallad: {wujuh: [tafkhim], cite: [wafi 170]}
-      abul_harith: {wujuh: [tafkhim], cite: [wafi 170]}
-      duri_kisai: {wujuh: [tafkhim], cite: [wafi 170]}
-      ibn_wardan: {wujuh: [tafkhim], cite: [idah 146, wafi 170], via: model_qalun}
-      ibn_jammaz: {wujuh: [tafkhim], cite: [idah 146, wafi 170], via: model_qalun}
-      ruways: {wujuh: [tafkhim], cite: [idah 147, wafi 170], via: asl}
-      rawh: {wujuh: [tafkhim], cite: [idah 147, wafi 170], via: asl}
-      ishaq: {wujuh: [tafkhim], cite: [idah 147, wafi 170], via: asl}
-      idris: {wujuh: [tafkhim], cite: [idah 147, wafi 170], via: asl}
-  - case: "fatḥah or ḍammah rāʾ after a yāʾ sākinah or a lāzim kasrah in the same word (a sākin that is not a ḥarf istiʿlāʾ between does not stop it)"
-    note: "Warsh's tarqīq; the other thirteen read the aṣl"
-    ruwat:
-      qalun: {wujuh: [tafkhim], cite: [wafi 161, wafi 170]}
-      warsh: {wujuh: [tarqiq], cite: [wafi 161, wafi 162]}
-      bazzi: {wujuh: [tafkhim], cite: [wafi 161, wafi 170]}
-      qunbul: {wujuh: [tafkhim], cite: [wafi 161, wafi 170]}
-      duri_abuamr: {wujuh: [tafkhim], cite: [wafi 161, wafi 170]}
-      susi: {wujuh: [tafkhim], cite: [wafi 161, wafi 170]}
-      hisham: {wujuh: [tafkhim], cite: [wafi 161, wafi 170]}
-      ibn_dhakwan: {wujuh: [tafkhim], cite: [wafi 161, wafi 170]}
-      shuba: {wujuh: [tafkhim], cite: [wafi 161, wafi 170]}
-      hafs: {wujuh: [tafkhim], cite: [wafi 161, wafi 170]}
-      khalaf_an_hamzah: {wujuh: [tafkhim], cite: [wafi 161, wafi 170]}
-      khallad: {wujuh: [tafkhim], cite: [wafi 161, wafi 170]}
-      abul_harith: {wujuh: [tafkhim], cite: [wafi 161, wafi 170]}
-      duri_kisai: {wujuh: [tafkhim], cite: [wafi 161, wafi 170]}
-      ibn_wardan: {wujuh: [tafkhim], cite: [idah 146, wafi 161, wafi 170], via: model_qalun}
-      ibn_jammaz: {wujuh: [tafkhim], cite: [idah 146, wafi 161, wafi 170], via: model_qalun}
-      ruways: {wujuh: [tafkhim], cite: [idah 147, wafi 161, wafi 170], via: asl}
-      rawh: {wujuh: [tafkhim], cite: [idah 147, wafi 161, wafi 170], via: asl}
-      ishaq: {wujuh: [tafkhim], cite: [idah 147, wafi 161, wafi 170], via: asl}
-      idris: {wujuh: [tafkhim], cite: [idah 147, wafi 161, wafi 170], via: asl}
-  - case: "rāʾ sākinah after a lāzim kasrah, no ḥarf istiʿlāʾ after it"
-    ruwat:
-      qalun: {wujuh: [tarqiq], cite: [wafi 165]}
-      warsh: {wujuh: [tarqiq], cite: [wafi 165]}
-      bazzi: {wujuh: [tarqiq], cite: [wafi 165]}
-      qunbul: {wujuh: [tarqiq], cite: [wafi 165]}
-      duri_abuamr: {wujuh: [tarqiq], cite: [wafi 165]}
-      susi: {wujuh: [tarqiq], cite: [wafi 165]}
-      hisham: {wujuh: [tarqiq], cite: [wafi 165]}
-      ibn_dhakwan: {wujuh: [tarqiq], cite: [wafi 165]}
-      shuba: {wujuh: [tarqiq], cite: [wafi 165]}
-      hafs: {wujuh: [tarqiq], cite: [wafi 165]}
-      khalaf_an_hamzah: {wujuh: [tarqiq], cite: [wafi 165]}
-      khallad: {wujuh: [tarqiq], cite: [wafi 165]}
-      abul_harith: {wujuh: [tarqiq], cite: [wafi 165]}
-      duri_kisai: {wujuh: [tarqiq], cite: [wafi 165]}
-      ibn_wardan: {wujuh: [tarqiq], cite: [idah 146, wafi 165], via: model_qalun}
-      ibn_jammaz: {wujuh: [tarqiq], cite: [idah 146, wafi 165], via: model_qalun}
-      ruways: {wujuh: [tarqiq], cite: [idah 147, wafi 165], via: asl}
-      rawh: {wujuh: [tarqiq], cite: [idah 147, wafi 165], via: asl}
-      ishaq: {wujuh: [tarqiq], cite: [idah 147, wafi 165], via: asl}
-      idris: {wujuh: [tarqiq], cite: [idah 147, wafi 165], via: asl}
-  - case: "rāʾ (sākinah or mutaḥarrikah) before a ḥarf istiʿlāʾ in the same word"
-    ruwat:
-      qalun: {wujuh: [tafkhim], cite: [wafi 165, wafi 166]}
-      warsh: {wujuh: [tafkhim], cite: [wafi 165, wafi 166]}
-      bazzi: {wujuh: [tafkhim], cite: [wafi 165, wafi 166]}
-      qunbul: {wujuh: [tafkhim], cite: [wafi 165, wafi 166]}
-      duri_abuamr: {wujuh: [tafkhim], cite: [wafi 165, wafi 166]}
-      susi: {wujuh: [tafkhim], cite: [wafi 165, wafi 166]}
-      hisham: {wujuh: [tafkhim], cite: [wafi 165, wafi 166]}
-      ibn_dhakwan: {wujuh: [tafkhim], cite: [wafi 165, wafi 166]}
-      shuba: {wujuh: [tafkhim], cite: [wafi 165, wafi 166]}
-      hafs: {wujuh: [tafkhim], cite: [wafi 165, wafi 166]}
-      khalaf_an_hamzah: {wujuh: [tafkhim], cite: [wafi 165, wafi 166]}
-      khallad: {wujuh: [tafkhim], cite: [wafi 165, wafi 166]}
-      abul_harith: {wujuh: [tafkhim], cite: [wafi 165, wafi 166]}
-      duri_kisai: {wujuh: [tafkhim], cite: [wafi 165, wafi 166]}
-      ibn_wardan: {wujuh: [tafkhim], cite: [idah 146, wafi 165, wafi 166], via: model_qalun}
-      ibn_jammaz: {wujuh: [tafkhim], cite: [idah 146, wafi 165, wafi 166], via: model_qalun}
-      ruways: {wujuh: [tafkhim], cite: [idah 147, wafi 165, wafi 166], via: asl}
-      rawh: {wujuh: [tafkhim], cite: [idah 147, wafi 165, wafi 166], via: asl}
-      ishaq: {wujuh: [tafkhim], cite: [idah 147, wafi 165, wafi 166], via: asl}
-      idris: {wujuh: [tafkhim], cite: [idah 147, wafi 165, wafi 166], via: asl}
-  - case: "the kasrah is in another word (or an ʿāriḍ kasrah at the start: امرأ ارتابوا)"
-    ruwat:
-      qalun: {wujuh: [tafkhim], cite: [wafi 162, wafi 166, wafi 167]}
-      warsh: {wujuh: [tafkhim], cite: [wafi 162, wafi 166, wafi 167]}
-      bazzi: {wujuh: [tafkhim], cite: [wafi 162, wafi 166, wafi 167]}
-      qunbul: {wujuh: [tafkhim], cite: [wafi 162, wafi 166, wafi 167]}
-      duri_abuamr: {wujuh: [tafkhim], cite: [wafi 162, wafi 166, wafi 167]}
-      susi: {wujuh: [tafkhim], cite: [wafi 162, wafi 166, wafi 167]}
-      hisham: {wujuh: [tafkhim], cite: [wafi 162, wafi 166, wafi 167]}
-      ibn_dhakwan: {wujuh: [tafkhim], cite: [wafi 162, wafi 166, wafi 167]}
-      shuba: {wujuh: [tafkhim], cite: [wafi 162, wafi 166, wafi 167]}
-      hafs: {wujuh: [tafkhim], cite: [wafi 162, wafi 166, wafi 167]}
-      khalaf_an_hamzah: {wujuh: [tafkhim], cite: [wafi 162, wafi 166, wafi 167]}
-      khallad: {wujuh: [tafkhim], cite: [wafi 162, wafi 166, wafi 167]}
-      abul_harith: {wujuh: [tafkhim], cite: [wafi 162, wafi 166, wafi 167]}
-      duri_kisai: {wujuh: [tafkhim], cite: [wafi 162, wafi 166, wafi 167]}
-      ibn_wardan: {wujuh: [tafkhim], cite: [idah 146, wafi 162, wafi 166, wafi 167], via: model_qalun}
-      ibn_jammaz: {wujuh: [tafkhim], cite: [idah 146, wafi 162, wafi 166, wafi 167], via: model_qalun}
-      ruways: {wujuh: [tafkhim], cite: [idah 147, wafi 162, wafi 166, wafi 167], via: asl}
-      rawh: {wujuh: [tafkhim], cite: [idah 147, wafi 162, wafi 166, wafi 167], via: asl}
-      ishaq: {wujuh: [tafkhim], cite: [idah 147, wafi 162, wafi 166, wafi 167], via: asl}
-      idris: {wujuh: [tafkhim], cite: [idah 147, wafi 162, wafi 166, wafi 167], via: asl}
-  - case: "rāʾ followed by a kasrah or yāʾ"
-    ruwat:
-      qalun: {wujuh: [tafkhim], cite: [wafi 166]}
-      warsh: {wujuh: [tafkhim], cite: [wafi 166]}
-      bazzi: {wujuh: [tafkhim], cite: [wafi 166]}
-      qunbul: {wujuh: [tafkhim], cite: [wafi 166]}
-      duri_abuamr: {wujuh: [tafkhim], cite: [wafi 166]}
-      susi: {wujuh: [tafkhim], cite: [wafi 166]}
-      hisham: {wujuh: [tafkhim], cite: [wafi 166]}
-      ibn_dhakwan: {wujuh: [tafkhim], cite: [wafi 166]}
-      shuba: {wujuh: [tafkhim], cite: [wafi 166]}
-      hafs: {wujuh: [tafkhim], cite: [wafi 166]}
-      khalaf_an_hamzah: {wujuh: [tafkhim], cite: [wafi 166]}
-      khallad: {wujuh: [tafkhim], cite: [wafi 166]}
-      abul_harith: {wujuh: [tafkhim], cite: [wafi 166]}
-      duri_kisai: {wujuh: [tafkhim], cite: [wafi 166]}
-      ibn_wardan: {wujuh: [tafkhim], cite: [idah 146, wafi 166], via: model_qalun}
-      ibn_jammaz: {wujuh: [tafkhim], cite: [idah 146, wafi 166], via: model_qalun}
-      ruways: {wujuh: [tafkhim], cite: [idah 147, wafi 166], via: asl}
-      rawh: {wujuh: [tafkhim], cite: [idah 147, wafi 166], via: asl}
-      ishaq: {wujuh: [tafkhim], cite: [idah 147, wafi 166], via: asl}
-      idris: {wujuh: [tafkhim], cite: [idah 147, wafi 166], via: asl}
-  - case: "rāʾ maksūrah at the start or middle of a word"
-    ruwat:
-      qalun: {wujuh: [tarqiq], cite: [wafi 168]}
-      warsh: {wujuh: [tarqiq], cite: [wafi 168]}
-      bazzi: {wujuh: [tarqiq], cite: [wafi 168]}
-      qunbul: {wujuh: [tarqiq], cite: [wafi 168]}
-      duri_abuamr: {wujuh: [tarqiq], cite: [wafi 168]}
-      susi: {wujuh: [tarqiq], cite: [wafi 168]}
-      hisham: {wujuh: [tarqiq], cite: [wafi 168]}
-      ibn_dhakwan: {wujuh: [tarqiq], cite: [wafi 168]}
-      shuba: {wujuh: [tarqiq], cite: [wafi 168]}
-      hafs: {wujuh: [tarqiq], cite: [wafi 168]}
-      khalaf_an_hamzah: {wujuh: [tarqiq], cite: [wafi 168]}
-      khallad: {wujuh: [tarqiq], cite: [wafi 168]}
-      abul_harith: {wujuh: [tarqiq], cite: [wafi 168]}
-      duri_kisai: {wujuh: [tarqiq], cite: [wafi 168]}
-      ibn_wardan: {wujuh: [tarqiq], cite: [idah 146, wafi 168], via: model_qalun}
-      ibn_jammaz: {wujuh: [tarqiq], cite: [idah 146, wafi 168], via: model_qalun}
-      ruways: {wujuh: [tarqiq], cite: [idah 147, wafi 168], via: asl}
-      rawh: {wujuh: [tarqiq], cite: [idah 147, wafi 168], via: asl}
-      ishaq: {wujuh: [tarqiq], cite: [idah 147, wafi 168], via: asl}
-      idris: {wujuh: [tarqiq], cite: [idah 147, wafi 168], via: asl}
-  - case: "rāʾ maksūrah at the end of a word, in waṣl"
-    ruwat:
-      qalun: {wujuh: [tarqiq], cite: [wafi 168]}
-      warsh: {wujuh: [tarqiq], cite: [wafi 168]}
-      bazzi: {wujuh: [tarqiq], cite: [wafi 168]}
-      qunbul: {wujuh: [tarqiq], cite: [wafi 168]}
-      duri_abuamr: {wujuh: [tarqiq], cite: [wafi 168]}
-      susi: {wujuh: [tarqiq], cite: [wafi 168]}
-      hisham: {wujuh: [tarqiq], cite: [wafi 168]}
-      ibn_dhakwan: {wujuh: [tarqiq], cite: [wafi 168]}
-      shuba: {wujuh: [tarqiq], cite: [wafi 168]}
-      hafs: {wujuh: [tarqiq], cite: [wafi 168]}
-      khalaf_an_hamzah: {wujuh: [tarqiq], cite: [wafi 168]}
-      khallad: {wujuh: [tarqiq], cite: [wafi 168]}
-      abul_harith: {wujuh: [tarqiq], cite: [wafi 168]}
-      duri_kisai: {wujuh: [tarqiq], cite: [wafi 168]}
-      ibn_wardan: {wujuh: [tarqiq], cite: [idah 146, wafi 168], via: model_qalun}
-      ibn_jammaz: {wujuh: [tarqiq], cite: [idah 146, wafi 168], via: model_qalun}
-      ruways: {wujuh: [tarqiq], cite: [idah 147, wafi 168], via: asl}
-      rawh: {wujuh: [tarqiq], cite: [idah 147, wafi 168], via: asl}
-      ishaq: {wujuh: [tarqiq], cite: [idah 147, wafi 168], via: asl}
-      idris: {wujuh: [tarqiq], cite: [idah 147, wafi 168], via: asl}
-  - case: "final rāʾ at a stop after a fatḥah, ḍammah, alif, wāw or a ṣaḥīḥ sākin"
-    ruwat:
-      qalun: {wujuh: [tafkhim], cite: [wafi 169]}
-      warsh: {wujuh: [tafkhim], cite: [wafi 169]}
-      bazzi: {wujuh: [tafkhim], cite: [wafi 169]}
-      qunbul: {wujuh: [tafkhim], cite: [wafi 169]}
-      duri_abuamr: {wujuh: [tafkhim], cite: [wafi 169]}
-      susi: {wujuh: [tafkhim], cite: [wafi 169]}
-      hisham: {wujuh: [tafkhim], cite: [wafi 169]}
-      ibn_dhakwan: {wujuh: [tafkhim], cite: [wafi 169]}
-      shuba: {wujuh: [tafkhim], cite: [wafi 169]}
-      hafs: {wujuh: [tafkhim], cite: [wafi 169]}
-      khalaf_an_hamzah: {wujuh: [tafkhim], cite: [wafi 169]}
-      khallad: {wujuh: [tafkhim], cite: [wafi 169]}
-      abul_harith: {wujuh: [tafkhim], cite: [wafi 169]}
-      duri_kisai: {wujuh: [tafkhim], cite: [wafi 169]}
-      ibn_wardan: {wujuh: [tafkhim], cite: [idah 146, wafi 169], via: model_qalun}
-      ibn_jammaz: {wujuh: [tafkhim], cite: [idah 146, wafi 169], via: model_qalun}
-      ruways: {wujuh: [tafkhim], cite: [idah 147, wafi 169], via: asl}
-      rawh: {wujuh: [tafkhim], cite: [idah 147, wafi 169], via: asl}
-      ishaq: {wujuh: [tafkhim], cite: [idah 147, wafi 169], via: asl}
-      idris: {wujuh: [tafkhim], cite: [idah 147, wafi 169], via: asl}
-  - case: "final rāʾ at a stop after a kasrah or a yāʾ sākinah (rāʾ maksūrah, maftūḥah or maḍmūmah)"
-    ruwat:
-      qalun: {wujuh: [tarqiq], cite: [wafi 169]}
-      warsh: {wujuh: [tarqiq], cite: [wafi 169]}
-      bazzi: {wujuh: [tarqiq], cite: [wafi 169]}
-      qunbul: {wujuh: [tarqiq], cite: [wafi 169]}
-      duri_abuamr: {wujuh: [tarqiq], cite: [wafi 169]}
-      susi: {wujuh: [tarqiq], cite: [wafi 169]}
-      hisham: {wujuh: [tarqiq], cite: [wafi 169]}
-      ibn_dhakwan: {wujuh: [tarqiq], cite: [wafi 169]}
-      shuba: {wujuh: [tarqiq], cite: [wafi 169]}
-      hafs: {wujuh: [tarqiq], cite: [wafi 169]}
-      khalaf_an_hamzah: {wujuh: [tarqiq], cite: [wafi 169]}
-      khallad: {wujuh: [tarqiq], cite: [wafi 169]}
-      abul_harith: {wujuh: [tarqiq], cite: [wafi 169]}
-      duri_kisai: {wujuh: [tarqiq], cite: [wafi 169]}
-      ibn_wardan: {wujuh: [tarqiq], cite: [idah 146, wafi 169], via: model_qalun}
-      ibn_jammaz: {wujuh: [tarqiq], cite: [idah 146, wafi 169], via: model_qalun}
-      ruways: {wujuh: [tarqiq], cite: [idah 147, wafi 169], via: asl}
-      rawh: {wujuh: [tarqiq], cite: [idah 147, wafi 169], via: asl}
-      ishaq: {wujuh: [tarqiq], cite: [idah 147, wafi 169], via: asl}
-      idris: {wujuh: [tarqiq], cite: [idah 147, wafi 169], via: asl}
-  - case: "stopping on the rāʾ with rawm"
-    ruwat:
-      qalun: {wujuh: [as_wasl], cite: [wafi 169]}
-      warsh: {wujuh: [tarqiq], cite: [wafi 169, wafi 170]}
-      bazzi: {wujuh: [as_wasl], cite: [wafi 169]}
-      qunbul: {wujuh: [as_wasl], cite: [wafi 169]}
-      duri_abuamr: {wujuh: [as_wasl], cite: [wafi 169]}
-      susi: {wujuh: [as_wasl], cite: [wafi 169]}
-      hisham: {wujuh: [as_wasl], cite: [wafi 169]}
-      ibn_dhakwan: {wujuh: [as_wasl], cite: [wafi 169]}
-      shuba: {wujuh: [as_wasl], cite: [wafi 169]}
-      hafs: {wujuh: [as_wasl], cite: [wafi 169]}
-      khalaf_an_hamzah: {wujuh: [as_wasl], cite: [wafi 169]}
-      khallad: {wujuh: [as_wasl], cite: [wafi 169]}
-      abul_harith: {wujuh: [as_wasl], cite: [wafi 169]}
-      duri_kisai: {wujuh: [as_wasl], cite: [wafi 169]}
-      ibn_wardan: {wujuh: [as_wasl], cite: [idah 146, wafi 169], via: model_qalun}
-      ibn_jammaz: {wujuh: [as_wasl], cite: [idah 146, wafi 169], via: model_qalun}
-      ruways: {wujuh: [as_wasl], cite: [idah 147, wafi 169], via: asl}
-      rawh: {wujuh: [as_wasl], cite: [idah 147, wafi 169], via: asl}
-      ishaq: {wujuh: [as_wasl], cite: [idah 147, wafi 169], via: asl}
-      idris: {wujuh: [as_wasl], cite: [idah 147, wafi 169], via: asl}
+- case: 'every rāʾ not under a tarqīq condition below (the aṣl: tafkhīm)'
+  ruwat:
+    qalun:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 170
+    warsh:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 170
+    bazzi:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 170
+    qunbul:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 170
+    duri_abuamr:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 170
+    susi:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 170
+    hisham:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 170
+    ibn_dhakwan:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 170
+    shuba:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 170
+    hafs:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 170
+    khalaf_an_hamzah:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 170
+    khallad:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 170
+    abul_harith:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 170
+    duri_kisai:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 170
+    ibn_wardan:
+      wujuh:
+      - tafkhim
+      cite:
+      - idah 146
+      - wafi 170
+      via: model_qalun
+    ibn_jammaz:
+      wujuh:
+      - tafkhim
+      cite:
+      - idah 146
+      - wafi 170
+      via: model_qalun
+    ruways:
+      wujuh:
+      - tafkhim
+      cite:
+      - idah 147
+      - wafi 170
+      via: asl
+    rawh:
+      wujuh:
+      - tafkhim
+      cite:
+      - idah 147
+      - wafi 170
+      via: asl
+    ishaq:
+      wujuh:
+      - tafkhim
+      cite:
+      - idah 147
+      - wafi 170
+      via: asl
+    idris:
+      wujuh:
+      - tafkhim
+      cite:
+      - idah 147
+      - wafi 170
+      via: asl
+- case: fatḥah or ḍammah rāʾ after a yāʾ sākinah or a lāzim kasrah in the same word (a sākin that is not a ḥarf istiʿlāʾ between does not stop
+    it)
+  note: Warsh's tarqīq; the other thirteen read the aṣl
+  ruwat:
+    qalun:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 161
+      - wafi 170
+    warsh:
+      wujuh:
+      - tarqiq
+      cite:
+      - wafi 161
+      - wafi 162
+    bazzi:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 161
+      - wafi 170
+    qunbul:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 161
+      - wafi 170
+    duri_abuamr:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 161
+      - wafi 170
+    susi:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 161
+      - wafi 170
+    hisham:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 161
+      - wafi 170
+    ibn_dhakwan:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 161
+      - wafi 170
+    shuba:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 161
+      - wafi 170
+    hafs:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 161
+      - wafi 170
+    khalaf_an_hamzah:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 161
+      - wafi 170
+    khallad:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 161
+      - wafi 170
+    abul_harith:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 161
+      - wafi 170
+    duri_kisai:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 161
+      - wafi 170
+    ibn_wardan:
+      wujuh:
+      - tafkhim
+      cite:
+      - idah 146
+      - wafi 161
+      - wafi 170
+      via: model_qalun
+    ibn_jammaz:
+      wujuh:
+      - tafkhim
+      cite:
+      - idah 146
+      - wafi 161
+      - wafi 170
+      via: model_qalun
+    ruways:
+      wujuh:
+      - tafkhim
+      cite:
+      - idah 147
+      - wafi 161
+      - wafi 170
+      via: asl
+    rawh:
+      wujuh:
+      - tafkhim
+      cite:
+      - idah 147
+      - wafi 161
+      - wafi 170
+      via: asl
+    ishaq:
+      wujuh:
+      - tafkhim
+      cite:
+      - idah 147
+      - wafi 161
+      - wafi 170
+      via: asl
+    idris:
+      wujuh:
+      - tafkhim
+      cite:
+      - idah 147
+      - wafi 161
+      - wafi 170
+      via: asl
+- case: rāʾ sākinah after a lāzim kasrah, no ḥarf istiʿlāʾ after it
+  ruwat:
+    qalun:
+      wujuh:
+      - tarqiq
+      cite:
+      - wafi 165
+    warsh:
+      wujuh:
+      - tarqiq
+      cite:
+      - wafi 165
+    bazzi:
+      wujuh:
+      - tarqiq
+      cite:
+      - wafi 165
+    qunbul:
+      wujuh:
+      - tarqiq
+      cite:
+      - wafi 165
+    duri_abuamr:
+      wujuh:
+      - tarqiq
+      cite:
+      - wafi 165
+    susi:
+      wujuh:
+      - tarqiq
+      cite:
+      - wafi 165
+    hisham:
+      wujuh:
+      - tarqiq
+      cite:
+      - wafi 165
+    ibn_dhakwan:
+      wujuh:
+      - tarqiq
+      cite:
+      - wafi 165
+    shuba:
+      wujuh:
+      - tarqiq
+      cite:
+      - wafi 165
+    hafs:
+      wujuh:
+      - tarqiq
+      cite:
+      - wafi 165
+    khalaf_an_hamzah:
+      wujuh:
+      - tarqiq
+      cite:
+      - wafi 165
+    khallad:
+      wujuh:
+      - tarqiq
+      cite:
+      - wafi 165
+    abul_harith:
+      wujuh:
+      - tarqiq
+      cite:
+      - wafi 165
+    duri_kisai:
+      wujuh:
+      - tarqiq
+      cite:
+      - wafi 165
+    ibn_wardan:
+      wujuh:
+      - tarqiq
+      cite:
+      - idah 146
+      - wafi 165
+      via: model_qalun
+    ibn_jammaz:
+      wujuh:
+      - tarqiq
+      cite:
+      - idah 146
+      - wafi 165
+      via: model_qalun
+    ruways:
+      wujuh:
+      - tarqiq
+      cite:
+      - idah 147
+      - wafi 165
+      via: asl
+    rawh:
+      wujuh:
+      - tarqiq
+      cite:
+      - idah 147
+      - wafi 165
+      via: asl
+    ishaq:
+      wujuh:
+      - tarqiq
+      cite:
+      - idah 147
+      - wafi 165
+      via: asl
+    idris:
+      wujuh:
+      - tarqiq
+      cite:
+      - idah 147
+      - wafi 165
+      via: asl
+- case: rāʾ (sākinah or mutaḥarrikah) before a ḥarf istiʿlāʾ in the same word
+  ruwat:
+    qalun:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 165
+      - wafi 166
+    warsh:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 165
+      - wafi 166
+    bazzi:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 165
+      - wafi 166
+    qunbul:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 165
+      - wafi 166
+    duri_abuamr:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 165
+      - wafi 166
+    susi:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 165
+      - wafi 166
+    hisham:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 165
+      - wafi 166
+    ibn_dhakwan:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 165
+      - wafi 166
+    shuba:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 165
+      - wafi 166
+    hafs:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 165
+      - wafi 166
+    khalaf_an_hamzah:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 165
+      - wafi 166
+    khallad:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 165
+      - wafi 166
+    abul_harith:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 165
+      - wafi 166
+    duri_kisai:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 165
+      - wafi 166
+    ibn_wardan:
+      wujuh:
+      - tafkhim
+      cite:
+      - idah 146
+      - wafi 165
+      - wafi 166
+      via: model_qalun
+    ibn_jammaz:
+      wujuh:
+      - tafkhim
+      cite:
+      - idah 146
+      - wafi 165
+      - wafi 166
+      via: model_qalun
+    ruways:
+      wujuh:
+      - tafkhim
+      cite:
+      - idah 147
+      - wafi 165
+      - wafi 166
+      via: asl
+    rawh:
+      wujuh:
+      - tafkhim
+      cite:
+      - idah 147
+      - wafi 165
+      - wafi 166
+      via: asl
+    ishaq:
+      wujuh:
+      - tafkhim
+      cite:
+      - idah 147
+      - wafi 165
+      - wafi 166
+      via: asl
+    idris:
+      wujuh:
+      - tafkhim
+      cite:
+      - idah 147
+      - wafi 165
+      - wafi 166
+      via: asl
+- case: 'the kasrah is in another word (or an ʿāriḍ kasrah at the start: امرأ ارتابوا)'
+  ruwat:
+    qalun:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 162
+      - wafi 166
+      - wafi 167
+    warsh:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 162
+      - wafi 166
+      - wafi 167
+    bazzi:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 162
+      - wafi 166
+      - wafi 167
+    qunbul:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 162
+      - wafi 166
+      - wafi 167
+    duri_abuamr:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 162
+      - wafi 166
+      - wafi 167
+    susi:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 162
+      - wafi 166
+      - wafi 167
+    hisham:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 162
+      - wafi 166
+      - wafi 167
+    ibn_dhakwan:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 162
+      - wafi 166
+      - wafi 167
+    shuba:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 162
+      - wafi 166
+      - wafi 167
+    hafs:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 162
+      - wafi 166
+      - wafi 167
+    khalaf_an_hamzah:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 162
+      - wafi 166
+      - wafi 167
+    khallad:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 162
+      - wafi 166
+      - wafi 167
+    abul_harith:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 162
+      - wafi 166
+      - wafi 167
+    duri_kisai:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 162
+      - wafi 166
+      - wafi 167
+    ibn_wardan:
+      wujuh:
+      - tafkhim
+      cite:
+      - idah 146
+      - wafi 162
+      - wafi 166
+      - wafi 167
+      via: model_qalun
+    ibn_jammaz:
+      wujuh:
+      - tafkhim
+      cite:
+      - idah 146
+      - wafi 162
+      - wafi 166
+      - wafi 167
+      via: model_qalun
+    ruways:
+      wujuh:
+      - tafkhim
+      cite:
+      - idah 147
+      - wafi 162
+      - wafi 166
+      - wafi 167
+      via: asl
+    rawh:
+      wujuh:
+      - tafkhim
+      cite:
+      - idah 147
+      - wafi 162
+      - wafi 166
+      - wafi 167
+      via: asl
+    ishaq:
+      wujuh:
+      - tafkhim
+      cite:
+      - idah 147
+      - wafi 162
+      - wafi 166
+      - wafi 167
+      via: asl
+    idris:
+      wujuh:
+      - tafkhim
+      cite:
+      - idah 147
+      - wafi 162
+      - wafi 166
+      - wafi 167
+      via: asl
+- case: rāʾ followed by a kasrah or yāʾ
+  ruwat:
+    qalun:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 166
+    warsh:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 166
+    bazzi:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 166
+    qunbul:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 166
+    duri_abuamr:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 166
+    susi:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 166
+    hisham:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 166
+    ibn_dhakwan:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 166
+    shuba:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 166
+    hafs:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 166
+    khalaf_an_hamzah:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 166
+    khallad:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 166
+    abul_harith:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 166
+    duri_kisai:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 166
+    ibn_wardan:
+      wujuh:
+      - tafkhim
+      cite:
+      - idah 146
+      - wafi 166
+      via: model_qalun
+    ibn_jammaz:
+      wujuh:
+      - tafkhim
+      cite:
+      - idah 146
+      - wafi 166
+      via: model_qalun
+    ruways:
+      wujuh:
+      - tafkhim
+      cite:
+      - idah 147
+      - wafi 166
+      via: asl
+    rawh:
+      wujuh:
+      - tafkhim
+      cite:
+      - idah 147
+      - wafi 166
+      via: asl
+    ishaq:
+      wujuh:
+      - tafkhim
+      cite:
+      - idah 147
+      - wafi 166
+      via: asl
+    idris:
+      wujuh:
+      - tafkhim
+      cite:
+      - idah 147
+      - wafi 166
+      via: asl
+- case: rāʾ maksūrah at the start or middle of a word
+  ruwat:
+    qalun:
+      wujuh:
+      - tarqiq
+      cite:
+      - wafi 168
+    warsh:
+      wujuh:
+      - tarqiq
+      cite:
+      - wafi 168
+    bazzi:
+      wujuh:
+      - tarqiq
+      cite:
+      - wafi 168
+    qunbul:
+      wujuh:
+      - tarqiq
+      cite:
+      - wafi 168
+    duri_abuamr:
+      wujuh:
+      - tarqiq
+      cite:
+      - wafi 168
+    susi:
+      wujuh:
+      - tarqiq
+      cite:
+      - wafi 168
+    hisham:
+      wujuh:
+      - tarqiq
+      cite:
+      - wafi 168
+    ibn_dhakwan:
+      wujuh:
+      - tarqiq
+      cite:
+      - wafi 168
+    shuba:
+      wujuh:
+      - tarqiq
+      cite:
+      - wafi 168
+    hafs:
+      wujuh:
+      - tarqiq
+      cite:
+      - wafi 168
+    khalaf_an_hamzah:
+      wujuh:
+      - tarqiq
+      cite:
+      - wafi 168
+    khallad:
+      wujuh:
+      - tarqiq
+      cite:
+      - wafi 168
+    abul_harith:
+      wujuh:
+      - tarqiq
+      cite:
+      - wafi 168
+    duri_kisai:
+      wujuh:
+      - tarqiq
+      cite:
+      - wafi 168
+    ibn_wardan:
+      wujuh:
+      - tarqiq
+      cite:
+      - idah 146
+      - wafi 168
+      via: model_qalun
+    ibn_jammaz:
+      wujuh:
+      - tarqiq
+      cite:
+      - idah 146
+      - wafi 168
+      via: model_qalun
+    ruways:
+      wujuh:
+      - tarqiq
+      cite:
+      - idah 147
+      - wafi 168
+      via: asl
+    rawh:
+      wujuh:
+      - tarqiq
+      cite:
+      - idah 147
+      - wafi 168
+      via: asl
+    ishaq:
+      wujuh:
+      - tarqiq
+      cite:
+      - idah 147
+      - wafi 168
+      via: asl
+    idris:
+      wujuh:
+      - tarqiq
+      cite:
+      - idah 147
+      - wafi 168
+      via: asl
+- case: rāʾ maksūrah at the end of a word, in waṣl
+  ruwat:
+    qalun:
+      wujuh:
+      - tarqiq
+      cite:
+      - wafi 168
+    warsh:
+      wujuh:
+      - tarqiq
+      cite:
+      - wafi 168
+    bazzi:
+      wujuh:
+      - tarqiq
+      cite:
+      - wafi 168
+    qunbul:
+      wujuh:
+      - tarqiq
+      cite:
+      - wafi 168
+    duri_abuamr:
+      wujuh:
+      - tarqiq
+      cite:
+      - wafi 168
+    susi:
+      wujuh:
+      - tarqiq
+      cite:
+      - wafi 168
+    hisham:
+      wujuh:
+      - tarqiq
+      cite:
+      - wafi 168
+    ibn_dhakwan:
+      wujuh:
+      - tarqiq
+      cite:
+      - wafi 168
+    shuba:
+      wujuh:
+      - tarqiq
+      cite:
+      - wafi 168
+    hafs:
+      wujuh:
+      - tarqiq
+      cite:
+      - wafi 168
+    khalaf_an_hamzah:
+      wujuh:
+      - tarqiq
+      cite:
+      - wafi 168
+    khallad:
+      wujuh:
+      - tarqiq
+      cite:
+      - wafi 168
+    abul_harith:
+      wujuh:
+      - tarqiq
+      cite:
+      - wafi 168
+    duri_kisai:
+      wujuh:
+      - tarqiq
+      cite:
+      - wafi 168
+    ibn_wardan:
+      wujuh:
+      - tarqiq
+      cite:
+      - idah 146
+      - wafi 168
+      via: model_qalun
+    ibn_jammaz:
+      wujuh:
+      - tarqiq
+      cite:
+      - idah 146
+      - wafi 168
+      via: model_qalun
+    ruways:
+      wujuh:
+      - tarqiq
+      cite:
+      - idah 147
+      - wafi 168
+      via: asl
+    rawh:
+      wujuh:
+      - tarqiq
+      cite:
+      - idah 147
+      - wafi 168
+      via: asl
+    ishaq:
+      wujuh:
+      - tarqiq
+      cite:
+      - idah 147
+      - wafi 168
+      via: asl
+    idris:
+      wujuh:
+      - tarqiq
+      cite:
+      - idah 147
+      - wafi 168
+      via: asl
+- case: final rāʾ at a stop after a fatḥah, ḍammah, alif, wāw or a ṣaḥīḥ sākin
+  ruwat:
+    qalun:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 169
+    warsh:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 169
+    bazzi:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 169
+    qunbul:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 169
+    duri_abuamr:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 169
+    susi:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 169
+    hisham:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 169
+    ibn_dhakwan:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 169
+    shuba:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 169
+    hafs:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 169
+    khalaf_an_hamzah:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 169
+    khallad:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 169
+    abul_harith:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 169
+    duri_kisai:
+      wujuh:
+      - tafkhim
+      cite:
+      - wafi 169
+    ibn_wardan:
+      wujuh:
+      - tafkhim
+      cite:
+      - idah 146
+      - wafi 169
+      via: model_qalun
+    ibn_jammaz:
+      wujuh:
+      - tafkhim
+      cite:
+      - idah 146
+      - wafi 169
+      via: model_qalun
+    ruways:
+      wujuh:
+      - tafkhim
+      cite:
+      - idah 147
+      - wafi 169
+      via: asl
+    rawh:
+      wujuh:
+      - tafkhim
+      cite:
+      - idah 147
+      - wafi 169
+      via: asl
+    ishaq:
+      wujuh:
+      - tafkhim
+      cite:
+      - idah 147
+      - wafi 169
+      via: asl
+    idris:
+      wujuh:
+      - tafkhim
+      cite:
+      - idah 147
+      - wafi 169
+      via: asl
+- case: final rāʾ at a stop after a kasrah or a yāʾ sākinah (rāʾ maksūrah, maftūḥah or maḍmūmah)
+  ruwat:
+    qalun:
+      wujuh:
+      - tarqiq
+      cite:
+      - wafi 169
+    warsh:
+      wujuh:
+      - tarqiq
+      cite:
+      - wafi 169
+    bazzi:
+      wujuh:
+      - tarqiq
+      cite:
+      - wafi 169
+    qunbul:
+      wujuh:
+      - tarqiq
+      cite:
+      - wafi 169
+    duri_abuamr:
+      wujuh:
+      - tarqiq
+      cite:
+      - wafi 169
+    susi:
+      wujuh:
+      - tarqiq
+      cite:
+      - wafi 169
+    hisham:
+      wujuh:
+      - tarqiq
+      cite:
+      - wafi 169
+    ibn_dhakwan:
+      wujuh:
+      - tarqiq
+      cite:
+      - wafi 169
+    shuba:
+      wujuh:
+      - tarqiq
+      cite:
+      - wafi 169
+    hafs:
+      wujuh:
+      - tarqiq
+      cite:
+      - wafi 169
+    khalaf_an_hamzah:
+      wujuh:
+      - tarqiq
+      cite:
+      - wafi 169
+    khallad:
+      wujuh:
+      - tarqiq
+      cite:
+      - wafi 169
+    abul_harith:
+      wujuh:
+      - tarqiq
+      cite:
+      - wafi 169
+    duri_kisai:
+      wujuh:
+      - tarqiq
+      cite:
+      - wafi 169
+    ibn_wardan:
+      wujuh:
+      - tarqiq
+      cite:
+      - idah 146
+      - wafi 169
+      via: model_qalun
+    ibn_jammaz:
+      wujuh:
+      - tarqiq
+      cite:
+      - idah 146
+      - wafi 169
+      via: model_qalun
+    ruways:
+      wujuh:
+      - tarqiq
+      cite:
+      - idah 147
+      - wafi 169
+      via: asl
+    rawh:
+      wujuh:
+      - tarqiq
+      cite:
+      - idah 147
+      - wafi 169
+      via: asl
+    ishaq:
+      wujuh:
+      - tarqiq
+      cite:
+      - idah 147
+      - wafi 169
+      via: asl
+    idris:
+      wujuh:
+      - tarqiq
+      cite:
+      - idah 147
+      - wafi 169
+      via: asl
+- case: stopping on the rāʾ with rawm
+  ruwat:
+    qalun:
+      wujuh:
+      - as_wasl
+      cite:
+      - wafi 169
+    warsh:
+      wujuh:
+      - tarqiq
+      cite:
+      - wafi 169
+      - wafi 170
+    bazzi:
+      wujuh:
+      - as_wasl
+      cite:
+      - wafi 169
+    qunbul:
+      wujuh:
+      - as_wasl
+      cite:
+      - wafi 169
+    duri_abuamr:
+      wujuh:
+      - as_wasl
+      cite:
+      - wafi 169
+    susi:
+      wujuh:
+      - as_wasl
+      cite:
+      - wafi 169
+    hisham:
+      wujuh:
+      - as_wasl
+      cite:
+      - wafi 169
+    ibn_dhakwan:
+      wujuh:
+      - as_wasl
+      cite:
+      - wafi 169
+    shuba:
+      wujuh:
+      - as_wasl
+      cite:
+      - wafi 169
+    hafs:
+      wujuh:
+      - as_wasl
+      cite:
+      - wafi 169
+    khalaf_an_hamzah:
+      wujuh:
+      - as_wasl
+      cite:
+      - wafi 169
+    khallad:
+      wujuh:
+      - as_wasl
+      cite:
+      - wafi 169
+    abul_harith:
+      wujuh:
+      - as_wasl
+      cite:
+      - wafi 169
+    duri_kisai:
+      wujuh:
+      - as_wasl
+      cite:
+      - wafi 169
+    ibn_wardan:
+      wujuh:
+      - as_wasl
+      cite:
+      - idah 146
+      - wafi 169
+      via: model_qalun
+    ibn_jammaz:
+      wujuh:
+      - as_wasl
+      cite:
+      - idah 146
+      - wafi 169
+      via: model_qalun
+    ruways:
+      wujuh:
+      - as_wasl
+      cite:
+      - idah 147
+      - wafi 169
+      via: asl
+    rawh:
+      wujuh:
+      - as_wasl
+      cite:
+      - idah 147
+      - wafi 169
+      via: asl
+    ishaq:
+      wujuh:
+      - as_wasl
+      cite:
+      - idah 147
+      - wafi 169
+      via: asl
+    idris:
+      wujuh:
+      - as_wasl
+      cite:
+      - idah 147
+      - wafi 169
+      via: asl
 listed:
-  - words: ["مصرا", "إصرا", "إصرهم", "بمصر", "مصر", "قطرا", "فطرت", "قرآ"]
-    case: "fatḥah or ḍammah rāʾ after a yāʾ sākinah or a lāzim kasrah in the same word (a sākin that is not a ḥarf istiʿlāʾ between does not stop it)"
-    ruwat: {warsh: [tafkhim]}
-    note: "a ḥarf istiʿlāʾ sākin between the kasrah and the rāʾ"
-    cite: [wafi 163]
-  - words: ["إخراجهم", "إخراج", "إخراجكم", "إخراجا"]
-    case: "fatḥah or ḍammah rāʾ after a yāʾ sākinah or a lāzim kasrah in the same word (a sākin that is not a ḥarf istiʿlāʾ between does not stop it)"
-    ruwat: {warsh: [tarqiq]}
-    note: "the sākin khāʾ does not stop the tarqīq"
-    cite: [wafi 163]
-  - words: ["إبراهيم", "إسرائيل", "عمران"]
-    case: "fatḥah or ḍammah rāʾ after a yāʾ sākinah or a lāzim kasrah in the same word (a sākin that is not a ḥarf istiʿlāʾ between does not stop it)"
-    ruwat: {warsh: [tafkhim]}
-    note: "non-Arabic names"
-    cite: [wafi 163]
-  - words: ["إرم"]
-    case: "fatḥah or ḍammah rāʾ after a yāʾ sākinah or a lāzim kasrah in the same word (a sākin that is not a ḥarf istiʿlāʾ between does not stop it)"
-    ruwat: {warsh: [tafkhim]}
-    cite: [wafi 163]
-  - words: ["ضرارا", "فرارا", "الفرار", "إسرارا", "مدرارا"]
-    case: "fatḥah or ḍammah rāʾ after a yāʾ sākinah or a lāzim kasrah in the same word (a sākin that is not a ḥarf istiʿlāʾ between does not stop it)"
-    ruwat: {warsh: [tafkhim]}
-    note: "the word with a repeated rāʾ"
-    cite: [wafi 163]
-  - words: ["ذكرا", "ستراً", "إمراً", "وزراً", "حجراً", "صهراً"]
-    case: "fatḥah or ḍammah rāʾ after a yāʾ sākinah or a lāzim kasrah in the same word (a sākin that is not a ḥarf istiʿlāʾ between does not stop it)"
-    ruwat: {warsh: [tafkhim, tarqiq]}
-    note: "jumhūr of ahl al-adāʾ tafkhīm (first), some tarqīq"
-    cite: [wafi 164]
-  - words: ["سرا"]
-    case: "fatḥah or ḍammah rāʾ after a yāʾ sākinah or a lāzim kasrah in the same word (a sākin that is not a ḥarf istiʿlāʾ between does not stop it)"
-    ruwat: {warsh: [tarqiq]}
-    note: "the sākin before the rāʾ is idghāmed in it; no khulf"
-    cite: [wafi 164]
-  - words: ["بشرر"]
-    case: "fatḥah or ḍammah rāʾ after a yāʾ sākinah or a lāzim kasrah in the same word (a sākin that is not a ḥarf istiʿlāʾ between does not stop it)"
-    ruwat: {warsh: [tarqiq]}
-    note: "al-Mursalāt, wasl and waqf; at a stop Warsh tarqīq on both rāʾs, the other thirteen tafkhīm on the first rāʾ"
-    cite: [wafi 164]
-  - words: ["حيران"]
-    case: "fatḥah or ḍammah rāʾ after a yāʾ sākinah or a lāzim kasrah in the same word (a sākin that is not a ḥarf istiʿlāʾ between does not stop it)"
-    ruwat: {warsh: [tafkhim, tarqiq]}
-    cite: [wafi 164, wafi 165]
-  - words: ["حضرت", "صدورهم", "الذكر", "صفحا", "المدثر", "قم لتنذر قوما"]
-    case: "fatḥah or ḍammah rāʾ after a yāʾ sākinah or a lāzim kasrah in the same word (a sākin that is not a ḥarf istiʿlāʾ between does not stop it)"
-    ruwat: {warsh: [tarqiq]}
-    note: "a ḥarf istiʿlāʾ in the next word does not stop Warsh's tarqīq"
-    cite: [wafi 166]
-  - words: ["أن أنذر قومك", "ولا تصعر خدك", "فاصبر صبرا"]
-    case: "rāʾ sākinah after a lāzim kasrah, no ḥarf istiʿlāʾ after it"
-    ruwat: {qalun: [tarqiq], warsh: [tarqiq], bazzi: [tarqiq], qunbul: [tarqiq], duri_abuamr: [tarqiq], susi: [tarqiq], hisham: [tarqiq], ibn_dhakwan: [tarqiq], shuba: [tarqiq], hafs: [tarqiq], khalaf_an_hamzah: [tarqiq], khallad: [tarqiq], abul_harith: [tarqiq], duri_kisai: [tarqiq], ibn_wardan: [tarqiq], ibn_jammaz: [tarqiq], ruways: [tarqiq], rawh: [tarqiq], ishaq: [tarqiq], idris: [tarqiq]}
-    via: {ibn_wardan: model_qalun, ibn_jammaz: model_qalun, ruways: asl, rawh: asl, ishaq: asl, idris: asl}
-    note: "a ḥarf istiʿlāʾ in the next word does not stop it, for Warsh and the others"
-    cite: [wafi 166]
-  - words: ["ارتابوا", "ارتضى", "اركعوا"]
-    case: "rāʾ sākinah after a lāzim kasrah, no ḥarf istiʿlāʾ after it"
-    ruwat: {qalun: [tafkhim], warsh: [tafkhim], bazzi: [tafkhim], qunbul: [tafkhim], duri_abuamr: [tafkhim], susi: [tafkhim], hisham: [tafkhim], ibn_dhakwan: [tafkhim], shuba: [tafkhim], hafs: [tafkhim], khalaf_an_hamzah: [tafkhim], khallad: [tafkhim], abul_harith: [tafkhim], duri_kisai: [tafkhim], ibn_wardan: [tafkhim], ibn_jammaz: [tafkhim], ruways: [tafkhim], rawh: [tafkhim], ishaq: [tafkhim], idris: [tafkhim]}
-    via: {ibn_wardan: model_qalun, ibn_jammaz: model_qalun, ruways: asl, rawh: asl, ishaq: asl, idris: asl}
-    note: "the kasrah is ʿāriḍ"
-    cite: [wafi 165]
-  - words: ["فرق"]
-    case: "rāʾ (sākinah or mutaḥarrikah) before a ḥarf istiʿlāʾ in the same word"
-    ruwat: {qalun: [tafkhim, tarqiq], warsh: [tafkhim, tarqiq], bazzi: [tafkhim, tarqiq], qunbul: [tafkhim, tarqiq], duri_abuamr: [tafkhim, tarqiq], susi: [tafkhim, tarqiq], hisham: [tafkhim, tarqiq], ibn_dhakwan: [tafkhim, tarqiq], shuba: [tafkhim, tarqiq], hafs: [tafkhim, tarqiq], khalaf_an_hamzah: [tafkhim, tarqiq], khallad: [tafkhim, tarqiq], abul_harith: [tafkhim, tarqiq], duri_kisai: [tafkhim, tarqiq], ibn_wardan: [tafkhim, tarqiq], ibn_jammaz: [tafkhim, tarqiq], ruways: [tafkhim, tarqiq], rawh: [tafkhim, tarqiq], ishaq: [tafkhim, tarqiq], idris: [tafkhim, tarqiq]}
-    via: {ibn_wardan: model_qalun, ibn_jammaz: model_qalun, ruways: asl, rawh: asl, ishaq: asl, idris: asl}
-    note: "both wujūh sound for all the fourteen"
-    cite: [wafi 166]
-  - words: ["إرصادا", "مرصادا", "المرصاد", "قرطاس", "فرقة"]
-    case: "rāʾ (sākinah or mutaḥarrikah) before a ḥarf istiʿlāʾ in the same word"
-    ruwat: {qalun: [tafkhim], warsh: [tafkhim], bazzi: [tafkhim], qunbul: [tafkhim], duri_abuamr: [tafkhim], susi: [tafkhim], hisham: [tafkhim], ibn_dhakwan: [tafkhim], shuba: [tafkhim], hafs: [tafkhim], khalaf_an_hamzah: [tafkhim], khallad: [tafkhim], abul_harith: [tafkhim], duri_kisai: [tafkhim], ibn_wardan: [tafkhim], ibn_jammaz: [tafkhim], ruways: [tafkhim], rawh: [tafkhim], ishaq: [tafkhim], idris: [tafkhim]}
-    via: {ibn_wardan: model_qalun, ibn_jammaz: model_qalun, ruways: asl, rawh: asl, ishaq: asl, idris: asl}
-    note: "rāʾ sākinah before a ḥarf istiʿlāʾ"
-    cite: [wafi 166]
-  - words: ["فراق", "الفراق", "الإشراق", "إعراضا", "إعراضهم", "صراط"]
-    case: "rāʾ (sākinah or mutaḥarrikah) before a ḥarf istiʿlāʾ in the same word"
-    ruwat: {qalun: [tafkhim], warsh: [tafkhim], bazzi: [tafkhim], qunbul: [tafkhim], duri_abuamr: [tafkhim], susi: [tafkhim], hisham: [tafkhim], ibn_dhakwan: [tafkhim], shuba: [tafkhim], hafs: [tafkhim], khalaf_an_hamzah: [tafkhim], khallad: [tafkhim], abul_harith: [tafkhim], duri_kisai: [tafkhim], ibn_wardan: [tafkhim], ibn_jammaz: [tafkhim], ruways: [tafkhim], rawh: [tafkhim], ishaq: [tafkhim], idris: [tafkhim]}
-    via: {ibn_wardan: model_qalun, ibn_jammaz: model_qalun, ruways: asl, rawh: asl, ishaq: asl, idris: asl}
-    note: "rāʾ mutaḥarrikah before a ḥarf istiʿlāʾ in its word"
-    cite: [wafi 166]
-  - words: ["ارتابوا", "ارجعوا", "ارجعى", "اركعوا", "اركبوا"]
-    case: "the kasrah is in another word (or an ʿāriḍ kasrah at the start: امرأ ارتابوا)"
-    ruwat: {qalun: [tafkhim], warsh: [tafkhim], bazzi: [tafkhim], qunbul: [tafkhim], duri_abuamr: [tafkhim], susi: [tafkhim], hisham: [tafkhim], ibn_dhakwan: [tafkhim], shuba: [tafkhim], hafs: [tafkhim], khalaf_an_hamzah: [tafkhim], khallad: [tafkhim], abul_harith: [tafkhim], duri_kisai: [tafkhim], ibn_wardan: [tafkhim], ibn_jammaz: [tafkhim], ruways: [tafkhim], rawh: [tafkhim], ishaq: [tafkhim], idris: [tafkhim]}
-    via: {ibn_wardan: model_qalun, ibn_jammaz: model_qalun, ruways: asl, rawh: asl, ishaq: asl, idris: asl}
-    note: "at the start of the word"
-    cite: [wafi 166]
-  - words: ["امرأ", "امرأة", "امرؤ"]
-    case: "the kasrah is in another word (or an ʿāriḍ kasrah at the start: امرأ ارتابوا)"
-    ruwat: {warsh: [tafkhim]}
-    note: "at the start of the word"
-    cite: [wafi 162, wafi 166]
-  - words: ["رب", "ارجعون", "الذي ارتضى", "أم ارتابوا", "إن ارتبتم", "لمن ارتضى"]
-    case: "the kasrah is in another word (or an ʿāriḍ kasrah at the start: امرأ ارتابوا)"
-    ruwat: {qalun: [tafkhim], warsh: [tafkhim], bazzi: [tafkhim], qunbul: [tafkhim], duri_abuamr: [tafkhim], susi: [tafkhim], hisham: [tafkhim], ibn_dhakwan: [tafkhim], shuba: [tafkhim], hafs: [tafkhim], khalaf_an_hamzah: [tafkhim], khallad: [tafkhim], abul_harith: [tafkhim], duri_kisai: [tafkhim], ibn_wardan: [tafkhim], ibn_jammaz: [tafkhim], ruways: [tafkhim], rawh: [tafkhim], ishaq: [tafkhim], idris: [tafkhim]}
-    via: {ibn_wardan: model_qalun, ibn_jammaz: model_qalun, ruways: asl, rawh: asl, ishaq: asl, idris: asl}
-    cite: [wafi 167]
-  - words: ["ما كان أبوك امرأ سوء", "في المدينة امرأت", "بحمد ربهم", "بأمر ربك", "قالت امرأت العزيز", "وإن امرأة خافت", "إن امرؤ هلك", "برسول", "برازقين", "برموسكم", "برشيد", "لربك", "لرقيك", "ولرسوله"]
-    case: "the kasrah is in another word (or an ʿāriḍ kasrah at the start: امرأ ارتابوا)"
-    ruwat: {warsh: [tafkhim]}
-    note: "the kasrah is in a different word (the bāʾ/lām prefix or the previous word) for Warsh"
-    cite: [wafi 162, wafi 167]
-  - words: ["المرء", "كرسيه", "ردف", "رضيا", "شرقية", "غربية", "مرجعكم", "مرج البحرين", "البشرين", "مريم", "قرية"]
-    case: "rāʾ followed by a kasrah or yāʾ"
-    ruwat: {qalun: [tafkhim], warsh: [tafkhim], bazzi: [tafkhim], qunbul: [tafkhim], duri_abuamr: [tafkhim], susi: [tafkhim], hisham: [tafkhim], ibn_dhakwan: [tafkhim], shuba: [tafkhim], hafs: [tafkhim], khalaf_an_hamzah: [tafkhim], khallad: [tafkhim], abul_harith: [tafkhim], duri_kisai: [tafkhim], ibn_wardan: [tafkhim], ibn_jammaz: [tafkhim], ruways: [tafkhim], rawh: [tafkhim], ishaq: [tafkhim], idris: [tafkhim]}
-    via: {ibn_wardan: model_qalun, ibn_jammaz: model_qalun, ruways: asl, rawh: asl, ishaq: asl, idris: asl}
-    cite: [wafi 166]
-  - words: ["القطر"]
-    case: "final rāʾ at a stop after a fatḥah, ḍammah, alif, wāw or a ṣaḥīḥ sākin"
-    ruwat: {qalun: [tarqiq, tafkhim], warsh: [tarqiq, tafkhim], bazzi: [tarqiq, tafkhim], qunbul: [tarqiq, tafkhim], duri_abuamr: [tarqiq, tafkhim], susi: [tarqiq, tafkhim], hisham: [tarqiq, tafkhim], ibn_dhakwan: [tarqiq, tafkhim], shuba: [tarqiq, tafkhim], hafs: [tarqiq, tafkhim], khalaf_an_hamzah: [tarqiq, tafkhim], khallad: [tarqiq, tafkhim], abul_harith: [tarqiq, tafkhim], duri_kisai: [tarqiq, tafkhim], ibn_wardan: [tarqiq, tafkhim], ibn_jammaz: [tarqiq, tafkhim], ruways: [tarqiq, tafkhim], rawh: [tarqiq, tafkhim], ishaq: [tarqiq, tafkhim], idris: [tarqiq, tafkhim]}
-    via: {ibn_wardan: model_qalun, ibn_jammaz: model_qalun, ruways: asl, rawh: asl, ishaq: asl, idris: asl}
-    note: "at a stop: tarqīq and tafkhīm, tarqīq preferred"
-    cite: [wafi 169]
-  - words: ["مصر"]
-    case: "final rāʾ at a stop after a fatḥah, ḍammah, alif, wāw or a ṣaḥīḥ sākin"
-    ruwat: {qalun: [tafkhim, tarqiq], warsh: [tafkhim, tarqiq], bazzi: [tafkhim, tarqiq], qunbul: [tafkhim, tarqiq], duri_abuamr: [tafkhim, tarqiq], susi: [tafkhim, tarqiq], hisham: [tafkhim, tarqiq], ibn_dhakwan: [tafkhim, tarqiq], shuba: [tafkhim, tarqiq], hafs: [tafkhim, tarqiq], khalaf_an_hamzah: [tafkhim, tarqiq], khallad: [tafkhim, tarqiq], abul_harith: [tafkhim, tarqiq], duri_kisai: [tafkhim, tarqiq], ibn_wardan: [tafkhim, tarqiq], ibn_jammaz: [tafkhim, tarqiq], ruways: [tafkhim, tarqiq], rawh: [tafkhim, tarqiq], ishaq: [tafkhim, tarqiq], idris: [tafkhim, tarqiq]}
-    via: {ibn_wardan: model_qalun, ibn_jammaz: model_qalun, ruways: asl, rawh: asl, ishaq: asl, idris: asl}
-    note: "at a stop: tafkhīm and tarqīq, tafkhīm preferred"
-    cite: [wafi 169]
+- words:
+  - مصرا
+  - إصرا
+  - إصرهم
+  - بمصر
+  - مصر
+  - قطرا
+  - فطرت
+  - قرآ
+  case: fatḥah or ḍammah rāʾ after a yāʾ sākinah or a lāzim kasrah in the same word (a sākin that is not a ḥarf istiʿlāʾ between does not stop
+    it)
+  ruwat:
+    warsh:
+    - tafkhim
+  note: a ḥarf istiʿlāʾ sākin between the kasrah and the rāʾ
+  cite:
+  - wafi 163
+- words:
+  - إخراجهم
+  - إخراج
+  - إخراجكم
+  - إخراجا
+  case: fatḥah or ḍammah rāʾ after a yāʾ sākinah or a lāzim kasrah in the same word (a sākin that is not a ḥarf istiʿlāʾ between does not stop
+    it)
+  ruwat:
+    warsh:
+    - tarqiq
+  note: the sākin khāʾ does not stop the tarqīq
+  cite:
+  - wafi 163
+- words:
+  - إبراهيم
+  - إسرائيل
+  - عمران
+  case: fatḥah or ḍammah rāʾ after a yāʾ sākinah or a lāzim kasrah in the same word (a sākin that is not a ḥarf istiʿlāʾ between does not stop
+    it)
+  ruwat:
+    warsh:
+    - tafkhim
+  note: non-Arabic names
+  cite:
+  - wafi 163
+- words:
+  - إرم
+  case: fatḥah or ḍammah rāʾ after a yāʾ sākinah or a lāzim kasrah in the same word (a sākin that is not a ḥarf istiʿlāʾ between does not stop
+    it)
+  ruwat:
+    warsh:
+    - tafkhim
+  cite:
+  - wafi 163
+- words:
+  - ضرارا
+  - فرارا
+  - الفرار
+  - إسرارا
+  - مدرارا
+  case: fatḥah or ḍammah rāʾ after a yāʾ sākinah or a lāzim kasrah in the same word (a sākin that is not a ḥarf istiʿlāʾ between does not stop
+    it)
+  ruwat:
+    warsh:
+    - tafkhim
+  note: the word with a repeated rāʾ
+  cite:
+  - wafi 163
+- words:
+  - ذكرا
+  - ستراً
+  - إمراً
+  - وزراً
+  - حجراً
+  - صهراً
+  case: fatḥah or ḍammah rāʾ after a yāʾ sākinah or a lāzim kasrah in the same word (a sākin that is not a ḥarf istiʿlāʾ between does not stop
+    it)
+  ruwat:
+    warsh:
+    - tafkhim
+    - tarqiq
+  note: jumhūr of ahl al-adāʾ tafkhīm (first), some tarqīq
+  cite:
+  - wafi 164
+- words:
+  - سرا
+  case: fatḥah or ḍammah rāʾ after a yāʾ sākinah or a lāzim kasrah in the same word (a sākin that is not a ḥarf istiʿlāʾ between does not stop
+    it)
+  ruwat:
+    warsh:
+    - tarqiq
+  note: the sākin before the rāʾ is idghāmed in it; no khulf
+  cite:
+  - wafi 164
+- words:
+  - بشرر
+  case: fatḥah or ḍammah rāʾ after a yāʾ sākinah or a lāzim kasrah in the same word (a sākin that is not a ḥarf istiʿlāʾ between does not stop
+    it)
+  ruwat:
+    warsh:
+    - tarqiq
+  note: al-Mursalāt, wasl and waqf; at a stop Warsh tarqīq on both rāʾs, the other thirteen tafkhīm on the first rāʾ
+  cite:
+  - wafi 164
+- words:
+  - حيران
+  case: fatḥah or ḍammah rāʾ after a yāʾ sākinah or a lāzim kasrah in the same word (a sākin that is not a ḥarf istiʿlāʾ between does not stop
+    it)
+  ruwat:
+    warsh:
+    - tafkhim
+    - tarqiq
+  cite:
+  - wafi 164
+  - wafi 165
+- words:
+  - حضرت
+  - صدورهم
+  - الذكر
+  - صفحا
+  - المدثر
+  - قم لتنذر قوما
+  case: fatḥah or ḍammah rāʾ after a yāʾ sākinah or a lāzim kasrah in the same word (a sākin that is not a ḥarf istiʿlāʾ between does not stop
+    it)
+  ruwat:
+    warsh:
+    - tarqiq
+  note: a ḥarf istiʿlāʾ in the next word does not stop Warsh's tarqīq
+  cite:
+  - wafi 166
+- words:
+  - أن أنذر قومك
+  - ولا تصعر خدك
+  - فاصبر صبرا
+  case: rāʾ sākinah after a lāzim kasrah, no ḥarf istiʿlāʾ after it
+  ruwat:
+    qalun:
+    - tarqiq
+    warsh:
+    - tarqiq
+    bazzi:
+    - tarqiq
+    qunbul:
+    - tarqiq
+    duri_abuamr:
+    - tarqiq
+    susi:
+    - tarqiq
+    hisham:
+    - tarqiq
+    ibn_dhakwan:
+    - tarqiq
+    shuba:
+    - tarqiq
+    hafs:
+    - tarqiq
+    khalaf_an_hamzah:
+    - tarqiq
+    khallad:
+    - tarqiq
+    abul_harith:
+    - tarqiq
+    duri_kisai:
+    - tarqiq
+    ibn_wardan:
+    - tarqiq
+    ibn_jammaz:
+    - tarqiq
+    ruways:
+    - tarqiq
+    rawh:
+    - tarqiq
+    ishaq:
+    - tarqiq
+    idris:
+    - tarqiq
+  via:
+    ibn_wardan: model_qalun
+    ibn_jammaz: model_qalun
+    ruways: asl
+    rawh: asl
+    ishaq: asl
+    idris: asl
+  note: a ḥarf istiʿlāʾ in the next word does not stop it, for Warsh and the others
+  cite:
+  - wafi 166
+- words:
+  - ارتابوا
+  - ارتضى
+  - اركعوا
+  case: rāʾ sākinah after a lāzim kasrah, no ḥarf istiʿlāʾ after it
+  ruwat:
+    qalun:
+    - tafkhim
+    warsh:
+    - tafkhim
+    bazzi:
+    - tafkhim
+    qunbul:
+    - tafkhim
+    duri_abuamr:
+    - tafkhim
+    susi:
+    - tafkhim
+    hisham:
+    - tafkhim
+    ibn_dhakwan:
+    - tafkhim
+    shuba:
+    - tafkhim
+    hafs:
+    - tafkhim
+    khalaf_an_hamzah:
+    - tafkhim
+    khallad:
+    - tafkhim
+    abul_harith:
+    - tafkhim
+    duri_kisai:
+    - tafkhim
+    ibn_wardan:
+    - tafkhim
+    ibn_jammaz:
+    - tafkhim
+    ruways:
+    - tafkhim
+    rawh:
+    - tafkhim
+    ishaq:
+    - tafkhim
+    idris:
+    - tafkhim
+  via:
+    ibn_wardan: model_qalun
+    ibn_jammaz: model_qalun
+    ruways: asl
+    rawh: asl
+    ishaq: asl
+    idris: asl
+  note: the kasrah is ʿāriḍ
+  cite:
+  - wafi 165
+- words:
+  - فرق
+  case: rāʾ (sākinah or mutaḥarrikah) before a ḥarf istiʿlāʾ in the same word
+  ruwat:
+    qalun:
+    - tafkhim
+    - tarqiq
+    warsh:
+    - tafkhim
+    - tarqiq
+    bazzi:
+    - tafkhim
+    - tarqiq
+    qunbul:
+    - tafkhim
+    - tarqiq
+    duri_abuamr:
+    - tafkhim
+    - tarqiq
+    susi:
+    - tafkhim
+    - tarqiq
+    hisham:
+    - tafkhim
+    - tarqiq
+    ibn_dhakwan:
+    - tafkhim
+    - tarqiq
+    shuba:
+    - tafkhim
+    - tarqiq
+    hafs:
+    - tafkhim
+    - tarqiq
+    khalaf_an_hamzah:
+    - tafkhim
+    - tarqiq
+    khallad:
+    - tafkhim
+    - tarqiq
+    abul_harith:
+    - tafkhim
+    - tarqiq
+    duri_kisai:
+    - tafkhim
+    - tarqiq
+    ibn_wardan:
+    - tafkhim
+    - tarqiq
+    ibn_jammaz:
+    - tafkhim
+    - tarqiq
+    ruways:
+    - tafkhim
+    - tarqiq
+    rawh:
+    - tafkhim
+    - tarqiq
+    ishaq:
+    - tafkhim
+    - tarqiq
+    idris:
+    - tafkhim
+    - tarqiq
+  via:
+    ibn_wardan: model_qalun
+    ibn_jammaz: model_qalun
+    ruways: asl
+    rawh: asl
+    ishaq: asl
+    idris: asl
+  note: both wujūh sound for all the fourteen
+  cite:
+  - wafi 166
+- words:
+  - إرصادا
+  - مرصادا
+  - المرصاد
+  - قرطاس
+  - فرقة
+  case: rāʾ (sākinah or mutaḥarrikah) before a ḥarf istiʿlāʾ in the same word
+  ruwat:
+    qalun:
+    - tafkhim
+    warsh:
+    - tafkhim
+    bazzi:
+    - tafkhim
+    qunbul:
+    - tafkhim
+    duri_abuamr:
+    - tafkhim
+    susi:
+    - tafkhim
+    hisham:
+    - tafkhim
+    ibn_dhakwan:
+    - tafkhim
+    shuba:
+    - tafkhim
+    hafs:
+    - tafkhim
+    khalaf_an_hamzah:
+    - tafkhim
+    khallad:
+    - tafkhim
+    abul_harith:
+    - tafkhim
+    duri_kisai:
+    - tafkhim
+    ibn_wardan:
+    - tafkhim
+    ibn_jammaz:
+    - tafkhim
+    ruways:
+    - tafkhim
+    rawh:
+    - tafkhim
+    ishaq:
+    - tafkhim
+    idris:
+    - tafkhim
+  via:
+    ibn_wardan: model_qalun
+    ibn_jammaz: model_qalun
+    ruways: asl
+    rawh: asl
+    ishaq: asl
+    idris: asl
+  note: rāʾ sākinah before a ḥarf istiʿlāʾ
+  cite:
+  - wafi 166
+- words:
+  - فراق
+  - الفراق
+  - الإشراق
+  - إعراضا
+  - إعراضهم
+  - صراط
+  case: rāʾ (sākinah or mutaḥarrikah) before a ḥarf istiʿlāʾ in the same word
+  ruwat:
+    qalun:
+    - tafkhim
+    warsh:
+    - tafkhim
+    bazzi:
+    - tafkhim
+    qunbul:
+    - tafkhim
+    duri_abuamr:
+    - tafkhim
+    susi:
+    - tafkhim
+    hisham:
+    - tafkhim
+    ibn_dhakwan:
+    - tafkhim
+    shuba:
+    - tafkhim
+    hafs:
+    - tafkhim
+    khalaf_an_hamzah:
+    - tafkhim
+    khallad:
+    - tafkhim
+    abul_harith:
+    - tafkhim
+    duri_kisai:
+    - tafkhim
+    ibn_wardan:
+    - tafkhim
+    ibn_jammaz:
+    - tafkhim
+    ruways:
+    - tafkhim
+    rawh:
+    - tafkhim
+    ishaq:
+    - tafkhim
+    idris:
+    - tafkhim
+  via:
+    ibn_wardan: model_qalun
+    ibn_jammaz: model_qalun
+    ruways: asl
+    rawh: asl
+    ishaq: asl
+    idris: asl
+  note: rāʾ mutaḥarrikah before a ḥarf istiʿlāʾ in its word
+  cite:
+  - wafi 166
+- words:
+  - ارتابوا
+  - ارجعوا
+  - ارجعى
+  - اركعوا
+  - اركبوا
+  case: 'the kasrah is in another word (or an ʿāriḍ kasrah at the start: امرأ ارتابوا)'
+  ruwat:
+    qalun:
+    - tafkhim
+    warsh:
+    - tafkhim
+    bazzi:
+    - tafkhim
+    qunbul:
+    - tafkhim
+    duri_abuamr:
+    - tafkhim
+    susi:
+    - tafkhim
+    hisham:
+    - tafkhim
+    ibn_dhakwan:
+    - tafkhim
+    shuba:
+    - tafkhim
+    hafs:
+    - tafkhim
+    khalaf_an_hamzah:
+    - tafkhim
+    khallad:
+    - tafkhim
+    abul_harith:
+    - tafkhim
+    duri_kisai:
+    - tafkhim
+    ibn_wardan:
+    - tafkhim
+    ibn_jammaz:
+    - tafkhim
+    ruways:
+    - tafkhim
+    rawh:
+    - tafkhim
+    ishaq:
+    - tafkhim
+    idris:
+    - tafkhim
+  via:
+    ibn_wardan: model_qalun
+    ibn_jammaz: model_qalun
+    ruways: asl
+    rawh: asl
+    ishaq: asl
+    idris: asl
+  note: at the start of the word
+  cite:
+  - wafi 166
+- words:
+  - امرأ
+  - امرأة
+  - امرؤ
+  case: 'the kasrah is in another word (or an ʿāriḍ kasrah at the start: امرأ ارتابوا)'
+  ruwat:
+    warsh:
+    - tafkhim
+  note: at the start of the word
+  cite:
+  - wafi 162
+  - wafi 166
+- words:
+  - رب
+  - ارجعون
+  - الذي ارتضى
+  - أم ارتابوا
+  - إن ارتبتم
+  - لمن ارتضى
+  case: 'the kasrah is in another word (or an ʿāriḍ kasrah at the start: امرأ ارتابوا)'
+  ruwat:
+    qalun:
+    - tafkhim
+    warsh:
+    - tafkhim
+    bazzi:
+    - tafkhim
+    qunbul:
+    - tafkhim
+    duri_abuamr:
+    - tafkhim
+    susi:
+    - tafkhim
+    hisham:
+    - tafkhim
+    ibn_dhakwan:
+    - tafkhim
+    shuba:
+    - tafkhim
+    hafs:
+    - tafkhim
+    khalaf_an_hamzah:
+    - tafkhim
+    khallad:
+    - tafkhim
+    abul_harith:
+    - tafkhim
+    duri_kisai:
+    - tafkhim
+    ibn_wardan:
+    - tafkhim
+    ibn_jammaz:
+    - tafkhim
+    ruways:
+    - tafkhim
+    rawh:
+    - tafkhim
+    ishaq:
+    - tafkhim
+    idris:
+    - tafkhim
+  via:
+    ibn_wardan: model_qalun
+    ibn_jammaz: model_qalun
+    ruways: asl
+    rawh: asl
+    ishaq: asl
+    idris: asl
+  cite:
+  - wafi 167
+- words:
+  - ما كان أبوك امرأ سوء
+  - في المدينة امرأت
+  - بحمد ربهم
+  - بأمر ربك
+  - قالت امرأت العزيز
+  - وإن امرأة خافت
+  - إن امرؤ هلك
+  - برسول
+  - برازقين
+  - برموسكم
+  - برشيد
+  - لربك
+  - لرقيك
+  - ولرسوله
+  case: 'the kasrah is in another word (or an ʿāriḍ kasrah at the start: امرأ ارتابوا)'
+  ruwat:
+    warsh:
+    - tafkhim
+  note: the kasrah is in a different word (the bāʾ/lām prefix or the previous word) for Warsh
+  cite:
+  - wafi 162
+  - wafi 167
+- words:
+  - المرء
+  - كرسيه
+  - ردف
+  - رضيا
+  - شرقية
+  - غربية
+  - مرجعكم
+  - مرج البحرين
+  - البشرين
+  - مريم
+  - قرية
+  case: rāʾ followed by a kasrah or yāʾ
+  ruwat:
+    qalun:
+    - tafkhim
+    warsh:
+    - tafkhim
+    bazzi:
+    - tafkhim
+    qunbul:
+    - tafkhim
+    duri_abuamr:
+    - tafkhim
+    susi:
+    - tafkhim
+    hisham:
+    - tafkhim
+    ibn_dhakwan:
+    - tafkhim
+    shuba:
+    - tafkhim
+    hafs:
+    - tafkhim
+    khalaf_an_hamzah:
+    - tafkhim
+    khallad:
+    - tafkhim
+    abul_harith:
+    - tafkhim
+    duri_kisai:
+    - tafkhim
+    ibn_wardan:
+    - tafkhim
+    ibn_jammaz:
+    - tafkhim
+    ruways:
+    - tafkhim
+    rawh:
+    - tafkhim
+    ishaq:
+    - tafkhim
+    idris:
+    - tafkhim
+  via:
+    ibn_wardan: model_qalun
+    ibn_jammaz: model_qalun
+    ruways: asl
+    rawh: asl
+    ishaq: asl
+    idris: asl
+  cite:
+  - wafi 166
+- words:
+  - القطر
+  case: final rāʾ at a stop after a fatḥah, ḍammah, alif, wāw or a ṣaḥīḥ sākin
+  ruwat:
+    qalun:
+    - tarqiq
+    - tafkhim
+    warsh:
+    - tarqiq
+    - tafkhim
+    bazzi:
+    - tarqiq
+    - tafkhim
+    qunbul:
+    - tarqiq
+    - tafkhim
+    duri_abuamr:
+    - tarqiq
+    - tafkhim
+    susi:
+    - tarqiq
+    - tafkhim
+    hisham:
+    - tarqiq
+    - tafkhim
+    ibn_dhakwan:
+    - tarqiq
+    - tafkhim
+    shuba:
+    - tarqiq
+    - tafkhim
+    hafs:
+    - tarqiq
+    - tafkhim
+    khalaf_an_hamzah:
+    - tarqiq
+    - tafkhim
+    khallad:
+    - tarqiq
+    - tafkhim
+    abul_harith:
+    - tarqiq
+    - tafkhim
+    duri_kisai:
+    - tarqiq
+    - tafkhim
+    ibn_wardan:
+    - tarqiq
+    - tafkhim
+    ibn_jammaz:
+    - tarqiq
+    - tafkhim
+    ruways:
+    - tarqiq
+    - tafkhim
+    rawh:
+    - tarqiq
+    - tafkhim
+    ishaq:
+    - tarqiq
+    - tafkhim
+    idris:
+    - tarqiq
+    - tafkhim
+  via:
+    ibn_wardan: model_qalun
+    ibn_jammaz: model_qalun
+    ruways: asl
+    rawh: asl
+    ishaq: asl
+    idris: asl
+  note: 'at a stop: tarqīq and tafkhīm, tarqīq preferred'
+  cite:
+  - wafi 169
+- words:
+  - مصر
+  case: final rāʾ at a stop after a fatḥah, ḍammah, alif, wāw or a ṣaḥīḥ sākin
+  ruwat:
+    qalun:
+    - tafkhim
+    - tarqiq
+    warsh:
+    - tafkhim
+    - tarqiq
+    bazzi:
+    - tafkhim
+    - tarqiq
+    qunbul:
+    - tafkhim
+    - tarqiq
+    duri_abuamr:
+    - tafkhim
+    - tarqiq
+    susi:
+    - tafkhim
+    - tarqiq
+    hisham:
+    - tafkhim
+    - tarqiq
+    ibn_dhakwan:
+    - tafkhim
+    - tarqiq
+    shuba:
+    - tafkhim
+    - tarqiq
+    hafs:
+    - tafkhim
+    - tarqiq
+    khalaf_an_hamzah:
+    - tafkhim
+    - tarqiq
+    khallad:
+    - tafkhim
+    - tarqiq
+    abul_harith:
+    - tafkhim
+    - tarqiq
+    duri_kisai:
+    - tafkhim
+    - tarqiq
+    ibn_wardan:
+    - tafkhim
+    - tarqiq
+    ibn_jammaz:
+    - tafkhim
+    - tarqiq
+    ruways:
+    - tafkhim
+    - tarqiq
+    rawh:
+    - tafkhim
+    - tarqiq
+    ishaq:
+    - tafkhim
+    - tarqiq
+    idris:
+    - tafkhim
+    - tarqiq
+  via:
+    ibn_wardan: model_qalun
+    ibn_jammaz: model_qalun
+    ruways: asl
+    rawh: asl
+    ishaq: asl
+    idris: asl
+  note: 'at a stop: tafkhīm and tarqīq, tafkhīm preferred'
+  cite:
+  - wafi 169
 open:
-  - "Ibn Wardān, Ibn Jammāz: from the Durrah's 'قرأ جميع الراءات واللامات مثل قراءة [قالون]' (idah 146): given Qālūn's reading in each case, via: model_qalun (Qālūn the stated model, not via aṣl), cite = idah 146 plus Qālūn's pages. Ruways, Rawh and Ishaq, Idris: 'كأصله' (idah 147): Abū ʿAmr's (al-Dūrī = al-Sūsī in every case here) and Khalaf ʿan Ḥamzah's reading, via: asl."
-  - "Warsh, rule exceptions without a stated reading: الخيرة، يرون، يردون، في ريب، مقنعى رموسهم (wafi 161) and الكفار رحماء، برشيد، بأمر ربك، بربوة، لرقيك (wafi 162) are named as excluded from Warsh's tarqīq; the rows give them no reading of their own (برشيد، بأمر ربك، لرقيك are in the tafkhīm list at wafi 167)."
-  - "Rawm (wafi 169-170): the fourteen 'as in waṣl' is a statement, not a wajh; for Warsh the row (wafi 170) 'ووقفت بالروم لورش فإنك ترقق الراء' is given as tarqīq; whether it covers every rāʾ at a stop with rawm or only after a kasrah is not stated in the row."
-  - "The Durrah rows (idah 146-147) say only 'like Qālūn' and 'like his aṣl'; whether Yaʿqūb's two (and Khalaf's) differ on the khulf words (فرق، القطر، مصر) is not in the rows; they are given the model's/aṣl's own khulf."
-  - "Case 'every rāʾ not under a condition': wafi 170 'اعمل بالتفخيم ... فيما عدا قواعد الترقيق' for the fourteen; the profile rows repeat it for 'rest7' (wafi 161)."
-  - "Warsh's cases (profile, wafi 161-162): a ḥarf istiʿlāʾ sākin stops the tarqīq; the other thirteen of the fourteen are given tafkhīm from the profile rows (wafi 161, 170), the rows of this category speak of Warsh only for the first two conditions."
+- 'Ibn Wardān, Ibn Jammāz: from the Durrah''s ''قرأ جميع الراءات واللامات مثل قراءة [قالون]'' (idah 146): given Qālūn''s reading in each case,
+  via: model_qalun (Qālūn the stated model, not via aṣl), cite = idah 146 plus Qālūn''s pages. Ruways, Rawh and Ishaq, Idris: ''كأصله'' (idah
+  147): Abū ʿAmr''s (al-Dūrī = al-Sūsī in every case here) and Khalaf ʿan Ḥamzah''s reading, via: asl.'
+- The Durrah rows (idah 146-147) say only 'like Qālūn' and 'like his aṣl'; whether Yaʿqūb's two (and Khalaf's) differ on the khulf words (فرق،
+  القطر، مصر) is not in the rows; they are given the model's/aṣl's own khulf.
+- 'Case ''every rāʾ not under a condition'': wafi 170 ''اعمل بالتفخيم ... فيما عدا قواعد الترقيق'' for the fourteen; the profile rows repeat it
+  for ''rest7'' (wafi 161).'
+- 'Warsh''s cases (profile, wafi 161-162): a ḥarf istiʿlāʾ sākin stops the tarqīq; the other thirteen of the fourteen are given tafkhīm from the
+  profile rows (wafi 161, 170), the rows of this category speak of Warsh only for the first two conditions.'
+filled_notes:
+- 'Warsh, rule exceptions without a stated reading: الخيرة، يرون، يردون، في ريب، مقنعى رموسهم (wafi 161) and الكفار رحماء، برشيد، بأمر ربك، بربوة،
+  لرقيك (wafi 162) are named as excluded from Warsh''s tarqīq; the rows give them no reading of their own (برشيد، بأمر ربك، لرقيك are in the tafkhīm
+  list at wafi 167).'
+- 'Rawm (wafi 169-170): the fourteen ''as in waṣl'' is a statement, not a wajh; for Warsh the row (wafi 170) ''ووقفت بالروم لورش فإنك ترقق الراء''
+  is given as tarqīq; whether it covers every rāʾ at a stop with rawm or only after a kasrah is not stated in the row.'

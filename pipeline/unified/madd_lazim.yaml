@@ -1,120 +1,390 @@
 category: madd_lazim
 what: madd lāzim (kalimī and ḥarfī, the letters of the surah openings)
 wujuh:
-- {id: qasr, ar: القصر, en: 'qaṣr, 1 alif (2 ḥarakāt)'}
-- {id: tawassut, ar: التوسط, en: 'tawassuṭ, 2 alifs (4 ḥarakāt)'}
-- {id: ishba, ar: المد المشبع, en: 'ishbāʿ / ṭūl, 3 alifs (6 ḥarakāt)'}
+- id: qasr
+  ar: القصر
+  en: qaṣr, 1 alif (2 ḥarakāt)
+- id: tawassut
+  ar: التوسط
+  en: tawassuṭ, 2 alifs (4 ḥarakāt)
+- id: ishba
+  ar: المد المشبع
+  en: ishbāʿ / ṭūl, 3 alifs (6 ḥarakāt)
 cases:
 - case: madd letter before a lāzim sākin in a word (الضالين, الطامة, الصاخة, وحاجه قومه, آلله خير)
   ruwat:
-    qalun: {wujuh: &id001 [ishba], cite: &id002 [wafi 79]}
-    warsh: {wujuh: *id001, cite: *id002}
-    bazzi: {wujuh: *id001, cite: *id002}
-    qunbul: {wujuh: *id001, cite: *id002}
-    duri_abuamr: {wujuh: *id001, cite: *id002}
-    susi: {wujuh: *id001, cite: *id002}
-    hisham: {wujuh: *id001, cite: *id002}
-    ibn_dhakwan: {wujuh: *id001, cite: *id002}
-    shuba: {wujuh: *id001, cite: *id002}
-    hafs: {wujuh: *id001, cite: *id002}
-    khalaf_an_hamzah: {wujuh: *id001, cite: *id002}
-    khallad: {wujuh: *id001, cite: *id002}
-    abul_harith: {wujuh: *id001, cite: *id002}
-    duri_kisai: {wujuh: *id001, cite: *id002}
-    ibn_wardan: {wujuh: &id003 [ishba], cite: &id004 [idah 85], via: asl}
-    ibn_jammaz: {wujuh: *id003, cite: *id004, via: asl}
-    ruways: {wujuh: *id003, cite: *id004, via: asl}
-    rawh: {wujuh: *id003, cite: *id004, via: asl}
-    ishaq: {wujuh: *id003, cite: *id004, via: asl}
-    idris: {wujuh: *id003, cite: *id004, via: asl}
+    qalun:
+      wujuh: &id001
+      - ishba
+      cite: &id002
+      - wafi 79
+    warsh:
+      wujuh: *id001
+      cite: *id002
+    bazzi:
+      wujuh: *id001
+      cite: *id002
+    qunbul:
+      wujuh: *id001
+      cite: *id002
+    duri_abuamr:
+      wujuh: *id001
+      cite: *id002
+    susi:
+      wujuh: *id001
+      cite: *id002
+    hisham:
+      wujuh: *id001
+      cite: *id002
+    ibn_dhakwan:
+      wujuh: *id001
+      cite: *id002
+    shuba:
+      wujuh: *id001
+      cite: *id002
+    hafs:
+      wujuh: *id001
+      cite: *id002
+    khalaf_an_hamzah:
+      wujuh: *id001
+      cite: *id002
+    khallad:
+      wujuh: *id001
+      cite: *id002
+    abul_harith:
+      wujuh: *id001
+      cite: *id002
+    duri_kisai:
+      wujuh: *id001
+      cite: *id002
+    ibn_wardan:
+      wujuh: &id003
+      - ishba
+      cite: &id004
+      - idah 85
+      via: asl
+    ibn_jammaz:
+      wujuh: *id003
+      cite: *id004
+      via: asl
+    ruways:
+      wujuh: *id003
+      cite: *id004
+      via: asl
+    rawh:
+      wujuh: *id003
+      cite: *id004
+      via: asl
+    ishaq:
+      wujuh: *id003
+      cite: *id004
+      via: asl
+    idris:
+      wujuh: *id003
+      cite: *id004
+      via: asl
 - case: madd letter in the openings' letters of three letters (لام, ميم, طسم, حم, كاف, صاد, ق, سين, نون)
   ruwat:
-    qalun: {wujuh: &id005 [ishba], cite: &id006 [wafi 80]}
-    warsh: {wujuh: *id005, cite: *id006}
-    bazzi: {wujuh: *id005, cite: *id006}
-    qunbul: {wujuh: *id005, cite: *id006}
-    duri_abuamr: {wujuh: *id005, cite: *id006}
-    susi: {wujuh: *id005, cite: *id006}
-    hisham: {wujuh: *id005, cite: *id006}
-    ibn_dhakwan: {wujuh: *id005, cite: *id006}
-    shuba: {wujuh: *id005, cite: *id006}
-    hafs: {wujuh: *id005, cite: *id006}
-    khalaf_an_hamzah: {wujuh: *id005, cite: *id006}
-    khallad: {wujuh: *id005, cite: *id006}
-    abul_harith: {wujuh: *id005, cite: *id006}
-    duri_kisai: {wujuh: *id005, cite: *id006}
-    ibn_wardan: {wujuh: &id007 [ishba], cite: &id008 [idah 85], via: asl}
-    ibn_jammaz: {wujuh: *id007, cite: *id008, via: asl}
-    ruways: {wujuh: *id007, cite: *id008, via: asl}
-    rawh: {wujuh: *id007, cite: *id008, via: asl}
-    ishaq: {wujuh: *id007, cite: *id008, via: asl}
-    idris: {wujuh: *id007, cite: *id008, via: asl}
+    qalun:
+      wujuh: &id005
+      - ishba
+      cite: &id006
+      - wafi 80
+    warsh:
+      wujuh: *id005
+      cite: *id006
+    bazzi:
+      wujuh: *id005
+      cite: *id006
+    qunbul:
+      wujuh: *id005
+      cite: *id006
+    duri_abuamr:
+      wujuh: *id005
+      cite: *id006
+    susi:
+      wujuh: *id005
+      cite: *id006
+    hisham:
+      wujuh: *id005
+      cite: *id006
+    ibn_dhakwan:
+      wujuh: *id005
+      cite: *id006
+    shuba:
+      wujuh: *id005
+      cite: *id006
+    hafs:
+      wujuh: *id005
+      cite: *id006
+    khalaf_an_hamzah:
+      wujuh: *id005
+      cite: *id006
+    khallad:
+      wujuh: *id005
+      cite: *id006
+    abul_harith:
+      wujuh: *id005
+      cite: *id006
+    duri_kisai:
+      wujuh: *id005
+      cite: *id006
+    ibn_wardan:
+      wujuh: &id007
+      - ishba
+      cite: &id008
+      - idah 85
+      via: asl
+    ibn_jammaz:
+      wujuh: *id007
+      cite: *id008
+      via: asl
+    ruways:
+      wujuh: *id007
+      cite: *id008
+      via: asl
+    rawh:
+      wujuh: *id007
+      cite: *id008
+      via: asl
+    ishaq:
+      wujuh: *id007
+      cite: *id008
+      via: asl
+    idris:
+      wujuh: *id007
+      cite: *id008
+      via: asl
 - case: ʿayn in the openings (كهيعص, حم عسق)
   ruwat:
-    qalun: {wujuh: &id009 [tawassut, ishba], cite: &id010 [wafi 81]}
-    warsh: {wujuh: *id009, cite: *id010}
-    bazzi: {wujuh: *id009, cite: *id010}
-    qunbul: {wujuh: *id009, cite: *id010}
-    duri_abuamr: {wujuh: *id009, cite: *id010}
-    susi: {wujuh: *id009, cite: *id010}
-    hisham: {wujuh: *id009, cite: *id010}
-    ibn_dhakwan: {wujuh: *id009, cite: *id010}
-    shuba: {wujuh: *id009, cite: *id010}
-    hafs: {wujuh: *id009, cite: *id010}
-    khalaf_an_hamzah: {wujuh: *id009, cite: *id010}
-    khallad: {wujuh: *id009, cite: *id010}
-    abul_harith: {wujuh: *id009, cite: *id010}
-    duri_kisai: {wujuh: *id009, cite: *id010}
-    ibn_wardan: {wujuh: &id011 [tawassut, ishba], cite: &id012 [idah 85], via: asl}
-    ibn_jammaz: {wujuh: *id011, cite: *id012, via: asl}
-    ruways: {wujuh: *id011, cite: *id012, via: asl}
-    rawh: {wujuh: *id011, cite: *id012, via: asl}
-    ishaq: {wujuh: *id011, cite: *id012, via: asl}
-    idris: {wujuh: *id011, cite: *id012, via: asl}
+    qalun:
+      wujuh: &id009
+      - tawassut
+      - ishba
+      cite: &id010
+      - wafi 81
+    warsh:
+      wujuh: *id009
+      cite: *id010
+    bazzi:
+      wujuh: *id009
+      cite: *id010
+    qunbul:
+      wujuh: *id009
+      cite: *id010
+    duri_abuamr:
+      wujuh: *id009
+      cite: *id010
+    susi:
+      wujuh: *id009
+      cite: *id010
+    hisham:
+      wujuh: *id009
+      cite: *id010
+    ibn_dhakwan:
+      wujuh: *id009
+      cite: *id010
+    shuba:
+      wujuh: *id009
+      cite: *id010
+    hafs:
+      wujuh: *id009
+      cite: *id010
+    khalaf_an_hamzah:
+      wujuh: *id009
+      cite: *id010
+    khallad:
+      wujuh: *id009
+      cite: *id010
+    abul_harith:
+      wujuh: *id009
+      cite: *id010
+    duri_kisai:
+      wujuh: *id009
+      cite: *id010
+    ibn_wardan:
+      wujuh: &id011
+      - tawassut
+      - ishba
+      cite: &id012
+      - idah 85
+      via: asl
+    ibn_jammaz:
+      wujuh: *id011
+      cite: *id012
+      via: asl
+    ruways:
+      wujuh: *id011
+      cite: *id012
+      via: asl
+    rawh:
+      wujuh: *id011
+      cite: *id012
+      via: asl
+    ishaq:
+      wujuh: *id011
+      cite: *id012
+      via: asl
+    idris:
+      wujuh: *id011
+      cite: *id012
+      via: asl
 - case: mīm of الم before the name Allāh, in waṣl
   ruwat:
-    qalun: {wujuh: &id013 [ishba, qasr], cite: &id014 [wafi 80]}
-    warsh: {wujuh: *id013, cite: *id014}
-    bazzi: {wujuh: *id013, cite: *id014}
-    qunbul: {wujuh: *id013, cite: *id014}
-    duri_abuamr: {wujuh: *id013, cite: *id014}
-    susi: {wujuh: *id013, cite: *id014}
-    hisham: {wujuh: *id013, cite: *id014}
-    ibn_dhakwan: {wujuh: *id013, cite: *id014}
-    shuba: {wujuh: *id013, cite: *id014}
-    hafs: {wujuh: *id013, cite: *id014}
-    khalaf_an_hamzah: {wujuh: *id013, cite: *id014}
-    khallad: {wujuh: *id013, cite: *id014}
-    abul_harith: {wujuh: *id013, cite: *id014}
-    duri_kisai: {wujuh: *id013, cite: *id014}
-    ibn_wardan: {wujuh: &id015 [ishba, qasr], cite: &id016 [idah 85], via: asl}
-    ibn_jammaz: {wujuh: *id015, cite: *id016, via: asl}
-    ruways: {wujuh: *id015, cite: *id016, via: asl}
-    rawh: {wujuh: *id015, cite: *id016, via: asl}
-    ishaq: {wujuh: *id015, cite: *id016, via: asl}
-    idris: {wujuh: *id015, cite: *id016, via: asl}
+    qalun:
+      wujuh: &id013
+      - ishba
+      - qasr
+      cite: &id014
+      - wafi 80
+    warsh:
+      wujuh: *id013
+      cite: *id014
+    bazzi:
+      wujuh: *id013
+      cite: *id014
+    qunbul:
+      wujuh: *id013
+      cite: *id014
+    duri_abuamr:
+      wujuh: *id013
+      cite: *id014
+    susi:
+      wujuh: *id013
+      cite: *id014
+    hisham:
+      wujuh: *id013
+      cite: *id014
+    ibn_dhakwan:
+      wujuh: *id013
+      cite: *id014
+    shuba:
+      wujuh: *id013
+      cite: *id014
+    hafs:
+      wujuh: *id013
+      cite: *id014
+    khalaf_an_hamzah:
+      wujuh: *id013
+      cite: *id014
+    khallad:
+      wujuh: *id013
+      cite: *id014
+    abul_harith:
+      wujuh: *id013
+      cite: *id014
+    duri_kisai:
+      wujuh: *id013
+      cite: *id014
+    ibn_wardan:
+      wujuh: &id015
+      - ishba
+      - qasr
+      cite: &id016
+      - idah 85
+      via: asl
+    ibn_jammaz:
+      wujuh: *id015
+      cite: *id016
+      via: asl
+    ruways:
+      wujuh: *id015
+      cite: *id016
+      via: asl
+    rawh:
+      wujuh: *id015
+      cite: *id016
+      via: asl
+    ishaq:
+      wujuh: *id015
+      cite: *id016
+      via: asl
+    idris:
+      wujuh: *id015
+      cite: *id016
+      via: asl
 - case: openings' letters of two letters (الطاء الهاء الراء الياء الحاء) and the word ألف
   ruwat:
-    qalun: {wujuh: &id017 [qasr], cite: &id018 [wafi 81]}
-    warsh: {wujuh: *id017, cite: *id018}
-    bazzi: {wujuh: *id017, cite: *id018}
-    qunbul: {wujuh: *id017, cite: *id018}
-    duri_abuamr: {wujuh: *id017, cite: *id018}
-    susi: {wujuh: *id017, cite: *id018}
-    hisham: {wujuh: *id017, cite: *id018}
-    ibn_dhakwan: {wujuh: *id017, cite: *id018}
-    shuba: {wujuh: *id017, cite: *id018}
-    hafs: {wujuh: *id017, cite: *id018}
-    khalaf_an_hamzah: {wujuh: *id017, cite: *id018}
-    khallad: {wujuh: *id017, cite: *id018}
-    abul_harith: {wujuh: *id017, cite: *id018}
-    duri_kisai: {wujuh: *id017, cite: *id018}
-    ibn_wardan: {wujuh: [], cite: []}
-    ibn_jammaz: {wujuh: [], cite: []}
-    ruways: {wujuh: [], cite: []}
-    rawh: {wujuh: [], cite: []}
-    ishaq: {wujuh: [], cite: []}
-    idris: {wujuh: [], cite: []}
+    qalun:
+      wujuh: &id017
+      - qasr
+      cite: &id018
+      - wafi 81
+    warsh:
+      wujuh: *id017
+      cite: *id018
+    bazzi:
+      wujuh: *id017
+      cite: *id018
+    qunbul:
+      wujuh: *id017
+      cite: *id018
+    duri_abuamr:
+      wujuh: *id017
+      cite: *id018
+    susi:
+      wujuh: *id017
+      cite: *id018
+    hisham:
+      wujuh: *id017
+      cite: *id018
+    ibn_dhakwan:
+      wujuh: *id017
+      cite: *id018
+    shuba:
+      wujuh: *id017
+      cite: *id018
+    hafs:
+      wujuh: *id017
+      cite: *id018
+    khalaf_an_hamzah:
+      wujuh: *id017
+      cite: *id018
+    khallad:
+      wujuh: *id017
+      cite: *id018
+    abul_harith:
+      wujuh: *id017
+      cite: *id018
+    duri_kisai:
+      wujuh: *id017
+      cite: *id018
+    ibn_wardan:
+      wujuh:
+      - qasr
+      cite:
+      - idah 40-43
+      via: asl_unstated
+    ibn_jammaz:
+      wujuh:
+      - qasr
+      cite:
+      - idah 40-43
+      via: asl_unstated
+    ruways:
+      wujuh:
+      - qasr
+      cite:
+      - idah 40-43
+      via: asl_unstated
+    rawh:
+      wujuh:
+      - qasr
+      cite:
+      - idah 40-43
+      via: asl_unstated
+    ishaq:
+      wujuh:
+      - qasr
+      cite:
+      - idah 40-43
+      via: asl_unstated
+    idris:
+      wujuh:
+      - qasr
+      cite:
+      - idah 40-43
+      via: asl_unstated
 listed:
 - words:
   - آلآن
@@ -154,9 +424,14 @@ listed:
   - wafi 81
   why: the mīm after the hamzah's vowel is moved to it (al-ʿAnkabūt)
 open:
-- 'Lengths: ʿayn "4 ḥarakāt" = tawassuṭ (2 alifs) or 6 = ishbāʿ (3 alifs) (wafi 81); no fractions. For the others the rows say "المد المشبع ست حركات".'
-- 'The Durrah: one row, idah 85 ("كأصولهم في المد اللازم بجميع أنواعه"); every case except case 5 is filled with the aṣl''s wujūh (via asl), which all agree between the aṣl''s two ruwāt. Case 5 (two-letter letters, ألف) is not lāzim and the row does not reach it: left empty.'
-- 'Abū Jaʿfar''s ruwāt on آلآن (first alif) and on الم أحسب الناس: their aṣl is Nāfiʿ, whose two ruwāt differ from case 1/2 in these words (Qālūn and Warsh above); the rows do not say which Ibn Wardān and Ibn Jammāz follow, so the listed words are not extended to them.'
-- 'Case 1: the rows list the words as examples only (الضالين, الطامة, الصاخة, وحاجه قومه, آلله خير, ص, ق, ن); the book names no exceptions in this category.'
+- 'Lengths: ʿayn "4 ḥarakāt" = tawassuṭ (2 alifs) or 6 = ishbāʿ (3 alifs) (wafi 81); no fractions. For the others the rows say "المد المشبع ست
+  حركات".'
+- 'Abū Jaʿfar''s ruwāt on آلآن (first alif) and on الم أحسب الناس: their aṣl is Nāfiʿ, whose two ruwāt differ from case 1/2 in these words (Qālūn
+  and Warsh above); the rows do not say which Ibn Wardān and Ibn Jammāz follow, so the listed words are not extended to them.'
+- 'Case 1: the rows list the words as examples only (الضالين, الطامة, الصاخة, وحاجه قومه, آلله خير, ص, ق, ن); the book names no exceptions in
+  this category.'
 - Case 4 quote ("المد المشبع نظراً …") is cut off in the row; the second wajh is qaṣr per the row's tag only.
 - 'wafi 80: "ميم الم" before a transferred hamzah is Warsh''s only (listed); the other thirteen are not mentioned.'
+filled_notes:
+- 'The Durrah: one row, idah 85 ("كأصولهم في المد اللازم بجميع أنواعه"); every case except case 5 is filled with the aṣl''s wujūh (via asl), which
+  all agree between the aṣl''s two ruwāt. Case 5 (two-letter letters, ألف) is not lāzim and the row does not reach it: left empty.'

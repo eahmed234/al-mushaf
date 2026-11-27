@@ -353,35 +353,55 @@ cases:
 - case: hāʾ before the plural mīm before a sākin, after a sākin yāʾ, in waṣl (عليهمُ القتال)
   ruwat:
     qalun:
-      wujuh: []
+      wujuh:
+      - kasr_ha
       cite: []
+      via: as_hafs
     warsh:
-      wujuh: []
+      wujuh:
+      - kasr_ha
       cite: []
+      via: as_hafs
     bazzi:
-      wujuh: []
+      wujuh:
+      - kasr_ha
       cite: []
+      via: as_hafs
     qunbul:
-      wujuh: []
+      wujuh:
+      - kasr_ha
       cite: []
+      via: as_hafs
     duri_abuamr:
-      wujuh: []
+      wujuh:
+      - kasr_ha
       cite: []
+      via: as_hafs
     susi:
-      wujuh: []
+      wujuh:
+      - kasr_ha
       cite: []
+      via: as_hafs
     hisham:
-      wujuh: []
+      wujuh:
+      - kasr_ha
       cite: []
+      via: as_hafs
     ibn_dhakwan:
-      wujuh: []
+      wujuh:
+      - kasr_ha
       cite: []
+      via: as_hafs
     shuba:
-      wujuh: []
+      wujuh:
+      - kasr_ha
       cite: []
+      via: as_hafs
     hafs:
-      wujuh: []
+      wujuh:
+      - kasr_ha
       cite: []
+      via: as_hafs
     khalaf_an_hamzah:
       wujuh:
       - damm_ha
@@ -435,35 +455,55 @@ cases:
 - case: hāʾ before the plural mīm before a sākin, after a kasrah, in waṣl (بهمُ الأسباب)
   ruwat:
     qalun:
-      wujuh: []
+      wujuh:
+      - kasr_ha
       cite: []
+      via: as_hafs
     warsh:
-      wujuh: []
+      wujuh:
+      - kasr_ha
       cite: []
+      via: as_hafs
     bazzi:
-      wujuh: []
+      wujuh:
+      - kasr_ha
       cite: []
+      via: as_hafs
     qunbul:
-      wujuh: []
+      wujuh:
+      - kasr_ha
       cite: []
+      via: as_hafs
     duri_abuamr:
-      wujuh: []
+      wujuh:
+      - kasr_ha
       cite: []
+      via: as_hafs
     susi:
-      wujuh: []
+      wujuh:
+      - kasr_ha
       cite: []
+      via: as_hafs
     hisham:
-      wujuh: []
+      wujuh:
+      - kasr_ha
       cite: []
+      via: as_hafs
     ibn_dhakwan:
-      wujuh: []
+      wujuh:
+      - kasr_ha
       cite: []
+      via: as_hafs
     shuba:
-      wujuh: []
+      wujuh:
+      - kasr_ha
       cite: []
+      via: as_hafs
     hafs:
-      wujuh: []
+      wujuh:
+      - kasr_ha
       cite: []
+      via: as_hafs
     khalaf_an_hamzah:
       wujuh:
       - damm_ha
@@ -517,35 +557,55 @@ cases:
 - case: hāʾ before the plural mīm, at waqf
   ruwat:
     qalun:
-      wujuh: []
+      wujuh:
+      - kasr_ha
       cite: []
+      via: as_hafs
     warsh:
-      wujuh: []
+      wujuh:
+      - kasr_ha
       cite: []
+      via: as_hafs
     bazzi:
-      wujuh: []
+      wujuh:
+      - kasr_ha
       cite: []
+      via: as_hafs
     qunbul:
-      wujuh: []
+      wujuh:
+      - kasr_ha
       cite: []
+      via: as_hafs
     duri_abuamr:
-      wujuh: []
+      wujuh:
+      - kasr_ha
       cite: []
+      via: as_hafs
     susi:
-      wujuh: []
+      wujuh:
+      - kasr_ha
       cite: []
+      via: as_hafs
     hisham:
-      wujuh: []
+      wujuh:
+      - kasr_ha
       cite: []
+      via: as_hafs
     ibn_dhakwan:
-      wujuh: []
+      wujuh:
+      - kasr_ha
       cite: []
+      via: as_hafs
     shuba:
-      wujuh: []
+      wujuh:
+      - kasr_ha
       cite: []
+      via: as_hafs
     hafs:
-      wujuh: []
+      wujuh:
+      - kasr_ha
       cite: []
+      via: as_hafs
     khalaf_an_hamzah:
       wujuh:
       - kasr_ha
@@ -583,11 +643,17 @@ cases:
       cite:
       - idah 59
     ruways:
-      wujuh: []
-      cite: []
+      wujuh:
+      - kasr_ha
+      cite:
+      - idah 40-43
+      via: asl_unstated
     rawh:
-      wujuh: []
-      cite: []
+      wujuh:
+      - kasr_ha
+      cite:
+      - idah 40-43
+      via: asl_unstated
     ishaq:
       wujuh:
       - kasr_ha
@@ -601,35 +667,55 @@ cases:
 - case: mīm, at waqf
   ruwat:
     qalun:
-      wujuh: []
+      wujuh:
+      - kasr_ha
       cite: []
+      via: as_hafs
     warsh:
-      wujuh: []
+      wujuh:
+      - kasr_ha
       cite: []
+      via: as_hafs
     bazzi:
-      wujuh: []
+      wujuh:
+      - kasr_ha
       cite: []
+      via: as_hafs
     qunbul:
-      wujuh: []
+      wujuh:
+      - kasr_ha
       cite: []
+      via: as_hafs
     duri_abuamr:
-      wujuh: []
+      wujuh:
+      - kasr_ha
       cite: []
+      via: as_hafs
     susi:
-      wujuh: []
+      wujuh:
+      - kasr_ha
       cite: []
+      via: as_hafs
     hisham:
-      wujuh: []
+      wujuh:
+      - kasr_ha
       cite: []
+      via: as_hafs
     ibn_dhakwan:
-      wujuh: []
+      wujuh:
+      - kasr_ha
       cite: []
+      via: as_hafs
     shuba:
-      wujuh: []
+      wujuh:
+      - kasr_ha
       cite: []
+      via: as_hafs
     hafs:
-      wujuh: []
+      wujuh:
+      - kasr_ha
       cite: []
+      via: as_hafs
     khalaf_an_hamzah:
       wujuh:
       - sukun_mim
@@ -661,11 +747,17 @@ cases:
       cite:
       - idah 59
     ruways:
-      wujuh: []
-      cite: []
+      wujuh:
+      - kasr_ha
+      cite:
+      - idah 40-43
+      via: asl_unstated
     rawh:
-      wujuh: []
-      cite: []
+      wujuh:
+      - kasr_ha
+      cite:
+      - idah 40-43
+      via: asl_unstated
     ishaq:
       wujuh:
       - sukun_mim
@@ -746,22 +838,26 @@ listed:
   cite:
   - idah 60
 open:
-- The Shāṭibiyyah rows give the hāʾ only for the three words عليهم، إليهم، لديهم (wafi 51); what Ḥamzah and Khalaf do in other words with the plural hāʾ after a yāʾ (فيهم …) is not in the rows. Al-Īḍāḥ
-  gives Yaʿqūb the general rule (idah 55).
-- 'Abū Jaʿfar in the first case: no row names him; kasr is read from idah 57 (''in all that Yaʿqūb pronounced with ḍamm''). Khalaf al-ʿĀshir: kasr in the three words (idah 54) and in all that Yaʿqūb damms
-  (idah 57).'
-- 'Words with the yāʾ dropped (فتاتهم…): Ruways ḍamm (idah 56), all the others kasr (idah 57, ''غير رويس''); only Rawḥ, Abū Jaʿfar''s two and Khalaf''s two are named, the Shāṭibiyyah ruwāt are not in the
-  rows for these words.'
+- The Shāṭibiyyah rows give the hāʾ only for the three words عليهم، إليهم، لديهم (wafi 51); what Ḥamzah and Khalaf do in other words with the
+  plural hāʾ after a yāʾ (فيهم …) is not in the rows. Al-Īḍāḥ gives Yaʿqūb the general rule (idah 55).
+- 'Words with the yāʾ dropped (فتاتهم…): Ruways ḍamm (idah 56), all the others kasr (idah 57, ''غير رويس''); only Rawḥ, Abū Jaʿfar''s two and
+  Khalaf''s two are named, the Shāṭibiyyah ruwāt are not in the rows for these words.'
+- 'Row tagged waqf in the data for يغنهم (idah 60): the quote doesn''t say waqf; shown for the waṣl case.'
+- 'Disagreement at waqf: wafi 52 says Ḥamzah, al-Kisāʾī and Khalaf read the hāʾ with kasr at waqf; wafi 53 says Khalaf and Khallād read ḍamm of
+  the hāʾ with sukūn of the mīm at waqf, Abū l-Ḥārith and al-Dūrī kasr with sukūn. Kept both for Khalaf/Khallād ([kasr_ha, damm_ha]).'
+filled_notes:
+- 'Abū Jaʿfar in the first case: no row names him; kasr is read from idah 57 (''in all that Yaʿqūb pronounced with ḍamm''). Khalaf al-ʿĀshir:
+  kasr in the three words (idah 54) and in all that Yaʿqūb damms (idah 57).'
 - Ruways reads kasr in يولهم (idah 56); Rawḥ's reading there is not stated apart from the general 'غير رويس'.
 - 'Feminine and dual pronouns after a yāʾ (عليهن، فيهما): only Yaʿqūb''s two are stated (idah 55); no row says what the others read.'
-- 'Mīm before a sākin: idah 58 gives Ruways and Rawḥ itbāʿ (the mīm follows the hāʾ''s vowel); the row''s quote is cut and says nothing about a mīm after kāf (عليكم), so itbāʿ is also shown in the general
-  case. Abū Jaʿfar and Khalaf al-ʿĀshir: ḍamm of the mīm ''following their aṣl'' (idah 59); Nāfiʿ''s and Ḥamzah''s ruwāt read ḍamm without ṣilah (wafi 51, 52).'
-- 'Abū ʿAmr (Dūrī, Sūsī): kasr of the mīm only when a kasrah or sākin yāʾ precedes the hāʾ (wafi 52); the book gives the hāʾ itself no wajh for the two, so they are empty in the hāʾ cases (as are the ten
-  of the fourteen who aren''t Ḥamzah, Khalaf, Khallād, Abū l-Ḥārith, al-Dūrī al-Kisāʾī).'
-- 'Hāʾ cases before the plural mīm: the Shāṭibiyyah names only Ḥamzah, Khalaf, Khallād and al-Kisāʾī''s two (wafi 52); the other ten are empty. The ''sākin yāʾ'' and ''kasrah'' cases are one rule in al-Wāfī
-  (wafi 52), split here because Yaʿqūb''s two differ (idah 60). Abū Jaʿfar and Khalaf (idah 59): ''مطلقا''.'
-- 'Row tagged waqf in the data for يغنهم (idah 60): the quote doesn''t say waqf; shown for the waṣl case.'
-- 'Disagreement at waqf: wafi 52 says Ḥamzah, al-Kisāʾī and Khalaf read the hāʾ with kasr at waqf; wafi 53 says Khalaf and Khallād read ḍamm of the hāʾ with sukūn of the mīm at waqf, Abū l-Ḥārith and al-Dūrī
-  kasr with sukūn. Kept both for Khalaf/Khallād ([kasr_ha, damm_ha]).'
-- 'Waqf: Abū Jaʿfar and Khalaf al-ʿĀshir read kasr of the hāʾ ''مطلقا'' and sukūn of the mīm (idah 59); Ruways and Rawḥ at waqf on the mīm: no row (Ruways ''وصلا ووقفا'' on idah 56 is the first case).'
+- 'Mīm before a sākin: idah 58 gives Ruways and Rawḥ itbāʿ (the mīm follows the hāʾ''s vowel); the row''s quote is cut and says nothing about
+  a mīm after kāf (عليكم), so itbāʿ is also shown in the general case. Abū Jaʿfar and Khalaf al-ʿĀshir: ḍamm of the mīm ''following their aṣl''
+  (idah 59); Nāfiʿ''s and Ḥamzah''s ruwāt read ḍamm without ṣilah (wafi 51, 52).'
+- 'Abū ʿAmr (Dūrī, Sūsī): kasr of the mīm only when a kasrah or sākin yāʾ precedes the hāʾ (wafi 52); the book gives the hāʾ itself no wajh for
+  the two, so they are empty in the hāʾ cases (as are the ten of the fourteen who aren''t Ḥamzah, Khalaf, Khallād, Abū l-Ḥārith, al-Dūrī al-Kisāʾī).'
+- 'Hāʾ cases before the plural mīm: the Shāṭibiyyah names only Ḥamzah, Khalaf, Khallād and al-Kisāʾī''s two (wafi 52); the other ten are empty.
+  The ''sākin yāʾ'' and ''kasrah'' cases are one rule in al-Wāfī (wafi 52), split here because Yaʿqūb''s two differ (idah 60). Abū Jaʿfar and
+  Khalaf (idah 59): ''مطلقا''.'
+- 'Waqf: Abū Jaʿfar and Khalaf al-ʿĀshir read kasr of the hāʾ ''مطلقا'' and sukūn of the mīm (idah 59); Ruways and Rawḥ at waqf on the mīm: no
+  row (Ruways ''وصلا ووقفا'' on idah 56 is the first case).'
 - No row for the other Shāṭibiyyah ruwāt at waqf; and no row says the mīm is sākin at waqf for them.

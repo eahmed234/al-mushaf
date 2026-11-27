@@ -1,98 +1,168 @@
 category: hadhf_damm
 what: dropping the hamzah of مستهزءون and the like (Abū Jaʿfar)
 wujuh:
-- {id: tahqiq, ar: تحقيق الهمزة, en: the hamzah pronounced (ithbāt)}
-- {id: hadhf, ar: حذف الهمزة, en: the hamzah dropped}
+- id: tahqiq
+  ar: تحقيق الهمزة
+  en: the hamzah pronounced (ithbāt)
+- id: hadhf
+  ar: حذف الهمزة
+  en: the hamzah dropped
 cases:
 - case: hamzah maḍmūmah after a kasrah followed by a long wāw (مستهزءون, متكئون, …)
   ruwat:
     qalun:
-      wujuh: [tahqiq]
-      cite: [wafi 98-103]
+      wujuh:
+      - tahqiq
+      cite:
+      - wafi 98-103
     warsh:
-      wujuh: [tahqiq]
-      cite: [wafi 98-103]
+      wujuh:
+      - tahqiq
+      cite:
+      - wafi 98-103
     bazzi:
-      wujuh: [tahqiq]
-      cite: [wafi 98-103]
+      wujuh:
+      - tahqiq
+      cite:
+      - wafi 98-103
     qunbul:
-      wujuh: [tahqiq]
-      cite: [wafi 98-103]
+      wujuh:
+      - tahqiq
+      cite:
+      - wafi 98-103
     duri_abuamr:
-      wujuh: [tahqiq]
-      cite: [wafi 98-103]
+      wujuh:
+      - tahqiq
+      cite:
+      - wafi 98-103
     susi:
-      wujuh: [tahqiq]
-      cite: [wafi 98-103]
+      wujuh:
+      - tahqiq
+      cite:
+      - wafi 98-103
     hisham:
-      wujuh: [tahqiq]
-      cite: [wafi 98-103]
+      wujuh:
+      - tahqiq
+      cite:
+      - wafi 98-103
     ibn_dhakwan:
-      wujuh: [tahqiq]
-      cite: [wafi 98-103]
+      wujuh:
+      - tahqiq
+      cite:
+      - wafi 98-103
     shuba:
-      wujuh: [tahqiq]
-      cite: [wafi 98-103]
+      wujuh:
+      - tahqiq
+      cite:
+      - wafi 98-103
     hafs:
-      wujuh: [tahqiq]
-      cite: [wafi 98-103]
+      wujuh:
+      - tahqiq
+      cite:
+      - wafi 98-103
     khalaf_an_hamzah:
-      wujuh: [tahqiq]
-      cite: [wafi 98-103]
+      wujuh:
+      - tahqiq
+      cite:
+      - wafi 98-103
     khallad:
-      wujuh: [tahqiq]
-      cite: [wafi 98-103]
+      wujuh:
+      - tahqiq
+      cite:
+      - wafi 98-103
     abul_harith:
-      wujuh: [tahqiq]
-      cite: [wafi 98-103]
+      wujuh:
+      - tahqiq
+      cite:
+      - wafi 98-103
     duri_kisai:
-      wujuh: [tahqiq]
-      cite: [wafi 98-103]
+      wujuh:
+      - tahqiq
+      cite:
+      - wafi 98-103
     ibn_wardan:
-      wujuh: [hadhf]
-      cite: [idah 108]
+      wujuh:
+      - hadhf
+      cite:
+      - idah 108
     ibn_jammaz:
-      wujuh: [hadhf]
-      cite: [idah 108]
+      wujuh:
+      - hadhf
+      cite:
+      - idah 108
     ruways:
-      wujuh: [tahqiq]
-      cite: [idah 109]
+      wujuh:
+      - tahqiq
+      cite:
+      - idah 109
     rawh:
-      wujuh: [tahqiq]
-      cite: [idah 109]
+      wujuh:
+      - tahqiq
+      cite:
+      - idah 109
     ishaq:
-      wujuh: [tahqiq]
-      cite: [idah 109]
+      wujuh:
+      - tahqiq
+      cite:
+      - idah 109
     idris:
-      wujuh: [tahqiq]
-      cite: [idah 109]
+      wujuh:
+      - tahqiq
+      cite:
+      - idah 109
 listed:
-- words: [المنشئون]
+- words:
+  - المنشئون
   case: hamzah maḍmūmah after a kasrah followed by a long wāw (al-Wāqiʿah 72)
   ruwat:
-    ibn_wardan: [hadhf, tahqiq]
-    ibn_jammaz: [hadhf]
-  cite: [idah 110]
-- words: [يطئون, تطئوها, تطئوهم]
+    ibn_wardan:
+    - hadhf
+    - tahqiq
+    ibn_jammaz:
+    - hadhf
+  cite:
+  - idah 110
+- words:
+  - يطئون
+  - تطئوها
+  - تطئوهم
   case: hamzah maḍmūmah after a fatḥah (the preceding letter keeps its vowel)
   ruwat:
-    ibn_wardan: [hadhf]
-    ibn_jammaz: [hadhf]
-  cite: [idah 108]
-- words: [متكا]
+    ibn_wardan:
+    - hadhf
+    ibn_jammaz:
+    - hadhf
+  cite:
+  - idah 108
+- words:
+  - متكا
   case: hamzah maftūḥah after a fatḥah
   ruwat:
-    ibn_wardan: [hadhf]
-    ibn_jammaz: [hadhf]
-  cite: [idah 108]
-- words: [خاطئين, متكئين, المستهزئين]
+    ibn_wardan:
+    - hadhf
+    ibn_jammaz:
+    - hadhf
+  cite:
+  - idah 108
+- words:
+  - خاطئين
+  - متكئين
+  - المستهزئين
   case: hamzah maksūrah after a kasrah
   ruwat:
-    ibn_wardan: [hadhf]
-    ibn_jammaz: [hadhf]
-  cite: [idah 109]
-open: ['The readings of the 14 of al-Wāfī and of Ruways, Rawḥ, Isḥāq, Idrīs (taḥqīq) come only from the reviewed profile rows (wafi 98-103 states no such rule in bāb al-hamz al-mufrad; idah 109 n. 1 for
-    the four); no row of the books speaks of them.', 'idah 108-109: for Ibn Wardān and Ibn Jammāz the ḥadhf of the three other hamzah positions (maḍmūmah after fatḥah, maftūḥah after fatḥah, maksūrah after
-    kasrah) is stated only for the named words, so they are in `listed`, not cases; the readings of other words with those positions are not stated.', 'idah 108: the first row''s wording has the ḥadhf ''with
-    ḍamm of what precedes'' (the vowel before the dropped hamzah); idah 110 المنشئون repeats it for Ibn Jammāz; not a separate wajh here.', 'idah 110 المنشئون: Ibn Wardān has two wujūh (ḥadhf and ithbāt),
-    Ibn Jammāz only ḥadhf (no khulf).']
+    ibn_wardan:
+    - hadhf
+    ibn_jammaz:
+    - hadhf
+  cite:
+  - idah 109
+open:
+- 'idah 108: the first row''s wording has the ḥadhf ''with ḍamm of what precedes'' (the vowel before the dropped hamzah); idah 110 المنشئون repeats
+  it for Ibn Jammāz; not a separate wajh here.'
+- 'idah 110 المنشئون: Ibn Wardān has two wujūh (ḥadhf and ithbāt), Ibn Jammāz only ḥadhf (no khulf).'
+filled_notes:
+- The readings of the 14 of al-Wāfī and of Ruways, Rawḥ, Isḥāq, Idrīs (taḥqīq) come only from the reviewed profile rows (wafi 98-103 states no
+  such rule in bāb al-hamz al-mufrad; idah 109 n. 1 for the four); no row of the books speaks of them.
+- 'idah 108-109: for Ibn Wardān and Ibn Jammāz the ḥadhf of the three other hamzah positions (maḍmūmah after fatḥah, maftūḥah after fatḥah, maksūrah
+  after kasrah) is stated only for the named words, so they are in `listed`, not cases; the readings of other words with those positions are not
+  stated.'

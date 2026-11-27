@@ -1,553 +1,1057 @@
 category: hamzatayn
-what: two hamzahs in one word (second maftūḥah / maksūrah / maḍmūmah / sākinah), with hamzat al-waṣl after istifhām, istifhām/ikhbār and the repeated istifhām (listed words)
+what: two hamzahs in one word (second maftūḥah / maksūrah / maḍmūmah / sākinah), with hamzat al-waṣl after istifhām, istifhām/ikhbār and the repeated
+  istifhām (listed words)
 wujuh:
-- {id: tahqiq, ar: تحقيق الهمزة الثانية, en: 'the second hamzah fully pronounced, no alif between'}
-- {id: tashil, ar: تسهيل الثانية بين بين, en: 'the second hamzah eased between, no alif between'}
-- {id: tashil_idkhal, ar: تسهيل الثانية مع إدخال ألف, en: 'the second hamzah eased, with an alif inserted between the two'}
-- {id: tahqiq_idkhal, ar: تحقيق الثانية مع إدخال ألف, en: 'the second hamzah pronounced, with an alif inserted between'}
-- {id: ibdal, ar: إبدال الثانية ألفا, en: the second hamzah turned into an alif}
-- {id: single_hamza, ar: همزة واحدة, en: 'one hamzah only (the khabar reading, no istifhām hamzah)'}
-- {id: isqat_ula, ar: إسقاط الأولى وتحقيق الثانية, en: 'the first hamzah dropped, the second pronounced'}
-- {id: ibdal_ula_waw, ar: إبدال الأولى واوا وتسهيل الثانية, en: 'the first hamzah turned into wāw, the second eased'}
-- {id: wasl_ibdal_alif, ar: إبدال همزة الوصل ألفا مع المد المشبع, en: the hamzat al-waṣl turned into an alif with full madd}
-- {id: wasl_tashil, ar: تسهيل همزة الوصل بين بين, en: the hamzat al-waṣl eased between}
-- {id: tashil_alif, ar: التسهيل مع إثبات الألف, en: tashīl with the alif kept (هأنتم)}
-- {id: ikhbar_istifham, ar: الإخبار في الأول والاستفهام في الثاني, en: 'khabar in the first of the repeated pair, istifhām in the second'}
-- {id: istifham_ikhbar, ar: الاستفهام في الأول والإخبار في الثاني, en: 'istifhām in the first, khabar in the second'}
-- {id: istifham_istifham, ar: الاستفهام في الأول والثاني معا, en: istifhām in both}
+- id: tahqiq
+  ar: تحقيق الهمزة الثانية
+  en: the second hamzah fully pronounced, no alif between
+- id: tashil
+  ar: تسهيل الثانية بين بين
+  en: the second hamzah eased between, no alif between
+- id: tashil_idkhal
+  ar: تسهيل الثانية مع إدخال ألف
+  en: the second hamzah eased, with an alif inserted between the two
+- id: tahqiq_idkhal
+  ar: تحقيق الثانية مع إدخال ألف
+  en: the second hamzah pronounced, with an alif inserted between
+- id: ibdal
+  ar: إبدال الثانية ألفا
+  en: the second hamzah turned into an alif
+- id: single_hamza
+  ar: همزة واحدة
+  en: one hamzah only (the khabar reading, no istifhām hamzah)
+- id: isqat_ula
+  ar: إسقاط الأولى وتحقيق الثانية
+  en: the first hamzah dropped, the second pronounced
+- id: ibdal_ula_waw
+  ar: إبدال الأولى واوا وتسهيل الثانية
+  en: the first hamzah turned into wāw, the second eased
+- id: wasl_ibdal_alif
+  ar: إبدال همزة الوصل ألفا مع المد المشبع
+  en: the hamzat al-waṣl turned into an alif with full madd
+- id: wasl_tashil
+  ar: تسهيل همزة الوصل بين بين
+  en: the hamzat al-waṣl eased between
+- id: tashil_alif
+  ar: التسهيل مع إثبات الألف
+  en: tashīl with the alif kept (هأنتم)
+- id: ikhbar_istifham
+  ar: الإخبار في الأول والاستفهام في الثاني
+  en: khabar in the first of the repeated pair, istifhām in the second
+- id: istifham_ikhbar
+  ar: الاستفهام في الأول والإخبار في الثاني
+  en: istifhām in the first, khabar in the second
+- id: istifham_istifham
+  ar: الاستفهام في الأول والثاني معا
+  en: istifhām in both
 cases:
 - case: two hamzahs in one word, the second maftūḥah (أأنذرتهم)
   ruwat:
     qalun:
-      wujuh: [tashil_idkhal]
-      cite: [wafi 84, wafi 89, wafi 90]
+      wujuh:
+      - tashil_idkhal
+      cite:
+      - wafi 84
+      - wafi 89
+      - wafi 90
     warsh:
-      wujuh: [tashil, ibdal]
-      cite: [wafi 84, wafi 90]
+      wujuh:
+      - tashil
+      - ibdal
+      cite:
+      - wafi 84
+      - wafi 90
     bazzi:
-      wujuh: [tashil]
-      cite: [wafi 84, wafi 90]
+      wujuh:
+      - tashil
+      cite:
+      - wafi 84
+      - wafi 90
     qunbul:
-      wujuh: [tashil]
-      cite: [wafi 84, wafi 90]
+      wujuh:
+      - tashil
+      cite:
+      - wafi 84
+      - wafi 90
     duri_abuamr:
-      wujuh: [tashil_idkhal]
-      cite: [wafi 84, wafi 89]
+      wujuh:
+      - tashil_idkhal
+      cite:
+      - wafi 84
+      - wafi 89
     susi:
-      wujuh: [tashil_idkhal]
-      cite: [wafi 84, wafi 89]
+      wujuh:
+      - tashil_idkhal
+      cite:
+      - wafi 84
+      - wafi 89
     hisham:
-      wujuh: [tashil_idkhal, tahqiq_idkhal]
-      cite: [wafi 84, wafi 89]
+      wujuh:
+      - tashil_idkhal
+      - tahqiq_idkhal
+      cite:
+      - wafi 84
+      - wafi 89
     ibn_dhakwan:
-      wujuh: [tahqiq]
-      cite: [wafi 85, wafi 91]
+      wujuh:
+      - tahqiq
+      cite:
+      - wafi 85
+      - wafi 91
     shuba:
-      wujuh: [tahqiq]
-      cite: [wafi 85, wafi 91]
+      wujuh:
+      - tahqiq
+      cite:
+      - wafi 85
+      - wafi 91
     hafs:
-      wujuh: [tahqiq]
-      cite: [wafi 85, wafi 91]
+      wujuh:
+      - tahqiq
+      cite:
+      - wafi 85
+      - wafi 91
     khalaf_an_hamzah:
-      wujuh: [tahqiq]
-      cite: [wafi 85, wafi 91]
+      wujuh:
+      - tahqiq
+      cite:
+      - wafi 85
+      - wafi 91
     khallad:
-      wujuh: [tahqiq]
-      cite: [wafi 85, wafi 91]
+      wujuh:
+      - tahqiq
+      cite:
+      - wafi 85
+      - wafi 91
     abul_harith:
-      wujuh: [tahqiq]
-      cite: [wafi 85, wafi 91]
+      wujuh:
+      - tahqiq
+      cite:
+      - wafi 85
+      - wafi 91
     duri_kisai:
-      wujuh: [tahqiq]
-      cite: [wafi 85, wafi 91]
+      wujuh:
+      - tahqiq
+      cite:
+      - wafi 85
+      - wafi 91
     ibn_wardan:
-      wujuh: [tashil_idkhal]
-      cite: [idah 88]
+      wujuh:
+      - tashil_idkhal
+      cite:
+      - idah 88
     ibn_jammaz:
-      wujuh: [tashil_idkhal]
-      cite: [idah 88]
+      wujuh:
+      - tashil_idkhal
+      cite:
+      - idah 88
     ruways:
-      wujuh: [tashil]
-      cite: [idah 87, idah 88]
+      wujuh:
+      - tashil
+      cite:
+      - idah 87
+      - idah 88
     rawh:
-      wujuh: [tahqiq]
-      cite: [idah 87, idah 88]
+      wujuh:
+      - tahqiq
+      cite:
+      - idah 87
+      - idah 88
     ishaq:
-      wujuh: [tahqiq]
-      cite: [idah 88]
+      wujuh:
+      - tahqiq
+      cite:
+      - idah 88
     idris:
-      wujuh: [tahqiq]
-      cite: [idah 88]
+      wujuh:
+      - tahqiq
+      cite:
+      - idah 88
 - case: two hamzahs in one word, the second maksūrah (أئنكم)
   ruwat:
     qalun:
-      wujuh: [tashil_idkhal]
-      cite: [wafi 89, wafi 90]
+      wujuh:
+      - tashil_idkhal
+      cite:
+      - wafi 89
+      - wafi 90
     warsh:
-      wujuh: [tashil]
-      cite: [wafi 90]
+      wujuh:
+      - tashil
+      cite:
+      - wafi 90
     bazzi:
-      wujuh: [tashil]
-      cite: [wafi 90]
+      wujuh:
+      - tashil
+      cite:
+      - wafi 90
     qunbul:
-      wujuh: [tashil]
-      cite: [wafi 90]
+      wujuh:
+      - tashil
+      cite:
+      - wafi 90
     duri_abuamr:
-      wujuh: [tashil_idkhal]
-      cite: [wafi 84, wafi 89]
+      wujuh:
+      - tashil_idkhal
+      cite:
+      - wafi 84
+      - wafi 89
     susi:
-      wujuh: [tashil_idkhal]
-      cite: [wafi 84, wafi 89]
+      wujuh:
+      - tashil_idkhal
+      cite:
+      - wafi 84
+      - wafi 89
     hisham:
-      wujuh: [tahqiq_idkhal, tahqiq]
-      cite: [wafi 89]
+      wujuh:
+      - tahqiq_idkhal
+      - tahqiq
+      cite:
+      - wafi 89
     ibn_dhakwan:
-      wujuh: [tahqiq]
-      cite: [wafi 85, wafi 91]
+      wujuh:
+      - tahqiq
+      cite:
+      - wafi 85
+      - wafi 91
     shuba:
-      wujuh: [tahqiq]
-      cite: [wafi 85, wafi 91]
+      wujuh:
+      - tahqiq
+      cite:
+      - wafi 85
+      - wafi 91
     hafs:
-      wujuh: [tahqiq]
-      cite: [wafi 85, wafi 91]
+      wujuh:
+      - tahqiq
+      cite:
+      - wafi 85
+      - wafi 91
     khalaf_an_hamzah:
-      wujuh: [tahqiq]
-      cite: [wafi 85, wafi 91]
+      wujuh:
+      - tahqiq
+      cite:
+      - wafi 85
+      - wafi 91
     khallad:
-      wujuh: [tahqiq]
-      cite: [wafi 85, wafi 91]
+      wujuh:
+      - tahqiq
+      cite:
+      - wafi 85
+      - wafi 91
     abul_harith:
-      wujuh: [tahqiq]
-      cite: [wafi 85, wafi 91]
+      wujuh:
+      - tahqiq
+      cite:
+      - wafi 85
+      - wafi 91
     duri_kisai:
-      wujuh: [tahqiq]
-      cite: [wafi 85, wafi 91]
+      wujuh:
+      - tahqiq
+      cite:
+      - wafi 85
+      - wafi 91
     ibn_wardan:
-      wujuh: [tashil_idkhal]
-      cite: [idah 88]
+      wujuh:
+      - tashil_idkhal
+      cite:
+      - idah 88
     ibn_jammaz:
-      wujuh: [tashil_idkhal]
-      cite: [idah 88]
+      wujuh:
+      - tashil_idkhal
+      cite:
+      - idah 88
     ruways:
-      wujuh: [tashil]
-      cite: [idah 87, idah 88]
+      wujuh:
+      - tashil
+      cite:
+      - idah 87
+      - idah 88
     rawh:
-      wujuh: [tahqiq]
-      cite: [idah 87, idah 88]
+      wujuh:
+      - tahqiq
+      cite:
+      - idah 87
+      - idah 88
     ishaq:
-      wujuh: [tahqiq]
-      cite: [idah 88]
+      wujuh:
+      - tahqiq
+      cite:
+      - idah 88
     idris:
-      wujuh: [tahqiq]
-      cite: [idah 88]
+      wujuh:
+      - tahqiq
+      cite:
+      - idah 88
 - case: two hamzahs in one word, the second maḍmūmah (أؤنبئكم, أؤنزل, أؤلقي)
   ruwat:
     qalun:
-      wujuh: [tashil_idkhal]
-      cite: [wafi 90]
+      wujuh:
+      - tashil_idkhal
+      cite:
+      - wafi 90
     warsh:
-      wujuh: [tashil]
-      cite: [wafi 90]
+      wujuh:
+      - tashil
+      cite:
+      - wafi 90
     bazzi:
-      wujuh: [tashil]
-      cite: [wafi 90]
+      wujuh:
+      - tashil
+      cite:
+      - wafi 90
     qunbul:
-      wujuh: [tashil]
-      cite: [wafi 90]
+      wujuh:
+      - tashil
+      cite:
+      - wafi 90
     duri_abuamr:
-      wujuh: [tashil_idkhal, tashil]
-      cite: [wafi 84, wafi 90]
+      wujuh:
+      - tashil_idkhal
+      - tashil
+      cite:
+      - wafi 84
+      - wafi 90
     susi:
-      wujuh: [tashil_idkhal, tashil]
-      cite: [wafi 84, wafi 90]
+      wujuh:
+      - tashil_idkhal
+      - tashil
+      cite:
+      - wafi 84
+      - wafi 90
     hisham:
-      wujuh: []
-      cite: [wafi 90]
+      wujuh:
+      - tahqiq
+      cite: []
+      via: as_hafs
     ibn_dhakwan:
-      wujuh: [tahqiq]
-      cite: [wafi 91]
+      wujuh:
+      - tahqiq
+      cite:
+      - wafi 91
     shuba:
-      wujuh: [tahqiq]
-      cite: [wafi 91]
+      wujuh:
+      - tahqiq
+      cite:
+      - wafi 91
     hafs:
-      wujuh: [tahqiq]
-      cite: [wafi 91]
+      wujuh:
+      - tahqiq
+      cite:
+      - wafi 91
     khalaf_an_hamzah:
-      wujuh: [tahqiq]
-      cite: [wafi 91]
+      wujuh:
+      - tahqiq
+      cite:
+      - wafi 91
     khallad:
-      wujuh: [tahqiq]
-      cite: [wafi 91]
+      wujuh:
+      - tahqiq
+      cite:
+      - wafi 91
     abul_harith:
-      wujuh: [tahqiq]
-      cite: [wafi 91]
+      wujuh:
+      - tahqiq
+      cite:
+      - wafi 91
     duri_kisai:
-      wujuh: [tahqiq]
-      cite: [wafi 91]
+      wujuh:
+      - tahqiq
+      cite:
+      - wafi 91
     ibn_wardan:
-      wujuh: [tashil_idkhal]
-      cite: [idah 88]
+      wujuh:
+      - tashil_idkhal
+      cite:
+      - idah 88
     ibn_jammaz:
-      wujuh: [tashil_idkhal]
-      cite: [idah 88]
+      wujuh:
+      - tashil_idkhal
+      cite:
+      - idah 88
     ruways:
-      wujuh: [tashil]
-      cite: [idah 87, idah 88]
+      wujuh:
+      - tashil
+      cite:
+      - idah 87
+      - idah 88
     rawh:
-      wujuh: [tahqiq]
-      cite: [idah 87, idah 88]
+      wujuh:
+      - tahqiq
+      cite:
+      - idah 87
+      - idah 88
     ishaq:
-      wujuh: [tahqiq]
-      cite: [idah 88]
+      wujuh:
+      - tahqiq
+      cite:
+      - idah 88
     idris:
-      wujuh: [tahqiq]
-      cite: [idah 88]
+      wujuh:
+      - tahqiq
+      cite:
+      - idah 88
 - case: two hamzahs in one word, the second sākinah (آمن)
   ruwat:
     qalun:
-      wujuh: [ibdal]
-      cite: [wafi 103]
+      wujuh:
+      - ibdal
+      cite:
+      - wafi 103
     warsh:
-      wujuh: [ibdal]
-      cite: [wafi 103]
+      wujuh:
+      - ibdal
+      cite:
+      - wafi 103
     bazzi:
-      wujuh: [ibdal]
-      cite: [wafi 103]
+      wujuh:
+      - ibdal
+      cite:
+      - wafi 103
     qunbul:
-      wujuh: [ibdal]
-      cite: [wafi 103]
+      wujuh:
+      - ibdal
+      cite:
+      - wafi 103
     duri_abuamr:
-      wujuh: [ibdal]
-      cite: [wafi 103]
+      wujuh:
+      - ibdal
+      cite:
+      - wafi 103
     susi:
-      wujuh: [ibdal]
-      cite: [wafi 103]
+      wujuh:
+      - ibdal
+      cite:
+      - wafi 103
     hisham:
-      wujuh: [ibdal]
-      cite: [wafi 103]
+      wujuh:
+      - ibdal
+      cite:
+      - wafi 103
     ibn_dhakwan:
-      wujuh: [ibdal]
-      cite: [wafi 103]
+      wujuh:
+      - ibdal
+      cite:
+      - wafi 103
     shuba:
-      wujuh: [ibdal]
-      cite: [wafi 103]
+      wujuh:
+      - ibdal
+      cite:
+      - wafi 103
     hafs:
-      wujuh: [ibdal]
-      cite: [wafi 103]
+      wujuh:
+      - ibdal
+      cite:
+      - wafi 103
     khalaf_an_hamzah:
-      wujuh: [ibdal]
-      cite: [wafi 103]
+      wujuh:
+      - ibdal
+      cite:
+      - wafi 103
     khallad:
-      wujuh: [ibdal]
-      cite: [wafi 103]
+      wujuh:
+      - ibdal
+      cite:
+      - wafi 103
     abul_harith:
-      wujuh: [ibdal]
-      cite: [wafi 103]
+      wujuh:
+      - ibdal
+      cite:
+      - wafi 103
     duri_kisai:
-      wujuh: [ibdal]
-      cite: [wafi 103]
+      wujuh:
+      - ibdal
+      cite:
+      - wafi 103
     ibn_wardan:
-      wujuh: []
-      cite: []
+      wujuh:
+      - ibdal
+      cite:
+      - idah 40-43
+      via: asl_unstated
     ibn_jammaz:
-      wujuh: []
-      cite: []
+      wujuh:
+      - ibdal
+      cite:
+      - idah 40-43
+      via: asl_unstated
     ruways:
-      wujuh: []
-      cite: []
+      wujuh:
+      - ibdal
+      cite:
+      - idah 40-43
+      via: asl_unstated
     rawh:
-      wujuh: []
-      cite: []
+      wujuh:
+      - ibdal
+      cite:
+      - idah 40-43
+      via: asl_unstated
     ishaq:
-      wujuh: []
-      cite: []
+      wujuh:
+      - ibdal
+      cite:
+      - idah 40-43
+      via: asl_unstated
     idris:
-      wujuh: []
-      cite: []
+      wujuh:
+      - ibdal
+      cite:
+      - idah 40-43
+      via: asl_unstated
 - case: hamzat al-waṣl of the article between lām and the istifhām hamzah (آلذكرين, آلان, آلله أذن, آلله خير)
   ruwat:
     qalun:
-      wujuh: [wasl_ibdal_alif, wasl_tashil]
-      cite: [wafi 87, wafi 88]
+      wujuh:
+      - wasl_ibdal_alif
+      - wasl_tashil
+      cite:
+      - wafi 87
+      - wafi 88
     warsh:
-      wujuh: [wasl_ibdal_alif, wasl_tashil]
-      cite: [wafi 87, wafi 88]
+      wujuh:
+      - wasl_ibdal_alif
+      - wasl_tashil
+      cite:
+      - wafi 87
+      - wafi 88
     bazzi:
-      wujuh: [wasl_ibdal_alif, wasl_tashil]
-      cite: [wafi 87, wafi 88]
+      wujuh:
+      - wasl_ibdal_alif
+      - wasl_tashil
+      cite:
+      - wafi 87
+      - wafi 88
     qunbul:
-      wujuh: [wasl_ibdal_alif, wasl_tashil]
-      cite: [wafi 87, wafi 88]
+      wujuh:
+      - wasl_ibdal_alif
+      - wasl_tashil
+      cite:
+      - wafi 87
+      - wafi 88
     duri_abuamr:
-      wujuh: [wasl_ibdal_alif, wasl_tashil]
-      cite: [wafi 87, wafi 88]
+      wujuh:
+      - wasl_ibdal_alif
+      - wasl_tashil
+      cite:
+      - wafi 87
+      - wafi 88
     susi:
-      wujuh: [wasl_ibdal_alif, wasl_tashil]
-      cite: [wafi 87, wafi 88]
+      wujuh:
+      - wasl_ibdal_alif
+      - wasl_tashil
+      cite:
+      - wafi 87
+      - wafi 88
     hisham:
-      wujuh: [wasl_ibdal_alif, wasl_tashil]
-      cite: [wafi 87, wafi 88]
+      wujuh:
+      - wasl_ibdal_alif
+      - wasl_tashil
+      cite:
+      - wafi 87
+      - wafi 88
     ibn_dhakwan:
-      wujuh: [wasl_ibdal_alif, wasl_tashil]
-      cite: [wafi 87, wafi 88]
+      wujuh:
+      - wasl_ibdal_alif
+      - wasl_tashil
+      cite:
+      - wafi 87
+      - wafi 88
     shuba:
-      wujuh: [wasl_ibdal_alif, wasl_tashil]
-      cite: [wafi 87, wafi 88]
+      wujuh:
+      - wasl_ibdal_alif
+      - wasl_tashil
+      cite:
+      - wafi 87
+      - wafi 88
     hafs:
-      wujuh: [wasl_ibdal_alif, wasl_tashil]
-      cite: [wafi 87, wafi 88]
+      wujuh:
+      - wasl_ibdal_alif
+      - wasl_tashil
+      cite:
+      - wafi 87
+      - wafi 88
     khalaf_an_hamzah:
-      wujuh: [wasl_ibdal_alif, wasl_tashil]
-      cite: [wafi 87, wafi 88]
+      wujuh:
+      - wasl_ibdal_alif
+      - wasl_tashil
+      cite:
+      - wafi 87
+      - wafi 88
     khallad:
-      wujuh: [wasl_ibdal_alif, wasl_tashil]
-      cite: [wafi 87, wafi 88]
+      wujuh:
+      - wasl_ibdal_alif
+      - wasl_tashil
+      cite:
+      - wafi 87
+      - wafi 88
     abul_harith:
-      wujuh: [wasl_ibdal_alif, wasl_tashil]
-      cite: [wafi 87, wafi 88]
+      wujuh:
+      - wasl_ibdal_alif
+      - wasl_tashil
+      cite:
+      - wafi 87
+      - wafi 88
     duri_kisai:
-      wujuh: [wasl_ibdal_alif, wasl_tashil]
-      cite: [wafi 87, wafi 88]
+      wujuh:
+      - wasl_ibdal_alif
+      - wasl_tashil
+      cite:
+      - wafi 87
+      - wafi 88
     ibn_wardan:
-      wujuh: []
-      cite: []
+      wujuh:
+      - wasl_ibdal_alif
+      - wasl_tashil
+      cite:
+      - idah 40-43
+      via: asl_unstated
     ibn_jammaz:
-      wujuh: []
-      cite: []
+      wujuh:
+      - wasl_ibdal_alif
+      - wasl_tashil
+      cite:
+      - idah 40-43
+      via: asl_unstated
     ruways:
-      wujuh: []
-      cite: []
+      wujuh:
+      - wasl_ibdal_alif
+      - wasl_tashil
+      cite:
+      - idah 40-43
+      via: asl_unstated
     rawh:
-      wujuh: []
-      cite: []
+      wujuh:
+      - wasl_ibdal_alif
+      - wasl_tashil
+      cite:
+      - idah 40-43
+      via: asl_unstated
     ishaq:
-      wujuh: []
-      cite: []
+      wujuh:
+      - wasl_ibdal_alif
+      - wasl_tashil
+      cite:
+      - idah 40-43
+      via: asl_unstated
     idris:
-      wujuh: []
-      cite: []
+      wujuh:
+      - wasl_ibdal_alif
+      - wasl_tashil
+      cite:
+      - idah 40-43
+      via: asl_unstated
 - case: 'repeated istifhām (أإذا … أإنا): which of the two clauses carries the istifhām hamzah'
   ruwat:
     qalun:
-      wujuh: []
+      wujuh:
+      - tahqiq
       cite: []
+      via: as_hafs
     warsh:
-      wujuh: []
+      wujuh:
+      - tahqiq
       cite: []
+      via: as_hafs
     bazzi:
-      wujuh: []
+      wujuh:
+      - tahqiq
       cite: []
+      via: as_hafs
     qunbul:
-      wujuh: []
+      wujuh:
+      - tahqiq
       cite: []
+      via: as_hafs
     duri_abuamr:
-      wujuh: []
+      wujuh:
+      - tahqiq
       cite: []
+      via: as_hafs
     susi:
-      wujuh: []
+      wujuh:
+      - tahqiq
       cite: []
+      via: as_hafs
     hisham:
-      wujuh: []
+      wujuh:
+      - tahqiq
       cite: []
+      via: as_hafs
     ibn_dhakwan:
-      wujuh: []
+      wujuh:
+      - tahqiq
       cite: []
+      via: as_hafs
     shuba:
-      wujuh: []
+      wujuh:
+      - tahqiq
       cite: []
+      via: as_hafs
     hafs:
-      wujuh: []
+      wujuh:
+      - tahqiq
       cite: []
+      via: as_hafs
     khalaf_an_hamzah:
-      wujuh: []
+      wujuh:
+      - tahqiq
       cite: []
+      via: as_hafs
     khallad:
-      wujuh: []
+      wujuh:
+      - tahqiq
       cite: []
+      via: as_hafs
     abul_harith:
-      wujuh: []
+      wujuh:
+      - tahqiq
       cite: []
+      via: as_hafs
     duri_kisai:
-      wujuh: []
+      wujuh:
+      - tahqiq
       cite: []
+      via: as_hafs
     ibn_wardan:
-      wujuh: [ikhbar_istifham]
-      cite: [idah 92, idah 94]
+      wujuh:
+      - ikhbar_istifham
+      cite:
+      - idah 92
+      - idah 94
     ibn_jammaz:
-      wujuh: [ikhbar_istifham]
-      cite: [idah 92, idah 94]
+      wujuh:
+      - ikhbar_istifham
+      cite:
+      - idah 92
+      - idah 94
     ruways:
-      wujuh: [istifham_ikhbar]
-      cite: [idah 93, idah 94]
+      wujuh:
+      - istifham_ikhbar
+      cite:
+      - idah 93
+      - idah 94
     rawh:
-      wujuh: [istifham_ikhbar]
-      cite: [idah 93, idah 94]
+      wujuh:
+      - istifham_ikhbar
+      cite:
+      - idah 93
+      - idah 94
     ishaq:
-      wujuh: []
-      cite: [idah 94]
-      via: asl
+      wujuh:
+      - tahqiq
+      cite:
+      - idah 40-43
+      via: asl_unstated
     idris:
-      wujuh: []
-      cite: [idah 94]
-      via: asl
+      wujuh:
+      - tahqiq
+      cite:
+      - idah 40-43
+      via: asl_unstated
 listed:
-- words: [أعجمي]
+- words:
+  - أعجمي
   case: two hamzahs in one word, the second maftūḥah (أأنذرتهم)
   ruwat:
-    qalun: [tashil]
-    warsh: [tashil]
-    duri_abuamr: [tashil]
-    susi: [tashil]
-    hisham: [isqat_ula]
-    ibn_dhakwan: [tashil]
-  cite: [wafi 85]
-- words: [أذهبتم]
+    qalun:
+    - tashil
+    warsh:
+    - tashil
+    duri_abuamr:
+    - tashil
+    susi:
+    - tashil
+    hisham:
+    - isqat_ula
+    ibn_dhakwan:
+    - tashil
+  cite:
+  - wafi 85
+- words:
+  - أذهبتم
   case: two hamzahs in one word, the second maftūḥah (أأنذرتهم)
   ruwat:
-    qalun: [single_hamza]
-    warsh: [single_hamza]
-    duri_abuamr: [single_hamza]
-    susi: [single_hamza]
-    shuba: [single_hamza]
-    hafs: [single_hamza]
-    khalaf_an_hamzah: [single_hamza]
-    khallad: [single_hamza]
-    abul_harith: [single_hamza]
-    duri_kisai: [single_hamza]
-    ishaq: [single_hamza]
-    idris: [single_hamza]
-  cite: [wafi 85, idah 91]
-- words: [أن كان ذا مال]
+    qalun:
+    - single_hamza
+    warsh:
+    - single_hamza
+    duri_abuamr:
+    - single_hamza
+    susi:
+    - single_hamza
+    shuba:
+    - single_hamza
+    hafs:
+    - single_hamza
+    khalaf_an_hamzah:
+    - single_hamza
+    khallad:
+    - single_hamza
+    abul_harith:
+    - single_hamza
+    duri_kisai:
+    - single_hamza
+    ishaq:
+    - single_hamza
+    idris:
+    - single_hamza
+  cite:
+  - wafi 85
+  - idah 91
+- words:
+  - أن كان ذا مال
   case: two hamzahs in one word, the second maftūḥah (أأنذرتهم)
   ruwat:
-    qalun: [single_hamza]
-    warsh: [single_hamza]
-    bazzi: [single_hamza]
-    qunbul: [single_hamza]
-    duri_abuamr: [single_hamza]
-    susi: [single_hamza]
-    hafs: [single_hamza]
-    abul_harith: [single_hamza]
-    duri_kisai: [single_hamza]
-    ibn_dhakwan: [tashil]
-    hisham: [tashil_idkhal]
-    ishaq: [single_hamza]
-    idris: [single_hamza]
-  cite: [wafi 86, idah 90, idah 91]
-- words: [أن يؤتى أحد]
+    qalun:
+    - single_hamza
+    warsh:
+    - single_hamza
+    bazzi:
+    - single_hamza
+    qunbul:
+    - single_hamza
+    duri_abuamr:
+    - single_hamza
+    susi:
+    - single_hamza
+    hafs:
+    - single_hamza
+    abul_harith:
+    - single_hamza
+    duri_kisai:
+    - single_hamza
+    ibn_dhakwan:
+    - tashil
+    hisham:
+    - tashil_idkhal
+    ishaq:
+    - single_hamza
+    idris:
+    - single_hamza
+  cite:
+  - wafi 86
+  - idah 90
+  - idah 91
+- words:
+  - أن يؤتى أحد
   case: two hamzahs in one word, the second maftūḥah (أأنذرتهم)
   ruwat:
-    qalun: [single_hamza]
-    warsh: [single_hamza]
-    duri_abuamr: [single_hamza]
-    susi: [single_hamza]
-    hisham: [single_hamza]
-    ibn_dhakwan: [single_hamza]
-    shuba: [single_hamza]
-    hafs: [single_hamza]
-    khalaf_an_hamzah: [single_hamza]
-    khallad: [single_hamza]
-    abul_harith: [single_hamza]
-    duri_kisai: [single_hamza]
-  cite: [wafi 86]
-- words: [آمنتم]
+    qalun:
+    - single_hamza
+    warsh:
+    - single_hamza
+    duri_abuamr:
+    - single_hamza
+    susi:
+    - single_hamza
+    hisham:
+    - single_hamza
+    ibn_dhakwan:
+    - single_hamza
+    shuba:
+    - single_hamza
+    hafs:
+    - single_hamza
+    khalaf_an_hamzah:
+    - single_hamza
+    khallad:
+    - single_hamza
+    abul_harith:
+    - single_hamza
+    duri_kisai:
+    - single_hamza
+  cite:
+  - wafi 86
+- words:
+  - آمنتم
   case: two hamzahs in one word, the second maftūḥah (أأنذرتهم)
   ruwat:
-    qalun: [tashil]
-    warsh: [tashil]
-    duri_abuamr: [tashil]
-    susi: [tashil]
-    hisham: [tashil]
-    ibn_dhakwan: [tashil]
-    hafs: [single_hamza]
-    ibn_wardan: [tashil]
-    ibn_jammaz: [tashil]
-    ruways: [single_hamza]
-  cite: [wafi 86, wafi 87, wafi 88, idah 89]
-- words: [آمنتم طه]
+    qalun:
+    - tashil
+    warsh:
+    - tashil
+    duri_abuamr:
+    - tashil
+    susi:
+    - tashil
+    hisham:
+    - tashil
+    ibn_dhakwan:
+    - tashil
+    hafs:
+    - single_hamza
+    ibn_wardan:
+    - tashil
+    ibn_jammaz:
+    - tashil
+    ruways:
+    - single_hamza
+  cite:
+  - wafi 86
+  - wafi 87
+  - wafi 88
+  - idah 89
+- words:
+  - آمنتم طه
   case: two hamzahs in one word, the second maftūḥah (أأنذرتهم)
   ruwat:
-    qunbul: [single_hamza]
-  cite: [wafi 86]
-- words: [قال فرعون وآمنتم به, وأمنتم الملك]
+    qunbul:
+    - single_hamza
+  cite:
+  - wafi 86
+- words:
+  - قال فرعون وآمنتم به
+  - وأمنتم الملك
   case: two hamzahs in one word, the second maftūḥah (أأنذرتهم), in wasl
   ruwat:
-    qunbul: [ibdal_ula_waw]
-  cite: [wafi 86]
-- words: [ءالهتنا]
+    qunbul:
+    - ibdal_ula_waw
+  cite:
+  - wafi 86
+- words:
+  - ءالهتنا
   case: two hamzahs in one word, the second maftūḥah (أأنذرتهم)
   ruwat:
-    ibn_wardan: [tashil]
-    ibn_jammaz: [tashil]
-  cite: [wafi 88, idah 89]
-- words: [أعنك لأنت يوسف]
+    ibn_wardan:
+    - tashil
+    ibn_jammaz:
+    - tashil
+  cite:
+  - wafi 88
+  - idah 89
+- words:
+  - أعنك لأنت يوسف
   case: two hamzahs in one word, the second maksūrah (أئنكم)
   ruwat:
-    ibn_wardan: [single_hamza]
-    ibn_jammaz: [single_hamza]
-  cite: [idah 90]
-- words: [أذا مامت, أتنكم لتأتون, أن لنا لأجراً, أمن لنا لأجراً, أئنك لمن المصدقين, أنفكا آلهة, أتنكم لتكفرون]
+    ibn_wardan:
+    - single_hamza
+    ibn_jammaz:
+    - single_hamza
+  cite:
+  - idah 90
+- words:
+  - أذا مامت
+  - أتنكم لتأتون
+  - أن لنا لأجراً
+  - أمن لنا لأجراً
+  - أئنك لمن المصدقين
+  - أنفكا آلهة
+  - أتنكم لتكفرون
   case: two hamzahs in one word, the second maksūrah (أئنكم)
   ruwat:
-    hisham: [tahqiq_idkhal]
-  cite: [wafi 89]
-- words: [أتنكم لتكفرون فصلت]
+    hisham:
+    - tahqiq_idkhal
+  cite:
+  - wafi 89
+- words:
+  - أتنكم لتكفرون فصلت
   case: two hamzahs in one word, the second maksūrah (أئنكم)
   ruwat:
-    hisham: [tashil, tahqiq]
-  cite: [wafi 89]
-- words: [أئمة, أيمةَ]
+    hisham:
+    - tashil
+    - tahqiq
+  cite:
+  - wafi 89
+- words:
+  - أئمة
+  - أيمةَ
   case: two hamzahs in one word, the second maksūrah (أئنكم)
   ruwat: {}
-  cite: [wafi 89, idah 88]
-- words: [السحر]
+  cite:
+  - wafi 89
+  - idah 88
+- words:
+  - السحر
   case: hamzat al-waṣl of the article between lām and the istifhām hamzah
   ruwat:
-    duri_abuamr: [wasl_ibdal_alif, wasl_tashil]
-    susi: [wasl_ibdal_alif, wasl_tashil]
-  cite: [wafi 87]
-- words: [هأنتم]
+    duri_abuamr:
+    - wasl_ibdal_alif
+    - wasl_tashil
+    susi:
+    - wasl_ibdal_alif
+    - wasl_tashil
+  cite:
+  - wafi 87
+- words:
+  - هأنتم
   case: hā al-tanbīh + hamzah (ها أنتم)
   ruwat:
-    ibn_wardan: [tashil_alif]
-    ibn_jammaz: [tashil_alif]
-    ruways: [tahqiq]
-    rawh: [tahqiq]
-  cite: [idah 113, idah 114]
-- words: [أبذا متنا وكنا ترابا وعظاما أعنا لمبعوثون (الواقعة), أول الذبح (الصافات)]
+    ibn_wardan:
+    - tashil_alif
+    ibn_jammaz:
+    - tashil_alif
+    ruways:
+    - tahqiq
+    rawh:
+    - tahqiq
+  cite:
+  - idah 113
+  - idah 114
+- words:
+  - أبذا متنا وكنا ترابا وعظاما أعنا لمبعوثون (الواقعة)
+  - أول الذبح (الصافات)
   case: repeated istifhām
   ruwat:
-    ibn_wardan: [istifham_ikhbar]
-    ibn_jammaz: [istifham_ikhbar]
-  cite: [idah 92, idah 94]
-- words: [العنكبوت]
+    ibn_wardan:
+    - istifham_ikhbar
+    ibn_jammaz:
+    - istifham_ikhbar
+  cite:
+  - idah 92
+  - idah 94
+- words:
+  - العنكبوت
   case: repeated istifhām
   ruwat:
-    ruways: [ikhbar_istifham]
-    rawh: [ikhbar_istifham]
-  cite: [idah 93, idah 94]
-- words: [النمل]
+    ruways:
+    - ikhbar_istifham
+    rawh:
+    - ikhbar_istifham
+  cite:
+  - idah 93
+  - idah 94
+- words:
+  - النمل
   case: repeated istifhām
   ruwat:
-    ruways: [istifham_istifham]
-    rawh: [istifham_istifham]
-  cite: [idah 93, idah 94]
-open: ['Ḥafṣ is in no row for أعجمي (wafi 85): the rows name the Kūfī group of Shuʿbah, Ḥamzah, al-Kisāʾī (taḥqīq), Hishām (first dropped), and Nāfiʿ, Ibn Kathīr, Abū ʿAmr, Ibn Dhakwān (first pronounced,
-    second eased); Ḥafṣ is not listed in the table for this word.', 'Hishām, second maftūḥah (wafi 84): the row gives tashīl or taḥqīq; the idkhāl comes from wafi 89 (idkhāl before maftūḥah and maksūrah
-    for Qālūn, Abū ʿAmr, Hishām) and agrees with the reviewed profile row, which gives [taḥqīq+idkhāl, tashīl+idkhāl].', 'Hishām, second maksūrah: wafi 89 gives taḥqīq with or without idkhāl; the reviewed
-    profile row (wafi 84) gives taḥqīq+idkhāl and tashīl+idkhāl for him. The table keeps wafi 89. The seven words with ''no khulf'' idkhāl (wafi 89) include أتنكم لتكفرون, while the same page gives Hishām
-    two wujūh (tashīl, taḥqīq) for the Fuṣṣilat word; both are listed as the rows say, not resolved.', 'Hishām, second maḍmūmah (wafi 90): the row gives only the khulf of idkhāl (with or without) for Hishām,
-    Abū ʿAmr (al-Dūrī, al-Sūsī), and no idkhāl khulf for Qālūn; it does not say whether Hishām reads the second hamzah with taḥqīq or tashīl; Hishām is left empty in this case. For al-Dūrī and al-Sūsī the
-    table gives tashīl (wafi 84) with idkhāl, then without; the khulf is only on the idkhāl.', 'Warsh, second maftūḥah (wafi 84): the Egyptians narrate ibdāl to alif, the Baghdādīs tashīl; the table orders
-    tashīl, ibdāl as in the reviewed profile row; the book states no preference.', 'أئمة (wafi 89, idah 88): Hishām has idkhāl and taḥqīq or not; Nāfiʿ, Ibn Kathīr, Abū ʿAmr have tashīl, the rest taḥqīq;
-    Abū Jaʿfar''s أيمةَ is said to be as his three types. Rows do not say whether Qālūn, al-Dūrī, al-Sūsī insert the alif in this word, so no reading is listed (ruwat left empty).', 'ءالهتنا and آمنتم (wafi
-    88): those with idkhāl (Qālūn, Abū ʿAmr, Hishām) do not insert the alif in these words (the rows say ''لا إدخال''); for ءالهتنا no other reading is stated for the fourteen, only Abū Jaʿfar''s tashīl
-    without idkhāl (idah 89).', 'Ḥafṣ for أن يؤتى أحد and أن كان ذا مال: wafi 86 gives ''one hamzah'' to the rest; the Durrah rows say nothing on أن يؤتى أحد, so no Durrah reading is listed for it; Isḥāq
-    and Idrīs read one hamzah in أن كان ذا مال ''against their riwāyah'' (idah 90-91) while Khalaf ʿan Ḥamzah reads two (wafi 86); not a disagreement of rows, kept as stated.', 'Isḥāq and Idrīs for أذهبتم:
-    ''كأصله'' (idah 91) → the aṣl Khalaf''s one hamzah (wafi 85); marked as listed, not via asl, since the aṣl''s reading comes from another page.', 'Case ''sākinah second hamzah'' (wafi 103): the one row
-    speaks of all fourteen; no Durrah row (six empty). Case ''hamzat al-waṣl'' (wafi 87-88): no Durrah row (six empty); wafi 88 says the ibdāl with madd is better for all (أولى), listed first; wafi 88 also
-    says those with idkhāl do not insert it in these words.', 'Repeated istifhām (idah 92-94, rows labelled istifham_mukarrar) and هأنتم (idah 113-114, haa_antum): the wujūh are the book''s own words; the
-    fourteen of al-Wāfī have no row in this category for them (empty); Isḥāq and Idrīs are ''كأصله'' (idah 94, Khalaf ʿan Ḥamzah) but the aṣl''s reading is not in the rows (empty).', 'Yaʿqūb''s Naml (idah
-    93): Ruways tashīl and Rawḥ taḥqīq of the second hamzah of أبنا, without idkhāl (idah 93) are not put in the table (only the istifhām/khabar pattern is).', 'Ruways in الأعراف وطه والشعراء (idah 89):
-    khabar with one hamzah, in the listed آمنتم; Ibn Wardān/Ibn Jammaz there tashīl without idkhāl (idah 89).', 'idah 90: for أعنك لأنت يوسف the rest of Yaʿqūb and Khalaf read as their aṣl (istifhām), as
-    in their case reading.']
+    ruways:
+    - istifham_istifham
+    rawh:
+    - istifham_istifham
+  cite:
+  - idah 93
+  - idah 94
+open:
+- 'Hishām, second maftūḥah (wafi 84): the row gives tashīl or taḥqīq; the idkhāl comes from wafi 89 (idkhāl before maftūḥah and maksūrah for Qālūn,
+  Abū ʿAmr, Hishām) and agrees with the reviewed profile row, which gives [taḥqīq+idkhāl, tashīl+idkhāl].'
+- 'Hishām, second maksūrah: wafi 89 gives taḥqīq with or without idkhāl; the reviewed profile row (wafi 84) gives taḥqīq+idkhāl and tashīl+idkhāl
+  for him. The table keeps wafi 89. The seven words with ''no khulf'' idkhāl (wafi 89) include أتنكم لتكفرون, while the same page gives Hishām
+  two wujūh (tashīl, taḥqīq) for the Fuṣṣilat word; both are listed as the rows say, not resolved.'
+- 'Warsh, second maftūḥah (wafi 84): the Egyptians narrate ibdāl to alif, the Baghdādīs tashīl; the table orders tashīl, ibdāl as in the reviewed
+  profile row; the book states no preference.'
+- 'ءالهتنا and آمنتم (wafi 88): those with idkhāl (Qālūn, Abū ʿAmr, Hishām) do not insert the alif in these words (the rows say ''لا إدخال'');
+  for ءالهتنا no other reading is stated for the fourteen, only Abū Jaʿfar''s tashīl without idkhāl (idah 89).'
+- 'Ḥafṣ for أن يؤتى أحد and أن كان ذا مال: wafi 86 gives ''one hamzah'' to the rest; the Durrah rows say nothing on أن يؤتى أحد, so no Durrah
+  reading is listed for it; Isḥāq and Idrīs read one hamzah in أن كان ذا مال ''against their riwāyah'' (idah 90-91) while Khalaf ʿan Ḥamzah reads
+  two (wafi 86); not a disagreement of rows, kept as stated.'
+- 'Isḥāq and Idrīs for أذهبتم: ''كأصله'' (idah 91) → the aṣl Khalaf''s one hamzah (wafi 85); marked as listed, not via asl, since the aṣl''s reading
+  comes from another page.'
+- 'Yaʿqūb''s Naml (idah 93): Ruways tashīl and Rawḥ taḥqīq of the second hamzah of أبنا, without idkhāl (idah 93) are not put in the table (only
+  the istifhām/khabar pattern is).'
+- 'Ruways in الأعراف وطه والشعراء (idah 89): khabar with one hamzah, in the listed آمنتم; Ibn Wardān/Ibn Jammaz there tashīl without idkhāl (idah
+  89).'
+- 'idah 90: for أعنك لأنت يوسف the rest of Yaʿqūb and Khalaf read as their aṣl (istifhām), as in their case reading.'
+filled_notes:
+- 'Ḥafṣ is in no row for أعجمي (wafi 85): the rows name the Kūfī group of Shuʿbah, Ḥamzah, al-Kisāʾī (taḥqīq), Hishām (first dropped), and Nāfiʿ,
+  Ibn Kathīr, Abū ʿAmr, Ibn Dhakwān (first pronounced, second eased); Ḥafṣ is not listed in the table for this word.'
+- 'Hishām, second maḍmūmah (wafi 90): the row gives only the khulf of idkhāl (with or without) for Hishām, Abū ʿAmr (al-Dūrī, al-Sūsī), and no
+  idkhāl khulf for Qālūn; it does not say whether Hishām reads the second hamzah with taḥqīq or tashīl; Hishām is left empty in this case. For
+  al-Dūrī and al-Sūsī the table gives tashīl (wafi 84) with idkhāl, then without; the khulf is only on the idkhāl.'
+- 'أئمة (wafi 89, idah 88): Hishām has idkhāl and taḥqīq or not; Nāfiʿ, Ibn Kathīr, Abū ʿAmr have tashīl, the rest taḥqīq; Abū Jaʿfar''s أيمةَ
+  is said to be as his three types. Rows do not say whether Qālūn, al-Dūrī, al-Sūsī insert the alif in this word, so no reading is listed (ruwat
+  left empty).'
+- 'Case ''sākinah second hamzah'' (wafi 103): the one row speaks of all fourteen; no Durrah row (six empty). Case ''hamzat al-waṣl'' (wafi 87-88):
+  no Durrah row (six empty); wafi 88 says the ibdāl with madd is better for all (أولى), listed first; wafi 88 also says those with idkhāl do not
+  insert it in these words.'
+- 'Repeated istifhām (idah 92-94, rows labelled istifham_mukarrar) and هأنتم (idah 113-114, haa_antum): the wujūh are the book''s own words; the
+  fourteen of al-Wāfī have no row in this category for them (empty); Isḥāq and Idrīs are ''كأصله'' (idah 94, Khalaf ʿan Ḥamzah) but the aṣl''s
+  reading is not in the rows (empty).'

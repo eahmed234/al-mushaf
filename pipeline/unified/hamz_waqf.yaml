@@ -1,515 +1,921 @@
 category: hamz_waqf
 what: Ḥamzah's and Hishām's stop on the hamzah (sākin, final, middle, after a prefix, two hamzahs, with rawm/ishmām); five parts, each a case
 wujuh:
-- {id: tahqiq, ar: تحقيق الهمزة, en: the hamzah pronounced as in wasl}
-- {id: tashil, ar: تسهيل بين بين, en: tashīl between (also takhfīf in the middle-hamzah case)}
-- {id: hadhf, ar: حذف الهمزة, en: the hamzah dropped}
-- {id: ibdal_ya, ar: إبدال الهمزة ياء, en: the hamzah turned into yāʾ}
-- {id: ibdal_waw, ar: إبدال الهمزة واوا, en: the hamzah turned into wāw}
-- {id: ibdal, ar: إبدال الهمزة حرف مد, en: the hamzah turned into a madd letter matching the vowel before it}
-- {id: ibdal_madd, ar: إبدال ألفا مع المد, en: ibdāl into a madd letter with madd (long)}
-- {id: ibdal_tawassut, ar: إبدال ألفا مع التوسط, en: ibdāl into a madd letter with tawassuṭ}
-- {id: ibdal_qasr, ar: إبدال ألفا مع القصر, en: ibdāl into a madd letter with qaṣr}
-- {id: tashil_rawm_madd, ar: تسهيل بالروم مع المد, en: tashīl with rawm and madd}
-- {id: tashil_rawm_tawassut, ar: تسهيل بالروم مع التوسط, en: tashīl with rawm and tawassuṭ}
-- {id: tashil_rawm_qasr, ar: تسهيل بالروم مع القصر, en: tashīl with rawm and qaṣr}
-- {id: tahqiq_idkhal, ar: تحقيق مع إدخال ألف, en: taḥqīq with an alif inserted between the two hamzahs}
-- {id: tashil_idkhal, ar: تسهيل مع إدخال ألف, en: tashīl with an alif inserted between the two hamzahs}
-- {id: naql_hadhf, ar: نقل حركة الهمز إلى الساكن قبله وحذفه, en: the hamzah's vowel moved onto the sākin before it and the hamzah dropped}
-- {id: ibdal_idgham, ar: إبدال من جنس ما قبله وإدغامه, en: ibdāl into the kind of the letter before it and merging into it}
-- {id: izhar, ar: إظهار الحرف المبدل, en: the letter substituted for the hamzah kept apart}
-- {id: idgham, ar: إدغام الحرف المبدل فيما بعده, en: the substituted letter merged into the one after it}
-- {id: qalb_waw_idgham, ar: قلب الواو ياء وإدغامها, en: the substituted wāw turned into yāʾ and merged}
-- {id: kasr_ha, ar: كسر الهاء, en: kasrah on the hāʾ (أنبئهم)}
-- {id: damm_ha, ar: ضم الهاء, en: ḍammah on the hāʾ}
+- id: tahqiq
+  ar: تحقيق الهمزة
+  en: the hamzah pronounced as in wasl
+- id: tashil
+  ar: تسهيل بين بين
+  en: tashīl between (also takhfīf in the middle-hamzah case)
+- id: hadhf
+  ar: حذف الهمزة
+  en: the hamzah dropped
+- id: ibdal_ya
+  ar: إبدال الهمزة ياء
+  en: the hamzah turned into yāʾ
+- id: ibdal_waw
+  ar: إبدال الهمزة واوا
+  en: the hamzah turned into wāw
+- id: ibdal
+  ar: إبدال الهمزة حرف مد
+  en: the hamzah turned into a madd letter matching the vowel before it
+- id: ibdal_madd
+  ar: إبدال ألفا مع المد
+  en: ibdāl into a madd letter with madd (long)
+- id: ibdal_tawassut
+  ar: إبدال ألفا مع التوسط
+  en: ibdāl into a madd letter with tawassuṭ
+- id: ibdal_qasr
+  ar: إبدال ألفا مع القصر
+  en: ibdāl into a madd letter with qaṣr
+- id: tashil_rawm_madd
+  ar: تسهيل بالروم مع المد
+  en: tashīl with rawm and madd
+- id: tashil_rawm_tawassut
+  ar: تسهيل بالروم مع التوسط
+  en: tashīl with rawm and tawassuṭ
+- id: tashil_rawm_qasr
+  ar: تسهيل بالروم مع القصر
+  en: tashīl with rawm and qaṣr
+- id: tahqiq_idkhal
+  ar: تحقيق مع إدخال ألف
+  en: taḥqīq with an alif inserted between the two hamzahs
+- id: tashil_idkhal
+  ar: تسهيل مع إدخال ألف
+  en: tashīl with an alif inserted between the two hamzahs
+- id: naql_hadhf
+  ar: نقل حركة الهمز إلى الساكن قبله وحذفه
+  en: the hamzah's vowel moved onto the sākin before it and the hamzah dropped
+- id: ibdal_idgham
+  ar: إبدال من جنس ما قبله وإدغامه
+  en: ibdāl into the kind of the letter before it and merging into it
+- id: izhar
+  ar: إظهار الحرف المبدل
+  en: the letter substituted for the hamzah kept apart
+- id: idgham
+  ar: إدغام الحرف المبدل فيما بعده
+  en: the substituted letter merged into the one after it
+- id: qalb_waw_idgham
+  ar: قلب الواو ياء وإدغامها
+  en: the substituted wāw turned into yāʾ and merged
+- id: kasr_ha
+  ar: كسر الهاء
+  en: kasrah on the hāʾ (أنبئهم)
+- id: damm_ha
+  ar: ضم الهاء
+  en: ḍammah on the hāʾ
 cases:
 - case: 'hamz_waqf_final: final hamzah at the stop'
   ruwat:
     qalun:
-      wujuh: [tahqiq]
+      wujuh:
+      - tahqiq
       cite: []
       via: wasl
     warsh:
-      wujuh: [tahqiq]
+      wujuh:
+      - tahqiq
       cite: []
       via: wasl
     bazzi:
-      wujuh: [tahqiq]
+      wujuh:
+      - tahqiq
       cite: []
       via: wasl
     qunbul:
-      wujuh: [tahqiq]
+      wujuh:
+      - tahqiq
       cite: []
       via: wasl
     duri_abuamr:
-      wujuh: [tahqiq]
+      wujuh:
+      - tahqiq
       cite: []
       via: wasl
     susi:
-      wujuh: [tahqiq]
+      wujuh:
+      - tahqiq
       cite: []
       via: wasl
     hisham:
-      wujuh: [ibdal_madd, ibdal_tawassut, ibdal_qasr, tashil_rawm_madd, tashil_rawm_qasr]
-      cite: [wafi 115, wafi 117, wafi 126]
+      wujuh:
+      - ibdal_madd
+      - ibdal_tawassut
+      - ibdal_qasr
+      - tashil_rawm_madd
+      - tashil_rawm_qasr
+      cite:
+      - wafi 115
+      - wafi 117
+      - wafi 126
     ibn_dhakwan:
-      wujuh: [tahqiq]
+      wujuh:
+      - tahqiq
       cite: []
       via: wasl
     shuba:
-      wujuh: [tahqiq]
+      wujuh:
+      - tahqiq
       cite: []
       via: wasl
     hafs:
-      wujuh: [tahqiq]
+      wujuh:
+      - tahqiq
       cite: []
       via: wasl
     khalaf_an_hamzah:
-      wujuh: [ibdal_madd, ibdal_tawassut, ibdal_qasr, tashil_rawm_madd, tashil_rawm_qasr]
-      cite: [wafi 115, wafi 117, wafi 126]
+      wujuh:
+      - ibdal_madd
+      - ibdal_tawassut
+      - ibdal_qasr
+      - tashil_rawm_madd
+      - tashil_rawm_qasr
+      cite:
+      - wafi 115
+      - wafi 117
+      - wafi 126
     khallad:
-      wujuh: [ibdal_madd, ibdal_tawassut, ibdal_qasr, tashil_rawm_madd, tashil_rawm_qasr]
-      cite: [wafi 115, wafi 117, wafi 126]
+      wujuh:
+      - ibdal_madd
+      - ibdal_tawassut
+      - ibdal_qasr
+      - tashil_rawm_madd
+      - tashil_rawm_qasr
+      cite:
+      - wafi 115
+      - wafi 117
+      - wafi 126
     abul_harith:
-      wujuh: [tahqiq]
+      wujuh:
+      - tahqiq
       cite: []
       via: wasl
     duri_kisai:
-      wujuh: [tahqiq]
+      wujuh:
+      - tahqiq
       cite: []
       via: wasl
     ibn_wardan:
-      wujuh: [tahqiq]
+      wujuh:
+      - tahqiq
       cite: []
       via: wasl
     ibn_jammaz:
-      wujuh: [tahqiq]
+      wujuh:
+      - tahqiq
       cite: []
       via: wasl
     ruways:
-      wujuh: [tahqiq]
+      wujuh:
+      - tahqiq
       cite: []
       via: wasl
     rawh:
-      wujuh: [tahqiq]
+      wujuh:
+      - tahqiq
       cite: []
       via: wasl
     ishaq:
-      wujuh: [tahqiq]
-      cite: [idah 121]
+      wujuh:
+      - tahqiq
+      cite:
+      - idah 121
     idris:
-      wujuh: [tahqiq]
-      cite: [idah 121]
+      wujuh:
+      - tahqiq
+      cite:
+      - idah 121
 - case: 'hamz_waqf_mid: middle hamzah at the stop (after a vowel, after a letter, in the middle of the word)'
   ruwat:
     qalun:
-      wujuh: [tahqiq]
+      wujuh:
+      - tahqiq
       cite: []
       via: wasl
     warsh:
-      wujuh: [tahqiq]
+      wujuh:
+      - tahqiq
       cite: []
       via: wasl
     bazzi:
-      wujuh: [tahqiq]
+      wujuh:
+      - tahqiq
       cite: []
       via: wasl
     qunbul:
-      wujuh: [tahqiq]
+      wujuh:
+      - tahqiq
       cite: []
       via: wasl
     duri_abuamr:
-      wujuh: [tahqiq]
+      wujuh:
+      - tahqiq
       cite: []
       via: wasl
     susi:
-      wujuh: [tahqiq]
+      wujuh:
+      - tahqiq
       cite: []
       via: wasl
     hisham:
-      wujuh: [tahqiq]
-      cite: [wafi 117]
+      wujuh:
+      - tahqiq
+      cite:
+      - wafi 117
     ibn_dhakwan:
-      wujuh: [tahqiq]
+      wujuh:
+      - tahqiq
       cite: []
       via: wasl
     shuba:
-      wujuh: [tahqiq]
+      wujuh:
+      - tahqiq
       cite: []
       via: wasl
     hafs:
-      wujuh: [tahqiq]
+      wujuh:
+      - tahqiq
       cite: []
       via: wasl
     khalaf_an_hamzah:
-      wujuh: [tashil, ibdal_ya, ibdal_waw, hadhf]
-      cite: [wafi 113, wafi 116, wafi 121]
+      wujuh:
+      - tashil
+      - ibdal_ya
+      - ibdal_waw
+      - hadhf
+      cite:
+      - wafi 113
+      - wafi 116
+      - wafi 121
     khallad:
-      wujuh: [tashil, ibdal_ya, ibdal_waw, hadhf]
-      cite: [wafi 113, wafi 116, wafi 121]
+      wujuh:
+      - tashil
+      - ibdal_ya
+      - ibdal_waw
+      - hadhf
+      cite:
+      - wafi 113
+      - wafi 116
+      - wafi 121
     abul_harith:
-      wujuh: [tahqiq]
+      wujuh:
+      - tahqiq
       cite: []
       via: wasl
     duri_kisai:
-      wujuh: [tahqiq]
+      wujuh:
+      - tahqiq
       cite: []
       via: wasl
     ibn_wardan:
-      wujuh: [tahqiq]
+      wujuh:
+      - tahqiq
       cite: []
       via: wasl
     ibn_jammaz:
-      wujuh: [tahqiq]
+      wujuh:
+      - tahqiq
       cite: []
       via: wasl
     ruways:
-      wujuh: [tahqiq]
+      wujuh:
+      - tahqiq
       cite: []
       via: wasl
     rawh:
-      wujuh: [tahqiq]
+      wujuh:
+      - tahqiq
       cite: []
       via: wasl
     ishaq:
-      wujuh: [tahqiq]
-      cite: [idah 121]
+      wujuh:
+      - tahqiq
+      cite:
+      - idah 121
     idris:
-      wujuh: [tahqiq]
-      cite: [idah 121]
+      wujuh:
+      - tahqiq
+      cite:
+      - idah 121
 - case: 'hamz_waqf_zaid: hamzah after a prefix (a letter added before the hamzah)'
   ruwat:
     qalun:
-      wujuh: [tahqiq]
+      wujuh:
+      - tahqiq
       cite: []
       via: wasl
     warsh:
-      wujuh: [tahqiq]
+      wujuh:
+      - tahqiq
       cite: []
       via: wasl
     bazzi:
-      wujuh: [tahqiq]
+      wujuh:
+      - tahqiq
       cite: []
       via: wasl
     qunbul:
-      wujuh: [tahqiq]
+      wujuh:
+      - tahqiq
       cite: []
       via: wasl
     duri_abuamr:
-      wujuh: [tahqiq]
+      wujuh:
+      - tahqiq
       cite: []
       via: wasl
     susi:
-      wujuh: [tahqiq]
+      wujuh:
+      - tahqiq
       cite: []
       via: wasl
     hisham:
-      wujuh: [tahqiq]
-      cite: [wafi 117]
+      wujuh:
+      - tahqiq
+      cite:
+      - wafi 117
     ibn_dhakwan:
-      wujuh: [tahqiq]
+      wujuh:
+      - tahqiq
       cite: []
       via: wasl
     shuba:
-      wujuh: [tahqiq]
+      wujuh:
+      - tahqiq
       cite: []
       via: wasl
     hafs:
-      wujuh: [tahqiq]
+      wujuh:
+      - tahqiq
       cite: []
       via: wasl
     khalaf_an_hamzah:
-      wujuh: [tahqiq, tashil]
-      cite: [wafi 123]
+      wujuh:
+      - tahqiq
+      - tashil
+      cite:
+      - wafi 123
     khallad:
-      wujuh: [tahqiq, tashil]
-      cite: [wafi 123]
+      wujuh:
+      - tahqiq
+      - tashil
+      cite:
+      - wafi 123
     abul_harith:
-      wujuh: [tahqiq]
+      wujuh:
+      - tahqiq
       cite: []
       via: wasl
     duri_kisai:
-      wujuh: [tahqiq]
+      wujuh:
+      - tahqiq
       cite: []
       via: wasl
     ibn_wardan:
-      wujuh: [tahqiq]
+      wujuh:
+      - tahqiq
       cite: []
       via: wasl
     ibn_jammaz:
-      wujuh: [tahqiq]
+      wujuh:
+      - tahqiq
       cite: []
       via: wasl
     ruways:
-      wujuh: [tahqiq]
+      wujuh:
+      - tahqiq
       cite: []
       via: wasl
     rawh:
-      wujuh: [tahqiq]
+      wujuh:
+      - tahqiq
       cite: []
       via: wasl
     ishaq:
-      wujuh: [tahqiq]
-      cite: [idah 121]
+      wujuh:
+      - tahqiq
+      cite:
+      - idah 121
     idris:
-      wujuh: [tahqiq]
-      cite: [idah 121]
+      wujuh:
+      - tahqiq
+      cite:
+      - idah 121
 - case: 'hamzatayn_waqf: two hamzahs in one word, stopping on the word'
   ruwat:
     qalun:
-      wujuh: []
-      cite: []
-      via: wasl
+      wujuh:
+      - tashil_idkhal
+      cite:
+      - wafi 84
+      - wafi 89
+      - wafi 90
+      - wafi 99
+      via: as_wasl
     warsh:
-      wujuh: []
-      cite: []
-      via: wasl
+      wujuh:
+      - tashil
+      - ibdal
+      cite:
+      - wafi 84
+      - wafi 90
+      - wafi 99
+      via: as_wasl
     bazzi:
-      wujuh: []
-      cite: []
-      via: wasl
+      wujuh:
+      - tashil
+      cite:
+      - wafi 84
+      - wafi 90
+      - wafi 99
+      via: as_wasl
     qunbul:
-      wujuh: []
-      cite: []
-      via: wasl
+      wujuh:
+      - tashil
+      cite:
+      - wafi 84
+      - wafi 90
+      - wafi 99
+      via: as_wasl
     duri_abuamr:
-      wujuh: []
-      cite: []
-      via: wasl
+      wujuh:
+      - tashil_idkhal
+      cite:
+      - wafi 84
+      - wafi 89
+      - wafi 99
+      via: as_wasl
     susi:
-      wujuh: []
-      cite: []
-      via: wasl
+      wujuh:
+      - tashil_idkhal
+      cite:
+      - wafi 84
+      - wafi 89
+      - wafi 99
+      via: as_wasl
     hisham:
-      wujuh: [tahqiq_idkhal, tashil_idkhal]
-      cite: [wafi 85]
+      wujuh:
+      - tahqiq_idkhal
+      - tashil_idkhal
+      cite:
+      - wafi 85
     ibn_dhakwan:
-      wujuh: []
-      cite: []
-      via: wasl
+      wujuh:
+      - tahqiq
+      cite:
+      - wafi 85
+      - wafi 91
+      - wafi 99
+      via: as_wasl
     shuba:
-      wujuh: []
-      cite: []
-      via: wasl
+      wujuh:
+      - tahqiq
+      cite:
+      - wafi 85
+      - wafi 91
+      - wafi 99
+      via: as_wasl
     hafs:
-      wujuh: []
-      cite: []
-      via: wasl
+      wujuh:
+      - tahqiq
+      cite:
+      - wafi 85
+      - wafi 91
+      - wafi 99
+      via: as_wasl
     khalaf_an_hamzah:
-      wujuh: [tahqiq, tashil]
+      wujuh:
+      - tahqiq
+      - tashil
       cite: []
     khallad:
-      wujuh: [tahqiq, tashil]
+      wujuh:
+      - tahqiq
+      - tashil
       cite: []
     abul_harith:
-      wujuh: []
-      cite: []
-      via: wasl
+      wujuh:
+      - tahqiq
+      cite:
+      - wafi 85
+      - wafi 91
+      - wafi 99
+      via: as_wasl
     duri_kisai:
-      wujuh: []
-      cite: []
-      via: wasl
+      wujuh:
+      - tahqiq
+      cite:
+      - wafi 85
+      - wafi 91
+      - wafi 99
+      via: as_wasl
     ibn_wardan:
-      wujuh: []
-      cite: []
-      via: wasl
+      wujuh:
+      - tashil_idkhal
+      cite:
+      - idah 88
+      - wafi 99
+      via: as_wasl
     ibn_jammaz:
-      wujuh: []
-      cite: []
-      via: wasl
+      wujuh:
+      - tashil_idkhal
+      cite:
+      - idah 88
+      - wafi 99
+      via: as_wasl
     ruways:
-      wujuh: []
-      cite: []
-      via: wasl
+      wujuh:
+      - tashil
+      cite:
+      - idah 87
+      - idah 88
+      - wafi 99
+      via: as_wasl
     rawh:
-      wujuh: []
-      cite: []
-      via: wasl
+      wujuh:
+      - tahqiq
+      cite:
+      - idah 87
+      - idah 88
+      - wafi 99
+      via: as_wasl
     ishaq:
-      wujuh: [tahqiq]
-      cite: [idah 121]
+      wujuh:
+      - tahqiq
+      cite:
+      - idah 121
     idris:
-      wujuh: [tahqiq]
-      cite: [idah 121]
+      wujuh:
+      - tahqiq
+      cite:
+      - idah 121
 - case: 'ibdal_sakin_waqf: sākin hamzah at the stop'
   ruwat:
     qalun:
-      wujuh: []
-      cite: []
-      via: wasl
+      wujuh:
+      - tahqiq
+      cite:
+      - wafi 98-101
+      - wafi 99
+      via: as_wasl
     warsh:
-      wujuh: []
-      cite: []
-      via: wasl
+      wujuh:
+      - ibdal
+      cite:
+      - wafi 99
+      - wafi 99
+      via: as_wasl
     bazzi:
-      wujuh: []
-      cite: []
-      via: wasl
+      wujuh:
+      - tahqiq
+      cite:
+      - wafi 98-101
+      - wafi 99
+      via: as_wasl
     qunbul:
-      wujuh: []
-      cite: []
-      via: wasl
+      wujuh:
+      - tahqiq
+      cite:
+      - wafi 98-101
+      - wafi 99
+      via: as_wasl
     duri_abuamr:
-      wujuh: []
-      cite: []
-      via: wasl
+      wujuh:
+      - tahqiq
+      cite:
+      - wafi 98-101
+      - wafi 99
+      via: as_wasl
     susi:
-      wujuh: []
-      cite: []
-      via: wasl
+      wujuh:
+      - ibdal
+      cite:
+      - wafi 99
+      - wafi 99
+      via: as_wasl
     hisham:
-      wujuh: [tahqiq]
-      cite: [wafi 117]
+      wujuh:
+      - tahqiq
+      cite:
+      - wafi 117
     ibn_dhakwan:
-      wujuh: []
-      cite: []
-      via: wasl
+      wujuh:
+      - tahqiq
+      cite:
+      - wafi 98-101
+      - wafi 99
+      via: as_wasl
     shuba:
-      wujuh: []
-      cite: []
-      via: wasl
+      wujuh:
+      - tahqiq
+      cite:
+      - wafi 98-101
+      - wafi 99
+      via: as_wasl
     hafs:
-      wujuh: []
-      cite: []
-      via: wasl
+      wujuh:
+      - tahqiq
+      cite:
+      - wafi 98-101
+      - wafi 99
+      via: as_wasl
     khalaf_an_hamzah:
-      wujuh: [ibdal]
-      cite: [wafi 110, wafi 111]
+      wujuh:
+      - ibdal
+      cite:
+      - wafi 110
+      - wafi 111
     khallad:
-      wujuh: [ibdal]
-      cite: [wafi 110, wafi 111]
+      wujuh:
+      - ibdal
+      cite:
+      - wafi 110
+      - wafi 111
     abul_harith:
-      wujuh: []
-      cite: []
-      via: wasl
+      wujuh:
+      - tahqiq
+      cite:
+      - wafi 98-101
+      - wafi 99
+      via: as_wasl
     duri_kisai:
-      wujuh: []
-      cite: []
-      via: wasl
+      wujuh:
+      - tahqiq
+      cite:
+      - wafi 98-101
+      - wafi 99
+      via: as_wasl
     ibn_wardan:
-      wujuh: []
-      cite: []
-      via: wasl
+      wujuh:
+      - ibdal
+      cite:
+      - idah 102
+      - wafi 99
+      via: as_wasl
     ibn_jammaz:
-      wujuh: []
-      cite: []
-      via: wasl
+      wujuh:
+      - ibdal
+      cite:
+      - idah 102
+      - wafi 99
+      via: as_wasl
     ruways:
-      wujuh: []
-      cite: []
-      via: wasl
+      wujuh:
+      - tahqiq
+      cite:
+      - idah 102
+      - wafi 99
+      via: as_wasl
     rawh:
-      wujuh: []
-      cite: []
-      via: wasl
+      wujuh:
+      - tahqiq
+      cite:
+      - idah 102
+      - wafi 99
+      via: as_wasl
     ishaq:
-      wujuh: [tahqiq]
-      cite: [idah 121]
+      wujuh:
+      - tahqiq
+      cite:
+      - idah 121
     idris:
-      wujuh: [tahqiq]
-      cite: [idah 121]
+      wujuh:
+      - tahqiq
+      cite:
+      - idah 121
 listed:
-- words: [جاء, السفهاء, السماء, شركاء, يشاء, الماء, الأعداء]
+- words:
+  - جاء
+  - السفهاء
+  - السماء
+  - شركاء
+  - يشاء
+  - الماء
+  - الأعداء
   case: 'hamz_waqf_final: final hamzah at the stop'
   ruwat:
-    khalaf_an_hamzah: [ibdal_qasr, ibdal_tawassut, ibdal_madd]
-    khallad: [ibdal_qasr, ibdal_tawassut, ibdal_madd]
-  cite: [wafi 115]
-- words: [قروء, خطيئته, هنيئا, مريئا, بريئون, النسيء, بريء]
+    khalaf_an_hamzah:
+    - ibdal_qasr
+    - ibdal_tawassut
+    - ibdal_madd
+    khallad:
+    - ibdal_qasr
+    - ibdal_tawassut
+    - ibdal_madd
+  cite:
+  - wafi 115
+- words:
+  - قروء
+  - خطيئته
+  - هنيئا
+  - مريئا
+  - بريئون
+  - النسيء
+  - بريء
   case: 'hamz_waqf_final: final hamzah at the stop'
   ruwat:
-    khalaf_an_hamzah: [ibdal_idgham]
-    khallad: [ibdal_idgham]
-  cite: [wafi 115]
-- words: [السوآى, سيئت, سوءة, كهيئة, لتنوء, سيء, السوء, شيء]
+    khalaf_an_hamzah:
+    - ibdal_idgham
+    khallad:
+    - ibdal_idgham
+  cite:
+  - wafi 115
+- words:
+  - السوآى
+  - سيئت
+  - سوءة
+  - كهيئة
+  - لتنوء
+  - سيء
+  - السوء
+  - شيء
   case: 'hamz_waqf_final: final hamzah at the stop'
   ruwat:
-    khalaf_an_hamzah: [naql_hadhf, ibdal_idgham]
-    khallad: [naql_hadhf, ibdal_idgham]
-  cite: [wafi 125]
-- words: [التى]
+    khalaf_an_hamzah:
+    - naql_hadhf
+    - ibdal_idgham
+    khallad:
+    - naql_hadhf
+    - ibdal_idgham
+  cite:
+  - wafi 125
+- words:
+  - التى
   case: 'hamz_waqf_final: final hamzah at the stop'
   ruwat:
-    ibn_wardan: [ibdal_madd, tashil_rawm_tawassut, tashil_rawm_qasr]
-    ibn_jammaz: [ibdal_madd, tashil_rawm_tawassut, tashil_rawm_qasr]
-  cite: [idah 113]
-- words: [خاطئة, ناشئة, مائة, فئة]
+    ibn_wardan:
+    - ibdal_madd
+    - tashil_rawm_tawassut
+    - tashil_rawm_qasr
+    ibn_jammaz:
+    - ibdal_madd
+    - tashil_rawm_tawassut
+    - tashil_rawm_qasr
+  cite:
+  - idah 113
+- words:
+  - خاطئة
+  - ناشئة
+  - مائة
+  - فئة
   case: 'hamz_waqf_mid: middle hamzah at the stop (after a vowel, after a letter, in the middle of the word)'
   ruwat:
-    khalaf_an_hamzah: [ibdal_ya]
-    khallad: [ibdal_ya]
-  cite: [wafi 116]
-- words: [يؤيد, مؤذن, فؤادك, لؤلؤا]
+    khalaf_an_hamzah:
+    - ibdal_ya
+    khallad:
+    - ibdal_ya
+  cite:
+  - wafi 116
+- words:
+  - يؤيد
+  - مؤذن
+  - فؤادك
+  - لؤلؤا
   case: 'hamz_waqf_mid: middle hamzah at the stop (after a vowel, after a letter, in the middle of the word)'
   ruwat:
-    khalaf_an_hamzah: [ibdal_waw]
-    khallad: [ibdal_waw]
-  cite: [wafi 116]
-- words: [مستهزءون, فمالئون, متكئون, الخاطئون, ليواطئوا, ويستنبئونك, ليطفئوا]
+    khalaf_an_hamzah:
+    - ibdal_waw
+    khallad:
+    - ibdal_waw
+  cite:
+  - wafi 116
+- words:
+  - مستهزءون
+  - فمالئون
+  - متكئون
+  - الخاطئون
+  - ليواطئوا
+  - ويستنبئونك
+  - ليطفئوا
   case: 'hamz_waqf_mid: middle hamzah at the stop (after a vowel, after a letter, in the middle of the word)'
   ruwat:
-    khalaf_an_hamzah: [hadhf]
-    khallad: [hadhf]
-  cite: [wafi 121]
-- words: [يؤمن, المؤمن, مأمنه]
+    khalaf_an_hamzah:
+    - hadhf
+    khallad:
+    - hadhf
+  cite:
+  - wafi 121
+- words:
+  - يؤمن
+  - المؤمن
+  - مأمنه
   case: 'hamz_waqf_mid: middle hamzah at the stop (after a vowel, after a letter, in the middle of the word)'
   ruwat:
-    khalaf_an_hamzah: [tashil]
-    khallad: [tashil]
-  cite: [wafi 122]
-- words: [هاؤم]
+    khalaf_an_hamzah:
+    - tashil
+    khallad:
+    - tashil
+  cite:
+  - wafi 122
+- words:
+  - هاؤم
   case: 'hamz_waqf_mid: middle hamzah at the stop (after a vowel, after a letter, in the middle of the word)'
   ruwat:
-    khalaf_an_hamzah: [tashil]
-    khallad: [tashil]
-  cite: [wafi 123]
-- words: [وأمر, فأتنا, فأووا, الذي اؤتمن, ائتنا]
+    khalaf_an_hamzah:
+    - tashil
+    khallad:
+    - tashil
+  cite:
+  - wafi 123
+- words:
+  - وأمر
+  - فأتنا
+  - فأووا
+  - الذي اؤتمن
+  - ائتنا
   case: 'hamz_waqf_zaid: hamzah after a prefix (a letter added before the hamzah)'
   ruwat:
-    khalaf_an_hamzah: [ibdal, tahqiq]
-    khallad: [ibdal, tahqiq]
-  cite: [wafi 123]
-- words: [أنت, أرأيت]
+    khalaf_an_hamzah:
+    - ibdal
+    - tahqiq
+    khallad:
+    - ibdal
+    - tahqiq
+  cite:
+  - wafi 123
+- words:
+  - أنت
+  - أرأيت
   case: 'hamzatayn_waqf: two hamzahs in one word, stopping on the word'
   ruwat:
-    warsh: [tashil]
-  cite: [wafi 85]
-- words: [رئيا, وتؤوي, تؤويه]
+    warsh:
+    - tashil
+  cite:
+  - wafi 85
+- words:
+  - رئيا
+  - وتؤوي
+  - تؤويه
   case: 'hamz_waqf_mid: middle hamzah at the stop (after a vowel, after a letter, in the middle of the word)'
   ruwat:
-    khalaf_an_hamzah: [izhar, idgham]
-    khallad: [izhar, idgham]
-  cite: [wafi 117]
-- words: [رؤياك, الرؤيا, رؤياى]
+    khalaf_an_hamzah:
+    - izhar
+    - idgham
+    khallad:
+    - izhar
+    - idgham
+  cite:
+  - wafi 117
+- words:
+  - رؤياك
+  - الرؤيا
+  - رؤياى
   case: 'hamz_waqf_mid: middle hamzah at the stop (after a vowel, after a letter, in the middle of the word)'
   ruwat:
-    khalaf_an_hamzah: [izhar, qalb_waw_idgham]
-    khallad: [izhar, qalb_waw_idgham]
-  cite: [wafi 117]
-- words: [أنبئهم, نبئهم]
+    khalaf_an_hamzah:
+    - izhar
+    - qalb_waw_idgham
+    khallad:
+    - izhar
+    - qalb_waw_idgham
+  cite:
+  - wafi 117
+- words:
+  - أنبئهم
+  - نبئهم
   case: 'hamz_waqf_mid: middle hamzah at the stop (after a vowel, after a letter, in the middle of the word)'
   ruwat:
-    khalaf_an_hamzah: [kasr_ha, damm_ha]
-    khallad: [kasr_ha, damm_ha]
-  cite: [wafi 118]
-open: ['Five parts, five cases, with their old wujūh ids kept (tashil, hadhf, ibdal_ya, ibdal_madd, ibdal_qasr, tashil_rawm_madd, tashil_rawm_qasr, tahqiq_idkhal, tashil_idkhal, ibdal). New ids: ibdal_tawassut,
-    tashil_rawm_tawassut, ibdal_waw, naql_hadhf, ibdal_idgham, izhar, idgham, qalb_waw_idgham, kasr_ha, damm_ha.', 'The reviewed profile rows give ''rest_as_wasl'' (taḥqīq for the final, middle and prefix
-    parts; ''as wasl of hamzatayn / ibdal_sakin'' for the other two) for everyone but Ḥamzah''s two, Hishām, Isḥāq and Idrīs; no book row says it. In the cases for hamzatayn_waqf and ibdal_sakin_waqf these
-    fifteen are left empty (via wasl): their reading is their wasl reading in the tables of hamzatayn and ibdal_sakin. Ibn Wardān, Ibn Jammaz, Ruways, Rawḥ: no row of al-Īḍāḥ speaks of their waqf either,
-    except اللائي (idah 113, listed).', 'Final case, Khalaf and Khallād (wafi 115): the three lengths of ibdāl to alif are qaṣr, tawassuṭ, madd; the reviewed profile row lists madd, qaṣr and tashīl with
-    rawm only (madd, qaṣr) — tawassuṭ is added from wafi 115. The case-level list is the union of the final-hamzah readings; which applies to which kind of final hamzah is in the listed rows (after alif:
-    three lengths; after a movable letter: ibdāl to the madd letter or tashīl with rawm, wafi 126; after a sākin sahīh/līn: naql then ḥadhf, wafi 112; after a sākin zāʾid wāw/yāʾ: ibdāl and idghām, wafi
-    115; after an original wāw/yāʾ: naql and ḥadhf, or ibdāl and idghām, wafi 125). The rows say rawm and ishmām are allowed in all cases except when ibdāl is to a madd letter (wafi 124; Hishām included),
-    and after naql in المرء/ملء/دفء ishmām and rawm for the raised, rawm for the lowered (wafi 113). Hishām follows Ḥamzah in a final hamzah only (wafi 117, 126).', 'Final case: Hishām''s wujūh are the
-    same as Khalaf''s and Khallād''s for the final hamzah (wafi 117 ''مثل حمزة''); wafi 126 gives all three the two wujūh ibdāl to a madd letter or tashīl with rawm as khulf.', 'Middle case, مستهزءون: wafi
-    121 says the ḥadhf is established from Ḥamzah (''ثابت''), while the reviewed profile row gives three wujūh (tashīl toward wāw, ibdāl yāʾ, ḥadhf) from al-Budūr p. 22 and Ghayth p. 31; the table keeps
-    wafi 121 (ḥadhf only for those words) and the case-level wujūh list tashīl, ibdāl yāʾ, ibdāl wāw, ḥadhf; the profile''s ''three wujūh'' for this word are not resolved here.', 'Middle case: the profile
-    row has no ibdal_waw; added because wafi 116 gives a pure wāw for a hamzah maftūḥah after ḍammah (يؤيد…). wafi 122: for the words with an inseparable prefix (يؤمن…) the book says only ''takhfīf'' of
-    the hamzah, not naming tashīl; listed as tashīl. wafi 123 هاؤم: tashīl with madd or qaṣr.', 'Prefix case (wafi 123): Khalaf and Khallād have taḥqīq (as the first of the word in reality) or tashīl/takhfīf
-    (as in the middle in form); for وأمر, فأتنا, فأووا, الذي اؤتمن, ائتنا the book says ''ibdāl and taḥqīq'' (listed). Hishām: taḥqīq from the profile row (final only changes).', 'Hamzatayn-waqf case: Khalaf
-    and Khallād''s taḥqīq or tashīl of the second hamzah comes from the reviewed profile row (al-Budūr p. 20; al-Wāfī pp. 116, 122-123), no row of this category; wafi 85 gives Warsh tashīl (a must, ''أوجبوا'')
-    for أنت and أرأيت when stopping, listed. Hishām (profile cite wafi 84): idkhāl with taḥqīq or tashīl, ''not final: as wasl''.', 'Sākin-hamzah case: Khalaf and Khallād ibdāl (wafi 110) only when the
-    preceding letter is movable (wafi 111, two conditions); Hishām taḥqīq (profile; he changes only a final hamzah).', 'Isḥāq and Idrīs (idah 121): taḥqīq in every kind of waqf on a hamzah; no ''via asl''
-    since the row speaks of them.', 'Rasm-following waqf (wafi 118-120): some of the ahl al-adāʾ narrate from Ḥamzah that he followed the mushaf''s spelling (yāʾ, wāw, ḥadhf): words with a wāw-form after
-    alif (شركاء, نشاء, الضعفاء, شفعاء, البلاء, دعاء, براء, جزاء), a wāw-form not after alif (يبدو, تفتأ, يتهيأ, أتوكأ, تظمأ, يدرأ, يعبأ, الملأ, ينشأ, نبأ) and a yāʾ-form after alif (تلقاء, إيتاء, آناء,
-    وراء, نبأ المرسلين); a view of some shaykhs, so not in the table.']
+    khalaf_an_hamzah:
+    - kasr_ha
+    - damm_ha
+    khallad:
+    - kasr_ha
+    - damm_ha
+  cite:
+  - wafi 118
+open:
+- 'Five parts, five cases, with their old wujūh ids kept (tashil, hadhf, ibdal_ya, ibdal_madd, ibdal_qasr, tashil_rawm_madd, tashil_rawm_qasr,
+  tahqiq_idkhal, tashil_idkhal, ibdal). New ids: ibdal_tawassut, tashil_rawm_tawassut, ibdal_waw, naql_hadhf, ibdal_idgham, izhar, idgham, qalb_waw_idgham,
+  kasr_ha, damm_ha.'
+- 'Final case, Khalaf and Khallād (wafi 115): the three lengths of ibdāl to alif are qaṣr, tawassuṭ, madd; the reviewed profile row lists madd,
+  qaṣr and tashīl with rawm only (madd, qaṣr) — tawassuṭ is added from wafi 115. The case-level list is the union of the final-hamzah readings;
+  which applies to which kind of final hamzah is in the listed rows (after alif: three lengths; after a movable letter: ibdāl to the madd letter
+  or tashīl with rawm, wafi 126; after a sākin sahīh/līn: naql then ḥadhf, wafi 112; after a sākin zāʾid wāw/yāʾ: ibdāl and idghām, wafi 115;
+  after an original wāw/yāʾ: naql and ḥadhf, or ibdāl and idghām, wafi 125). The rows say rawm and ishmām are allowed in all cases except when
+  ibdāl is to a madd letter (wafi 124; Hishām included), and after naql in المرء/ملء/دفء ishmām and rawm for the raised, rawm for the lowered
+  (wafi 113). Hishām follows Ḥamzah in a final hamzah only (wafi 117, 126).'
+- 'Final case: Hishām''s wujūh are the same as Khalaf''s and Khallād''s for the final hamzah (wafi 117 ''مثل حمزة''); wafi 126 gives all three
+  the two wujūh ibdāl to a madd letter or tashīl with rawm as khulf.'
+- 'Middle case, مستهزءون: wafi 121 says the ḥadhf is established from Ḥamzah (''ثابت''), while the reviewed profile row gives three wujūh (tashīl
+  toward wāw, ibdāl yāʾ, ḥadhf) from al-Budūr p. 22 and Ghayth p. 31; the table keeps wafi 121 (ḥadhf only for those words) and the case-level
+  wujūh list tashīl, ibdāl yāʾ, ibdāl wāw, ḥadhf; the profile''s ''three wujūh'' for this word are not resolved here.'
+- 'Middle case: the profile row has no ibdal_waw; added because wafi 116 gives a pure wāw for a hamzah maftūḥah after ḍammah (يؤيد…). wafi 122:
+  for the words with an inseparable prefix (يؤمن…) the book says only ''takhfīf'' of the hamzah, not naming tashīl; listed as tashīl. wafi 123
+  هاؤم: tashīl with madd or qaṣr.'
+- 'Prefix case (wafi 123): Khalaf and Khallād have taḥqīq (as the first of the word in reality) or tashīl/takhfīf (as in the middle in form);
+  for وأمر, فأتنا, فأووا, الذي اؤتمن, ائتنا the book says ''ibdāl and taḥqīq'' (listed). Hishām: taḥqīq from the profile row (final only changes).'
+- 'Sākin-hamzah case: Khalaf and Khallād ibdāl (wafi 110) only when the preceding letter is movable (wafi 111, two conditions); Hishām taḥqīq
+  (profile; he changes only a final hamzah).'
+- 'Isḥāq and Idrīs (idah 121): taḥqīq in every kind of waqf on a hamzah; no ''via asl'' since the row speaks of them.'
+- 'Rasm-following waqf (wafi 118-120): some of the ahl al-adāʾ narrate from Ḥamzah that he followed the mushaf''s spelling (yāʾ, wāw, ḥadhf):
+  words with a wāw-form after alif (شركاء, نشاء, الضعفاء, شفعاء, البلاء, دعاء, براء, جزاء), a wāw-form not after alif (يبدو, تفتأ, يتهيأ, أتوكأ,
+  تظمأ, يدرأ, يعبأ, الملأ, ينشأ, نبأ) and a yāʾ-form after alif (تلقاء, إيتاء, آناء, وراء, نبأ المرسلين); a view of some shaykhs, so not in the
+  table.'
+filled_notes:
+- 'The reviewed profile rows give ''rest_as_wasl'' (taḥqīq for the final, middle and prefix parts; ''as wasl of hamzatayn / ibdal_sakin'' for
+  the other two) for everyone but Ḥamzah''s two, Hishām, Isḥāq and Idrīs; no book row says it. In the cases for hamzatayn_waqf and ibdal_sakin_waqf
+  these fifteen are left empty (via wasl): their reading is their wasl reading in the tables of hamzatayn and ibdal_sakin. Ibn Wardān, Ibn Jammaz,
+  Ruways, Rawḥ: no row of al-Īḍāḥ speaks of their waqf either, except اللائي (idah 113, listed).'
+- 'Hamzatayn-waqf case: Khalaf and Khallād''s taḥqīq or tashīl of the second hamzah comes from the reviewed profile row (al-Budūr p. 20; al-Wāfī
+  pp. 116, 122-123), no row of this category; wafi 85 gives Warsh tashīl (a must, ''أوجبوا'') for أنت and أرأيت when stopping, listed. Hishām
+  (profile cite wafi 84): idkhāl with taḥqīq or tashīl, ''not final: as wasl''.'

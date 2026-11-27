@@ -1,32 +1,91 @@
 category: munfasil
 what: 'madd munfaṣil: a madd letter at the end of a word before a hamzah beginning the next'
 wujuh:
-- {id: qasr, ar: القصر, en: 'qaṣr, 1 alif (2 ḥarakāt)'}
-- {id: tawassut, ar: التوسط, en: 'tawassuṭ, 2 alifs (4 ḥarakāt)'}
-- {id: ishba, ar: المد المشبع / الطول, en: 'ṭūl / ishbāʿ, 3 alifs (6 ḥarakāt)'}
+- id: qasr
+  ar: القصر
+  en: qaṣr, 1 alif (2 ḥarakāt)
+- id: tawassut
+  ar: التوسط
+  en: tawassuṭ, 2 alifs (4 ḥarakāt)
+- id: ishba
+  ar: المد المشبع / الطول
+  en: ṭūl / ishbāʿ, 3 alifs (6 ḥarakāt)
 cases:
 - case: madd letter at a word end before hamzah at the start of the next word
   ruwat:
-    qalun: {wujuh: &id003 [qasr, tawassut], cite: &id004 [wafi 74]}
-    warsh: {wujuh: &id007 [ishba], cite: &id008 [wafi 74]}
-    bazzi: {wujuh: &id001 [qasr], cite: &id002 [wafi 74]}
-    qunbul: {wujuh: *id001, cite: *id002}
-    duri_abuamr: {wujuh: *id003, cite: *id004}
-    susi: {wujuh: *id001, cite: *id002}
-    hisham: {wujuh: &id005 [tawassut], cite: &id006 [wafi 74]}
-    ibn_dhakwan: {wujuh: *id005, cite: *id006}
-    shuba: {wujuh: *id005, cite: *id006}
-    hafs: {wujuh: *id005, cite: *id006}
-    khalaf_an_hamzah: {wujuh: *id007, cite: *id008}
-    khallad: {wujuh: *id007, cite: *id008}
-    abul_harith: {wujuh: *id005, cite: *id006}
-    duri_kisai: {wujuh: *id005, cite: *id006}
-    ibn_wardan: {wujuh: &id009 [qasr], cite: &id010 [idah 83]}
-    ibn_jammaz: {wujuh: *id009, cite: *id010}
-    ruways: {wujuh: *id009, cite: *id010}
-    rawh: {wujuh: *id009, cite: *id010}
-    ishaq: {wujuh: &id011 [tawassut], cite: &id012 [idah 83]}
-    idris: {wujuh: *id011, cite: *id012}
+    qalun:
+      wujuh: &id003
+      - qasr
+      - tawassut
+      cite: &id004
+      - wafi 74
+    warsh:
+      wujuh: &id007
+      - ishba
+      cite: &id008
+      - wafi 74
+    bazzi:
+      wujuh: &id001
+      - qasr
+      cite: &id002
+      - wafi 74
+    qunbul:
+      wujuh: *id001
+      cite: *id002
+    duri_abuamr:
+      wujuh: *id003
+      cite: *id004
+    susi:
+      wujuh: *id001
+      cite: *id002
+    hisham:
+      wujuh: &id005
+      - tawassut
+      cite: &id006
+      - wafi 74
+    ibn_dhakwan:
+      wujuh: *id005
+      cite: *id006
+    shuba:
+      wujuh: *id005
+      cite: *id006
+    hafs:
+      wujuh: *id005
+      cite: *id006
+    khalaf_an_hamzah:
+      wujuh: *id007
+      cite: *id008
+    khallad:
+      wujuh: *id007
+      cite: *id008
+    abul_harith:
+      wujuh: *id005
+      cite: *id006
+    duri_kisai:
+      wujuh: *id005
+      cite: *id006
+    ibn_wardan:
+      wujuh: &id009
+      - qasr
+      cite: &id010
+      - idah 83
+    ibn_jammaz:
+      wujuh: *id009
+      cite: *id010
+    ruways:
+      wujuh: *id009
+      cite: *id010
+    rawh:
+      wujuh: *id009
+      cite: *id010
+    ishaq:
+      wujuh: &id011
+      - tawassut
+      cite: &id012
+      - idah 83
+    idris:
+      wujuh: *id011
+      cite: *id012
 listed:
 - words:
   - أمره إلى
@@ -39,6 +98,9 @@ listed:
   why: a ṣilah wāw/yāʾ not written in the muṣḥaf takes the munfaṣil rule like the written ones; all fourteen
 open:
 - 'al-Wāfī p. 74: tawassuṭ is "4 ḥarakāt" = 2 alifs, ṭūl "6 ḥarakāt" = 3 alifs; no fraction in the rows.'
-- al-Īḍāḥ p. 82 (row tagged munfaṣil) says tawassuṭ for all six ruwāt of the Durrah, which contradicts idah 83 (qaṣr for Ibn Wardān, Ibn Jammāz, Ruways, Rawḥ). The quote ("توسيط المدين - المتصل") looks like it is about the muttaṣil; table follows idah 83.
+- al-Īḍāḥ p. 82 (row tagged munfaṣil) says tawassuṭ for all six ruwāt of the Durrah, which contradicts idah 83 (qaṣr for Ibn Wardān, Ibn Jammāz,
+  Ruways, Rawḥ). The quote ("توسيط المدين - المتصل") looks like it is about the muttaṣil; table follows idah 83.
 - 'Qālūn and al-Dūrī: both wujūh given, qaṣr first as al-Wāfī lists it; the book does not say which is preferred (wafi 74).'
-- The reviewed profile rows call the remaining group "rest7"; the rows name six (Hishām, Ibn Dhakwān, Shuʿbah, Ḥafṣ, Abū l-Ḥārith, al-Dūrī ʿan al-Kisāʾī), which is what the table uses.
+- The reviewed profile rows call the remaining group "rest7"; the rows name six (Hishām, Ibn Dhakwān, Shuʿbah, Ḥafṣ, Abū l-Ḥārith, al-Dūrī ʿan
+  al-Kisāʾī), which is what the table uses.
+filled_notes: []

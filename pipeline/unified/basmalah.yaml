@@ -457,23 +457,41 @@ cases:
       cite:
       - wafi 48
     ibn_wardan:
-      wujuh: []
-      cite: []
+      wujuh:
+      - no_basmala
+      cite:
+      - idah 40-43
+      via: asl_unstated
     ibn_jammaz:
-      wujuh: []
-      cite: []
+      wujuh:
+      - no_basmala
+      cite:
+      - idah 40-43
+      via: asl_unstated
     ruways:
-      wujuh: []
-      cite: []
+      wujuh:
+      - no_basmala
+      cite:
+      - idah 40-43
+      via: asl_unstated
     rawh:
-      wujuh: []
-      cite: []
+      wujuh:
+      - no_basmala
+      cite:
+      - idah 40-43
+      via: asl_unstated
     ishaq:
-      wujuh: []
-      cite: []
+      wujuh:
+      - no_basmala
+      cite:
+      - idah 40-43
+      via: asl_unstated
     idris:
-      wujuh: []
-      cite: []
+      wujuh:
+      - no_basmala
+      cite:
+      - idah 40-43
+      via: asl_unstated
 - case: at the start of a juzʾ or a part of a surah (رؤوس الأجزاء)
   ruwat:
     qalun:
@@ -596,7 +614,8 @@ cases:
       - no_basmala
       cite:
       - idah 52
-- case: 'where the basmalah is obligatory: end of al-Nās to al-Fātiḥah; a second surah earlier in the order than the first (end of al-Anbiyāʾ and start of Hūd); joining a surah to its own start'
+- case: 'where the basmalah is obligatory: end of al-Nās to al-Fātiḥah; a second surah earlier in the order than the first (end of al-Anbiyāʾ
+    and start of Hūd); joining a surah to its own start'
   ruwat:
     qalun:
       wujuh:
@@ -683,23 +702,41 @@ cases:
       - wafi 46
       - wafi 47
     ibn_wardan:
-      wujuh: []
-      cite: []
+      wujuh:
+      - basmala
+      cite:
+      - idah 40-43
+      via: asl_unstated
     ibn_jammaz:
-      wujuh: []
-      cite: []
+      wujuh:
+      - basmala
+      cite:
+      - idah 40-43
+      via: asl_unstated
     ruways:
-      wujuh: []
-      cite: []
+      wujuh:
+      - basmala
+      cite:
+      - idah 40-43
+      via: asl_unstated
     rawh:
-      wujuh: []
-      cite: []
+      wujuh:
+      - basmala
+      cite:
+      - idah 40-43
+      via: asl_unstated
     ishaq:
-      wujuh: []
-      cite: []
+      wujuh:
+      - basmala
+      cite:
+      - idah 40-43
+      via: asl_unstated
     idris:
-      wujuh: []
-      cite: []
+      wujuh:
+      - basmala
+      cite:
+      - idah 40-43
+      via: asl_unstated
 listed:
 - words:
   - الأربع الزهر
@@ -726,19 +763,24 @@ listed:
   cite:
   - wafi 46
 open:
-- 'Abū ʿAmr: wafi 46 gives him waṣl and sakt without basmalah; idah 50 says Yaʿqūb has ''basmalah, sakt, waṣl like Abū ʿAmr'', which gives Abū ʿAmr the basmalah too. Kept as each book says (Yaʿqūb''s two
-  with three wujūh, Dūrī and Sūsī with two).'
+- 'Abū ʿAmr: wafi 46 gives him waṣl and sakt without basmalah; idah 50 says Yaʿqūb has ''basmalah, sakt, waṣl like Abū ʿAmr'', which gives Abū
+  ʿAmr the basmalah too. Kept as each book says (Yaʿqūb''s two with three wujūh, Dūrī and Sūsī with two).'
 - 'Yaʿqūb: idah 50 lists three wujūh between surahs, idah 52 says he follows his aṣl in ''the five wujūh''; the five are not set out in the rows.'
-- 'Abū Jaʿfar: idah 50 gives the basmalah ''قولا واحدا''; idah 52 says he agrees with his aṣl in ''the three wujūh of the basmalah''. Not reconciled here. Warsh''s rows give him two wujūh (wafi 46), Qālūn
-  the basmalah (wafi 45).'
+- 'Abū Jaʿfar: idah 50 gives the basmalah ''قولا واحدا''; idah 52 says he agrees with his aṣl in ''the three wujūh of the basmalah''. Not reconciled
+  here. Warsh''s rows give him two wujūh (wafi 46), Qālūn the basmalah (wafi 45).'
 - 'Khalaf al-ʿĀshir: waṣl only like Ḥamzah (idah 51).'
-- 'Al-Anfāl/Barāʾah: the Durrah''s six are given all three wujūh ''as their uṣūl'' (idah 52); wafi 50 says three wujūh for all fourteen. The Durrah row is marked via asl although it names all six; where
-  the aṣl''s two ruwāt differ the row doesn''t say which.'
-- 'Start of a surah (Durrah): idah 51 says the three follow their uṣūl; basmalah is read as the aṣl''s reading from wafi 49 (obligatory for all fourteen).'
+- 'Al-Anfāl/Barāʾah: the Durrah''s six are given all three wujūh ''as their uṣūl'' (idah 52); wafi 50 says three wujūh for all fourteen. The Durrah
+  row is marked via asl although it names all six; where the aṣl''s two ruwāt differ the row doesn''t say which.'
+- 'Start of a surah (Durrah): idah 51 says the three follow their uṣūl; basmalah is read as the aṣl''s reading from wafi 49 (obligatory for all
+  fourteen).'
+- 'Al-Arbaʿ al-Zuhr (بين المدثر والقيامة، الانفطار والتطفيف، الفجر والبلد، العصر والهمزة): al-Wāfī 47 reports only a choice of some ahl al-adāʾ
+  (basmalah for those who sakt elsewhere; sakt for those who waṣl elsewhere), not a text, so it is left out of the table; idah 51 states Yaʿqūb
+  (basmalah where he basmalahs elsewhere, sakt where he reads waṣl elsewhere) and Khalaf (sakt), shown in listed.'
+- 'Khalaf ʿan Ḥamzah: sakt on مثل ''فحدث'' / ''ألم نشرح'' (wafi 46), a sakt in a case of waṣl; shown in listed.'
+- 'Wafi 49: if the basmalah is joined to the end of the previous surah, waqf on it is not allowed and it must be joined to the next surah. Not
+  a wajh.'
+- Wafi 47 rows are tagged by reader with the ten who have waṣl/sakt; the choice for al-Arbaʿ al-Zuhr lists Hishām, Ibn Dhakwān, Warsh, the two
+  of Abū ʿAmr, Khalaf and Khallād (wafi 47).
+filled_notes:
 - 'Start of Barāʾah: no basmalah (wafi 48). No Durrah row, so the six are empty.'
 - 'Obligatory-basmalah case: no Durrah row, so the six are empty.'
-- 'Al-Arbaʿ al-Zuhr (بين المدثر والقيامة، الانفطار والتطفيف، الفجر والبلد، العصر والهمزة): al-Wāfī 47 reports only a choice of some ahl al-adāʾ (basmalah for those who sakt elsewhere; sakt for those who
-  waṣl elsewhere), not a text, so it is left out of the table; idah 51 states Yaʿqūb (basmalah where he basmalahs elsewhere, sakt where he reads waṣl elsewhere) and Khalaf (sakt), shown in listed.'
-- 'Khalaf ʿan Ḥamzah: sakt on مثل ''فحدث'' / ''ألم نشرح'' (wafi 46), a sakt in a case of waṣl; shown in listed.'
-- 'Wafi 49: if the basmalah is joined to the end of the previous surah, waqf on it is not allowed and it must be joined to the next surah. Not a wajh.'
-- Wafi 47 rows are tagged by reader with the ten who have waṣl/sakt; the choice for al-Arbaʿ al-Zuhr lists Hishām, Ibn Dhakwān, Warsh, the two of Abū ʿAmr, Khalaf and Khallād (wafi 47).

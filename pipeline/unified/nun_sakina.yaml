@@ -1,157 +1,690 @@
 category: nun_sakina
-what: "the sākin nūn and tanwīn: iẓhār, iqlāb, ikhfāʾ"
+what: 'the sākin nūn and tanwīn: iẓhār, iqlāb, ikhfāʾ'
 wujuh:
-  - {id: izhar, ar: "إظهار", en: "iẓhār"}
-  - {id: ikhfa, ar: "إخفاء (مع الغنة)", en: "ikhfāʾ (with ghunnah)"}
-  - {id: iqlab, ar: "قلب ميما", en: "iqlāb to mīm"}
+- id: izhar
+  ar: إظهار
+  en: iẓhār
+- id: ikhfa
+  ar: إخفاء (مع الغنة)
+  en: ikhfāʾ (with ghunnah)
+- id: iqlab
+  ar: قلب ميما
+  en: iqlāb to mīm
 cases:
-  - case: "before the throat letters ء ه ع ح"
-    ruwat:
-      qalun: {wujuh: [izhar], cite: [wafi 139]}
-      warsh: {wujuh: [izhar], cite: [wafi 139]}
-      bazzi: {wujuh: [izhar], cite: [wafi 139]}
-      qunbul: {wujuh: [izhar], cite: [wafi 139]}
-      duri_abuamr: {wujuh: [izhar], cite: [wafi 139]}
-      susi: {wujuh: [izhar], cite: [wafi 139]}
-      hisham: {wujuh: [izhar], cite: [wafi 139]}
-      ibn_dhakwan: {wujuh: [izhar], cite: [wafi 139]}
-      shuba: {wujuh: [izhar], cite: [wafi 139]}
-      hafs: {wujuh: [izhar], cite: [wafi 139]}
-      khalaf_an_hamzah: {wujuh: [izhar], cite: [wafi 139]}
-      khallad: {wujuh: [izhar], cite: [wafi 139]}
-      abul_harith: {wujuh: [izhar], cite: [wafi 139]}
-      duri_kisai: {wujuh: [izhar], cite: [wafi 139]}
-      ibn_wardan: {wujuh: [izhar], cite: [idah 138], via: asl}
-      ibn_jammaz: {wujuh: [izhar], cite: [idah 138], via: asl}
-      ruways: {wujuh: [izhar], cite: [idah 138]}
-      rawh: {wujuh: [izhar], cite: [idah 138]}
-      ishaq: {wujuh: [izhar], cite: [idah 138]}
-      idris: {wujuh: [izhar], cite: [idah 138]}
-  - case: "before غ and خ"
-    note: "Ibn Wardān and Ibn Jammāz: ikhfāʾ with ghunnah, except three words"
-    ruwat:
-      qalun: {wujuh: [izhar], cite: [wafi 139]}
-      warsh: {wujuh: [izhar], cite: [wafi 139]}
-      bazzi: {wujuh: [izhar], cite: [wafi 139]}
-      qunbul: {wujuh: [izhar], cite: [wafi 139]}
-      duri_abuamr: {wujuh: [izhar], cite: [wafi 139]}
-      susi: {wujuh: [izhar], cite: [wafi 139]}
-      hisham: {wujuh: [izhar], cite: [wafi 139]}
-      ibn_dhakwan: {wujuh: [izhar], cite: [wafi 139]}
-      shuba: {wujuh: [izhar], cite: [wafi 139]}
-      hafs: {wujuh: [izhar], cite: [wafi 139]}
-      khalaf_an_hamzah: {wujuh: [izhar], cite: [wafi 139]}
-      khallad: {wujuh: [izhar], cite: [wafi 139]}
-      abul_harith: {wujuh: [izhar], cite: [wafi 139]}
-      duri_kisai: {wujuh: [izhar], cite: [wafi 139]}
-      ibn_wardan: {wujuh: [ikhfa], cite: [idah 138]}
-      ibn_jammaz: {wujuh: [ikhfa], cite: [idah 138]}
-      ruways: {wujuh: [izhar], cite: [idah 138]}
-      rawh: {wujuh: [izhar], cite: [idah 138]}
-      ishaq: {wujuh: [izhar], cite: [idah 138]}
-      idris: {wujuh: [izhar], cite: [idah 138]}
-  - case: "nūn before yāʾ or wāw in the same word (الدنيا بنيان صنوان قنوان)"
-    ruwat:
-      qalun: {wujuh: [izhar], cite: [wafi 138]}
-      warsh: {wujuh: [izhar], cite: [wafi 138]}
-      bazzi: {wujuh: [izhar], cite: [wafi 138]}
-      qunbul: {wujuh: [izhar], cite: [wafi 138]}
-      duri_abuamr: {wujuh: [izhar], cite: [wafi 138]}
-      susi: {wujuh: [izhar], cite: [wafi 138]}
-      hisham: {wujuh: [izhar], cite: [wafi 138]}
-      ibn_dhakwan: {wujuh: [izhar], cite: [wafi 138]}
-      shuba: {wujuh: [izhar], cite: [wafi 138]}
-      hafs: {wujuh: [izhar], cite: [wafi 138]}
-      khalaf_an_hamzah: {wujuh: [izhar], cite: [wafi 138]}
-      khallad: {wujuh: [izhar], cite: [wafi 138]}
-      abul_harith: {wujuh: [izhar], cite: [wafi 138]}
-      duri_kisai: {wujuh: [izhar], cite: [wafi 138]}
-      ibn_wardan: {wujuh: [], cite: []}
-      ibn_jammaz: {wujuh: [], cite: []}
-      ruways: {wujuh: [], cite: []}
-      rawh: {wujuh: [], cite: []}
-      ishaq: {wujuh: [], cite: []}
-      idris: {wujuh: [], cite: []}
-  - case: "the nūn of طس before the tāʾ of تلك"
-    ruwat:
-      qalun: {wujuh: [ikhfa], cite: [wafi 137]}
-      warsh: {wujuh: [ikhfa], cite: [wafi 137]}
-      bazzi: {wujuh: [ikhfa], cite: [wafi 137]}
-      qunbul: {wujuh: [ikhfa], cite: [wafi 137]}
-      duri_abuamr: {wujuh: [ikhfa], cite: [wafi 137]}
-      susi: {wujuh: [ikhfa], cite: [wafi 137]}
-      hisham: {wujuh: [ikhfa], cite: [wafi 137]}
-      ibn_dhakwan: {wujuh: [ikhfa], cite: [wafi 137]}
-      shuba: {wujuh: [ikhfa], cite: [wafi 137]}
-      hafs: {wujuh: [ikhfa], cite: [wafi 137]}
-      khalaf_an_hamzah: {wujuh: [ikhfa], cite: [wafi 137]}
-      khallad: {wujuh: [ikhfa], cite: [wafi 137]}
-      abul_harith: {wujuh: [ikhfa], cite: [wafi 137]}
-      duri_kisai: {wujuh: [ikhfa], cite: [wafi 137]}
-      ibn_wardan: {wujuh: [], cite: []}
-      ibn_jammaz: {wujuh: [], cite: []}
-      ruways: {wujuh: [], cite: []}
-      rawh: {wujuh: [], cite: []}
-      ishaq: {wujuh: [], cite: []}
-      idris: {wujuh: [], cite: []}
-  - case: "before bāʾ"
-    ruwat:
-      qalun: {wujuh: [iqlab], cite: [wafi 139]}
-      warsh: {wujuh: [iqlab], cite: [wafi 139]}
-      bazzi: {wujuh: [iqlab], cite: [wafi 139]}
-      qunbul: {wujuh: [iqlab], cite: [wafi 139]}
-      duri_abuamr: {wujuh: [iqlab], cite: [wafi 139]}
-      susi: {wujuh: [iqlab], cite: [wafi 139]}
-      hisham: {wujuh: [iqlab], cite: [wafi 139]}
-      ibn_dhakwan: {wujuh: [iqlab], cite: [wafi 139]}
-      shuba: {wujuh: [iqlab], cite: [wafi 139]}
-      hafs: {wujuh: [iqlab], cite: [wafi 139]}
-      khalaf_an_hamzah: {wujuh: [iqlab], cite: [wafi 139]}
-      khallad: {wujuh: [iqlab], cite: [wafi 139]}
-      abul_harith: {wujuh: [iqlab], cite: [wafi 139]}
-      duri_kisai: {wujuh: [iqlab], cite: [wafi 139]}
-      ibn_wardan: {wujuh: [], cite: []}
-      ibn_jammaz: {wujuh: [], cite: []}
-      ruways: {wujuh: [], cite: []}
-      rawh: {wujuh: [], cite: []}
-      ishaq: {wujuh: [], cite: []}
-      idris: {wujuh: [], cite: []}
-  - case: "before the remaining fifteen letters"
-    ruwat:
-      qalun: {wujuh: [ikhfa], cite: [wafi 139]}
-      warsh: {wujuh: [ikhfa], cite: [wafi 139]}
-      bazzi: {wujuh: [ikhfa], cite: [wafi 139]}
-      qunbul: {wujuh: [ikhfa], cite: [wafi 139]}
-      duri_abuamr: {wujuh: [ikhfa], cite: [wafi 139]}
-      susi: {wujuh: [ikhfa], cite: [wafi 139]}
-      hisham: {wujuh: [ikhfa], cite: [wafi 139]}
-      ibn_dhakwan: {wujuh: [ikhfa], cite: [wafi 139]}
-      shuba: {wujuh: [ikhfa], cite: [wafi 139]}
-      hafs: {wujuh: [ikhfa], cite: [wafi 139]}
-      khalaf_an_hamzah: {wujuh: [ikhfa], cite: [wafi 139]}
-      khallad: {wujuh: [ikhfa], cite: [wafi 139]}
-      abul_harith: {wujuh: [ikhfa], cite: [wafi 139]}
-      duri_kisai: {wujuh: [ikhfa], cite: [wafi 139]}
-      ibn_wardan: {wujuh: [], cite: []}
-      ibn_jammaz: {wujuh: [], cite: []}
-      ruways: {wujuh: [], cite: []}
-      rawh: {wujuh: [], cite: []}
-      ishaq: {wujuh: [], cite: []}
-      idris: {wujuh: [], cite: []}
+- case: before the throat letters ء ه ع ح
+  ruwat:
+    qalun:
+      wujuh:
+      - izhar
+      cite:
+      - wafi 139
+    warsh:
+      wujuh:
+      - izhar
+      cite:
+      - wafi 139
+    bazzi:
+      wujuh:
+      - izhar
+      cite:
+      - wafi 139
+    qunbul:
+      wujuh:
+      - izhar
+      cite:
+      - wafi 139
+    duri_abuamr:
+      wujuh:
+      - izhar
+      cite:
+      - wafi 139
+    susi:
+      wujuh:
+      - izhar
+      cite:
+      - wafi 139
+    hisham:
+      wujuh:
+      - izhar
+      cite:
+      - wafi 139
+    ibn_dhakwan:
+      wujuh:
+      - izhar
+      cite:
+      - wafi 139
+    shuba:
+      wujuh:
+      - izhar
+      cite:
+      - wafi 139
+    hafs:
+      wujuh:
+      - izhar
+      cite:
+      - wafi 139
+    khalaf_an_hamzah:
+      wujuh:
+      - izhar
+      cite:
+      - wafi 139
+    khallad:
+      wujuh:
+      - izhar
+      cite:
+      - wafi 139
+    abul_harith:
+      wujuh:
+      - izhar
+      cite:
+      - wafi 139
+    duri_kisai:
+      wujuh:
+      - izhar
+      cite:
+      - wafi 139
+    ibn_wardan:
+      wujuh:
+      - izhar
+      cite:
+      - idah 138
+      via: asl
+    ibn_jammaz:
+      wujuh:
+      - izhar
+      cite:
+      - idah 138
+      via: asl
+    ruways:
+      wujuh:
+      - izhar
+      cite:
+      - idah 138
+    rawh:
+      wujuh:
+      - izhar
+      cite:
+      - idah 138
+    ishaq:
+      wujuh:
+      - izhar
+      cite:
+      - idah 138
+    idris:
+      wujuh:
+      - izhar
+      cite:
+      - idah 138
+- case: before غ and خ
+  note: 'Ibn Wardān and Ibn Jammāz: ikhfāʾ with ghunnah, except three words'
+  ruwat:
+    qalun:
+      wujuh:
+      - izhar
+      cite:
+      - wafi 139
+    warsh:
+      wujuh:
+      - izhar
+      cite:
+      - wafi 139
+    bazzi:
+      wujuh:
+      - izhar
+      cite:
+      - wafi 139
+    qunbul:
+      wujuh:
+      - izhar
+      cite:
+      - wafi 139
+    duri_abuamr:
+      wujuh:
+      - izhar
+      cite:
+      - wafi 139
+    susi:
+      wujuh:
+      - izhar
+      cite:
+      - wafi 139
+    hisham:
+      wujuh:
+      - izhar
+      cite:
+      - wafi 139
+    ibn_dhakwan:
+      wujuh:
+      - izhar
+      cite:
+      - wafi 139
+    shuba:
+      wujuh:
+      - izhar
+      cite:
+      - wafi 139
+    hafs:
+      wujuh:
+      - izhar
+      cite:
+      - wafi 139
+    khalaf_an_hamzah:
+      wujuh:
+      - izhar
+      cite:
+      - wafi 139
+    khallad:
+      wujuh:
+      - izhar
+      cite:
+      - wafi 139
+    abul_harith:
+      wujuh:
+      - izhar
+      cite:
+      - wafi 139
+    duri_kisai:
+      wujuh:
+      - izhar
+      cite:
+      - wafi 139
+    ibn_wardan:
+      wujuh:
+      - ikhfa
+      cite:
+      - idah 138
+    ibn_jammaz:
+      wujuh:
+      - ikhfa
+      cite:
+      - idah 138
+    ruways:
+      wujuh:
+      - izhar
+      cite:
+      - idah 138
+    rawh:
+      wujuh:
+      - izhar
+      cite:
+      - idah 138
+    ishaq:
+      wujuh:
+      - izhar
+      cite:
+      - idah 138
+    idris:
+      wujuh:
+      - izhar
+      cite:
+      - idah 138
+- case: nūn before yāʾ or wāw in the same word (الدنيا بنيان صنوان قنوان)
+  ruwat:
+    qalun:
+      wujuh:
+      - izhar
+      cite:
+      - wafi 138
+    warsh:
+      wujuh:
+      - izhar
+      cite:
+      - wafi 138
+    bazzi:
+      wujuh:
+      - izhar
+      cite:
+      - wafi 138
+    qunbul:
+      wujuh:
+      - izhar
+      cite:
+      - wafi 138
+    duri_abuamr:
+      wujuh:
+      - izhar
+      cite:
+      - wafi 138
+    susi:
+      wujuh:
+      - izhar
+      cite:
+      - wafi 138
+    hisham:
+      wujuh:
+      - izhar
+      cite:
+      - wafi 138
+    ibn_dhakwan:
+      wujuh:
+      - izhar
+      cite:
+      - wafi 138
+    shuba:
+      wujuh:
+      - izhar
+      cite:
+      - wafi 138
+    hafs:
+      wujuh:
+      - izhar
+      cite:
+      - wafi 138
+    khalaf_an_hamzah:
+      wujuh:
+      - izhar
+      cite:
+      - wafi 138
+    khallad:
+      wujuh:
+      - izhar
+      cite:
+      - wafi 138
+    abul_harith:
+      wujuh:
+      - izhar
+      cite:
+      - wafi 138
+    duri_kisai:
+      wujuh:
+      - izhar
+      cite:
+      - wafi 138
+    ibn_wardan:
+      wujuh:
+      - izhar
+      cite:
+      - idah 40-43
+      via: asl_unstated
+    ibn_jammaz:
+      wujuh:
+      - izhar
+      cite:
+      - idah 40-43
+      via: asl_unstated
+    ruways:
+      wujuh:
+      - izhar
+      cite:
+      - idah 40-43
+      via: asl_unstated
+    rawh:
+      wujuh:
+      - izhar
+      cite:
+      - idah 40-43
+      via: asl_unstated
+    ishaq:
+      wujuh:
+      - izhar
+      cite:
+      - idah 40-43
+      via: asl_unstated
+    idris:
+      wujuh:
+      - izhar
+      cite:
+      - idah 40-43
+      via: asl_unstated
+- case: the nūn of طس before the tāʾ of تلك
+  ruwat:
+    qalun:
+      wujuh:
+      - ikhfa
+      cite:
+      - wafi 137
+    warsh:
+      wujuh:
+      - ikhfa
+      cite:
+      - wafi 137
+    bazzi:
+      wujuh:
+      - ikhfa
+      cite:
+      - wafi 137
+    qunbul:
+      wujuh:
+      - ikhfa
+      cite:
+      - wafi 137
+    duri_abuamr:
+      wujuh:
+      - ikhfa
+      cite:
+      - wafi 137
+    susi:
+      wujuh:
+      - ikhfa
+      cite:
+      - wafi 137
+    hisham:
+      wujuh:
+      - ikhfa
+      cite:
+      - wafi 137
+    ibn_dhakwan:
+      wujuh:
+      - ikhfa
+      cite:
+      - wafi 137
+    shuba:
+      wujuh:
+      - ikhfa
+      cite:
+      - wafi 137
+    hafs:
+      wujuh:
+      - ikhfa
+      cite:
+      - wafi 137
+    khalaf_an_hamzah:
+      wujuh:
+      - ikhfa
+      cite:
+      - wafi 137
+    khallad:
+      wujuh:
+      - ikhfa
+      cite:
+      - wafi 137
+    abul_harith:
+      wujuh:
+      - ikhfa
+      cite:
+      - wafi 137
+    duri_kisai:
+      wujuh:
+      - ikhfa
+      cite:
+      - wafi 137
+    ibn_wardan:
+      wujuh:
+      - ikhfa
+      cite:
+      - idah 40-43
+      via: asl_unstated
+    ibn_jammaz:
+      wujuh:
+      - ikhfa
+      cite:
+      - idah 40-43
+      via: asl_unstated
+    ruways:
+      wujuh:
+      - ikhfa
+      cite:
+      - idah 40-43
+      via: asl_unstated
+    rawh:
+      wujuh:
+      - ikhfa
+      cite:
+      - idah 40-43
+      via: asl_unstated
+    ishaq:
+      wujuh:
+      - ikhfa
+      cite:
+      - idah 40-43
+      via: asl_unstated
+    idris:
+      wujuh:
+      - ikhfa
+      cite:
+      - idah 40-43
+      via: asl_unstated
+- case: before bāʾ
+  ruwat:
+    qalun:
+      wujuh:
+      - iqlab
+      cite:
+      - wafi 139
+    warsh:
+      wujuh:
+      - iqlab
+      cite:
+      - wafi 139
+    bazzi:
+      wujuh:
+      - iqlab
+      cite:
+      - wafi 139
+    qunbul:
+      wujuh:
+      - iqlab
+      cite:
+      - wafi 139
+    duri_abuamr:
+      wujuh:
+      - iqlab
+      cite:
+      - wafi 139
+    susi:
+      wujuh:
+      - iqlab
+      cite:
+      - wafi 139
+    hisham:
+      wujuh:
+      - iqlab
+      cite:
+      - wafi 139
+    ibn_dhakwan:
+      wujuh:
+      - iqlab
+      cite:
+      - wafi 139
+    shuba:
+      wujuh:
+      - iqlab
+      cite:
+      - wafi 139
+    hafs:
+      wujuh:
+      - iqlab
+      cite:
+      - wafi 139
+    khalaf_an_hamzah:
+      wujuh:
+      - iqlab
+      cite:
+      - wafi 139
+    khallad:
+      wujuh:
+      - iqlab
+      cite:
+      - wafi 139
+    abul_harith:
+      wujuh:
+      - iqlab
+      cite:
+      - wafi 139
+    duri_kisai:
+      wujuh:
+      - iqlab
+      cite:
+      - wafi 139
+    ibn_wardan:
+      wujuh:
+      - iqlab
+      cite:
+      - idah 40-43
+      via: asl_unstated
+    ibn_jammaz:
+      wujuh:
+      - iqlab
+      cite:
+      - idah 40-43
+      via: asl_unstated
+    ruways:
+      wujuh:
+      - iqlab
+      cite:
+      - idah 40-43
+      via: asl_unstated
+    rawh:
+      wujuh:
+      - iqlab
+      cite:
+      - idah 40-43
+      via: asl_unstated
+    ishaq:
+      wujuh:
+      - iqlab
+      cite:
+      - idah 40-43
+      via: asl_unstated
+    idris:
+      wujuh:
+      - iqlab
+      cite:
+      - idah 40-43
+      via: asl_unstated
+- case: before the remaining fifteen letters
+  ruwat:
+    qalun:
+      wujuh:
+      - ikhfa
+      cite:
+      - wafi 139
+    warsh:
+      wujuh:
+      - ikhfa
+      cite:
+      - wafi 139
+    bazzi:
+      wujuh:
+      - ikhfa
+      cite:
+      - wafi 139
+    qunbul:
+      wujuh:
+      - ikhfa
+      cite:
+      - wafi 139
+    duri_abuamr:
+      wujuh:
+      - ikhfa
+      cite:
+      - wafi 139
+    susi:
+      wujuh:
+      - ikhfa
+      cite:
+      - wafi 139
+    hisham:
+      wujuh:
+      - ikhfa
+      cite:
+      - wafi 139
+    ibn_dhakwan:
+      wujuh:
+      - ikhfa
+      cite:
+      - wafi 139
+    shuba:
+      wujuh:
+      - ikhfa
+      cite:
+      - wafi 139
+    hafs:
+      wujuh:
+      - ikhfa
+      cite:
+      - wafi 139
+    khalaf_an_hamzah:
+      wujuh:
+      - ikhfa
+      cite:
+      - wafi 139
+    khallad:
+      wujuh:
+      - ikhfa
+      cite:
+      - wafi 139
+    abul_harith:
+      wujuh:
+      - ikhfa
+      cite:
+      - wafi 139
+    duri_kisai:
+      wujuh:
+      - ikhfa
+      cite:
+      - wafi 139
+    ibn_wardan:
+      wujuh:
+      - ikhfa
+      cite:
+      - idah 40-43
+      via: asl_unstated
+    ibn_jammaz:
+      wujuh:
+      - ikhfa
+      cite:
+      - idah 40-43
+      via: asl_unstated
+    ruways:
+      wujuh:
+      - ikhfa
+      cite:
+      - idah 40-43
+      via: asl_unstated
+    rawh:
+      wujuh:
+      - ikhfa
+      cite:
+      - idah 40-43
+      via: asl_unstated
+    ishaq:
+      wujuh:
+      - ikhfa
+      cite:
+      - idah 40-43
+      via: asl_unstated
+    idris:
+      wujuh:
+      - ikhfa
+      cite:
+      - idah 40-43
+      via: asl_unstated
 listed:
-  - words: ["من خير", "من خالق", "من غيركم", "يومئذ خاشعة", "من غفور رحيم"]
-    case: "before غ and خ"
-    ruwat: {ibn_wardan: [ikhfa], ibn_jammaz: [ikhfa]}
-    cite: [idah 138]
-  - words: ["فسيبغضون", "إن يكن غنيا", "والمنخنقة"]
-    case: "before غ and خ"
-    ruwat: {ibn_wardan: [izhar], ibn_jammaz: [izhar]}
-    cite: [idah 138]
+- words:
+  - من خير
+  - من خالق
+  - من غيركم
+  - يومئذ خاشعة
+  - من غفور رحيم
+  case: before غ and خ
+  ruwat:
+    ibn_wardan:
+    - ikhfa
+    ibn_jammaz:
+    - ikhfa
+  cite:
+  - idah 138
+- words:
+  - فسيبغضون
+  - إن يكن غنيا
+  - والمنخنقة
+  case: before غ and خ
+  ruwat:
+    ibn_wardan:
+    - izhar
+    ibn_jammaz:
+    - izhar
+  cite:
+  - idah 138
 open:
-  - "Ibn Wardān and Ibn Jammāz at ء ه ع ح: idah 138 says he stayed on his aṣl (iẓhār); given via aṣl (Nāfiʿ), the aṣl's reading is not in these rows beyond wafi 139 (all fourteen iẓhār)."
-  - "Idah 138 gives the Durrah nothing for the yāʾ/wāw-in-one-word case, the tāʾ of تلك, iqlāb or the fifteen ikhfāʾ letters; al-Wāfī 138-139 gives only the fourteen."
-  - "The nūn before lām, rāʾ, yāʾ, wāw, mīm, nūn (idghām) is the category idgham_ghunna, not repeated here."
-  - "case nūn before yāʾ or wāw in the same word: no row speaks of ibn_wardan, ibn_jammaz, ruways, rawh, ishaq, idris (left empty; wafi 138)"
-  - "case the nūn of طس before the tāʾ of تلك: no row speaks of ibn_wardan, ibn_jammaz, ruways, rawh, ishaq, idris (left empty; wafi 137)"
-  - "case before bāʾ: no row speaks of ibn_wardan, ibn_jammaz, ruways, rawh, ishaq, idris (left empty; wafi 139)"
-  - "case before the remaining fifteen letters: no row speaks of ibn_wardan, ibn_jammaz, ruways, rawh, ishaq, idris (left empty; wafi 139)"
+- 'Ibn Wardān and Ibn Jammāz at ء ه ع ح: idah 138 says he stayed on his aṣl (iẓhār); given via aṣl (Nāfiʿ), the aṣl''s reading is not in these
+  rows beyond wafi 139 (all fourteen iẓhār).'
+- Idah 138 gives the Durrah nothing for the yāʾ/wāw-in-one-word case, the tāʾ of تلك, iqlāb or the fifteen ikhfāʾ letters; al-Wāfī 138-139 gives
+  only the fourteen.
+- The nūn before lām, rāʾ, yāʾ, wāw, mīm, nūn (idghām) is the category idgham_ghunna, not repeated here.
+filled_notes:
+- 'case nūn before yāʾ or wāw in the same word: no row speaks of ibn_wardan, ibn_jammaz, ruways, rawh, ishaq, idris (left empty; wafi 138)'
+- 'case the nūn of طس before the tāʾ of تلك: no row speaks of ibn_wardan, ibn_jammaz, ruways, rawh, ishaq, idris (left empty; wafi 137)'
+- 'case before bāʾ: no row speaks of ibn_wardan, ibn_jammaz, ruways, rawh, ishaq, idris (left empty; wafi 139)'
+- 'case before the remaining fifteen letters: no row speaks of ibn_wardan, ibn_jammaz, ruways, rawh, ishaq, idris (left empty; wafi 139)'

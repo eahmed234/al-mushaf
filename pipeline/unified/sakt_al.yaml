@@ -1,53 +1,157 @@
 category: sakt_al
 what: 'sakt on the sākin before a hamzah in the same word (mafṣūl khāṣ): lām al-taʿrīf and شيء'
 wujuh:
-- {id: none, ar: ترك السكت, en: no sakt}
-- {id: sakt, ar: السكت, en: sakt}
+- id: none
+  ar: ترك السكت
+  en: no sakt
+- id: sakt
+  ar: السكت
+  en: sakt
 cases:
 - case: lām al-taʿrīf before a hamzat qaṭʿ (الأولى, الآخرة, الإنسان), in waṣl
   ruwat:
-    qalun: {wujuh: &id001 [none], cite: &id002 [wafi 105]}
-    warsh: {wujuh: *id001, cite: *id002}
-    bazzi: {wujuh: *id001, cite: *id002}
-    qunbul: {wujuh: *id001, cite: *id002}
-    duri_abuamr: {wujuh: *id001, cite: *id002}
-    susi: {wujuh: *id001, cite: *id002}
-    hisham: {wujuh: *id001, cite: *id002}
-    ibn_dhakwan: {wujuh: *id001, cite: *id002}
-    shuba: {wujuh: *id001, cite: *id002}
-    hafs: {wujuh: *id001, cite: *id002}
-    khalaf_an_hamzah: {wujuh: &id005 [sakt], cite: &id006 [wafi 105]}
-    khallad: {wujuh: &id007 [sakt], cite: &id008 [wafi 106]}
-    abul_harith: {wujuh: *id001, cite: *id002}
-    duri_kisai: {wujuh: *id001, cite: *id002}
-    ibn_wardan: {wujuh: &id003 [none], cite: &id004 [idah 124], via: asl}
-    ibn_jammaz: {wujuh: *id003, cite: *id004, via: asl}
-    ruways: {wujuh: *id003, cite: *id004, via: asl}
-    rawh: {wujuh: *id003, cite: *id004, via: asl}
-    ishaq: {wujuh: &id009 [none], cite: &id010 [idah 121]}
-    idris: {wujuh: &id011 [none], cite: &id012 [idah 121]}
+    qalun:
+      wujuh: &id001
+      - none
+      cite: &id002
+      - wafi 105
+    warsh:
+      wujuh: *id001
+      cite: *id002
+    bazzi:
+      wujuh: *id001
+      cite: *id002
+    qunbul:
+      wujuh: *id001
+      cite: *id002
+    duri_abuamr:
+      wujuh: *id001
+      cite: *id002
+    susi:
+      wujuh: *id001
+      cite: *id002
+    hisham:
+      wujuh: *id001
+      cite: *id002
+    ibn_dhakwan:
+      wujuh: *id001
+      cite: *id002
+    shuba:
+      wujuh: *id001
+      cite: *id002
+    hafs:
+      wujuh: *id001
+      cite: *id002
+    khalaf_an_hamzah:
+      wujuh: &id005
+      - sakt
+      cite: &id006
+      - wafi 105
+    khallad:
+      wujuh: &id007
+      - sakt
+      cite: &id008
+      - wafi 106
+    abul_harith:
+      wujuh: *id001
+      cite: *id002
+    duri_kisai:
+      wujuh: *id001
+      cite: *id002
+    ibn_wardan:
+      wujuh: &id003
+      - none
+      cite: &id004
+      - idah 124
+      via: asl
+    ibn_jammaz:
+      wujuh: *id003
+      cite: *id004
+      via: asl
+    ruways:
+      wujuh: *id003
+      cite: *id004
+      via: asl
+    rawh:
+      wujuh: *id003
+      cite: *id004
+      via: asl
+    ishaq:
+      wujuh: &id009
+      - none
+      cite: &id010
+      - idah 121
+    idris:
+      wujuh: &id011
+      - none
+      cite: &id012
+      - idah 121
 - case: شيء / شيئاً before what follows it, in waṣl
   ruwat:
-    qalun: {wujuh: *id001, cite: *id002}
-    warsh: {wujuh: *id001, cite: *id002}
-    bazzi: {wujuh: *id001, cite: *id002}
-    qunbul: {wujuh: *id001, cite: *id002}
-    duri_abuamr: {wujuh: *id001, cite: *id002}
-    susi: {wujuh: *id001, cite: *id002}
-    hisham: {wujuh: *id001, cite: *id002}
-    ibn_dhakwan: {wujuh: *id001, cite: *id002}
-    shuba: {wujuh: *id001, cite: *id002}
-    hafs: {wujuh: *id001, cite: *id002}
-    khalaf_an_hamzah: {wujuh: *id005, cite: *id006}
-    khallad: {wujuh: *id007, cite: *id008}
-    abul_harith: {wujuh: *id001, cite: *id002}
-    duri_kisai: {wujuh: *id001, cite: *id002}
-    ibn_wardan: {wujuh: *id003, cite: *id004, via: asl}
-    ibn_jammaz: {wujuh: *id003, cite: *id004, via: asl}
-    ruways: {wujuh: *id003, cite: *id004, via: asl}
-    rawh: {wujuh: *id003, cite: *id004, via: asl}
-    ishaq: {wujuh: *id009, cite: *id010}
-    idris: {wujuh: *id011, cite: *id012}
+    qalun:
+      wujuh: *id001
+      cite: *id002
+    warsh:
+      wujuh: *id001
+      cite: *id002
+    bazzi:
+      wujuh: *id001
+      cite: *id002
+    qunbul:
+      wujuh: *id001
+      cite: *id002
+    duri_abuamr:
+      wujuh: *id001
+      cite: *id002
+    susi:
+      wujuh: *id001
+      cite: *id002
+    hisham:
+      wujuh: *id001
+      cite: *id002
+    ibn_dhakwan:
+      wujuh: *id001
+      cite: *id002
+    shuba:
+      wujuh: *id001
+      cite: *id002
+    hafs:
+      wujuh: *id001
+      cite: *id002
+    khalaf_an_hamzah:
+      wujuh: *id005
+      cite: *id006
+    khallad:
+      wujuh: *id007
+      cite: *id008
+    abul_harith:
+      wujuh: *id001
+      cite: *id002
+    duri_kisai:
+      wujuh: *id001
+      cite: *id002
+    ibn_wardan:
+      wujuh: *id003
+      cite: *id004
+      via: asl
+    ibn_jammaz:
+      wujuh: *id003
+      cite: *id004
+      via: asl
+    ruways:
+      wujuh: *id003
+      cite: *id004
+      via: asl
+    rawh:
+      wujuh: *id003
+      cite: *id004
+      via: asl
+    ishaq:
+      wujuh: *id009
+      cite: *id010
+    idris:
+      wujuh: *id011
+      cite: *id012
 listed:
 - words:
   - الأولى
@@ -66,8 +170,13 @@ listed:
   - wafi 105
   - wafi 106
 open:
-- wafi 106 puts Khallād with Khalaf on the sakt of both (the row says sakt); the reviewed profile gives Khallād two wujūh (sakt and none) with the same page. Table follows the row; the profile's second wajh is left here.
+- wafi 106 puts Khallād with Khalaf on the sakt of both (the row says sakt); the reviewed profile gives Khallād two wujūh (sakt and none) with
+  the same page. Table follows the row; the profile's second wajh is left here.
 - 'wafi 105-106: Khalaf''s sakt on لام التعريف is "قليل"; the row does not separate the two words for Khallād.'
-- 'Idrīs: the editor records a sakt khulf for a sākin that is not a madd (al-Muṭṭawwiʿī, from al-Mubhij, which needs ishbāʿ of the muttaṣil, idah 123); the Durrah says "والسكت أهملا" and the shārḥ and most take none (profile, idah 121-123). Table: none; the sakt is an option here, default none.'
-- 'Abū Jaʿfar''s and Yaʿqūb''s ruwāt: idah 124 "كأصليهما" (a sakt_mafsul row); their aṣl, Nāfiʿ and Abū ʿAmr, have none, which the table gives. The Durrah rows speak of the mafṣūl; none has a row for lām al-taʿrīf or شيء, and the reviewed profile cites idah 121-123 for Isḥāq and Idrīs.'
+- 'Idrīs: the editor records a sakt khulf for a sākin that is not a madd (al-Muṭṭawwiʿī, from al-Mubhij, which needs ishbāʿ of the muttaṣil, idah
+  123); the Durrah says "والسكت أهملا" and the shārḥ and most take none (profile, idah 121-123). Table: none; the sakt is an option here, default
+  none.'
+- 'Abū Jaʿfar''s and Yaʿqūb''s ruwāt: idah 124 "كأصليهما" (a sakt_mafsul row); their aṣl, Nāfiʿ and Abū ʿAmr, have none, which the table gives.
+  The Durrah rows speak of the mafṣūl; none has a row for lām al-taʿrīf or شيء, and the reviewed profile cites idah 121-123 for Isḥāq and Idrīs.'
+filled_notes:
 - The book says nothing of waqf here (Warsh's naql on the same words is in the naql category).

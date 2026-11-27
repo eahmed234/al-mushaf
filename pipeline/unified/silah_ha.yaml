@@ -105,23 +105,41 @@ cases:
       cite:
       - wafi 68
     ibn_wardan:
-      wujuh: []
-      cite: []
+      wujuh:
+      - silah
+      cite:
+      - idah 40-43
+      via: asl_unstated
     ibn_jammaz:
-      wujuh: []
-      cite: []
+      wujuh:
+      - silah
+      cite:
+      - idah 40-43
+      via: asl_unstated
     ruways:
-      wujuh: []
-      cite: []
+      wujuh:
+      - silah
+      cite:
+      - idah 40-43
+      via: asl_unstated
     rawh:
-      wujuh: []
-      cite: []
+      wujuh:
+      - silah
+      cite:
+      - idah 40-43
+      via: asl_unstated
     ishaq:
-      wujuh: []
-      cite: []
+      wujuh:
+      - silah
+      cite:
+      - idah 40-43
+      via: asl_unstated
     idris:
-      wujuh: []
-      cite: []
+      wujuh:
+      - silah
+      cite:
+      - idah 40-43
+      via: asl_unstated
 - case: hāʾ after a sākin, before a mutaḥarrik (فيه هدى)
   ruwat:
     qalun:
@@ -303,23 +321,41 @@ cases:
       cite:
       - wafi 68
     ibn_wardan:
-      wujuh: []
-      cite: []
+      wujuh:
+      - none
+      cite:
+      - idah 40-43
+      via: asl_unstated
     ibn_jammaz:
-      wujuh: []
-      cite: []
+      wujuh:
+      - none
+      cite:
+      - idah 40-43
+      via: asl_unstated
     ruways:
-      wujuh: []
-      cite: []
+      wujuh:
+      - none
+      cite:
+      - idah 40-43
+      via: asl_unstated
     rawh:
-      wujuh: []
-      cite: []
+      wujuh:
+      - none
+      cite:
+      - idah 40-43
+      via: asl_unstated
     ishaq:
-      wujuh: []
-      cite: []
+      wujuh:
+      - none
+      cite:
+      - idah 40-43
+      via: asl_unstated
     idris:
-      wujuh: []
-      cite: []
+      wujuh:
+      - none
+      cite:
+      - idah 40-43
+      via: asl_unstated
 listed:
 - words:
   - فيه مهانا
@@ -676,24 +712,30 @@ listed:
   cite:
   - idah 77
 open:
-- 'Case ''between two mutaḥarriks'' and case ''before a sākin'': only al-Wāfī 68 speaks (all fourteen); no Īḍāḥ row states the general rule for the six, so they are empty. The Durrah rows name only words
-  (idah 71-79).'
-- 'Case ''after a sākin, before a mutaḥarrik'': the Durrah six are ''none'' by their aṣl as in the reviewed profile rows (cite idah 40-43); al-Īḍāḥ pp. 71-78 gives only word-specific readings.'
-- 'Where the book says ''الباقون'' of a listed word (silah for all those not named), the others are not repeated in listed: they follow the case''s ṣilah. The Durrah ruwāt are listed in every row that names
-  them, even where the reading is their aṣl''s.'
-- 'يؤده، نوله، نصله، نؤته: the Īḍāḥ rows give Ibn Jammāz sukūn (idah 71, 72) and also ishbāʿ (idah 72); both kept, no khulf stated. Wafi 69: Hishām has qaṣr with a khulf (qaṣr / ishbāʿ).'
-- 'ويتقه: Ḥafṣ reads the qāf sākin with qaṣr of the hāʾ (wafi 69), which is another reading of the word, not only of the hāʾ; shown as none. Khallād: sukūn or ishbāʿ with kasr of the qāf (wafi 70). Rawḥ
-  and Khalaf ʿan Ḥamzah: no row. Ibn Jammāz: ishbāʿ (idah 78).'
-- 'يرضه: Hishām appears in three rows (sukūn with khulf; qaṣr with khulf; ''the second wajh of Hishām and al-Dūrī'' is ṣilah, wafi 70); all three kept. The qaṣr row names Ḥamzah and ʿĀṣim in the quote but
-  lists Qālūn, Warsh and Hishām too; Qālūn and Warsh [none] are taken from the row. Rawḥ: no row.'
-- 'يأته مؤمنا: al-Dūrī (Abū ʿAmr) is not named; the rows give only Sūsī sukūn. Ibn Jammāz and Rawḥ ishbāʿ (idah 74). Khalaf al-ʿĀshir ishbāʿ (idah 78).'
-- 'يره: the Shāṭibiyyah gives Hishām sukūn in waṣl and waqf; the others ḍamm with ishbāʿ in waṣl and sukūn at waqf (wafi 71). Al-Īḍāḥ 79: all six read ishbāʿ in waṣl as their aṣl and sukūn at waqf; waqf
-  is not shown as a wajh.'
-- 'أرجئه: reading ids are combined (hamzah, hāʾ vowel, length). The rows say nothing of the hāʾ''s vowel for Warsh, Ibn Kathīr (Bazzī, Qunbul), al-Kisāʾī, Hishām, beyond ''ṣilah''. Rawḥ and Ruways follow
-  their aṣl (hamz sākin with ḍamm and qaṣr, idah 75). Ibn Wardān: kasr of the hāʾ, no hamzah, no ṣilah (idah 74, 78). The Shāṭibiyyah''s hāʾ also carries the ''ʿĀṣim, Ḥamzah: iskān'' (wafi 71).'
-- 'بيده: Ruways has qaṣr (idah 76) and ''ikhtilās of the hāʾ''s movement'' (idah 79); taken as the same wajh, qaṣr, but the book doesn''t say so. Same for Ibn Wardān in ترزقانه (qaṣr in 76; ikhtilās of
-  the kasrah in 79).'
-- 'أهله قبل امكثوا: the Īḍāḥ rows give kasr of the hāʾ for all six; wafi has no row; Isḥāq/Idrīs differ from their aṣl (idah 77). The second row (idah 77 ''خلاف بين القراء'') names two other places read
-  with kasr; no wajh there for the Shāṭibiyyah ruwāt.'
+- 'Case ''after a sākin, before a mutaḥarrik'': the Durrah six are ''none'' by their aṣl as in the reviewed profile rows (cite idah 40-43); al-Īḍāḥ
+  pp. 71-78 gives only word-specific readings.'
+- 'Where the book says ''الباقون'' of a listed word (silah for all those not named), the others are not repeated in listed: they follow the case''s
+  ṣilah. The Durrah ruwāt are listed in every row that names them, even where the reading is their aṣl''s.'
+- 'يؤده، نوله، نصله، نؤته: the Īḍāḥ rows give Ibn Jammāz sukūn (idah 71, 72) and also ishbāʿ (idah 72); both kept, no khulf stated. Wafi 69: Hishām
+  has qaṣr with a khulf (qaṣr / ishbāʿ).'
+- 'يأته مؤمنا: al-Dūrī (Abū ʿAmr) is not named; the rows give only Sūsī sukūn. Ibn Jammāz and Rawḥ ishbāʿ (idah 74). Khalaf al-ʿĀshir ishbāʿ (idah
+  78).'
+- 'يره: the Shāṭibiyyah gives Hishām sukūn in waṣl and waqf; the others ḍamm with ishbāʿ in waṣl and sukūn at waqf (wafi 71). Al-Īḍāḥ 79: all
+  six read ishbāʿ in waṣl as their aṣl and sukūn at waqf; waqf is not shown as a wajh.'
+- 'أرجئه: reading ids are combined (hamzah, hāʾ vowel, length). The rows say nothing of the hāʾ''s vowel for Warsh, Ibn Kathīr (Bazzī, Qunbul),
+  al-Kisāʾī, Hishām, beyond ''ṣilah''. Rawḥ and Ruways follow their aṣl (hamz sākin with ḍamm and qaṣr, idah 75). Ibn Wardān: kasr of the hāʾ,
+  no hamzah, no ṣilah (idah 74, 78). The Shāṭibiyyah''s hāʾ also carries the ''ʿĀṣim, Ḥamzah: iskān'' (wafi 71).'
+- 'بيده: Ruways has qaṣr (idah 76) and ''ikhtilās of the hāʾ''s movement'' (idah 79); taken as the same wajh, qaṣr, but the book doesn''t say
+  so. Same for Ibn Wardān in ترزقانه (qaṣr in 76; ikhtilās of the kasrah in 79).'
 - The words as written in al-Īḍāḥ (فَأَلْقِة, أرجة) appear garbled in the data (the hāʾ with a tāʾ marbūṭa); both spellings are listed.
 - The reviewed profile gives Ḥafṣ ṣilah in فيه مهانا (wafi 68); the other thirteen of the 'قبل ساكن بعد متحرك' case in that profile row read none.
+filled_notes:
+- 'Case ''between two mutaḥarriks'' and case ''before a sākin'': only al-Wāfī 68 speaks (all fourteen); no Īḍāḥ row states the general rule for
+  the six, so they are empty. The Durrah rows name only words (idah 71-79).'
+- 'ويتقه: Ḥafṣ reads the qāf sākin with qaṣr of the hāʾ (wafi 69), which is another reading of the word, not only of the hāʾ; shown as none. Khallād:
+  sukūn or ishbāʿ with kasr of the qāf (wafi 70). Rawḥ and Khalaf ʿan Ḥamzah: no row. Ibn Jammāz: ishbāʿ (idah 78).'
+- 'يرضه: Hishām appears in three rows (sukūn with khulf; qaṣr with khulf; ''the second wajh of Hishām and al-Dūrī'' is ṣilah, wafi 70); all three
+  kept. The qaṣr row names Ḥamzah and ʿĀṣim in the quote but lists Qālūn, Warsh and Hishām too; Qālūn and Warsh [none] are taken from the row.
+  Rawḥ: no row.'
+- 'أهله قبل امكثوا: the Īḍāḥ rows give kasr of the hāʾ for all six; wafi has no row; Isḥāq/Idrīs differ from their aṣl (idah 77). The second row
+  (idah 77 ''خلاف بين القراء'') names two other places read with kasr; no wajh there for the Shāṭibiyyah ruwāt.'

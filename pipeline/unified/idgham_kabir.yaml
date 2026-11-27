@@ -1,214 +1,880 @@
 category: idgham_kabir
 what: 'idghām kabīr: al-Sūsī''s merging (and Yaʿqūb''s places in al-Īḍāḥ), rawm/ishmām and the madd before it'
 wujuh:
-- {id: izhar, ar: الإظهار, en: iẓhār}
-- {id: idgham, ar: الإدغام الكبير, en: idghām kabīr}
-- {id: ikhfa_rawm, ar: الإخفاء (الروم) بعد ساكن صحيح, en: ikhfāʾ (rawm) after a sākin ṣaḥīḥ}
-- {id: rawm, ar: الروم, en: rawm of the mudgham's vowel}
-- {id: ishmam, ar: الإشمام, en: ishmām of the mudgham's damma}
-- {id: ikhfa_mim, ar: إسكان الميم وإخفاؤها, en: mīm made sākin and ikhfāʾ before bāʾ}
-- {id: qasr, ar: القصر, en: qaṣr}
-- {id: tawassut, ar: التوسط, en: tawassuṭ}
-- {id: ishba, ar: المد, en: madd (ṭūl)}
+- id: izhar
+  ar: الإظهار
+  en: iẓhār
+- id: idgham
+  ar: الإدغام الكبير
+  en: idghām kabīr
+- id: ikhfa_rawm
+  ar: الإخفاء (الروم) بعد ساكن صحيح
+  en: ikhfāʾ (rawm) after a sākin ṣaḥīḥ
+- id: rawm
+  ar: الروم
+  en: rawm of the mudgham's vowel
+- id: ishmam
+  ar: الإشمام
+  en: ishmām of the mudgham's damma
+- id: ikhfa_mim
+  ar: إسكان الميم وإخفاؤها
+  en: mīm made sākin and ikhfāʾ before bāʾ
+- id: qasr
+  ar: القصر
+  en: qaṣr
+- id: tawassut
+  ar: التوسط
+  en: tawassuṭ
+- id: ishba
+  ar: المد
+  en: madd (ṭūl)
 cases:
 - case: mithlayn, both vowelled, across two words (waṣl)
   ruwat:
-    qalun: {wujuh: &id001 [izhar], cite: &id002 [wafi 53]}
-    warsh: {wujuh: *id001, cite: *id002}
-    bazzi: {wujuh: *id001, cite: *id002}
-    qunbul: {wujuh: *id001, cite: *id002}
-    duri_abuamr: {wujuh: [izhar], cite: [wafi 53]}
-    susi: {wujuh: [idgham], cite: [wafi 54]}
-    hisham: {wujuh: *id001, cite: *id002}
-    ibn_dhakwan: {wujuh: *id001, cite: *id002}
-    shuba: {wujuh: *id001, cite: *id002}
-    hafs: {wujuh: *id001, cite: *id002}
-    khalaf_an_hamzah: {wujuh: *id001, cite: *id002}
-    khallad: {wujuh: *id001, cite: *id002}
-    abul_harith: {wujuh: *id001, cite: *id002}
-    duri_kisai: {wujuh: *id001, cite: *id002}
-    ibn_wardan: {wujuh: &id003 [izhar], cite: &id004 [idah 40-43], via: asl}
-    ibn_jammaz: {wujuh: *id003, cite: *id004, via: asl}
-    ruways: {wujuh: [izhar], cite: [idah 65]}
-    rawh: {wujuh: [izhar], cite: [idah 62]}
-    ishaq: {wujuh: *id003, cite: *id004, via: asl}
-    idris: {wujuh: *id003, cite: *id004, via: asl}
+    qalun:
+      wujuh: &id001
+      - izhar
+      cite: &id002
+      - wafi 53
+    warsh:
+      wujuh: *id001
+      cite: *id002
+    bazzi:
+      wujuh: *id001
+      cite: *id002
+    qunbul:
+      wujuh: *id001
+      cite: *id002
+    duri_abuamr:
+      wujuh:
+      - izhar
+      cite:
+      - wafi 53
+    susi:
+      wujuh:
+      - idgham
+      cite:
+      - wafi 54
+    hisham:
+      wujuh: *id001
+      cite: *id002
+    ibn_dhakwan:
+      wujuh: *id001
+      cite: *id002
+    shuba:
+      wujuh: *id001
+      cite: *id002
+    hafs:
+      wujuh: *id001
+      cite: *id002
+    khalaf_an_hamzah:
+      wujuh: *id001
+      cite: *id002
+    khallad:
+      wujuh: *id001
+      cite: *id002
+    abul_harith:
+      wujuh: *id001
+      cite: *id002
+    duri_kisai:
+      wujuh: *id001
+      cite: *id002
+    ibn_wardan:
+      wujuh: &id003
+      - izhar
+      cite: &id004
+      - idah 40-43
+      via: asl
+    ibn_jammaz:
+      wujuh: *id003
+      cite: *id004
+      via: asl
+    ruways:
+      wujuh:
+      - izhar
+      cite:
+      - idah 65
+    rawh:
+      wujuh:
+      - izhar
+      cite:
+      - idah 62
+    ishaq:
+      wujuh: *id003
+      cite: *id004
+      via: asl
+    idris:
+      wujuh: *id003
+      cite: *id004
+      via: asl
 - case: mithlayn inside one word
   ruwat:
-    qalun: {wujuh: &id005 [izhar], cite: &id006 [wafi 53]}
-    warsh: {wujuh: *id005, cite: *id006}
-    bazzi: {wujuh: *id005, cite: *id006}
-    qunbul: {wujuh: *id005, cite: *id006}
-    duri_abuamr: {wujuh: [izhar], cite: [wafi 53]}
-    susi: {wujuh: [izhar], cite: [wafi 54]}
-    hisham: {wujuh: *id005, cite: *id006}
-    ibn_dhakwan: {wujuh: *id005, cite: *id006}
-    shuba: {wujuh: *id005, cite: *id006}
-    hafs: {wujuh: *id005, cite: *id006}
-    khalaf_an_hamzah: {wujuh: *id005, cite: *id006}
-    khallad: {wujuh: *id005, cite: *id006}
-    abul_harith: {wujuh: *id005, cite: *id006}
-    duri_kisai: {wujuh: *id005, cite: *id006}
-    ibn_wardan: {wujuh: &id007 [izhar], cite: &id008 [idah 40-43], via: asl}
-    ibn_jammaz: {wujuh: *id007, cite: *id008, via: asl}
-    ruways: {wujuh: [izhar], cite: [idah 65]}
-    rawh: {wujuh: [izhar], cite: [idah 62]}
-    ishaq: {wujuh: *id007, cite: *id008, via: asl}
-    idris: {wujuh: *id007, cite: *id008, via: asl}
+    qalun:
+      wujuh: &id005
+      - izhar
+      cite: &id006
+      - wafi 53
+    warsh:
+      wujuh: *id005
+      cite: *id006
+    bazzi:
+      wujuh: *id005
+      cite: *id006
+    qunbul:
+      wujuh: *id005
+      cite: *id006
+    duri_abuamr:
+      wujuh:
+      - izhar
+      cite:
+      - wafi 53
+    susi:
+      wujuh:
+      - izhar
+      cite:
+      - wafi 54
+    hisham:
+      wujuh: *id005
+      cite: *id006
+    ibn_dhakwan:
+      wujuh: *id005
+      cite: *id006
+    shuba:
+      wujuh: *id005
+      cite: *id006
+    hafs:
+      wujuh: *id005
+      cite: *id006
+    khalaf_an_hamzah:
+      wujuh: *id005
+      cite: *id006
+    khallad:
+      wujuh: *id005
+      cite: *id006
+    abul_harith:
+      wujuh: *id005
+      cite: *id006
+    duri_kisai:
+      wujuh: *id005
+      cite: *id006
+    ibn_wardan:
+      wujuh: &id007
+      - izhar
+      cite: &id008
+      - idah 40-43
+      via: asl
+    ibn_jammaz:
+      wujuh: *id007
+      cite: *id008
+      via: asl
+    ruways:
+      wujuh:
+      - izhar
+      cite:
+      - idah 65
+    rawh:
+      wujuh:
+      - izhar
+      cite:
+      - idah 62
+    ishaq:
+      wujuh: *id007
+      cite: *id008
+      via: asl
+    idris:
+      wujuh: *id007
+      cite: *id008
+      via: asl
 - case: mutaqāribayn (and mutajānisayn) across two words, the sixteen letters
   ruwat:
-    qalun: {wujuh: &id009 [izhar], cite: &id010 [wafi 53]}
-    warsh: {wujuh: *id009, cite: *id010}
-    bazzi: {wujuh: *id009, cite: *id010}
-    qunbul: {wujuh: *id009, cite: *id010}
-    duri_abuamr: {wujuh: [izhar], cite: [wafi 53]}
-    susi: {wujuh: [idgham], cite: [wafi 60]}
-    hisham: {wujuh: *id009, cite: *id010}
-    ibn_dhakwan: {wujuh: *id009, cite: *id010}
-    shuba: {wujuh: *id009, cite: *id010}
-    hafs: {wujuh: *id009, cite: *id010}
-    khalaf_an_hamzah: {wujuh: *id009, cite: *id010}
-    khallad: {wujuh: *id009, cite: *id010}
-    abul_harith: {wujuh: *id009, cite: *id010}
-    duri_kisai: {wujuh: *id009, cite: *id010}
-    ibn_wardan: {wujuh: &id011 [izhar], cite: &id012 [idah 40-43], via: asl}
-    ibn_jammaz: {wujuh: *id011, cite: *id012, via: asl}
-    ruways: {wujuh: [izhar], cite: [idah 65]}
-    rawh: {wujuh: [izhar], cite: [idah 62]}
-    ishaq: {wujuh: *id011, cite: *id012, via: asl}
-    idris: {wujuh: *id011, cite: *id012, via: asl}
+    qalun:
+      wujuh: &id009
+      - izhar
+      cite: &id010
+      - wafi 53
+    warsh:
+      wujuh: *id009
+      cite: *id010
+    bazzi:
+      wujuh: *id009
+      cite: *id010
+    qunbul:
+      wujuh: *id009
+      cite: *id010
+    duri_abuamr:
+      wujuh:
+      - izhar
+      cite:
+      - wafi 53
+    susi:
+      wujuh:
+      - idgham
+      cite:
+      - wafi 60
+    hisham:
+      wujuh: *id009
+      cite: *id010
+    ibn_dhakwan:
+      wujuh: *id009
+      cite: *id010
+    shuba:
+      wujuh: *id009
+      cite: *id010
+    hafs:
+      wujuh: *id009
+      cite: *id010
+    khalaf_an_hamzah:
+      wujuh: *id009
+      cite: *id010
+    khallad:
+      wujuh: *id009
+      cite: *id010
+    abul_harith:
+      wujuh: *id009
+      cite: *id010
+    duri_kisai:
+      wujuh: *id009
+      cite: *id010
+    ibn_wardan:
+      wujuh: &id011
+      - izhar
+      cite: &id012
+      - idah 40-43
+      via: asl
+    ibn_jammaz:
+      wujuh: *id011
+      cite: *id012
+      via: asl
+    ruways:
+      wujuh:
+      - izhar
+      cite:
+      - idah 65
+    rawh:
+      wujuh:
+      - izhar
+      cite:
+      - idah 62
+    ishaq:
+      wujuh: *id011
+      cite: *id012
+      via: asl
+    idris:
+      wujuh: *id011
+      cite: *id012
+      via: asl
 - case: qāf before kāf inside one word, kāf followed by mīm al-jamʿ (يرزقكم)
   ruwat:
-    qalun: {wujuh: &id013 [izhar], cite: &id014 [wafi 53]}
-    warsh: {wujuh: *id013, cite: *id014}
-    bazzi: {wujuh: *id013, cite: *id014}
-    qunbul: {wujuh: *id013, cite: *id014}
-    duri_abuamr: {wujuh: [izhar], cite: [wafi 53]}
-    susi: {wujuh: [idgham], cite: [wafi 59]}
-    hisham: {wujuh: *id013, cite: *id014}
-    ibn_dhakwan: {wujuh: *id013, cite: *id014}
-    shuba: {wujuh: *id013, cite: *id014}
-    hafs: {wujuh: *id013, cite: *id014}
-    khalaf_an_hamzah: {wujuh: *id013, cite: *id014}
-    khallad: {wujuh: *id013, cite: *id014}
-    abul_harith: {wujuh: *id013, cite: *id014}
-    duri_kisai: {wujuh: *id013, cite: *id014}
-    ibn_wardan: {wujuh: &id015 [izhar], cite: &id016 [idah 40-43], via: asl}
-    ibn_jammaz: {wujuh: *id015, cite: *id016, via: asl}
-    ruways: {wujuh: [izhar], cite: [idah 65]}
-    rawh: {wujuh: [izhar], cite: [idah 62]}
-    ishaq: {wujuh: *id015, cite: *id016, via: asl}
-    idris: {wujuh: *id015, cite: *id016, via: asl}
+    qalun:
+      wujuh: &id013
+      - izhar
+      cite: &id014
+      - wafi 53
+    warsh:
+      wujuh: *id013
+      cite: *id014
+    bazzi:
+      wujuh: *id013
+      cite: *id014
+    qunbul:
+      wujuh: *id013
+      cite: *id014
+    duri_abuamr:
+      wujuh:
+      - izhar
+      cite:
+      - wafi 53
+    susi:
+      wujuh:
+      - idgham
+      cite:
+      - wafi 59
+    hisham:
+      wujuh: *id013
+      cite: *id014
+    ibn_dhakwan:
+      wujuh: *id013
+      cite: *id014
+    shuba:
+      wujuh: *id013
+      cite: *id014
+    hafs:
+      wujuh: *id013
+      cite: *id014
+    khalaf_an_hamzah:
+      wujuh: *id013
+      cite: *id014
+    khallad:
+      wujuh: *id013
+      cite: *id014
+    abul_harith:
+      wujuh: *id013
+      cite: *id014
+    duri_kisai:
+      wujuh: *id013
+      cite: *id014
+    ibn_wardan:
+      wujuh: &id015
+      - izhar
+      cite: &id016
+      - idah 40-43
+      via: asl
+    ibn_jammaz:
+      wujuh: *id015
+      cite: *id016
+      via: asl
+    ruways:
+      wujuh:
+      - izhar
+      cite:
+      - idah 65
+    rawh:
+      wujuh:
+      - izhar
+      cite:
+      - idah 62
+    ishaq:
+      wujuh: *id015
+      cite: *id016
+      via: asl
+    idris:
+      wujuh: *id015
+      cite: *id016
+      via: asl
 - case: mīm after a vowelled letter, before bāʾ (أعلم بكم)
   ruwat:
-    qalun: {wujuh: [], cite: []}
-    warsh: {wujuh: [], cite: []}
-    bazzi: {wujuh: [], cite: []}
-    qunbul: {wujuh: [], cite: []}
-    duri_abuamr: {wujuh: [], cite: []}
-    susi: {wujuh: [ikhfa_mim], cite: [wafi 64]}
-    hisham: {wujuh: [], cite: []}
-    ibn_dhakwan: {wujuh: [], cite: []}
-    shuba: {wujuh: [], cite: []}
-    hafs: {wujuh: [], cite: []}
-    khalaf_an_hamzah: {wujuh: [], cite: []}
-    khallad: {wujuh: [], cite: []}
-    abul_harith: {wujuh: [], cite: []}
-    duri_kisai: {wujuh: [], cite: []}
-    ibn_wardan: {wujuh: [], cite: []}
-    ibn_jammaz: {wujuh: [], cite: []}
-    ruways: {wujuh: [], cite: []}
-    rawh: {wujuh: [], cite: []}
-    ishaq: {wujuh: [], cite: []}
-    idris: {wujuh: [], cite: []}
+    qalun:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    warsh:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    bazzi:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    qunbul:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    duri_abuamr:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    susi:
+      wujuh:
+      - ikhfa_mim
+      cite:
+      - wafi 64
+    hisham:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    ibn_dhakwan:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    shuba:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    hafs:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    khalaf_an_hamzah:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    khallad:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    abul_harith:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    duri_kisai:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    ibn_wardan:
+      wujuh:
+      - izhar
+      cite:
+      - idah 40-43
+      via: asl_unstated
+    ibn_jammaz:
+      wujuh:
+      - izhar
+      cite:
+      - idah 40-43
+      via: asl_unstated
+    ruways:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    rawh:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    ishaq:
+      wujuh:
+      - izhar
+      cite:
+      - idah 40-43
+      via: asl_unstated
+    idris:
+      wujuh:
+      - izhar
+      cite:
+      - idah 40-43
+      via: asl_unstated
 - case: madd or līn letter before the mudgham (قال لهم, يقول ربنا)
   ruwat:
-    qalun: {wujuh: [], cite: []}
-    warsh: {wujuh: [], cite: []}
-    bazzi: {wujuh: [], cite: []}
-    qunbul: {wujuh: [], cite: []}
-    duri_abuamr: {wujuh: [], cite: []}
-    susi: {wujuh: [ishba, tawassut, qasr], cite: [wafi 66, wafi 80]}
-    hisham: {wujuh: [], cite: []}
-    ibn_dhakwan: {wujuh: [], cite: []}
-    shuba: {wujuh: [], cite: []}
-    hafs: {wujuh: [], cite: []}
-    khalaf_an_hamzah: {wujuh: [], cite: []}
-    khallad: {wujuh: [], cite: []}
-    abul_harith: {wujuh: [], cite: []}
-    duri_kisai: {wujuh: [], cite: []}
-    ibn_wardan: {wujuh: [], cite: []}
-    ibn_jammaz: {wujuh: [], cite: []}
-    ruways: {wujuh: [], cite: []}
-    rawh: {wujuh: [], cite: []}
-    ishaq: {wujuh: [], cite: []}
-    idris: {wujuh: [], cite: []}
+    qalun:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    warsh:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    bazzi:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    qunbul:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    duri_abuamr:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    susi:
+      wujuh:
+      - ishba
+      - tawassut
+      - qasr
+      cite:
+      - wafi 66
+      - wafi 80
+    hisham:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    ibn_dhakwan:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    shuba:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    hafs:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    khalaf_an_hamzah:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    khallad:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    abul_harith:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    duri_kisai:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    ibn_wardan:
+      wujuh:
+      - izhar
+      cite:
+      - idah 40-43
+      via: asl_unstated
+    ibn_jammaz:
+      wujuh:
+      - izhar
+      cite:
+      - idah 40-43
+      via: asl_unstated
+    ruways:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    rawh:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    ishaq:
+      wujuh:
+      - izhar
+      cite:
+      - idah 40-43
+      via: asl_unstated
+    idris:
+      wujuh:
+      - izhar
+      cite:
+      - idah 40-43
+      via: asl_unstated
 - case: 'first mudgham carrying a damma or kasra: rawm and ishmām'
   ruwat:
-    qalun: {wujuh: [], cite: []}
-    warsh: {wujuh: [], cite: []}
-    bazzi: {wujuh: [], cite: []}
-    qunbul: {wujuh: [], cite: []}
-    duri_abuamr: {wujuh: [], cite: []}
-    susi: {wujuh: [rawm, ishmam], cite: [wafi 65]}
-    hisham: {wujuh: [], cite: []}
-    ibn_dhakwan: {wujuh: [], cite: []}
-    shuba: {wujuh: [], cite: []}
-    hafs: {wujuh: [], cite: []}
-    khalaf_an_hamzah: {wujuh: [], cite: []}
-    khallad: {wujuh: [], cite: []}
-    abul_harith: {wujuh: [], cite: []}
-    duri_kisai: {wujuh: [], cite: []}
-    ibn_wardan: {wujuh: [], cite: []}
-    ibn_jammaz: {wujuh: [], cite: []}
-    ruways: {wujuh: [], cite: []}
-    rawh: {wujuh: [], cite: []}
-    ishaq: {wujuh: [], cite: []}
-    idris: {wujuh: [], cite: []}
+    qalun:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    warsh:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    bazzi:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    qunbul:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    duri_abuamr:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    susi:
+      wujuh:
+      - rawm
+      - ishmam
+      cite:
+      - wafi 65
+    hisham:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    ibn_dhakwan:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    shuba:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    hafs:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    khalaf_an_hamzah:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    khallad:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    abul_harith:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    duri_kisai:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    ibn_wardan:
+      wujuh:
+      - izhar
+      cite:
+      - idah 40-43
+      via: asl_unstated
+    ibn_jammaz:
+      wujuh:
+      - izhar
+      cite:
+      - idah 40-43
+      via: asl_unstated
+    ruways:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    rawh:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    ishaq:
+      wujuh:
+      - izhar
+      cite:
+      - idah 40-43
+      via: asl_unstated
+    idris:
+      wujuh:
+      - izhar
+      cite:
+      - idah 40-43
+      via: asl_unstated
 - case: first mudgham after a sākin ṣaḥīḥ (خذ العفو, وأمر, من العلم مالك)
   ruwat:
-    qalun: {wujuh: [], cite: []}
-    warsh: {wujuh: [], cite: []}
-    bazzi: {wujuh: [], cite: []}
-    qunbul: {wujuh: [], cite: []}
-    duri_abuamr: {wujuh: [], cite: []}
-    susi: {wujuh: [ikhfa_rawm], cite: [wafi 67]}
-    hisham: {wujuh: [], cite: []}
-    ibn_dhakwan: {wujuh: [], cite: []}
-    shuba: {wujuh: [], cite: []}
-    hafs: {wujuh: [], cite: []}
-    khalaf_an_hamzah: {wujuh: [], cite: []}
-    khallad: {wujuh: [], cite: []}
-    abul_harith: {wujuh: [], cite: []}
-    duri_kisai: {wujuh: [], cite: []}
-    ibn_wardan: {wujuh: [], cite: []}
-    ibn_jammaz: {wujuh: [], cite: []}
-    ruways: {wujuh: [], cite: []}
-    rawh: {wujuh: [], cite: []}
-    ishaq: {wujuh: [], cite: []}
-    idris: {wujuh: [], cite: []}
+    qalun:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    warsh:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    bazzi:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    qunbul:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    duri_abuamr:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    susi:
+      wujuh:
+      - ikhfa_rawm
+      cite:
+      - wafi 67
+    hisham:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    ibn_dhakwan:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    shuba:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    hafs:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    khalaf_an_hamzah:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    khallad:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    abul_harith:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    duri_kisai:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    ibn_wardan:
+      wujuh:
+      - izhar
+      cite:
+      - idah 40-43
+      via: asl_unstated
+    ibn_jammaz:
+      wujuh:
+      - izhar
+      cite:
+      - idah 40-43
+      via: asl_unstated
+    ruways:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    rawh:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    ishaq:
+      wujuh:
+      - izhar
+      cite:
+      - idah 40-43
+      via: asl_unstated
+    idris:
+      wujuh:
+      - izhar
+      cite:
+      - idah 40-43
+      via: asl_unstated
 - case: 'first mudgham after a madd or līn letter: idghām maḥḍ (قال لهم, يقول ربنا, كيف فعل, قوم موسى)'
   ruwat:
-    qalun: {wujuh: [], cite: []}
-    warsh: {wujuh: [], cite: []}
-    bazzi: {wujuh: [], cite: []}
-    qunbul: {wujuh: [], cite: []}
-    duri_abuamr: {wujuh: [], cite: []}
-    susi: {wujuh: [idgham], cite: [wafi 67]}
-    hisham: {wujuh: [], cite: []}
-    ibn_dhakwan: {wujuh: [], cite: []}
-    shuba: {wujuh: [], cite: []}
-    hafs: {wujuh: [], cite: []}
-    khalaf_an_hamzah: {wujuh: [], cite: []}
-    khallad: {wujuh: [], cite: []}
-    abul_harith: {wujuh: [], cite: []}
-    duri_kisai: {wujuh: [], cite: []}
-    ibn_wardan: {wujuh: [], cite: []}
-    ibn_jammaz: {wujuh: [], cite: []}
-    ruways: {wujuh: [], cite: []}
-    rawh: {wujuh: [], cite: []}
-    ishaq: {wujuh: [], cite: []}
-    idris: {wujuh: [], cite: []}
+    qalun:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    warsh:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    bazzi:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    qunbul:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    duri_abuamr:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    susi:
+      wujuh:
+      - idgham
+      cite:
+      - wafi 67
+    hisham:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    ibn_dhakwan:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    shuba:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    hafs:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    khalaf_an_hamzah:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    khallad:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    abul_harith:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    duri_kisai:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    ibn_wardan:
+      wujuh:
+      - izhar
+      cite:
+      - idah 40-43
+      via: asl_unstated
+    ibn_jammaz:
+      wujuh:
+      - izhar
+      cite:
+      - idah 40-43
+      via: asl_unstated
+    ruways:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    rawh:
+      wujuh:
+      - izhar
+      cite: []
+      via: as_hafs
+    ishaq:
+      wujuh:
+      - izhar
+      cite:
+      - idah 40-43
+      via: asl_unstated
+    idris:
+      wujuh:
+      - izhar
+      cite:
+      - idah 40-43
+      via: asl_unstated
 listed:
 - words:
   - كنت ترابا
@@ -832,16 +1498,50 @@ listed:
   - wafi 65
   why: the four forms excepted from rawm and ishmām; what al-Sūsī reads there is not in the rows
 open:
-- 'Every case is stated for al-Sūsī or Yaʿqūb''s places only. The other twelve of the Shāṭibiyyah and al-Dūrī: iẓhār (wafi 53, "ليس له من طريق النظم وأصله إلا الإظهار"; the words "من طريق النظم" leave other routes outside this book).'
-- 'Cases 1-4: Ibn Wardān, Ibn Jammāz, Isḥāq, Idrīs are iẓhār through their aṣl (Nāfiʿ; Khalaf ʿan Ḥamzah) from the reviewed profile (idah 40-43), not a row of this category; idah 66 only says Yaʿqūb and Khalaf follow their aṣl on تأمنا. Rawḥ''s general iẓhār is from the profile (idah 62) and Ruways'' from idah 65 ("فليس له فيها إلا الإظهار").'
-- 'تأمنا: Ibn Wardān and Ibn Jammāz merge the nūn (idah 65); for Ruways, Rawḥ, Isḥāq, Idrīs idah 66 says "كأصله". What the aṣl (Abū ʿAmr; Khalaf ʿan Ḥamzah) reads is not given in these rows, so they are not listed.'
-- 'تتمارى, ثم تتفكروا, أتمدونن (idah 66-67): the rows give Ruways (and Rawḥ for the first and third) as merging in waṣl; Isḥāq, Idrīs, Ibn Wardān, Ibn Jammāz read iẓhār, which is the case default, so are not repeated.'
-- The row for جعل, لا قبل لهم بها, وأنه هو (idah 63) has its words split oddly in the extraction (جَعَلَ in all places of al-Naḥl per the profile; "لَّا قِبَلَ هُم بِمَا"); listed as the row has them.
-- 'idah 63-64: Ruways'' khulf places are جعل (al-Naḥl), قبل لهم, وأنه هو (al-Najm), لذهب بسمعهم, الكتب بأيديهم, الكتب بالحق (first place); the row-by-row wording is from the profile''s place list. Elsewhere only iẓhār (idah 65).'
-- Cases 5-9 are stated for al-Sūsī only; every other rāwī is empty because the rows do not speak of them (the rawm/ishmām, madd and mīm rules are his).
-- 'Case 5: wafi 64 says "فإن كان ما قبل الميم متحركا امتنع تسكينها" which reads as the reverse of the rule; the words listed there (إبراهيم بنيه, اليوم بجالوت, وأولوا الأرحام بعضهم) are the iẓhār ones, as the row has them.'
-- 'Case 6 (madd before the mudgham): al-Sūsī has ṭūl, tawassuṭ, qaṣr (wafi 66, and wafi 80 for a madd before a sukūn arising from idghām: قال لهم, الرحيم ملك, يقول ربنا). Lengths not stated; no fractions. Khulf; book''s order ṭūl, tawassuṭ, qaṣr is kept.'
-- 'Case 7: rawm for a damma or kasra and ishmām for a damma (wafi 65), both with khulf for al-Sūsī; the rows do not say whether a plain idghām without either is also a wajh. The four excepted forms (listed) are named without the reading al-Sūsī has there.'
-- 'Case 8: wafi 67 calls it "الإخفاء" ("وبالإخفاء طبق مفصلا", the later authors'' way) and tags it rawm; id ikhfa_rawm is one wajh. Case 9 is idghām maḥḍ without rawm or ishmām ("لا خلاف").'
-- Idghām of the madd/līn before-mudgham words and the confirming listed words (آل لوط, وياقوم مالى, هو, …) are the case default, listed as the book names them.
+- 'Every case is stated for al-Sūsī or Yaʿqūb''s places only. The other twelve of the Shāṭibiyyah and al-Dūrī: iẓhār (wafi 53, "ليس له من طريق
+  النظم وأصله إلا الإظهار"; the words "من طريق النظم" leave other routes outside this book).'
+- 'Cases 1-4: Ibn Wardān, Ibn Jammāz, Isḥāq, Idrīs are iẓhār through their aṣl (Nāfiʿ; Khalaf ʿan Ḥamzah) from the reviewed profile (idah 40-43),
+  not a row of this category; idah 66 only says Yaʿqūb and Khalaf follow their aṣl on تأمنا. Rawḥ''s general iẓhār is from the profile (idah 62)
+  and Ruways'' from idah 65 ("فليس له فيها إلا الإظهار").'
+- 'تأمنا: Ibn Wardān and Ibn Jammāz merge the nūn (idah 65); for Ruways, Rawḥ, Isḥāq, Idrīs idah 66 says "كأصله". What the aṣl (Abū ʿAmr; Khalaf
+  ʿan Ḥamzah) reads is not given in these rows, so they are not listed.'
+- 'تتمارى, ثم تتفكروا, أتمدونن (idah 66-67): the rows give Ruways (and Rawḥ for the first and third) as merging in waṣl; Isḥāq, Idrīs, Ibn Wardān,
+  Ibn Jammāz read iẓhār, which is the case default, so are not repeated.'
+- The row for جعل, لا قبل لهم بها, وأنه هو (idah 63) has its words split oddly in the extraction (جَعَلَ in all places of al-Naḥl per the profile;
+  "لَّا قِبَلَ هُم بِمَا"); listed as the row has them.
+- 'idah 63-64: Ruways'' khulf places are جعل (al-Naḥl), قبل لهم, وأنه هو (al-Najm), لذهب بسمعهم, الكتب بأيديهم, الكتب بالحق (first place); the
+  row-by-row wording is from the profile''s place list. Elsewhere only iẓhār (idah 65).'
+- 'Case 5: wafi 64 says "فإن كان ما قبل الميم متحركا امتنع تسكينها" which reads as the reverse of the rule; the words listed there (إبراهيم بنيه,
+  اليوم بجالوت, وأولوا الأرحام بعضهم) are the iẓhār ones, as the row has them.'
+- 'Case 7: rawm for a damma or kasra and ishmām for a damma (wafi 65), both with khulf for al-Sūsī; the rows do not say whether a plain idghām
+  without either is also a wajh. The four excepted forms (listed) are named without the reading al-Sūsī has there.'
+- 'Case 8: wafi 67 calls it "الإخفاء" ("وبالإخفاء طبق مفصلا", the later authors'' way) and tags it rawm; id ikhfa_rawm is one wajh. Case 9 is
+  idghām maḥḍ without rawm or ishmām ("لا خلاف").'
+- Idghām of the madd/līn before-mudgham words and the confirming listed words (آل لوط, وياقوم مالى, هو, …) are the case default, listed as the
+  book names them.
 - 'wafi 54: al-Sūsī''s idghām within a word is only مناسككم and سلككم. Durrah''s tāʾ-in-tāʾ words are in case 2.'
+- 'ruways in case ''mīm after a vowelled letter, before bāʾ (أعلم بكم)'': the Durrah is silent and his aṣl''s two ruwāt differ (izhar / ikhfa_mim);
+  filled as Ḥafṣ for now'
+- 'rawh in case ''mīm after a vowelled letter, before bāʾ (أعلم بكم)'': the Durrah is silent and his aṣl''s two ruwāt differ (izhar / ikhfa_mim);
+  filled as Ḥafṣ for now'
+- 'ruways in case ''madd or līn letter before the mudgham (قال لهم, يقول ربنا)'': the Durrah is silent and his aṣl''s two ruwāt differ (izhar
+  / ishba+tawassut+qasr); filled as Ḥafṣ for now'
+- 'rawh in case ''madd or līn letter before the mudgham (قال لهم, يقول ربنا)'': the Durrah is silent and his aṣl''s two ruwāt differ (izhar /
+  ishba+tawassut+qasr); filled as Ḥafṣ for now'
+- 'ruways in case ''first mudgham carrying a damma or kasra: rawm and ishmām'': the Durrah is silent and his aṣl''s two ruwāt differ (izhar /
+  rawm+ishmam); filled as Ḥafṣ for now'
+- 'rawh in case ''first mudgham carrying a damma or kasra: rawm and ishmām'': the Durrah is silent and his aṣl''s two ruwāt differ (izhar / rawm+ishmam);
+  filled as Ḥafṣ for now'
+- 'ruways in case ''first mudgham after a sākin ṣaḥīḥ (خذ العفو, وأمر, من العلم مالك)'': the Durrah is silent and his aṣl''s two ruwāt differ
+  (izhar / ikhfa_rawm); filled as Ḥafṣ for now'
+- 'rawh in case ''first mudgham after a sākin ṣaḥīḥ (خذ العفو, وأمر, من العلم مالك)'': the Durrah is silent and his aṣl''s two ruwāt differ (izhar
+  / ikhfa_rawm); filled as Ḥafṣ for now'
+- 'ruways in case ''first mudgham after a madd or līn letter: idghām maḥḍ (قال لهم, يقول ربنا, كيف فعل, قوم موسى)'': the Durrah is silent and
+  his aṣl''s two ruwāt differ (izhar / idgham); filled as Ḥafṣ for now'
+- 'rawh in case ''first mudgham after a madd or līn letter: idghām maḥḍ (قال لهم, يقول ربنا, كيف فعل, قوم موسى)'': the Durrah is silent and his
+  aṣl''s two ruwāt differ (izhar / idgham); filled as Ḥafṣ for now'
+filled_notes:
+- Cases 5-9 are stated for al-Sūsī only; every other rāwī is empty because the rows do not speak of them (the rawm/ishmām, madd and mīm rules
+  are his).
+- 'Case 6 (madd before the mudgham): al-Sūsī has ṭūl, tawassuṭ, qaṣr (wafi 66, and wafi 80 for a madd before a sukūn arising from idghām: قال
+  لهم, الرحيم ملك, يقول ربنا). Lengths not stated; no fractions. Khulf; book''s order ṭūl, tawassuṭ, qaṣr is kept.'

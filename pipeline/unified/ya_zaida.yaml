@@ -1,539 +1,1128 @@
 category: ya_zaida
 what: 'yāʾāt al-zawāʾid: kept or dropped, in waṣl and in waqf, one table for the Shāṭibiyyah and the Durrah'
 wujuh:
-- {id: kept_wasl, ar: إثبات الياء وصلا وحذفها وقفا, en: 'kept in waṣl, dropped in waqf'}
-- {id: kept_both, ar: إثبات الياء في الحالين, en: kept in waṣl and in waqf}
-- {id: dropped, ar: حذف الياء في الحالين, en: dropped in both states}
-- {id: kept_waqf, ar: حذف الياء وصلا وإثباتها وقفا, en: 'dropped in waṣl, kept in waqf'}
+- id: kept_wasl
+  ar: إثبات الياء وصلا وحذفها وقفا
+  en: kept in waṣl, dropped in waqf
+- id: kept_both
+  ar: إثبات الياء في الحالين
+  en: kept in waṣl and in waqf
+- id: dropped
+  ar: حذف الياء في الحالين
+  en: dropped in both states
+- id: kept_waqf
+  ar: حذف الياء وصلا وإثباتها وقفا
+  en: dropped in waṣl, kept in waqf
 cases:
 - case: 'yāʾ zāʾidah of al-Ḥirz, in a word the book names for the reader: how he keeps it'
   ruwat:
     qalun:
-      wujuh: [kept_wasl]
-      cite: [wafi 193]
+      wujuh:
+      - kept_wasl
+      cite:
+      - wafi 193
     warsh:
-      wujuh: [kept_wasl]
-      cite: [wafi 193]
+      wujuh:
+      - kept_wasl
+      cite:
+      - wafi 193
     bazzi:
-      wujuh: [kept_both]
-      cite: [wafi 193]
+      wujuh:
+      - kept_both
+      cite:
+      - wafi 193
     qunbul:
-      wujuh: [kept_both]
-      cite: [wafi 193]
+      wujuh:
+      - kept_both
+      cite:
+      - wafi 193
     duri_abuamr:
-      wujuh: [kept_wasl]
-      cite: [wafi 193]
+      wujuh:
+      - kept_wasl
+      cite:
+      - wafi 193
     susi:
-      wujuh: [kept_wasl]
-      cite: [wafi 193]
+      wujuh:
+      - kept_wasl
+      cite:
+      - wafi 193
     hisham:
-      wujuh: [kept_both, dropped]
-      cite: [wafi 193]
+      wujuh:
+      - kept_both
+      - dropped
+      cite:
+      - wafi 193
     ibn_dhakwan:
-      wujuh: []
+      wujuh:
+      - kept_wasl
       cite: []
+      via: as_hafs
     shuba:
-      wujuh: []
+      wujuh:
+      - kept_wasl
       cite: []
+      via: as_hafs
     hafs:
-      wujuh: []
+      wujuh:
+      - kept_wasl
       cite: []
+      via: as_hafs
     khalaf_an_hamzah:
-      wujuh: [kept_wasl]
-      cite: [wafi 193]
+      wujuh:
+      - kept_wasl
+      cite:
+      - wafi 193
     khallad:
-      wujuh: [kept_wasl]
-      cite: [wafi 193]
+      wujuh:
+      - kept_wasl
+      cite:
+      - wafi 193
     abul_harith:
-      wujuh: [kept_wasl]
-      cite: [wafi 193]
+      wujuh:
+      - kept_wasl
+      cite:
+      - wafi 193
     duri_kisai:
-      wujuh: [kept_wasl]
-      cite: [wafi 193]
+      wujuh:
+      - kept_wasl
+      cite:
+      - wafi 193
     ibn_wardan:
-      wujuh: [kept_wasl]
-      cite: [idah 173]
+      wujuh:
+      - kept_wasl
+      cite:
+      - idah 173
     ibn_jammaz:
-      wujuh: [kept_wasl]
-      cite: [idah 173]
+      wujuh:
+      - kept_wasl
+      cite:
+      - idah 173
     ruways:
-      wujuh: [kept_both]
-      cite: [idah 173, idah 174]
+      wujuh:
+      - kept_both
+      cite:
+      - idah 173
+      - idah 174
     rawh:
-      wujuh: [kept_both]
-      cite: [idah 173, idah 174]
+      wujuh:
+      - kept_both
+      cite:
+      - idah 173
+      - idah 174
     ishaq:
-      wujuh: [dropped]
-      cite: [idah 173, idah 186]
+      wujuh:
+      - dropped
+      cite:
+      - idah 173
+      - idah 186
     idris:
-      wujuh: [dropped]
-      cite: [idah 173, idah 186]
+      wujuh:
+      - dropped
+      cite:
+      - idah 173
+      - idah 186
 listed:
-- words: [يا عباد الذين آمنوا (الزمر 10), يَنعِبَادِ الَّذِينَ ءَامَنُواْ]
+- words:
+  - يا عباد الذين آمنوا (الزمر 10)
+  - يَنعِبَادِ الَّذِينَ ءَامَنُواْ
   case: 'yāʾ zāʾidah of al-Ḥirz, in a word the book names for the reader: how he keeps it'
   ruwat:
-    ibn_wardan: [dropped]
-    ibn_jammaz: [dropped]
-    ruways: [dropped]
-    rawh: [dropped]
-    ishaq: [dropped]
-    idris: [dropped]
-  cite: [idah 167]
+    ibn_wardan:
+    - dropped
+    ibn_jammaz:
+    - dropped
+    ruways:
+    - dropped
+    rawh:
+    - dropped
+    ishaq:
+    - dropped
+    idris:
+    - dropped
+  cite:
+  - idah 167
   note: dropped in waṣl and waqf, all six agree
-- words: [إنه من يتق, يتق]
+- words:
+  - إنه من يتق
+  - يتق
   case: 'yāʾ zāʾidah of al-Ḥirz, in a word the book names for the reader: how he keeps it'
   ruwat:
-    qunbul: [kept_both]
-    ruways: [dropped]
-    rawh: [dropped]
-  cite: [wafi 196, idah 175]
+    qunbul:
+    - kept_both
+    ruways:
+    - dropped
+    rawh:
+    - dropped
+  cite:
+  - wafi 196
+  - idah 175
   note: Yaʿqūb drops it here, against his rule of keeping
-- words: [يرتع, نرتع]
+- words:
+  - يرتع
+  - نرتع
   case: 'yāʾ zāʾidah of al-Ḥirz, in a word the book names for the reader: how he keeps it'
   ruwat:
-    qunbul: [kept_both, dropped]
-    ruways: [dropped]
-    rawh: [dropped]
-  cite: [wafi 197, idah 175]
+    qunbul:
+    - kept_both
+    - dropped
+    ruways:
+    - dropped
+    rawh:
+    - dropped
+  cite:
+  - wafi 197
+  - idah 175
   note: Yaʿqūb reads يرتع with sukūn of the ʿayn (no yāʾ)
-- words: [فبشر عباد]
+- words:
+  - فبشر عباد
   case: 'yāʾ zāʾidah of al-Ḥirz, in a word the book names for the reader: how he keeps it'
   ruwat:
-    susi: [kept_both]
-    ibn_wardan: [dropped]
-    ibn_jammaz: [dropped]
-    ruways: [kept_waqf]
-    rawh: [kept_waqf]
-    ishaq: [dropped]
-    idris: [dropped]
-  cite: [wafi 197, idah 175, idah 185]
+    susi:
+    - kept_both
+    ibn_wardan:
+    - dropped
+    ibn_jammaz:
+    - dropped
+    ruways:
+    - kept_waqf
+    rawh:
+    - kept_waqf
+    ishaq:
+    - dropped
+    idris:
+    - dropped
+  cite:
+  - wafi 197
+  - idah 175
+  - idah 185
   note: 'Sūsī: yāʾ opened in waṣl, sākinah in waqf; Yaʿqūb: dropped in waṣl, kept in waqf (the aya end)'
-- words: [يا عباد فاتقون, يَنعِبَادِ فَاتَّقُونِ]
+- words:
+  - يا عباد فاتقون
+  - يَنعِبَادِ فَاتَّقُونِ
   case: 'yāʾ zāʾidah of al-Ḥirz, in a word the book names for the reader: how he keeps it'
   ruwat:
-    ibn_wardan: [dropped]
-    ibn_jammaz: [dropped]
-    ruways: [kept_both]
-    rawh: [dropped]
-    ishaq: [dropped]
-    idris: [dropped]
-  cite: [idah 184]
-- words: [واخشون اليوم, وَأَخْشَوْنِ الْيَوْمَ]
+    ibn_wardan:
+    - dropped
+    ibn_jammaz:
+    - dropped
+    ruways:
+    - kept_both
+    rawh:
+    - dropped
+    ishaq:
+    - dropped
+    idris:
+    - dropped
+  cite:
+  - idah 184
+- words:
+  - واخشون اليوم
+  - وَأَخْشَوْنِ الْيَوْمَ
   case: 'yāʾ zāʾidah of al-Ḥirz, in a word the book names for the reader: how he keeps it'
   ruwat:
-    ruways: [kept_waqf]
-    rawh: [kept_waqf]
-  cite: [idah 180]
+    ruways:
+    - kept_waqf
+    rawh:
+    - kept_waqf
+  cite:
+  - idah 180
   note: the book says the yāʾ is dropped in both states for all the others (idah 180)
-- words: [ولا تخزون في ضيفي, وَاتَّقُوا اللَّهَ وَلَا تُخْزُونِ, ولا تخزون]
+- words:
+  - ولا تخزون في ضيفي
+  - وَاتَّقُوا اللَّهَ وَلَا تُخْزُونِ
+  - ولا تخزون
   case: 'yāʾ zāʾidah of al-Ḥirz, in a word the book names for the reader: how he keeps it'
   ruwat:
-    duri_abuamr: [kept_wasl]
-    susi: [kept_wasl]
-    ibn_wardan: [kept_wasl]
-    ibn_jammaz: [kept_wasl]
-    ruways: [kept_both]
-    rawh: [kept_both]
-  cite: [wafi 195, idah 180]
+    duri_abuamr:
+    - kept_wasl
+    susi:
+    - kept_wasl
+    ibn_wardan:
+    - kept_wasl
+    ibn_jammaz:
+    - kept_wasl
+    ruways:
+    - kept_both
+    rawh:
+    - kept_both
+  cite:
+  - wafi 195
+  - idah 180
   note: idah 180 says the yāʾ is dropped in both states for all the readers except Yaʿqūb, against his own row on the same page for Abū Jaʿfar
-- words: [أشركتمون, بِمَا أَشْرَكْتُمُونِ]
+- words:
+  - أشركتمون
+  - بِمَا أَشْرَكْتُمُونِ
   case: 'yāʾ zāʾidah of al-Ḥirz, in a word the book names for the reader: how he keeps it'
   ruwat:
-    duri_abuamr: [kept_wasl]
-    susi: [kept_wasl]
-    ibn_wardan: [kept_wasl]
-    ibn_jammaz: [kept_wasl]
-  cite: [wafi 195, idah 180]
-- words: [هدان, وَقَدْ هَدَدْنِ]
+    duri_abuamr:
+    - kept_wasl
+    susi:
+    - kept_wasl
+    ibn_wardan:
+    - kept_wasl
+    ibn_jammaz:
+    - kept_wasl
+  cite:
+  - wafi 195
+  - idah 180
+- words:
+  - هدان
+  - وَقَدْ هَدَدْنِ
   case: 'yāʾ zāʾidah of al-Ḥirz, in a word the book names for the reader: how he keeps it'
   ruwat:
-    duri_abuamr: [kept_wasl]
-    susi: [kept_wasl]
-    ibn_wardan: [kept_wasl]
-    ibn_jammaz: [kept_wasl]
-  cite: [wafi 195, idah 180]
-- words: [واتقون, واتقون يا أولي الألباب, واخشون, واخشون ولا تشتروا, وخافون]
+    duri_abuamr:
+    - kept_wasl
+    susi:
+    - kept_wasl
+    ibn_wardan:
+    - kept_wasl
+    ibn_jammaz:
+    - kept_wasl
+  cite:
+  - wafi 195
+  - idah 180
+- words:
+  - واتقون
+  - واتقون يا أولي الألباب
+  - واخشون
+  - واخشون ولا تشتروا
+  - وخافون
   case: 'yāʾ zāʾidah of al-Ḥirz, in a word the book names for the reader: how he keeps it'
   ruwat:
-    duri_abuamr: [kept_wasl]
-    susi: [kept_wasl]
-    ibn_wardan: [kept_wasl]
-    ibn_jammaz: [kept_wasl]
-  cite: [wafi 196, idah 179, idah 181]
-- words: [كيدون, فكيدون]
+    duri_abuamr:
+    - kept_wasl
+    susi:
+    - kept_wasl
+    ibn_wardan:
+    - kept_wasl
+    ibn_jammaz:
+    - kept_wasl
+  cite:
+  - wafi 196
+  - idah 179
+  - idah 181
+- words:
+  - كيدون
+  - فكيدون
   case: 'yāʾ zāʾidah of al-Ḥirz, in a word the book names for the reader: how he keeps it'
   ruwat:
-    duri_abuamr: [kept_wasl]
-    susi: [kept_wasl]
-    hisham: [kept_both, dropped]
-    ibn_wardan: [kept_wasl]
-    ibn_jammaz: [kept_wasl]
-    ruways: [kept_both]
-    rawh: [kept_both]
-  cite: [wafi 195, idah 178, idah 181]
-- words: [دعان, الداع إذا دعان]
+    duri_abuamr:
+    - kept_wasl
+    susi:
+    - kept_wasl
+    hisham:
+    - kept_both
+    - dropped
+    ibn_wardan:
+    - kept_wasl
+    ibn_jammaz:
+    - kept_wasl
+    ruways:
+    - kept_both
+    rawh:
+    - kept_both
+  cite:
+  - wafi 195
+  - idah 178
+  - idah 181
+- words:
+  - دعان
+  - الداع إذا دعان
   case: 'yāʾ zāʾidah of al-Ḥirz, in a word the book names for the reader: how he keeps it'
   ruwat:
-    warsh: [kept_wasl]
-    duri_abuamr: [kept_wasl]
-    susi: [kept_wasl]
-    ibn_wardan: [kept_wasl]
-    ibn_jammaz: [kept_wasl]
-  cite: [wafi 196, idah 181]
-- words: [الجوار, المناد]
+    warsh:
+    - kept_wasl
+    duri_abuamr:
+    - kept_wasl
+    susi:
+    - kept_wasl
+    ibn_wardan:
+    - kept_wasl
+    ibn_jammaz:
+    - kept_wasl
+  cite:
+  - wafi 196
+  - idah 181
+- words:
+  - الجوار
+  - المناد
   case: 'yāʾ zāʾidah of al-Ḥirz, in a word the book names for the reader: how he keeps it'
   ruwat:
-    qalun: [kept_wasl]
-    warsh: [kept_wasl]
-    bazzi: [kept_both]
-    qunbul: [kept_both]
-    duri_abuamr: [kept_wasl]
-    susi: [kept_wasl]
-    ibn_wardan: [kept_wasl]
-    ibn_jammaz: [kept_wasl]
-  cite: [wafi 194, idah 181]
+    qalun:
+    - kept_wasl
+    warsh:
+    - kept_wasl
+    bazzi:
+    - kept_both
+    qunbul:
+    - kept_both
+    duri_abuamr:
+    - kept_wasl
+    susi:
+    - kept_wasl
+    ibn_wardan:
+    - kept_wasl
+    ibn_jammaz:
+    - kept_wasl
+  cite:
+  - wafi 194
+  - idah 181
   note: Abū Jaʿfar via Nāfiʿ (aṣl)
-- words: [الداع, دعوة الداع, أُجِيبُ دَعْوَةَ الدَّاع]
+- words:
+  - الداع
+  - دعوة الداع
+  - أُجِيبُ دَعْوَةَ الدَّاع
   case: 'yāʾ zāʾidah of al-Ḥirz, in a word the book names for the reader: how he keeps it'
   ruwat:
-    qalun: [kept_wasl]
-    warsh: [kept_wasl]
-    bazzi: [kept_both]
-    qunbul: [kept_both]
-    duri_abuamr: [kept_wasl]
-    susi: [kept_wasl]
-    ibn_wardan: [kept_wasl]
-    ibn_jammaz: [kept_wasl]
-  cite: [wafi 194, idah 179, idah 181]
-- words: [يوم يدع الداع, يدع الداع]
+    qalun:
+    - kept_wasl
+    warsh:
+    - kept_wasl
+    bazzi:
+    - kept_both
+    qunbul:
+    - kept_both
+    duri_abuamr:
+    - kept_wasl
+    susi:
+    - kept_wasl
+    ibn_wardan:
+    - kept_wasl
+    ibn_jammaz:
+    - kept_wasl
+  cite:
+  - wafi 194
+  - idah 179
+  - idah 181
+- words:
+  - يوم يدع الداع
+  - يدع الداع
   case: 'yāʾ zāʾidah of al-Ḥirz, in a word the book names for the reader: how he keeps it'
   ruwat:
-    warsh: [kept_wasl]
-    bazzi: [kept_both]
-    duri_abuamr: [kept_wasl]
-    susi: [kept_wasl]
-    ibn_wardan: [kept_wasl]
-    ibn_jammaz: [kept_wasl]
-  cite: [wafi 194, idah 179, idah 181]
-- words: [إذا يسر, يسر]
+    warsh:
+    - kept_wasl
+    bazzi:
+    - kept_both
+    duri_abuamr:
+    - kept_wasl
+    susi:
+    - kept_wasl
+    ibn_wardan:
+    - kept_wasl
+    ibn_jammaz:
+    - kept_wasl
+  cite:
+  - wafi 194
+  - idah 179
+  - idah 181
+- words:
+  - إذا يسر
+  - يسر
   case: 'yāʾ zāʾidah of al-Ḥirz, in a word the book names for the reader: how he keeps it'
   ruwat:
-    qalun: [kept_wasl]
-    warsh: [kept_wasl]
-    bazzi: [kept_both]
-    qunbul: [kept_both]
-    duri_abuamr: [kept_wasl]
-    susi: [kept_wasl]
-    ibn_wardan: [kept_wasl]
-    ibn_jammaz: [kept_wasl]
-    ruways: [kept_both]
-    rawh: [kept_both]
-  cite: [wafi 194, idah 178, idah 182]
-- words: [يهدين, يؤتين, تعلمن, أخرتن, أن يهدين, أن يؤتين, أن تعلمن, لئن أخرتني]
+    qalun:
+    - kept_wasl
+    warsh:
+    - kept_wasl
+    bazzi:
+    - kept_both
+    qunbul:
+    - kept_both
+    duri_abuamr:
+    - kept_wasl
+    susi:
+    - kept_wasl
+    ibn_wardan:
+    - kept_wasl
+    ibn_jammaz:
+    - kept_wasl
+    ruways:
+    - kept_both
+    rawh:
+    - kept_both
+  cite:
+  - wafi 194
+  - idah 178
+  - idah 182
+- words:
+  - يهدين
+  - يؤتين
+  - تعلمن
+  - أخرتن
+  - أن يهدين
+  - أن يؤتين
+  - أن تعلمن
+  - لئن أخرتني
   case: 'yāʾ zāʾidah of al-Ḥirz, in a word the book names for the reader: how he keeps it'
   ruwat:
-    qalun: [kept_wasl]
-    warsh: [kept_wasl]
-    bazzi: [kept_both]
-    qunbul: [kept_both]
-    duri_abuamr: [kept_wasl]
-    susi: [kept_wasl]
-    ibn_wardan: [kept_wasl]
-    ibn_jammaz: [kept_wasl]
-  cite: [wafi 194, idah 181]
+    qalun:
+    - kept_wasl
+    warsh:
+    - kept_wasl
+    bazzi:
+    - kept_both
+    qunbul:
+    - kept_both
+    duri_abuamr:
+    - kept_wasl
+    susi:
+    - kept_wasl
+    ibn_wardan:
+    - kept_wasl
+    ibn_jammaz:
+    - kept_wasl
+  cite:
+  - wafi 194
+  - idah 181
   note: Abū Jaʿfar via Nāfiʿ (aṣl)
-- words: [تتبعن, تَتَّبِعَن]
+- words:
+  - تتبعن
+  - تَتَّبِعَن
   case: 'yāʾ zāʾidah of al-Ḥirz, in a word the book names for the reader: how he keeps it'
   ruwat:
-    qalun: [kept_wasl]
-    warsh: [kept_wasl]
-    bazzi: [kept_both]
-    qunbul: [kept_both]
-    duri_abuamr: [kept_wasl]
-    susi: [kept_wasl]
-    ibn_wardan: [kept_both]
-    ibn_jammaz: [kept_both]
-    ruways: [kept_both]
-    rawh: [kept_both]
-    ishaq: [dropped]
-    idris: [dropped]
-  cite: [wafi 194, idah 183]
+    qalun:
+    - kept_wasl
+    warsh:
+    - kept_wasl
+    bazzi:
+    - kept_both
+    qunbul:
+    - kept_both
+    duri_abuamr:
+    - kept_wasl
+    susi:
+    - kept_wasl
+    ibn_wardan:
+    - kept_both
+    ibn_jammaz:
+    - kept_both
+    ruways:
+    - kept_both
+    rawh:
+    - kept_both
+    ishaq:
+    - dropped
+    idris:
+    - dropped
+  cite:
+  - wafi 194
+  - idah 183
   note: 'Abū Jaʿfar: opened yāʾ in waṣl, sākinah in waqf (idah 183)'
-- words: [يردن, يُرِدْنِ]
+- words:
+  - يردن
+  - يُرِدْنِ
   case: 'yāʾ zāʾidah of al-Ḥirz, in a word the book names for the reader: how he keeps it'
   ruwat:
-    ibn_wardan: [kept_both]
-    ibn_jammaz: [kept_both]
-    ruways: [kept_waqf]
-    rawh: [kept_waqf]
-    ishaq: [dropped]
-    idris: [dropped]
-  cite: [idah 183]
+    ibn_wardan:
+    - kept_both
+    ibn_jammaz:
+    - kept_both
+    ruways:
+    - kept_waqf
+    rawh:
+    - kept_waqf
+    ishaq:
+    - dropped
+    idris:
+    - dropped
+  cite:
+  - idah 183
   note: 'Abū Jaʿfar: opened in waṣl, sākinah in waqf; Yaʿqūb: dropped in waṣl, kept in waqf'
-- words: [نبغ, يأت, ما كنا نبغ, يوم يأت]
+- words:
+  - نبغ
+  - يأت
+  - ما كنا نبغ
+  - يوم يأت
   case: 'yāʾ zāʾidah of al-Ḥirz, in a word the book names for the reader: how he keeps it'
   ruwat:
-    qalun: [kept_wasl]
-    warsh: [kept_wasl]
-    bazzi: [kept_both]
-    qunbul: [kept_both]
-    duri_abuamr: [kept_wasl]
-    susi: [kept_wasl]
-    abul_harith: [kept_wasl]
-    duri_kisai: [kept_wasl]
-    ibn_wardan: [kept_wasl]
-    ibn_jammaz: [kept_wasl]
-  cite: [wafi 194, idah 181]
+    qalun:
+    - kept_wasl
+    warsh:
+    - kept_wasl
+    bazzi:
+    - kept_both
+    qunbul:
+    - kept_both
+    duri_abuamr:
+    - kept_wasl
+    susi:
+    - kept_wasl
+    abul_harith:
+    - kept_wasl
+    duri_kisai:
+    - kept_wasl
+    ibn_wardan:
+    - kept_wasl
+    ibn_jammaz:
+    - kept_wasl
+  cite:
+  - wafi 194
+  - idah 181
   note: Abū Jaʿfar via Nāfiʿ (aṣl)
-- words: [دعاء, وتقبل دعاء, وَتَقَبَّلْ دُعَاءِ]
+- words:
+  - دعاء
+  - وتقبل دعاء
+  - وَتَقَبَّلْ دُعَاءِ
   case: 'yāʾ zāʾidah of al-Ḥirz, in a word the book names for the reader: how he keeps it'
   ruwat:
-    warsh: [kept_wasl]
-    bazzi: [kept_both]
-    duri_abuamr: [kept_wasl]
-    susi: [kept_wasl]
-    khalaf_an_hamzah: [kept_wasl]
-    khallad: [kept_wasl]
-    ibn_wardan: [kept_wasl]
-    ibn_jammaz: [kept_wasl]
-    ruways: [kept_both]
-    rawh: [kept_both]
-    ishaq: [dropped]
-    idris: [dropped]
-  cite: [wafi 194, idah 176, idah 184]
-- words: [اتبعون أهدكم, ترني, إن ترن, اتَّبِعُونِ أَهْدِكُمْ]
+    warsh:
+    - kept_wasl
+    bazzi:
+    - kept_both
+    duri_abuamr:
+    - kept_wasl
+    susi:
+    - kept_wasl
+    khalaf_an_hamzah:
+    - kept_wasl
+    khallad:
+    - kept_wasl
+    ibn_wardan:
+    - kept_wasl
+    ibn_jammaz:
+    - kept_wasl
+    ruways:
+    - kept_both
+    rawh:
+    - kept_both
+    ishaq:
+    - dropped
+    idris:
+    - dropped
+  cite:
+  - wafi 194
+  - idah 176
+  - idah 184
+- words:
+  - اتبعون أهدكم
+  - ترني
+  - إن ترن
+  - اتَّبِعُونِ أَهْدِكُمْ
   case: 'yāʾ zāʾidah of al-Ḥirz, in a word the book names for the reader: how he keeps it'
   ruwat:
-    qalun: [kept_wasl]
-    bazzi: [kept_both]
-    qunbul: [kept_both]
-    duri_abuamr: [kept_wasl]
-    susi: [kept_wasl]
-    ibn_wardan: [kept_wasl]
-    ibn_jammaz: [kept_wasl]
-  cite: [wafi 194, idah 181, idah 182]
+    qalun:
+    - kept_wasl
+    bazzi:
+    - kept_both
+    qunbul:
+    - kept_both
+    duri_abuamr:
+    - kept_wasl
+    susi:
+    - kept_wasl
+    ibn_wardan:
+    - kept_wasl
+    ibn_jammaz:
+    - kept_wasl
+  cite:
+  - wafi 194
+  - idah 181
+  - idah 182
   note: Abū Jaʿfar keeps it because Qālūn does
-- words: [أتمدونن بمال, أتمدونن]
+- words:
+  - أتمدونن بمال
+  - أتمدونن
   case: 'yāʾ zāʾidah of al-Ḥirz, in a word the book names for the reader: how he keeps it'
   ruwat:
-    qalun: [kept_wasl]
-    warsh: [kept_wasl]
-    bazzi: [kept_both]
-    qunbul: [kept_both]
-    duri_abuamr: [kept_wasl]
-    susi: [kept_wasl]
-    khalaf_an_hamzah: [kept_both]
-    khallad: [kept_both]
-    ishaq: [dropped]
-    idris: [dropped]
-  cite: [wafi 193, wafi 194, idah 184]
+    qalun:
+    - kept_wasl
+    warsh:
+    - kept_wasl
+    bazzi:
+    - kept_both
+    qunbul:
+    - kept_both
+    duri_abuamr:
+    - kept_wasl
+    susi:
+    - kept_wasl
+    khalaf_an_hamzah:
+    - kept_both
+    khallad:
+    - kept_both
+    ishaq:
+    - dropped
+    idris:
+    - dropped
+  cite:
+  - wafi 193
+  - wafi 194
+  - idah 184
   note: 'Ḥamzah: kept in waṣl and waqf in the first (النمل) per wafi 193; wafi 194 says only "الإثبات"'
-- words: [بالواد, بِالْوَادِ]
+- words:
+  - بالواد
+  - بِالْوَادِ
   case: 'yāʾ zāʾidah of al-Ḥirz, in a word the book names for the reader: how he keeps it'
   ruwat:
-    warsh: [kept_wasl]
-    bazzi: [kept_both]
-    qunbul: [kept_both, kept_wasl]
-    ruways: [kept_both]
-    rawh: [kept_both]
-  cite: [wafi 194, idah 178]
+    warsh:
+    - kept_wasl
+    bazzi:
+    - kept_both
+    qunbul:
+    - kept_both
+    - kept_wasl
+    ruways:
+    - kept_both
+    rawh:
+    - kept_both
+  cite:
+  - wafi 194
+  - idah 178
   note: 'Qunbul: kept in waṣl, and in waqf either kept or dropped'
-- words: [أكرمن, أهانن, أَكْرَمَنِ, أَهَنَنِ]
+- words:
+  - أكرمن
+  - أهانن
+  - أَكْرَمَنِ
+  - أَهَنَنِ
   case: 'yāʾ zāʾidah of al-Ḥirz, in a word the book names for the reader: how he keeps it'
   ruwat:
-    qalun: [kept_wasl]
-    warsh: [kept_wasl]
-    bazzi: [kept_both]
-    duri_abuamr: [kept_wasl, dropped]
-    susi: [kept_wasl, dropped]
-    ibn_wardan: [kept_wasl]
-    ibn_jammaz: [kept_wasl]
-    ruways: [kept_both]
-    rawh: [kept_both]
-  cite: [wafi 194, wafi 195, idah 178, idah 182]
+    qalun:
+    - kept_wasl
+    warsh:
+    - kept_wasl
+    bazzi:
+    - kept_both
+    duri_abuamr:
+    - kept_wasl
+    - dropped
+    susi:
+    - kept_wasl
+    - dropped
+    ibn_wardan:
+    - kept_wasl
+    ibn_jammaz:
+    - kept_wasl
+    ruways:
+    - kept_both
+    rawh:
+    - kept_both
+  cite:
+  - wafi 194
+  - wafi 195
+  - idah 178
+  - idah 182
   note: 'Abū ʿAmr: in waṣl both, in waqf dropped'
-- words: [فما آتاني الله, فَمَا عَاتَنِ]
+- words:
+  - فما آتاني الله
+  - فَمَا عَاتَنِ
   case: 'yāʾ zāʾidah of al-Ḥirz, in a word the book names for the reader: how he keeps it'
   ruwat:
-    qalun: [kept_both, kept_wasl]
-    warsh: [kept_wasl]
-    bazzi: [dropped]
-    qunbul: [dropped]
-    duri_abuamr: [kept_both, kept_wasl]
-    susi: [kept_both, kept_wasl]
-    hisham: [dropped]
-    ibn_dhakwan: [dropped]
-    shuba: [dropped]
-    hafs: [kept_both, kept_wasl]
-    khalaf_an_hamzah: [dropped]
-    khallad: [dropped]
-    abul_harith: [dropped]
-    duri_kisai: [dropped]
-    ibn_wardan: [kept_wasl]
-    ibn_jammaz: [kept_wasl]
-    ruways: [kept_both]
-    rawh: [kept_waqf]
-    ishaq: [dropped]
-    idris: [dropped]
-  cite: [wafi 195, idah 185]
-  note: 'yāʾ opened in waṣl for those who keep it; waqf: Qālūn, Ḥafṣ, Abū ʿAmr both wujūh, Warsh dropped; Ruways opened in waṣl and sākinah in waqf; Rawḥ dropped in waṣl and kept in waqf'
-- words: [كالجواب]
+    qalun:
+    - kept_both
+    - kept_wasl
+    warsh:
+    - kept_wasl
+    bazzi:
+    - dropped
+    qunbul:
+    - dropped
+    duri_abuamr:
+    - kept_both
+    - kept_wasl
+    susi:
+    - kept_both
+    - kept_wasl
+    hisham:
+    - dropped
+    ibn_dhakwan:
+    - dropped
+    shuba:
+    - dropped
+    hafs:
+    - kept_both
+    - kept_wasl
+    khalaf_an_hamzah:
+    - dropped
+    khallad:
+    - dropped
+    abul_harith:
+    - dropped
+    duri_kisai:
+    - dropped
+    ibn_wardan:
+    - kept_wasl
+    ibn_jammaz:
+    - kept_wasl
+    ruways:
+    - kept_both
+    rawh:
+    - kept_waqf
+    ishaq:
+    - dropped
+    idris:
+    - dropped
+  cite:
+  - wafi 195
+  - idah 185
+  note: 'yāʾ opened in waṣl for those who keep it; waqf: Qālūn, Ḥafṣ, Abū ʿAmr both wujūh, Warsh dropped; Ruways opened in waṣl and sākinah in
+    waqf; Rawḥ dropped in waṣl and kept in waqf'
+- words:
+  - كالجواب
   case: 'yāʾ zāʾidah of al-Ḥirz, in a word the book names for the reader: how he keeps it'
   ruwat:
-    warsh: [kept_wasl]
-    bazzi: [kept_both]
-    qunbul: [kept_both]
-    duri_abuamr: [kept_wasl]
-    susi: [kept_wasl]
-  cite: [wafi 195]
-- words: [والباد, الباد]
+    warsh:
+    - kept_wasl
+    bazzi:
+    - kept_both
+    qunbul:
+    - kept_both
+    duri_abuamr:
+    - kept_wasl
+    susi:
+    - kept_wasl
+  cite:
+  - wafi 195
+- words:
+  - والباد
+  - الباد
   case: 'yāʾ zāʾidah of al-Ḥirz, in a word the book names for the reader: how he keeps it'
   ruwat:
-    warsh: [kept_wasl]
-    bazzi: [kept_both]
-    qunbul: [kept_both]
-    duri_abuamr: [kept_wasl]
-    susi: [kept_wasl]
-    ibn_wardan: [kept_wasl]
-    ibn_jammaz: [kept_wasl]
-  cite: [wafi 195, idah 180]
-- words: [المهتدي (الإسراء), المهتدي (الكهف), اتبعن, وَمَنِ اتَّبَعَنِ, فَهُوَ الْمُهْتَدِ]
+    warsh:
+    - kept_wasl
+    bazzi:
+    - kept_both
+    qunbul:
+    - kept_both
+    duri_abuamr:
+    - kept_wasl
+    susi:
+    - kept_wasl
+    ibn_wardan:
+    - kept_wasl
+    ibn_jammaz:
+    - kept_wasl
+  cite:
+  - wafi 195
+  - idah 180
+- words:
+  - المهتدي (الإسراء)
+  - المهتدي (الكهف)
+  - اتبعن
+  - وَمَنِ اتَّبَعَنِ
+  - فَهُوَ الْمُهْتَدِ
   case: 'yāʾ zāʾidah of al-Ḥirz, in a word the book names for the reader: how he keeps it'
   ruwat:
-    qalun: [kept_wasl]
-    warsh: [kept_wasl]
-    duri_abuamr: [kept_wasl]
-    susi: [kept_wasl]
-    ibn_wardan: [kept_wasl]
-    ibn_jammaz: [kept_wasl]
-  cite: [wafi 195, idah 181]
-- words: [تؤتون موثقا, حتى توتون, حَتَّى تُؤْتُونِ]
+    qalun:
+    - kept_wasl
+    warsh:
+    - kept_wasl
+    duri_abuamr:
+    - kept_wasl
+    susi:
+    - kept_wasl
+    ibn_wardan:
+    - kept_wasl
+    ibn_jammaz:
+    - kept_wasl
+  cite:
+  - wafi 195
+  - idah 181
+- words:
+  - تؤتون موثقا
+  - حتى توتون
+  - حَتَّى تُؤْتُونِ
   case: 'yāʾ zāʾidah of al-Ḥirz, in a word the book names for the reader: how he keeps it'
   ruwat:
-    bazzi: [kept_both]
-    qunbul: [kept_both]
-    duri_abuamr: [kept_wasl]
-    susi: [kept_wasl]
-    ibn_wardan: [kept_wasl]
-    ibn_jammaz: [kept_wasl]
-  cite: [wafi 195, idah 179]
-- words: [فلا تسألن, فَلَا تَسْتَلْن]
+    bazzi:
+    - kept_both
+    qunbul:
+    - kept_both
+    duri_abuamr:
+    - kept_wasl
+    susi:
+    - kept_wasl
+    ibn_wardan:
+    - kept_wasl
+    ibn_jammaz:
+    - kept_wasl
+  cite:
+  - wafi 195
+  - idah 179
+- words:
+  - فلا تسألن
+  - فَلَا تَسْتَلْن
   case: 'yāʾ zāʾidah of al-Ḥirz, in a word the book names for the reader: how he keeps it'
   ruwat:
-    warsh: [kept_wasl]
-    duri_abuamr: [kept_wasl]
-    susi: [kept_wasl]
-    ibn_wardan: [kept_wasl]
-    ibn_jammaz: [kept_wasl]
-  cite: [wafi 195, idah 179]
-- words: [فلا تسألني عن شيء]
+    warsh:
+    - kept_wasl
+    duri_abuamr:
+    - kept_wasl
+    susi:
+    - kept_wasl
+    ibn_wardan:
+    - kept_wasl
+    ibn_jammaz:
+    - kept_wasl
+  cite:
+  - wafi 195
+  - idah 179
+- words:
+  - فلا تسألني عن شيء
   case: 'yāʾ zāʾidah of al-Ḥirz, in a word the book names for the reader: how he keeps it'
   ruwat:
-    qalun: [kept_both]
-    warsh: [kept_both]
-    bazzi: [kept_both]
-    qunbul: [kept_both]
-    duri_abuamr: [kept_both]
-    susi: [kept_both]
-    hisham: [kept_both]
-    ibn_dhakwan: [kept_both, dropped]
-    shuba: [kept_both]
-    hafs: [kept_both]
-    khalaf_an_hamzah: [kept_both]
-    khallad: [kept_both]
-    abul_harith: [kept_both]
-    duri_kisai: [kept_both]
-  cite: [wafi 197]
-- words: [المتعال, الْمُتَعَالِ]
+    qalun:
+    - kept_both
+    warsh:
+    - kept_both
+    bazzi:
+    - kept_both
+    qunbul:
+    - kept_both
+    duri_abuamr:
+    - kept_both
+    susi:
+    - kept_both
+    hisham:
+    - kept_both
+    ibn_dhakwan:
+    - kept_both
+    - dropped
+    shuba:
+    - kept_both
+    hafs:
+    - kept_both
+    khalaf_an_hamzah:
+    - kept_both
+    khallad:
+    - kept_both
+    abul_harith:
+    - kept_both
+    duri_kisai:
+    - kept_both
+  cite:
+  - wafi 197
+- words:
+  - المتعال
+  - الْمُتَعَالِ
   case: 'yāʾ zāʾidah of al-Ḥirz, in a word the book names for the reader: how he keeps it'
   ruwat:
-    bazzi: [kept_both]
-    qunbul: [kept_both]
-    ruways: [kept_both]
-    rawh: [kept_both]
-  cite: [wafi 196, idah 176]
-- words: [التلاق, التناد, يَوْمَ التَّلَاقِ, يَوْمَ التَّنَادِ]
+    bazzi:
+    - kept_both
+    qunbul:
+    - kept_both
+    ruways:
+    - kept_both
+    rawh:
+    - kept_both
+  cite:
+  - wafi 196
+  - idah 176
+- words:
+  - التلاق
+  - التناد
+  - يَوْمَ التَّلَاقِ
+  - يَوْمَ التَّنَادِ
   case: 'yāʾ zāʾidah of al-Ḥirz, in a word the book names for the reader: how he keeps it'
   ruwat:
-    qalun: [kept_wasl, dropped]
-    warsh: [kept_wasl]
-    bazzi: [kept_both]
-    qunbul: [kept_both]
-    ibn_wardan: [kept_wasl]
-    ibn_jammaz: [dropped]
-    ruways: [kept_both]
-    rawh: [kept_both]
-    ishaq: [dropped]
-    idris: [dropped]
-  cite: [wafi 196, idah 184]
+    qalun:
+    - kept_wasl
+    - dropped
+    warsh:
+    - kept_wasl
+    bazzi:
+    - kept_both
+    qunbul:
+    - kept_both
+    ibn_wardan:
+    - kept_wasl
+    ibn_jammaz:
+    - dropped
+    ruways:
+    - kept_both
+    rawh:
+    - kept_both
+    ishaq:
+    - dropped
+    idris:
+    - dropped
+  cite:
+  - wafi 196
+  - idah 184
   note: 'Qālūn: wafi 196 gives khulf, then says the verifiers hold dropped only'
-- words: [نذير, لتردين, ترجمون, فاعتزلون, عذابي ونذر, وعيد, ينقذون, يكذبون, نكير]
+- words:
+  - نذير
+  - لتردين
+  - ترجمون
+  - فاعتزلون
+  - عذابي ونذر
+  - وعيد
+  - ينقذون
+  - يكذبون
+  - نكير
   case: 'yāʾ zāʾidah of al-Ḥirz, in a word the book names for the reader: how he keeps it'
   ruwat:
-    warsh: [kept_wasl]
-    ruways: [kept_both]
-    rawh: [kept_both]
-  cite: [wafi 197, idah 177, idah 178]
-- words: [واتبعون هذا صراط, وَاتَّبِعُونِ]
+    warsh:
+    - kept_wasl
+    ruways:
+    - kept_both
+    rawh:
+    - kept_both
+  cite:
+  - wafi 197
+  - idah 177
+  - idah 178
+- words:
+  - واتبعون هذا صراط
+  - وَاتَّبِعُونِ
   case: 'yāʾ zāʾidah of al-Ḥirz, in a word the book names for the reader: how he keeps it'
   ruwat:
-    duri_abuamr: [kept_wasl]
-    susi: [kept_wasl]
-    ibn_wardan: [kept_wasl]
-    ibn_jammaz: [kept_wasl]
-  cite: [wafi 197, idah 180]
-- words: [يهديني, فهو يهدين]
+    duri_abuamr:
+    - kept_wasl
+    susi:
+    - kept_wasl
+    ibn_wardan:
+    - kept_wasl
+    ibn_jammaz:
+    - kept_wasl
+  cite:
+  - wafi 197
+  - idah 180
+- words:
+  - يهديني
+  - فهو يهدين
   case: 'yāʾ zāʾidah of al-Ḥirz, in a word the book names for the reader: how he keeps it'
   ruwat:
-    qalun: [kept_both]
-    warsh: [kept_both]
-    bazzi: [kept_both]
-    qunbul: [kept_both]
-    duri_abuamr: [kept_both]
-    susi: [kept_both]
-    hisham: [kept_both]
-    ibn_dhakwan: [kept_both]
-    shuba: [kept_both]
-    hafs: [kept_both]
-    khalaf_an_hamzah: [kept_both]
-    khallad: [kept_both]
-    abul_harith: [kept_both]
-    duri_kisai: [kept_both]
-  cite: [wafi 197]
+    qalun:
+    - kept_both
+    warsh:
+    - kept_both
+    bazzi:
+    - kept_both
+    qunbul:
+    - kept_both
+    duri_abuamr:
+    - kept_both
+    susi:
+    - kept_both
+    hisham:
+    - kept_both
+    ibn_dhakwan:
+    - kept_both
+    shuba:
+    - kept_both
+    hafs:
+    - kept_both
+    khalaf_an_hamzah:
+    - kept_both
+    khallad:
+    - kept_both
+    abul_harith:
+    - kept_both
+    duri_kisai:
+    - kept_both
+  cite:
+  - wafi 197
   note: the row says all fourteen keep it ("الإثبات"); the state in waqf is not stated
-- words: [فَارْهَبُونِ, فَاتَّقُونِ, وَلَا تَكْفُرُونِ, وَأَطِيعُونِ, فَلَا تُنظِرُونِ, ثُمَّ لَا تُنظِرُونِ, فَأَرْسِلُونِ, وَلَا تَقْرَبُونِ, الْمُتَعَالِ, وَإِلَيْهِ مَتَابِ, فَكَيْفَ كَانَ عِقَابِ,
-    وَخَافَ وَعِيدِ, وَتَقَبَّلْ دُعَاءِ, فَلَا تَفْضَحُونِ]
+- words:
+  - فَارْهَبُونِ
+  - فَاتَّقُونِ
+  - وَلَا تَكْفُرُونِ
+  - وَأَطِيعُونِ
+  - فَلَا تُنظِرُونِ
+  - ثُمَّ لَا تُنظِرُونِ
+  - فَأَرْسِلُونِ
+  - وَلَا تَقْرَبُونِ
+  - الْمُتَعَالِ
+  - وَإِلَيْهِ مَتَابِ
+  - فَكَيْفَ كَانَ عِقَابِ
+  - وَخَافَ وَعِيدِ
+  - وَتَقَبَّلْ دُعَاءِ
+  - فَلَا تَفْضَحُونِ
   case: 'yāʾ zāʾidah of al-Ḥirz, in a word the book names for the reader: how he keeps it'
   ruwat:
-    ruways: [kept_both]
-    rawh: [kept_both]
-  cite: [idah 175, idah 176]
+    ruways:
+    - kept_both
+    rawh:
+    - kept_both
+  cite:
+  - idah 175
+  - idah 176
   note: yāʾāt at the end of the verse, kept by Yaʿqūb whether al-Ḥirz names them or not
-- words: [فَاعْبُدُونِ, فَلَا تَسْتَعْجِلُون, فَكَيْفَ كَانَ نَكِيرِ, بِمَا كَذَّبُونِ, فَاتَّقُونِ, أَن تَحْضُرُونِ, رَبِّ ارْجِعُونِ, وَلَا تُكَلِّمُونِ, أن يُكَذِبُونِ, أَن يَقْتُلُونِ, سَيَهْدِينِ,
-    فَهُوَ يَهْدِينِ, وَيَسْقِينِ, يَشْفِين, ثُمَّ يُحْيِينِ, وَأَطِيعُونِ, إِنَّ قَوْمِي كَذَّبُونِ, حَتَّى تَشْهَدُونِ, وَلَا يُنقِذُونِ, فَاسْمَعُونِ, لتُرْدِينِ, سَيْدِينِ]
+- words:
+  - فَاعْبُدُونِ
+  - فَلَا تَسْتَعْجِلُون
+  - فَكَيْفَ كَانَ نَكِيرِ
+  - بِمَا كَذَّبُونِ
+  - فَاتَّقُونِ
+  - أَن تَحْضُرُونِ
+  - رَبِّ ارْجِعُونِ
+  - وَلَا تُكَلِّمُونِ
+  - أن يُكَذِبُونِ
+  - أَن يَقْتُلُونِ
+  - سَيَهْدِينِ
+  - فَهُوَ يَهْدِينِ
+  - وَيَسْقِينِ
+  - يَشْفِين
+  - ثُمَّ يُحْيِينِ
+  - وَأَطِيعُونِ
+  - إِنَّ قَوْمِي كَذَّبُونِ
+  - حَتَّى تَشْهَدُونِ
+  - وَلَا يُنقِذُونِ
+  - فَاسْمَعُونِ
+  - لتُرْدِينِ
+  - سَيْدِينِ
   case: 'yāʾ zāʾidah of al-Ḥirz, in a word the book names for the reader: how he keeps it'
   ruwat:
-    ruways: [kept_both]
-    rawh: [kept_both]
-  cite: [idah 177]
+    ruways:
+    - kept_both
+    rawh:
+    - kept_both
+  cite:
+  - idah 177
   note: yāʾāt at the end of the verse (Yaʿqūb)
-- words: [لَمَّا يَذُوقُوا عَذَابِ, فَحَقِّ عِقَابِ, فَاتَّقُون, يَوْمَ التَّلَاقِ, يَوْمَ التَّنَادِ, فَكَيْفَ كَانَ عِقَابِ, سَهَدِينِ, وَأَطِيعُونِ, أَن تَرْجُمُونِ, فَاعْتَزِلُونِ, وَعِيدِ, لِيَعْبُدُونِ,
-    أَن يُطْعِمُونِ, فَلَا يَسْتَعْجِلُونِ, وَنُذْرِ, كَيْفَ نَذِيرِ, فَكَيْفَ كَانَ نَكِيرِ, فَكيدُونِ, إِذَا يَسْرِ, بِالْوَادِ, أَكْرَمَنِ, أَهَنَنِ, وَلِيَ دِينِ]
+- words:
+  - لَمَّا يَذُوقُوا عَذَابِ
+  - فَحَقِّ عِقَابِ
+  - فَاتَّقُون
+  - يَوْمَ التَّلَاقِ
+  - يَوْمَ التَّنَادِ
+  - فَكَيْفَ كَانَ عِقَابِ
+  - سَهَدِينِ
+  - وَأَطِيعُونِ
+  - أَن تَرْجُمُونِ
+  - فَاعْتَزِلُونِ
+  - وَعِيدِ
+  - لِيَعْبُدُونِ
+  - أَن يُطْعِمُونِ
+  - فَلَا يَسْتَعْجِلُونِ
+  - وَنُذْرِ
+  - كَيْفَ نَذِيرِ
+  - فَكَيْفَ كَانَ نَكِيرِ
+  - فَكيدُونِ
+  - إِذَا يَسْرِ
+  - بِالْوَادِ
+  - أَكْرَمَنِ
+  - أَهَنَنِ
+  - وَلِيَ دِينِ
   case: 'yāʾ zāʾidah of al-Ḥirz, in a word the book names for the reader: how he keeps it'
   ruwat:
-    ruways: [kept_both]
-    rawh: [kept_both]
-  cite: [idah 178]
+    ruways:
+    - kept_both
+    rawh:
+    - kept_both
+  cite:
+  - idah 178
   note: yāʾāt at the end of the verse (Yaʿqūb, 59 in all)
-open: ['Ibn Dhakwan, Shuʿbah and Ḥafṣ: no row gives them a general reading of the yāʾāt al-zawāʾid (wafi 193 names Ibn Kathīr, Hishām, Abū ʿAmr, Ḥamzah, al-Kisāʾī, Nāfiʿ only); the case is left empty for
-    them. Ibn Dhakwan appears at فلا تسألني (khulf) and فما آتاني (dropped); Ḥafṣ at فما آتاني.', 'A rāwī who is not named at a word: the rows do not say ''dropped'', except wafi 195 for فما آتاني (''الباقون''
-    drop in both states). Entries therefore list only the readers a row names; that nothing else is kept is not stated by the rows.', 'Bare ''الإثبات'' in the Wāfī was read as the reader''s general form
-    from wafi 193 (Nāfiʿ, Abū ʿAmr, Ḥamzah, al-Kisāʾī: kept in waṣl; Ibn Kathīr: kept in both; Hishām: khulf), see each entry; entries list the reading for all named readers, not only the ones that differ
-    from the case.', 'Ibn Wardan and Ibn Jammāz: idah 173 gives only ''kept in waṣl'' for all the yāʾāt he keeps (kept_wasl); at يردن/تتبعن/فما آتاني idah gives him opened in waṣl and sākin in waqf (recorded:
-    kept_both for the first two, kept_wasl for فما آتاني where waqf is dropped). Qālūn keeps تتبعن in waṣl only (wafi 194), so Abū Jaʿfar does not follow Qālūn there.', 'idah 180: for ولا تخزون في ضيفي
-    the book says all readers drop the yāʾ in both states except Yaʿqūb, but the previous row (idah 180) has Abū Jaʿfar keeping it in waṣl; both recorded (Abū Jaʿfar kept_wasl).', 'wafi 196: Qālūn at التلاق/التناد:
-    khulf (kept or dropped) in the naẓm, yet ''the verifiers say dropped only'' (row 84); recorded [kept_wasl, dropped].', 'wafi 193 vs 194 for Ḥamzah at أتمدونن: kept in waṣl and waqf (193) vs bare ''الإثبات''
-    (194); recorded kept_both.', 'يهديني (wafi 197, all fourteen keep): the waqf state is not stated.', Abū Jaʿfar's 'كأصله' words (idah 181) take Nāfiʿ's reading where the Wāfī rows name Qālūn and Warsh
-    alike; no row separates them., Kisāʾī's two ruwāt appear only at نبغ/يأت (wafi 194) and the general wafi 193; no other word names them., 'The ya_zaida wujūh `kept_waqf` (dropped in waṣl, kept in waqf)
-    is used for Rawḥ and Ruways at فبشر عباد، يردن، فما آتاني، واخشون اليوم where the rows say so.', 'Yaʿqūb''s long lists of verse-end yāʾāt (idah 176-178) overlap with other entries (e.g. التلاق، التناد،
-    يسر، أكرمن، المتعال): the same words are entered twice, once with the Shāṭibiyyah readers and once in the Yaʿqūb list.']
+open:
+- 'Bare ''الإثبات'' in the Wāfī was read as the reader''s general form from wafi 193 (Nāfiʿ, Abū ʿAmr, Ḥamzah, al-Kisāʾī: kept in waṣl; Ibn Kathīr:
+  kept in both; Hishām: khulf), see each entry; entries list the reading for all named readers, not only the ones that differ from the case.'
+- 'Ibn Wardan and Ibn Jammāz: idah 173 gives only ''kept in waṣl'' for all the yāʾāt he keeps (kept_wasl); at يردن/تتبعن/فما آتاني idah gives
+  him opened in waṣl and sākin in waqf (recorded: kept_both for the first two, kept_wasl for فما آتاني where waqf is dropped). Qālūn keeps تتبعن
+  in waṣl only (wafi 194), so Abū Jaʿfar does not follow Qālūn there.'
+- 'idah 180: for ولا تخزون في ضيفي the book says all readers drop the yāʾ in both states except Yaʿqūb, but the previous row (idah 180) has Abū
+  Jaʿfar keeping it in waṣl; both recorded (Abū Jaʿfar kept_wasl).'
+- 'wafi 196: Qālūn at التلاق/التناد: khulf (kept or dropped) in the naẓm, yet ''the verifiers say dropped only'' (row 84); recorded [kept_wasl,
+  dropped].'
+- 'wafi 193 vs 194 for Ḥamzah at أتمدونن: kept in waṣl and waqf (193) vs bare ''الإثبات'' (194); recorded kept_both.'
+- Kisāʾī's two ruwāt appear only at نبغ/يأت (wafi 194) and the general wafi 193; no other word names them.
+- The ya_zaida wujūh `kept_waqf` (dropped in waṣl, kept in waqf) is used for Rawḥ and Ruways at فبشر عباد، يردن، فما آتاني، واخشون اليوم where
+  the rows say so.
+- 'Yaʿqūb''s long lists of verse-end yāʾāt (idah 176-178) overlap with other entries (e.g. التلاق، التناد، يسر، أكرمن، المتعال): the same words
+  are entered twice, once with the Shāṭibiyyah readers and once in the Yaʿqūb list.'
+filled_notes:
+- 'Ibn Dhakwan, Shuʿbah and Ḥafṣ: no row gives them a general reading of the yāʾāt al-zawāʾid (wafi 193 names Ibn Kathīr, Hishām, Abū ʿAmr, Ḥamzah,
+  al-Kisāʾī, Nāfiʿ only); the case is left empty for them. Ibn Dhakwan appears at فلا تسألني (khulf) and فما آتاني (dropped); Ḥafṣ at فما آتاني.'
+- 'A rāwī who is not named at a word: the rows do not say ''dropped'', except wafi 195 for فما آتاني (''الباقون'' drop in both states). Entries
+  therefore list only the readers a row names; that nothing else is kept is not stated by the rows.'
+- 'يهديني (wafi 197, all fourteen keep): the waqf state is not stated.'
+- Abū Jaʿfar's 'كأصله' words (idah 181) take Nāfiʿ's reading where the Wāfī rows name Qālūn and Warsh alike; no row separates them.

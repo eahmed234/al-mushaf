@@ -1,31 +1,92 @@
 category: sakt_mafsul
 what: sakt on the mafṣūl ʿāmm (a sākin at a word's end before a hamzah beginning the next); the Durrah has none
 wujuh:
-- {id: none, ar: ترك السكت, en: no sakt}
-- {id: sakt, ar: السكت, en: sakt}
+- id: none
+  ar: ترك السكت
+  en: no sakt
+- id: sakt
+  ar: السكت
+  en: sakt
 cases:
 - case: sakt on a sākin at the end of a word before a hamzah beginning the next (من آمن, عذاب أليم)
   ruwat:
-    qalun: {wujuh: &id001 [none], cite: &id002 [wafi 105]}
-    warsh: {wujuh: *id001, cite: *id002}
-    bazzi: {wujuh: *id001, cite: *id002}
-    qunbul: {wujuh: *id001, cite: *id002}
-    duri_abuamr: {wujuh: *id001, cite: *id002}
-    susi: {wujuh: *id001, cite: *id002}
-    hisham: {wujuh: *id001, cite: *id002}
-    ibn_dhakwan: {wujuh: *id001, cite: *id002}
-    shuba: {wujuh: *id001, cite: *id002}
-    hafs: {wujuh: *id001, cite: *id002}
-    khalaf_an_hamzah: {wujuh: [sakt, none], cite: [wafi 105, wafi 106]}
-    khallad: {wujuh: [none], cite: [wafi 105, wafi 106]}
-    abul_harith: {wujuh: *id001, cite: *id002}
-    duri_kisai: {wujuh: *id001, cite: *id002}
-    ibn_wardan: {wujuh: &id003 [none], cite: &id004 [idah 124], via: asl}
-    ibn_jammaz: {wujuh: *id003, cite: *id004, via: asl}
-    ruways: {wujuh: *id003, cite: *id004, via: asl}
-    rawh: {wujuh: *id003, cite: *id004, via: asl}
-    ishaq: {wujuh: &id005 [none], cite: &id006 [idah 121]}
-    idris: {wujuh: *id005, cite: *id006}
+    qalun:
+      wujuh: &id001
+      - none
+      cite: &id002
+      - wafi 105
+    warsh:
+      wujuh: *id001
+      cite: *id002
+    bazzi:
+      wujuh: *id001
+      cite: *id002
+    qunbul:
+      wujuh: *id001
+      cite: *id002
+    duri_abuamr:
+      wujuh: *id001
+      cite: *id002
+    susi:
+      wujuh: *id001
+      cite: *id002
+    hisham:
+      wujuh: *id001
+      cite: *id002
+    ibn_dhakwan:
+      wujuh: *id001
+      cite: *id002
+    shuba:
+      wujuh: *id001
+      cite: *id002
+    hafs:
+      wujuh: *id001
+      cite: *id002
+    khalaf_an_hamzah:
+      wujuh:
+      - sakt
+      - none
+      cite:
+      - wafi 105
+      - wafi 106
+    khallad:
+      wujuh:
+      - none
+      cite:
+      - wafi 105
+      - wafi 106
+    abul_harith:
+      wujuh: *id001
+      cite: *id002
+    duri_kisai:
+      wujuh: *id001
+      cite: *id002
+    ibn_wardan:
+      wujuh: &id003
+      - none
+      cite: &id004
+      - idah 124
+      via: asl
+    ibn_jammaz:
+      wujuh: *id003
+      cite: *id004
+      via: asl
+    ruways:
+      wujuh: *id003
+      cite: *id004
+      via: asl
+    rawh:
+      wujuh: *id003
+      cite: *id004
+      via: asl
+    ishaq:
+      wujuh: &id005
+      - none
+      cite: &id006
+      - idah 121
+    idris:
+      wujuh: *id005
+      cite: *id006
 listed:
 - words:
   - من آمن
@@ -36,8 +97,13 @@ listed:
   - wafi 105
   - wafi 106
 open:
-- 'Khalaf ʿan Ḥamzah: wafi 105 gives him a qalīl sakt with khulf; wafi 106 says "فلا يسكت على الساكن المفصول … لخلف ولا لخلاد" (no sakt for either). The two pages disagree; table lists both wujūh (sakt first, as the khulf row has it), unresolved.'
+- 'Khalaf ʿan Ḥamzah: wafi 105 gives him a qalīl sakt with khulf; wafi 106 says "فلا يسكت على الساكن المفصول … لخلف ولا لخلاد" (no sakt for either).
+  The two pages disagree; table lists both wujūh (sakt first, as the khulf row has it), unresolved.'
 - 'Khallād: none (wafi 105, 106).'
-- 'Ibn Wardān, Ibn Jammāz, Ruways, Rawḥ: idah 124 "كأصليهما"; the aṣl''s (Nāfiʿ, Abū ʿAmr) none comes from wafi 105 (profile cites wafi 105 for "the rest"). Isḥāq and Idrīs: idah 121 "ترك السكت على الساكن مطلقاً".'
-- 'Idrīs: a sakt khulf on a sākin that is not a madd is recorded by the editor (al-Muṭṭawwiʿī, from al-Mubhij; idah 121-123); left out as an option, default none, as in sakt_al.'
-- 'The other twelve of the Shāṭibiyyah: "none" is from the reviewed profile (wafi 105); the sakt_mafsul rows themselves speak of Khalaf and Khallād only.'
+- 'Ibn Wardān, Ibn Jammāz, Ruways, Rawḥ: idah 124 "كأصليهما"; the aṣl''s (Nāfiʿ, Abū ʿAmr) none comes from wafi 105 (profile cites wafi 105 for
+  "the rest"). Isḥāq and Idrīs: idah 121 "ترك السكت على الساكن مطلقاً".'
+- 'Idrīs: a sakt khulf on a sākin that is not a madd is recorded by the editor (al-Muṭṭawwiʿī, from al-Mubhij; idah 121-123); left out as an option,
+  default none, as in sakt_al.'
+- 'The other twelve of the Shāṭibiyyah: "none" is from the reviewed profile (wafi 105); the sakt_mafsul rows themselves speak of Khalaf and Khallād
+  only.'
+filled_notes: []

@@ -1,79 +1,296 @@
 category: naql
 what: naql of the hamzah's vowel to the sākin before it (general and word-specific)
 wujuh:
-- {id: none, ar: ترك النقل (التحقيق), en: 'no naql, the hamzah kept'}
-- {id: naql, ar: النقل, en: 'naql of the hamzah''s vowel to the sākin before it, the hamzah dropped'}
-- {id: begin_wasl, ar: البدء بهمزة الوصل, en: begin with hamzat al-waṣl}
-- {id: begin_lam, ar: البدء باللام, en: begin with the lām}
-- {id: izhar, ar: الإظهار, en: iẓhār}
-- {id: idgham, ar: الإدغام, en: idghām}
+- id: none
+  ar: ترك النقل (التحقيق)
+  en: no naql, the hamzah kept
+- id: naql
+  ar: النقل
+  en: naql of the hamzah's vowel to the sākin before it, the hamzah dropped
+- id: begin_wasl
+  ar: البدء بهمزة الوصل
+  en: begin with hamzat al-waṣl
+- id: begin_lam
+  ar: البدء باللام
+  en: begin with the lām
+- id: izhar
+  ar: الإظهار
+  en: iẓhār
+- id: idgham
+  ar: الإدغام
+  en: idghām
 cases:
 - case: naql to a sākin at the end of a word before a hamzah beginning the next word (waṣl)
   ruwat:
-    qalun: {wujuh: &id001 [none], cite: &id002 [wafi 103]}
-    warsh: {wujuh: [naql], cite: [wafi 104]}
-    bazzi: {wujuh: *id001, cite: *id002}
-    qunbul: {wujuh: *id001, cite: *id002}
-    duri_abuamr: {wujuh: *id001, cite: *id002}
-    susi: {wujuh: *id001, cite: *id002}
-    hisham: {wujuh: *id001, cite: *id002}
-    ibn_dhakwan: {wujuh: *id001, cite: *id002}
-    shuba: {wujuh: *id001, cite: *id002}
-    hafs: {wujuh: *id001, cite: *id002}
-    khalaf_an_hamzah: {wujuh: *id001, cite: *id002}
-    khallad: {wujuh: *id001, cite: *id002}
-    abul_harith: {wujuh: *id001, cite: *id002}
-    duri_kisai: {wujuh: *id001, cite: *id002}
-    ibn_wardan: {wujuh: [none], cite: [idah 118]}
-    ibn_jammaz: {wujuh: [none], cite: [idah 119]}
-    ruways: {wujuh: &id003 [none], cite: &id004 [idah 119]}
-    rawh: {wujuh: *id003, cite: *id004}
-    ishaq: {wujuh: *id003, cite: *id004}
-    idris: {wujuh: *id003, cite: *id004}
+    qalun:
+      wujuh: &id001
+      - none
+      cite: &id002
+      - wafi 103
+    warsh:
+      wujuh:
+      - naql
+      cite:
+      - wafi 104
+    bazzi:
+      wujuh: *id001
+      cite: *id002
+    qunbul:
+      wujuh: *id001
+      cite: *id002
+    duri_abuamr:
+      wujuh: *id001
+      cite: *id002
+    susi:
+      wujuh: *id001
+      cite: *id002
+    hisham:
+      wujuh: *id001
+      cite: *id002
+    ibn_dhakwan:
+      wujuh: *id001
+      cite: *id002
+    shuba:
+      wujuh: *id001
+      cite: *id002
+    hafs:
+      wujuh: *id001
+      cite: *id002
+    khalaf_an_hamzah:
+      wujuh: *id001
+      cite: *id002
+    khallad:
+      wujuh: *id001
+      cite: *id002
+    abul_harith:
+      wujuh: *id001
+      cite: *id002
+    duri_kisai:
+      wujuh: *id001
+      cite: *id002
+    ibn_wardan:
+      wujuh:
+      - none
+      cite:
+      - idah 118
+    ibn_jammaz:
+      wujuh:
+      - none
+      cite:
+      - idah 119
+    ruways:
+      wujuh: &id003
+      - none
+      cite: &id004
+      - idah 119
+    rawh:
+      wujuh: *id003
+      cite: *id004
+    ishaq:
+      wujuh: *id003
+      cite: *id004
+    idris:
+      wujuh: *id003
+      cite: *id004
 - case: at waqf on a word before a hamzah (من آمن, عذاب أليم)
   ruwat:
-    qalun: {wujuh: [], cite: []}
-    warsh: {wujuh: [], cite: []}
-    bazzi: {wujuh: [], cite: []}
-    qunbul: {wujuh: [], cite: []}
-    duri_abuamr: {wujuh: [], cite: []}
-    susi: {wujuh: [], cite: []}
-    hisham: {wujuh: [], cite: []}
-    ibn_dhakwan: {wujuh: [], cite: []}
-    shuba: {wujuh: [], cite: []}
-    hafs: {wujuh: [], cite: []}
-    khalaf_an_hamzah: {wujuh: &id005 [naql, none], cite: &id006 [wafi 105, wafi 106]}
-    khallad: {wujuh: *id005, cite: *id006}
-    abul_harith: {wujuh: [], cite: []}
-    duri_kisai: {wujuh: [], cite: []}
-    ibn_wardan: {wujuh: [], cite: []}
-    ibn_jammaz: {wujuh: [], cite: []}
-    ruways: {wujuh: [], cite: []}
-    rawh: {wujuh: [], cite: []}
-    ishaq: {wujuh: [], cite: []}
-    idris: {wujuh: [], cite: []}
+    qalun:
+      wujuh:
+      - none
+      cite: []
+      via: as_hafs
+    warsh:
+      wujuh:
+      - none
+      cite: []
+      via: as_hafs
+    bazzi:
+      wujuh:
+      - none
+      cite: []
+      via: as_hafs
+    qunbul:
+      wujuh:
+      - none
+      cite: []
+      via: as_hafs
+    duri_abuamr:
+      wujuh:
+      - none
+      cite: []
+      via: as_hafs
+    susi:
+      wujuh:
+      - none
+      cite: []
+      via: as_hafs
+    hisham:
+      wujuh:
+      - none
+      cite: []
+      via: as_hafs
+    ibn_dhakwan:
+      wujuh:
+      - none
+      cite: []
+      via: as_hafs
+    shuba:
+      wujuh:
+      - none
+      cite: []
+      via: as_hafs
+    hafs:
+      wujuh:
+      - none
+      cite: []
+      via: as_hafs
+    khalaf_an_hamzah:
+      wujuh: &id005
+      - naql
+      - none
+      cite: &id006
+      - wafi 105
+      - wafi 106
+    khallad:
+      wujuh: *id005
+      cite: *id006
+    abul_harith:
+      wujuh:
+      - none
+      cite: []
+      via: as_hafs
+    duri_kisai:
+      wujuh:
+      - none
+      cite: []
+      via: as_hafs
+    ibn_wardan:
+      wujuh:
+      - none
+      cite:
+      - idah 40-43
+      via: asl_unstated
+    ibn_jammaz:
+      wujuh:
+      - none
+      cite:
+      - idah 40-43
+      via: asl_unstated
+    ruways:
+      wujuh:
+      - none
+      cite:
+      - idah 40-43
+      via: asl_unstated
+    rawh:
+      wujuh:
+      - none
+      cite:
+      - idah 40-43
+      via: asl_unstated
+    ishaq:
+      wujuh:
+      - naql
+      - none
+      cite:
+      - idah 40-43
+      via: asl_unstated
+    idris:
+      wujuh:
+      - naql
+      - none
+      cite:
+      - idah 40-43
+      via: asl_unstated
 - case: starting a word whose أل had its hamzah's vowel moved
   ruwat:
-    qalun: {wujuh: &id007 [begin_wasl, begin_lam], cite: &id008 [wafi 108]}
-    warsh: {wujuh: *id007, cite: *id008}
-    bazzi: {wujuh: *id007, cite: *id008}
-    qunbul: {wujuh: *id007, cite: *id008}
-    duri_abuamr: {wujuh: *id007, cite: *id008}
-    susi: {wujuh: *id007, cite: *id008}
-    hisham: {wujuh: *id007, cite: *id008}
-    ibn_dhakwan: {wujuh: *id007, cite: *id008}
-    shuba: {wujuh: *id007, cite: *id008}
-    hafs: {wujuh: *id007, cite: *id008}
-    khalaf_an_hamzah: {wujuh: *id007, cite: *id008}
-    khallad: {wujuh: *id007, cite: *id008}
-    abul_harith: {wujuh: *id007, cite: *id008}
-    duri_kisai: {wujuh: *id007, cite: *id008}
-    ibn_wardan: {wujuh: [], cite: []}
-    ibn_jammaz: {wujuh: [], cite: []}
-    ruways: {wujuh: [], cite: []}
-    rawh: {wujuh: [], cite: []}
-    ishaq: {wujuh: [], cite: []}
-    idris: {wujuh: [], cite: []}
+    qalun:
+      wujuh: &id007
+      - begin_wasl
+      - begin_lam
+      cite: &id008
+      - wafi 108
+    warsh:
+      wujuh: *id007
+      cite: *id008
+    bazzi:
+      wujuh: *id007
+      cite: *id008
+    qunbul:
+      wujuh: *id007
+      cite: *id008
+    duri_abuamr:
+      wujuh: *id007
+      cite: *id008
+    susi:
+      wujuh: *id007
+      cite: *id008
+    hisham:
+      wujuh: *id007
+      cite: *id008
+    ibn_dhakwan:
+      wujuh: *id007
+      cite: *id008
+    shuba:
+      wujuh: *id007
+      cite: *id008
+    hafs:
+      wujuh: *id007
+      cite: *id008
+    khalaf_an_hamzah:
+      wujuh: *id007
+      cite: *id008
+    khallad:
+      wujuh: *id007
+      cite: *id008
+    abul_harith:
+      wujuh: *id007
+      cite: *id008
+    duri_kisai:
+      wujuh: *id007
+      cite: *id008
+    ibn_wardan:
+      wujuh:
+      - begin_wasl
+      - begin_lam
+      cite:
+      - idah 40-43
+      via: asl_unstated
+    ibn_jammaz:
+      wujuh:
+      - begin_wasl
+      - begin_lam
+      cite:
+      - idah 40-43
+      via: asl_unstated
+    ruways:
+      wujuh:
+      - begin_wasl
+      - begin_lam
+      cite:
+      - idah 40-43
+      via: asl_unstated
+    rawh:
+      wujuh:
+      - begin_wasl
+      - begin_lam
+      cite:
+      - idah 40-43
+      via: asl_unstated
+    ishaq:
+      wujuh:
+      - begin_wasl
+      - begin_lam
+      cite:
+      - idah 40-43
+      via: asl_unstated
+    idris:
+      wujuh:
+      - begin_wasl
+      - begin_lam
+      cite:
+      - idah 40-43
+      via: asl_unstated
 listed:
 - words:
   - القرآن
@@ -235,10 +452,18 @@ listed:
   - wafi 110
   why: in waṣl, all fourteen
 open:
-- The general case (waṣl) for the six of the Durrah rests on the reviewed profile (idah 118-120) and on idah 119 ("بالتحقيق على الأصل", "كابن جماز موافقة لأصليهما"); no row states a general none for Ibn Wardān, so it is the listed words only that are his naql.
-- 'idah 117, "من أجل": the quote ("كما لا يدخل فيه نقل أبي جعفر") is unclear and the row''s place is "place", so whether both of Abū Jaʿfar''s ruwāt do naql there is unsettled; idah 119 says Ibn Jammāz reads "في جميع ذلك" with taḥqīq, which may conflict with this and with his naql in ردءا (idah 119).'
-- Case 2 is stated only for Khalaf ʿan Ḥamzah and Khallād (some narrators naql, some taḥqīq; Khallād "only" these two, wafi 105-106); the other twelve and the six of the Durrah have no row for waqf.
-- Case 3 (wafi 108) is stated for the fourteen only; "jāʾizān li-jamīʿ al-qurrāʾ". Nothing for the six of the Durrah; also the book says nothing there about whether the six have an أل with transferred hamzah.
-- The last listed item (ماليه هلك) is idghām of the hāʾ, not naql; the row sits in this category (wafi 110). The wujūh izhar and idghām are for all fourteen ("سائر القراء") and Ḥafṣ is not separated.
-- 'wafi 107: the ten who read عاداً الأولى without naql (Hishām, Ibn Dhakwān, Bazzī, Qunbul, Shuʿbah, Ḥafṣ, Khalaf, Khallād, Abū l-Ḥārith, al-Dūrī ʿan al-Kisāʾī) are the case''s default, so not repeated.'
+- 'idah 117, "من أجل": the quote ("كما لا يدخل فيه نقل أبي جعفر") is unclear and the row''s place is "place", so whether both of Abū Jaʿfar''s
+  ruwāt do naql there is unsettled; idah 119 says Ibn Jammāz reads "في جميع ذلك" with taḥqīq, which may conflict with this and with his naql in
+  ردءا (idah 119).'
+- The last listed item (ماليه هلك) is idghām of the hāʾ, not naql; the row sits in this category (wafi 110). The wujūh izhar and idghām are for
+  all fourteen ("سائر القراء") and Ḥafṣ is not separated.
+- 'wafi 107: the ten who read عاداً الأولى without naql (Hishām, Ibn Dhakwān, Bazzī, Qunbul, Shuʿbah, Ḥafṣ, Khalaf, Khallād, Abū l-Ḥārith, al-Dūrī
+  ʿan al-Kisāʾī) are the case''s default, so not repeated.'
 - Abū Jaʿfar's aṣl is Nāfiʿ, who has naql in ردءا and آلآن, so the Durrah rows agree with the aṣl there.
+filled_notes:
+- The general case (waṣl) for the six of the Durrah rests on the reviewed profile (idah 118-120) and on idah 119 ("بالتحقيق على الأصل", "كابن
+  جماز موافقة لأصليهما"); no row states a general none for Ibn Wardān, so it is the listed words only that are his naql.
+- Case 2 is stated only for Khalaf ʿan Ḥamzah and Khallād (some narrators naql, some taḥqīq; Khallād "only" these two, wafi 105-106); the other
+  twelve and the six of the Durrah have no row for waqf.
+- Case 3 (wafi 108) is stated for the fourteen only; "jāʾizān li-jamīʿ al-qurrāʾ". Nothing for the six of the Durrah; also the book says nothing
+  there about whether the six have an أل with transferred hamzah.
