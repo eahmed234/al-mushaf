@@ -1,8 +1,8 @@
-"""The unified uṣūl tables against al-Budūr's statements at each place of al-Baqarah.
+"""The unified uṣūl tables against al-Budūr's statements at each place of al-Baqarah and Āl ʿImrān.
 
     python3 -m pipeline.crosscheck_budur [--show N]
 
-al-Budūr's uṣūl rows (the reviewed gold pp. 16-25, the run pp. 26-58) name readers at a word. For
+al-Budūr's uṣūl rows (the reviewed gold pp. 16-25, the run pp. 26-75) name readers at a word. For
 each rāwī a row names, the unified table (its case for the row's category, or the listed entry
 for that word) should allow the reading: a row that includes Ḥafṣ states the case's first wajh
 (Ḥafṣ's); one that doesn't, another; for imālah the row's words decide (قلل → taqlīl, أمال →
@@ -32,10 +32,10 @@ KEYWORDS = {
     "sakt_al": [("ترك", "none"), ("بلا سكت", "none"), ("غير سكت", "none"), ("تحقيق", "none"), ("سكت", "sakt")],
     "sakt_mafsul": [("ترك", "none"), ("بلا سكت", "none"), ("غير سكت", "none"), ("تحقيق", "none"), ("سكت", "sakt")],
     "naql": [("نقل", "naql"), ("تحقيق", "none"), ("ترك", "none")],
-    "idgham_ghunna": [("بلا غنة", "bila_ghunna"), ("بغير غنة", "bila_ghunna"), ("غير غنة", "bila_ghunna"), ("بلاغنة", "bila_ghunna"), ("الغنة", "ghunna"), ("بغنة", "ghunna")],
+    "idgham_ghunna": [("أظهر", None), ("بلا غنة", "bila_ghunna"), ("بغير غنة", "bila_ghunna"), ("غير غنة", "bila_ghunna"), ("بلاغنة", "bila_ghunna"), ("الغنة", "ghunna"), ("بغنة", "ghunna")],
     "silah_mim": [("إسكان", "sukun"), ("الإسكان", "sukun"), ("بالإسكان", "sukun"), ("صلة", "silah"), ("وصل", "silah")],
     "silah_mim_hamza": [("إسكان", "sukun"), ("صلة", "silah"), ("وصل", "silah")],
-    "silah_ha": [("صلة", "silah"), ("وصل", "silah"), ("بغير صلة", "none")],
+    "silah_ha": [("حذف الصلة", "none"), ("غير صلة", "none"), ("بغير صلة", "none"), ("إسكان", "sukun"), ("بالقصر", "none"), ("الإشباع", "silah"), ("بلا صلة", "none"), ("صلة", "silah"), ("وصل", "silah")],
     "ibdal_sakin": [("حقق", "tahqiq"), ("تحقيق", "tahqiq"), ("ولا إبدال", "tahqiq"), ("أبدل", "ibdal"), ("إبدال", "ibdal")],
     "tarqiq_ra": [("لا ترقيق", "tafkhim"), ("فخم", "tafkhim"), ("تفخيم", "tafkhim"), ("كغيره", "tafkhim"), ("لا ترفق", "tafkhim"), ("لا ترقق", "tafkhim"), ("رقق", "tarqiq"), ("ترقيق", "tarqiq"), ("رفق", "tarqiq")],
     "hamz_waqf_mid": [("إلا التحقيق", "tahqiq"), ("لا شيء فيه", "tahqiq")],
@@ -46,7 +46,7 @@ FAALA = """موسى أنثى الدنيا قربى الوسطى القصوى ا�
 السوأى زلفى سقيا الرجعى عقبى السلوى الموتى التقوى النجوى القتلى مرضى دعوى شتى صرعى طغوى يحيى سيما إحدى
 ضيزى عيسى""".split()
 SUFFIX = re.compile(r"(?:هما|هم|ها|ه|كم)$")
-REFERENCE = ("كحكم", "حكمها", "ومثله", "مثله", "مثل ")  # a row pointing at another word's rule
+REFERENCE = ("كحكم", "حكمها", "ومثله", "مثله", "مثل ", "وكذلك")  # a row pointing at another word's rule
 
 
 def key(word: str) -> tuple[str, bool]:
@@ -105,9 +105,22 @@ def case_for(cat: str, word: str, k: int, nxt: str = "") -> int:
 IMALA = [("لا إمالة", "fath"), ("لا تقليل", "fath"), ("قلل", "taqlil"), ("تقليل", "taqlil"), ("أمال", "imala"), ("إمالة", "imala"), ("بالإمالة", "imala"), ("فتح", "fath")]
 
 
-def check(show: int = 0) -> dict:
+def farsh_words() -> set[str]:
+    """Slots the farsh tables (al-Budūr's and the books') cover: their reading is farsh, not a
+    table case (التوراة, wafi 230)."""
+    out = set()
+    for d in ("farsh", "farsh_books"):
+        for f in (Path("data") / d).glob("*.yaml"):
+            for pl in yaml.safe_load(f.read_text(encoding="utf-8")) or []:
+                if pl.get("class", "farsh") != "rule":
+                    out.update(pl.get("place") or [])
+    return out
+
+
+def check(show: int = 0, last: int = 75) -> dict:
     gold, _ = rows(GOLD / "budur", list(range(16, 26)))
-    run, _ = rows(Path("pipeline/out/baqarah/budur"), list(range(26, 59)))
+    run, _ = rows(Path("pipeline/out/baqarah/budur"), list(range(26, last + 1)))
+    farsh = farsh_words()
     h = words()
     order = list(h)
     pos = {w: i for i, w in enumerate(order)}
@@ -118,6 +131,9 @@ def check(show: int = 0) -> dict:
             continue
         if r["condition"] == "waqf" and not cat.startswith(("hamz_waqf", "ibdal_sakin_waqf", "hamzatayn_waqf")):
             continue  # a stop's wajh belongs to the waqf tables, not this waṣl case
+        if set(r["place"]) & farsh:
+            res["farsh"] += 1
+            continue
         if any(x in r["reading"] for x in REFERENCE):
             res["reference"] += 1
             continue
@@ -130,10 +146,15 @@ def check(show: int = 0) -> dict:
         case = t["cases"][k]
         vocab = [w["id"] for w in t.get("wujuh") or []]
         sk = {key(h[w]) for w in r["place"] if w in h}
+        sk |= {(k[1:], False) for k, _ in sk if k[:1] in "وفبل" and len(k) > 3}  # وَبِئۡسَ, وَمَأۡوَىٰهُمُ
         entries = [x for x in t.get("listed") or []
                    if {k for w in x.get("words") or [] for k in (key(str(w)), key(str(w).split()[0]))} & sk]
         kws = IMALA if cat.startswith("imala") else KEYWORDS.get(cat)
-        want = next((w for kw, w in kws if kw in r["reading"]), None) if kws else None
+        hit = next(((kw, w) for kw, w in kws if kw in r["reading"]), None) if kws else None
+        if hit and hit[1] is None:
+            res["other_rule"] += 1  # the row speaks of another rule (iẓhār at مِنۡ خَيۡرٖ is nūn sākinah)
+            continue
+        want = hit[1] if hit else None
         if want is not None:
             ok_set = lambda ws, want=want: want in ws  # noqa: E731
         elif cat.startswith("imala"):
@@ -152,7 +173,8 @@ def check(show: int = 0) -> dict:
             if not fine:
                 out.append((p, cat, ",".join(r["place"]), " ".join(h.get(w, "") for w in r["place"]), x, "/".join(ws), r["reading"][:40],
                             "khulf" if x in r["khulf"] else "", "listed" if entry else ""))
-    return {"agree": res["agree"], "differ": res["differ"], "reference": res["reference"], "rows": out}
+    return {"agree": res["agree"], "differ": res["differ"], "reference": res["reference"], "farsh": res["farsh"],
+            "rows": out}
 
 
 def main():
@@ -160,7 +182,7 @@ def main():
     ap.add_argument("--show", type=int, default=0)
     a = ap.parse_args()
     r = check()
-    print(f"al-Budūr pp. 16-58 against the unified tables: {r['agree']} rāwī statements agree, {r['differ']} differ"
+    print(f"al-Budūr pp. 16-75 against the unified tables: {r['agree']} rāwī statements agree, {r['differ']} differ"
           f" ({r['reference']} rows that point at another word's rule left out)")
     by = Counter((x[1]) for x in r["rows"])
     print("  by category:", dict(by.most_common()))

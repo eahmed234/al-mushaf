@@ -319,9 +319,11 @@ cases:
       - wafi 90
     hisham:
       wujuh:
+      - tahqiq_idkhal
       - tahqiq
-      cite: []
-      via: as_hafs
+      cite:
+      - wafi 90
+      - wafi 91
     ibn_dhakwan:
       wujuh:
       - tahqiq
@@ -1025,6 +1027,20 @@ listed:
   - idah 93
   - idah 94
   note: 'the second id is the second hamzah: Ruways tashīl, Rawḥ taḥqīq, no idkhāl (idah 93)'
+- words:
+  - أؤنزل
+  - أؤلقي
+  case: two hamzahs in one word, the second maḍmūmah (أؤنبئكم, أؤنزل, أؤلقي)
+  ruwat:
+    hisham:
+    - tahqiq_idkhal
+    - tahqiq
+    - tashil_idkhal
+  cite:
+  - wafi 90
+  - wafi 91
+  note: 'Ṣād 8 and al-Qamar 25: Hishām''s two wujūh plus tas-hīl with idkhāl, by the view the verse gives (كفص في آل عمران وفي الباقي كقالون);
+    Āl ʿImrān has no tas-hīl on either view (wafi 90)'
 open:
 - 'Hishām, second maftūḥah (wafi 84): the row gives tashīl or taḥqīq; the idkhāl comes from wafi 89 (idkhāl before maftūḥah and maksūrah for Qālūn,
   Abū ʿAmr, Hishām) and agrees with the reviewed profile row, which gives [taḥqīq+idkhāl, tashīl+idkhāl].'

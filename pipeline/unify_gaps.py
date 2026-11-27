@@ -188,7 +188,25 @@ def apply() -> list[str]:
         t["cases"].insert(i + 1, {"case": name_ra, "ruwat": rw,
                                   "note": "al-Sūsī's khulf is on the rāʾ, the alif being dropped (wafi 156)"})
     t["listed"] = [x for x in t["listed"] if x.get("words") != ["نرى الله", "فسيرى الله", "الكبرى اذهب"]]
+    # wafi 152 gives "ويولج النهار" (the rāʾ maftūḥah) as no imālah; the bare word made every النهار
+    # fatḥ, against النهارِ (budur 62, 66: imālah for Abū ʿAmr and al-Dūrī)
+    for x in t["listed"]:
+        x["words"] = ["ويولج النهار" if w == "النهار" else w for w in x.get("words") or []]
     save("imala", t); done.append("crosscheck: imala_alif_tanith warsh, imala_wasl_sakin(_ra)")
+
+    # found by the al-Budūr crosscheck on Āl ʿImrān (budur 60, أؤنبئكم): wafi 90-91, Hishām in the
+    # maḍmūmah has idkhāl with a khulf ("ومدك قبل الهمزة المضمومة … هشام وأبو عمرو بخلف عنهما"); by the
+    # other ahl al-adāʾ's view, at Ṣād and al-Qamar also tas-hīl with idkhāl, so three wujūh there
+    t = load("hamzatayn")
+    c = next(c for c in t["cases"] if "maḍmūmah" in c["case"])
+    c["ruwat"]["hisham"] = {"wujuh": ["tahqiq_idkhal", "tahqiq"], "cite": ["wafi 90", "wafi 91"]}
+    if not any("أؤنزل" in x.get("words", []) for x in t.get("listed") or []):
+        t.setdefault("listed", []).append({
+            "words": ["أؤنزل", "أؤلقي"], "case": c["case"],
+            "ruwat": {"hisham": ["tahqiq_idkhal", "tahqiq", "tashil_idkhal"]}, "cite": ["wafi 90", "wafi 91"],
+            "note": "Ṣād 8 and al-Qamar 25: Hishām's two wujūh plus tas-hīl with idkhāl, by the view the verse gives "
+                    "(كفص في آل عمران وفي الباقي كقالون); Āl ʿImrān has no tas-hīl on either view (wafi 90)"})
+    save("hamzatayn", t); done.append("crosscheck: hamzatayn maḍmūmah hisham")
 
     t = load("naql")  # idah 117 n. 2, 119
     cite(listed(t, lambda x: x["words"] == ["من أجل"])[0], "idah 119")
