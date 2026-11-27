@@ -116,14 +116,17 @@ tables; review list empty.
   reviewed profile wujūh kept where a fresh reading disagreed (recorded under `disagreements`).
   Through the engine: al-Futūḥ 674/676, KFGQPC 2,047/2,056 (tests). al-Budūr's statements in
   al-Baqarah agree on 1,216/1,356 (`python3 -m pipeline.crosscheck_budur`, build/crosscheck_budur.md).
-- **Waiting on Eisa: the 200 open questions** in `data/usul/*.yaml` (`open:`), on the sheet
-  `PYTHONPATH=.:../mushaf ../mushaf/.venv/bin/python -m pipeline.unified_sheet` →
-  build/unified_review.html (serve build/ on :8794); answers come back as JSON to apply to data/usul.
-  Eisa may bring a backup source for Ḥamzah's waqf.
+- **Uṣūl review done (2026-11-26)**: the 200 `open` lines were mostly notes; `pipeline/open_sort.yaml`
+  sorted them (3 policies, 15 questions, 34 page gaps re-read and applied by `pipeline.unify_gaps`),
+  and Eisa's answers are applied by `pipeline.unify_answers` (rulings in open_sort.yaml `answers`).
+  data/usul now has `notes`, `options` (ahl al-adāʾ views, off), `kubra` (other ṭuruq), and no open
+  questions. Regenerate: `unify_gaps`, `unify_answers`, then `unify_merge`. Sheet:
+  `PYTHONPATH=.:../mushaf ../mushaf/.venv/bin/python -m pipeline.unified_sheet` → build/unified_review.html.
+  Eisa may bring a backup source for Ḥamzah's waqf. One default-order exception to confirm: Warsh's
+  hamzatayn (tashīl first, against al-Wāfī's verse order; `order_exception` in hamzatayn).
 
 Next, in order:
-1. Apply Eisa's answers to the open questions (`pipeline/unify_merge.py` regenerates data/usul from
-   pipeline/unified/; record rulings there, then regenerate).
+1. Engine support for `options` and `kubra` (today they are recorded, not offered).
 2. Class al-Baqarah's 147 farsh places as covered by a rule (data/usul) or true farsh; fix the
    crosscheck's case selection (faʿlā imālah, ʿayn/lām of the sākin hamzah, hamzatayn darbs).
 3. al-Fātiḥah's farsh (مالك, الصراط) into data/farsh/001.yaml; the per-word chapters (idghām ṣaghīr,
