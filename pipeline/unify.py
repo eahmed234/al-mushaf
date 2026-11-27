@@ -17,7 +17,7 @@ import yaml
 from mushaf_data.paths import ROOT
 from mushaf_data.ruwat import RUWAT
 
-OUT = ROOT / "pipeline/out/unified"
+OUT = ROOT / "pipeline/unified"  # drafts until reviewed; then into data/
 WORK = ROOT / "pipeline/work/unify"
 
 
@@ -25,6 +25,14 @@ def check(path: Path) -> tuple[dict, list[str]]:
     t = yaml.safe_load(path.read_text(encoding="utf-8"))
     src = json.loads((WORK / f"{path.stem}.json").read_text(encoding="utf-8"))
     pages = {f"{r['book']} {r['page']}" for r in src["rows"]}
+    # the reviewed profile rows are a source too: their cites count ("wafi 51", "idah 40-43")
+    for rows in src["head"].get("reviewed_profile_rows", {}).values():
+        for row in rows or []:
+            for part in str(row.get("cite", "")).split(";"):
+                pages.add(part.strip())
+                book, _, rest = part.strip().partition(" ")
+                for piece in rest.split(","):
+                    pages.add(f"{book} {piece.strip()}")
     vocab = {w["id"] for w in t.get("wujuh", [])}
     bad = []
 

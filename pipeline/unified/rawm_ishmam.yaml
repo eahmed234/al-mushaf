@@ -1,0 +1,106 @@
+category: rawm_ishmam
+what: "rawm and ishmām at a stop"
+wujuh:
+  - {id: sukun, ar: "الإسكان المجرد", en: "bare sukūn"}
+  - {id: ishmam, ar: "الإشمام", en: "ishmām"}
+  - {id: rawm, ar: "الروم", en: "rawm"}
+cases:
+  - case: "stopping on a ḍammah or raf (مضموم أو مرفوع)"
+    note: "sukūn, ishmām and rawm are all given to the fourteen (wafi 176)"
+    ruwat:
+      qalun: {wujuh: [sukun, ishmam, rawm], cite: [wafi 176]}
+      warsh: {wujuh: [sukun, ishmam, rawm], cite: [wafi 176]}
+      bazzi: {wujuh: [sukun, ishmam, rawm], cite: [wafi 176]}
+      qunbul: {wujuh: [sukun, ishmam, rawm], cite: [wafi 176]}
+      duri_abuamr: {wujuh: [sukun, ishmam, rawm], cite: [wafi 176]}
+      susi: {wujuh: [sukun, ishmam, rawm], cite: [wafi 176]}
+      hisham: {wujuh: [sukun, ishmam, rawm], cite: [wafi 176]}
+      ibn_dhakwan: {wujuh: [sukun, ishmam, rawm], cite: [wafi 176]}
+      shuba: {wujuh: [sukun, ishmam, rawm], cite: [wafi 176]}
+      hafs: {wujuh: [sukun, ishmam, rawm], cite: [wafi 176]}
+      khalaf_an_hamzah: {wujuh: [sukun, ishmam, rawm], cite: [wafi 176]}
+      khallad: {wujuh: [sukun, ishmam, rawm], cite: [wafi 176]}
+      abul_harith: {wujuh: [sukun, ishmam, rawm], cite: [wafi 176]}
+      duri_kisai: {wujuh: [sukun, ishmam, rawm], cite: [wafi 176]}
+      ibn_wardan: {wujuh: [], cite: []}
+      ibn_jammaz: {wujuh: [], cite: []}
+      ruways: {wujuh: [], cite: []}
+      rawh: {wujuh: [], cite: []}
+      ishaq: {wujuh: [], cite: []}
+      idris: {wujuh: [], cite: []}
+  - case: "stopping on a kasrah or jarr (مكسور أو مجرور)"
+    ruwat:
+      qalun: {wujuh: [sukun, rawm], cite: [wafi 176]}
+      warsh: {wujuh: [sukun, rawm], cite: [wafi 176]}
+      bazzi: {wujuh: [sukun, rawm], cite: [wafi 176]}
+      qunbul: {wujuh: [sukun, rawm], cite: [wafi 176]}
+      duri_abuamr: {wujuh: [sukun, rawm], cite: [wafi 176]}
+      susi: {wujuh: [sukun, rawm], cite: [wafi 176]}
+      hisham: {wujuh: [sukun, rawm], cite: [wafi 176]}
+      ibn_dhakwan: {wujuh: [sukun, rawm], cite: [wafi 176]}
+      shuba: {wujuh: [sukun, rawm], cite: [wafi 176]}
+      hafs: {wujuh: [sukun, rawm], cite: [wafi 176]}
+      khalaf_an_hamzah: {wujuh: [sukun, rawm], cite: [wafi 176]}
+      khallad: {wujuh: [sukun, rawm], cite: [wafi 176]}
+      abul_harith: {wujuh: [sukun, rawm], cite: [wafi 176]}
+      duri_kisai: {wujuh: [sukun, rawm], cite: [wafi 176]}
+      ibn_wardan: {wujuh: [], cite: []}
+      ibn_jammaz: {wujuh: [], cite: []}
+      ruways: {wujuh: [], cite: []}
+      rawh: {wujuh: [], cite: []}
+      ishaq: {wujuh: [], cite: []}
+      idris: {wujuh: [], cite: []}
+  - case: "stopping on a fatḥah or naṣb (مفتوح أو منصوب)"
+    ruwat:
+      qalun: {wujuh: [sukun], cite: [wafi 176]}
+      warsh: {wujuh: [sukun], cite: [wafi 176]}
+      bazzi: {wujuh: [sukun], cite: [wafi 176]}
+      qunbul: {wujuh: [sukun], cite: [wafi 176]}
+      duri_abuamr: {wujuh: [sukun], cite: [wafi 176]}
+      susi: {wujuh: [sukun], cite: [wafi 176]}
+      hisham: {wujuh: [sukun], cite: [wafi 176]}
+      ibn_dhakwan: {wujuh: [sukun], cite: [wafi 176]}
+      shuba: {wujuh: [sukun], cite: [wafi 176]}
+      hafs: {wujuh: [sukun], cite: [wafi 176]}
+      khalaf_an_hamzah: {wujuh: [sukun], cite: [wafi 176]}
+      khallad: {wujuh: [sukun], cite: [wafi 176]}
+      abul_harith: {wujuh: [sukun], cite: [wafi 176]}
+      duri_kisai: {wujuh: [sukun], cite: [wafi 176]}
+      ibn_wardan: {wujuh: [], cite: []}
+      ibn_jammaz: {wujuh: [], cite: []}
+      ruways: {wujuh: [], cite: []}
+      rawh: {wujuh: [], cite: []}
+      ishaq: {wujuh: [], cite: []}
+      idris: {wujuh: [], cite: []}
+  - case: "hāʾ al-taʾnīth, mīm al-jamʿ and the ʿāriḍ ḥarakah: neither rawm nor ishmām"
+    ruwat:
+      qalun: {wujuh: [sukun], cite: [wafi 177]}
+      warsh: {wujuh: [sukun], cite: [wafi 177]}
+      bazzi: {wujuh: [sukun], cite: [wafi 177]}
+      qunbul: {wujuh: [sukun], cite: [wafi 177]}
+      duri_abuamr: {wujuh: [sukun], cite: [wafi 177]}
+      susi: {wujuh: [sukun], cite: [wafi 177]}
+      hisham: {wujuh: [sukun], cite: [wafi 177]}
+      ibn_dhakwan: {wujuh: [sukun], cite: [wafi 177]}
+      shuba: {wujuh: [sukun], cite: [wafi 177]}
+      hafs: {wujuh: [sukun], cite: [wafi 177]}
+      khalaf_an_hamzah: {wujuh: [sukun], cite: [wafi 177]}
+      khallad: {wujuh: [sukun], cite: [wafi 177]}
+      abul_harith: {wujuh: [sukun], cite: [wafi 177]}
+      duri_kisai: {wujuh: [sukun], cite: [wafi 177]}
+      ibn_wardan: {wujuh: [], cite: []}
+      ibn_jammaz: {wujuh: [], cite: []}
+      ruways: {wujuh: [], cite: []}
+      rawh: {wujuh: [], cite: []}
+      ishaq: {wujuh: [], cite: []}
+      idris: {wujuh: [], cite: []}
+listed: []
+open:
+  - "Wafi 174 calls rawm/ishmām a 'ṭarīq jamīl' for Abū ʿAmr and the Kūfīs (Dūrī Abī ʿAmr, Sūsī, Shuʿbah, Ḥafṣ, Khalaf, Khallād, Abū l-Ḥārith, al-Dūrī) and says most ahl al-adāʾ take it, as istiḥbāb, for the others (Qālūn, Warsh, al-Bazzī, Qunbul, Hishām, Ibn Dhakwān); whether this ranks the wujūh is not settled by the rows (wafi 174)."
+  - "Wafi 176: all fourteen are listed with khulf over sukūn/ishmām/rawm on a ḍamm and over sukūn/rawm on a kasr; the rows do not say which each rāwī prefers."
+  - "Wafi 177 names 'the three places' for the second case without the rows saying which three; the rows gloss them as hāʾ al-taʾnīth, mīm al-jamʿ and the ʿāriḍ ḥarakah."
+  - "The Durrah rows say nothing about rawm and ishmām."
+  - "case stopping on a ḍammah or raf: no row speaks of ibn_wardan, ibn_jammaz, ruways, rawh, ishaq, idris (left empty; wafi 176)"
+  - "case stopping on a kasrah or jarr: no row speaks of ibn_wardan, ibn_jammaz, ruways, rawh, ishaq, idris (left empty; wafi 176)"
+  - "case stopping on a fatḥah or naṣb: no row speaks of ibn_wardan, ibn_jammaz, ruways, rawh, ishaq, idris (left empty; wafi 176)"
+  - "case hāʾ al-taʾnīth, mīm al-jamʿ and the ʿāriḍ ḥarakah: no row speaks of ibn_wardan, ibn_jammaz, ruways, rawh, ishaq, idris (left empty; wafi 177)"

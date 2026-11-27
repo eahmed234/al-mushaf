@@ -1,0 +1,57 @@
+category: madd_arid
+what: madd ʿāriḍ li-l-sukūn and līn before a waqf sukūn
+wujuh:
+- {id: qasr, ar: القصر, en: 'qaṣr, 1 alif (2 ḥarakāt)'}
+- {id: tawassut, ar: التوسط, en: 'tawassuṭ, 2 alifs (4 ḥarakāt)'}
+- {id: ishba, ar: المد المشبع / الطول, en: 'ṭūl / ishbāʿ, 3 alifs (6 ḥarakāt)'}
+cases:
+- case: madd letter before a sukūn arising at waqf
+  ruwat:
+    qalun: {wujuh: &id001 [qasr, tawassut, ishba], cite: &id002 [wafi 79, wafi 80]}
+    warsh: {wujuh: *id001, cite: *id002}
+    bazzi: {wujuh: *id001, cite: *id002}
+    qunbul: {wujuh: *id001, cite: *id002}
+    duri_abuamr: {wujuh: *id001, cite: *id002}
+    susi: {wujuh: *id001, cite: *id002}
+    hisham: {wujuh: *id001, cite: *id002}
+    ibn_dhakwan: {wujuh: *id001, cite: *id002}
+    shuba: {wujuh: *id001, cite: *id002}
+    hafs: {wujuh: *id001, cite: *id002}
+    khalaf_an_hamzah: {wujuh: *id001, cite: *id002}
+    khallad: {wujuh: *id001, cite: *id002}
+    abul_harith: {wujuh: *id001, cite: *id002}
+    duri_kisai: {wujuh: *id001, cite: *id002}
+    ibn_wardan: {wujuh: &id003 [qasr, tawassut, ishba], cite: &id004 [idah 85], via: asl}
+    ibn_jammaz: {wujuh: *id003, cite: *id004, via: asl}
+    ruways: {wujuh: *id003, cite: *id004, via: asl}
+    rawh: {wujuh: *id003, cite: *id004, via: asl}
+    ishaq: {wujuh: *id003, cite: *id004, via: asl}
+    idris: {wujuh: *id003, cite: *id004, via: asl}
+- case: līn before a waqf sukūn, no hamzah after it (قريش, خوف)
+  ruwat:
+    qalun: {wujuh: &id005 [qasr, tawassut, ishba], cite: &id006 [wafi 82]}
+    warsh: {wujuh: *id005, cite: *id006}
+    bazzi: {wujuh: *id005, cite: *id006}
+    qunbul: {wujuh: *id005, cite: *id006}
+    duri_abuamr: {wujuh: *id005, cite: *id006}
+    susi: {wujuh: *id005, cite: *id006}
+    hisham: {wujuh: *id005, cite: *id006}
+    ibn_dhakwan: {wujuh: *id005, cite: *id006}
+    shuba: {wujuh: *id005, cite: *id006}
+    hafs: {wujuh: *id005, cite: *id006}
+    khalaf_an_hamzah: {wujuh: *id005, cite: *id006}
+    khallad: {wujuh: *id005, cite: *id006}
+    abul_harith: {wujuh: *id005, cite: *id006}
+    duri_kisai: {wujuh: *id005, cite: *id006}
+    ibn_wardan: {wujuh: [], cite: []}
+    ibn_jammaz: {wujuh: [], cite: []}
+    ruways: {wujuh: [], cite: []}
+    rawh: {wujuh: [], cite: []}
+    ishaq: {wujuh: [], cite: []}
+    idris: {wujuh: [], cite: []}
+listed: []
+open:
+- idah 85 says only "والمد العارض … كأصله" for the six; table gives each aṣl's wujūh (Nāfiʿ, Abū ʿAmr, Khalaf ʿan Ḥamzah all three here). The aṣl's own wujūh are taken from wafi 79-80; case 2 not stated for the Durrah, left empty.
+- 'wafi 82: the quote for case 2 ("إلا وجه الثلاثة وقفاً") reads unclearly; the row records the three wujūh for all fourteen, which the table uses.'
+- Rawm only with qaṣr (budur 15, from the reviewed profile; not in these rows).
+- 'wafi 79 lists ṭūl then tawassuṭ, wafi 80 adds qaṣr; no preference among them. Lengths: tawassuṭ 4 ḥarakāt (2 alifs), ṭūl 6 (3 alifs); no fractions.'

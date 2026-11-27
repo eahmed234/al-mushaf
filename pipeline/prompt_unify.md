@@ -9,7 +9,7 @@ one row per statement, each with its page and the page's own words (`quote`), pl
 Use only what the rows and the profile rows say. Add nothing from your own knowledge of the
 qirāʾāt. Where the rows don't settle something, say so in `open`, don't guess.
 
-## Output: `pipeline/out/unified/<category>.yaml`
+## Output: `pipeline/unified/<category>.yaml`
 
 ```yaml
 category: silah_mim

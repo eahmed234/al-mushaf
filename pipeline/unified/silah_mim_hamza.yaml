@@ -1,0 +1,125 @@
+category: silah_mim_hamza
+what: Ṣilah of mīm al-jamʿ before a hamzat al-qaṭʿ (عليهم أأنذرتهم).
+wujuh:
+- id: sukun
+  ar: إسكان الميم
+  en: sukūn of the mīm, no ṣilah
+- id: silah
+  ar: صلة الميم بواو
+  en: ṣilah of the mīm with a wāw
+cases:
+- case: before hamzat al-qaṭʿ, in waṣl
+  ruwat:
+    qalun:
+      wujuh:
+      - sukun
+      - silah
+      cite:
+      - wafi 51
+    warsh:
+      wujuh:
+      - silah
+      cite:
+      - wafi 52
+    bazzi:
+      wujuh:
+      - silah
+      cite:
+      - wafi 51
+    qunbul:
+      wujuh:
+      - silah
+      cite:
+      - wafi 51
+    duri_abuamr:
+      wujuh:
+      - sukun
+      cite:
+      - wafi 52
+    susi:
+      wujuh:
+      - sukun
+      cite:
+      - wafi 52
+    hisham:
+      wujuh:
+      - sukun
+      cite:
+      - wafi 52
+    ibn_dhakwan:
+      wujuh:
+      - sukun
+      cite:
+      - wafi 52
+    shuba:
+      wujuh:
+      - sukun
+      cite:
+      - wafi 52
+    hafs:
+      wujuh:
+      - sukun
+      cite:
+      - wafi 52
+    khalaf_an_hamzah:
+      wujuh:
+      - sukun
+      cite:
+      - wafi 52
+    khallad:
+      wujuh:
+      - sukun
+      cite:
+      - wafi 52
+    abul_harith:
+      wujuh:
+      - sukun
+      cite:
+      - wafi 52
+    duri_kisai:
+      wujuh:
+      - sukun
+      cite:
+      - wafi 52
+    ibn_wardan:
+      wujuh:
+      - silah
+      cite:
+      - idah 57
+    ibn_jammaz:
+      wujuh:
+      - silah
+      cite:
+      - idah 57
+    ruways:
+      wujuh:
+      - sukun
+      cite:
+      - idah 58
+      via: asl
+    rawh:
+      wujuh:
+      - sukun
+      cite:
+      - idah 58
+      via: asl
+    ishaq:
+      wujuh:
+      - sukun
+      cite:
+      - idah 58
+      via: asl
+    idris:
+      wujuh:
+      - sukun
+      cite:
+      - idah 58
+      via: asl
+listed: []
+open:
+- 'Qālūn: no silah_mim_hamza row names him as a reader; his sukūn-or-ṣilah choice comes from the reviewed profile rows (cite wafi 51), and wafi 52 only mentions him in passing (''after Ibn Kathīr, Qālūn
+  and Warsh'').'
+- Warsh's ṣilah takes his munfaṣil length (ishbāʿ) (reviewed profile note on wafi 52); the length itself belongs to the madd table.
+- 'Ibn Wardān / Ibn Jammāz: idah 57''s quote says ''before a mutaḥarrik'' and the row applies it to the hamzah; idah 57 is the page cited.'
+- 'Ruways, Rawḥ, Isḥāq, Idrīs: only idah 58 (their aṣl leaves the ṣilah); sukūn is the aṣl''s reading, from wafi 52 (reviewed profile cite idah 40-43).'
+- 'The ten others (Abū ʿAmr''s two, Ibn ʿĀmir''s two, Shuʿbah, Ḥafṣ, Khalaf, Khallād, Abū l-Ḥārith, al-Dūrī): sukūn in waṣl, from wafi 52.'

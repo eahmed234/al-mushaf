@@ -1,0 +1,75 @@
+category: madd_hamz_mughayyar
+what: the madd letter before a hamzah that is changed (tashīl at waqf in al-Wāfī, or Abū Jaʿfar's changed hamzah in al-Īḍāḥ)
+wujuh:
+- {id: qasr, ar: القصر, en: 'qaṣr, 1 alif (2 ḥarakāt)'}
+- {id: tawassut, ar: التوسط, en: 'tawassuṭ, 2 alifs (4 ḥarakāt)'}
+- {id: ishba, ar: المد المشبع / الطول, en: 'ṭūl / ishbāʿ, 3 alifs (6 ḥarakāt)'}
+cases:
+- case: alif before a hamzah made tashīl at waqf (دعاء, نداء, غثاء)
+  ruwat:
+    qalun: {wujuh: [], cite: []}
+    warsh: {wujuh: [], cite: []}
+    bazzi: {wujuh: [], cite: []}
+    qunbul: {wujuh: [], cite: []}
+    duri_abuamr: {wujuh: [], cite: []}
+    susi: {wujuh: [], cite: []}
+    hisham: {wujuh: [], cite: []}
+    ibn_dhakwan: {wujuh: [], cite: []}
+    shuba: {wujuh: [], cite: []}
+    hafs: {wujuh: [], cite: []}
+    khalaf_an_hamzah: {wujuh: &id001 [ishba, qasr], cite: &id002 [wafi 114]}
+    khallad: {wujuh: *id001, cite: *id002}
+    abul_harith: {wujuh: [], cite: []}
+    duri_kisai: {wujuh: [], cite: []}
+    ibn_wardan: {wujuh: [], cite: []}
+    ibn_jammaz: {wujuh: [], cite: []}
+    ruways: {wujuh: [], cite: []}
+    rawh: {wujuh: [], cite: []}
+    ishaq: {wujuh: [], cite: []}
+    idris: {wujuh: [], cite: []}
+- case: madd letter before a changed hamzah in words Abū Jaʿfar changes (إسرائيل, كأين, التى)
+  ruwat:
+    qalun: {wujuh: [], cite: []}
+    warsh: {wujuh: [], cite: []}
+    bazzi: {wujuh: [], cite: []}
+    qunbul: {wujuh: [], cite: []}
+    duri_abuamr: {wujuh: [], cite: []}
+    susi: {wujuh: [], cite: []}
+    hisham: {wujuh: [], cite: []}
+    ibn_dhakwan: {wujuh: [], cite: []}
+    shuba: {wujuh: [], cite: []}
+    hafs: {wujuh: [], cite: []}
+    khalaf_an_hamzah: {wujuh: [], cite: []}
+    khallad: {wujuh: [], cite: []}
+    abul_harith: {wujuh: [], cite: []}
+    duri_kisai: {wujuh: [], cite: []}
+    ibn_wardan: {wujuh: &id003 [tawassut, qasr], cite: &id004 [idah 112, idah 113]}
+    ibn_jammaz: {wujuh: *id003, cite: *id004}
+    ruways: {wujuh: [], cite: []}
+    rawh: {wujuh: [], cite: []}
+    ishaq: {wujuh: [], cite: []}
+    idris: {wujuh: [], cite: []}
+listed:
+- words:
+  - إسرائيل
+  case: madd letter before a changed hamzah in words Abū Jaʿfar changes (إسرائيل, كأين, التى)
+  ruwat: {}
+  cite:
+  - idah 112
+- words:
+  - كأين
+  case: madd letter before a changed hamzah in words Abū Jaʿfar changes (إسرائيل, كأين, التى)
+  ruwat: {}
+  cite:
+  - idah 112
+- words:
+  - التى
+  case: madd letter before a changed hamzah in words Abū Jaʿfar changes (إسرائيل, كأين, التى)
+  ruwat: {}
+  cite:
+  - idah 113
+open:
+- Case 1 is stated for Khalaf ʿan Ḥamzah and Khallād only (wafi 114, "all waqf", khulf between ṭūl and qaṣr); the other twelve of the Shāṭibiyyah and all six of the Durrah have no row here.
+- Case 2 is stated for Ibn Wardān and Ibn Jammāz only (khulf between tawassuṭ and qaṣr, idah 112-113); Ruways, Rawḥ, Isḥāq, Idrīs have no row, and the rest of the Shāṭibiyyah none.
+- The listed words of case 2 are as the rows write them (التى at idah 113); the rows do not say which words the rule is limited to beyond these three.
+- wafi 114 says "المد المشبع بست حركات" and "القصر بمقدار حركتين"; no tawassuṭ or fractions.

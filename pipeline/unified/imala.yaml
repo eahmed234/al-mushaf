@@ -1,0 +1,517 @@
+category: imala
+what: "imālah and taqlīl: one table, each part of the old imala_* tables a case"
+wujuh:
+  - {id: fath, ar: "فتح", en: "fatḥ"}
+  - {id: taqlil, ar: "تقليل", en: "taqlīl"}
+  - {id: imala, ar: "إمالة", en: "imālah"}
+cases:
+  - case: "imala_ra: the alif before a final majrūr rāʾ (الأبصار، الدار)"
+    note: "Ishaq and Idris: fatḥ from the reviewed profile (idah 142), see open"
+    ruwat:
+      qalun: {wujuh: [fath], cite: [wafi 151, wafi 152, wafi 153]}
+      warsh: {wujuh: [taqlil], cite: [wafi 153]}
+      bazzi: {wujuh: [fath], cite: [wafi 151, wafi 152, wafi 153]}
+      qunbul: {wujuh: [fath], cite: [wafi 151, wafi 152, wafi 153]}
+      duri_abuamr: {wujuh: [imala], cite: [wafi 151, wafi 152]}
+      susi: {wujuh: [imala], cite: [wafi 151, wafi 152]}
+      hisham: {wujuh: [fath], cite: [wafi 151, wafi 152, wafi 153]}
+      ibn_dhakwan: {wujuh: [fath], cite: [wafi 151, wafi 152, wafi 153]}
+      shuba: {wujuh: [fath], cite: [wafi 151, wafi 152, wafi 153]}
+      hafs: {wujuh: [fath], cite: [wafi 151, wafi 152, wafi 153]}
+      khalaf_an_hamzah: {wujuh: [fath], cite: [wafi 151, wafi 152, wafi 153]}
+      khallad: {wujuh: [fath], cite: [wafi 151, wafi 152, wafi 153]}
+      abul_harith: {wujuh: [fath], cite: [wafi 151, wafi 152, wafi 153]}
+      duri_kisai: {wujuh: [imala], cite: [wafi 151, wafi 152]}
+      ibn_wardan: {wujuh: [fath], cite: [idah 144]}
+      ibn_jammaz: {wujuh: [fath], cite: [idah 144]}
+      ruways: {wujuh: [fath], cite: [idah 143, idah 144]}
+      rawh: {wujuh: [fath], cite: [idah 143, idah 144]}
+      ishaq: {wujuh: [fath], cite: [idah 142]}
+      idris: {wujuh: [fath], cite: [idah 142]}
+  - case: "imala_kafirin: كافرين with yāʾ (nasb/jarr, with or without the article)"
+    ruwat:
+      qalun: {wujuh: [fath], cite: [wafi 152]}
+      warsh: {wujuh: [taqlil], cite: [wafi 153]}
+      bazzi: {wujuh: [fath], cite: [wafi 152]}
+      qunbul: {wujuh: [fath], cite: [wafi 152]}
+      duri_abuamr: {wujuh: [imala], cite: [wafi 152]}
+      susi: {wujuh: [imala], cite: [wafi 152]}
+      hisham: {wujuh: [fath], cite: [wafi 152]}
+      ibn_dhakwan: {wujuh: [fath], cite: [wafi 152]}
+      shuba: {wujuh: [fath], cite: [wafi 152]}
+      hafs: {wujuh: [fath], cite: [wafi 152]}
+      khalaf_an_hamzah: {wujuh: [fath], cite: [wafi 152]}
+      khallad: {wujuh: [fath], cite: [wafi 152]}
+      abul_harith: {wujuh: [fath], cite: [wafi 152]}
+      duri_kisai: {wujuh: [imala], cite: [wafi 152]}
+      ibn_wardan: {wujuh: [fath], cite: [idah 144]}
+      ibn_jammaz: {wujuh: [fath], cite: [idah 144]}
+      ruways: {wujuh: [imala], cite: [idah 143]}
+      rawh: {wujuh: [fath], cite: [idah 143, idah 144]}
+      ishaq: {wujuh: [fath], cite: [idah 40-43], via: asl}
+      idris: {wujuh: [fath], cite: [idah 40-43], via: asl}
+  - case: "imala_nas: الناس in the jarr"
+    ruwat:
+      qalun: {wujuh: [fath], cite: [wafi 154]}
+      warsh: {wujuh: [fath], cite: [wafi 154]}
+      bazzi: {wujuh: [fath], cite: [wafi 154]}
+      qunbul: {wujuh: [fath], cite: [wafi 154]}
+      duri_abuamr: {wujuh: [imala], cite: [wafi 154]}
+      susi: {wujuh: [fath], cite: [wafi 154]}
+      hisham: {wujuh: [fath], cite: [wafi 154]}
+      ibn_dhakwan: {wujuh: [fath], cite: [wafi 154]}
+      shuba: {wujuh: [fath], cite: [wafi 154]}
+      hafs: {wujuh: [fath], cite: [wafi 154]}
+      khalaf_an_hamzah: {wujuh: [fath], cite: [wafi 154]}
+      khallad: {wujuh: [fath], cite: [wafi 154]}
+      abul_harith: {wujuh: [fath], cite: [wafi 154]}
+      duri_kisai: {wujuh: [fath], cite: [wafi 154]}
+      ibn_wardan: {wujuh: [fath], cite: [idah 144]}
+      ibn_jammaz: {wujuh: [fath], cite: [idah 144]}
+      ruways: {wujuh: [fath], cite: [idah 143, idah 144]}
+      rawh: {wujuh: [fath], cite: [idah 143, idah 144]}
+      ishaq: {wujuh: [fath], cite: [idah 40-43], via: asl}
+      idris: {wujuh: [fath], cite: [idah 40-43], via: asl}
+  - case: "imala_ya: the final alif from yāʾ or written with yāʾ (ذوات الياء)"
+    ruwat:
+      qalun: {wujuh: [fath], cite: [wafi 140]}
+      warsh: {wujuh: [fath, taqlil], cite: [wafi 148]}
+      bazzi: {wujuh: [fath], cite: [wafi 140]}
+      qunbul: {wujuh: [fath], cite: [wafi 140]}
+      duri_abuamr: {wujuh: [fath], cite: [wafi 149]}
+      susi: {wujuh: [fath], cite: [wafi 149]}
+      hisham: {wujuh: [fath], cite: [wafi 140]}
+      ibn_dhakwan: {wujuh: [fath], cite: [wafi 140]}
+      shuba: {wujuh: [fath], cite: [wafi 140]}
+      hafs: {wujuh: [fath], cite: [wafi 140]}
+      khalaf_an_hamzah: {wujuh: [imala], cite: [wafi 140]}
+      khallad: {wujuh: [imala], cite: [wafi 140]}
+      abul_harith: {wujuh: [imala], cite: [wafi 140]}
+      duri_kisai: {wujuh: [imala], cite: [wafi 140]}
+      ibn_wardan: {wujuh: [fath], cite: [idah 144]}
+      ibn_jammaz: {wujuh: [fath], cite: [idah 144]}
+      ruways: {wujuh: [fath], cite: [idah 143]}
+      rawh: {wujuh: [fath], cite: [idah 143]}
+      ishaq: {wujuh: [imala], cite: [idah 143], via: asl}
+      idris: {wujuh: [imala], cite: [idah 143], via: asl}
+  - case: "imala_ya_ra: the final alif after a rāʾ (ذوات الراء)"
+    ruwat:
+      qalun: {wujuh: [fath], cite: [wafi 147]}
+      warsh: {wujuh: [taqlil], cite: [wafi 148]}
+      bazzi: {wujuh: [fath], cite: [wafi 147]}
+      qunbul: {wujuh: [fath], cite: [wafi 147]}
+      duri_abuamr: {wujuh: [imala], cite: [wafi 147]}
+      susi: {wujuh: [imala], cite: [wafi 147]}
+      hisham: {wujuh: [fath], cite: [wafi 147]}
+      ibn_dhakwan: {wujuh: [fath], cite: [wafi 147]}
+      shuba: {wujuh: [fath], cite: [wafi 147]}
+      hafs: {wujuh: [fath], cite: [wafi 147]}
+      khalaf_an_hamzah: {wujuh: [imala], cite: [wafi 147]}
+      khallad: {wujuh: [imala], cite: [wafi 147]}
+      abul_harith: {wujuh: [imala], cite: [wafi 147]}
+      duri_kisai: {wujuh: [imala], cite: [wafi 147]}
+      ibn_wardan: {wujuh: [fath], cite: [idah 144]}
+      ibn_jammaz: {wujuh: [fath], cite: [idah 144]}
+      ruways: {wujuh: [fath], cite: [idah 143, idah 144]}
+      rawh: {wujuh: [fath], cite: [idah 143, idah 144]}
+      ishaq: {wujuh: [imala], cite: [idah 40-43], via: asl}
+      idris: {wujuh: [imala], cite: [idah 40-43], via: asl}
+  - case: "imala_jaa_shaa: جاء وشاء"
+    ruwat:
+      qalun: {wujuh: [fath], cite: [wafi 150, wafi 151]}
+      warsh: {wujuh: [fath], cite: [wafi 150, wafi 151]}
+      bazzi: {wujuh: [fath], cite: [wafi 150, wafi 151]}
+      qunbul: {wujuh: [fath], cite: [wafi 150, wafi 151]}
+      duri_abuamr: {wujuh: [fath], cite: [wafi 150, wafi 151]}
+      susi: {wujuh: [fath], cite: [wafi 150, wafi 151]}
+      hisham: {wujuh: [fath], cite: [wafi 150, wafi 151]}
+      ibn_dhakwan: {wujuh: [imala], cite: [wafi 150, wafi 151]}
+      shuba: {wujuh: [fath], cite: [wafi 150, wafi 151]}
+      hafs: {wujuh: [fath], cite: [wafi 150, wafi 151]}
+      khalaf_an_hamzah: {wujuh: [imala], cite: [wafi 150, wafi 151]}
+      khallad: {wujuh: [imala], cite: [wafi 150, wafi 151]}
+      abul_harith: {wujuh: [fath], cite: [wafi 150, wafi 151]}
+      duri_kisai: {wujuh: [fath], cite: [wafi 150, wafi 151]}
+      ibn_wardan: {wujuh: [fath], cite: [idah 144]}
+      ibn_jammaz: {wujuh: [fath], cite: [idah 144]}
+      ruways: {wujuh: [fath], cite: [idah 143, idah 144]}
+      rawh: {wujuh: [fath], cite: [idah 143, idah 144]}
+      ishaq: {wujuh: [imala], cite: [idah 141]}
+      idris: {wujuh: [imala], cite: [idah 141]}
+  - case: "imala_zad: زاد"
+    note: "Ibn Dhakwān: imālah only at the first place (2:10); at the others khulf (listed)"
+    ruwat:
+      qalun: {wujuh: [fath], cite: [wafi 150, wafi 151]}
+      warsh: {wujuh: [fath], cite: [wafi 150, wafi 151]}
+      bazzi: {wujuh: [fath], cite: [wafi 150, wafi 151]}
+      qunbul: {wujuh: [fath], cite: [wafi 150, wafi 151]}
+      duri_abuamr: {wujuh: [fath], cite: [wafi 150, wafi 151]}
+      susi: {wujuh: [fath], cite: [wafi 150, wafi 151]}
+      hisham: {wujuh: [fath], cite: [wafi 150, wafi 151]}
+      ibn_dhakwan: {wujuh: [fath, imala], cite: [wafi 151]}
+      shuba: {wujuh: [fath], cite: [wafi 150, wafi 151]}
+      hafs: {wujuh: [fath], cite: [wafi 150, wafi 151]}
+      khalaf_an_hamzah: {wujuh: [imala], cite: [wafi 150]}
+      khallad: {wujuh: [imala], cite: [wafi 150]}
+      abul_harith: {wujuh: [fath], cite: [wafi 150, wafi 151]}
+      duri_kisai: {wujuh: [fath], cite: [wafi 150, wafi 151]}
+      ibn_wardan: {wujuh: [fath], cite: [idah 144]}
+      ibn_jammaz: {wujuh: [fath], cite: [idah 144]}
+      ruways: {wujuh: [fath], cite: [idah 143, idah 144]}
+      rawh: {wujuh: [fath], cite: [idah 143, idah 144]}
+      ishaq: {wujuh: [fath], cite: [idah 140]}
+      idris: {wujuh: [fath], cite: [idah 140]}
+  - case: "imala_fiil: the past thulāthī verb with alif as ʿayn (خاب خاف طاب ضاقت حاق)"
+    ruwat:
+      qalun: {wujuh: [fath], cite: [wafi 150]}
+      warsh: {wujuh: [fath], cite: [wafi 150]}
+      bazzi: {wujuh: [fath], cite: [wafi 150]}
+      qunbul: {wujuh: [fath], cite: [wafi 150]}
+      duri_abuamr: {wujuh: [fath], cite: [wafi 150]}
+      susi: {wujuh: [fath], cite: [wafi 150]}
+      hisham: {wujuh: [fath], cite: [wafi 150]}
+      ibn_dhakwan: {wujuh: [fath], cite: [wafi 150]}
+      shuba: {wujuh: [fath], cite: [wafi 150]}
+      hafs: {wujuh: [fath], cite: [wafi 150]}
+      khalaf_an_hamzah: {wujuh: [imala], cite: [wafi 150, wafi 151]}
+      khallad: {wujuh: [imala], cite: [wafi 150, wafi 151]}
+      abul_harith: {wujuh: [fath], cite: [wafi 150]}
+      duri_kisai: {wujuh: [fath], cite: [wafi 150]}
+      ibn_wardan: {wujuh: [fath], cite: [idah 144]}
+      ibn_jammaz: {wujuh: [fath], cite: [idah 144]}
+      ruways: {wujuh: [fath], cite: [idah 143, idah 144]}
+      rawh: {wujuh: [fath], cite: [idah 143, idah 144]}
+      ishaq: {wujuh: [fath], cite: [idah 140]}
+      idris: {wujuh: [fath], cite: [idah 140]}
+  - case: "imala_duri_kisai: words al-Dūrī ʿan al-Kisāʾī alone imāles"
+    ruwat:
+      qalun: {wujuh: [fath], cite: [wafi 153]}
+      warsh: {wujuh: [fath], cite: [wafi 153]}
+      bazzi: {wujuh: [fath], cite: [wafi 153]}
+      qunbul: {wujuh: [fath], cite: [wafi 153]}
+      duri_abuamr: {wujuh: [fath], cite: [wafi 153]}
+      susi: {wujuh: [fath], cite: [wafi 153]}
+      hisham: {wujuh: [fath], cite: [wafi 153]}
+      ibn_dhakwan: {wujuh: [fath], cite: [wafi 153]}
+      shuba: {wujuh: [fath], cite: [wafi 153]}
+      hafs: {wujuh: [fath], cite: [wafi 153]}
+      khalaf_an_hamzah: {wujuh: [fath], cite: [wafi 153]}
+      khallad: {wujuh: [fath], cite: [wafi 153]}
+      abul_harith: {wujuh: [fath], cite: [wafi 153]}
+      duri_kisai: {wujuh: [imala], cite: [wafi 145, wafi 152, wafi 153, wafi 154]}
+      ibn_wardan: {wujuh: [fath], cite: [idah 141, idah 142, idah 143, idah 144]}
+      ibn_jammaz: {wujuh: [fath], cite: [idah 141, idah 142, idah 143, idah 144]}
+      ruways: {wujuh: [fath], cite: [idah 141, idah 142, idah 143, idah 144]}
+      rawh: {wujuh: [fath], cite: [idah 141, idah 142, idah 143, idah 144]}
+      ishaq: {wujuh: [fath], cite: [idah 141, idah 142, idah 143, idah 144]}
+      idris: {wujuh: [fath], cite: [idah 141, idah 142, idah 143, idah 144]}
+  - case: "imala_alif_tanith: the alif of taʾnīth on fuʿlā/faʿlā/fiʿlā, not after a rāʾ"
+    ruwat:
+      qalun: {wujuh: [], cite: []}
+      warsh: {wujuh: [], cite: []}
+      bazzi: {wujuh: [], cite: []}
+      qunbul: {wujuh: [], cite: []}
+      duri_abuamr: {wujuh: [taqlil], cite: [wafi 149]}
+      susi: {wujuh: [taqlil], cite: [wafi 149]}
+      hisham: {wujuh: [], cite: []}
+      ibn_dhakwan: {wujuh: [], cite: []}
+      shuba: {wujuh: [], cite: []}
+      hafs: {wujuh: [], cite: []}
+      khalaf_an_hamzah: {wujuh: [imala], cite: [wafi 141]}
+      khallad: {wujuh: [imala], cite: [wafi 141]}
+      abul_harith: {wujuh: [imala], cite: [wafi 141]}
+      duri_kisai: {wujuh: [imala], cite: [wafi 141]}
+      ibn_wardan: {wujuh: [fath], cite: [idah 144]}
+      ibn_jammaz: {wujuh: [fath], cite: [idah 144]}
+      ruways: {wujuh: [fath], cite: [idah 143]}
+      rawh: {wujuh: [fath], cite: [idah 143]}
+      ishaq: {wujuh: [], cite: []}
+      idris: {wujuh: [], cite: []}
+  - case: "imala_ras_ay: the verse-end alifs of the eleven sūrahs (طه النجم الشمس الأعلى الليل الضحى العلق النازعات عبس القيامة المعارج), yāʾ and wāw"
+    note: "Abū ʿAmr: taqlīl when not after a rāʾ (after a rāʾ: imālah, imala_ya_ra)"
+    ruwat:
+      qalun: {wujuh: [], cite: []}
+      warsh: {wujuh: [taqlil], cite: [wafi 148]}
+      bazzi: {wujuh: [], cite: []}
+      qunbul: {wujuh: [], cite: []}
+      duri_abuamr: {wujuh: [taqlil], cite: [wafi 149]}
+      susi: {wujuh: [taqlil], cite: [wafi 149]}
+      hisham: {wujuh: [], cite: []}
+      ibn_dhakwan: {wujuh: [], cite: []}
+      shuba: {wujuh: [], cite: []}
+      hafs: {wujuh: [], cite: []}
+      khalaf_an_hamzah: {wujuh: [imala], cite: [wafi 146]}
+      khallad: {wujuh: [imala], cite: [wafi 146]}
+      abul_harith: {wujuh: [imala], cite: [wafi 146]}
+      duri_kisai: {wujuh: [imala], cite: [wafi 146]}
+      ibn_wardan: {wujuh: [fath], cite: [idah 144]}
+      ibn_jammaz: {wujuh: [fath], cite: [idah 144]}
+      ruways: {wujuh: [fath], cite: [idah 143]}
+      rawh: {wujuh: [fath], cite: [idah 143]}
+      ishaq: {wujuh: [], cite: []}
+      idris: {wujuh: [], cite: []}
+  - case: "named words with no general rule (the rows give per-rāwī readings only)"
+    ruwat:
+      qalun: {wujuh: [], cite: []}
+      warsh: {wujuh: [], cite: []}
+      bazzi: {wujuh: [], cite: []}
+      qunbul: {wujuh: [], cite: []}
+      duri_abuamr: {wujuh: [], cite: []}
+      susi: {wujuh: [], cite: []}
+      hisham: {wujuh: [], cite: []}
+      ibn_dhakwan: {wujuh: [], cite: []}
+      shuba: {wujuh: [], cite: []}
+      hafs: {wujuh: [], cite: []}
+      khalaf_an_hamzah: {wujuh: [], cite: []}
+      khallad: {wujuh: [], cite: []}
+      abul_harith: {wujuh: [], cite: []}
+      duri_kisai: {wujuh: [], cite: []}
+      ibn_wardan: {wujuh: [], cite: []}
+      ibn_jammaz: {wujuh: [], cite: []}
+      ruways: {wujuh: [], cite: []}
+      rawh: {wujuh: [], cite: []}
+      ishaq: {wujuh: [], cite: []}
+      idris: {wujuh: [], cite: []}
+listed:
+  - words: ["القهار", "البوار"]
+    case: "imala_ra: the alif before a final majrūr rāʾ (الأبصار، الدار)"
+    ruwat: {khalaf_an_hamzah: [taqlil], khallad: [taqlil], ishaq: [fath], idris: [fath]}
+    cite: [wafi 153, idah 140]
+  - words: ["الأبرار", "القرار", "الأشرار"]
+    case: "imala_ra: the alif before a final majrūr rāʾ (الأبصار، الدار)"
+    ruwat: {warsh: [taqlil], duri_abuamr: [imala], susi: [imala], abul_harith: [imala], duri_kisai: [imala], khalaf_an_hamzah: [taqlil], khallad: [taqlil], ishaq: [imala], idris: [imala]}
+    note: "the alif between two rāʾs, the second final and majrūr; al-Sūsī imāles also with idghām (الأبرار ربنا, wafi 65)"
+    cite: [wafi 153, wafi 65, idah 141]
+  - words: ["جبارين", "والجار"]
+    case: "imala_ra: the alif before a final majrūr rāʾ (الأبصار، الدار)"
+    ruwat: {warsh: [fath, taqlil]}
+    cite: [wafi 153]
+  - words: ["هار"]
+    case: "imala_ra: the alif before a final majrūr rāʾ (الأبصار، الدار)"
+    ruwat: {qalun: [imala], warsh: [taqlil], duri_abuamr: [imala], susi: [imala], shuba: [imala], ibn_dhakwan: [imala, fath], abul_harith: [imala], duri_kisai: [imala]}
+    note: "al-Tawbah"
+    cite: [wafi 152, wafi 153]
+  - words: ["حمارك", "الحمار", "المحراب"]
+    case: "imala_ra: the alif before a final majrūr rāʾ (الأبصار، الدار)"
+    ruwat: {ibn_dhakwan: [imala, fath]}
+    cite: [wafi 154]
+  - words: ["إكراههن", "الإكرام", "عمران", "امرأت عمران"]
+    case: "imala_ra: the alif before a final majrūr rāʾ (الأبصار، الدار)"
+    ruwat: {ibn_dhakwan: [imala, fath]}
+    cite: [wafi 155]
+  - words: ["المحراب"]
+    case: "imala_ra: the alif before a final majrūr rāʾ (الأبصار، الدار)"
+    ruwat: {ibn_dhakwan: [imala]}
+    note: "al-Miḥrāb in the jarr: imālah only"
+    cite: [wafi 155]
+  - words: ["ولا طائر", "مضار", "بضار", "من أنصارى", "وسار", "النهار"]
+    case: "imala_ra: the alif before a final majrūr rāʾ (الأبصار، الدار)"
+    ruwat: {duri_kisai: [fath], duri_abuamr: [fath], susi: [fath]}
+    note: "a separator, an ʿāriḍ kasrah or a fatḥah rāʾ: no imālah"
+    cite: [wafi 152]
+  - words: ["كافرين"]
+    case: "imala_kafirin: كافرين with yāʾ (nasb/jarr, with or without the article)"
+    ruwat: {ruways: [imala], rawh: [imala]}
+    note: "al-Naml 27:43"
+    cite: [idah 143]
+  - words: ["أعمى"]
+    case: "imala_ya: the final alif from yāʾ or written with yāʾ (ذوات الياء)"
+    ruwat: {duri_abuamr: [imala], susi: [imala], shuba: [imala], khalaf_an_hamzah: [imala], khallad: [imala], abul_harith: [imala], duri_kisai: [imala], ruways: [imala], rawh: [imala]}
+    note: "the first in al-Isrāʾ; Ruways/Rawh imālah kubrā"
+    cite: [wafi 147, idah 143]
+  - words: ["رمى", "أعمى", "سوى", "سدى"]
+    case: "imala_ya: the final alif from yāʾ or written with yāʾ (ذوات الياء)"
+    ruwat: {shuba: [imala], khalaf_an_hamzah: [imala], khallad: [imala], abul_harith: [imala], duri_kisai: [imala]}
+    note: "the quote names رمى in al-Anfāl"
+    cite: [wafi 146]
+  - words: ["أنى", "متى", "عسى", "بلى"]
+    case: "imala_ya: the final alif from yāʾ or written with yāʾ (ذوات الياء)"
+    ruwat: {khalaf_an_hamzah: [imala], khallad: [imala], abul_harith: [imala], duri_kisai: [imala]}
+    cite: [wafi 142]
+  - words: ["لدى الحناجر", "ولد الباب", "زكى", "حتى", "إلى", "على"]
+    case: "imala_ya: the final alif from yāʾ or written with yāʾ (ذوات الياء)"
+    ruwat: {khalaf_an_hamzah: [fath], khallad: [fath], abul_harith: [fath], duri_kisai: [fath]}
+    note: "not imāled"
+    cite: [wafi 143]
+  - words: ["تقاة", "هداني", "ضحاها", "الضحى", "الربا", "القوى", "مثواكم", "مثواهم", "مثواه"]
+    case: "imala_ya: the final alif from yāʾ or written with yāʾ (ذوات الياء)"
+    ruwat: {khalaf_an_hamzah: [imala], khallad: [imala], abul_harith: [imala], duri_kisai: [imala]}
+    cite: [wafi 145]
+  - words: ["أحيا"]
+    case: "imala_ya: the final alif from yāʾ or written with yāʾ (ذوات الياء)"
+    ruwat: {khalaf_an_hamzah: [imala], khallad: [imala], abul_harith: [imala], duri_kisai: [imala]}
+    note: "when joined with wāw; with fāʾ, thumma or bare: al-Kisāʾī only"
+    cite: [wafi 144]
+  - words: ["أحيا"]
+    case: "imala_ya: the final alif from yāʾ or written with yāʾ (ذوات الياء)"
+    ruwat: {abul_harith: [imala], duri_kisai: [imala]}
+    note: "with fāʾ, thumma or bare"
+    cite: [wafi 144]
+  - words: ["رؤياى", "الرؤيا", "مرضاة", "خطايا", "محياهم", "تقاته", "هدان", "أنسانيه", "عصاني", "أوصاني", "أتاني", "آتاني", "تلاها", "طحاها", "سجى", "دحاها"]
+    case: "imala_ya: the final alif from yāʾ or written with yāʾ (ذوات الياء)"
+    ruwat: {abul_harith: [imala], duri_kisai: [imala]}
+    note: "al-Kisāʾī alone"
+    cite: [wafi 144, wafi 145]
+  - words: ["تراءى"]
+    case: "imala_ya: the final alif from yāʾ or written with yāʾ (ذوات الياء)"
+    ruwat: {khalaf_an_hamzah: [imala], khallad: [imala], abul_harith: [imala], duri_kisai: [imala]}
+    note: "Ḥamzah alone also imāles the rāʾ (al-Shuʿarāʾ); not تراءت الفئتان"
+    cite: [wafi 146, wafi 147]
+  - words: ["ونأى"]
+    case: "imala_ya: the final alif from yāʾ or written with yāʾ (ذوات الياء)"
+    ruwat: {khalaf_an_hamzah: [imala], khallad: [imala], abul_harith: [imala], duri_kisai: [imala], shuba: [imala]}
+    note: "hamzah and alif; the nūn also for Khalaf and al-Kisāʾī; Khallād not the nūn; Shuʿbah only in al-Isrāʾ"
+    cite: [wafi 147]
+  - words: ["إناه"]
+    case: "imala_ya: the final alif from yāʾ or written with yāʾ (ذوات الياء)"
+    ruwat: {hisham: [imala], khalaf_an_hamzah: [imala], khallad: [imala], abul_harith: [imala], duri_kisai: [imala]}
+    note: "al-Aḥzāb, the alif with the nūn"
+    cite: [wafi 147]
+  - words: ["كلاهما"]
+    case: "imala_ya: the final alif from yāʾ or written with yāʾ (ذوات الياء)"
+    ruwat: {khalaf_an_hamzah: [imala], khallad: [imala], abul_harith: [imala], duri_kisai: [imala]}
+    note: "al-Isrāʾ"
+    cite: [wafi 148]
+  - words: ["ياويلتى", "أنى", "يا حسرتى", "يا أسفى"]
+    case: "imala_ya: the final alif from yāʾ or written with yāʾ (ذوات الياء)"
+    ruwat: {duri_abuamr: [taqlil], khalaf_an_hamzah: [imala], khallad: [imala], abul_harith: [imala], duri_kisai: [imala], warsh: [fath, taqlil]}
+    cite: [wafi 149, wafi 150]
+  - words: ["مرضاة", "الربا", "كلاهما", "مشكاة"]
+    case: "imala_ya: the final alif from yāʾ or written with yāʾ (ذوات الياء)"
+    ruwat: {warsh: [fath]}
+    note: "no taqlīl"
+    cite: [wafi 148]
+  - words: ["مجراها"]
+    case: "imala_ya_ra: the final alif after a rāʾ (ذوات الراء)"
+    ruwat: {hafs: [imala]}
+    cite: [wafi 147]
+  - words: ["ولو أراكهم"]
+    case: "imala_ya_ra: the final alif after a rāʾ (ذوات الراء)"
+    ruwat: {warsh: [fath, taqlil]}
+    note: "al-Anfāl"
+    cite: [wafi 148]
+  - words: ["ذكراها"]
+    case: "imala_ya_ra: the final alif after a rāʾ (ذوات الراء)"
+    ruwat: {warsh: [taqlil]}
+    note: "al-Nāziʿāt"
+    cite: [wafi 149]
+  - words: ["نرى الله", "فسيرى الله", "الكبرى اذهب"]
+    case: "imala_ya_ra: the final alif after a rāʾ (ذوات الراء)"
+    ruwat: {susi: [fath, imala]}
+    note: "waṣl, the alif dropped"
+    cite: [wafi 156]
+  - words: ["ترى المؤمنين", "وترى الملائكة"]
+    case: "imala_ya_ra: the final alif after a rāʾ (ذوات الراء)"
+    ruwat: {susi: [fath, imala]}
+    note: "waṣl"
+    cite: [wafi 156]
+  - words: ["تترا"]
+    case: "imala_ya_ra: the final alif after a rāʾ (ذوات الراء)"
+    ruwat: {khalaf_an_hamzah: [imala], khallad: [imala], abul_harith: [imala], duri_kisai: [imala], warsh: [taqlil]}
+    cite: [wafi 157]
+  - words: ["زاد"]
+    case: "imala_zad: زاد"
+    ruwat: {ibn_dhakwan: [imala]}
+    note: "the first place, al-Baqarah 2:10"
+    cite: [wafi 151]
+  - words: ["زاغت"]
+    case: "imala_fiil: the past thulāthī verb with alif as ʿayn (خاب خاف طاب ضاقت حاق)"
+    ruwat: {khalaf_an_hamzah: [fath], khallad: [fath]}
+    cite: [wafi 151]
+  - words: ["ران"]
+    case: "imala_fiil: the past thulāthī verb with alif as ʿayn (خاب خاف طاب ضاقت حاق)"
+    ruwat: {shuba: [imala], khalaf_an_hamzah: [imala], khallad: [imala], abul_harith: [imala], duri_kisai: [imala], ishaq: [imala], idris: [imala]}
+    note: "al-Muṭaffifīn"
+    cite: [wafi 151, idah 141]
+  - words: ["رؤياك", "مثواى", "محياى", "مشكاة", "هداى"]
+    case: "imala_duri_kisai: words al-Dūrī ʿan al-Kisāʾī alone imāles"
+    ruwat: {duri_kisai: [imala]}
+    cite: [wafi 145]
+  - words: ["جبارين", "والجار"]
+    case: "imala_duri_kisai: words al-Dūrī ʿan al-Kisāʾī alone imāles"
+    ruwat: {duri_kisai: [imala]}
+    note: "جبارين in al-Māʾidah and al-Shuʿarāʾ; والجار in al-Nisāʾ (two places)"
+    cite: [wafi 152]
+  - words: ["أنصارى"]
+    case: "imala_duri_kisai: words al-Dūrī ʿan al-Kisāʾī alone imāles"
+    ruwat: {duri_kisai: [imala]}
+    cite: [wafi 153]
+  - words: ["سارعوا", "نسارع", "البارى", "بارئكم", "آذانهم", "طغيانهم", "يسارعون", "آذاننا", "الجوار"]
+    case: "imala_duri_kisai: words al-Dūrī ʿan al-Kisāʾī alone imāles"
+    ruwat: {duri_kisai: [imala]}
+    cite: [wafi 154]
+  - words: ["يوارى", "أوارى"]
+    case: "imala_duri_kisai: words al-Dūrī ʿan al-Kisāʾī alone imāles"
+    ruwat: {duri_kisai: [fath]}
+    note: "al-Māʾidah; fatḥ by the ṭarīq"
+    cite: [wafi 154]
+  - words: ["موسى", "يحيى", "عيسى"]
+    case: "imala_alif_tanith: the alif of taʾnīth on fuʿlā/faʿlā/fiʿlā, not after a rāʾ"
+    ruwat: {khalaf_an_hamzah: [imala], khallad: [imala], abul_harith: [imala], duri_kisai: [imala]}
+    cite: [wafi 141]
+  - words: ["دحاها", "سواها", "مرعاها", "ضحاها", "تلاها"]
+    case: "imala_ras_ay: the verse-end alifs of the eleven sūrahs (طه النجم الشمس الأعلى الليل الضحى العلق النازعات عبس القيامة المعارج), yāʾ and wāw"
+    ruwat: {warsh: [fath, taqlil]}
+    note: "verse-end alif with the pronoun ها"
+    cite: [wafi 149]
+  - words: ["ضعافا"]
+    case: "named words with no general rule (the rows give per-rāwī readings only)"
+    ruwat: {khalaf_an_hamzah: [imala], khallad: [imala, fath], ishaq: [fath], idris: [fath]}
+    note: "al-Nisāʾ"
+    cite: [wafi 154, idah 140]
+  - words: ["آتيك"]
+    case: "named words with no general rule (the rows give per-rāwī readings only)"
+    ruwat: {khallad: [imala]}
+    note: "al-Naml"
+    cite: [wafi 154]
+  - words: ["مشارب"]
+    case: "named words with no general rule (the rows give per-rāwī readings only)"
+    ruwat: {hisham: [imala]}
+    note: "Yāsīn"
+    cite: [wafi 154]
+  - words: ["آنية"]
+    case: "named words with no general rule (the rows give per-rāwī readings only)"
+    ruwat: {hisham: [imala]}
+    note: "al-Ghāshiyah, hamzah and alif; not بآنية"
+    cite: [wafi 154]
+  - words: ["عابدون", "عابد"]
+    case: "named words with no general rule (the rows give per-rāwī readings only)"
+    ruwat: {hisham: [imala]}
+    note: "al-Kāfirūn, the ʿayn and alif; not عابدون in 'نحن له'"
+    cite: [wafi 154]
+  - words: ["يس"]
+    case: "named words with no general rule (the rows give per-rāwī readings only)"
+    ruwat: {rawh: [imala]}
+    note: "the alif, with the fatḥah of the yāʾ"
+    cite: [idah 144]
+  - words: ["التوراة"]
+    case: "named words with no general rule (the rows give per-rāwī readings only)"
+    ruwat: {ishaq: [imala], idris: [imala]}
+    cite: [idah 142]
+  - words: ["الرؤيا"]
+    case: "named words with no general rule (the rows give per-rāwī readings only)"
+    ruwat: {ishaq: [imala], idris: [imala]}
+    note: "with the article"
+    cite: [idah 142]
+  - words: ["رؤياي", "رؤياك"]
+    case: "named words with no general rule (the rows give per-rāwī readings only)"
+    ruwat: {ishaq: [fath], idris: [fath]}
+    note: "without the article, like his aṣl"
+    cite: [idah 142]
+open:
+  - "Ishaq, Idris, imala_ra: fatḥ is the reviewed profile's reading (idah 142, not a row page); the rows only give fatḥ at القهار and البوار (idah 140) and imālah between two rāʾs (idah 141); the profile's note says the القهار/البوار fatḥ differs from his riwāyah."
+  - "Ishaq, Idris at imala_kafirin, imala_nas, imala_ya, imala_ya_ra: via aṣl from the profile (cite idah 40-43, not a row page) except imala_ya where the row is idah 143 ('كأصله'); the aṣl is Khalaf ʿan Ḥamzah (this table: imālah for dhawāt al-yāʾ and dhawāt al-rāʾ, fatḥ for كافرين and الناس)."
+  - "imala_nas: the profile note says the verse reads as khulf for Abū ʿAmr; al-Wāfī gives imālah to al-Dūrī and fatḥ to al-Sūsī 'by the ṭarīq' (wafi 154)."
+  - "imala_ya, Abū ʿAmr (al-Dūrī, al-Sūsī): the profile gives fatḥ with the cond 'taqlīl in fuʿlā/faʿlā/fiʿlā forms and the ruʾūs al-āy of the eleven sūrahs; his imālah is in dhawāt al-rāʾ'; those are the cases imala_alif_tanith, imala_ras_ay and imala_ya_ra; the rows give no other reading of his for dhawāt al-yāʾ in general (wafi 149)."
+  - "imala_ya, Warsh: fatḥ and taqlīl (wafi 148); the profile's cond is 'after rāʾ: taqlīl only; ruʾūs al-āy: taqlīl only, unless with ـهَا' (cases imala_ya_ra, imala_ras_ay)."
+  - "The thirteen/ten ruwāt marked 'rest' in the profile rows (fatḥ in imala_ra, imala_kafirin, imala_nas, imala_ya, imala_ya_ra, imala_jaa_shaa, imala_zad, imala_fiil, imala_duri_kisai) are given fatḥ from the profile rows, not from this category's rows."
+  - "Ruways and Rawh at imala_ya (idah 143): fatḥ in 'the alifs Abū ʿAmr imāles' except أعمى (the first in al-Isrāʾ); the rows do not repeat it for each case, the profile's 'idah 143-144' is used for the others."
+  - "المحراب for Ibn Dhakwān: khulf at wafi 154 and 'imālah only' for المحراب in the jarr at wafi 155; both are in `listed`."
+  - "أنصارى for al-Dūrī ʿan al-Kisāʾī: no imālah in 'من أنصارى' (wafi 152) but imālah listed for أنصارى at wafi 153; the extracted rows do not say which place."
+  - "Words excluded from a rule by the book with no reading of their own in the rows: الحياة مناة (wafi 140), همساً ضنكا نسفاً علماً ظلماً عزماً (wafi 146), أجاءها أزاغ (wafi 150), تراءت الفئتان (wafi 147), ونمارق الحواريين تمار (wafi 151)."
+  - "The named words with no general rule (last case) have no case-level reading: every rāwī is empty there, the words are in `listed`."
+  - "Hafs: imālah only at مجراها in the rows (wafi 147)."
+  - "Ruways, Rawh, Ibn Wardān, Ibn Jammāz for imala_alif_tanith and imala_ras_ay: Ibn Wardān/Ibn Jammāz fatḥ is 'فتح جميع باب الإمالة' (idah 144), Ruways/Rawh fatḥ is 'the alifs imāled for Abū ʿAmr, kubrā or ṣughrā' (idah 143); the other eight and Ishaq/Idris are left empty in these two cases (no row)."
+  - "case imala_alif_tanith: no row speaks of qalun, warsh, bazzi, qunbul, hisham, ibn_dhakwan, shuba, hafs, ishaq, idris (left empty; idah 143, idah 144, wafi 141, wafi 149)"
+  - "case imala_ras_ay: no row speaks of qalun, bazzi, qunbul, hisham, ibn_dhakwan, shuba, hafs, ishaq, idris (left empty; idah 143, idah 144, wafi 146, wafi 148, wafi 149)"
+  - "case named words with no general rule: no row speaks of qalun, warsh, bazzi, qunbul, duri_abuamr, susi, hisham, ibn_dhakwan, shuba, hafs, khalaf_an_hamzah, khallad, abul_harith, duri_kisai, ibn_wardan, ibn_jammaz, ruways, rawh, ishaq, idris (left empty; no cite)"

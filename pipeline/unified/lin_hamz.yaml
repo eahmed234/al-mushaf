@@ -1,0 +1,91 @@
+category: lin_hamz
+what: madd of the līn letter (yāʾ/wāw after a fatḥah) before a hamzah
+wujuh:
+- {id: qasr, ar: القصر, en: 'qaṣr, 1 alif'}
+- {id: tawassut, ar: التوسط, en: 'tawassuṭ, 2 alifs (4 ḥarakāt)'}
+- {id: tul, ar: الطول, en: 'ṭūl, 3 alifs (6 ḥarakāt)'}
+cases:
+- case: līn before a hamzah inside the word (شيئاً, كهيئة, تيئسوا, سوءة)
+  ruwat:
+    qalun: {wujuh: &id001 [qasr], cite: &id002 [wafi 83]}
+    warsh: {wujuh: [tawassut, tul], cite: [wafi 82]}
+    bazzi: {wujuh: *id001, cite: *id002}
+    qunbul: {wujuh: *id001, cite: *id002}
+    duri_abuamr: {wujuh: *id001, cite: *id002}
+    susi: {wujuh: *id001, cite: *id002}
+    hisham: {wujuh: *id001, cite: *id002}
+    ibn_dhakwan: {wujuh: *id001, cite: *id002}
+    shuba: {wujuh: *id001, cite: *id002}
+    hafs: {wujuh: *id001, cite: *id002}
+    khalaf_an_hamzah: {wujuh: *id001, cite: *id002}
+    khallad: {wujuh: *id001, cite: *id002}
+    abul_harith: {wujuh: *id001, cite: *id002}
+    duri_kisai: {wujuh: *id001, cite: *id002}
+    ibn_wardan: {wujuh: &id003 [qasr], cite: &id004 [idah 84]}
+    ibn_jammaz: {wujuh: *id003, cite: *id004}
+    ruways: {wujuh: &id005 [qasr], cite: &id006 [idah 84]}
+    rawh: {wujuh: *id005, cite: *id006}
+    ishaq: {wujuh: *id005, cite: *id006}
+    idris: {wujuh: *id005, cite: *id006}
+- case: līn before a final hamzah (شيء, سوء), at waqf
+  ruwat:
+    qalun: {wujuh: &id007 [qasr, tawassut, tul], cite: &id008 [wafi 82, wafi 83]}
+    warsh: {wujuh: [tawassut, tul], cite: [wafi 82, wafi 83]}
+    bazzi: {wujuh: *id007, cite: *id008}
+    qunbul: {wujuh: *id007, cite: *id008}
+    duri_abuamr: {wujuh: *id007, cite: *id008}
+    susi: {wujuh: *id007, cite: *id008}
+    hisham: {wujuh: *id007, cite: *id008}
+    ibn_dhakwan: {wujuh: *id007, cite: *id008}
+    shuba: {wujuh: *id007, cite: *id008}
+    hafs: {wujuh: *id007, cite: *id008}
+    khalaf_an_hamzah: {wujuh: *id007, cite: *id008}
+    khallad: {wujuh: *id007, cite: *id008}
+    abul_harith: {wujuh: *id007, cite: *id008}
+    duri_kisai: {wujuh: *id007, cite: *id008}
+    ibn_wardan: {wujuh: &id009 [qasr], cite: &id010 [idah 84]}
+    ibn_jammaz: {wujuh: *id009, cite: *id010}
+    ruways: {wujuh: &id011 [qasr], cite: &id012 [idah 84]}
+    rawh: {wujuh: *id011, cite: *id012}
+    ishaq: {wujuh: *id011, cite: *id012}
+    idris: {wujuh: *id011, cite: *id012}
+listed:
+- words:
+  - سوءات
+  case: līn before a hamzah inside the word (شيئاً, كهيئة, تيئسوا, سوءة)
+  ruwat:
+    warsh:
+    - qasr
+    - tawassut
+  cite:
+  - wafi 83
+- words:
+  - الموءودة
+  - موئلا
+  case: līn before a hamzah inside the word (شيئاً, كهيئة, تيئسوا, سوءة)
+  ruwat:
+    warsh:
+    - qasr
+  cite:
+  - wafi 83
+  why: qaṣr of the wāw for all of Warsh's narrators
+- words:
+  - شيئاً
+  - كهيئة الطير
+  - ولا تيئسوا
+  - سوءة أخيه
+  - سوآتهما
+  - شيء
+  - ظن السوء
+  case: līn before a hamzah inside the word (شيئاً, كهيئة, تيئسوا, سوءة)
+  ruwat: {}
+  cite:
+  - wafi 82
+  why: the book's examples for Warsh
+open:
+- Case 2 is stated for the other twelve of al-Wāfī only "عند الوقف" (wafi 82, 83); their waṣl reading of a final hamzah is not stated (taken as case 1 by the profile only). Warsh is "waṣlan wa-waqfan" (wafi 83).
+- 'Case 2, the Durrah: idah 84 gives "قصر مد اللين" for the three imāms without separating waqf or a final hamzah; nothing says whether the waqf wujūh of al-Wāfī apply to them.'
+- 'wafi 82: Warsh''s two wujūh are called "الطول والقصر" in the quote, where the row marks tawassuṭ; the table follows the rows (tawassuṭ, ṭūl) and the profile. The row''s exceptions (ابنى آدم, ولو آمن) are not līn-before-hamzah in one word.'
+- Ruways, Rawḥ, Isḥāq, Idrīs are cited from idah 84 "فاتفق الثلاثة"; the profile cites a footnote (idah 84 n. 3).
+- 'The word سوءات: the book says the khulf is between qaṣr and tawassuṭ (wafi 83).'
+- 'Lengths: tawassuṭ 4 ḥarakāt = 2 alifs, ṭūl 6 = 3; no fractions.'

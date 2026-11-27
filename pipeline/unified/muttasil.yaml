@@ -1,0 +1,32 @@
+category: muttasil
+what: 'madd muttaṣil: a madd letter followed by hamzah in the same word'
+wujuh:
+- {id: tawassut, ar: التوسط, en: 'tawassuṭ, 2 alifs (4 ḥarakāt)'}
+- {id: ishba, ar: الطول / المد المشبع, en: 'ṭūl, 3 alifs (6 ḥarakāt)'}
+cases:
+- case: madd letter before hamzah in the same word
+  ruwat:
+    qalun: {wujuh: &id001 [tawassut], cite: &id002 [wafi 73]}
+    warsh: {wujuh: &id003 [ishba], cite: &id004 [wafi 73]}
+    bazzi: {wujuh: *id001, cite: *id002}
+    qunbul: {wujuh: *id001, cite: *id002}
+    duri_abuamr: {wujuh: *id001, cite: *id002}
+    susi: {wujuh: *id001, cite: *id002}
+    hisham: {wujuh: *id001, cite: *id002}
+    ibn_dhakwan: {wujuh: *id001, cite: *id002}
+    shuba: {wujuh: *id001, cite: *id002}
+    hafs: {wujuh: *id001, cite: *id002}
+    khalaf_an_hamzah: {wujuh: *id003, cite: *id004}
+    khallad: {wujuh: *id003, cite: *id004}
+    abul_harith: {wujuh: *id001, cite: *id002}
+    duri_kisai: {wujuh: *id001, cite: *id002}
+    ibn_wardan: {wujuh: &id005 [tawassut], cite: &id006 [idah 81, idah 82]}
+    ibn_jammaz: {wujuh: *id005, cite: *id006}
+    ruways: {wujuh: *id005, cite: *id006}
+    rawh: {wujuh: *id005, cite: *id006}
+    ishaq: {wujuh: &id007 [tawassut], cite: &id008 [idah 81, idah 83]}
+    idris: {wujuh: *id007, cite: *id008}
+listed: []
+open:
+- The editor's footnote (idah 81 n. 4, from al-Taḥbīr, as the reviewed profile records) allows three ḥarakāt (1½ alifs) for Abū Jaʿfar and Yaʿqūb; not in the table, and it is a fraction outside the three lengths.
+- The rows give the Durrah's six as one group at idah 81 and 82; idah 83 repeats it for Khalaf al-ʿĀshir only.

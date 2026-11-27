@@ -1,0 +1,221 @@
+category: hamzatayn_kalimatayn_muttafiq
+what: two hamzahs at the meeting of two words, both with the same vowel
+wujuh:
+- {id: tahqiq, ar: تحقيق الهمزتين, en: both hamzahs fully pronounced}
+- {id: isqat_ula, ar: إسقاط الهمزة الأولى, en: the first hamzah dropped}
+- {id: tashil_ula, ar: تسهيل الأولى بين بين, en: the first hamzah eased between}
+- {id: ibdal_ula_waw_idgham, ar: إبدال الأولى واوا وإدغام الواو قبلها فيها, en: the first hamzah turned into wāw and the preceding wāw merged into it}
+- {id: tashil_thaniya, ar: تسهيل الثانية بين بين, en: the second hamzah eased between}
+- {id: ibdal_thaniya, ar: إبدال الثانية حرف مد مجانسا لحركة الأولى, en: the second hamzah turned into a madd letter matching the vowel of the first}
+- {id: ibdal_thaniya_ya, ar: إبدال الثانية ياء مكسورة, en: the second hamzah turned into a kasrah yāʾ}
+cases:
+- case: both hamzahs maftūḥah (after a wasl)
+  ruwat:
+    qalun:
+      wujuh: [isqat_ula]
+      cite: [wafi 92]
+    warsh:
+      wujuh: [tashil_thaniya, ibdal_thaniya]
+      cite: [wafi 93]
+    bazzi:
+      wujuh: [isqat_ula]
+      cite: [wafi 92]
+    qunbul:
+      wujuh: [tashil_thaniya, ibdal_thaniya]
+      cite: [wafi 93]
+    duri_abuamr:
+      wujuh: [isqat_ula]
+      cite: [wafi 92]
+    susi:
+      wujuh: [isqat_ula]
+      cite: [wafi 92]
+    hisham:
+      wujuh: [tahqiq]
+      cite: [wafi 94]
+    ibn_dhakwan:
+      wujuh: [tahqiq]
+      cite: [wafi 94]
+    shuba:
+      wujuh: [tahqiq]
+      cite: [wafi 94]
+    hafs:
+      wujuh: [tahqiq]
+      cite: [wafi 94]
+    khalaf_an_hamzah:
+      wujuh: [tahqiq]
+      cite: [wafi 94]
+    khallad:
+      wujuh: [tahqiq]
+      cite: [wafi 94]
+    abul_harith:
+      wujuh: [tahqiq]
+      cite: [wafi 94]
+    duri_kisai:
+      wujuh: [tahqiq]
+      cite: [wafi 94]
+    ibn_wardan:
+      wujuh: [tashil_thaniya]
+      cite: [idah 96]
+    ibn_jammaz:
+      wujuh: [tashil_thaniya]
+      cite: [idah 96]
+    ruways:
+      wujuh: [tashil_thaniya]
+      cite: [idah 96]
+    rawh:
+      wujuh: [tahqiq]
+      cite: [idah 96, idah 98]
+    ishaq:
+      wujuh: [tahqiq]
+      cite: [idah 99]
+      via: asl
+    idris:
+      wujuh: [tahqiq]
+      cite: [idah 99]
+      via: asl
+- case: both hamzahs maksūrah, or both maḍmūmah
+  ruwat:
+    qalun:
+      wujuh: [tashil_ula]
+      cite: [wafi 92]
+    warsh:
+      wujuh: [tashil_thaniya, ibdal_thaniya]
+      cite: [wafi 93]
+    bazzi:
+      wujuh: [tashil_ula]
+      cite: [wafi 92]
+    qunbul:
+      wujuh: [tashil_thaniya, ibdal_thaniya]
+      cite: [wafi 93]
+    duri_abuamr:
+      wujuh: [isqat_ula]
+      cite: [wafi 92]
+    susi:
+      wujuh: [isqat_ula]
+      cite: [wafi 92]
+    hisham:
+      wujuh: [tahqiq]
+      cite: [wafi 94]
+    ibn_dhakwan:
+      wujuh: [tahqiq]
+      cite: [wafi 94]
+    shuba:
+      wujuh: [tahqiq]
+      cite: [wafi 94]
+    hafs:
+      wujuh: [tahqiq]
+      cite: [wafi 94]
+    khalaf_an_hamzah:
+      wujuh: [tahqiq]
+      cite: [wafi 94]
+    khallad:
+      wujuh: [tahqiq]
+      cite: [wafi 94]
+    abul_harith:
+      wujuh: [tahqiq]
+      cite: [wafi 94]
+    duri_kisai:
+      wujuh: [tahqiq]
+      cite: [wafi 94]
+    ibn_wardan:
+      wujuh: [tashil_thaniya]
+      cite: [idah 96]
+    ibn_jammaz:
+      wujuh: [tashil_thaniya]
+      cite: [idah 96]
+    ruways:
+      wujuh: [tashil_thaniya]
+      cite: [idah 96]
+    rawh:
+      wujuh: [tahqiq]
+      cite: [idah 96, idah 98]
+    ishaq:
+      wujuh: [tahqiq]
+      cite: [idah 99]
+      via: asl
+    idris:
+      wujuh: [tahqiq]
+      cite: [idah 99]
+      via: asl
+- case: stopping on the first hamzah and starting with the second (waqf)
+  ruwat:
+    qalun:
+      wujuh: [tahqiq]
+      cite: [wafi 97]
+    warsh:
+      wujuh: [tahqiq]
+      cite: [wafi 97]
+    bazzi:
+      wujuh: [tahqiq]
+      cite: [wafi 97]
+    qunbul:
+      wujuh: [tahqiq]
+      cite: [wafi 97]
+    duri_abuamr:
+      wujuh: [tahqiq]
+      cite: [wafi 97]
+    susi:
+      wujuh: [tahqiq]
+      cite: [wafi 97]
+    hisham:
+      wujuh: [tahqiq]
+      cite: [wafi 97]
+    ibn_dhakwan:
+      wujuh: [tahqiq]
+      cite: [wafi 97]
+    shuba:
+      wujuh: [tahqiq]
+      cite: [wafi 97]
+    hafs:
+      wujuh: [tahqiq]
+      cite: [wafi 97]
+    khalaf_an_hamzah:
+      wujuh: [tahqiq]
+      cite: [wafi 97]
+    khallad:
+      wujuh: [tahqiq]
+      cite: [wafi 97]
+    abul_harith:
+      wujuh: [tahqiq]
+      cite: [wafi 97]
+    duri_kisai:
+      wujuh: [tahqiq]
+      cite: [wafi 97]
+    ibn_wardan:
+      wujuh: []
+      cite: []
+    ibn_jammaz:
+      wujuh: []
+      cite: []
+    ruways:
+      wujuh: []
+      cite: []
+    rawh:
+      wujuh: []
+      cite: []
+    ishaq:
+      wujuh: []
+      cite: []
+    idris:
+      wujuh: []
+      cite: []
+listed:
+- words: [بالسوء إلا]
+  case: both maksūrah or both maḍmūmah
+  ruwat:
+    qalun: [ibdal_ula_waw_idgham, tashil_ula]
+    bazzi: [ibdal_ula_waw_idgham, tashil_ula]
+  cite: [wafi 92]
+- words: [هؤلاء إن, البغاء إن]
+  case: both maksūrah or both maḍmūmah
+  ruwat:
+    warsh: [ibdal_thaniya_ya]
+  cite: [wafi 94]
+open: ['Durrah ruwāt for the waqf case (stopping on the first hamzah): no row of al-Īḍāḥ speaks of it (asl: Ibn Wardān, Ibn Jammāz, Ruways, Rawḥ, Isḥāq, Idrīs left empty).', 'wafi 97: the rows say that
+    whoever changes the first hamzah has only taḥqīq of the second, and whoever changes the second has only taḥqīq of the first (Qālūn, Bazzī, Dūrī/Sūsī; Warsh, Qunbul), without saying plainly that this
+    is the waqf/ibtidāʾ case; the table puts only the explicit waqf row (all fourteen: taḥqīq of the second) in the waqf case.', 'wafi 92: بالسوء إلا — Qālūn and Bazzī have two wujūh (ibdāl of the first
+    to wāw with idghām, and tashīl of the first ''on their aṣl''); the row gives no order of preference besides listing ibdāl first.', 'wafi 94: هؤلاء إن / البغاء إن — Warsh''s kasrah-yāʾ ibdāl is reported
+    only as the reading of ''some of the ahl al-adāʾ'' from him; the rows do not say whether it replaces or adds to his two wujūh (tashīl, ibdāl to a madd letter) in these words.', 'wafi 92-93: the order
+    of Warsh''s and Qunbul''s two wujūh is not preferred by the book (tashīl listed first as in the reviewed profile row); wafi 93 says Qunbul''s tashīl/ibdāl is ''narrated from them'' (khulf).', 'wafi
+    94: the rest are the eight ruwāt of Hishām, Ibn Dhakwān, Shuʿbah, Ḥafṣ, Khalaf, Khallād, Abū al-Ḥārith, al-Dūrī; Ḥafṣ is in the same row.', 'Isḥāq and Idrīs (idah 99): the row says ''taḥqīq of the two
+    hamzahs, muttafiqah and mukhtalifah'' as their aṣl Khalaf''s; table marks via aṣl.']

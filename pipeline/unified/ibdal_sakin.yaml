@@ -1,0 +1,290 @@
+category: ibdal_sakin
+what: ibdāl of a sākin hamzah into a madd letter (Warsh, al-Sūsī, Abū Jaʿfar) and its listed exceptions
+wujuh:
+- {id: tahqiq, ar: تحقيق الهمزة الساكنة, en: the sākin hamzah pronounced}
+- {id: ibdal, ar: إبدال الهمزة الساكنة حرف مد, en: the sākin hamzah turned into a madd letter matching the vowel before it}
+cases:
+- case: sākin hamzah as fāʾ al-kalimah (يؤمن)
+  ruwat:
+    qalun:
+      wujuh: [tahqiq]
+      cite: [wafi 98-101]
+    warsh:
+      wujuh: [ibdal]
+      cite: [wafi 99]
+    bazzi:
+      wujuh: [tahqiq]
+      cite: [wafi 98-101]
+    qunbul:
+      wujuh: [tahqiq]
+      cite: [wafi 98-101]
+    duri_abuamr:
+      wujuh: [tahqiq]
+      cite: [wafi 98-101]
+    susi:
+      wujuh: [ibdal]
+      cite: [wafi 99]
+    hisham:
+      wujuh: [tahqiq]
+      cite: [wafi 98-101]
+    ibn_dhakwan:
+      wujuh: [tahqiq]
+      cite: [wafi 98-101]
+    shuba:
+      wujuh: [tahqiq]
+      cite: [wafi 98-101]
+    hafs:
+      wujuh: [tahqiq]
+      cite: [wafi 98-101]
+    khalaf_an_hamzah:
+      wujuh: [tahqiq]
+      cite: [wafi 98-101]
+    khallad:
+      wujuh: [tahqiq]
+      cite: [wafi 98-101]
+    abul_harith:
+      wujuh: [tahqiq]
+      cite: [wafi 98-101]
+    duri_kisai:
+      wujuh: [tahqiq]
+      cite: [wafi 98-101]
+    ibn_wardan:
+      wujuh: [ibdal]
+      cite: [idah 102]
+    ibn_jammaz:
+      wujuh: [ibdal]
+      cite: [idah 102]
+    ruways:
+      wujuh: [tahqiq]
+      cite: [idah 102]
+    rawh:
+      wujuh: [tahqiq]
+      cite: [idah 102]
+    ishaq:
+      wujuh: [tahqiq]
+      cite: [idah 40-43]
+      via: asl
+    idris:
+      wujuh: [tahqiq]
+      cite: [idah 40-43]
+      via: asl
+- case: sākin hamzah as ʿayn al-kalimah (بئر, الذئب)
+  ruwat:
+    qalun:
+      wujuh: [tahqiq]
+      cite: [wafi 98-101]
+    warsh:
+      wujuh: [tahqiq]
+      cite: [wafi 98-99]
+    bazzi:
+      wujuh: [tahqiq]
+      cite: [wafi 98-101]
+    qunbul:
+      wujuh: [tahqiq]
+      cite: [wafi 98-101]
+    duri_abuamr:
+      wujuh: [tahqiq]
+      cite: [wafi 98-101]
+    susi:
+      wujuh: [ibdal]
+      cite: [wafi 99]
+    hisham:
+      wujuh: [tahqiq]
+      cite: [wafi 98-101]
+    ibn_dhakwan:
+      wujuh: [tahqiq]
+      cite: [wafi 98-101]
+    shuba:
+      wujuh: [tahqiq]
+      cite: [wafi 98-101]
+    hafs:
+      wujuh: [tahqiq]
+      cite: [wafi 98-101]
+    khalaf_an_hamzah:
+      wujuh: [tahqiq]
+      cite: [wafi 98-101]
+    khallad:
+      wujuh: [tahqiq]
+      cite: [wafi 98-101]
+    abul_harith:
+      wujuh: [tahqiq]
+      cite: [wafi 98-101]
+    duri_kisai:
+      wujuh: [tahqiq]
+      cite: [wafi 98-101]
+    ibn_wardan:
+      wujuh: [ibdal]
+      cite: [idah 102]
+    ibn_jammaz:
+      wujuh: [ibdal]
+      cite: [idah 102]
+    ruways:
+      wujuh: [tahqiq]
+      cite: [idah 102]
+    rawh:
+      wujuh: [tahqiq]
+      cite: [idah 102]
+    ishaq:
+      wujuh: [tahqiq]
+      cite: [idah 40-43]
+      via: asl
+    idris:
+      wujuh: [tahqiq]
+      cite: [idah 40-43]
+      via: asl
+- case: sākin hamzah as lām al-kalimah (جئت)
+  ruwat:
+    qalun:
+      wujuh: [tahqiq]
+      cite: [wafi 98-101]
+    warsh:
+      wujuh: [tahqiq]
+      cite: [wafi 98-99]
+    bazzi:
+      wujuh: [tahqiq]
+      cite: [wafi 98-101]
+    qunbul:
+      wujuh: [tahqiq]
+      cite: [wafi 98-101]
+    duri_abuamr:
+      wujuh: [tahqiq]
+      cite: [wafi 98-101]
+    susi:
+      wujuh: [ibdal]
+      cite: [wafi 99]
+    hisham:
+      wujuh: [tahqiq]
+      cite: [wafi 98-101]
+    ibn_dhakwan:
+      wujuh: [tahqiq]
+      cite: [wafi 98-101]
+    shuba:
+      wujuh: [tahqiq]
+      cite: [wafi 98-101]
+    hafs:
+      wujuh: [tahqiq]
+      cite: [wafi 98-101]
+    khalaf_an_hamzah:
+      wujuh: [tahqiq]
+      cite: [wafi 98-101]
+    khallad:
+      wujuh: [tahqiq]
+      cite: [wafi 98-101]
+    abul_harith:
+      wujuh: [tahqiq]
+      cite: [wafi 98-101]
+    duri_kisai:
+      wujuh: [tahqiq]
+      cite: [wafi 98-101]
+    ibn_wardan:
+      wujuh: [ibdal]
+      cite: [idah 102]
+    ibn_jammaz:
+      wujuh: [ibdal]
+      cite: [idah 102]
+    ruways:
+      wujuh: [tahqiq]
+      cite: [idah 102]
+    rawh:
+      wujuh: [tahqiq]
+      cite: [idah 102]
+    ishaq:
+      wujuh: [tahqiq]
+      cite: [idah 40-43]
+      via: asl
+    idris:
+      wujuh: [tahqiq]
+      cite: [idah 40-43]
+      via: asl
+listed:
+- words: [المأوى, مأواه, مأواهم, مأواكم, فأووا, تؤوى, تؤويه]
+  case: sākin hamzah as fāʾ al-kalimah (يؤمن)
+  ruwat:
+    warsh: [tahqiq]
+  cite: [wafi 99]
+- words: [تسؤ, نشأ, يشأ, ويهيء, ننسأها, ينبأ]
+  case: sākin hamzah as lām al-kalimah (جئت)
+  ruwat:
+    susi: [tahqiq]
+  cite: [wafi 100]
+- words: [يشأ]
+  case: sākin hamzah as lām al-kalimah (جئت), in wasl before a sākin that has been moved
+  ruwat:
+    ibn_wardan: [tahqiq]
+    ibn_jammaz: [tahqiq]
+  cite: [idah 103]
+- words: [هيء, أنبئهم, نبئنا, نبيء, ونبهم, أرجئه, اقرأ]
+  case: sākin hamzah as lām al-kalimah (جئت)
+  ruwat:
+    susi: [tahqiq]
+  cite: [wafi 100]
+- words: [أنبئهم, نبئهم]
+  case: sākin hamzah as lām al-kalimah (جئت)
+  ruwat:
+    ibn_wardan: [tahqiq]
+    ibn_jammaz: [tahqiq]
+  cite: [idah 103]
+- words: [نبئنا, نبأتكما]
+  case: sākin hamzah as lām al-kalimah (جئت)
+  ruwat:
+    ibn_wardan: [ibdal]
+    ibn_jammaz: [ibdal]
+  cite: [idah 103]
+- words: [تؤوى, تؤويه]
+  case: sākin hamzah as fāʾ al-kalimah (يؤمن)
+  ruwat:
+    susi: [tahqiq]
+  cite: [wafi 101]
+- words: [رئيا]
+  case: sākin hamzah as ʿayn al-kalimah (بئر, الذئب)
+  ruwat:
+    susi: [tahqiq]
+  cite: [wafi 101]
+- words: [مؤصدة]
+  case: sākin hamzah as fāʾ al-kalimah (يؤمن)
+  ruwat:
+    susi: [tahqiq]
+  cite: [wafi 101]
+- words: [بارئكم]
+  case: sākin hamzah as lām al-kalimah (جئت)
+  ruwat:
+    susi: [tahqiq]
+  cite: [wafi 102]
+- words: [بئر, بئس]
+  case: sākin hamzah as ʿayn al-kalimah (بئر, الذئب)
+  ruwat:
+    warsh: [ibdal]
+  cite: [wafi 102]
+- words: [الذئب]
+  case: sākin hamzah as ʿayn al-kalimah (بئر, الذئب)
+  ruwat:
+    abul_harith: [ibdal]
+    duri_kisai: [ibdal]
+    ishaq: [ibdal]
+    idris: [ibdal]
+  cite: [wafi 102, idah 115]
+- words: [لؤلؤ]
+  case: sākin hamzah as ʿayn al-kalimah (بئر, الذئب)
+  ruwat:
+    shuba: [ibdal]
+  cite: [wafi 102]
+- words: [يأجوج, مأجوج]
+  case: sākin hamzah as fāʾ al-kalimah (يؤمن)
+  ruwat:
+    ruways: [ibdal]
+    rawh: [ibdal]
+  cite: [idah 102]
+- words: [الملأ, امرئ, شاطئ, لؤلؤ]
+  case: hamzah moving by origin and made sākin only by the stop (waqf)
+  ruwat:
+    ibn_wardan: [tahqiq]
+    ibn_jammaz: [tahqiq]
+  cite: [idah 103]
+open: ['Rest of the fourteen (taḥqīq) and Warsh''s taḥqīq in the ʿayn and lām cases come from the reviewed profile rows (wafi 98-101: Warsh ''only a hamzah that is fāʾ al-fiʿl''); no row states them. Isḥāq
+    and Idrīs: from the aṣl (profile, idah 40-43), no row.', 'The books give the fāʾ/ʿayn/lām split only through Warsh''s rule (fāʾ only, wafi 99) and the examples; Ibn Wardān/Ibn Jammaz and al-Sūsī are
+    said to apply to every sākin hamzah, so the three cases carry the same reading for them.', 'Ibn Wardān/Ibn Jammaz (idah 103): in wasl, where the hamzah''s neighbour sākin is moved (e.g. يشأ), taḥqīq;
+    on stopping there they return to ibdāl (idah 103, waqf row); and where the hamzah was originally moving and is sākin only by waqf (الملأ, امرئ, شاطئ, لؤلؤ), taḥqīq. Readings of other words in those
+    two conditions are not stated.', 'al-Sūsī: the rows list the exceptions of kind jazm (wafi 100) and bināʾ (wafi 100) and the single words تؤوى/تؤويه (wafi 101), رئيا, مؤصدة, بارئكم; the ''heavier''
+    and ''ambiguous'' kinds of the profile cond are the same words, not extra rows.', 'يأجوج ومأجوج (idah 102): Ruways and Rawḥ read ibdāl although their rule is taḥqīq; the reviewed profile row calls these
+    farsh. Listed here because the row is in this category.', 'Ibn Wardān/Ibn Jammaz on لؤلؤ: taḥqīq when sākin only by waqf (idah 103); Shuʿbah ibdāl in the same word (wafi 102) — different conditions
+    (waqf vs wasl), kept apart; case ʿayn for Shuʿbah is assumed from the word.']

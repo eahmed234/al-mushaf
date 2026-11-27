@@ -1,0 +1,117 @@
+category: sakt_huruf
+what: Sakt on the letters of the surah openings (Abū Jaʿfar).
+wujuh:
+- id: none
+  ar: ترك السكت
+  en: no sakt
+- id: sakt
+  ar: السكت
+  en: sakt on the opening letters
+cases:
+- case: sakt on the letters of the surah openings
+  ruwat:
+    qalun:
+      wujuh:
+      - none
+      cite:
+      - idah 188
+    warsh:
+      wujuh:
+      - none
+      cite:
+      - idah 188
+    bazzi:
+      wujuh:
+      - none
+      cite:
+      - idah 188
+    qunbul:
+      wujuh:
+      - none
+      cite:
+      - idah 188
+    duri_abuamr:
+      wujuh:
+      - none
+      cite:
+      - idah 188
+    susi:
+      wujuh:
+      - none
+      cite:
+      - idah 188
+    hisham:
+      wujuh:
+      - none
+      cite:
+      - idah 188
+    ibn_dhakwan:
+      wujuh:
+      - none
+      cite:
+      - idah 188
+    shuba:
+      wujuh:
+      - none
+      cite:
+      - idah 188
+    hafs:
+      wujuh:
+      - none
+      cite:
+      - idah 188
+    khalaf_an_hamzah:
+      wujuh:
+      - none
+      cite:
+      - idah 188
+    khallad:
+      wujuh:
+      - none
+      cite:
+      - idah 188
+    abul_harith:
+      wujuh:
+      - none
+      cite:
+      - idah 188
+    duri_kisai:
+      wujuh:
+      - none
+      cite:
+      - idah 188
+    ibn_wardan:
+      wujuh:
+      - sakt
+      cite:
+      - idah 188
+    ibn_jammaz:
+      wujuh:
+      - sakt
+      cite:
+      - idah 188
+    ruways:
+      wujuh:
+      - none
+      cite:
+      - idah 188
+    rawh:
+      wujuh:
+      - none
+      cite:
+      - idah 188
+    ishaq:
+      wujuh:
+      - none
+      cite:
+      - idah 188
+    idris:
+      wujuh:
+      - none
+      cite:
+      - idah 188
+listed: []
+open:
+- 'No rows: built from the reviewed profile rows alone, cite idah 188. The profile''s ''rest7'' row is read as the fourteen of the Shāṭibiyyah, none of whom is named in it; Ruways, Rawḥ, Isḥāq, Idrīs are
+  named (none).'
+- No page of this category's rows exists, so the cites cannot be checked against rows; the opening letters themselves are not listed.
