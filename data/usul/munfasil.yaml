@@ -139,7 +139,8 @@ notes:
 - al-Īḍāḥ p. 82 (row tagged munfaṣil) says tawassuṭ for all six ruwāt of the Durrah, which contradicts idah 83 (qaṣr for Ibn Wardān, Ibn Jammāz,
   Ruways, Rawḥ). The quote ("توسيط المدين - المتصل") looks like it is about the muttaṣil; table follows idah 83.
 - 'Qālūn and al-Dūrī: both wujūh given, qaṣr first as al-Wāfī lists it; the book does not say which is preferred (wafi 74). — answered: the book''s
-  first-listed wajh is the default (Eisa); every table already follows it except Warsh''s two hamzahs in one word, kept tashīl first: see `order_exception`'
+  first-listed wajh is the default (Eisa); every table already follows it except Warsh''s two hamzahs in one word, tashīl first (Eisa confirmed):
+  see `order_exception`'
 - The reviewed profile rows call the remaining group "rest7"; the rows name six (Hishām, Ibn Dhakwān, Shuʿbah, Ḥafṣ, Abū l-Ḥārith, al-Dūrī ʿan
   al-Kisāʾī), which is what the table uses.
 status: merged 2026-11-26

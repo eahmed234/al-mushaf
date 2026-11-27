@@ -23,7 +23,7 @@ ANSWERS = {
     "policy:ahl_adaa": "options, off by default (Eisa)",
     "policy:footnotes": "kubrā version only (Eisa)",
     "policy:order": "the book's first-listed wajh is the default (Eisa); every table already follows it except "
-                    "Warsh's two hamzahs in one word, kept tashīl first: see `order_exception`",
+                    "Warsh's two hamzahs in one word, tashīl first (Eisa confirmed): see `order_exception`",
     "basmalah#0": "Eisa: waṣl and sakt are the two ways of dropping the basmalah (isqāṭ), beside keeping it "
                   "(ithbāt). wafi 46: the khilāf in the basmalah from Ibn ʿĀmir, Warsh and Abū ʿAmr is famous, "
                   "and sakt is preferred over waṣl (wafi 47); so they have basmalah, sakt, waṣl, as Yaʿqūb "
@@ -93,7 +93,7 @@ def apply() -> list[str]:
     cite(f, "budur 282")
     t["order_exception"] = ("Warsh, second hamzah maftūḥah: al-Wāfī's verse names the ibdāl (Egyptians) before the "
                             "tashīl (Baghdādīs, wafi 84), but the reviewed table and al-Budūr (budur 20: 'الأول مثل "
-                            "المكي والثاني إبدالها') put tashīl first; kept tashīl first until Eisa says otherwise")
+                            "المكي والثاني إبدالها') put tashīl first; tashīl first (Eisa 2026-11-26)")
     save("hamzatayn", t)
 
     t = load("idgham_kabir")

@@ -122,8 +122,8 @@ tables; review list empty.
   data/usul now has `notes`, `options` (ahl al-adāʾ views, off), `kubra` (other ṭuruq), and no open
   questions. Regenerate: `unify_gaps`, `unify_answers`, then `unify_merge`. Sheet:
   `PYTHONPATH=.:../mushaf ../mushaf/.venv/bin/python -m pipeline.unified_sheet` → build/unified_review.html.
-  Eisa may bring a backup source for Ḥamzah's waqf. One default-order exception to confirm: Warsh's
-  hamzatayn (tashīl first, against al-Wāfī's verse order; `order_exception` in hamzatayn).
+  Eisa may bring a backup source for Ḥamzah's waqf. Warsh's hamzatayn keeps tashīl first
+  (Eisa), against al-Wāfī's verse order (`order_exception` in hamzatayn).
 
 Next, in order:
 1. Engine support for `options` and `kubra` (today they are recorded, not offered).
