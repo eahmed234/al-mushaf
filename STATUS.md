@@ -102,7 +102,40 @@ tables; review list empty.
   uṣūl chapters do (98% of 2:1–20 with no training rows), and agree with every row-learned
   profile in the passage except Idrīs's sakt.
 
-## Next steps, in order
+## Where we are (2026-11-26, to resume)
+
+- **Spike** closed (`spike/REPORT.md`, tag `spike-end`). **Milestone 0** (package, tests) and
+  **milestone 1** (extraction pipeline, model pilot: Sonnet 5.5 subagents, `pipeline/PILOT.md`) done.
+- **Milestone 2, farsh of al-Baqarah** (in progress): al-Budūr pp. 16-58 extracted; `data/farsh/002.yaml`
+  has 147 places (3 flagged). Checked against KFGQPC (`python3 -m checks.farsh --report`): 304 pairs
+  agree, 72 words disagree (mostly farsh al-Budūr states once and doesn't repeat, and hamz farsh the
+  differ calls uṣūl). The al-Futūḥ farsh check is too noisy until it compares full engine readings.
+- **Uṣūl** (Eisa: al-Budūr is "one and done", so aṣl vs farsh comes from al-Wāfī / al-Īḍāḥ): both
+  uṣūl sections read (1,187 rules), unified into **`data/usul/`**: 36 categories (`data/categories.yaml`),
+  one table each for all twenty ruwāt in one vocabulary; unstated = as Ḥafṣ (Durrah: as its aṣl);
+  reviewed profile wujūh kept where a fresh reading disagreed (recorded under `disagreements`).
+  Through the engine: al-Futūḥ 674/676, KFGQPC 2,047/2,056 (tests). al-Budūr's statements in
+  al-Baqarah agree on 1,216/1,356 (`python3 -m pipeline.crosscheck_budur`, build/crosscheck_budur.md).
+- **Waiting on Eisa: the 200 open questions** in `data/usul/*.yaml` (`open:`), on the sheet
+  `PYTHONPATH=.:../mushaf ../mushaf/.venv/bin/python -m pipeline.unified_sheet` →
+  build/unified_review.html (serve build/ on :8794); answers come back as JSON to apply to data/usul.
+  Eisa may bring a backup source for Ḥamzah's waqf.
+
+Next, in order:
+1. Apply Eisa's answers to the open questions (`pipeline/unify_merge.py` regenerates data/usul from
+   pipeline/unified/; record rulings there, then regenerate).
+2. Class al-Baqarah's 147 farsh places as covered by a rule (data/usul) or true farsh; fix the
+   crosscheck's case selection (faʿlā imālah, ʿayn/lām of the sākin hamzah, hamzatayn darbs).
+3. al-Fātiḥah's farsh (مالك, الصراط) into data/farsh/001.yaml; the per-word chapters (idghām ṣaghīr,
+   the yāʾāt) anchored to places in farsh format.
+4. The al-Baqarah farsh disagreements with KFGQPC: review sheet, second reading of the disputed
+   words from al-Wāfī / al-Īḍāḥ's farsh chapters.
+5. Then docs/05 milestones 3- (riwāyah-neutral spine, the rest of the farsh, occurrences, constraints).
+
+Working notes: subagents get their own scratch folders; reviewed data stands until Eisa rules;
+book text is never committed (quotes are offsets; pipeline/out and pipeline/work are gitignored).
+
+## Next steps, in order (older list)
 
 1. ~~Pull the books~~, ~~build the profile table~~, ~~read the remaining bābs~~, ~~Eisa's review~~
    (all 160 rows right, 2026-11-24; notes applied: Warsh's tarbīʿ and badal × dhawāt al-yāʾ in
