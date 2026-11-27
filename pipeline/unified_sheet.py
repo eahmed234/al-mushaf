@@ -36,6 +36,36 @@ def esc(s) -> str:
     return html.escape(str(s))
 
 
+import re
+
+_DOCS: dict = {}
+PAGE_REF = re.compile(r"\b(wafi|idah|budur)\s+(\d+)(?:\s*[-–]\s*(\d+))?")
+
+
+def page_link(book: str, n: int) -> str:
+    """build/pages/BOOK-N.jpg, rendered once (needs pymupdf: run with the sheet environment)."""
+    from mushaf_data.paths import BOOKS
+    f = BUILD / "pages" / f"{book}-{n}.jpg"
+    if not f.exists():
+        import pymupdf
+        doc = _DOCS.setdefault(book, pymupdf.open(BOOKS / f"{book}.pdf"))
+        f.parent.mkdir(parents=True, exist_ok=True)
+        doc[n - 1].get_pixmap(matrix=pymupdf.Matrix(1.3, 1.3)).save(f, jpg_quality=70)
+    return f"pages/{f.name}"
+
+
+def linked(text: str) -> str:
+    out, last = [], 0
+    for m in PAGE_REF.finditer(text):
+        out.append(esc(text[last:m.start()]))
+        book, a, b = m.group(1), int(m.group(2)), m.group(3)
+        links = [f'<a href="{page_link(book, n)}" target="_blank">{n}</a>' for n in range(a, (int(b) if b else a) + 1)][:6]
+        out.append(f"{book} " + "–".join(links) if b else f'<a href="{page_link(book, a)}" target="_blank">{esc(m.group(0))}</a>')
+        last = m.end()
+    out.append(esc(text[last:]))
+    return "".join(out)
+
+
 def cell(v: dict | None, label: dict) -> str:
     v = v or {}
     ws = v.get("wujuh") or []
@@ -54,10 +84,11 @@ def grid(ruwat: dict, label: dict) -> str:
 
 def main():
     sections, n = [], 0
-    for f in sorted((ROOT / "pipeline/unified").glob("*.yaml")):
+    for f in sorted((ROOT / "data/usul").glob("*.yaml")):
         t = yaml.safe_load(f.read_text(encoding="utf-8"))
         cat = t.get("category", f.stem)
-        src = json.loads((ROOT / "pipeline/work/unify" / f"{f.stem}.json").read_text(encoding="utf-8"))
+        wf = ROOT / "pipeline/work/unify" / f"{f.stem}.json"
+        src = json.loads(wf.read_text(encoding="utf-8")) if wf.exists() else {"head": {}}
         label = {w["id"]: w.get("ar") or w["id"] for w in t.get("wujuh") or []}
         vocab = "".join(f'<span class="chip" title="{esc(w.get("en", ""))}">{esc(w.get("ar", w["id"]))} <code>{esc(w["id"])}</code></span>'
                         for w in t.get("wujuh") or [])
@@ -78,9 +109,15 @@ def main():
                 + ": " + ("؛ ".join(f'{esc(NAME.get(r, r))} {esc(" / ".join(label.get(w, w) for w in (ws or [])))}' for r, ws in (x.get("ruwat") or {}).items()) or "—")
                 + f' <span class="src">{esc(" · ".join(map(str, x.get("cite") or [])))}</span></li>' for x in listed)
             parts.append(f'<details class="listed"><summary>الكلمات المذكورة ({len(listed)})</summary><ul>{items}</ul></details>')
+        dis = t.get("disagreements") or []
+        if dis:
+            items = "".join(f'<li>{esc(NAME.get(d.get("rawi"), d.get("words", "")))}: {esc(d.get("case") or "")} — '
+                            f'table {esc("/".join(map(str, d.get("table") or [])) if isinstance(d.get("table"), list) else d.get("table"))}, '
+                            f'reviewed {esc("/".join(map(str, d.get("reviewed") or [])))} → kept <b>{esc(d.get("kept"))}</b></li>' for d in dis)
+            parts.append(f'<details class="listed"><summary>الخلاف مع الجدول المراجَع ({len(dis)})</summary><ul class="en-list">{items}</ul></details>')
         for j, q in enumerate(t.get("open") or []):
             qid = f"{cat}#open{j}"
-            parts.append(f'<article class="rule open" data-id="{esc(qid)}"><p class="q">{esc(q)}</p><div class="foot">{marks(qid, "الجواب")}</div></article>')
+            parts.append(f'<article class="rule open" data-id="{esc(qid)}"><p class="q">{linked(str(q))}</p><div class="foot">{marks(qid, "الجواب")}</div></article>')
             n += 1
         prof = src["head"].get("reviewed_profile_rows") or {}
         if prof:
@@ -93,20 +130,20 @@ def main():
                         f'<span class="ftarget">{len(t.get("cases") or [])} حالات · {len(listed)} كلمات · {n_open} أسئلة</span>'
                         f'<span class="fcount"></span></summary>{"".join(parts)}</details>')
     nav = "".join(f'<a href="#{esc(f.stem)}" data-nav="{esc(f.stem)}">{esc(f.stem)}</a>'
-                  for f in sorted((ROOT / "pipeline/unified").glob("*.yaml")))
+                  for f in sorted((ROOT / "data/usul").glob("*.yaml")))
     css = """<style>
 .grid{border-collapse:collapse;width:100%;margin:6px 0;font-size:16px}.grid th{font-weight:600;color:var(--muted);text-align:right;padding:3px 8px;width:7em;font-size:15px}
 .grid td{padding:3px 8px;border-top:1px solid var(--line)}.grid small{color:var(--muted);font:12px system-ui,sans-serif;display:inline-block;min-width:5.5em}
 .w{color:var(--fg)}.none{color:var(--line);font-size:14px}.via{font:11px system-ui,sans-serif;color:var(--accent);border:1px solid var(--accent);border-radius:8px;padding:0 5px;margin-inline-start:6px}
 .vocab{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 10px}.chip{background:var(--quote);border-radius:12px;padding:1px 10px;font-size:15px}.chip code{font-size:11px;color:var(--muted)}
 .listed{padding:6px 18px;border-bottom:1px solid var(--line)}.listed summary{padding:4px 0;font-size:16px;color:var(--accent)}.listed ul{margin:4px 0 8px;padding-inline-start:20px;font-size:16px}
-.listed .src,.listed .sub{font:12px system-ui,sans-serif;color:var(--muted)}.rule.open .q{font:15px/1.6 system-ui,sans-serif;direction:ltr;text-align:left;margin:0 0 6px}
+.listed .src,.listed .sub{font:12px system-ui,sans-serif;color:var(--muted)}.en-list{direction:ltr;text-align:left;font:13px system-ui,sans-serif}.rule.open .q a{color:var(--accent)}.rule.open .q{font:15px/1.6 system-ui,sans-serif;direction:ltr;text-align:left;margin:0 0 6px}
 .rule.open{background:color-mix(in srgb,var(--accent) 4%,transparent)}.note{font:13px system-ui,sans-serif;color:var(--muted);direction:ltr;text-align:left}
 </style>"""
     page = (PAGE.replace("{NAV}", nav).replace("{SECTIONS}", "".join(sections)).replace("{N}", str(n)).replace("{F}", str(len(sections)))
             .replace("<title>Category review</title>", "<title>Unified uṣūl</title>" + css)
             .replace("مراجعة أبواب الأصول", "الأصول موحّدة: الشاطبية والدرة").replace("أبواب مقترحة", "باباً")
-            .replace('"category-review-v1"', '"unified-review-v1"')
+            .replace('"category-review-v1"', '"usul-open-v1"')
             .replace('<label><input type="checkbox" id="watchonly"> «راجِع» فقط</label>', '<label><input type="checkbox" id="watchonly"> الأسئلة فقط</label>'))
     page = page.replace('r.style.display=e.target.checked&&!r.classList.contains("watch")?"none":""', 'r.style.display=e.target.checked&&!r.classList.contains("open")?"none":""')
     page = page.replace('if(d.querySelector(".rule.watch"))d.open=true', 'if(d.querySelector(".rule.open"))d.open=true')
