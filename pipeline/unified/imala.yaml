@@ -1035,8 +1035,10 @@ cases:
     warsh:
       wujuh:
       - fath
-      cite: []
-      via: as_hafs
+      - taqlil
+      cite:
+      - wafi 148
+      - wafi 150
     bazzi:
       wujuh:
       - fath
@@ -1235,6 +1237,213 @@ cases:
       cite:
       - idah 40-43
       via: asl_unstated
+- case: 'imala_wasl_sakin: the final alif before a sākin in the next word, in waṣl (موسى الهدى، نرى الله)'
+  ruwat:
+    qalun:
+      wujuh:
+      - fath
+      cite:
+      - wafi 156
+    warsh:
+      wujuh:
+      - fath
+      cite:
+      - wafi 156
+    bazzi:
+      wujuh:
+      - fath
+      cite:
+      - wafi 156
+    qunbul:
+      wujuh:
+      - fath
+      cite:
+      - wafi 156
+    duri_abuamr:
+      wujuh:
+      - fath
+      cite:
+      - wafi 156
+    susi:
+      wujuh:
+      - fath
+      cite:
+      - wafi 156
+    hisham:
+      wujuh:
+      - fath
+      cite:
+      - wafi 156
+    ibn_dhakwan:
+      wujuh:
+      - fath
+      cite:
+      - wafi 156
+    shuba:
+      wujuh:
+      - fath
+      cite:
+      - wafi 156
+    hafs:
+      wujuh:
+      - fath
+      cite:
+      - wafi 156
+    khalaf_an_hamzah:
+      wujuh:
+      - fath
+      cite:
+      - wafi 156
+    khallad:
+      wujuh:
+      - fath
+      cite:
+      - wafi 156
+    abul_harith:
+      wujuh:
+      - fath
+      cite:
+      - wafi 156
+    duri_kisai:
+      wujuh:
+      - fath
+      cite:
+      - wafi 156
+    ibn_wardan:
+      wujuh:
+      - fath
+      cite:
+      - wafi 156
+    ibn_jammaz:
+      wujuh:
+      - fath
+      cite:
+      - wafi 156
+    ruways:
+      wujuh:
+      - fath
+      cite:
+      - wafi 156
+    rawh:
+      wujuh:
+      - fath
+      cite:
+      - wafi 156
+    ishaq:
+      wujuh:
+      - fath
+      cite:
+      - wafi 156
+    idris:
+      wujuh:
+      - fath
+      cite:
+      - wafi 156
+  note: the alif is dropped for everyone (wafi 156); at a stop each reads as his aṣl
+- case: 'imala_wasl_sakin_ra: the same, after a rāʾ (نرى الله، فسيرى الله، الكبرى اذهب)'
+  ruwat:
+    qalun:
+      wujuh:
+      - fath
+      cite:
+      - wafi 156
+    warsh:
+      wujuh:
+      - fath
+      cite:
+      - wafi 156
+    bazzi:
+      wujuh:
+      - fath
+      cite:
+      - wafi 156
+    qunbul:
+      wujuh:
+      - fath
+      cite:
+      - wafi 156
+    duri_abuamr:
+      wujuh:
+      - fath
+      cite:
+      - wafi 156
+    susi:
+      wujuh:
+      - fath
+      - imala
+      cite:
+      - wafi 156
+    hisham:
+      wujuh:
+      - fath
+      cite:
+      - wafi 156
+    ibn_dhakwan:
+      wujuh:
+      - fath
+      cite:
+      - wafi 156
+    shuba:
+      wujuh:
+      - fath
+      cite:
+      - wafi 156
+    hafs:
+      wujuh:
+      - fath
+      cite:
+      - wafi 156
+    khalaf_an_hamzah:
+      wujuh:
+      - fath
+      cite:
+      - wafi 156
+    khallad:
+      wujuh:
+      - fath
+      cite:
+      - wafi 156
+    abul_harith:
+      wujuh:
+      - fath
+      cite:
+      - wafi 156
+    duri_kisai:
+      wujuh:
+      - fath
+      cite:
+      - wafi 156
+    ibn_wardan:
+      wujuh:
+      - fath
+      cite:
+      - wafi 156
+    ibn_jammaz:
+      wujuh:
+      - fath
+      cite:
+      - wafi 156
+    ruways:
+      wujuh:
+      - fath
+      cite:
+      - wafi 156
+    rawh:
+      wujuh:
+      - fath
+      cite:
+      - wafi 156
+    ishaq:
+      wujuh:
+      - fath
+      cite:
+      - wafi 156
+    idris:
+      wujuh:
+      - fath
+      cite:
+      - wafi 156
+  note: al-Sūsī's khulf is on the rāʾ, the alif being dropped (wafi 156)
 - case: named words with no general rule (the rows give per-rāwī readings only)
   ruwat:
     qalun:
@@ -1769,18 +1978,6 @@ listed:
   note: al-Nāziʿāt
   cite:
   - wafi 149
-- words:
-  - نرى الله
-  - فسيرى الله
-  - الكبرى اذهب
-  case: 'imala_ya_ra: the final alif after a rāʾ (ذوات الراء)'
-  ruwat:
-    susi:
-    - fath
-    - imala
-  note: waṣl, the alif dropped
-  cite:
-  - wafi 156
 - words:
   - ترى المؤمنين
   - وترى الملائكة

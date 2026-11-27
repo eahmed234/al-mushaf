@@ -131,14 +131,24 @@ tables; review list empty.
   (basmalah, badal at one word, Ḥamzah's rasm waqf, the yāʾāt, three ḥarakāt) are recorded and
   reported `modelled: False` until the engine has those categories (milestone 8).
 
+- **Aṣl or farsh in al-Baqarah (2026-11-27)**: each of the 147 places in data/farsh/002.yaml has a
+  `class` (`pipeline/farsh_class.py`, run by `pipeline.farsh`): 21 `rule` (an uṣūl table gives it:
+  the hāʾ of عليهم, hāʾ al-sakt, hāʾ al-taʾnīth at a stop, the yāʾāt, لئلا; each names its table
+  case) and 126 `farsh` (the farsh chapters of al-Wāfī pp. 199-231 / al-Īḍāḥ pp. 187-222, with pages;
+  12 pinned by hand, the rest found next to a stated reading, so evidence to read, not proof).
+  The al-Budūr crosscheck now picks the table case from the word (imālah after a rāʾ, al-Wāfī
+  p. 150's faʿlā words, the alif before a sākin in waṣl; the sākin hamzah's place; the second
+  hamzah's vowel) and leaves out rows that point at another word: 1,271 agree, 52 differ (was
+  1,227 / 129). It found two table gaps, fixed from the page (`pipeline.unify_gaps`): Warsh's
+  khulf taqlīl on the faʿlā words (wafi 150), and the alif dropped before a sākin in waṣl with
+  al-Sūsī's khulf on the rāʾ (wafi 155-156), a new case pair in the imālah table.
+
 Next, in order:
-1. Class al-Baqarah's 147 farsh places as covered by a rule (data/usul) or true farsh; fix the
-   crosscheck's case selection (faʿlā imālah, ʿayn/lām of the sākin hamzah, hamzatayn darbs).
-2. al-Fātiḥah's farsh (مالك, الصراط) into data/farsh/001.yaml; the per-word chapters (idghām ṣaghīr,
+1. al-Fātiḥah's farsh (مالك, الصراط) into data/farsh/001.yaml; the per-word chapters (idghām ṣaghīr,
    the yāʾāt) anchored to places in farsh format.
-3. The al-Baqarah farsh disagreements with KFGQPC: review sheet, second reading of the disputed
+2. The al-Baqarah farsh disagreements with KFGQPC: review sheet, second reading of the disputed
    words from al-Wāfī / al-Īḍāḥ's farsh chapters.
-4. Then docs/05 milestones 3- (riwāyah-neutral spine, the rest of the farsh, occurrences, constraints).
+3. Then docs/05 milestones 3- (riwāyah-neutral spine, the rest of the farsh, occurrences, constraints).
 
 Working notes: subagents get their own scratch folders; reviewed data stands until Eisa rules;
 book text is never committed (quotes are offsets; pipeline/out and pipeline/work are gitignored).

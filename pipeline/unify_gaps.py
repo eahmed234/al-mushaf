@@ -167,6 +167,29 @@ def apply() -> list[str]:
     t["listed"] = [x for x in t.get("listed") or [] if not any("آدم" in w or "ولو آمن" in w for w in x["words"])]
     save("lin_hamz", t); done.append("lin_hamz#1")
 
+    # found by the al-Budūr crosscheck (2026-11-27): wafi 150 "وتقلل لورش بخلاف عنه" for the fuʿlā words;
+    # the fill had given Warsh Ḥafṣ's fatḥ
+    t = load("imala")
+    c = next(c for c in t["cases"] if c["case"].startswith("imala_alif_tanith"))
+    c["ruwat"]["warsh"] = {"wujuh": ["fath", "taqlil"], "cite": ["wafi 148", "wafi 150"]}
+    # wafi 155-156: before a sākin in the next word the alif is dropped in waṣl (no fatḥ, taqlīl or
+    # imālah); after a rāʾ al-Sūsī has a khulf on the rāʾ, fatḥ (named first) or imālah
+    name = "imala_wasl_sakin: the final alif before a sākin in the next word, in waṣl (موسى الهدى، نرى الله)"
+    if not any(c["case"] == name for c in t["cases"]):
+        rw = {r: {"wujuh": ["fath"], "cite": ["wafi 156"]} for r in RUWAT}
+        t["cases"].insert(next(i for i, c in enumerate(t["cases"]) if c["case"].startswith("named words")),
+                          {"case": name, "ruwat": rw,
+                           "note": "the alif is dropped for everyone (wafi 156); at a stop each reads as his aṣl"})
+    name_ra = "imala_wasl_sakin_ra: the same, after a rāʾ (نرى الله، فسيرى الله، الكبرى اذهب)"
+    if not any(c["case"] == name_ra for c in t["cases"]):
+        rw = {r: {"wujuh": ["fath"], "cite": ["wafi 156"]} for r in RUWAT}
+        rw["susi"] = {"wujuh": ["fath", "imala"], "cite": ["wafi 156"]}
+        i = next(i for i, c in enumerate(t["cases"]) if c["case"] == name)
+        t["cases"].insert(i + 1, {"case": name_ra, "ruwat": rw,
+                                  "note": "al-Sūsī's khulf is on the rāʾ, the alif being dropped (wafi 156)"})
+    t["listed"] = [x for x in t["listed"] if x.get("words") != ["نرى الله", "فسيرى الله", "الكبرى اذهب"]]
+    save("imala", t); done.append("crosscheck: imala_alif_tanith warsh, imala_wasl_sakin(_ra)")
+
     t = load("naql")  # idah 117 n. 2, 119
     cite(listed(t, lambda x: x["words"] == ["من أجل"])[0], "idah 119")
     save("naql", t); done.append("naql#0")

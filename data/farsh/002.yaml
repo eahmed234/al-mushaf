@@ -5,6 +5,8 @@
 # scope: all = the book says it holds wherever the word occurs; `also` lists the same word, written
 #   the same way, elsewhere in the surah (prefixed forms are not matched yet).
 # Option text per slot (the reading written out) comes next; `reading` is the book's own words.
+# class: rule = an uṣūl table (data/usul) gives the place (al-Budūr restates it here); farsh = the
+#   surah's farsh chapter of al-Wāfī / al-Īḍāḥ treats it (pages); pipeline/farsh_class.py.
 - place: ['2:6:5']
   words: عَلَيۡهِمۡ
   scope: here
@@ -20,6 +22,9 @@
     reading: بكسرها
     cite: budur 20
     from: gold
+  class:
+    kind: rule
+    rule: ['ha_mim_jam: hāʾ after a sākin yāʾ, before a mutaḥarrik (عليهم، إليهم، لديهم)']
 - place: ['2:9:6']
   words: يَخۡدَعُونَ
   scope: here
@@ -35,6 +40,9 @@
     reading: بفتح الياء وإسكان الخاء بلا ألف وفتح الدال
     cite: budur 21
     from: gold
+  class:
+    kind: farsh
+    farsh: [idah 189, wafi 199, wafi 200]
 - place: ['2:10:12']
   words: يَكۡذِبُونَ
   scope: here
@@ -50,6 +58,9 @@
     reading: بضم الياء وفتح الكاف وتشديد الذال
     cite: budur 21
     from: gold
+  class:
+    kind: farsh
+    farsh: [wafi 200]
 - place: ['2:11:2', '2:13:2']
   words: قِيلَ قِيلَ
   scope: here
@@ -65,6 +76,9 @@
     reading: بكسرة خالصة
     cite: budur 21
     from: gold
+  class:
+    kind: farsh
+    farsh: [idah 189, idah 190, wafi 201]
 - place: ['2:28:13']
   words: تُرۡجَعُونَ
   scope: here
@@ -80,6 +94,9 @@
     reading: بضم التاء وفتح الجيم على البناء للمفعول
     cite: budur 27
     from: run
+  class:
+    kind: farsh
+    farsh: [wafi 229]
 - place: ['2:29:13']
   words: فَسَوَّىٰهُنَّ
   scope: here
@@ -97,6 +114,9 @@
     cite: budur 27
     from: run
     condition: waqf
+  class:
+    kind: rule
+    rule: ['waqf_rasm: نون هنّ (the doubled nūn after the pronoun hāʾ): hāʾ al-sakt at a stop']
 - place: ['2:29:16']
   words: وَهُوَ
   scope: here
@@ -118,6 +138,9 @@
     cite: budur 27
     from: run
     condition: waqf
+  class:
+    kind: farsh
+    farsh: [wafi 201]
 - place: ['2:30:24']
   words: إِنِّيٓ
   scope: here
@@ -140,6 +163,10 @@
     reading: كحفص (الباقون، غير مذكورين)
     cite: budur 28
     from: implied
+  class:
+    kind: rule
+    rule: [ya_idafa]
+    note: 'Eisa (category review 2026-11-26): the yāʾāt could be farsh; the tables list them word by word'
 - place: ['2:34:3']
   words: لِلۡمَلَٰٓئِكَةِ
   scope: here
@@ -156,6 +183,9 @@
     reading: بكسرها
     cite: budur 30
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 188, idah 193]
 - place: ['2:36:1']
   words: فَأَزَلَّهُمَا
   scope: here
@@ -171,6 +201,9 @@
     reading: بحذف الألف وتشديد اللام
     cite: budur 30
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 194]
 - place: ['2:37:2', '2:37:5']
   words: ءَادَمُ كَلِمَٰتٖ
   scope: here
@@ -186,6 +219,9 @@
     reading: برفع آدم ونصب كلمات
     cite: budur 30
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 211, wafi 202]
 - place: ['2:38:13']
   words: خَوۡفٌ
   scope: here
@@ -201,6 +237,9 @@
     reading: بالرفع والتنوين
     cite: budur 30
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 194]
 - place: ['2:38:14']
   words: عَلَيۡهِمۡ
   scope: here
@@ -216,6 +255,9 @@
     reading: كحفص (الباقون، غير مذكورين)
     cite: budur 30
     from: implied
+  class:
+    kind: rule
+    rule: ['ha_mim_jam: hāʾ after a sākin yāʾ, before a mutaḥarrik (عليهم، إليهم، لديهم)']
 - place: ['2:40:13', '2:41:18']
   words: فَٱرۡهَبُونِ فَٱتَّقُونِ
   scope: here
@@ -231,6 +273,10 @@
     reading: بالحذف كذلك
     cite: budur 30
     from: run
+  class:
+    kind: rule
+    rule: [ya_zaida]
+    note: 'Eisa (category review 2026-11-26): the yāʾāt could be farsh; the tables list them word by word'
 - place: ['2:48:10']
   words: يُقۡبَلُ
   scope: here
@@ -246,6 +292,9 @@
     reading: بالياء التحتية على التذكير
     cite: budur 32
     from: run
+  class:
+    kind: farsh
+    farsh: [wafi 202]
 - place: ['2:51:2']
   words: وَٰعَدۡنَا
   scope: here
@@ -261,6 +310,9 @@
     reading: بإثباته
     cite: budur 32
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 194, wafi 202]
 - place: ['2:54:13', '2:54:20']
   words: بَارِئِكُمۡ بَارِئِكُمۡ
   scope: here
@@ -281,6 +333,9 @@
     reading: كحفص (الباقون، غير مذكورين)
     cite: budur 32
     from: implied
+  class:
+    kind: farsh
+    farsh: [wafi 202]
 - place: ['2:58:16']
   words: نَّغۡفِرۡ
   scope: here
@@ -301,6 +356,9 @@
     reading: بالنون المفتوحة والفاء المكسورة
     cite: budur 32
     from: run
+  class:
+    kind: farsh
+    farsh: [wafi 203]
 - place: ['2:61:38']
   words: عَلَيۡهِمُ
   scope: here
@@ -354,6 +412,10 @@
     cite: budur 33
     from: run
     condition: waqf
+  class:
+    kind: rule
+    rule: ['ha_mim_jam: hāʾ before the plural mīm before a sākin, after a sākin yāʾ, in waṣl (عليهمُ القتال)', 'ha_mim_jam: mīm after a hāʾ that follows a kasrah or sākin yāʾ, before a sākin, in waṣl (عليهمِ
+        القتال)']
 - place: ['2:61:52']
   words: ٱلنَّبِيِّـۧنَ
   scope: here
@@ -369,6 +431,9 @@
     reading: بالياء المشددة
     cite: budur 34
     from: run
+  class:
+    kind: farsh
+    farsh: [wafi 204]
 - place: ['2:62:7']
   words: وَٱلصَّٰبِـِٔينَ
   scope: here
@@ -384,6 +449,9 @@
     reading: باثباتها
     cite: budur 34
     from: run
+  class:
+    kind: farsh
+    farsh: [wafi 204]
 - place: ['2:67:7']
   words: يَأۡمُرُكُمۡ
   scope: here
@@ -404,6 +472,9 @@
     reading: بالضمة الكاملة
     cite: budur 34
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 195, wafi 203]
 - place: ['2:67:13']
   words: هُزُوٗاۖ
   scope: here
@@ -430,6 +501,9 @@
     reading: بضم الزاى مع الهمز وصلا ووقفا
     cite: budur 34
     from: run
+  class:
+    kind: farsh
+    farsh: [wafi 204]
 - place: ['2:68:7', '2:68:8', '2:70:7', '2:70:8']
   words: مَا هِيَۚ مَا هِيَ
   scope: all
@@ -445,6 +519,9 @@
     '2:114:15', '2:116:8', '2:120:24', '2:133:11', '2:134:6', '2:141:6', '2:142:5', '2:144:16', '2:145:25', '2:148:8', '2:150:10', '2:159:11', '2:169:9', '2:172:7', '2:174:14', '2:181:4', '2:185:41', '2:187:27',
     '2:189:5', '2:194:13', '2:204:12', '2:209:5', '2:211:15', '2:213:28', '2:228:11', '2:235:39', '2:236:7', '2:237:12', '2:240:19', '2:253:25', '2:253:32', '2:253:46', '2:253:51', '2:255:14', '2:255:28',
     '2:267:7', '2:275:33', '2:278:7', '2:282:76', '2:284:2', '2:284:10', '2:286:8', '2:286:11', '2:286:34']
+  class:
+    kind: rule
+    rule: ['waqf_rasm: هو، هي (the detached pronoun): hāʾ al-sakt at a stop']
 - place: ['2:74:7']
   words: فَهِيَ
   scope: here
@@ -466,6 +543,10 @@
     cite: budur 34
     from: run
     condition: waqf
+  class:
+    kind: farsh
+    farsh: [idah 188, idah 192, idah 193, idah 194, idah 195, idah 197, idah 201, idah 203, idah 206, idah 208, idah 219, wafi 201, wafi 202, wafi 203, wafi 204, wafi 206, wafi 207, wafi 209, wafi 210,
+      wafi 212, wafi 214, wafi 219, wafi 225, wafi 227]
 - place: ['2:74:37']
   words: تَعۡمَلُونَ
   scope: here
@@ -481,6 +562,9 @@
     reading: بتاء الخطاب
     cite: budur 35
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 197, idah 198, idah 200, wafi 205, wafi 212]
 - place: ['2:78:7']
   words: أَمَانِيَّ
   scope: here
@@ -503,6 +587,9 @@
     reading: بتشديدها
     cite: budur 35
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 196, idah 197]
 - place: ['2:79:5', '2:79:20']
   words: بِأَيۡدِيهِمۡ أَيۡدِيهِمۡ
   scope: here
@@ -518,6 +605,9 @@
     reading: كحفص (الباقون، غير مذكورين)
     cite: budur 35
     from: implied
+  class:
+    kind: rule
+    rule: ['ha_mim_jam: hāʾ after a sākin yāʾ, before a mutaḥarrik (عليهم، إليهم، لديهم)']
 - place: ['2:81:7']
   words: خَطِيٓـَٔتُهُۥ
   scope: here
@@ -533,6 +623,9 @@
     reading: بحذف الألف على الإفراد
     cite: budur 35
     from: run
+  class:
+    kind: farsh
+    farsh: [wafi 205]
 - place: ['2:83:7']
   words: تَعۡبُدُونَ
   scope: here
@@ -548,6 +641,9 @@
     reading: بتاء الخطاب
     cite: budur 35
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 197, wafi 205]
 - place: ['2:83:18']
   words: حُسۡنٗا
   scope: here
@@ -563,6 +659,9 @@
     reading: يضم الحاء وإسكان السين
     cite: budur 35
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 195, idah 198, wafi 205]
 - place: ['2:85:11']
   words: تَظَٰهَرُونَ
   scope: here
@@ -578,6 +677,9 @@
     reading: بتشديدها
     cite: budur 35
     from: run
+  class:
+    kind: farsh
+    farsh: [wafi 205]
 - place: ['2:85:17']
   words: أُسَٰرَىٰ
   scope: here
@@ -593,6 +695,9 @@
     reading: بضم الهمزة وفتح السين وإثبات ألف بعدها
     cite: budur 35
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 194, idah 196, wafi 206, wafi 207]
 - place: ['2:85:18']
   words: تُفَٰدُوهُمۡ
   scope: here
@@ -608,6 +713,9 @@
     reading: بفتح التاء وسكون الفاء وحذف الألف بعدها
     cite: budur 35
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 198, wafi 206]
 - place: ['2:85:49']
   words: تَعۡمَلُونَ
   scope: here
@@ -623,6 +731,9 @@
     reading: بتاء الخطاب
     cite: budur 36
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 197, idah 198, idah 200, wafi 205, wafi 212]
 - place: ['2:87:16']
   words: ٱلۡقُدُسِۗ
   scope: here
@@ -638,6 +749,9 @@
     reading: بضمها
     cite: budur 36
     from: run
+  class:
+    kind: farsh
+    farsh: [wafi 206]
 - place: ['2:90:12']
   words: يُنَزِّلَ
   scope: here
@@ -653,6 +767,9 @@
     reading: بفتح النون وتشديد الزاي
     cite: budur 36
     from: run
+  class:
+    kind: farsh
+    farsh: [wafi 206, wafi 207]
 - place: ['2:91:16']
   words: وَهُوَ
   scope: here
@@ -664,6 +781,9 @@
     cite: budur 36
     from: run
     condition: waqf
+  class:
+    kind: rule
+    rule: ['waqf_rasm: هو، هي (the detached pronoun): hāʾ al-sakt at a stop']
 - place: ['2:91:22']
   words: فَلِمَ
   scope: here
@@ -687,6 +807,9 @@
     cite: budur 36
     from: run
     condition: waqf
+  class:
+    kind: rule
+    rule: ['waqf_rasm: ما istifhāmiyyah after a preposition (لم عم فيم مم بم): hāʾ al-sakt at a stop']
 - place: ['2:91:24']
   words: أَنۢبِيَآءَ
   scope: here
@@ -702,6 +825,9 @@
     reading: بالياء بدلا من الهمز
     cite: budur 36
     from: run
+  class:
+    kind: farsh
+    farsh: [wafi 204]
 - place: ['2:96:25']
   words: يَعۡمَلُونَ
   scope: here
@@ -717,6 +843,9 @@
     reading: بياء الغيب
     cite: budur 37
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 194, idah 197, idah 201, wafi 211]
 - place: ['2:97:5', '2:98:7']
   words: لِّجِبۡرِيلَ وَجِبۡرِيلَ
   scope: here
@@ -742,6 +871,9 @@
     reading: كذلك ولكن بزيادة ياء ساكنة بعد الهمزة
     cite: budur 37
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 197, wafi 207]
 - place: ['2:98:8']
   words: وَمِيكَىٰلَ
   scope: here
@@ -762,6 +894,9 @@
     reading: بهمزة مكسورة بعد الألف وياء ساكنة بعدها
     cite: budur 37
     from: run
+  class:
+    kind: farsh
+    farsh: [wafi 207]
 - place: ['2:102:11', '2:102:12']
   words: وَلَٰكِنَّ ٱلشَّيَٰطِينَ
   scope: here
@@ -777,6 +912,9 @@
     reading: بتشديد النون وفتحها ونصب الشياطين
     cite: budur 37
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 207, wafi 204, wafi 207, wafi 208, wafi 209, wafi 216, wafi 217, wafi 231]
 - place: ['2:106:2']
   words: نَنسَخۡ
   scope: here
@@ -792,6 +930,9 @@
     reading: بفتحهما
     cite: budur 38
     from: run
+  class:
+    kind: farsh
+    farsh: [wafi 208]
 - place: ['2:106:6']
   words: نُنسِهَا
   scope: here
@@ -807,6 +948,9 @@
     reading: بضم النون وكسر السين من غير همز
     cite: budur 38
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 198, wafi 208]
 - place: ['2:111:12']
   words: أَمَانِيُّهُمۡۗ
   scope: here
@@ -829,6 +973,9 @@
     from: run
   review:
     twice: [ibn_wardan, ibn_jammaz]
+  class:
+    kind: farsh
+    farsh: [idah 197]
 - place: ['2:112:6']
   words: وَهُوَ
   scope: here
@@ -844,6 +991,9 @@
     reading: كحفص (الباقون، غير مذكورين)
     cite: budur 38
     from: implied
+  class:
+    kind: farsh
+    farsh: [wafi 201]
 - place: ['2:112:13']
   words: خَوۡفٌ
   scope: here
@@ -859,6 +1009,9 @@
     reading: كحفص (الباقون، غير مذكورين)
     cite: budur 39
     from: implied
+  class:
+    kind: farsh
+    farsh: [idah 194]
 - place: ['2:116:1']
   words: وَقَالُواْ
   scope: here
@@ -874,6 +1027,9 @@
     reading: بإثباتها
     cite: budur 39
     from: run
+  class:
+    kind: farsh
+    farsh: [wafi 208]
 - place: ['2:117:11']
   words: فَيَكُونُ
   scope: here
@@ -889,6 +1045,9 @@
     reading: برفعه
     cite: budur 39
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 192, idah 198, idah 199, idah 200, idah 213, idah 214, wafi 203, wafi 206, wafi 208, wafi 209, wafi 213, wafi 216, wafi 218, wafi 222, wafi 223, wafi 225, wafi 230]
 - place: ['2:119:7']
   words: تُسۡـَٔلُ
   scope: here
@@ -904,6 +1063,9 @@
     reading: بضم التاء ورفع اللام
     cite: budur 39
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 198, wafi 209]
 - place: ['2:124:3', '2:125:10', '2:125:14', '2:126:3', '2:127:3', '2:130:5', '2:132:3', '2:133:20', '2:135:10', '2:136:10', '2:140:4']
   words: إِبۡرَٰهِـۧمَ إِبۡرَٰهِـۧمَ إِبۡرَٰهِـۧمَ إِبۡرَٰهِـۧمُ إِبۡرَٰهِـۧمُ إِبۡرَٰهِـۧمَ إِبۡرَٰهِـۧمُ إِبۡرَٰهِـۧمَ إِبۡرَٰهِـۧمَ إِبۡرَٰهِـۧمَ إِبۡرَٰهِـۧمَ
   scope: all
@@ -930,6 +1092,9 @@
     cite: budur 39
     from: run
   also: ['2:258:6', '2:258:15', '2:258:25', '2:260:3']
+  class:
+    kind: farsh
+    farsh: [idah 199, idah 200, wafi 209]
 - place: ['2:124:18']
   words: عَهۡدِي
   scope: here
@@ -945,6 +1110,10 @@
     reading: يفتحها
     cite: budur 40
     from: run
+  class:
+    kind: rule
+    rule: [ya_idafa]
+    note: 'Eisa (category review 2026-11-26): the yāʾāt could be farsh; the tables list them word by word'
 - place: ['2:125:7']
   words: وَٱتَّخِذُواْ
   scope: here
@@ -960,6 +1129,9 @@
     reading: بكسرها
     cite: budur 40
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 199, wafi 209, wafi 211]
 - place: ['2:125:18']
   words: بَيۡتِيَ
   scope: here
@@ -976,6 +1148,10 @@
     reading: باسكانها
     cite: budur 40
     from: run
+  class:
+    kind: rule
+    rule: [ya_idafa]
+    note: 'Eisa (category review 2026-11-26): the yāʾāt could be farsh; the tables list them word by word'
 - place: ['2:126:22']
   words: فَأُمَتِّعُهُۥ
   scope: here
@@ -991,6 +1167,9 @@
     reading: بفتح الميم وتشديد التاء
     cite: budur 40
     from: run
+  class:
+    kind: farsh
+    farsh: [wafi 211]
 - place: ['2:128:10']
   words: وَأَرِنَا
   scope: here
@@ -1011,6 +1190,9 @@
     reading: بالكسرة الكاملة على الأصل
     cite: budur 40
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 199, idah 200, wafi 211]
 - place: ['2:132:1']
   words: وَوَصَّىٰ
   scope: here
@@ -1026,6 +1208,9 @@
     reading: بحذف الهمزة مع تشديد الصاد
     cite: budur 40
     from: run
+  class:
+    kind: farsh
+    farsh: [wafi 211]
 - place: ['2:137:17', '2:139:5']
   words: وَهُوَ وَهُوَ
   scope: here
@@ -1041,6 +1226,9 @@
     reading: ضمها
     cite: budur 40
     from: run
+  class:
+    kind: farsh
+    farsh: [wafi 201]
 - place: ['2:140:2']
   words: تَقُولُونَ
   scope: here
@@ -1056,6 +1244,9 @@
     reading: بياء الغيب
     cite: budur 40
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 200]
 - place: ['2:142:20']
   words: صِرَٰطٖ
   scope: here
@@ -1076,6 +1267,10 @@
     reading: بالصاد الخالصة
     cite: budur 42
     from: run
+  class:
+    kind: farsh
+    farsh: [wafi 50, wafi 51]
+    note: first treated at al-Fātiḥah (الصراط)
 - place: ['2:143:44']
   words: لَرَءُوفٞ
   scope: here
@@ -1091,6 +1286,9 @@
     reading: بإثباتها
     cite: budur 42
     from: run
+  class:
+    kind: farsh
+    farsh: [wafi 212]
 - place: ['2:144:34']
   words: يَعۡمَلُونَ
   scope: here
@@ -1106,6 +1304,9 @@
     reading: بياء الغيبة
     cite: budur 42
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 194, idah 197, idah 201, wafi 211]
 - place: ['2:148:4']
   words: مُوَلِّيهَاۖ
   scope: here
@@ -1121,6 +1322,9 @@
     reading: بكسر اللام وياء ساكنة بعدها
     cite: budur 42
     from: run
+  class:
+    kind: farsh
+    farsh: [wafi 212]
 - place: ['2:149:17']
   words: تَعۡمَلُونَ
   scope: here
@@ -1136,6 +1340,9 @@
     reading: بالتاء على الخطاب
     cite: budur 42
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 197, idah 198, idah 200, wafi 205, wafi 212]
 - place: ['2:150:15']
   words: لِئَلَّا
   scope: here
@@ -1151,6 +1358,9 @@
     reading: كحفص (الباقون، غير مذكورين)
     cite: budur 42
     from: implied
+  class:
+    kind: rule
+    rule: ['hamz_mufrad: hamzah after a lām-alif']
 - place: ['2:152:1', '2:152:2']
   words: فَٱذۡكُرُونِيٓ أَذۡكُرۡكُمۡ
   scope: here
@@ -1166,6 +1376,10 @@
     reading: بإسكانها
     cite: budur 42
     from: run
+  class:
+    kind: rule
+    rule: [ya_idafa]
+    note: 'Eisa (category review 2026-11-26): the yāʾāt could be farsh; the tables list them word by word'
 - place: ['2:152:6']
   words: تَكۡفُرُونِ
   scope: here
@@ -1181,6 +1395,10 @@
     reading: بالحذف في الحالين
     cite: budur 42
     from: run
+  class:
+    kind: rule
+    rule: [ya_zaida]
+    note: 'Eisa (category review 2026-11-26): the yāʾāt could be farsh; the tables list them word by word'
 - place: ['2:158:19', '2:158:20']
   words: تَطَوَّعَ خَيۡرٗا
   scope: here
@@ -1196,6 +1414,9 @@
     reading: بالتاء الفوقية وتخفيف الطاء وفتح العين
     cite: budur 43
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 202, idah 209, wafi 212, wafi 217, wafi 229]
 - place: ['2:164:35']
   words: ٱلرِّيَٰحِ
   scope: here
@@ -1211,6 +1432,9 @@
     reading: بفتح الياء وألف بعدها على الجمع
     cite: budur 43
     from: run
+  class:
+    kind: farsh
+    farsh: [wafi 212]
 - place: ['2:165:18']
   words: يَرَى
   scope: here
@@ -1226,6 +1450,9 @@
     reading: بياء الغيبة
     cite: budur 43
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 199, idah 201, wafi 213]
 - place: ['2:165:22']
   words: يَرَوۡنَ
   scope: here
@@ -1241,6 +1468,9 @@
     reading: بفتحها
     cite: budur 43
     from: run
+  class:
+    kind: farsh
+    farsh: [wafi 213]
 - place: ['2:165:24', '2:165:28']
   words: أَنَّ وَأَنَّ
   scope: here
@@ -1256,6 +1486,9 @@
     reading: يفتحها فيهما
     cite: budur 43
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 196, idah 199, idah 201, idah 203, idah 206, wafi 203, wafi 205, wafi 206, wafi 209, wafi 215, wafi 220, wafi 221, wafi 222, wafi 227, wafi 229]
 - place: ['2:168:11']
   words: خُطُوَٰتِ
   scope: here
@@ -1271,6 +1504,9 @@
     reading: كحفص (الباقون، غير مذكورين)
     cite: budur 43
     from: implied
+  class:
+    kind: farsh
+    farsh: [idah 207, idah 210, idah 211, wafi 213]
 - place: ['2:173:4']
   words: ٱلۡمَيۡتَةَ
   scope: here
@@ -1286,6 +1522,9 @@
     reading: بالتخفيف
     cite: budur 44
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 203, idah 205]
 - place: ['2:173:13', '2:173:14']
   words: فَمَنِ ٱضۡطُرَّ
   scope: here
@@ -1306,6 +1545,12 @@
     reading: بضمهما معا
     cite: budur 44
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 187, idah 188, idah 189, idah 190, idah 191, idah 192, idah 193, idah 194, idah 195, idah 196, idah 197, idah 198, idah 199, idah 200, idah 201, idah 202, idah 203, idah 204, idah 205,
+      idah 206, idah 207, idah 208, idah 209, idah 210, idah 211, idah 212, idah 213, idah 214, idah 215, idah 216, idah 217, idah 218, idah 219, idah 220, idah 221, wafi 199, wafi 200, wafi 201, wafi 202,
+      wafi 203, wafi 204, wafi 205, wafi 206, wafi 207, wafi 208, wafi 209, wafi 210, wafi 211, wafi 212, wafi 213, wafi 214, wafi 215, wafi 216, wafi 217, wafi 218, wafi 220, wafi 221, wafi 222, wafi 223,
+      wafi 224, wafi 225, wafi 227, wafi 228, wafi 229, wafi 230, wafi 231]
 - place: ['2:177:1', '2:177:2']
   words: لَّيۡسَ ٱلۡبِرَّ
   scope: here
@@ -1321,6 +1566,9 @@
     reading: برفعها
     cite: budur 44
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 187, idah 207, idah 208, wafi 202, wafi 209, wafi 216, wafi 217, wafi 220, wafi 225]
 - place: ['2:177:9', '2:177:10']
   words: وَلَٰكِنَّ ٱلۡبِرَّ
   scope: here
@@ -1336,6 +1584,9 @@
     reading: بفتح النون مشددة ونصب راء البر
     cite: budur 44
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 207, wafi 204, wafi 207, wafi 208, wafi 209, wafi 216, wafi 217, wafi 231]
 - place: ['2:177:18']
   words: وَٱلنَّبِيِّـۧنَ
   scope: here
@@ -1351,6 +1602,9 @@
     reading: بياء مشددة
     cite: budur 44
     from: run
+  class:
+    kind: farsh
+    farsh: [wafi 204]
 - place: ['2:182:4']
   words: مُّوصٖ
   scope: here
@@ -1366,6 +1620,9 @@
     reading: بإسكان الواو وتخفيف الصاد
     cite: budur 45
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 208, wafi 216, wafi 217]
 - place: ['2:184:17', '2:184:18', '2:184:19']
   words: فِدۡيَةٞ طَعَامُ مِسۡكِينٖۖ
   scope: here
@@ -1393,6 +1650,9 @@
     from: run
   review:
     twice: [bazzi, qunbul, duri_abuamr, susi, hisham, shuba, hafs, khalaf_an_hamzah, khallad, abul_harith, duri_kisai, ruways, rawh, ishaq, idris]
+  class:
+    kind: farsh
+    farsh: [wafi 217]
 - place: ['2:184:21']
   words: تَطَوَّعَ
   scope: here
@@ -1408,6 +1668,9 @@
     reading: بالتاء الفوقية وتخفيف الطاء وفتح العين
     cite: budur 45
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 202, wafi 212]
 - place: ['2:185:31', '2:185:35']
   words: ٱلۡيُسۡرَ ٱلۡعُسۡرَ
   scope: here
@@ -1423,6 +1686,9 @@
     reading: بالإسكان
     cite: budur 46
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 208, idah 209]
 - place: ['2:185:36']
   words: وَلِتُكۡمِلُواْ
   scope: here
@@ -1438,6 +1704,9 @@
     reading: بإسكان الكاف وتخفيف الميم
     cite: budur 46
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 208, wafi 217]
 - place: ['2:186:9', '2:186:11']
   words: ٱلدَّاعِ دَعَانِۖ
   scope: here
@@ -1470,6 +1739,10 @@
     reading: بحذفهما في الحالين
     cite: budur 46
     from: run
+  class:
+    kind: rule
+    rule: [ya_zaida]
+    note: 'Eisa (category review 2026-11-26): the yāʾāt could be farsh; the tables list them word by word'
 - place: ['2:186:15']
   words: بِي
   scope: here
@@ -1492,6 +1765,10 @@
     reading: بالإسكان في الحالين
     cite: budur 46
     from: run
+  class:
+    kind: rule
+    rule: [ya_idafa]
+    note: 'Eisa (category review 2026-11-26): the yāʾāt could be farsh; the tables list them word by word'
 - place: ['2:189:13', '2:189:21']
   words: ٱلۡبُيُوتَ ٱلۡبُيُوتَ
   scope: here
@@ -1507,6 +1784,9 @@
     reading: بكسرها
     cite: budur 47
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 213, wafi 217, wafi 218]
 - place: ['2:189:16', '2:189:17']
   words: وَلَٰكِنَّ ٱلۡبِرَّ
   scope: here
@@ -1522,6 +1802,9 @@
     reading: بفتح النون مشددة ونصب البر
     cite: budur 47
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 207, wafi 204, wafi 207, wafi 208, wafi 209, wafi 216, wafi 217, wafi 231]
 - place: ['2:191:13', '2:191:18', '2:191:21']
   words: تُقَٰتِلُوهُمۡ يُقَٰتِلُوكُمۡ قَٰتَلُوكُمۡ
   scope: here
@@ -1537,6 +1820,9 @@
     reading: بإثبات الألف فيها
     cite: budur 47
     from: run
+  class:
+    kind: farsh
+    farsh: [wafi 218]
 - place: ['2:197:9', '2:197:11', '2:197:13']
   words: رَفَثَ فُسُوقَ جِدَالَ
   scope: here
@@ -1564,6 +1850,9 @@
     from: run
   review:
     twice: [ibn_wardan, ibn_jammaz]
+  class:
+    kind: farsh
+    farsh: [idah 213, idah 214, wafi 218]
 - place: ['2:197:27']
   words: وَٱتَّقُونِ
   scope: here
@@ -1585,6 +1874,10 @@
     reading: كحفص (الباقون، غير مذكورين)
     cite: budur 47
     from: implied
+  class:
+    kind: rule
+    rule: [ya_zaida]
+    note: 'Eisa (category review 2026-11-26): the yāʾāt could be farsh; the tables list them word by word'
 - place: ['2:208:6']
   words: ٱلسِّلۡمِ
   scope: here
@@ -1600,6 +1893,9 @@
     reading: بكسرها
     cite: budur 48
     from: run
+  class:
+    kind: farsh
+    farsh: [wafi 204, wafi 218, wafi 231]
 - place: ['2:210:11']
   words: وَٱلۡمَلَٰٓئِكَةُ
   scope: here
@@ -1615,6 +1911,9 @@
     reading: برفعها
     cite: budur 48
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 213, wafi 207]
 - place: ['2:210:16']
   words: تُرۡجَعُ
   scope: here
@@ -1630,6 +1929,9 @@
     reading: بفتح التاء وكسر الجيم
     cite: budur 48
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 192, wafi 219]
 - place: ['2:213:14']
   words: لِيَحۡكُمَ
   scope: here
@@ -1645,6 +1947,9 @@
     reading: بفتح الياء وضم الكاف
     cite: budur 48
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 214]
 - place: ['2:214:18']
   words: يَقُولَ
   scope: here
@@ -1660,6 +1965,9 @@
     reading: بنصبها
     cite: budur 48
     from: run
+  class:
+    kind: farsh
+    farsh: [wafi 218, idah 215]
 - place: ['2:218:12']
   words: رَحۡمَتَ
   scope: here
@@ -1677,6 +1985,9 @@
     cite: budur 48
     from: run
     condition: waqf
+  class:
+    kind: rule
+    rule: ['waqf_rasm: hāʾ al-taʾnīth written with a tāʾ (رحمة قسم)']
 - place: ['2:219:8']
   words: كَبِيرٞ
   scope: here
@@ -1692,6 +2003,9 @@
     reading: بالباء الموحدة
     cite: budur 49
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 215, wafi 219]
 - place: ['2:219:19']
   words: ٱلۡعَفۡوَۗ
   scope: here
@@ -1707,6 +2021,9 @@
     reading: بالنصب
     cite: budur 49
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 214, idah 215, wafi 219]
 - place: ['2:220:22']
   words: لَأَعۡنَتَكُمۡۚ
   scope: here
@@ -1727,6 +2044,9 @@
     reading: التحقيق (الطريق الثاني للبزى)
     cite: budur 49
     from: run
+  class:
+    kind: farsh
+    farsh: [wafi 219]
 - place: ['2:222:14']
   words: يَطۡهُرۡنَۖ
   scope: here
@@ -1742,6 +2062,9 @@
     reading: بسكون الطاء وضم الهاء مخففة
     cite: budur 49
     from: run
+  class:
+    kind: farsh
+    farsh: [wafi 219]
 - place: ['2:229:18']
   words: يَخَافَآ
   scope: here
@@ -1757,6 +2080,9 @@
     reading: بفتحها
     cite: budur 50
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 214, idah 215, wafi 219]
 - place: ['2:233:23']
   words: تُضَآرَّ
   scope: here
@@ -1777,6 +2103,9 @@
     reading: بفتح الراء مشددة
     cite: budur 50
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 214, idah 215]
 - place: ['2:233:55']
   words: ءَاتَيۡتُم
   scope: here
@@ -1792,6 +2121,9 @@
     reading: بمدها
     cite: budur 51
     from: run
+  class:
+    kind: farsh
+    farsh: [wafi 220]
 - place: ['2:236:9', '2:237:6']
   words: تَمَسُّوهُنَّ تَمَسُّوهُنَّ
   scope: here
@@ -1807,6 +2139,9 @@
     reading: بفتح التاء من غير ألف ولا مد
     cite: budur 51
     from: run
+  class:
+    kind: farsh
+    farsh: [wafi 220]
 - place: ['2:236:17', '2:236:20']
   words: قَدَرُهُۥ قَدَرُهُۥ
   scope: here
@@ -1822,6 +2157,9 @@
     reading: بسكونها
     cite: budur 51
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 214, idah 216, wafi 220]
 - place: ['2:240:6']
   words: وَصِيَّةٗ
   scope: here
@@ -1837,6 +2175,9 @@
     reading: بنصبها
     cite: budur 51
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 214, idah 216, wafi 220]
 - place: ['2:245:8']
   words: فَيُضَٰعِفَهُۥ
   scope: here
@@ -1862,6 +2203,9 @@
     reading: بالتخفيف والنصب
     cite: budur 51
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 216, idah 217, wafi 221]
 - place: ['2:245:14']
   words: وَيَبۡصُۜطُ
   scope: here
@@ -1887,6 +2231,9 @@
     reading: بالسين
     cite: budur 52
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 216, idah 217, wafi 220]
 - place: ['2:245:16']
   words: تُرۡجَعُونَ
   scope: here
@@ -1902,6 +2249,9 @@
     reading: بضم التاء وفتح الجيم
     cite: budur 52
     from: run
+  class:
+    kind: farsh
+    farsh: [wafi 229]
 - place: ['2:246:24']
   words: عَسَيۡتُمۡ
   scope: here
@@ -1917,6 +2267,9 @@
     reading: بفتحها
     cite: budur 52
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 218, wafi 221]
 - place: ['2:249:19']
   words: مِنِّيٓ
   scope: here
@@ -1932,6 +2285,10 @@
     reading: أسكنها
     cite: budur 52
     from: run
+  class:
+    kind: rule
+    rule: [ya_idafa]
+    note: 'Eisa (category review 2026-11-26): the yāʾāt could be farsh; the tables list them word by word'
 - place: ['2:249:23']
   words: غُرۡفَةَۢ
   scope: here
@@ -1947,6 +2304,9 @@
     reading: بضمها
     cite: budur 52
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 218, wafi 221, wafi 222]
 - place: ['2:251:15']
   words: دَفۡعُ
   scope: here
@@ -1962,6 +2322,9 @@
     reading: بفتح الدال وإسكان الفاء من غير ألف
     cite: budur 52
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 218, wafi 200, wafi 221]
 - place: ['2:253:21']
   words: ٱلۡقُدُسِۗ
   scope: here
@@ -1977,6 +2340,9 @@
     reading: بضمها
     cite: budur 53
     from: run
+  class:
+    kind: farsh
+    farsh: [wafi 206]
 - place: ['2:254:13', '2:254:16', '2:254:18']
   words: بَيۡعٞ خُلَّةٞ شَفَٰعَةٞۗ
   scope: here
@@ -1992,6 +2358,9 @@
     reading: بالرفع مع التنوين في الثلاثة
     cite: budur 53
     from: run
+  class:
+    kind: farsh
+    farsh: [wafi 202, wafi 222]
 - place: ['2:258:6', '2:258:15', '2:258:25', '2:260:3']
   words: إِبۡرَٰهِـۧمَ إِبۡرَٰهِـۧمُ إِبۡرَٰهِـۧمُ إِبۡرَٰهِـۧمُ
   scope: here
@@ -2017,6 +2386,9 @@
     reading: كسر الهاء وياء بعدها
     cite: budur 53
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 199, idah 200, wafi 209]
 - place: ['2:259:42']
   words: يَتَسَنَّهۡۖ
   scope: here
@@ -2039,6 +2411,9 @@
     reading: بإثباتها في الحالين
     cite: budur 54
     from: run
+  class:
+    kind: farsh
+    farsh: [wafi 223]
 - place: ['2:259:53']
   words: نُنشِزُهَا
   scope: here
@@ -2054,6 +2429,9 @@
     reading: بالراء المهملة
     cite: budur 54
     from: run
+  class:
+    kind: farsh
+    farsh: [wafi 223]
 - place: ['2:259:61']
   words: أَعۡلَمُ
   scope: here
@@ -2069,6 +2447,9 @@
     reading: بهمزة قطع مفتوحة وصلا وابتداء
     cite: budur 54
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 189, idah 209, idah 214, idah 218, idah 219, wafi 199, wafi 204, wafi 205, wafi 210, wafi 211, wafi 222, wafi 223, wafi 228]
 - place: ['2:260:5']
   words: أَرِنِي
   scope: here
@@ -2089,6 +2470,9 @@
     reading: بكسرة كاملة
     cite: budur 54
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 199, idah 200, wafi 211]
 - place: ['2:260:22']
   words: فَصُرۡهُنَّ
   scope: here
@@ -2104,6 +2488,9 @@
     reading: بضم الصاد
     cite: budur 54
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 218]
 - place: ['2:260:30']
   words: جُزۡءٗا
   scope: here
@@ -2124,6 +2511,9 @@
     reading: بإسكان الزاى و بالهمز منونا
     cite: budur 54
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 189, idah 190, wafi 223]
 - place: ['2:261:19']
   words: يُضَٰعِفُ
   scope: here
@@ -2139,6 +2529,9 @@
     reading: بتخفيف العين وإثبات الألف
     cite: budur 54
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 217, wafi 221]
 - place: ['2:262:20']
   words: خَوۡفٌ
   scope: here
@@ -2154,6 +2547,9 @@
     reading: بالرفع مع التنوين
     cite: budur 54
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 194]
 - place: ['2:265:6']
   words: مَرۡضَاتِ
   scope: here
@@ -2171,6 +2567,9 @@
     cite: budur 55
     from: run
     condition: waqf
+  class:
+    kind: rule
+    rule: ['waqf_rasm: hāʾ al-taʾnīth written with a tāʾ (رحمة قسم)']
 - place: ['2:265:13']
   words: بِرَبۡوَةٍ
   scope: here
@@ -2186,6 +2585,9 @@
     reading: بالضم
     cite: budur 55
     from: run
+  class:
+    kind: farsh
+    farsh: [wafi 224]
 - place: ['2:265:17']
   words: أُكُلَهَا
   scope: here
@@ -2201,6 +2603,9 @@
     reading: بضمها
     cite: budur 55
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 190, idah 191, idah 200, idah 207, idah 210, wafi 223, wafi 227, wafi 228]
 - place: ['2:269:6']
   words: يُؤۡتَ
   scope: here
@@ -2222,6 +2627,11 @@
     reading: بفتح التاء
     cite: budur 55
     from: run
+  class:
+    kind: farsh
+    farsh: [wafi 230]
+    rule: ['waqf_rasm: the yāʾ dropped from the rasm before a sākin (يؤت الحكمة، سوف يؤت الله، اخشون، يقص الحق، ننج المؤمنين، لهاد الذين، بالواد المقدس، واد النمل، الواد الأيمن، بهاد العمي، يردن، صال الجحيم،
+        ينادي، تغن النذر، الجوار)']
 - place: ['2:271:4']
   words: فَنِعِمَّا
   scope: here
@@ -2252,6 +2662,9 @@
     reading: كسر النون وإسكان العين
     cite: budur 55
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 219, wafi 227]
 - place: ['2:271:13']
   words: وَيُكَفِّرُ
   scope: here
@@ -2272,6 +2685,9 @@
     reading: بالياء ورفع الراء
     cite: budur 56
     from: run
+  class:
+    kind: farsh
+    farsh: [wafi 227]
 - place: ['2:273:12']
   words: يَحۡسَبُهُمُ
   scope: here
@@ -2287,6 +2703,9 @@
     reading: بكسرها
     cite: budur 56
     from: run
+  class:
+    kind: farsh
+    farsh: [wafi 227, wafi 228, idah 219]
 - place: ['2:279:4']
   words: فَأۡذَنُواْ
   scope: here
@@ -2302,6 +2721,9 @@
     reading: بإسكان الهمزة وفتح الذال
     cite: budur 56
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 219, idah 220, wafi 228]
 - place: ['2:280:4']
   words: عُسۡرَةٖ
   scope: here
@@ -2317,6 +2739,9 @@
     reading: بإسكانها
     cite: budur 56
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 208]
 - place: ['2:280:7']
   words: مَيۡسَرَةٖۚ
   scope: here
@@ -2332,6 +2757,9 @@
     reading: بفتحها
     cite: budur 56
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 219, wafi 228]
 - place: ['2:280:9']
   words: تَصَدَّقُواْ
   scope: here
@@ -2347,6 +2775,9 @@
     reading: بتشديدها
     cite: budur 56
     from: run
+  class:
+    kind: farsh
+    farsh: [wafi 229]
 - place: ['2:281:3']
   words: تُرۡجَعُونَ
   scope: here
@@ -2362,6 +2793,9 @@
     reading: بضم التاء وفتح الجيم
     cite: budur 56
     from: run
+  class:
+    kind: farsh
+    farsh: [wafi 229]
 - place: ['2:282:48']
   words: هُوَ
   scope: here
@@ -2377,6 +2811,9 @@
     reading: بضمها
     cite: budur 56
     from: run
+  class:
+    kind: farsh
+    farsh: [wafi 201]
 - place: ['2:282:66']
   words: أَن
   scope: here
@@ -2392,6 +2829,9 @@
     reading: بفتحها
     cite: budur 57
     from: run
+  class:
+    kind: farsh
+    farsh: [wafi 229, idah 220]
 - place: ['2:282:69']
   words: فَتُذَكِّرَ
   scope: here
@@ -2412,6 +2852,9 @@
     reading: بفتح الذال وتشديد الكاف مع رفع الراء
     cite: budur 57
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 220, wafi 229]
 - place: ['2:282:99', '2:282:100']
   words: تِجَٰرَةً حَاضِرَةٗ
   scope: here
@@ -2427,6 +2870,9 @@
     reading: بالرفع
     cite: budur 57
     from: run
+  class:
+    kind: farsh
+    farsh: [wafi 229]
 - place: ['2:282:112']
   words: يُضَآرَّ
   scope: here
@@ -2442,6 +2888,9 @@
     reading: بالتشديد مع الفتح
     cite: budur 57
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 214, idah 215]
 - place: ['2:283:8']
   words: فَرِهَٰنٞ
   scope: here
@@ -2457,6 +2906,9 @@
     reading: بكسر الراء وفتح الهاء وألف بعدها
     cite: budur 57
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 220, idah 221, wafi 229]
 - place: ['2:284:18', '2:284:21']
   words: فَيَغۡفِرُ وَيُعَذِّبُ
   scope: here
@@ -2472,6 +2924,9 @@
     reading: بجزمهما
     cite: budur 58
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 220, idah 221, wafi 229]
 - place: ['2:285:13']
   words: وَكُتُبِهِۦ
   scope: here
@@ -2487,6 +2942,9 @@
     reading: بضم الكاف والتاء على الجمع
     cite: budur 58
     from: run
+  class:
+    kind: farsh
+    farsh: [wafi 229, wafi 230]
 - place: ['2:285:16']
   words: نُفَرِّقُ
   scope: here
@@ -2502,3 +2960,6 @@
     reading: بالنون
     cite: budur 58
     from: run
+  class:
+    kind: farsh
+    farsh: [idah 220, idah 221]

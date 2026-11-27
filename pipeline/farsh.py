@@ -22,6 +22,7 @@ from mushaf_data.paths import DATA
 from mushaf_data.ruwat import RUWAT
 from mushaf_data.spine import words
 
+from .farsh_class import CHAPTERS, classify
 from .gold import GOLD
 from .pack import parse_pages
 from .score import rows
@@ -126,6 +127,8 @@ HEADER = """# Farsh of surah {s}: each place's options, read from {book} ({pages
 # scope: all = the book says it holds wherever the word occurs; `also` lists the same word, written
 #   the same way, elsewhere in the surah (prefixed forms are not matched yet).
 # Option text per slot (the reading written out) comes next; `reading` is the book's own words.
+# class: rule = an uṣūl table (data/usul) gives the place (al-Budūr restates it here); farsh = the
+#   surah's farsh chapter of al-Wāfī / al-Īḍāḥ treats it (pages); pipeline/farsh_class.py.
 """
 
 
@@ -139,6 +142,9 @@ def main():
     OUT.mkdir(parents=True, exist_ok=True)
     for s, entries in sorted(by_surah.items()):
         entries.sort(key=lambda e: tuple(int(x) for x in e["place"][0].split(":")))
+        if f"{s:03d}" in CHAPTERS:  # aṣl or farsh, from the books' farsh chapters and data/usul
+            for e in entries:
+                e["class"] = classify(e, f"{s:03d}")
         f = OUT / f"{s:03d}.yaml"
         f.write_text(HEADER.format(s=s, book=a.slug, pages=a.pages)
                      + yaml.safe_dump(entries, allow_unicode=True, sort_keys=False, width=200, default_flow_style=None), encoding="utf-8")

@@ -41,13 +41,76 @@ KEYWORDS = {
     "hamz_waqf_mid": [("إلا التحقيق", "tahqiq"), ("لا شيء فيه", "tahqiq")],
     "taghliz_lam": [("ترقيق", "tarqiq"), ("غلظ", "taghliz"), ("تغليظ", "taghliz"), ("تفخيم", "taghliz")],
 }
-IMALA = [("قلل", "taqlil"), ("تقليل", "taqlil"), ("أمال", "imala"), ("إمالة", "imala"), ("بالإمالة", "imala"), ("فتح", "fath")]
+# al-Wāfī p. 150: the words on fuʿlā, faʿlā and fiʿlā (alif al-taʾnīth), Abū ʿAmr's taqlīl
+FAALA = """موسى أنثى الدنيا قربى الوسطى القصوى العزى الوثقى الحسنى الأولى السفلى العليا الرؤيا طوبى المثلى
+السوأى زلفى سقيا الرجعى عقبى السلوى الموتى التقوى النجوى القتلى مرضى دعوى شتى صرعى طغوى يحيى سيما إحدى
+ضيزى عيسى""".split()
+SUFFIX = re.compile(r"(?:هما|هم|ها|ه|كم)$")
+REFERENCE = ("كحكم", "حكمها", "ومثله", "مثله", "مثل ")  # a row pointing at another word's rule
+
+
+def key(word: str) -> tuple[str, bool]:
+    """Skeleton plus whether the word starts with an alif or hamzah (skel drops both: أزكى ≠ زكى)."""
+    from tools import book
+    return skel(word), book.fold(word).lstrip("وفبل")[:1] in ("ا", "ء")
+
+
+def stem(word: str) -> str:
+    """The skeleton without a pronoun suffix (prefixes are left: matching is by the word's end)."""
+    return SUFFIX.sub("", skel(word))
+
+
+FAALA_SK = {skel(w[2:] if w.startswith("ال") else w) for w in FAALA}
+
+
+def faala(word: str) -> bool:
+    st = stem(word)
+    return any(st.endswith(f) and len(st) - len(f) <= 3 for f in FAALA_SK)
+
+
+WASL_SAKIN = 11  # imala: the alif before a sākin in the next word, in waṣl (wafi 156)
+
+
+def case_for(cat: str, word: str, k: int, nxt: str = "") -> int:
+    """The table case the word belongs to, where the category alone doesn't say: imālah (after a
+    rāʾ: ذوات الراء; on fuʿlā/faʿlā/fiʿlā: alif al-taʾnīth, wafi 150), the sākin hamzah (fāʾ, ʿayn,
+    lām of the word), the second hamzah of two in a word (its vowel)."""
+    if cat.startswith("imala") and nxt.startswith("ٱ") and re.search("[ىا][\u0670]?[\u064b-\u065f\u06d6-\u06ed]*$", word):
+        return WASL_SAKIN + (stem(word)[-2:-1] == "ر")  # a final alif; after a rāʾ, al-Sūsī's khulf
+    if cat == "imala_ya":
+        st = stem(word)
+        if st[-2:-1] == "ر":
+            return 4
+        if faala(word):
+            return 9
+    if cat == "ibdal_sakin":
+        st = re.sub(r"^(?:[وفبل]*ل(?=.{3})|[وفب])?[يتنم]?", "", stem(word))  # article, conjunction, imperfect or participle prefix
+        i = st.find("ء")
+        if i == 0:
+            return 0
+        if i == len(st) - 1 or (i >= 0 and i == len(st) - 2 and st[-1] in "تن"):
+            return 2
+        if i > 0:
+            return 1
+    if cat == "hamzatayn":
+        m = re.search("[ءأ][\u064e]?[\u0670]?[ءأإؤئ]([\u064e\u064f\u0650])?", word)
+        second = m.group(0)[-2:] if m else ""
+        if "إ" in second or "ئ" in second or "\u0650" in second:
+            return 1
+        if "ؤ" in second or "\u064f" in second:
+            return 2
+    return k
+
+
+IMALA = [("لا إمالة", "fath"), ("لا تقليل", "fath"), ("قلل", "taqlil"), ("تقليل", "taqlil"), ("أمال", "imala"), ("إمالة", "imala"), ("بالإمالة", "imala"), ("فتح", "fath")]
 
 
 def check(show: int = 0) -> dict:
     gold, _ = rows(GOLD / "budur", list(range(16, 26)))
     run, _ = rows(Path("pipeline/out/baqarah/budur"), list(range(26, 59)))
     h = words()
+    order = list(h)
+    pos = {w: i for i, w in enumerate(order)}
     tables, res, out = {}, Counter(), []
     for p, r in gold + run:
         cat = r.get("category")
@@ -55,12 +118,20 @@ def check(show: int = 0) -> dict:
             continue
         if r["condition"] == "waqf" and not cat.startswith(("hamz_waqf", "ibdal_sakin_waqf", "hamzatayn_waqf")):
             continue  # a stop's wajh belongs to the waqf tables, not this waṣl case
+        if any(x in r["reading"] for x in REFERENCE):
+            res["reference"] += 1
+            continue
         tname, k = where()[cat]
+        first = r["place"][0]
+        nxt = h[order[pos[first] + 1]] if first in pos and pos[first] + 1 < len(order) else ""
+        nxt = "" if r["condition"] == "waqf" or (first in h and any(c in h[first] for c in "ۖۗۚۛۘۙ")) else nxt
+        k = case_for(cat, h.get(first, ""), k, nxt)
         t = tables.setdefault(tname, yaml.safe_load((DIR / f"{tname}.yaml").read_text(encoding="utf-8")))
         case = t["cases"][k]
         vocab = [w["id"] for w in t.get("wujuh") or []]
-        sk = {skel(h[w]) for w in r["place"] if w in h}
-        entry = next((x for x in t.get("listed") or [] if {skel(str(w)) for w in x.get("words") or []} & sk), None)
+        sk = {key(h[w]) for w in r["place"] if w in h}
+        entries = [x for x in t.get("listed") or []
+                   if {k for w in x.get("words") or [] for k in (key(str(w)), key(str(w).split()[0]))} & sk]
         kws = IMALA if cat.startswith("imala") else KEYWORDS.get(cat)
         want = next((w for kw, w in kws if kw in r["reading"]), None) if kws else None
         if want is not None:
@@ -74,13 +145,14 @@ def check(show: int = 0) -> dict:
             else:
                 ok_set = lambda ws, d=set(default): bool(set(ws) - d)  # noqa: E731
         for x in r["readers"]:
-            ws = (entry.get("ruwat") or {}).get(x) if entry and x in (entry.get("ruwat") or {}) else (case["ruwat"].get(x) or {}).get("wujuh") or []
+            entry = next((e for e in entries if x in (e.get("ruwat") or {})), None)  # the entry that names him
+            ws = entry["ruwat"][x] if entry else (case["ruwat"].get(x) or {}).get("wujuh") or []
             fine = ok_set(ws) and (x not in r["khulf"] or len(ws) > 1)
             res["agree" if fine else "differ"] += 1
             if not fine:
                 out.append((p, cat, ",".join(r["place"]), " ".join(h.get(w, "") for w in r["place"]), x, "/".join(ws), r["reading"][:40],
                             "khulf" if x in r["khulf"] else "", "listed" if entry else ""))
-    return {"agree": res["agree"], "differ": res["differ"], "rows": out}
+    return {"agree": res["agree"], "differ": res["differ"], "reference": res["reference"], "rows": out}
 
 
 def main():
@@ -88,7 +160,8 @@ def main():
     ap.add_argument("--show", type=int, default=0)
     a = ap.parse_args()
     r = check()
-    print(f"al-Budūr pp. 16-58 against the unified tables: {r['agree']} rāwī statements agree, {r['differ']} differ")
+    print(f"al-Budūr pp. 16-58 against the unified tables: {r['agree']} rāwī statements agree, {r['differ']} differ"
+          f" ({r['reference']} rows that point at another word's rule left out)")
     by = Counter((x[1]) for x in r["rows"])
     print("  by category:", dict(by.most_common()))
     for x in r["rows"][: a.show]:
