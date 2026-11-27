@@ -206,8 +206,20 @@ tables; review list empty.
   pilot: بيوت، هو، النبيء، صراط، يحسب، يأمركم…), the yāʾāt (uṣūl tables), and two to check (قرح 3:140:7
   for Shuʿbah, متم 3:158 for Qālūn). Open: Abū Jaʿfar at ها أنتم (Qālūn and Warsh differ).
 
+- **Farsh from the books, switched (2026-11-27, Eisa)**: al-Fātiḥah (wafi 50-52, idah 52-55) and
+  al-Baqarah (wafi 199-230, idah 187-222) extracted by four Sonnet readers (~550k tokens; 0 rows
+  rejected). `pipeline.farsh_books combine N` reads every extracted page: the sūrah's own rows plus
+  any chapter's "حيث وقع" rows at its words, kept to the book's own conditions (a prefix: هو after و
+  ف ل, wafi 201; the next word's hamzah: أنا, wafi 222), and overridden only for the readers a
+  sūrah's own rows name about the same thing. A word must match the book exactly (allowing prefixes
+  and a pronoun suffix) for a row of many places; the reading's own word ranks a run before its
+  neighbours. Against KFGQPC (`checks.farsh --books`): al-Fātiḥah 8/0/0; al-Baqarah 370 agree, 41
+  missing, 7 contradicted; Āl ʿImrān 230 agree, 30 missing, 0 contradicted (al-Budūr tables: 418 and
+  307, 0/0). Missing: mostly the yāʾāt (uṣūl tables) and a few words (يقبل، ميكائيل، البر، تقولون 2:140;
+  وضعت، ويعلمه، لتحسبوه، قرح 3:140, متم 3:158 for Qālūn, تكتمونه). `compare N` sets the two tables side by side.
+
 Next, in order:
-1. docs/05 milestone 4, continued: al-Nisāʾ (al-Budūr pp. 75-89) onward (al-Budūr, then the farsh chapters
+1. docs/05 milestone 4, continued from the books: al-Nisāʾ onward (wafi 243-, idah 231-), in batches (al-Budūr, then the farsh chapters
    as the second reading); new slots go to data/spine/slots.yaml as they turn up.
 2. Then milestones 5- (occurrences, constraints, marks and counts, the engine's API).
 

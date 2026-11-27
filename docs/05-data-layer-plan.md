@@ -138,6 +138,9 @@ Milestones 2–6 can overlap once milestone 1 is done: each is a batch job plus 
    later without change.
 2. **The pilot's bar: 98%** of rows agreeing with reviewed pages, no invented quotes.
 3. **Farsh priority: al-Budūr primary**, al-Wāfī / al-Īḍāḥ the second reading.
+   **Changed 2026-11-27 (Eisa):** from Āl ʿImrān on, al-Wāfī and al-Īḍāḥ's farsh chapters are
+   primary (shorter and targeted: ~10-12k tokens a page against ~27k; pilot in STATUS.md); the al-Budūr
+   tables of al-Fātiḥah, al-Baqarah and Āl ʿImrān stay as the cross-check.
 4. **This repo stands alone**: nothing it needs may come from the archived mushaflab. Sources are
    listed with URL and sha256 (`tools/sources.tsv`), fetched into a gitignored `sources/`, and
    the Ḥafṣ spine is built here from KFGQPC's official text. `../mushaf` (the al-Futūḥ extractor,

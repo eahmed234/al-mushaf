@@ -85,7 +85,7 @@ def entries(surah: int) -> dict[str, list[dict]]:
     from pipeline.anchor import find
 
     out: dict[str, list[dict]] = defaultdict(list)
-    for f in sorted((DATA / "farsh").glob("*.yaml")):
+    for f in sorted((FARSH).glob("*.yaml")):
         for e in yaml.safe_load(f.read_text(encoding="utf-8")) or []:
             ws = set(e["place"] + e.get("also", []))
             rec = e.get("recurs") or {}
@@ -103,16 +103,19 @@ def places(surah: int) -> dict[str, dict]:
     from pipeline.anchor import find
 
     out: dict[str, dict] = {}
-    for e in yaml.safe_load((DATA / "farsh" / f"{surah:03d}.yaml").read_text(encoding="utf-8")) or []:
+    for e in yaml.safe_load((FARSH / f"{surah:03d}.yaml").read_text(encoding="utf-8")) or []:
         for w in e["place"] + e.get("also", []):
             out.setdefault(w, e)
-    for f in sorted((DATA / "farsh").glob("*.yaml")):
+    for f in sorted((FARSH).glob("*.yaml")):
         for e in yaml.safe_load(f.read_text(encoding="utf-8")) or []:
             for form in (e.get("recurs") or {}).get("forms", []):
                 for w in find(form, ya=False):
                     if int(w.split(":")[0]) == surah:
                         out.setdefault(w, e)
     return out
+
+
+FARSH = DATA / "farsh"  # --books: data/farsh_books (al-Wāfī and al-Īḍāḥ, from Āl ʿImrān on)
 
 
 def waqf_only(o: dict) -> bool:
@@ -280,6 +283,9 @@ def check(surah: int = 2, upto: int | None = None, source: str = "kfgqpc") -> di
                     why[(w, r, k)] = KNOWN[(w, k)]
                 elif k == "table_only" and any(o in kf_of[r] for e in ent.get(w, []) for o in e["place"] if o != w):
                     why[(w, r, k)] = "a place of several words: the difference shows on another of them"
+                elif k == "table_only" and any(r in o["readers"] and (o.get("base") or "hafs" in o["readers"])
+                                               for e in ent.get(w, []) for o in e["options"]):
+                    why[(w, r, k)] = "a khulf whose other wajh reads as Ḥafṣ: KFGQPC prints that one"
                 else:
                     x = explain(w, r, k, ALIGNED.get((r, w)))
                     if x:
@@ -331,7 +337,11 @@ def main():
     ap.add_argument("--show", type=int, default=0)
     ap.add_argument("--source", choices=["kfgqpc", "futuh"], default="kfgqpc")
     ap.add_argument("--report", action="store_true", help="write build/farsh_check_SSS.md")
+    ap.add_argument("--books", action="store_true", help="check data/farsh_books (al-Wāfī, al-Īḍāḥ)")
     a = ap.parse_args()
+    if a.books:
+        global FARSH
+        FARSH = DATA / "farsh_books"
     r = check(a.surah, a.upto, a.source)
     h = words()
     who = "seven KFGQPC riwāyāt" if a.source == "kfgqpc" else "al-Futūḥ's rows, all twenty"

@@ -92,3 +92,28 @@ class FarshBooks(unittest.TestCase):
         """متنا isn't in Āl ʿImrān; مِن is not close enough to stand for it."""
         from pipeline.farsh_books import anchor
         self.assertEqual(anchor({"sura": 3, "ayah": None, "word": "متنا", "words": "متنا", "where": "here"}), [])
+
+
+class FarshBooksCombine(unittest.TestCase):
+    """al-Fātiḥah to Āl ʿImrān from the books (2026-11-27): general rows carry over, conditions hold."""
+
+    @needs.sources
+    def test_general_rows_keep_their_conditions(self):
+        from pipeline.farsh_books import before_ok, prefix_ok
+        cond = "بإسكان الهاء إذا قرنت بالواو أو الفاء أو اللام"
+        self.assertTrue(prefix_ok(cond, "وَهُوَ"))
+        self.assertFalse(prefix_ok(cond, "هُوَ"))            # planted: a bare هو is not covered (wafi 201)
+        alif = "بإثبات ألف أنا وصلا قبل همزة قطع مضمومة أو مفتوحة"
+        self.assertTrue(before_ok(alif, "أُحۡيِۦ"))
+        self.assertFalse(before_ok(alif, "مَعَكُم"))         # planted: no hamzah after أنا (wafi 222)
+
+    @needs.sources
+    def test_against_kfgqpc_nothing_contradicted_in_al_imran(self):
+        from checks import farsh
+        try:
+            farsh.FARSH = DATA / "farsh_books"
+            r = farsh.check(3)
+        finally:
+            farsh.FARSH = DATA / "farsh"
+        self.assertGreaterEqual(len(r["both"]), 230)
+        self.assertEqual(r["table_only"], [])
