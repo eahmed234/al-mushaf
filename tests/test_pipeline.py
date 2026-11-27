@@ -74,3 +74,21 @@ class Gold(unittest.TestCase):
             s = score.score(Path(tmp), self.PAGES)
         self.assertEqual(len(s["missed"]), 1)  # Shuʿbah's unit moved from one group to the other
         self.assertLess(s["recall"], 1.0)
+
+
+class FarshBooks(unittest.TestCase):
+    """The farsh read from al-Wāfī / al-Īḍāḥ (pilot 2026-11-27): rows name words, anchored here."""
+
+    @needs.sources
+    def test_anchor_takes_the_word_the_reading_is_about(self):
+        from pipeline.farsh_books import anchor
+        row = {"sura": 3, "ayah": None, "word": "قرح", "words": "إن يمسسكم قرح", "where": "here"}
+        self.assertEqual(anchor(row), ["3:140:3"])
+        row = {"sura": 3, "ayah": None, "word": "يأمركم", "words": "ولا يأمركم", "where": "here"}
+        self.assertEqual(anchor(row), ["3:80:2"])
+
+    @needs.sources
+    def test_planted_word_not_in_the_sura_is_not_anchored(self):
+        """متنا isn't in Āl ʿImrān; مِن is not close enough to stand for it."""
+        from pipeline.farsh_books import anchor
+        self.assertEqual(anchor({"sura": 3, "ayah": None, "word": "متنا", "words": "متنا", "where": "here"}), [])

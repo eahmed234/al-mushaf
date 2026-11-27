@@ -195,6 +195,17 @@ tables; review list empty.
   New recurring farsh: بيوت (wafi 218), ها أنتم (wafi 235), النبوة (wafi 204).
   Cost: ~160k tokens a reader for six pages (~27k a page).
 
+- **Farsh from al-Wāfī / al-Īḍāḥ, pilot (2026-11-27, Eisa: shorter and more targeted)**: instructions
+  `pipeline/prompt_farsh.md` (no word lists; each row names its sūrah, āyah when al-Īḍāḥ gives it,
+  the `word` the reading is about and its context), `pipeline/farsh_books.py` (validate; anchor rows
+  to places by the word run; combine the 14 with the Durrah 6, an unnamed Durrah rāwī as his aṣl per
+  idah 226). Āl ʿImrān, al-Wāfī pp. 231-242 + al-Īḍāḥ pp. 223-230: ~215k tokens (~10-12k a page, vs
+  ~27k a page and ~480k for al-Budūr). data/farsh_books/003.yaml: 67 places. Against the al-Budūr
+  table 450 (place, rāwī) pairs agree; against KFGQPC 175 agree, 66 missing and none contradicted —
+  the missing are mostly farsh the books give once in al-Baqarah's chapter (not extracted in the
+  pilot: بيوت، هو، النبيء، صراط، يحسب، يأمركم…), the yāʾāt (uṣūl tables), and two to check (قرح 3:140:7
+  for Shuʿbah, متم 3:158 for Qālūn). Open: Abū Jaʿfar at ها أنتم (Qālūn and Warsh differ).
+
 Next, in order:
 1. docs/05 milestone 4, continued: al-Nisāʾ (al-Budūr pp. 75-89) onward (al-Budūr, then the farsh chapters
    as the second reading); new slots go to data/spine/slots.yaml as they turn up.
