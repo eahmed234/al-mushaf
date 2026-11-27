@@ -1,0 +1,24 @@
+# The word spine across the twenty (docs/04 §3): Ḥafṣ's word ids (sources/spine/hafs.jsonl) plus the
+# slots below. Ḥafṣ is one projection: his words, none of the added slots. Only whole words a
+# qirāʾah adds or drops are here; a letter added or dropped inside a word is farsh (data/farsh).
+# Found by aligning KFGQPC's seven other riwāyāt with the Ḥafṣ spine over the whole Qurʾān
+# (checks/spine.py), readers for all twenty from the books. KFGQPC splitting or joining tokens in
+# the same rasm (أَوَ لَمۡ, مَا لِي, وَنَـَٔابِجَانِبِهِۦ) is not a slot: the check allows it.
+
+added:  # a word Ḥafṣ doesn't have: its own slot after the Ḥafṣ word `after`
+  - id: "9:100:17a"
+    after: "9:100:17"          # تَجۡرِي … تَحۡتَهَا
+    readers: [bazzi, qunbul]
+    text: {source: kfgqpc bazzi, word: 9:100 after تجري}   # مِن, read from the file by checks/spine.py
+    cite: [budur 139]
+    note: "قرأ المكي بزيادة من قبل تحتها مع جر التاء، والباقون بحذف من وفتح تاء تحتها (a farsh of the next word too)"
+
+empty:  # a Ḥafṣ word some ruwāt don't read: the slot is empty in their projection
+  - slot: "40:26:13"           # أَوۡ أَن يُظۡهِرَ
+    readers: [qalun, warsh, bazzi, qunbul, duri_abuamr, susi, hisham, ibn_dhakwan, ibn_wardan, ibn_jammaz]
+    cite: [budur 279]
+    note: "their و (وَأَن) joins the next word: a farsh of 40:26:14; Ḥafṣ, Yaʿqūb, Shuʿbah, Ḥamzah, al-Kisāʾī, Khalaf read أو"
+  - slot: "57:24:10"           # فَإِنَّ ٱللَّهَ هُوَ ٱلۡغَنِيُّ
+    readers: [qalun, warsh, ibn_wardan, ibn_jammaz, hisham, ibn_dhakwan]
+    cite: [wafi 368, budur 315]
+    note: "المدنيان وابن عامر بحذف لفظ هو"

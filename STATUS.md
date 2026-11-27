@@ -170,8 +170,21 @@ tables; review list empty.
   candidate, not enforced: no farsh choice in the engine yet). Each place's Ḥafṣ option is marked
   `base` (Eisa: the pure ṣād is the aṣl, the other readings are the farsh).
 
+- **Milestone 3, the spine (2026-11-27)**: `data/spine/slots.yaml` holds the whole words a qirāʾah adds
+  or drops, found by aligning KFGQPC's seven other riwāyāt with the Ḥafṣ spine over the whole Qurʾān,
+  readers for all twenty from the books: من added at 9:100 (Ibn Kathīr, budur 139), أو empty at
+  40:26 (Nāfiʿ, Abū Jaʿfar, Abū ʿAmr, Ibn Kathīr, Ibn ʿĀmir: budur 279), هو empty at 57:24 (Nāfiʿ,
+  Abū Jaʿfar, Ibn ʿĀmir: wafi 368, budur 315). `spine.slots()` / `spine.projection(rāwī)`; Ḥafṣ's
+  projection is his words. `python3 -m checks.spine`: KFGQPC's eight align with their projections
+  with 0 gaps; KFGQPC writing one rasm in more or fewer tokens (أَوَ لَمۡ, مَا لِے, وَأَن لَّوِ,
+  أَلَّن) is not a gap; without the slot data exactly the three places come back. Al-Fātiḥah's
+  basmalah missing from four files is their count (milestone 7). Ibn ʿĀmir, the Kūfīs and the
+  Durrah have no KFGQPC text: their slot differences come with the farsh (milestone 4).
+
 Next, in order:
-1. Then docs/05 milestones 3- (riwāyah-neutral spine, the rest of the farsh, occurrences, constraints).
+1. docs/05 milestone 4: the rest of the farsh, sūrah by sūrah (al-Budūr, then the farsh chapters
+   as the second reading); new slots go to data/spine/slots.yaml as they turn up.
+2. Then milestones 5- (occurrences, constraints, marks and counts, the engine's API).
 
 Working notes: subagents get their own scratch folders; reviewed data stands until Eisa rules;
 book text is never committed (quotes are offsets; pipeline/out and pipeline/work are gitignored).

@@ -57,7 +57,7 @@ Some farsh follows the rasm of the different ʿUthmānī maṣāḥif (Shāmī, 
   Kathīr). This breaks one assumption: word ids come from Ḥafṣ, so a word Ḥafṣ lacks has no id.
 
 **Decision.** The word spine becomes **riwāyah-neutral**: the union of word slots across all
-twenty, with stable ids; an added word gets its own slot (e.g. `9:100:12a`) that some riwāyāt
+twenty, with stable ids; an added word gets its own slot (e.g. `9:100:17a`, after تَجۡرِي) that some riwāyāt
 leave empty. Ḥafṣ is one projection of the spine, not its definition. Layout reflows per riwāyah
 (the 13- and 15-line layouts need that anyway).
 

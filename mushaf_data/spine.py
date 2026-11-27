@@ -53,3 +53,40 @@ def passage() -> dict[str, str]:
                 out[f"B:2:{n}"] = out[f"1:1:{n}"]
         out[k] = v
     return out
+
+
+# The spine across the twenty (docs/04 §3): Ḥafṣ's words plus the slots of data/spine/slots.yaml.
+
+@lru_cache(maxsize=1)
+def slot_data() -> dict:
+    import yaml
+
+    from .paths import DATA
+    return yaml.safe_load((DATA / "spine" / "slots.yaml").read_text(encoding="utf-8"))
+
+
+@lru_cache(maxsize=1)
+def slots() -> tuple[str, ...]:
+    """Every slot id in order: Ḥafṣ's word ids with each added slot after its `after`."""
+    after: dict[str, list[str]] = {}
+    for a in slot_data().get("added") or []:
+        after.setdefault(a["after"], []).append(a["id"])
+    out = []
+    for w in words():
+        out.append(w)
+        out += after.get(w, [])
+    return tuple(out)
+
+
+def projection(rawi: str) -> list[str]:
+    """The slots the rāwī reads, in order: Ḥafṣ's words but the ones empty for him, plus the added
+    slots he reads. Ḥafṣ's projection is his word list."""
+    from .ruwat import RUWAT
+
+    if rawi not in RUWAT:
+        raise ValueError(f"unknown rāwī {rawi}")
+    d = slot_data()
+    empty = {e["slot"] for e in d.get("empty") or [] if rawi in e["readers"]}
+    added = {a["id"] for a in d.get("added") or []}
+    mine = {a["id"] for a in d.get("added") or [] if rawi in a["readers"]}
+    return [s for s in slots() if s not in empty and (s not in added or s in mine)]
