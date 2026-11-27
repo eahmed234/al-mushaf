@@ -935,22 +935,24 @@ listed:
   - أمن لنا لأجراً
   - أئنك لمن المصدقين
   - أنفكا آلهة
-  - أتنكم لتكفرون
   case: two hamzahs in one word, the second maksūrah (أئنكم)
   ruwat:
     hisham:
     - tahqiq_idkhal
   cite:
   - wafi 89
+  - budur 120
+  - budur 121
 - words:
   - أتنكم لتكفرون فصلت
   case: two hamzahs in one word, the second maksūrah (أئنكم)
   ruwat:
     hisham:
-    - tashil
-    - tahqiq
+    - tashil_idkhal
+    - tahqiq_idkhal
   cite:
   - wafi 89
+  - budur 282
 - words:
   - أئمة
   - أيمةَ
@@ -1058,3 +1060,5 @@ filled_notes:
 - 'Repeated istifhām (idah 92-94, rows labelled istifham_mukarrar) and هأنتم (idah 113-114, haa_antum): the wujūh are the book''s own words; the
   fourteen of al-Wāfī have no row in this category for them (empty); Isḥāq and Idrīs are ''كأصله'' (idah 94, Khalaf ʿan Ḥamzah) but the aṣl''s
   reading is not in the rows (empty).'
+order_exception: 'Warsh, second hamzah maftūḥah: al-Wāfī''s verse names the ibdāl (Egyptians) before the tashīl (Baghdādīs, wafi 84), but the
+  reviewed table and al-Budūr (budur 20: ''الأول مثل المكي والثاني إبدالها'') put tashīl first; kept tashīl first until Eisa says otherwise'

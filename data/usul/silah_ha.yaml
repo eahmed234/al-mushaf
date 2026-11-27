@@ -406,7 +406,6 @@ listed:
     - sukun
     ibn_jammaz:
     - sukun
-    - silah
     ruways:
     - none
     rawh:
@@ -420,6 +419,9 @@ listed:
   - idah 71
   - idah 72
   - idah 76
+  - budur 66
+  - budur 70
+  - budur 85
 - words:
   - فألقه إليهم
   - فَأَلْقِهْ
@@ -733,25 +735,14 @@ filled_notes:
   Rawḥ: no row.'
 - 'أهله قبل امكثوا: the Īḍāḥ rows give kasr of the hāʾ for all six; wafi has no row; Isḥāq/Idrīs differ from their aṣl (idah 77). The second row
   (idah 77 ''خلاف بين القراء'') names two other places read with kasr; no wajh there for the Shāṭibiyyah ruwāt.'
-questions:
-- id: silah_ha#2
-  q: 'يؤده، نوله، نصله، نؤته for Ibn Jammāz: idah 71-72 give Abū Jaʿfar''s two ruwāt sukūn, then give Ibn Jammāz ishbāʿ (وامدد جد), without saying
-    whether it replaces the sukūn. Ishbāʿ only, or both?'
-  from: 'يؤده، نوله، نصله، نؤته: the Īḍāḥ rows give Ibn Jammāz sukūn (idah 71, 72) and also ishbāʿ (idah 72); both kept, no khulf stated. Wafi
-    69: Hishām has qaṣr with a khulf (qaṣr / ishbāʿ). — re-read (idah 71, idah 72, wafi 69): Idah 71-72 give the sukūn in يؤده، نوله، نصله، نؤته
-    to the hamzah-symbol, Abū Jaʿfar (both ruwāt), then Yaʿqūb qaṣr, then Ibn Jammāz ishbāʿ (''وامدد جد'') in the same words. The book never says
-    whether Ibn Jammāz''s ishbāʿ replaces the sukūn he would take from Abū Jaʿfar or sits beside it, and it does not use the word khulf. Wafi
-    69 gives Hishām qaṣr and ishbāʿ (''بالقصر والإشباع في كل منها'').'
-- id: silah_ha#6
-  q: 'بيده (Ruways) and ترزقانه (Ibn Wardān): idah 76 says qaṣr, and idah 79 says ikhtilās of the hāʾ''s vowel. The table reads them as one wajh,
-    qaṣr. Is the ikhtilās a separate wajh?'
-  from: 'بيده: Ruways has qaṣr (idah 76) and ''ikhtilās of the hāʾ''s movement'' (idah 79); taken as the same wajh, qaṣr, but the book doesn''t
-    say so. Same for Ibn Wardān in ترزقانه (qaṣr in 76; ikhtilās of the kasrah in 79).'
 notes:
 - 'Case ''after a sākin, before a mutaḥarrik'': the Durrah six are ''none'' by their aṣl as in the reviewed profile rows (cite idah 40-43); al-Īḍāḥ
   pp. 71-78 gives only word-specific readings.'
 - 'Where the book says ''الباقون'' of a listed word (silah for all those not named), the others are not repeated in listed: they follow the case''s
   ṣilah. The Durrah ruwāt are listed in every row that names them, even where the reading is their aṣl''s.'
+- 'يؤده، نوله، نصله، نؤته: the Īḍāḥ rows give Ibn Jammāz sukūn (idah 71, 72) and also ishbāʿ (idah 72); both kept, no khulf stated. Wafi 69: Hishām
+  has qaṣr with a khulf (qaṣr / ishbāʿ). — answered: al-Budūr: Abū Jaʿfar (both ruwāt) sukūn in يؤده، نؤته، نوله، نصله (budur 66, 70, 85); the
+  Durrah''s ''وامدد جد'' is Ibn Jammāz''s ṣilah in ويتقه (idah 72).'
 - 'يأته مؤمنا: al-Dūrī (Abū ʿAmr) is not named; the rows give only Sūsī sukūn. Ibn Jammāz and Rawḥ ishbāʿ (idah 74). Khalaf al-ʿĀshir ishbāʿ (idah
   78).'
 - 'يره: the Shāṭibiyyah gives Hishām sukūn in waṣl and waqf; the others ḍamm with ishbāʿ in waṣl and sukūn at waqf (wafi 71). Al-Īḍāḥ 79: all
@@ -761,9 +752,12 @@ notes:
   no hamzah, no ṣilah (idah 74, 78). The Shāṭibiyyah''s hāʾ also carries the ''ʿĀṣim, Ḥamzah: iskān'' (wafi 71). — re-read (wafi 71): Wafi 71
   says Warsh and al-Kisāʾī read أرجئه with no hamzah, kasr of the hāʾ and ishbāʿ, while Ibn Kathīr and Hishām read sākin hamzah with ḍamm of the
   hāʾ and ishbāʿ. Qālūn, Abū ʿAmr and Ibn Dhakwān are as the table has them; ʿĀṣim and Ḥamzah are without hamzah (iskān).'
+- 'بيده: Ruways has qaṣr (idah 76) and ''ikhtilās of the hāʾ''s movement'' (idah 79); taken as the same wajh, qaṣr, but the book doesn''t say
+  so. Same for Ibn Wardān in ترزقانه (qaṣr in 76; ikhtilās of the kasrah in 79). — answered: al-Budūr: Ruways ''بقصر الهاء أي اختلاس حركتها''
+  in بيده (budur 51); Ibn Wardān kasr without ṣilah in ترزقانه (budur 163): qaṣr and ikhtilās are one wajh.'
 - 'The words as written in al-Īḍāḥ (فَأَلْقِة, أرجة) appear garbled in the data (the hāʾ with a tāʾ marbūṭa); both spellings are listed. — re-read
   (idah 72, idah 74, idah 77, idah 80): Idah 72 and 74 print فَأَلْقِة and أرجة with a final tāʾ-like mark, but idah 77 (فَأَلْقِهُ) and idah
   80 (فَأَلْقِهِ، أَرجِه, and ''فألقه، وأرجه'') write the words with a plain hāʾ. The tāʾ form is a print or extraction garble; the words are
   فألقه and أرجه.'
 - The reviewed profile gives Ḥafṣ ṣilah in فيه مهانا (wafi 68); the other thirteen of the 'قبل ساكن بعد متحرك' case in that profile row read none.
-status: merged 2026-11-26; questions for review
+status: merged 2026-11-26

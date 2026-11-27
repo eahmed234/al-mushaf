@@ -378,19 +378,15 @@ listed:
 filled_notes:
 - 'Durrah ruwāt for the waqf case (stopping on the first hamzah): no row of al-Īḍāḥ speaks of it (asl: Ibn Wardān, Ibn Jammāz, Ruways, Rawḥ, Isḥāq,
   Idrīs left empty).'
-questions:
-- id: hamzatayn_kalimatayn_muttafiq#1
-  policy: order
-  from: 'wafi 92: بالسوء إلا — Qālūn and Bazzī have two wujūh (ibdāl of the first to wāw with idghām, and tashīl of the first ''on their aṣl'');
-    the row gives no order of preference besides listing ibdāl first.'
-- id: hamzatayn_kalimatayn_muttafiq#2
-  policy: ahl_adaa
-  from: 'wafi 94: هؤلاء إن / البغاء إن — Warsh''s kasrah-yāʾ ibdāl is reported only as the reading of ''some of the ahl al-adāʾ'' from him; the
-    rows do not say whether it replaces or adds to his two wujūh (tashīl, ibdāl to a madd letter) in these words.'
-- id: hamzatayn_kalimatayn_muttafiq#3
-  policy: order
-  from: 'wafi 92-93: the order of Warsh''s and Qunbul''s two wujūh is not preferred by the book (tashīl listed first as in the reviewed profile
-    row); wafi 93 says Qunbul''s tashīl/ibdāl is ''narrated from them'' (khulf).'
+options:
+- about: هؤلاء إن، البغاء إن
+  ruwat:
+  - warsh
+  reads: the second hamzah as a yāʾ with kasrah
+  cite:
+  - wafi 94
+  view: ahl al-adāʾ
+  default: 'off'
 notes:
 - 'wafi 97: the rows say that whoever changes the first hamzah has only taḥqīq of the second, and whoever changes the second has only taḥqīq of
   the first (Qālūn, Bazzī, Dūrī/Sūsī; Warsh, Qunbul), without saying plainly that this is the waqf/ibtidāʾ case; the table puts only the explicit
@@ -398,6 +394,15 @@ notes:
   after the waqf/ibtidāʾ paragraph, not part of it: whoever changes the first of two agreeing hamzahs (tashīl or ḥadhf) has only taḥqīq of the
   second, and whoever changes the second (tashīl or ibdāl) has only taḥqīq of the first, since no reader changes both. The page''s own waqf/ibtidāʾ
   statement is the preceding paragraph (second hamzah must be taḥqīq when starting on it).'
+- 'wafi 92: بالسوء إلا — Qālūn and Bazzī have two wujūh (ibdāl of the first to wāw with idghām, and tashīl of the first ''on their aṣl''); the
+  row gives no order of preference besides listing ibdāl first. — answered: the book''s first-listed wajh is the default (Eisa); every table already
+  follows it except Warsh''s two hamzahs in one word, kept tashīl first: see `order_exception`'
+- 'wafi 94: هؤلاء إن / البغاء إن — Warsh''s kasrah-yāʾ ibdāl is reported only as the reading of ''some of the ahl al-adāʾ'' from him; the rows
+  do not say whether it replaces or adds to his two wujūh (tashīl, ibdāl to a madd letter) in these words. — answered: options, off by default
+  (Eisa)'
+- 'wafi 92-93: the order of Warsh''s and Qunbul''s two wujūh is not preferred by the book (tashīl listed first as in the reviewed profile row);
+  wafi 93 says Qunbul''s tashīl/ibdāl is ''narrated from them'' (khulf). — answered: the book''s first-listed wajh is the default (Eisa); every
+  table already follows it except Warsh''s two hamzahs in one word, kept tashīl first: see `order_exception`'
 - 'wafi 94: the rest are the eight ruwāt of Hishām, Ibn Dhakwān, Shuʿbah, Ḥafṣ, Khalaf, Khallād, Abū al-Ḥārith, al-Dūrī; Ḥafṣ is in the same row.'
 - 'Isḥāq and Idrīs (idah 99): the row says ''taḥqīq of the two hamzahs, muttafiqah and mukhtalifah'' as their aṣl Khalaf''s; table marks via aṣl.'
-status: merged 2026-11-26; questions for review
+status: merged 2026-11-26

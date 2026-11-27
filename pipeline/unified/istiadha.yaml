@@ -187,8 +187,8 @@ cases:
       - wafi 44
     khalaf_an_hamzah:
       wujuh:
-      - jahr
       - ikhfa
+      - jahr
       cite:
       - wafi 41
       - wafi 43
@@ -253,6 +253,7 @@ cases:
       cite:
       - idah 40-43
       via: asl_unstated
+  note: 'Khalaf: jahr at the start of al-Fātiḥah (listed), ikhfāʾ elsewhere by default (wafi 44; Eisa)'
 - case: when reading silently, alone, in prayer, or in a circle where he is not the one who starts
   ruwat:
     qalun:

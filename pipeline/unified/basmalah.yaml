@@ -26,10 +26,12 @@ cases:
       - wafi 45
     warsh:
       wujuh:
-      - wasl
+      - basmala
       - sakt
+      - wasl
       cite:
       - wafi 46
+      - wafi 47
     bazzi:
       wujuh:
       - basmala
@@ -42,28 +44,36 @@ cases:
       - wafi 45
     duri_abuamr:
       wujuh:
-      - wasl
+      - basmala
       - sakt
+      - wasl
       cite:
       - wafi 46
+      - wafi 47
     susi:
       wujuh:
-      - wasl
+      - basmala
       - sakt
+      - wasl
       cite:
       - wafi 46
+      - wafi 47
     hisham:
       wujuh:
-      - wasl
+      - basmala
       - sakt
+      - wasl
       cite:
       - wafi 46
+      - wafi 47
     ibn_dhakwan:
       wujuh:
-      - wasl
+      - basmala
       - sakt
+      - wasl
       cite:
       - wafi 46
+      - wafi 47
     shuba:
       wujuh:
       - basmala
@@ -128,6 +138,8 @@ cases:
       - wasl
       cite:
       - idah 51
+  note: 'basmala is keeping the basmalah (three ways: join all, cut all, cut the sūrah''s end and join the basmalah to the next; joining it to
+    the end and stopping on it is not allowed, wafi 49); sakt and waṣl are the two ways of dropping it (Eisa 2026-11-26)'
 - case: between al-Anfāl and Barāʾah
   ruwat:
     qalun:
@@ -784,3 +796,16 @@ open:
 filled_notes:
 - 'Start of Barāʾah: no basmalah (wafi 48). No Durrah row, so the six are empty.'
 - 'Obligatory-basmalah case: no Durrah row, so the six are empty.'
+options:
+- about: al-arbaʿ al-zuhr (القيامة، المطففين، البلد، الهمزة)
+  view: ahl al-adāʾ
+  ruwat:
+  - warsh
+  - duri_abuamr
+  - susi
+  - hisham
+  - ibn_dhakwan
+  reads: basmala before them for those who make sakt elsewhere, sakt for those who make waṣl
+  cite:
+  - wafi 47
+  default: 'off'

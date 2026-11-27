@@ -919,3 +919,15 @@ filled_notes:
 - 'Hamzatayn-waqf case: Khalaf and Khallād''s taḥqīq or tashīl of the second hamzah comes from the reviewed profile row (al-Budūr p. 20; al-Wāfī
   pp. 116, 122-123), no row of this category; wafi 85 gives Warsh tashīl (a must, ''أوجبوا'') for أنت and أرأيت when stopping, listed. Hishām
   (profile cite wafi 84): idkhāl with taḥqīq or tashīl, ''not final: as wasl''.'
+options:
+- about: stopping by the rasm (شركاء، يبدو، تلقاء …)
+  ruwat:
+  - khalaf_an_hamzah
+  - khallad
+  reads: 'follow the muṣḥaf''s spelling: yāʾ, wāw or ḥadhf'
+  cite:
+  - wafi 118
+  - wafi 119
+  - wafi 120
+  view: ahl al-adāʾ
+  default: 'off'

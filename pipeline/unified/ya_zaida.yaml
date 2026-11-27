@@ -229,8 +229,6 @@ listed:
   note: the book says the yāʾ is dropped in both states for all the others (idah 180)
 - words:
   - ولا تخزون في ضيفي
-  - وَاتَّقُوا اللَّهَ وَلَا تُخْزُونِ
-  - ولا تخزون
   case: 'yāʾ zāʾidah of al-Ḥirz, in a word the book names for the reader: how he keeps it'
   ruwat:
     duri_abuamr:
@@ -248,7 +246,7 @@ listed:
   cite:
   - wafi 195
   - idah 180
-  note: idah 180 says the yāʾ is dropped in both states for all the readers except Yaʿqūb, against his own row on the same page for Abū Jaʿfar
+  place: Hūd 78
 - words:
   - أشركتمون
   - بِمَا أَشْرَكْتُمُونِ
@@ -915,7 +913,6 @@ listed:
   case: 'yāʾ zāʾidah of al-Ḥirz, in a word the book names for the reader: how he keeps it'
   ruwat:
     qalun:
-    - kept_wasl
     - dropped
     warsh:
     - kept_wasl
@@ -938,7 +935,7 @@ listed:
   cite:
   - wafi 196
   - idah 184
-  note: 'Qālūn: wafi 196 gives khulf, then says the verifiers hold dropped only'
+  note: 'Qālūn: dropped (the verifiers, wafi 196); the poem''s kept-in-waṣl is for the kubrā (Eisa)'
 - words:
   - نذير
   - لتردين
@@ -1103,6 +1100,53 @@ listed:
   cite:
   - idah 178
   note: yāʾāt at the end of the verse (Yaʿqūb, 59 in all)
+- words:
+  - وَاتَّقُوا اللَّهَ وَلَا تُخْزُونِ
+  case: 'yāʾ zāʾidah of al-Ḥirz, in a word the book names for the reader: how he keeps it'
+  place: al-Ḥijr 69
+  ruwat:
+    qalun:
+    - dropped
+    warsh:
+    - dropped
+    bazzi:
+    - dropped
+    qunbul:
+    - dropped
+    duri_abuamr:
+    - dropped
+    susi:
+    - dropped
+    hisham:
+    - dropped
+    ibn_dhakwan:
+    - dropped
+    shuba:
+    - dropped
+    hafs:
+    - dropped
+    khalaf_an_hamzah:
+    - dropped
+    khallad:
+    - dropped
+    abul_harith:
+    - dropped
+    duri_kisai:
+    - dropped
+    ibn_wardan:
+    - dropped
+    ibn_jammaz:
+    - dropped
+    ruways:
+    - kept_both
+    rawh:
+    - kept_both
+    ishaq:
+    - dropped
+    idris:
+    - dropped
+  cite:
+  - idah 180
 open:
 - 'Bare ''الإثبات'' in the Wāfī was read as the reader''s general form from wafi 193 (Nāfiʿ, Abū ʿAmr, Ḥamzah, al-Kisāʾī: kept in waṣl; Ibn Kathīr:
   kept in both; Hishām: khulf), see each entry; entries list the reading for all named readers, not only the ones that differ from the case.'
@@ -1126,3 +1170,11 @@ filled_notes:
   therefore list only the readers a row names; that nothing else is kept is not stated by the rows.'
 - 'يهديني (wafi 197, all fourteen keep): the waqf state is not stated.'
 - Abū Jaʿfar's 'كأصله' words (idah 181) take Nāfiʿ's reading where the Wāfī rows name Qālūn and Warsh alike; no row separates them.
+kubra:
+- about: التلاق، التناد
+  ruwat:
+  - qalun
+  reads: kept_wasl
+  cite:
+  - wafi 196
+  why: the poem's khulf; the verifiers drop it

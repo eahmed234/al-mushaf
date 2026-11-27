@@ -36,6 +36,12 @@ wujuh:
 - id: ishba
   ar: المد
   en: madd (ṭūl)
+- id: idgham_ishmam
+  ar: الإدغام مع الإشمام
+  en: idghām with ishmām
+- id: ikhtilas
+  ar: الإخفاء (الاختلاس)
+  en: ikhfāʾ of the vowel (ikhtilās)
 cases:
 - case: mithlayn, both vowelled, across two words (waṣl)
   ruwat:
@@ -1643,26 +1649,87 @@ listed:
   - wafi 65
   - wafi 66
   why: 'the four forms: idghām maḥḍ only, no ishmām, and no rawm on al-Shāṭibī''s view (wafi 66)'
+- words:
+  - تأمنا
+  case: mithlayn inside one word
+  ruwat:
+    qalun:
+    - idgham_ishmam
+    - ikhtilas
+    warsh:
+    - idgham_ishmam
+    - ikhtilas
+    bazzi:
+    - idgham_ishmam
+    - ikhtilas
+    qunbul:
+    - idgham_ishmam
+    - ikhtilas
+    duri_abuamr:
+    - idgham_ishmam
+    - ikhtilas
+    susi:
+    - idgham_ishmam
+    - ikhtilas
+    hisham:
+    - idgham_ishmam
+    - ikhtilas
+    ibn_dhakwan:
+    - idgham_ishmam
+    - ikhtilas
+    shuba:
+    - idgham_ishmam
+    - ikhtilas
+    hafs:
+    - idgham_ishmam
+    - ikhtilas
+    khalaf_an_hamzah:
+    - idgham_ishmam
+    - ikhtilas
+    khallad:
+    - idgham_ishmam
+    - ikhtilas
+    abul_harith:
+    - idgham_ishmam
+    - ikhtilas
+    duri_kisai:
+    - idgham_ishmam
+    - ikhtilas
+    ibn_wardan:
+    - idgham
+    ibn_jammaz:
+    - idgham
+    ruways:
+    - idgham_ishmam
+    - ikhtilas
+    rawh:
+    - idgham_ishmam
+    - ikhtilas
+    ishaq:
+    - idgham_ishmam
+    - ikhtilas
+    idris:
+    - idgham_ishmam
+    - ikhtilas
+  cite:
+  - wafi 294
+  - idah 65
+  - idah 66
+  note: ishmām the default (the more famous, wafi 294; Eisa); Abū Jaʿfar idghām only
 filled_notes:
 - Cases 5-9 are stated for al-Sūsī only; every other rāwī is empty because the rows do not speak of them (the rawm/ishmām, madd and mīm rules
   are his).
 - 'Case 6 (madd before the mudgham): al-Sūsī has ṭūl, tawassuṭ, qaṣr (wafi 66, and wafi 80 for a madd before a sukūn arising from idghām: قال
   لهم, الرحيم ملك, يقول ربنا). Lengths not stated; no fractions. Khulf; book''s order ṭūl, tawassuṭ, qaṣr is kept.'
-questions:
-- id: idgham_kabir#2
-  q: 'تأمنا (wafi 294): every reader has either ikhfāʾ of the first nūn''s vowel (ikhtilās) or idghām with ishmām, and the book calls ishmām the
-    more famous. Should ishmām be the default and ikhtilās the option? (Yaʿqūb and Khalaf al-ʿĀshir follow their aṣl here, idah 66.)'
-  from: 'تأمنا: Ibn Wardān and Ibn Jammāz merge the nūn (idah 65); for Ruways, Rawḥ, Isḥāq, Idrīs idah 66 says "كأصله". What the aṣl (Abū ʿAmr;
-    Khalaf ʿan Ḥamzah) reads is not given in these rows, so they are not listed. — re-read (wafi 294, idah 65, idah 66): Wafi 294 says تأمنا is
-    read by all seven with ikhfāʾ (iẓhār with ikhtilās of the first nūn''s vowel), and that some transmitters also merge with ishmām; both are
-    valid for all seven, ishmām being the more famous. Idah 66 says Yaʿqūb and Khalaf follow their aṣl (Abū ʿAmr; Khalaf ʿan Ḥamzah), with fn.
-    citing the Shāṭibiyyah verse. So the aṣl rows have two wujūh, the book not choosing between them.'
 notes:
 - 'Every case is stated for al-Sūsī or Yaʿqūb''s places only. The other twelve of the Shāṭibiyyah and al-Dūrī: iẓhār (wafi 53, "ليس له من طريق
   النظم وأصله إلا الإظهار"; the words "من طريق النظم" leave other routes outside this book).'
 - 'Cases 1-4: Ibn Wardān, Ibn Jammāz, Isḥāq, Idrīs are iẓhār through their aṣl (Nāfiʿ; Khalaf ʿan Ḥamzah) from the reviewed profile (idah 40-43),
   not a row of this category; idah 66 only says Yaʿqūb and Khalaf follow their aṣl on تأمنا. Rawḥ''s general iẓhār is from the profile (idah 62)
   and Ruways'' from idah 65 ("فليس له فيها إلا الإظهار").'
+- 'تأمنا: Ibn Wardān and Ibn Jammāz merge the nūn (idah 65); for Ruways, Rawḥ, Isḥāq, Idrīs idah 66 says "كأصله". What the aṣl (Abū ʿAmr; Khalaf
+  ʿan Ḥamzah) reads is not given in these rows, so they are not listed. — answered: Eisa: ishmām the default; Abū Jaʿfar has no option, idghām
+  only (idah 65).'
 - 'تتمارى, ثم تتفكروا, أتمدونن (idah 66-67): the rows give Ruways (and Rawḥ for the first and third) as merging in waṣl; Isḥāq, Idrīs, Ibn Wardān,
   Ibn Jammāz read iẓhār, which is the case default, so are not repeated.'
 - 'The row for جعل, لا قبل لهم بها, وأنه هو (idah 63) has its words split oddly in the extraction (جَعَلَ in all places of al-Naḥl per the profile;
@@ -1717,4 +1784,4 @@ notes:
 - 'rawh in case ''first mudgham after a madd or līn letter: idghām maḥḍ (قال لهم, يقول ربنا, كيف فعل, قوم موسى)'': the Durrah is silent and his
   aṣl''s two ruwāt differ (izhar / idgham); filled as Ḥafṣ for now — settled: Cases 5-9 are how al-Sūsī makes his idghām; Ruways and Rawḥ read
   iẓhār outside their listed words (idah 62, 65), stated in cases 1-4, so iẓhār here follows from that, not from Ḥafṣ.'
-status: merged 2026-11-26; questions for review
+status: merged 2026-11-26

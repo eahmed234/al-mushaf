@@ -28,6 +28,12 @@ wujuh:
 - id: ishba
   ar: المد
   en: madd (ṭūl)
+- id: idgham_ishmam
+  ar: الإدغام مع الإشمام
+  en: idghām with ishmām
+- id: ikhtilas
+  ar: الإخفاء (الاختلاس)
+  en: ikhfāʾ of the vowel (ikhtilās)
 cases:
 - case: mithlayn, both vowelled, across two words (waṣl)
   ruwat:
@@ -1513,6 +1519,73 @@ listed:
   - wafi 65
   - wafi 66
   why: 'the four forms: idghām maḥḍ only, no ishmām, and no rawm on al-Shāṭibī''s view (wafi 66)'
+- words:
+  - تأمنا
+  case: mithlayn inside one word
+  ruwat:
+    qalun:
+    - idgham_ishmam
+    - ikhtilas
+    warsh:
+    - idgham_ishmam
+    - ikhtilas
+    bazzi:
+    - idgham_ishmam
+    - ikhtilas
+    qunbul:
+    - idgham_ishmam
+    - ikhtilas
+    duri_abuamr:
+    - idgham_ishmam
+    - ikhtilas
+    susi:
+    - idgham_ishmam
+    - ikhtilas
+    hisham:
+    - idgham_ishmam
+    - ikhtilas
+    ibn_dhakwan:
+    - idgham_ishmam
+    - ikhtilas
+    shuba:
+    - idgham_ishmam
+    - ikhtilas
+    hafs:
+    - idgham_ishmam
+    - ikhtilas
+    khalaf_an_hamzah:
+    - idgham_ishmam
+    - ikhtilas
+    khallad:
+    - idgham_ishmam
+    - ikhtilas
+    abul_harith:
+    - idgham_ishmam
+    - ikhtilas
+    duri_kisai:
+    - idgham_ishmam
+    - ikhtilas
+    ibn_wardan:
+    - idgham
+    ibn_jammaz:
+    - idgham
+    ruways:
+    - idgham_ishmam
+    - ikhtilas
+    rawh:
+    - idgham_ishmam
+    - ikhtilas
+    ishaq:
+    - idgham_ishmam
+    - ikhtilas
+    idris:
+    - idgham_ishmam
+    - ikhtilas
+  cite:
+  - wafi 294
+  - idah 65
+  - idah 66
+  note: ishmām the default (the more famous, wafi 294; Eisa); Abū Jaʿfar idghām only
 open:
 - 'Every case is stated for al-Sūsī or Yaʿqūb''s places only. The other twelve of the Shāṭibiyyah and al-Dūrī: iẓhār (wafi 53, "ليس له من طريق
   النظم وأصله إلا الإظهار"; the words "من طريق النظم" leave other routes outside this book).'

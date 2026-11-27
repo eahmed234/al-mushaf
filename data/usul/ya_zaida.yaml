@@ -237,8 +237,6 @@ listed:
   note: the book says the yāʾ is dropped in both states for all the others (idah 180)
 - words:
   - ولا تخزون في ضيفي
-  - وَاتَّقُوا اللَّهَ وَلَا تُخْزُونِ
-  - ولا تخزون
   case: 'yāʾ zāʾidah of al-Ḥirz, in a word the book names for the reader: how he keeps it'
   ruwat:
     duri_abuamr:
@@ -256,7 +254,7 @@ listed:
   cite:
   - wafi 195
   - idah 180
-  note: idah 180 says the yāʾ is dropped in both states for all the readers except Yaʿqūb, against his own row on the same page for Abū Jaʿfar
+  place: Hūd 78
 - words:
   - أشركتمون
   - بِمَا أَشْرَكْتُمُونِ
@@ -923,7 +921,6 @@ listed:
   case: 'yāʾ zāʾidah of al-Ḥirz, in a word the book names for the reader: how he keeps it'
   ruwat:
     qalun:
-    - kept_wasl
     - dropped
     warsh:
     - kept_wasl
@@ -946,7 +943,7 @@ listed:
   cite:
   - wafi 196
   - idah 184
-  note: 'Qālūn: wafi 196 gives khulf, then says the verifiers hold dropped only'
+  note: 'Qālūn: dropped (the verifiers, wafi 196); the poem''s kept-in-waṣl is for the kubrā (Eisa)'
 - words:
   - نذير
   - لتردين
@@ -1111,6 +1108,53 @@ listed:
   cite:
   - idah 178
   note: yāʾāt at the end of the verse (Yaʿqūb, 59 in all)
+- words:
+  - وَاتَّقُوا اللَّهَ وَلَا تُخْزُونِ
+  case: 'yāʾ zāʾidah of al-Ḥirz, in a word the book names for the reader: how he keeps it'
+  place: al-Ḥijr 69
+  ruwat:
+    qalun:
+    - dropped
+    warsh:
+    - dropped
+    bazzi:
+    - dropped
+    qunbul:
+    - dropped
+    duri_abuamr:
+    - dropped
+    susi:
+    - dropped
+    hisham:
+    - dropped
+    ibn_dhakwan:
+    - dropped
+    shuba:
+    - dropped
+    hafs:
+    - dropped
+    khalaf_an_hamzah:
+    - dropped
+    khallad:
+    - dropped
+    abul_harith:
+    - dropped
+    duri_kisai:
+    - dropped
+    ibn_wardan:
+    - dropped
+    ibn_jammaz:
+    - dropped
+    ruways:
+    - kept_both
+    rawh:
+    - kept_both
+    ishaq:
+    - dropped
+    idris:
+    - dropped
+  cite:
+  - idah 180
 filled_notes:
 - 'Ibn Dhakwan, Shuʿbah and Ḥafṣ: no row gives them a general reading of the yāʾāt al-zawāʾid (wafi 193 names Ibn Kathīr, Hishām, Abū ʿAmr, Ḥamzah,
   al-Kisāʾī, Nāfiʿ only); the case is left empty for them. Ibn Dhakwan appears at فلا تسألني (khulf) and فما آتاني (dropped); Ḥafṣ at فما آتاني.'
@@ -1118,23 +1162,25 @@ filled_notes:
   therefore list only the readers a row names; that nothing else is kept is not stated by the rows.'
 - 'يهديني (wafi 197, all fourteen keep): the waqf state is not stated.'
 - Abū Jaʿfar's 'كأصله' words (idah 181) take Nāfiʿ's reading where the Wāfī rows name Qālūn and Warsh alike; no row separates them.
-questions:
-- id: ya_zaida#2
-  q: 'ولا تخزون في ضيفي: idah 180 says everyone drops the yāʾ in both states except Yaʿqūb, but the row just before on the same page has Abū Jaʿfar
-    keeping it in waṣl. Does Abū Jaʿfar keep it in waṣl?'
-  from: 'idah 180: for ولا تخزون في ضيفي the book says all readers drop the yāʾ in both states except Yaʿqūb, but the previous row (idah 180)
-    has Abū Jaʿfar keeping it in waṣl; both recorded (Abū Jaʿfar kept_wasl).'
-- id: ya_zaida#3
-  q: 'Qālūn at التلاق and التناد: the poem gives him khulf (kept or dropped), but "the verifiers" say dropped only (wafi 196). The table gives
-    [kept in waṣl, dropped]. Dropped only?'
-  from: 'wafi 196: Qālūn at التلاق/التناد: khulf (kept or dropped) in the naẓm, yet ''the verifiers say dropped only'' (row 84); recorded [kept_wasl,
-    dropped].'
+kubra:
+- about: التلاق، التناد
+  ruwat:
+  - qalun
+  reads: kept_wasl
+  cite:
+  - wafi 196
+  why: the poem's khulf; the verifiers drop it
 notes:
 - 'Bare ''الإثبات'' in the Wāfī was read as the reader''s general form from wafi 193 (Nāfiʿ, Abū ʿAmr, Ḥamzah, al-Kisāʾī: kept in waṣl; Ibn Kathīr:
   kept in both; Hishām: khulf), see each entry; entries list the reading for all named readers, not only the ones that differ from the case.'
 - 'Ibn Wardan and Ibn Jammāz: idah 173 gives only ''kept in waṣl'' for all the yāʾāt he keeps (kept_wasl); at يردن/تتبعن/فما آتاني idah gives
   him opened in waṣl and sākin in waqf (recorded: kept_both for the first two, kept_wasl for فما آتاني where waqf is dropped). Qālūn keeps تتبعن
   in waṣl only (wafi 194), so Abū Jaʿfar does not follow Qālūn there.'
+- 'idah 180: for ولا تخزون في ضيفي the book says all readers drop the yāʾ in both states except Yaʿqūb, but the previous row (idah 180) has Abū
+  Jaʿfar keeping it in waṣl; both recorded (Abū Jaʿfar kept_wasl). — answered: Eisa: two āyāt. Hūd 78 (ولا تخزون في ضيفي): Abū Jaʿfar keeps it
+  in waṣl, Yaʿqūb in both; al-Ḥijr 69 (واتقوا الله ولا تخزون): dropped in both states for all but Yaʿqūb (idah 180).'
+- 'wafi 196: Qālūn at التلاق/التناد: khulf (kept or dropped) in the naẓm, yet ''the verifiers say dropped only'' (row 84); recorded [kept_wasl,
+  dropped]. — answered: Eisa: dropped is the default; kept in waṣl is disputed, kubrā only.'
 - 'wafi 193 vs 194 for Ḥamzah at أتمدونن: kept in waṣl and waqf (193) vs bare ''الإثبات'' (194); recorded kept_both. — re-read (wafi 193, wafi
   194): Wafi 193 says Ḥamzah departs from his aṣl and keeps the first zāʾidah yāʾ of al-Naml (أتمدونن) in waṣl and in waqf. Wafi 194 repeats it:
   ''حيث أثبتها في الحالين كما سبق''. The two pages agree.'
@@ -1144,4 +1190,4 @@ notes:
 - 'Yaʿqūb''s long lists of verse-end yāʾāt (idah 176-178) overlap with other entries (e.g. التلاق، التناد، يسر، أكرمن، المتعال): the same words
   are entered twice, once with the Shāṭibiyyah readers and once in the Yaʿqūb list. — settled: the Yaʿqūb list overlaps other entries; the duplicates
   are merged when the gaps are applied.'
-status: merged 2026-11-26; questions for review
+status: merged 2026-11-26

@@ -617,17 +617,13 @@ cases:
     khalaf_an_hamzah:
       wujuh:
       - kasr_ha
-      - damm_ha
       cite:
       - wafi 52
-      - wafi 53
     khallad:
       wujuh:
       - kasr_ha
-      - damm_ha
       cite:
       - wafi 52
-      - wafi 53
     abul_harith:
       wujuh:
       - kasr_ha
@@ -676,54 +672,54 @@ cases:
   ruwat:
     qalun:
       wujuh:
-      - kasr_ha
-      cite: []
-      via: as_hafs
+      - sukun_mim
+      cite:
+      - wafi 52
     warsh:
       wujuh:
-      - kasr_ha
-      cite: []
-      via: as_hafs
+      - sukun_mim
+      cite:
+      - wafi 52
     bazzi:
       wujuh:
-      - kasr_ha
-      cite: []
-      via: as_hafs
+      - sukun_mim
+      cite:
+      - wafi 52
     qunbul:
       wujuh:
-      - kasr_ha
-      cite: []
-      via: as_hafs
+      - sukun_mim
+      cite:
+      - wafi 52
     duri_abuamr:
       wujuh:
-      - kasr_ha
-      cite: []
-      via: as_hafs
+      - sukun_mim
+      cite:
+      - wafi 52
     susi:
       wujuh:
-      - kasr_ha
-      cite: []
-      via: as_hafs
+      - sukun_mim
+      cite:
+      - wafi 52
     hisham:
       wujuh:
-      - kasr_ha
-      cite: []
-      via: as_hafs
+      - sukun_mim
+      cite:
+      - wafi 52
     ibn_dhakwan:
       wujuh:
-      - kasr_ha
-      cite: []
-      via: as_hafs
+      - sukun_mim
+      cite:
+      - wafi 52
     shuba:
       wujuh:
-      - kasr_ha
-      cite: []
-      via: as_hafs
+      - sukun_mim
+      cite:
+      - wafi 52
     hafs:
       wujuh:
-      - kasr_ha
-      cite: []
-      via: as_hafs
+      - sukun_mim
+      cite:
+      - wafi 52
     khalaf_an_hamzah:
       wujuh:
       - sukun_mim
@@ -756,16 +752,14 @@ cases:
       - idah 59
     ruways:
       wujuh:
-      - kasr_ha
+      - sukun_mim
       cite:
-      - idah 40-43
-      via: asl_unstated
+      - wafi 52
     rawh:
       wujuh:
-      - kasr_ha
+      - sukun_mim
       cite:
-      - idah 40-43
-      via: asl_unstated
+      - wafi 52
     ishaq:
       wujuh:
       - sukun_mim
@@ -853,6 +847,19 @@ listed:
     - kasr_ha
   cite:
   - idah 60
+- words:
+  - عليهم
+  - إليهم
+  - لديهم
+  case: hāʾ before the plural mīm, at waqf
+  ruwat:
+    khalaf_an_hamzah:
+    - damm_ha
+    khallad:
+    - damm_ha
+  cite:
+  - wafi 52
+  note: Ḥamzah's ḍamm in these three holds in waqf and waṣl
 filled_notes:
 - 'Abū Jaʿfar in the first case: no row names him; kasr is read from idah 57 (''in all that Yaʿqūb pronounced with ḍamm''). Khalaf al-ʿĀshir:
   kasr in the three words (idah 54) and in all that Yaʿqūb damms (idah 57).'
@@ -869,12 +876,6 @@ filled_notes:
 - 'Waqf: Abū Jaʿfar and Khalaf al-ʿĀshir read kasr of the hāʾ ''مطلقا'' and sukūn of the mīm (idah 59); Ruways and Rawḥ at waqf on the mīm: no
   row (Ruways ''وصلا ووقفا'' on idah 56 is the first case).'
 - No row for the other Shāṭibiyyah ruwāt at waqf; and no row says the mīm is sākin at waqf for them.
-questions:
-- id: ha_mim_jam#3
-  q: 'Khalaf and Khallād stopping on the plural hāʾ: wafi 52 says Ḥamzah reads the hāʾ with kasr at waqf; wafi 53 says Khalaf and Khallād read
-    it with ḍamm (mīm sākin). The table gives both, kasr first. Which is right, or both?'
-  from: 'Disagreement at waqf: wafi 52 says Ḥamzah, al-Kisāʾī and Khalaf read the hāʾ with kasr at waqf; wafi 53 says Khalaf and Khallād read
-    ḍamm of the hāʾ with sukūn of the mīm at waqf, Abū l-Ḥārith and al-Dūrī kasr with sukūn. Kept both for Khalaf/Khallād ([kasr_ha, damm_ha]).'
 notes:
 - 'The Shāṭibiyyah rows give the hāʾ only for the three words عليهم، إليهم، لديهم (wafi 51); what Ḥamzah and Khalaf do in other words with the
   plural hāʾ after a yāʾ (فيهم …) is not in the rows. Al-Īḍāḥ gives Yaʿqūb the general rule (idah 55). — re-read (wafi 51, idah 55): Al-Wāfī p.51
@@ -887,4 +888,8 @@ notes:
   and Khalaf (al-ʿĀshir) read kasr in everything Yaʿqūb damms, with Rawḥ named too. Wafi 51-52 say nothing about these words (wafi 51 gives the
   Shāṭibiyyah hāʾ only for عليهم، إليهم، لديهم), so the Shāṭibiyyah ruwāt are not settled by the pages.'
 - 'Row tagged waqf in the data for يغنهم (idah 60): the quote doesn''t say waqf; shown for the waṣl case.'
-status: merged 2026-11-26; questions for review
+- 'Disagreement at waqf: wafi 52 says Ḥamzah, al-Kisāʾī and Khalaf read the hāʾ with kasr at waqf; wafi 53 says Khalaf and Khallād read ḍamm of
+  the hāʾ with sukūn of the mīm at waqf, Abū l-Ḥārith and al-Dūrī kasr with sukūn. Kept both for Khalaf/Khallād ([kasr_ha, damm_ha]). — answered:
+  Eisa: عليهم، إليهم، لديهم are ḍamm in both states for Ḥamzah; the other words differ: ḍamm in waṣl before a sākin, kasr at waqf (wafi 52). Waqf
+  case: kasr; the three words listed with ḍamm.'
+status: merged 2026-11-26

@@ -943,22 +943,24 @@ listed:
   - أمن لنا لأجراً
   - أئنك لمن المصدقين
   - أنفكا آلهة
-  - أتنكم لتكفرون
   case: two hamzahs in one word, the second maksūrah (أئنكم)
   ruwat:
     hisham:
     - tahqiq_idkhal
   cite:
   - wafi 89
+  - budur 120
+  - budur 121
 - words:
   - أتنكم لتكفرون فصلت
   case: two hamzahs in one word, the second maksūrah (أئنكم)
   ruwat:
     hisham:
-    - tashil
-    - tahqiq
+    - tashil_idkhal
+    - tahqiq_idkhal
   cite:
   - wafi 89
+  - budur 282
 - words:
   - أئمة
   - أيمةَ
@@ -1046,20 +1048,19 @@ filled_notes:
 - 'Repeated istifhām (idah 92-94, rows labelled istifham_mukarrar) and هأنتم (idah 113-114, haa_antum): the wujūh are the book''s own words; the
   fourteen of al-Wāfī have no row in this category for them (empty); Isḥāq and Idrīs are ''كأصله'' (idah 94, Khalaf ʿan Ḥamzah) but the aṣl''s
   reading is not in the rows (empty).'
-questions:
-- id: hamzatayn#1
-  q: 'Hishām with a second hamzah maksūrah: wafi 89 gives taḥqīq with or without idkhāl; the reviewed table (wafi 84) gives taḥqīq with idkhāl
-    and tashīl with idkhāl. Which?'
-  from: 'Hishām, second maksūrah: wafi 89 gives taḥqīq with or without idkhāl; the reviewed profile row (wafi 84) gives taḥqīq+idkhāl and tashīl+idkhāl
-    for him. The table keeps wafi 89. The seven words with ''no khulf'' idkhāl (wafi 89) include أتنكم لتكفرون, while the same page gives Hishām
-    two wujūh (tashīl, taḥqīq) for the Fuṣṣilat word; both are listed as the rows say, not resolved.'
-- id: hamzatayn#2
-  policy: order
-  from: 'Warsh, second maftūḥah (wafi 84): the Egyptians narrate ibdāl to alif, the Baghdādīs tashīl; the table orders tashīl, ibdāl as in the
-    reviewed profile row; the book states no preference.'
+order_exception: 'Warsh, second hamzah maftūḥah: al-Wāfī''s verse names the ibdāl (Egyptians) before the tashīl (Baghdādīs, wafi 84), but the
+  reviewed table and al-Budūr (budur 20: ''الأول مثل المكي والثاني إبدالها'') put tashīl first; kept tashīl first until Eisa says otherwise'
 notes:
 - 'Hishām, second maftūḥah (wafi 84): the row gives tashīl or taḥqīq; the idkhāl comes from wafi 89 (idkhāl before maftūḥah and maksūrah for Qālūn,
   Abū ʿAmr, Hishām) and agrees with the reviewed profile row, which gives [taḥqīq+idkhāl, tashīl+idkhāl].'
+- 'Hishām, second maksūrah: wafi 89 gives taḥqīq with or without idkhāl; the reviewed profile row (wafi 84) gives taḥqīq+idkhāl and tashīl+idkhāl
+  for him. The table keeps wafi 89. The seven words with ''no khulf'' idkhāl (wafi 89) include أتنكم لتكفرون, while the same page gives Hishām
+  two wujūh (tashīl, taḥqīq) for the Fuṣṣilat word; both are listed as the rows say, not resolved. — answered: al-Budūr (Eisa: check al-Budūr):
+  Hishām taḥqīq with and without idkhāl (budur 134, 166, 236, 265, 269), idkhāl only in the seven places (budur 120, 121, 238, 245); in Fuṣṣilat
+  idkhāl with tashīl or taḥqīq, tashīl first (budur 282). The table follows.'
+- 'Warsh, second maftūḥah (wafi 84): the Egyptians narrate ibdāl to alif, the Baghdādīs tashīl; the table orders tashīl, ibdāl as in the reviewed
+  profile row; the book states no preference. — answered: the book''s first-listed wajh is the default (Eisa); every table already follows it
+  except Warsh''s two hamzahs in one word, kept tashīl first: see `order_exception`'
 - 'ءالهتنا and آمنتم (wafi 88): those with idkhāl (Qālūn, Abū ʿAmr, Hishām) do not insert the alif in these words (the rows say ''لا إدخال'');
   for ءالهتنا no other reading is stated for the fourteen, only Abū Jaʿfar''s tashīl without idkhāl (idah 89).'
 - 'Ḥafṣ for أن يؤتى أحد and أن كان ذا مال: wafi 86 gives ''one hamzah'' to the rest; the Durrah rows say nothing on أن يؤتى أحد, so no Durrah
@@ -1074,4 +1075,4 @@ notes:
 - 'Ruways in الأعراف وطه والشعراء (idah 89): khabar with one hamzah, in the listed آمنتم; Ibn Wardān/Ibn Jammaz there tashīl without idkhāl (idah
   89).'
 - 'idah 90: for أعنك لأنت يوسف the rest of Yaʿqūb and Khalaf read as their aṣl (istifhām), as in their case reading.'
-status: merged 2026-11-26; questions for review
+status: merged 2026-11-26

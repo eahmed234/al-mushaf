@@ -51,6 +51,10 @@ def sort_open(c: str, t: dict, s: dict) -> None:
     for i, line in enumerate(t.pop("open", None) or []):
         k = f"{c}#{i}"
         r = (s.get("resolved") or {}).get(k)
+        ans = (s.get("answers") or {}).get(k) or (s.get("answers") or {}).get(f"policy:{policy.get(k)}")
+        if ans:
+            notes.append(f"{line} — answered: {ans}")
+            continue
         if r:
             line = f"{line} — re-read ({', '.join(r['pages'])}): {r['finding']}"
             if r.get("becomes") == "question":

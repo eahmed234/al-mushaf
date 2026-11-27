@@ -609,17 +609,13 @@ cases:
     khalaf_an_hamzah:
       wujuh:
       - kasr_ha
-      - damm_ha
       cite:
       - wafi 52
-      - wafi 53
     khallad:
       wujuh:
       - kasr_ha
-      - damm_ha
       cite:
       - wafi 52
-      - wafi 53
     abul_harith:
       wujuh:
       - kasr_ha
@@ -668,54 +664,54 @@ cases:
   ruwat:
     qalun:
       wujuh:
-      - kasr_ha
-      cite: []
-      via: as_hafs
+      - sukun_mim
+      cite:
+      - wafi 52
     warsh:
       wujuh:
-      - kasr_ha
-      cite: []
-      via: as_hafs
+      - sukun_mim
+      cite:
+      - wafi 52
     bazzi:
       wujuh:
-      - kasr_ha
-      cite: []
-      via: as_hafs
+      - sukun_mim
+      cite:
+      - wafi 52
     qunbul:
       wujuh:
-      - kasr_ha
-      cite: []
-      via: as_hafs
+      - sukun_mim
+      cite:
+      - wafi 52
     duri_abuamr:
       wujuh:
-      - kasr_ha
-      cite: []
-      via: as_hafs
+      - sukun_mim
+      cite:
+      - wafi 52
     susi:
       wujuh:
-      - kasr_ha
-      cite: []
-      via: as_hafs
+      - sukun_mim
+      cite:
+      - wafi 52
     hisham:
       wujuh:
-      - kasr_ha
-      cite: []
-      via: as_hafs
+      - sukun_mim
+      cite:
+      - wafi 52
     ibn_dhakwan:
       wujuh:
-      - kasr_ha
-      cite: []
-      via: as_hafs
+      - sukun_mim
+      cite:
+      - wafi 52
     shuba:
       wujuh:
-      - kasr_ha
-      cite: []
-      via: as_hafs
+      - sukun_mim
+      cite:
+      - wafi 52
     hafs:
       wujuh:
-      - kasr_ha
-      cite: []
-      via: as_hafs
+      - sukun_mim
+      cite:
+      - wafi 52
     khalaf_an_hamzah:
       wujuh:
       - sukun_mim
@@ -748,16 +744,14 @@ cases:
       - idah 59
     ruways:
       wujuh:
-      - kasr_ha
+      - sukun_mim
       cite:
-      - idah 40-43
-      via: asl_unstated
+      - wafi 52
     rawh:
       wujuh:
-      - kasr_ha
+      - sukun_mim
       cite:
-      - idah 40-43
-      via: asl_unstated
+      - wafi 52
     ishaq:
       wujuh:
       - sukun_mim
@@ -845,6 +839,19 @@ listed:
     - kasr_ha
   cite:
   - idah 60
+- words:
+  - عليهم
+  - إليهم
+  - لديهم
+  case: hāʾ before the plural mīm, at waqf
+  ruwat:
+    khalaf_an_hamzah:
+    - damm_ha
+    khallad:
+    - damm_ha
+  cite:
+  - wafi 52
+  note: Ḥamzah's ḍamm in these three holds in waqf and waṣl
 open:
 - The Shāṭibiyyah rows give the hāʾ only for the three words عليهم، إليهم، لديهم (wafi 51); what Ḥamzah and Khalaf do in other words with the
   plural hāʾ after a yāʾ (فيهم …) is not in the rows. Al-Īḍāḥ gives Yaʿqūb the general rule (idah 55).

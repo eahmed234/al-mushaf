@@ -254,6 +254,15 @@ listed:
   - wafi 106
 filled_notes:
 - The book says nothing of waqf here (Warsh's naql on the same words is in the naql category).
+kubra:
+- about: sakt on a sākin that is not a madd
+  ruwat:
+  - idris
+  reads: sakt (al-Muṭṭawwiʿī, from al-Mubhij)
+  cite:
+  - idah 121
+  - idah 122
+  - idah 123
 disagreements:
 - rawi: idris
   case: lām al-taʿrīf before a hamzat qaṭʿ (الأولى, الآخرة, الإنسان), in waṣl
@@ -265,12 +274,6 @@ disagreements:
   - sakt
   kept: reviewed
   why: al-Futūḥ's rows and al-Budūr's statements side with the reviewed table (cross-checks 2026-11-26)
-questions:
-- id: sakt_al#2
-  policy: footnotes
-  from: 'Idrīs: the editor records a sakt khulf for a sākin that is not a madd (al-Muṭṭawwiʿī, from al-Mubhij, which needs ishbāʿ of the muttaṣil,
-    idah 123); the Durrah says "والسكت أهملا" and the shārḥ and most take none (profile, idah 121-123). Table: none; the sakt is an option here,
-    default none.'
 notes:
 - 'wafi 106 puts Khallād with Khalaf on the sakt of both (the row says sakt); the reviewed profile gives Khallād two wujūh (sakt and none) with
   the same page. Table follows the row; the profile''s second wajh is left here. — re-read (wafi 106): wafi 106: Khallād has no sakt on the first
@@ -279,6 +282,9 @@ notes:
   Wafi 106 gives Khallād no sakt at all on the first route (Abū al-Fatḥ) and sakt on ال and شيء/شيئا only on the second route (Ibn Ghalbūn), with
   no sakt on the separated sākin on either; so he has khulf in both words together. Khalaf has sakt on ال and شيء on both routes (the ''قليل''
   is the shortness of the sakt).'
+- 'Idrīs: the editor records a sakt khulf for a sākin that is not a madd (al-Muṭṭawwiʿī, from al-Mubhij, which needs ishbāʿ of the muttaṣil, idah
+  123); the Durrah says "والسكت أهملا" and the shārḥ and most take none (profile, idah 121-123). Table: none; the sakt is an option here, default
+  none. — answered: kubrā version only (Eisa)'
 - 'Abū Jaʿfar''s and Yaʿqūb''s ruwāt: idah 124 "كأصليهما" (a sakt_mafsul row); their aṣl, Nāfiʿ and Abū ʿAmr, have none, which the table gives.
   The Durrah rows speak of the mafṣūl; none has a row for lām al-taʿrīf or شيء, and the reviewed profile cites idah 121-123 for Isḥāq and Idrīs.'
-status: merged 2026-11-26; questions for review
+status: merged 2026-11-26

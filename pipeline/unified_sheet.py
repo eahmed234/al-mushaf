@@ -84,9 +84,11 @@ def grid(ruwat: dict, label: dict) -> str:
 
 def main():
     sections, n = [], 0
-    pol = yaml.safe_load((ROOT / "pipeline/open_sort.yaml").read_text(encoding="utf-8"))["policies"]
+    sort = yaml.safe_load((ROOT / "pipeline/open_sort.yaml").read_text(encoding="utf-8"))
+    pol, ans = sort["policies"], sort.get("answers") or {}
     items = "".join(f'<article class="rule open" id="policy-{esc(k)}" data-id="policy:{esc(k)}"><p class="q">{linked(p["q"])}</p>'
-                    f'<p class="note">Settles: {esc(", ".join(p["covers"]))}</p><div class="foot">{marks("policy:" + k, "الجواب")}</div></article>'
+                    + (f'<p class="note"><b>Answered:</b> {esc(ans["policy:" + k])}</p>' if "policy:" + k in ans else "")
+                    + f'<p class="note">Settles: {esc(", ".join(p["covers"]))}</p><div class="foot">{marks("policy:" + k, "الجواب")}</div></article>'
                     for k, p in pol.items())
     sections.append(f'<details class="family" id="policies" open><summary><span class="fname">policies</span>'
                     f'<span class="ftarget">{len(pol)} أسئلة، كل منها يحسم عدة أبواب</span><span class="fcount"></span></summary>{items}</details>')
@@ -136,6 +138,14 @@ def main():
         if t.get("gaps"):
             parts.append(f'<details class="listed"><summary>pages being re-read ({len(t["gaps"])})</summary><ul class="en-list">'
                          + "".join(f'<li>{linked(g["reread"])}</li>' for g in t["gaps"]) + "</ul></details>")
+        for key, title in (("options", "options, off by default (ahl al-adāʾ)"), ("kubra", "for the kubrā version")):
+            if t.get(key):
+                parts.append(f'<details class="listed" open><summary>{title} ({len(t[key])})</summary><ul class="en-list">'
+                             + "".join(f'<li><b>{esc(o["about"])}</b>: {esc(", ".join(NAME.get(r, r) for r in o["ruwat"]))} — '
+                                       f'{esc(o["reads"])} <span class="src">{linked(" · ".join(o["cite"]))}</span></li>' for o in t[key])
+                             + "</ul></details>")
+        if t.get("order_exception"):
+            parts.append(f'<p class="note">Default order: {linked(t["order_exception"])}</p>')
         if t.get("notes"):
             parts.append(f'<details class="listed"><summary>notes ({len(t["notes"])})</summary><ul class="en-list">'
                          + "".join(f'<li>{linked(str(x))}</li>' for x in t["notes"]) + "</ul></details>")

@@ -439,3 +439,40 @@ resolved:
       table''s two wujūh [sakt, none] are right in both words.'
     becomes: note
     by: sakt_al#1
+
+# Eisa's answers (review of 2026-11-26), applied by pipeline.unify_answers; `policy:<name>` answers
+# every line the policy covers.
+answers:
+  policy:ahl_adaa: options, off by default (Eisa)
+  policy:footnotes: kubrā version only (Eisa)
+  policy:order: 'the book''s first-listed wajh is the default (Eisa); every table already follows it except Warsh''s
+    two hamzahs in one word, kept tashīl first: see `order_exception`'
+  basmalah#0: 'Eisa: waṣl and sakt are the two ways of dropping the basmalah (isqāṭ), beside keeping it (ithbāt).
+    wafi 46: the khilāf in the basmalah from Ibn ʿĀmir, Warsh and Abū ʿAmr is famous, and sakt is preferred over
+    waṣl (wafi 47); so they have basmalah, sakt, waṣl, as Yaʿqūb ''like Abū ʿAmr'' (idah 50) and Qaṭr min Ghayth
+    al-Nafʿ (Eisa''s photo: ithbāt and isqāṭ).'
+  basmalah#2: 'Eisa: the ''three wujūh'' of idah 52 are the three ways of keeping the basmalah (end-basmalah-start:
+    join all, cut all, cut then join), not a choice of dropping it. Abū Jaʿfar: basmalah only.'
+  ha_mim_jam#3: 'Eisa: عليهم، إليهم، لديهم are ḍamm in both states for Ḥamzah; the other words differ: ḍamm in waṣl
+    before a sākin, kasr at waqf (wafi 52). Waqf case: kasr; the three words listed with ḍamm.'
+  hamz_waqf#3: 'Eisa: the three wujūh (tashīl, ibdāl yāʾ, ḥadhf) are right.'
+  hamzatayn#1: 'al-Budūr (Eisa: check al-Budūr): Hishām taḥqīq with and without idkhāl (budur 134, 166, 236, 265,
+    269), idkhāl only in the seven places (budur 120, 121, 238, 245); in Fuṣṣilat idkhāl with tashīl or taḥqīq,
+    tashīl first (budur 282). The table follows.'
+  idgham_kabir#2: 'Eisa: ishmām the default; Abū Jaʿfar has no option, idghām only (idah 65).'
+  istiadha#0: 'Eisa: jahr the default, ikhfāʾ the option. (Eisa: the chapter marks nothing in the muṣḥaf.)'
+  istiadha#1: 'Eisa: Khalaf''s default is jahr at the start of al-Fātiḥah and ikhfāʾ elsewhere.'
+  madd_lazim#1: 'al-Budūr: آلآن: Ibn Wardān reads like Qālūn, with naql, so ishbāʿ or qaṣr (budur 145-146); Ibn
+    Jammāz has no naql (idah 119), ishbāʿ. الم أحسب: Abū Jaʿfar makes sakt on the letters, so no naql, ishbāʿ (budur
+    244).'
+  rawm_ishmam#0: 'Eisa: yes, rawm and ishmām are options for all fourteen.'
+  sakt_mafsul#0: 'Eisa: wafi 105 defines the sakt; the categories are the mafṣūl ʿāmm (this table) and the khāṣ
+    (ال، شيء: sakt_al). wafi 106: Khalaf sakt in the mafṣūl on the first madhhab, none on the second, so [sakt,
+    none]; Khallād none on both.'
+  silah_ha#2: 'al-Budūr: Abū Jaʿfar (both ruwāt) sukūn in يؤده، نؤته، نوله، نصله (budur 66, 70, 85); the Durrah''s
+    ''وامدد جد'' is Ibn Jammāz''s ṣilah in ويتقه (idah 72).'
+  silah_ha#6: 'al-Budūr: Ruways ''بقصر الهاء أي اختلاس حركتها'' in بيده (budur 51); Ibn Wardān kasr without ṣilah
+    in ترزقانه (budur 163): qaṣr and ikhtilās are one wajh.'
+  ya_zaida#2: 'Eisa: two āyāt. Hūd 78 (ولا تخزون في ضيفي): Abū Jaʿfar keeps it in waṣl, Yaʿqūb in both; al-Ḥijr
+    69 (واتقوا الله ولا تخزون): dropped in both states for all but Yaʿqūb (idah 180).'
+  ya_zaida#3: 'Eisa: dropped is the default; kept in waṣl is disputed, kubrā only.'

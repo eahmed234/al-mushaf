@@ -235,15 +235,13 @@ listed: []
 filled_notes:
 - 'Case ''with an attached pronoun'': only al-Wāfī 51 speaks (all fourteen ṣilah); al-Īḍāḥ has no row for the six, so they are empty here. No
   example word is attached to the row (أنلزمكموها is not in the rows).'
-questions:
-- id: silah_mim#0
-  policy: order
-  from: 'Qālūn: the book gives the choice of ṣilah or sukūn without saying which is preferred (wafi 51); sukūn listed first as in the reviewed
-    profile.'
 notes:
+- 'Qālūn: the book gives the choice of ṣilah or sukūn without saying which is preferred (wafi 51); sukūn listed first as in the reviewed profile.
+  — answered: the book''s first-listed wajh is the default (Eisa); every table already follows it except Warsh''s two hamzahs in one word, kept
+  tashīl first: see `order_exception`'
 - 'Warsh and the other ten of the Shāṭibiyyah (sukūn): no silah_mim row states them; the readings come from the reviewed profile rows, which cite
   wafi 52 (not a page among this category''s rows).'
 - 'Ruways, Rawḥ, Isḥāq, Idrīs: al-Īḍāḥ 58 only says Yaʿqūb and Khalaf follow their aṣl in leaving the ṣilah; sukūn is given as the aṣl''s reading
   (Abū ʿAmr''s and Khalaf ʿan Ḥamzah''s, wafi 52).'
 - Ibn Wardān and Ibn Jammāz row carries condition waṣl (idah 57); the reviewed profile cites idah 40-43 for the inherited four.
-status: merged 2026-11-26; questions for review
+status: merged 2026-11-26

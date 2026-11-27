@@ -126,11 +126,18 @@ cases:
       - idah 83
 listed: []
 filled_notes: []
-questions:
-- id: muttasil#0
-  policy: footnotes
-  from: The editor's footnote (idah 81 n. 4, from al-Taḥbīr, as the reviewed profile records) allows three ḥarakāt (1½ alifs) for Abū Jaʿfar and
-    Yaʿqūb; not in the table, and it is a fraction outside the three lengths.
+kubra:
+- about: the muttaṣil
+  ruwat:
+  - ibn_wardan
+  - ibn_jammaz
+  - ruways
+  - rawh
+  reads: three ḥarakāt (1½ alifs), al-Taḥbīr
+  cite:
+  - idah 81 n. 4
 notes:
+- 'The editor''s footnote (idah 81 n. 4, from al-Taḥbīr, as the reviewed profile records) allows three ḥarakāt (1½ alifs) for Abū Jaʿfar and Yaʿqūb;
+  not in the table, and it is a fraction outside the three lengths. — answered: kubrā version only (Eisa)'
 - The rows give the Durrah's six as one group at idah 81 and 82; idah 83 repeats it for Khalaf al-ʿĀshir only.
-status: merged 2026-11-26; questions for review
+status: merged 2026-11-26

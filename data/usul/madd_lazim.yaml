@@ -610,8 +610,16 @@ listed:
     warsh:
     - ishba
     - qasr
+    ibn_wardan:
+    - ishba
+    - qasr
+    ibn_jammaz:
+    - ishba
   cite:
   - wafi 77
+  - budur 145
+  - budur 146
+  - idah 119
   why: the first alif only; ishbāʿ keeps the original, qaṣr the other wajh
 - words:
   - هاتين
@@ -634,21 +642,24 @@ listed:
     warsh:
     - ishba
     - qasr
+    ibn_wardan:
+    - ishba
+    ibn_jammaz:
+    - ishba
   cite:
   - wafi 81
+  - budur 244
   why: the mīm after the hamzah's vowel is moved to it (al-ʿAnkabūt)
 filled_notes:
 - 'The Durrah: one row, idah 85 ("كأصولهم في المد اللازم بجميع أنواعه"); every case except case 5 is filled with the aṣl''s wujūh (via asl), which
   all agree between the aṣl''s two ruwāt. Case 5 (two-letter letters, ألف) is not lāzim and the row does not reach it: left empty.'
-questions:
-- id: madd_lazim#1
-  q: 'Abū Jaʿfar on the first alif of آلآن and on الم أحسب الناس: his aṣl''s two ruwāt differ here (Qālūn and Warsh), and the Durrah rows don''t
-    say whom Ibn Wardān and Ibn Jammāz follow. Qālūn''s reading, Warsh''s, or leave it to a farsh page?'
-  from: 'Abū Jaʿfar''s ruwāt on آلآن (first alif) and on الم أحسب الناس: their aṣl is Nāfiʿ, whose two ruwāt differ from case 1/2 in these words
-    (Qālūn and Warsh above); the rows do not say which Ibn Wardān and Ibn Jammāz follow, so the listed words are not extended to them.'
 notes:
 - 'Lengths: ʿayn "4 ḥarakāt" = tawassuṭ (2 alifs) or 6 = ishbāʿ (3 alifs) (wafi 81); no fractions. For the others the rows say "المد المشبع ست
   حركات".'
+- 'Abū Jaʿfar''s ruwāt on آلآن (first alif) and on الم أحسب الناس: their aṣl is Nāfiʿ, whose two ruwāt differ from case 1/2 in these words (Qālūn
+  and Warsh above); the rows do not say which Ibn Wardān and Ibn Jammāz follow, so the listed words are not extended to them. — answered: al-Budūr:
+  آلآن: Ibn Wardān reads like Qālūn, with naql, so ishbāʿ or qaṣr (budur 145-146); Ibn Jammāz has no naql (idah 119), ishbāʿ. الم أحسب: Abū Jaʿfar
+  makes sakt on the letters, so no naql, ishbāʿ (budur 244).'
 - 'Case 1: the rows list the words as examples only (الضالين, الطامة, الصاخة, وحاجه قومه, آلله خير, ص, ق, ن); the book names no exceptions in
   this category.'
 - 'Case 4 quote ("المد المشبع نظراً …") is cut off in the row; the second wajh is qaṣr per the row''s tag only. — re-read (wafi 80, wafi 81):
@@ -656,4 +667,4 @@ notes:
   for the original sākin, and qaṣr because the mīm''s vowel is incidental. So the second wajh is qaṣr, stated in words, not only by the row''s
   tag.'
 - 'wafi 80: "ميم الم" before a transferred hamzah is Warsh''s only (listed); the other thirteen are not mentioned.'
-status: merged 2026-11-26; questions for review
+status: merged 2026-11-26

@@ -138,6 +138,15 @@ listed:
   - wafi 105
   - wafi 106
 filled_notes: []
+kubra:
+- about: sakt on a sākin that is not a madd
+  ruwat:
+  - idris
+  reads: sakt (al-Muṭṭawwiʿī, from al-Mubhij)
+  cite:
+  - idah 121
+  - idah 122
+  - idah 123
 disagreements:
 - rawi: idris
   case: sakt on a sākin at the end of a word before a hamzah beginning the next (من آمن, عذاب أليم)
@@ -149,20 +158,16 @@ disagreements:
   - sakt
   kept: reviewed
   why: al-Futūḥ's rows and al-Budūr's statements side with the reviewed table (cross-checks 2026-11-26)
-questions:
-- id: sakt_mafsul#0
-  q: 'Khalaf ʿan Ḥamzah''s sakt on the mafṣūl: wafi 105 gives him a little sakt with khulf; wafi 106 says neither Khalaf nor Khallād makes sakt
-    on the mafṣūl. The table gives Khalaf both (sakt first). Which?'
-  from: 'Khalaf ʿan Ḥamzah: wafi 105 gives him a qalīl sakt with khulf; wafi 106 says "فلا يسكت على الساكن المفصول … لخلف ولا لخلاد" (no sakt
-    for either). The two pages disagree; table lists both wujūh (sakt first, as the khulf row has it), unresolved.'
-- id: sakt_mafsul#3
-  policy: footnotes
-  from: 'Idrīs: a sakt khulf on a sākin that is not a madd is recorded by the editor (al-Muṭṭawwiʿī, from al-Mubhij; idah 121-123); left out as
-    an option, default none, as in sakt_al.'
 notes:
+- 'Khalaf ʿan Ḥamzah: wafi 105 gives him a qalīl sakt with khulf; wafi 106 says "فلا يسكت على الساكن المفصول … لخلف ولا لخلاد" (no sakt for either).
+  The two pages disagree; table lists both wujūh (sakt first, as the khulf row has it), unresolved. — answered: Eisa: wafi 105 defines the sakt;
+  the categories are the mafṣūl ʿāmm (this table) and the khāṣ (ال، شيء: sakt_al). wafi 106: Khalaf sakt in the mafṣūl on the first madhhab, none
+  on the second, so [sakt, none]; Khallād none on both.'
 - 'Khallād: none (wafi 105, 106).'
 - 'Ibn Wardān, Ibn Jammāz, Ruways, Rawḥ: idah 124 "كأصليهما"; the aṣl''s (Nāfiʿ, Abū ʿAmr) none comes from wafi 105 (profile cites wafi 105 for
   "the rest"). Isḥāq and Idrīs: idah 121 "ترك السكت على الساكن مطلقاً".'
+- 'Idrīs: a sakt khulf on a sākin that is not a madd is recorded by the editor (al-Muṭṭawwiʿī, from al-Mubhij; idah 121-123); left out as an option,
+  default none, as in sakt_al. — answered: kubrā version only (Eisa)'
 - 'The other twelve of the Shāṭibiyyah: "none" is from the reviewed profile (wafi 105); the sakt_mafsul rows themselves speak of Khalaf and Khallād
   only.'
-status: merged 2026-11-26; questions for review
+status: merged 2026-11-26

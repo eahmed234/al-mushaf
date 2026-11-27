@@ -894,6 +894,18 @@ filled_notes:
 - 'Hamzatayn-waqf case: Khalaf and Khallād''s taḥqīq or tashīl of the second hamzah comes from the reviewed profile row (al-Budūr p. 20; al-Wāfī
   pp. 116, 122-123), no row of this category; wafi 85 gives Warsh tashīl (a must, ''أوجبوا'') for أنت and أرأيت when stopping, listed. Hishām
   (profile cite wafi 84): idkhāl with taḥqīq or tashīl, ''not final: as wasl''.'
+options:
+- about: stopping by the rasm (شركاء، يبدو، تلقاء …)
+  ruwat:
+  - khalaf_an_hamzah
+  - khallad
+  reads: 'follow the muṣḥaf''s spelling: yāʾ, wāw or ḥadhf'
+  cite:
+  - wafi 118
+  - wafi 119
+  - wafi 120
+  view: ahl al-adāʾ
+  default: 'off'
 disagreements:
 - rawi: hisham
   case: 'hamz_waqf_final: final hamzah at the stop'
@@ -990,19 +1002,6 @@ disagreements:
   - hadhf
   kept: reviewed
   why: al-Futūḥ's rows and al-Budūr's statements side with the reviewed table (cross-checks 2026-11-26)
-questions:
-- id: hamz_waqf#3
-  q: 'Ḥamzah stopping on مستهزءون: wafi 121 gives ḥadhf only, while the reviewed table (al-Budūr 22, Ghayth 31) gives three wujūh: tashīl, ibdāl
-    to yāʾ, ḥadhf. The three are kept for now. Confirm the three?'
-  from: 'Middle case, مستهزءون: wafi 121 says the ḥadhf is established from Ḥamzah (''ثابت''), while the reviewed profile row gives three wujūh
-    (tashīl toward wāw, ibdāl yāʾ, ḥadhf) from al-Budūr p. 22 and Ghayth p. 31; the table keeps wafi 121 (ḥadhf only for those words) and the
-    case-level wujūh list tashīl, ibdāl yāʾ, ibdāl wāw, ḥadhf; the profile''s ''three wujūh'' for this word are not resolved here.'
-- id: hamz_waqf#8
-  policy: ahl_adaa
-  from: 'Rasm-following waqf (wafi 118-120): some of the ahl al-adāʾ narrate from Ḥamzah that he followed the mushaf''s spelling (yāʾ, wāw, ḥadhf):
-    words with a wāw-form after alif (شركاء, نشاء, الضعفاء, شفعاء, البلاء, دعاء, براء, جزاء), a wāw-form not after alif (يبدو, تفتأ, يتهيأ, أتوكأ,
-    تظمأ, يدرأ, يعبأ, الملأ, ينشأ, نبأ) and a yāʾ-form after alif (تلقاء, إيتاء, آناء, وراء, نبأ المرسلين); a view of some shaykhs, so not in
-    the table.'
 notes:
 - 'Five parts, five cases, with their old wujūh ids kept (tashil, hadhf, ibdal_ya, ibdal_madd, ibdal_qasr, tashil_rawm_madd, tashil_rawm_qasr,
   tahqiq_idkhal, tashil_idkhal, ibdal). New ids: ibdal_tawassut, tashil_rawm_tawassut, ibdal_waw, naql_hadhf, ibdal_idgham, izhar, idgham, qalb_waw_idgham,
@@ -1016,6 +1015,10 @@ notes:
   (wafi 113). Hishām follows Ḥamzah in a final hamzah only (wafi 117, 126).'
 - 'Final case: Hishām''s wujūh are the same as Khalaf''s and Khallād''s for the final hamzah (wafi 117 ''مثل حمزة''); wafi 126 gives all three
   the two wujūh ibdāl to a madd letter or tashīl with rawm as khulf.'
+- 'Middle case, مستهزءون: wafi 121 says the ḥadhf is established from Ḥamzah (''ثابت''), while the reviewed profile row gives three wujūh (tashīl
+  toward wāw, ibdāl yāʾ, ḥadhf) from al-Budūr p. 22 and Ghayth p. 31; the table keeps wafi 121 (ḥadhf only for those words) and the case-level
+  wujūh list tashīl, ibdāl yāʾ, ibdāl wāw, ḥadhf; the profile''s ''three wujūh'' for this word are not resolved here. — answered: Eisa: the three
+  wujūh (tashīl, ibdāl yāʾ, ḥadhf) are right.'
 - 'Middle case: the profile row has no ibdal_waw; added because wafi 116 gives a pure wāw for a hamzah maftūḥah after ḍammah (يؤيد…). wafi 122:
   for the words with an inseparable prefix (يؤمن…) the book says only ''takhfīf'' of the hamzah, not naming tashīl; listed as tashīl. wafi 123
   هاؤم: tashīl with madd or qaṣr.'
@@ -1024,4 +1027,8 @@ notes:
 - 'Sākin-hamzah case: Khalaf and Khallād ibdāl (wafi 110) only when the preceding letter is movable (wafi 111, two conditions); Hishām taḥqīq
   (profile; he changes only a final hamzah).'
 - 'Isḥāq and Idrīs (idah 121): taḥqīq in every kind of waqf on a hamzah; no ''via asl'' since the row speaks of them.'
-status: merged 2026-11-26; questions for review
+- 'Rasm-following waqf (wafi 118-120): some of the ahl al-adāʾ narrate from Ḥamzah that he followed the mushaf''s spelling (yāʾ, wāw, ḥadhf):
+  words with a wāw-form after alif (شركاء, نشاء, الضعفاء, شفعاء, البلاء, دعاء, براء, جزاء), a wāw-form not after alif (يبدو, تفتأ, يتهيأ, أتوكأ,
+  تظمأ, يدرأ, يعبأ, الملأ, ينشأ, نبأ) and a yāʾ-form after alif (تلقاء, إيتاء, آناء, وراء, نبأ المرسلين); a view of some shaykhs, so not in the
+  table. — answered: options, off by default (Eisa)'
+status: merged 2026-11-26

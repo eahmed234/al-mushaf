@@ -396,8 +396,16 @@ listed:
     warsh:
     - ishba
     - qasr
+    ibn_wardan:
+    - ishba
+    - qasr
+    ibn_jammaz:
+    - ishba
   cite:
   - wafi 77
+  - budur 145
+  - budur 146
+  - idah 119
   why: the first alif only; ishbāʿ keeps the original, qaṣr the other wajh
 - words:
   - هاتين
@@ -420,8 +428,13 @@ listed:
     warsh:
     - ishba
     - qasr
+    ibn_wardan:
+    - ishba
+    ibn_jammaz:
+    - ishba
   cite:
   - wafi 81
+  - budur 244
   why: the mīm after the hamzah's vowel is moved to it (al-ʿAnkabūt)
 open:
 - 'Lengths: ʿayn "4 ḥarakāt" = tawassuṭ (2 alifs) or 6 = ishbāʿ (3 alifs) (wafi 81); no fractions. For the others the rows say "المد المشبع ست

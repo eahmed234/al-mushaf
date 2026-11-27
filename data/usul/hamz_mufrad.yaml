@@ -395,15 +395,6 @@ filled_notes:
   the other seventeen are left empty, not filled with taḥqīq. The same for every listed word: only the ruwāt named by the row are listed.'
 - 'wafi 102-103 يلتكم: the added hamzah is read taḥqīq by al-Dūrī, ibdāl to alif by al-Sūsī, dropped by the other twelve of al-Wāfī named; the
   Durrah rows say nothing (empty).'
-questions:
-- id: hamz_mufrad#2
-  policy: order
-  from: 'idah 107 موطئا: both Ibn Wardān and Ibn Jammaz have khulf (ibdāl or taḥqīq); the row does not name the letter of ibdāl nor give an order
-    of preference.'
-- id: hamz_mufrad#5
-  policy: order
-  from: 'wafi 58 واللائى ينسن: Abū ʿAmr (al-Dūrī and al-Sūsī) have khulf: tashīl between (with madd or with qaṣr) or ibdāl to a sākin yāʾ with
-    full madd; the row does not say which is preferred.'
 notes:
 - 'wafi 99: Warsh does not turn it into wāw in فؤاد and سؤال (three conditions of the rule); idah 105 gives الفؤاد, فؤادك, بسؤال as exceptions
   for Abū Jaʿfar; the rows do not say what they read there. — re-read (idah 105, wafi 99): Idah 105 says الفؤاد, فؤادك and بسؤال fall outside
@@ -413,6 +404,9 @@ notes:
   row. — re-read (idah 105, idah 106): Idah 105-106 give the thirteen words: nine in the first list (قرئ in al-Aʿrāf and al-Inshiqāq; استهزئ;
   ناشئة; رئاء; لنبوئنهم; ليبطئن; شانئك; خاسئا; ملئت) and, per the idah 106 footnote (''تلك تسع، وتكملتها فيما يلي''), الخاطئة, مائة, فئة and موطئا
   (the last with khulf). The first nine are the case''s words; the other four are already in later rows.'
+- 'idah 107 موطئا: both Ibn Wardān and Ibn Jammaz have khulf (ibdāl or taḥqīq); the row does not name the letter of ibdāl nor give an order of
+  preference. — answered: the book''s first-listed wajh is the default (Eisa); every table already follows it except Warsh''s two hamzahs in one
+  word, kept tashīl first: see `order_exception`'
 - 'idah 105 and 104: for يؤيد Ibn Jammaz has a pure wāw (idah 104) and Ibn Wardān taḥqīq (idah 105); Ibn Jammaz''s place in the fāʾ-after-ḍamm
   rule is the same wāw.'
 - 'idah 117 عادا الأولى: Abū Jaʿfar has ''three wujūh like Qālūn'' with a sākin wāw in place of the hamzah; the three wujūh themselves are not
@@ -421,6 +415,9 @@ notes:
   he puts a sākin wāw in place of the hamzah, and does not name the three. Al-Wāfī 107-108 gives Qālūn naql in waṣl, a sākin hamzah for the wāw,
   and two ways of starting on الأولى (with hamzat waṣl or on the lām), but does not call them a set of three for Qālūn. The page does not say
   which three.'
+- 'wafi 58 واللائى ينسن: Abū ʿAmr (al-Dūrī and al-Sūsī) have khulf: tashīl between (with madd or with qaṣr) or ibdāl to a sākin yāʾ with full
+  madd; the row does not say which is preferred. — answered: the book''s first-listed wajh is the default (Eisa); every table already follows
+  it except Warsh''s two hamzahs in one word, kept tashīl first: see `order_exception`'
 - 'idah 114 التى: Ruways and Rawḥ taḥqīq of the hamzah wherever it occurs; idah 112: Abū Jaʿfar''s tashīl in أرأيت ''wherever and however it occurs''
   (not tied to a position).'
-status: merged 2026-11-26; questions for review
+status: merged 2026-11-26
