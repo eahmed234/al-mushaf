@@ -153,11 +153,11 @@ def validate() -> dict:
     return rep
 
 
-def build() -> dict:
-    """data/farsh_text/SSS.yaml: slot → groups {text, readers, khulf, base, from: [option refs], note}."""
+def entries() -> dict[int, dict[str, dict]]:
+    """sūrah → slot → {hafs, case, status, groups: [{text, readers, khulf, base, from, note}]}, from the
+    written cases that validate (what build writes; checks read it without writing data/)."""
     cs = json.loads((WORK / "keys.json").read_text(encoding="utf-8"))
     per = defaultdict(dict)
-    n = 0
     for c in cs:
         f = OUT / f"{c['key']}.json"
         if not f.exists():
@@ -179,7 +179,13 @@ def build() -> dict:
             groups.append(gr)
         for s in c["slots"]:
             per[int(s.split(":")[0])][s] = {"hafs": c["hafs"], "case": c["key"], "status": "written", "groups": groups}
-            n += 1
+    return dict(per)
+
+
+def build() -> dict:
+    """data/farsh_text/SSS.yaml: slot → groups {text, readers, khulf, base, from: [option refs], note}."""
+    per = entries()
+    n = sum(len(d) for d in per.values())
     out = DATA / "farsh_text"
     out.mkdir(exist_ok=True)
     head = ("# Option text: each farsh word as the twenty read it, grouped by text (the farsh only; the\n"

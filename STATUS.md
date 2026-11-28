@@ -227,11 +227,33 @@ tables; review list empty.
   words with no text. The storage gaps it found, in docs/06: farsh options have no text; one table
   case per engine category; listed words not anchored; al-Budūr `recurs` as forms.
 
+- **An independent check for the twelve (2026-11-27)**: `python3 -m checks.futuh.farsh_text` compares
+  the written farsh text (pipeline.farsh_text, 252 words so far) with every form al-Futūḥ gives each
+  rāwī there (elided rows rebuilt, uṣūl folded by mushaf_data.diff). al-Futūḥ isn't al-Qāḍī, so it
+  catches what al-Budūr agreeing with al-Wāfī / al-Īḍāḥ can't. All twenty: 3,911 agree, 176 differ,
+  19 extra, 898 no row (labels like "واندرج من اندرج" / "أصحاب القصر" it can't resolve). The twelve:
+  2,272 / 143 / 10 / 568. What the differences are:
+  - **The Durrah "as his aṣl" fill (farsh_books, idah 226) is wrong where al-Īḍāḥ states the reading
+    elsewhere**: عليهم / إليهم (Yaʿqūb and Khalaf al-ʿĀshir reversed; idah 54-55, which data/usul's
+    ha_mim_jam already has right), النبوة / النبيين for Abū Jaʿfar (idah 115, its uṣūl section),
+    ترجع 3:109 for Yaʿqūb (idah 191, "كيف جا"), and وهو / فهي for Yaʿqūb (idah 192 is in the table,
+    but the fill also put him in wafi 201's option and the writer took that one). In each, al-Futūḥ
+    agrees with al-Īḍāḥ. Fix in pipeline.farsh_books: a rule word takes no farsh entry, and the fill
+    skips a rāwī any entry at the word names or the uṣūl tables cover.
+  - Table gap: تقولون 2:140 for Qālūn, Ibn Kathīr and Shuʿbah (al-Futūḥ and KFGQPC agree).
+  - Writer convention: a word before a sākin must be written as in waṣl (ولكنِ الشياطين 2:102).
+  - For the print: كلمات 2:37 for Ibn Kathīr (al-Futūḥ's extraction has an open fatḥatan), نغفر 2:58
+    for Abū Jaʿfar and Qālūn; ها أنتم 3:66 / 3:119 (already open).
+  - Noise to fold: Abū ʿAmr's kasr of the mīm, al-Sūsī's idghām, Warsh's naql, Ḥamzah's waqf,
+    Yaʿqūb's hāʾ al-sakt, وَوَصَّىٰ's imālah spelling, al-Futūḥ anchoring slips (2:284:25, 3:181:16).
+
 Next, in order:
-1. docs/06 §4: option text for the farsh of 1-3, per-word table cases in the engine, anchored lists.
-2. docs/05 milestone 4, continued from the books: al-Nisāʾ onward (wafi 243-, idah 231-), in batches (al-Budūr, then the farsh chapters
+1. Fix the Durrah fill in pipeline.farsh_books (above), rebuild farsh_books 1-3, re-pack and
+   re-write the farsh text cases it changes; rerun checks.futuh.farsh_text and checks.farsh --books.
+2. docs/06 §4: option text for the farsh of 1-3 (finish), per-word table cases in the engine, anchored lists.
+3. docs/05 milestone 4, continued from the books: al-Nisāʾ onward (wafi 243-, idah 231-), in batches (al-Budūr, then the farsh chapters
    as the second reading); new slots go to data/spine/slots.yaml as they turn up.
-3. Then milestones 5- (occurrences, constraints, marks and counts, the engine's API).
+4. Then milestones 5- (occurrences, constraints, marks and counts, the engine's API).
 
 Working notes: subagents get their own scratch folders; reviewed data stands until Eisa rules;
 book text is never committed here (pipeline/out and pipeline/work are gitignored; pipeline/out is backed up to the private al-mushaf-extractions repo, pipeline/work is rebuilt by `pack`).
