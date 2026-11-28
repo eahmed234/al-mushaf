@@ -255,9 +255,32 @@ tables; review list empty.
   0, 7, 0 contradicted. Open for the print: Nāfiʿ's hamzah in النبيء is written two ways by the
   writers (KFGQPC's Qālūn has its own encoding), النبيين left null.
 
+- **Farsh text for 1-3 written (2026-11-27)**: all 279 cases (four Sonnet writers for the last 191),
+  validate clean, 26 groups left null (ishmām, ikhtilās, tas-hīl, hamz the book doesn't spell);
+  `data/farsh_text/` built, so the API reads it. KFGQPC word check (`checks.api`): words with no text
+  625 → 39; 76,207 / 76,961 agree (99.0%); of the 586 newly compared words 554 agree.
+  `checks.futuh.farsh_text`, 387 words: 5,881 pairs agree, 221 differ, 1,534 no row. The real
+  differences, for the next fix:
+  - **Table, the Durrah ruwāt again** (al-Futūḥ disagrees, no KFGQPC to break the tie; read al-Īḍāḥ):
+    يعملون k072 (Isḥāq/Idrīs against Abū Jaʿfar/Rawḥ, reversed), يخافا k119 (same pattern), يطهرن k118
+    (Khalaf al-ʿĀshir), خطوات k109, ونكفر k157 (rafʿ/jazm: the second aspect not filled for those the
+    first names), جزءا k148 and وكأين k238 (Abū Jaʿfar), ترجع k111.
+  - **Table, recurring farsh not reaching sūrah 3**: يحسب's kasr of the sīn (k257, k273, k274), بيوت
+    (k208, k245); gaps: تقولون 2:140 (k069), تكتمونه 3:187 (k272), يحسبن 3:180 for Ḥamzah (k264).
+  - **Table, anchoring**: rows reach words they aren't about (كل ← الأكل, مني ← الأماني, لما ← the
+    opening letters; writers put everyone in the base group, so the text is right but the entries
+    are wrong); البر 2:177 (k086/k088: the two occurrences' readings swapped?); يبسط k127.
+  - **Writer**: a vowel the book doesn't state was supplied (منزلين k233, ينصركم 3:160:2 k250, the
+    swap قاتلوا/قتلوا k275-276, فناداه's alif k199).
+  - **Not for the print after all**: كلمات 2:37 — al-Futūḥ's extraction writes the rafʿ tanwīn of
+    رفث / فسوق / جدال with the same mark (U+065E), an extractor glyph mapping. نغفر 2:58 still open.
+  - Noise to fold in the check: al-Sūsī's idghām, Abū ʿAmr's mīm, yāʾ al-iḍāfah, Ḥamzah's waqf,
+    al-Kisāʾī's hāʾ al-taʾnīth at a stop, Yaʿqūb's hāʾ al-sakt and hāʾ of the pronoun, وصّى's alif.
+
 Next, in order:
-1. docs/06 §4: option text for the farsh of 1-3 (finish: 191 of 279 cases unwritten), per-word table
-   cases in the engine, anchored lists.
+1. Fix the table items above in pipeline.farsh_books (read al-Īḍāḥ for each Durrah one), rebuild,
+   carry the unchanged cases, re-write the changed ones, rerun both checks. Then per-word table
+   cases in the engine and anchored lists (docs/06 §4).
 2. docs/05 milestone 4, continued from the books: al-Nisāʾ onward (wafi 243-, idah 231-), in batches (al-Budūr, then the farsh chapters
    as the second reading); new slots go to data/spine/slots.yaml as they turn up.
 3. Then milestones 5- (occurrences, constraints, marks and counts, the engine's API).

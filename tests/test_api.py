@@ -42,10 +42,17 @@ class Reading(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.m.read("hafs", "2:1-5", choice={"ibdal_sakin": "ibdal"})
 
-    def test_farsh_word_without_text_is_unknown(self):
+    def test_farsh_word_takes_its_written_text(self):
+        """data/farsh_text: Qālūn's مالك is the written ملك, and the uṣūl run on it."""
         w = next(w for w in self.m.read("qalun", "1:4") if w.slot == "1:4:1")
-        self.assertIsNone(w.text)
+        self.assertEqual((w.text, w.source), ("مَلِكِ", "farsh_text"))
         self.assertTrue(any(not o["base"] for o in w.farsh))
+
+    def test_farsh_word_without_text_is_unknown(self):
+        """Khalaf's ishmām of the ṣād at 1:7:1 has no written form (text null): no text, no rules."""
+        w = next(w for w in self.m.read("khalaf_an_hamzah", "1:7") if w.slot == "1:7:1")
+        self.assertIsNone(w.text)
+        self.assertEqual(w.source, "none")
 
     def test_who_and_explain(self):
         groups = self.m.who("1:4:1")
