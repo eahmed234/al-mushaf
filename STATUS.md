@@ -102,7 +102,7 @@ tables; review list empty.
   uṣūl chapters do (98% of 2:1–20 with no training rows), and agree with every row-learned
   profile in the passage except Idrīs's sakt.
 
-## Where we are (2026-11-26, to resume)
+## Where we are (2026-11-27, to resume)
 
 - **Spike** closed (`spike/REPORT.md`, tag `spike-end`). **Milestone 0** (package, tests) and
   **milestone 1** (extraction pipeline, model pilot: Sonnet 5.5 subagents, `pipeline/PILOT.md`) done.
@@ -233,27 +233,34 @@ tables; review list empty.
   catches what al-Budūr agreeing with al-Wāfī / al-Īḍāḥ can't. All twenty: 3,911 agree, 176 differ,
   19 extra, 898 no row (labels like "واندرج من اندرج" / "أصحاب القصر" it can't resolve). The twelve:
   2,272 / 143 / 10 / 568. What the differences are:
-  - **The Durrah "as his aṣl" fill (farsh_books, idah 226) is wrong where al-Īḍāḥ states the reading
-    elsewhere**: عليهم / إليهم (Yaʿqūb and Khalaf al-ʿĀshir reversed; idah 54-55, which data/usul's
-    ha_mim_jam already has right), النبوة / النبيين for Abū Jaʿfar (idah 115, its uṣūl section),
-    ترجع 3:109 for Yaʿqūb (idah 191, "كيف جا"), and وهو / فهي for Yaʿqūb (idah 192 is in the table,
-    but the fill also put him in wafi 201's option and the writer took that one). In each, al-Futūḥ
-    agrees with al-Īḍāḥ. Fix in pipeline.farsh_books: a rule word takes no farsh entry, and the fill
-    skips a rāwī any entry at the word names or the uṣūl tables cover.
   - Table gap: تقولون 2:140 for Qālūn, Ibn Kathīr and Shuʿbah (al-Futūḥ and KFGQPC agree).
-  - Writer convention: a word before a sākin must be written as in waṣl (ولكنِ الشياطين 2:102).
   - For the print: كلمات 2:37 for Ibn Kathīr (al-Futūḥ's extraction has an open fatḥatan), نغفر 2:58
     for Abū Jaʿfar and Qālūn; ها أنتم 3:66 / 3:119 (already open).
   - Noise to fold: Abū ʿAmr's kasr of the mīm, al-Sūsī's idghām, Warsh's naql, Ḥamzah's waqf,
     Yaʿqūb's hāʾ al-sakt, وَوَصَّىٰ's imālah spelling, al-Futūḥ anchoring slips (2:284:25, 3:181:16).
 
+- **The Durrah fill fixed (2026-11-27)**: in pipeline.farsh_books an unnamed Durrah rāwī reads as his
+  aṣl (idah 226), and any unnamed rāwī as Ḥafṣ, only where no entry at the slot names him about the same
+  thing (a key whose slots differ is split). A Durrah rāwī whose reading a listed data/usul entry gives
+  reads as Ḥafṣ there, marked `usul` (Abū Jaʿfar's النبيء family, idah 115). A row an uṣūl case cites by
+  page and word takes no farsh entry (عليهم/إليهم/لديهم, wafi 51: ha_mim_jam). Anchoring: idah 191's يرجع
+  reaches Ḥafṣ's passive ترجع/ترجعون (`FORMS`); idah 192's "بعد الواو والفاء واللام" is a prefix
+  condition; a row of many places no longer takes a word with an alif its own word lacks (يحسب ≠
+  يحاسبكم 2:284, مت ≠ مات 3:144, the sakt row ≠ الماء 2:74; wafi 204 names أنبياء). Writer rule: a word
+  before ٱ is written as read in waṣl (وَلَٰكِنِ 2:102); cases split on it and validate flags a sukūn.
+  88 cases written: 71 carried over unchanged, 17 re-written (Sonnet). checks.futuh.farsh_text on the shared pairs:
+  26 differ → agree, 4 no_text → agree, none worse (now all twenty 2,583 agree / 44 differ / 9 extra /
+  632 no row / 32 no text; the twelve 1,525 / 20 / 2 / 406 / 27; the ha_mim_jam words left the
+  check). checks.farsh --books: 8, 368 (two false agreements and four masked pairs at 2:284:15 gone), 230;
+  0, 7, 0 contradicted. Open for the print: Nāfiʿ's hamzah in النبيء is written two ways by the
+  writers (KFGQPC's Qālūn has its own encoding), النبيين left null.
+
 Next, in order:
-1. Fix the Durrah fill in pipeline.farsh_books (above), rebuild farsh_books 1-3, re-pack and
-   re-write the farsh text cases it changes; rerun checks.futuh.farsh_text and checks.farsh --books.
-2. docs/06 §4: option text for the farsh of 1-3 (finish), per-word table cases in the engine, anchored lists.
-3. docs/05 milestone 4, continued from the books: al-Nisāʾ onward (wafi 243-, idah 231-), in batches (al-Budūr, then the farsh chapters
+1. docs/06 §4: option text for the farsh of 1-3 (finish: 191 of 279 cases unwritten), per-word table
+   cases in the engine, anchored lists.
+2. docs/05 milestone 4, continued from the books: al-Nisāʾ onward (wafi 243-, idah 231-), in batches (al-Budūr, then the farsh chapters
    as the second reading); new slots go to data/spine/slots.yaml as they turn up.
-4. Then milestones 5- (occurrences, constraints, marks and counts, the engine's API).
+3. Then milestones 5- (occurrences, constraints, marks and counts, the engine's API).
 
 Working notes: subagents get their own scratch folders; reviewed data stands until Eisa rules;
 book text is never committed here (pipeline/out and pipeline/work are gitignored; pipeline/out is backed up to the private al-mushaf-extractions repo, pipeline/work is rebuilt by `pack`).

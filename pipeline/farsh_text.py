@@ -4,7 +4,8 @@
     python3 -m pipeline.farsh_text validate       # pipeline/out/farsh_text/kNNN.json
     python3 -m pipeline.farsh_text build          # data/farsh_text/SSS.yaml
 
-A case (key) is one Ḥafṣ word with one set of options (from data/farsh_books): the 509 farsh words of
+A case (key) is one Ḥafṣ word with one set of options (from data/farsh_books), apart where the
+next word opens on a sākin (the end is written as read in waṣl): the 509 farsh words of
 sūrahs 1-3 are 280 cases. A writer (pipeline/prompt_farsh_text.md) groups the twenty by the text
 they read; build stores, per slot, the groups with the options (entry, reading, cite) they realise.
 """
@@ -70,13 +71,15 @@ def cases(suras) -> list[dict]:
                 opts.append({"readers": o["readers"], "khulf": o.get("khulf") or [], "reading": o["reading"],
                              "cite": o.get("cite"), "base": bool(o.get("base")), "entry": ref,
                              "where": e.get("where")})
-        sig = (h[s], json.dumps([(o["entry"].split("#")[0], o["reading"], o["readers"], o["khulf"]) for o in opts],
+        i = pos[s]
+        sakin = i + 1 < len(order) and h[order[i + 1]].startswith("\u0671")  # next word opens on a sākin
+        sig = (h[s], sakin, json.dumps([(o["entry"].split("#")[0], o["reading"], o["readers"], o["khulf"]) for o in opts],
                                 ensure_ascii=False))
         if sig not in by:
             for k, o in enumerate(opts, 1):
                 o["n"] = k
                 o["quote"] = _quote(o, qc)
-            by[sig] = {"slots": [], "hafs": h[s], "options": opts}
+            by[sig] = {"slots": [], "hafs": h[s], "options": opts, "before_sakin": sakin}
         by[sig]["slots"].append(s)
     out = []
     for k, c in enumerate(by.values(), 1):
@@ -124,6 +127,8 @@ def check(c: dict, d: dict) -> list[str]:
             errs.append(f"base text {t!r} is not the Ḥafṣ word")
         if t is not None and not x.get("base") and t == c["hafs"]:
             errs.append("a non-base group has the Ḥafṣ text (mark it base, or merge it)")
+        if t and c.get("before_sakin") and re.search("\u06e1[\u06d6-\u06dc]*$", t):
+            errs.append("ends in a sukūn before a sākin: write the waṣl vowel (وَلَٰكِنِ ٱلشَّيَٰطِينُ)")
         if t and set(t) - chars():
             errs.append(f"characters outside the spine's: {[hex(ord(ch)) for ch in set(t) - chars()]}")
         for n in x.get("options") or []:

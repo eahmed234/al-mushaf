@@ -24,8 +24,59 @@
     reading: بحذف الألف
     cite: idah 53
     book: idah
-- place: ['1:6:2', '1:7:1']
-  words: ٱلصِّرَٰطَ صِرَٰطَ
+- place: ['1:6:2']
+  words: ٱلصِّرَٰطَ
+  where: all
+  options:
+  - readers: [qunbul]
+    khulf: []
+    reading: بالسين
+    cite: wafi 50
+    book: wafi
+  - readers: [khalaf_an_hamzah]
+    khulf: []
+    reading: بإشمام الصاد صوت الزاي
+    cite: wafi 50
+    book: wafi
+  - readers: [khallad]
+    khulf: []
+    reading: بالصاد الخالصة
+    cite: wafi 51
+    book: wafi
+  - readers: [ibn_wardan, ibn_jammaz, rawh, ishaq, idris]
+    khulf: []
+    reading: بالصاد الخالصة
+    cite: idah 53
+    book: idah
+  - readers: [ruways]
+    khulf: []
+    reading: بالسين كقنبل
+    cite: idah 53
+    book: idah
+- place: ['1:6:2']
+  words: ٱلصِّرَٰطَ
+  where: listed
+  options:
+  - readers: [khallad]
+    khulf: []
+    reading: بإشمام الصاد صوت الزاي
+    cite: wafi 50
+    book: wafi
+  - readers: [qalun, warsh, bazzi, qunbul, duri_abuamr, susi, hisham, ibn_dhakwan, shuba, hafs, khallad, abul_harith, duri_kisai, ruways]
+    khulf: []
+    reading: بالصاد الخالصة
+    cite: wafi 51
+    book: wafi
+    as_asl: [ruways]
+    implied: [qunbul]
+    base: true
+  - readers: [khallad]
+    khulf: [khallad]
+    reading: بإشمام الصاد صوت الزاي
+    cite: wafi 51
+    book: wafi
+- place: ['1:7:1']
+  words: صِرَٰطَ
   where: all
   options:
   - readers: [qunbul]
@@ -58,43 +109,4 @@
     reading: كحفص (غير مذكورين)
     cite: wafi 50
     from: implied
-    base: true
-- place: ['1:6:2']
-  words: ٱلصِّرَٰطَ
-  where: listed
-  options:
-  - readers: [khallad]
-    khulf: []
-    reading: بإشمام الصاد صوت الزاي
-    cite: wafi 50
-    book: wafi
-  - readers: [qalun, warsh, bazzi, qunbul, duri_abuamr, susi, hisham, ibn_dhakwan, shuba, hafs, khalaf_an_hamzah, khallad, abul_harith, duri_kisai, ibn_wardan, ibn_jammaz, ruways, rawh, ishaq, idris]
-    khulf: []
-    reading: بالصاد الخالصة
-    cite: wafi 51
-    book: wafi
-    as_asl: [ibn_wardan, ibn_jammaz, ruways, rawh]
-    implied: [qunbul, khalaf_an_hamzah, ishaq, idris]
-    base: true
-  - readers: [khallad]
-    khulf: [khallad]
-    reading: بإشمام الصاد صوت الزاي
-    cite: wafi 51
-    book: wafi
-- place: ['1:7:4', '1:7:7']
-  words: عَلَيۡهِمۡ عَلَيۡهِمۡ
-  where: all
-  options:
-  - readers: [khalaf_an_hamzah, khallad, ishaq, idris]
-    khulf: []
-    reading: بضم الهاء وقفا ووصلا
-    cite: wafi 51
-    book: wafi
-    as_asl: [ishaq, idris]
-  - readers: [qalun, warsh, bazzi, qunbul, duri_abuamr, susi, hisham, ibn_dhakwan, shuba, hafs, abul_harith, duri_kisai, ibn_wardan, ibn_jammaz, ruways, rawh]
-    khulf: []
-    reading: بكسر الهاء
-    cite: wafi 51
-    book: wafi
-    as_asl: [ibn_wardan, ibn_jammaz, ruways, rawh]
     base: true

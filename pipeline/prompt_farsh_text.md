@@ -25,6 +25,11 @@ don't tell you the text, say so in `note` and leave that group's `text` as `null
 - **Two entries at one word** (each about a different thing: the tāʾ, then the sīn): a rāwī's text
   applies every option he has, one from each entry.
 - **Several slots** (`slots` > 1 in a case): the same word at each; one text serves them all.
+- **Before a sākin, write the word as read in waṣl.** When the next word in the context starts
+  with a sākin (an alif waṣlah ٱ), the word's end is the vowel read when joined to it, not a
+  sukūn: a reading that makes the last letter sākin (تخفيف النون) gives it a kasrah there
+  (وَلَٰكِنِ ٱلشَّيَٰطِينُ 2:102), unless the quote gives another vowel. A tanwīn there takes
+  the plain marks U+064B-064D, as the Ḥafṣ text writes tanwīn before ٱ (خَيۡرًا ٱلۡوَصِيَّةُ).
 
 ## Encoding (KFGQPC's, as in the Ḥafṣ word)
 

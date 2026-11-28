@@ -106,6 +106,33 @@ class FarshBooksCombine(unittest.TestCase):
         alif = "بإثبات ألف أنا وصلا قبل همزة قطع مضمومة أو مفتوحة"
         self.assertTrue(before_ok(alif, "أُحۡيِۦ"))
         self.assertFalse(before_ok(alif, "مَعَكُم"))         # planted: no hamzah after أنا (wafi 222)
+        idah = "إسكان الهاء بعد الواو والفاء واللام"
+        self.assertTrue(prefix_ok(idah, "فَهُوَ"))
+        self.assertFalse(prefix_ok(idah, "هُوَ"))            # planted: Abū Jaʿfar's bare هو (idah 192)
+
+    def test_usul_words_and_cover(self):
+        from pipeline.farsh_books import usul_covers, usul_row
+        row = {"book": "wafi", "page": 51, "words": "عليهم", "reading": "بضم الهاء وقفا ووصلا"}
+        self.assertTrue(usul_row(row).startswith("ha_mim_jam"))
+        self.assertIsNone(usul_row({**row, "page": 200}))   # planted: a page the table doesn't cite
+        self.assertTrue(usul_covers("2:61:52", "ٱلنَّبِيِّـۧنَ", "ibn_wardan", "بالهمز").startswith("hamz_mufrad"))
+        self.assertIsNone(usul_covers("2:61:52", "ٱلنَّبِيِّـۧنَ", "qalun", "بالهمز"))  # planted: not in the table
+        self.assertIsNone(usul_covers("2:10:12", "يَكۡذِبُونَ", "ruways", "بضم الياء"))  # planted: al-Qaṣaṣ's yāʾ
+
+    def test_durrah_fill_where_al_idah_speaks(self):
+        """The aṣl fill (idah 226) yields where al-Īḍāḥ names the rāwī elsewhere at the word."""
+        import yaml
+
+        def at(slot):
+            f = DATA / "farsh_books" / f"{int(slot.split(':')[0]):03d}.yaml"
+            return [o for e in yaml.safe_load(f.read_text(encoding="utf-8")) if slot in e["place"] for o in e["options"]]
+        self.assertEqual(at("1:7:4"), [])                   # hāʾ al-jamʿ: uṣūl (ha_mim_jam, idah 54-55)
+        tarja = [o["cite"] for o in at("3:109:10") if "ruways" in o["readers"] and not o.get("base")]
+        self.assertEqual(tarja, ["idah 191"])               # not Abū ʿAmr's (wafi 219)
+        wahuwa = [o["reading"] for o in at("2:85:19") if "ruways" in o["readers"]]
+        self.assertFalse(any("بإسكان" in r for r in wahuwa))  # idah 192: ḍamm, not wafi 201's iskān
+        nabi = [o for o in at("2:61:52") if "ibn_wardan" in o["readers"]]
+        self.assertTrue(nabi and all(o.get("base") for o in nabi))  # as Ḥafṣ; hamz_mufrad (idah 115)
 
     @needs.sources
     def test_against_kfgqpc_nothing_contradicted_in_al_imran(self):
