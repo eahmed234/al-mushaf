@@ -125,6 +125,21 @@ def _alifs(w: str) -> int:
 # word lacks (يحسب: يُحَاسِبۡكُم 2:284; مت: مَّاتَ 3:144; أنا: ءَانَآءَ 3:113); such words are left
 # out, except where the book names those forms too (wafi 204: "الأنبياء أنبياء" for النبيء).
 ALIF_OK = {("wafi", 204, "لنبي")}  # keys (_key): النبيء
+HAMZ = re.compile("[ء-ئٔ]")
+
+
+def _mud(k: str) -> str:
+    """A key with the mudāriʿ letter (ي ت ن, after و or ف) as one: a row about the word's opening
+    letter writes the reading it describes (تعملون for يَعۡمَلُونَ 2:144, idah 200; تخافا 2:229;
+    يكتمونه 3:187; نعلمه 3:48)."""
+    return re.sub("^([وف]?)[يتن]", r"\1ي", k) if len(k) >= 3 else k
+
+
+def _no_article(w: str) -> str | None:
+    """The book's word without the article, when what is left has three letters or more (البيوت:
+    بُيُوتِكُمۡ 3:49 has none)."""
+    k = _key(w[2:]) if w.startswith("ال") else ""
+    return k if len(k) >= 3 else None
 
 
 def anchor(r: dict, sura: int | None = None) -> list[str]:
@@ -138,34 +153,56 @@ def anchor(r: dict, sura: int | None = None) -> list[str]:
     if (f := _forms(r)) and r.get("where") != "here":  # every form of the word (FORMS)
         from mushaf_data.spine import words
         return [w for w, _ in ws if f.search(words()[w])]
-    if r.get("ayah") and sura == r["sura"]:
-        ws = [(w, k) for w, k in ws if int(w.split(":")[1]) == r["ayah"]] or ws
-    toks = [_key(t) for t in str(r["words"]).split()]
-    toks = [t for t in toks if t] or []
+    # the āyah narrows a row about one place (its word must be in it; its neighbours may run into the
+    # next āyah: بِمَا يَعۡمَلُونَ / قُلۡ 2:96-97); a row "wherever it occurs" names its first place only
+    inayah = None
+    if r.get("ayah") and sura == r["sura"] and r.get("where") != "all":
+        inayah = {w for w, _ in ws if int(w.split(":")[1]) == r["ayah"]} or None
+    raw = str(r["words"]).split()
+    toks = [_key(t) for t in raw]
+    keep = [i for i, t in enumerate(toks) if t]
+    raw, toks = [raw[i] for i in keep], [toks[i] for i in keep]
     if not toks or max(len(t) for t in toks) < 2:
         return []
     n = len(toks)
     # the word the reading is about (`word`), its index among the book's words
     wk = _key(str(r.get("word") or ""))
     target = next((i for i, t in enumerate(toks) if t == wk or t.endswith(wk) or _sim(wk, t) == 1.0), None) if wk else None
-    best, out = (0.0, 0.0), []
+    many = r.get("where") in ("all", "listed")
+    bare = _no_article(raw[target]) if many and target is not None else None
+    best, out = (0.0, 0.0, 0), []
     for i in range(len(ws) - n + 1):
         sims = [_sim(t, ws[i + j][1]) for j, t in enumerate(toks)]
         if target is not None:  # the word itself first, its neighbours only to choose among equals
             j = target
+            if inayah is not None and ws[i + j][0] not in inayah:
+                continue
+            s, exact = sims[j], 1
+            if s < 1.0 and bare and _sim(bare, ws[i + j][1]) == 1.0 and \
+                    bool(HAMZ.search(raw[target])) == bool(HAMZ.search(_sura_words_text(ws[i + j][0]))):
+                s = 1.0  # not الميت for وَأُمِيتُ
+            elif s < 1.0 and r.get("where") == "here" and _sim(_mud(toks[j]), _mud(ws[i + j][1])) == 1.0:
+                s, exact = 1.0, 0  # the variant's opening letter; the neighbours decide, then the exact word
             others = [x for k, x in enumerate(sims) if k != j]
-            score = (sims[j], sum(others) / len(others) if others else 1.0)
+            score = (s, sum(others) / len(others) if others else 1.0, exact)
         else:
             j = min(range(n), key=lambda x: sims[x]) if min(sims) < 1 else max(range(n), key=lambda x: len(toks[x]))
-            score = (sum(sims) / n, 0.0)
+            if inayah is not None and ws[i + j][0] not in inayah:
+                continue
+            score = (sum(sims) / n, 0.0, 0)
         if score > best:
             best, out = score, [ws[i + j][0]]
         elif score == best:
             out.append(ws[i + j][0])
-    if r.get("where") in ("all", "listed") and (r.get("book"), r.get("page"), _key(str(r["words"]))) not in ALIF_OK:
+    named_forms = (r.get("book"), r.get("page"), _key(str(r["words"]))) in ALIF_OK
+    if many and not named_forms:
         bw = max(str(r["words"]).split(), key=len)
         from mushaf_data.spine import words
         out = [w for w in out if _alifs(words()[w]) <= _alifs(bw)]
+    if many and not named_forms and target is not None and HAMZ.search(raw[target]):
+        # the skeleton drops the hamzah, so الأكل would take كُلّ and أكلها كُلَّهُۥ, الأماني مِنِّي
+        from mushaf_data.spine import words
+        out = [w for w in out if HAMZ.search(words()[w])]
     if target is not None:
         floor = 1.0 if r.get("where") in ("all", "listed") else 0.86 if n == 1 else 0.8  # many places: the word itself; one word alone: مِن is not متنا
         return out if best[0] >= floor and (n == 1 or best[1] >= 0.4) else []
@@ -182,9 +219,10 @@ COMMON = {"الباقون", "الباقين", "الوصل", "الوقف", "ال�
 
 def topics(reading: str) -> set[str]:
     """What a reading is about: its words with the article (بكسر السين → السين; بالتاء على الخطاب →
-    التاء، الخطاب), less the common ones."""
+    التاء، الخطاب), less the common ones, a final ة dropped."""
     toks = {re.sub("^[وب]?", "", t) for t in re.findall(r"\S+", reading)}
-    return {t for t in toks if t.startswith("ال") and t not in COMMON}
+    # one topic with or without a final tāʾ marbūṭah (بياء الغيب, بياء الغيبة: wafi 240, idah 227)
+    return {re.sub("ة$", "", t) for t in toks if t.startswith("ال") and t not in COMMON}
 
 
 def before_ok(reading: str, nxt: str) -> bool:
@@ -216,7 +254,31 @@ def prefix_ok(reading: str, hafs: str) -> bool:
 # the row's word) → the Ḥafṣ words it covers. idah 191: Yaʿqūb's يرجع "كيف جا" — opening with the
 # tāʾ or the yāʾ, with a noun or a pronoun after it — when it is the return to Allah in the
 # hereafter (للأخرى); otherwise all read it active, as Ḥafṣ, so the places are Ḥafṣ's passive ones.
-FORMS = {("idah", 191, "يرجع"): re.compile("^[وف]?[تي]ُرۡجَعُ")}
+# wafi 227-228: the kasr of the sīn in يحسب "إذا كان مستقبلا مضارعا ... حيث ورد وكيف أتى" (idah
+# 219-220 for the Durrah): the mudāriʿ in any person, with any prefix or pronoun (تَحۡسَبَنَّ 3:169,
+# لِتَحۡسَبُوهُ 3:78, يَحۡسَبُهُمُ 2:273); the past حَسِبۡتُمۡ is not it.
+YAHSAB = re.compile("^(?:[وفأ]َ?|لِ)?[يت]َحۡسَب")
+FORMS = {("idah", 191, "يرجع"): re.compile("^[وف]?[تي]ُرۡجَعُ"),
+         ("wafi", 227, "يحسب"): YAHSAB, ("wafi", 228, "يحسب"): YAHSAB,
+         ("idah", 219, "يحسب"): YAHSAB, ("idah", 220, "يحسب"): YAHSAB}
+
+# Rows whose words fit more than one place, placed by hand from the quote (book, page, the row's
+# words as keys) → slots: wafi 211 "أم يقولون إن إبراهيم" (2:140, not أَمۡ تَقُولُونَ عَلَى 2:80);
+# wafi 216 "ليس البر أن تولوا" (2:177; 2:189's وَلَيۡسَ ٱلۡبِرُّ بِأَن has no ikhtilāf); wafi 240
+# "ولا يحسبن الذين كفروا، ولا يحسبن الذين يبخلون ... فيهما" (the row names the first only).
+PINS = {("wafi", 211, ("م", "يقولون")): ["2:140:2"],
+        ("wafi", 216, ("ليس", "لبر")): ["2:177:2"],
+        ("wafi", 240, ("ول", "يحسبن", "لذين", "كفرو")): ["3:178:2", "3:180:2"]}
+
+# Farsh an uṣūl chapter states and the farsh chapters don't repeat: idah 112 (hamz mufrad), Abū
+# Jaʿfar's وكأين "قرأها كابن كثير" (his tas-hīl of its hamzah is data/usul's hamz_mufrad).
+EXTRA = [{"sura": 3, "ayah": 146, "word": "وكأين", "words": "وكأين", "where": "all", "sites": None,
+          "readers": ["ibn_wardan", "ibn_jammaz"], "khulf": [], "reading": "قرأها كابن كثير", "condition": None,
+          "quote": "قرأها كابن كثير", "book": "idah", "page": 112}]
+
+
+def _pin(r: dict) -> list[str] | None:
+    return PINS.get((r.get("book"), r.get("page"), tuple(k for t in str(r["words"]).split() if (k := _key(t)))))
 
 
 def _forms(r: dict) -> re.Pattern | None:
@@ -305,12 +367,15 @@ def combine(sura: int, wafi_pages: list[int] | None = None, idah_pages: list[int
     problems = []
     every = rows("wafi", all_pages("wafi") if wafi_pages is None else wafi_pages) + \
         rows("idah", all_pages("idah") if idah_pages is None else idah_pages)
+    every += [dict(x) for x in EXTRA if idah_pages is None or x["book"] != "idah" or x["page"] in idah_pages]
     every_all = every
     held = {id(r): u for r in every if (u := usul_row(r))}  # uṣūl words: no farsh entry
     every = [r for r in every if id(r) not in held]
+    # the sakt of the opening letters is uṣūl (sakt_huruf), not farsh (its الم took لَمۡ، فَلَمَّآ)
+    every = [r for r in every if not (r["where"] == "all" and re.search("السكت|بسكت", r["reading"]))]
     allrows = [r for r in every if r["sura"] == sura]
     general = [r for r in every if r["where"] == "all" and r["sura"] != sura]  # its sūrah: the first the book names
-    anchors = {id(r): anchor(r, sura) for r in allrows}
+    anchors = {id(r): _pin(r) or anchor(r, sura) for r in allrows}
     order_ids = list(h)
     nxt = {w: h[order_ids[i + 1]] for i, w in enumerate(order_ids[:-1])}
     # a row whose words fit several places takes the one nearest the rows that share its quote
@@ -338,6 +403,24 @@ def combine(sura: int, wafi_pages: list[int] | None = None, idah_pages: list[int
                 continue
         key = tuple(ids)
         by[key].append(r)
+        # a reading that names the next word too ("بتشديد النون ونصب البر", idah 207 at ولكن البر)
+        # speaks of that word's place as well, and one that swaps the order ("بتقديم قتلوا وتأخير
+        # قاتلوا", wafi 242 at وقاتلوا وقتلوا) of every word of the run
+        if r["where"] == "here" and len(ids) == 1:
+            ws_ = str(r["words"]).split()
+            wk_ = _key(str(r["word"]))
+            iw = next((m for m, y in enumerate(ws_) if y == str(r["word"])), None)
+            if iw is None:
+                iw = next((m for m, y in enumerate(ws_) if _key(y) == wk_), None)
+            named_w = {_key(x) for x in topics(r["reading"])}
+            swap = bool(re.search("بتقديم.*وتأخير", r["reading"]))
+            for k, x in enumerate(ws_):
+                kx = _key(x)
+                if iw is None or k == iw or len(kx) < 3 or not (swap or kx != wk_ and kx in named_w):
+                    continue
+                at = order[ids[0]] + (k - iw)
+                if 0 <= at < len(order_ids) and _sim(kx, _key(h[order_ids[at]])) == 1.0:
+                    by[(order_ids[at],)].append({**r, "word": x})
     # each word's own rows: what they speak of, and for whom
     own_topics: dict[str, list[tuple[set, set]]] = defaultdict(list)
     for key, rs in by.items():
@@ -349,7 +432,7 @@ def combine(sura: int, wafi_pages: list[int] | None = None, idah_pages: list[int
         if re.search("السكت|بسكت", r["reading"]):
             continue  # the sakt of the opening letters is uṣūl (sakt_huruf), not farsh
         t = topics(r["reading"])
-        for w in anchor({**r, "ayah": None}, sura):
+        for w in _pin(r) if _pin(r) and any(int(x.split(":")[0]) == sura for x in _pin(r)) else anchor({**r, "ayah": None}, sura):
             if not (before_ok(r["reading"], nxt.get(w, "")) and prefix_ok(r["reading"], h[w])):
                 continue
             # the sūrah's own rows win for the readers they name about the same thing (ينزل's
@@ -396,8 +479,9 @@ def combine(sura: int, wafi_pages: list[int] | None = None, idah_pages: list[int
         opts = []
         for r in rs:
             o = next((x for x in opts if x["reading"] == r["reading"] and x["cite"] == f"{r['book']} {r['page']}"), None)
-            if o:
+            if o:  # the same reading from another row (يبسط, wafi 220: Khallād's and Ibn Dhakwān's khulf)
                 o["readers"] = sorted(set(o["readers"]) | set(r["readers"]), key=RUWAT.index)
+                o["khulf"] = sorted(set(o["khulf"]) | set(r["khulf"]), key=RUWAT.index)
                 continue
             opts.append({"readers": sorted(r["readers"], key=RUWAT.index), "khulf": sorted(r["khulf"], key=RUWAT.index),
                          "reading": r["reading"], "cite": f"{r['book']} {r['page']}", "book": r["book"],
@@ -409,11 +493,17 @@ def combine(sura: int, wafi_pages: list[int] | None = None, idah_pages: list[int
             if len({tuple(sorted(set(asl) & set(o["readers"]))) for o in mine}) > 1 and len(asl) > 1 and \
                     not any(set(asl) <= set(o["readers"]) for o in mine):
                 problems.append({"asl_differs": d, "place": list(key)})
+            # one option for each thing the entries speak of (ونكفر 2:271: the nūn, then the jazm):
+            # an option rivals one already taken when no reader is in both (two readings of one
+            # thing, or a khulf's two sides); options that share readers are about different things
+            taken: list[dict] = []
             for o in mine:
-                if set(asl) & set(o["readers"]):
-                    o["readers"] = sorted(set(o["readers"]) | {d}, key=RUWAT.index)
-                    o.setdefault("as_asl", []).append(d)
-                    break
+                if any(not (set(o["readers"]) & set(c["readers"])) - set(o["khulf"]) - set(c["khulf"]) - {d}
+                       for c in taken):
+                    continue
+                o["readers"] = sorted(set(o["readers"]) | {d}, key=RUWAT.index)
+                o.setdefault("as_asl", []).append(d)
+                taken.append(o)
         missing = [x for x in RUWAT if x not in {y for o in opts for y in o["readers"]} and x not in named]
         if missing:  # unstated: as Ḥafṣ (Eisa 2026-11-26), with Ḥafṣ's option when he is named
             o = next((o for o in opts if "hafs" in o["readers"]), None)

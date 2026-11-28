@@ -93,6 +93,24 @@ class FarshBooks(unittest.TestCase):
         from pipeline.farsh_books import anchor
         self.assertEqual(anchor({"sura": 3, "ayah": None, "word": "متنا", "words": "متنا", "where": "here"}), [])
 
+    @needs.sources
+    def test_anchor_the_variant_word_and_its_limits(self):
+        """A row writes the reading it describes (تعملون for يَعۡمَلُونَ, idah 200); a row "wherever it
+        occurs" names its first place only; the skeleton's lost hamzah and article don't widen it."""
+        from pipeline.farsh_books import anchor
+        row = {"sura": 2, "ayah": 144, "word": "تَعْمَلُونَ", "words": "تَعْمَلُونَ", "where": "here"}
+        self.assertEqual(anchor(row), ["2:144:34"])
+        row = {"sura": 2, "ayah": 96, "word": "يَعْمَلُونَ", "words": "بِمَا يَعْمَلُونَ قُلْ", "where": "here"}
+        self.assertEqual(anchor(row), ["2:96:25"])          # the run goes on into 2:97
+        row = {"sura": 2, "ayah": 168, "word": "خطوات", "words": "خطوات", "where": "all"}
+        self.assertEqual(anchor(row), ["2:168:11", "2:208:10"])
+        row = {"sura": 2, "ayah": None, "word": "الأكل", "words": "الأكل", "where": "all"}
+        self.assertNotIn("2:20:23", anchor(row))             # planted: كُلِّ is not الأُكُل
+        row = {"sura": 3, "ayah": None, "word": "بيوت", "words": "البيوت", "where": "all"}
+        self.assertEqual(anchor(row), ["3:49:37", "3:154:55"])
+        row = {"sura": 3, "ayah": None, "word": "الميت", "words": "الميت", "where": "all"}
+        self.assertNotIn("2:258:23", anchor(row, 2))         # planted: وَأُمِيتُ has a hamzah
+
 
 class FarshBooksCombine(unittest.TestCase):
     """al-Fātiḥah to Āl ʿImrān from the books (2026-11-27): general rows carry over, conditions hold."""
@@ -133,6 +151,18 @@ class FarshBooksCombine(unittest.TestCase):
         self.assertFalse(any("بإسكان" in r for r in wahuwa))  # idah 192: ḍamm, not wafi 201's iskān
         nabi = [o for o in at("2:61:52") if "ibn_wardan" in o["readers"]]
         self.assertTrue(nabi and all(o.get("base") for o in nabi))  # as Ḥafṣ; hamz_mufrad (idah 115)
+        # each thing the entries speak of gets its aṣl option (ونكفر 2:271: the nūn, then the jazm)
+        nukaffir = sorted(o["reading"] for o in at("2:271:13") if "ibn_wardan" in o["readers"])
+        self.assertEqual(nukaffir, ["بالنون", "بجزم الراء"])
+        # al-Īḍāḥ's own rows reach their words (2:144 idah 200; 2:229 idah 215), not the aṣl fill
+        self.assertEqual([o["cite"] for o in at("2:144:34") if "rawh" in o["readers"]], ["idah 200"])
+        self.assertEqual([o["cite"] for o in at("2:229:18") if "ishaq" in o["readers"]], ["idah 215"])
+        # pinned by the quote, and Abū Jaʿfar's وكأين from the uṣūl chapter (idah 112)
+        self.assertTrue(any(o["cite"] == "wafi 211" and "hafs" in o["readers"] for o in at("2:140:2")))
+        self.assertEqual([o["cite"] for o in at("3:146:1") if "ibn_wardan" in o["readers"]], ["idah 112"])
+        self.assertEqual(at("2:24:2"), [])                  # the sakt row of الم is uṣūl, not لَّمۡ's farsh
+        basat = [o for o in at("2:245:14") if "khallad" in o["readers"]]
+        self.assertTrue(len(basat) == 2 and all("khallad" in o["khulf"] for o in basat))  # wafi 220
 
     @needs.sources
     def test_against_kfgqpc_nothing_contradicted_in_al_imran(self):

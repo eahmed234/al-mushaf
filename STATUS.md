@@ -1,6 +1,6 @@
 # Status and next steps
 
-Last updated 2026-11-24 (after the books were pulled and the profile table built). Read this first in a new session (the overview for newcomers is `README.md`), then
+Last updated 2026-11-28 (the al-Futūḥ items in the farsh table for 1-3 fixed). Read this first in a new session (the overview for newcomers is `README.md`), then
 `docs/02-spike-reading-model.md` (the spike plan with day-by-day results) and
 `docs/03-usul-sources.md` (uṣūl books).
 
@@ -277,10 +277,50 @@ tables; review list empty.
   - Noise to fold in the check: al-Sūsī's idghām, Abū ʿAmr's mīm, yāʾ al-iḍāfah, Ḥamzah's waqf,
     al-Kisāʾī's hāʾ al-taʾnīth at a stop, Yaʿqūb's hāʾ al-sakt and hāʾ of the pronoun, وصّى's alif.
 
+- **Farsh table fixed from the al-Futūḥ check (2026-11-28)**: pipeline.farsh_books, each change read on
+  the book's page. Anchoring: a "here" row may write the variant's mudāriʿ letter (`_mud`: تعملون
+  2:144 idah 200-201, تخافا 2:229 idah 215, يكتمونه 3:187 wafi 241, نعلمه 3:48 idah 221); the āyah
+  narrows the row's word, not its neighbours (بما يعملون قل 2:96, idah 197), and never a row "wherever
+  it occurs" (خطوات 2:208, idah 210); a "many places" row whose word has a hamzah takes only words with
+  one (الأكل ≠ كل, أكلها ≠ كله, الأماني ≠ مني; النبيء's wafi 204 exempt), and one with the article
+  also reaches the word without it (البيوت → بيوتكم 3:49, 3:154); يحسب's kasr in every mudāriʿ form
+  (`FORMS`, wafi 227-228 "كيف أتى", idah 219-220: 3:78, 3:169, 3:188 ×2); the sakt row of الم
+  (idah 188) is uṣūl and left the farsh (it had reached 44 لم/لما words). `PINS`, placed from the
+  quote: wafi 211 أم يقولون → 2:140 (it had taken 2:79), wafi 216 ليس البر → 2:177:2, wafi 240 ولا
+  يحسبن → 3:178 and 3:180 ("فيهما"). A reading naming the next word (idah 207 "ونصب البر") or
+  swapping two (wafi 242 "بتقديم قتلوا وتأخير قاتلوا") speaks of both places. `EXTRA`: Abū Jaʿfar's
+  وكأين "قرأها كابن كثير" (idah 112, uṣūl chapter). Merged options keep their khulf (يبسط, wafi 220:
+  Ibn Dhakwān, Khallād). The aṣl fill gives one option per thing the entries speak of (ونكفر 2:271:
+  nūn and jazm; هزوا: iskān and hamz), and topics match with or without a final ة (الغيب / الغيبة).
+  The table: 104 slots changed; 250 cases (the stray كل/لم/مني entries are gone), 225 carried over,
+  25 re-written (three Sonnet writers), validate clean, 24 groups null. Writer fixes by hand:
+  منزلين 3:124 (مُنَزَّلِينَ: the zāy keeps its fatḥah), ينصركم 3:160 (sākin after إن: all as Ḥafṣ),
+  فناداه 3:39 (فَنَادَىٰهُ, the spine's spelling of نادى + pronoun, 7:22, 19:24), أمانيهم 2:111 (idah
+  197: the hāʾ kasr), هزوا 2:231 (Ḥamzah hamzes in waṣl, wafi 204-205: هُزۡءٗا; the 2:67 text was
+  wrong the same way), وكائن (the kāf's fatḥah). The check folds KFGQPC's ṣād with a small sīn as sīn.
+  Results: `checks.futuh.farsh_text` on the 6,220 pairs both runs have: agree 4,581 → 4,675, differ
+  212 → 121 (93 differ → agree, 3 no_text → agree, 2 agree → differ, below); all now 4,726 agree /
+  121 differ / 1,340 no row / 78 no text of 6,280 (1,520 pairs of the stray entries left, nearly
+  all agree). KFGQPC (`checks.api`): 76,226 / 76,968 agree (99.0%), unknown 39 → 32. `checks.farsh
+  --books`: 8 / 382 / 257 agree (was 8 / 368 / 230), 0 table only. 92 tests pass.
+  **Left, with the book's reason (for Eisa):**
+  - يطهرن 2:222, Isḥāq / Idrīs: al-Īḍāḥ says nothing (p. 215 goes from 2:219 to 2:229), so Khalaf
+    reads as his aṣl Ḥamzah (يطّهّرن, idah 226); al-Futūḥ prints Ḥafṣ's. A qirāʾāt question.
+  - ترجع 2:210: idah 191 names this very place for Yaʿqūb (active) and wafi 219 gives Ibn ʿĀmir,
+    Ḥamzah, al-Kisāʾī the same; al-Futūḥ prints the passive for al-Kisāʾī's two, Yaʿqūb's two and
+    Isḥāq but not Idrīs, so its rows look split. Its footnote "من تفردات يعقوب" is about every يرجع.
+  - خطوات 2:208, Khalaf ʿan Ḥamzah: wafi 213 (and the Shāṭibiyyah verse quoted at idah 210) give
+    Ḥamzah the iskān; al-Futūḥ prints the ḍamm for Khalaf only.
+  - جزءا 2:260 (Abū Jaʿfar's جزًّا) is uṣūl: data/usul hamz_mufrad, idah 110; the farsh text is the
+    base word. وكأين's tas-hīl likewise (idah 112).
+  - 3:195 وقاتلوا وقتلوا: al-Futūḥ prints Abū l-Ḥārith and Isḥāq the other way round from al-Dūrī ʿan
+    al-Kisāʾī and Idrīs; wafi 242 names Ḥamzah and al-Kisāʾī together.
+  - Still ambiguous (not anchored, pre-existing): يقبل منها (wafi 202), فأمتعه (wafi 211), كن فيكون
+    (wafi 208), وضعت (wafi 232), أن الله يبشرك (wafi 233); asl_differs at 3:66 / 3:119 for Abū Jaʿfar.
+
 Next, in order:
-1. Fix the table items above in pipeline.farsh_books (read al-Īḍāḥ for each Durrah one), rebuild,
-   carry the unchanged cases, re-write the changed ones, rerun both checks. Then per-word table
-   cases in the engine and anchored lists (docs/06 §4).
+1. Per-word table cases in the engine and anchored lists (docs/06 §4); pin the ambiguous rows above
+   from their quotes when their sūrah's farsh text is next checked.
 2. docs/05 milestone 4, continued from the books: al-Nisāʾ onward (wafi 243-, idah 231-), in batches (al-Budūr, then the farsh chapters
    as the second reading); new slots go to data/spine/slots.yaml as they turn up.
 3. Then milestones 5- (occurrences, constraints, marks and counts, the engine's API).

@@ -1,21 +1,4 @@
 # Farsh of surah 2 from al-Wāfī (all extracted pages) and al-Īḍāḥ (all extracted pages): pipeline/farsh_books.py
-- place: ['2:1:1', '2:6:8', '2:17:6', '2:24:2', '2:33:5', '2:33:9', '2:41:5', '2:66:3', '2:74:15', '2:74:21', '2:74:28', '2:89:1', '2:89:8', '2:89:17', '2:91:19', '2:91:22', '2:97:13', '2:101:1', '2:101:8',
-    '2:106:12', '2:107:1', '2:151:15', '2:196:46', '2:196:61', '2:213:37', '2:214:6', '2:236:8', '2:239:13', '2:243:1', '2:246:1', '2:246:44', '2:247:21', '2:249:1', '2:249:16', '2:249:30', '2:250:1', '2:258:1',
-    '2:259:41', '2:259:57', '2:260:10', '2:265:20', '2:279:2', '2:282:57', '2:283:5']
-  words: الٓمٓ لَمۡ فَلَمَّآ لَّمۡ فَلَمَّآ أَلَمۡ
-  where: all
-  options:
-  - readers: [ibn_wardan, ibn_jammaz]
-    khulf: []
-    reading: السكت على كل حرف من حروف الهجاء في فواتح السور
-    cite: idah 188
-    book: idah
-  - readers: [qalun, warsh, bazzi, qunbul, duri_abuamr, susi, hisham, ibn_dhakwan, shuba, hafs, khalaf_an_hamzah, khallad, abul_harith, duri_kisai, ruways, rawh, ishaq, idris]
-    khulf: []
-    reading: كحفص (غير مذكورين)
-    cite: idah 188
-    from: implied
-    base: true
 - place: ['2:9:6']
   words: يَخۡدَعُونَ
   where: here
@@ -81,21 +64,6 @@
     khulf: []
     reading: كحفص (غير مذكورين)
     cite: wafi 201
-    from: implied
-    base: true
-- place: ['2:20:23', '2:60:16', '2:106:17', '2:109:31', '2:116:12', '2:148:1', '2:148:17', '2:164:32', '2:259:65', '2:260:27', '2:261:14', '2:266:17', '2:276:9', '2:281:9', '2:284:26', '2:285:9']
-  words: كُلِّ كُلُّ كُلِّ كُلِّ كُلّٞ وَلِكُلّٖ
-  where: all
-  options:
-  - readers: [ibn_wardan, ibn_jammaz, ruways, rawh, ishaq, idris]
-    khulf: []
-    reading: بضم الكاف
-    cite: idah 209
-    book: idah
-  - readers: [qalun, warsh, bazzi, qunbul, duri_abuamr, susi, hisham, ibn_dhakwan, shuba, hafs, khalaf_an_hamzah, khallad, abul_harith, duri_kisai]
-    khulf: []
-    reading: كحفص (غير مذكورين)
-    cite: idah 209
     from: implied
     base: true
 - place: ['2:28:13', '2:245:16']
@@ -246,26 +214,6 @@
     reading: بالرفع
     cite: wafi 202
     book: wafi
-- place: ['2:38:7', '2:78:7', '2:249:14', '2:249:19']
-  words: مِّنِّي أَمَانِيَّ مِنِّي مِنِّيٓ
-  where: all
-  options:
-  - readers: [ibn_wardan, ibn_jammaz]
-    khulf: []
-    reading: بتخفيف الياء
-    cite: idah 196
-    book: idah
-  - readers: [ruways, rawh, ishaq, idris]
-    khulf: []
-    reading: بالتشديد (من الموافقة)
-    cite: idah 197
-    book: idah
-  - readers: [qalun, warsh, bazzi, qunbul, duri_abuamr, susi, hisham, ibn_dhakwan, shuba, hafs, khalaf_an_hamzah, khallad, abul_harith, duri_kisai]
-    khulf: []
-    reading: كحفص (غير مذكورين)
-    cite: idah 196
-    from: implied
-    base: true
 - place: ['2:38:13', '2:62:20', '2:112:13', '2:262:20', '2:274:13', '2:277:15']
   words: خَوۡفٌ خَوۡفٌ خَوۡفٌ خَوۡفٌ خَوۡفٌ خَوۡفٌ
   where: all
@@ -447,11 +395,12 @@
     cite: wafi 205
     book: wafi
     base: true
-  - readers: [qalun, warsh, bazzi, qunbul, duri_abuamr, susi, hisham, ibn_dhakwan, shuba, abul_harith, duri_kisai]
+  - readers: [qalun, warsh, bazzi, qunbul, duri_abuamr, susi, hisham, ibn_dhakwan, shuba, abul_harith, duri_kisai, ibn_wardan, ibn_jammaz, ruways, rawh]
     khulf: []
     reading: بالهمز
     cite: wafi 205
     book: wafi
+    as_asl: [ibn_wardan, ibn_jammaz, ruways, rawh]
 - place: ['2:68:8', '2:70:8', '2:189:5', '2:271:5']
   words: هِيَۚ هِيَ هِيَ هِيَۖ
   where: all
@@ -524,23 +473,26 @@
     book: wafi
     as_asl: [ibn_wardan, ibn_jammaz, ruways, rawh, ishaq, idris]
     base: true
-- place: ['2:79:7']
-  words: يَقُولُونَ
-  where: here
+- place: ['2:78:7', '2:111:12']
+  words: أَمَانِيَّ أَمَانِيُّهُمۡۗ
+  where: all
   options:
-  - readers: [hisham, ibn_dhakwan, hafs, khalaf_an_hamzah, khallad, abul_harith, duri_kisai, ishaq, idris]
+  - readers: [ibn_wardan, ibn_jammaz]
     khulf: []
-    reading: بتاء الخطاب
-    cite: wafi 211
-    book: wafi
-    as_asl: [ishaq, idris]
+    reading: بتخفيف الياء
+    cite: idah 196
+    book: idah
+  - readers: [ruways, rawh, ishaq, idris]
+    khulf: []
+    reading: بالتشديد (من الموافقة)
+    cite: idah 197
+    book: idah
+  - readers: [qalun, warsh, bazzi, qunbul, duri_abuamr, susi, hisham, ibn_dhakwan, shuba, hafs, khalaf_an_hamzah, khallad, abul_harith, duri_kisai]
+    khulf: []
+    reading: كحفص (غير مذكورين)
+    cite: idah 196
+    from: implied
     base: true
-  - readers: [qalun, warsh, bazzi, qunbul, duri_abuamr, susi, shuba, ibn_wardan, ibn_jammaz, ruways, rawh]
-    khulf: []
-    reading: بياء الغيبة
-    cite: wafi 211
-    book: wafi
-    as_asl: [ibn_wardan, ibn_jammaz, ruways, rawh]
 - place: ['2:81:7']
   words: خَطِيٓـَٔتُهُۥ
   where: here
@@ -742,6 +694,26 @@
     cite: wafi 206
     book: wafi
     as_asl: [ibn_wardan, ibn_jammaz, ishaq, idris]
+    base: true
+- place: ['2:96:25']
+  words: يَعۡمَلُونَ
+  where: here
+  options:
+  - readers: [ruways, rawh]
+    khulf: []
+    reading: بتاء الخطاب
+    cite: idah 197
+    book: idah
+  - readers: [ibn_wardan, ibn_jammaz, ishaq, idris]
+    khulf: []
+    reading: بالغيب (من الموافقة)
+    cite: idah 197
+    book: idah
+  - readers: [qalun, warsh, bazzi, qunbul, duri_abuamr, susi, hisham, ibn_dhakwan, shuba, hafs, khalaf_an_hamzah, khallad, abul_harith, duri_kisai]
+    khulf: []
+    reading: كحفص (غير مذكورين)
+    cite: idah 197
+    from: implied
     base: true
 - place: ['2:97:5', '2:98:7']
   words: لِّجِبۡرِيلَ وَجِبۡرِيلَ
@@ -997,6 +969,17 @@
   words: تَقُولُونَ
   where: here
   options:
+  - readers: [hisham, ibn_dhakwan, hafs, khalaf_an_hamzah, khallad, abul_harith, duri_kisai]
+    khulf: []
+    reading: بتاء الخطاب
+    cite: wafi 211
+    book: wafi
+    base: true
+  - readers: [qalun, warsh, bazzi, qunbul, duri_abuamr, susi, shuba]
+    khulf: []
+    reading: بياء الغيبة
+    cite: wafi 211
+    book: wafi
   - readers: [ruways]
     khulf: []
     reading: بتاء الخطاب
@@ -1012,12 +995,6 @@
     reading: بالتاء
     cite: idah 200
     book: idah
-  - readers: [qalun, warsh, bazzi, qunbul, duri_abuamr, susi, hisham, ibn_dhakwan, shuba, hafs, khalaf_an_hamzah, khallad, abul_harith, duri_kisai]
-    khulf: []
-    reading: كحفص (غير مذكورين)
-    cite: idah 200
-    from: implied
-    base: true
 - place: ['2:142:20', '2:213:48']
   words: صِرَٰطٖ صِرَٰطٖ
   where: all
@@ -1075,19 +1052,32 @@
   words: يَعۡمَلُونَ
   where: here
   options:
-  - readers: [hisham, ibn_dhakwan, khalaf_an_hamzah, khallad, abul_harith, duri_kisai, ishaq, idris]
+  - readers: [hisham, ibn_dhakwan, khalaf_an_hamzah, khallad, abul_harith, duri_kisai]
     khulf: []
     reading: بتاء الخطاب
     cite: wafi 211
     book: wafi
-    as_asl: [ishaq, idris]
-  - readers: [qalun, warsh, bazzi, qunbul, duri_abuamr, susi, shuba, hafs, ibn_wardan, ibn_jammaz, ruways, rawh]
+  - readers: [qalun, warsh, bazzi, qunbul, duri_abuamr, susi, shuba, hafs]
     khulf: []
     reading: بياء الغيبة
     cite: wafi 211
     book: wafi
-    as_asl: [ibn_wardan, ibn_jammaz, ruways, rawh]
     base: true
+  - readers: [ibn_wardan, ibn_jammaz, rawh]
+    khulf: []
+    reading: بتاء الخطاب
+    cite: idah 200
+    book: idah
+  - readers: [ishaq, idris]
+    khulf: []
+    reading: بالغيب
+    cite: idah 201
+    book: idah
+  - readers: [ruways]
+    khulf: []
+    reading: بياء الغيب (على الأصل)
+    cite: idah 201
+    book: idah
 - place: ['2:148:4']
   words: مُوَلِّيهَاۖ
   where: here
@@ -1267,8 +1257,8 @@
     cite: idah 201
     from: implied
     base: true
-- place: ['2:168:11']
-  words: خُطُوَٰتِ
+- place: ['2:168:11', '2:208:10']
+  words: خُطُوَٰتِ خُطُوَٰتِ
   where: all
   options:
   - readers: [qunbul, hisham, ibn_dhakwan, hafs, abul_harith, duri_kisai]
@@ -1277,16 +1267,11 @@
     cite: wafi 213
     book: wafi
     base: true
-  - readers: [qalun, warsh, bazzi, duri_abuamr, susi, shuba, khalaf_an_hamzah, khallad, ishaq, idris]
+  - readers: [qalun, warsh, bazzi, duri_abuamr, susi, shuba, khalaf_an_hamzah, khallad]
     khulf: []
     reading: بإسكان الطاء
     cite: wafi 213
     book: wafi
-    as_asl: [ishaq, idris]
-- place: ['2:168:11']
-  words: خُطُوَٰتِ
-  where: all
-  options:
   - readers: [ibn_wardan, ibn_jammaz, ruways, rawh]
     khulf: []
     reading: بضم الطاء
@@ -1341,17 +1326,22 @@
   words: ٱلۡبِرَّ
   where: here
   options:
+  - readers: [hafs, khalaf_an_hamzah, khallad]
+    khulf: []
+    reading: بنصب الراء
+    cite: wafi 216
+    book: wafi
+    base: true
+  - readers: [qalun, warsh, bazzi, qunbul, duri_abuamr, susi, hisham, ibn_dhakwan, shuba, abul_harith, duri_kisai]
+    khulf: []
+    reading: برفع الراء
+    cite: wafi 216
+    book: wafi
   - readers: [ibn_wardan, ibn_jammaz, ruways, rawh, ishaq, idris]
     khulf: []
     reading: برفع الراء
     cite: idah 207
     book: idah
-  - readers: [qalun, warsh, bazzi, qunbul, duri_abuamr, susi, hisham, ibn_dhakwan, shuba, hafs, khalaf_an_hamzah, khallad, abul_harith, duri_kisai]
-    khulf: []
-    reading: كحفص (غير مذكورين)
-    cite: idah 207
-    from: implied
-    base: true
 - place: ['2:177:9']
   words: وَلَٰكِنَّ
   where: here
@@ -1376,19 +1366,22 @@
   words: ٱلۡبِرَّ
   where: here
   options:
-  - readers: [qalun, warsh, hisham, ibn_dhakwan, ibn_wardan, ibn_jammaz]
+  - readers: [qalun, warsh, hisham, ibn_dhakwan]
     khulf: []
     reading: برفع راء البر
     cite: wafi 217
     book: wafi
-    as_asl: [ibn_wardan, ibn_jammaz]
-  - readers: [bazzi, qunbul, duri_abuamr, susi, shuba, hafs, khalaf_an_hamzah, khallad, abul_harith, duri_kisai, ruways, rawh, ishaq, idris]
+  - readers: [bazzi, qunbul, duri_abuamr, susi, shuba, hafs, khalaf_an_hamzah, khallad, abul_harith, duri_kisai]
     khulf: []
     reading: بنصب راء البر
     cite: wafi 217
     book: wafi
-    as_asl: [ruways, rawh, ishaq, idris]
     base: true
+  - readers: [ibn_wardan, ibn_jammaz, ruways, rawh, ishaq, idris]
+    khulf: []
+    reading: بتشديد النون ونصب البر
+    cite: idah 207
+    book: idah
 - place: ['2:182:4']
   words: مُّوصٖ
   where: here
@@ -1631,19 +1624,22 @@
   words: ٱلۡبِرَّ
   where: here
   options:
-  - readers: [qalun, warsh, hisham, ibn_dhakwan, ibn_wardan, ibn_jammaz]
+  - readers: [qalun, warsh, hisham, ibn_dhakwan]
     khulf: []
     reading: برفع راء البر
     cite: wafi 217
     book: wafi
-    as_asl: [ibn_wardan, ibn_jammaz]
-  - readers: [bazzi, qunbul, duri_abuamr, susi, shuba, hafs, khalaf_an_hamzah, khallad, abul_harith, duri_kisai, ruways, rawh, ishaq, idris]
+  - readers: [bazzi, qunbul, duri_abuamr, susi, shuba, hafs, khalaf_an_hamzah, khallad, abul_harith, duri_kisai]
     khulf: []
     reading: بنصب راء البر
     cite: wafi 217
     book: wafi
-    as_asl: [ruways, rawh, ishaq, idris]
     base: true
+  - readers: [ibn_wardan, ibn_jammaz, ruways, rawh, ishaq, idris]
+    khulf: []
+    reading: بتشديد النون ونصب البر
+    cite: idah 207
+    book: idah
 - place: ['2:191:13']
   words: تُقَٰتِلُوهُمۡ
   where: here
@@ -1797,22 +1793,6 @@
     book: wafi
     as_asl: [ruways, rawh, ishaq, idris]
     base: true
-- place: ['2:208:10']
-  words: خُطُوَٰتِ
-  where: all
-  options:
-  - readers: [qunbul, hisham, ibn_dhakwan, hafs, abul_harith, duri_kisai]
-    khulf: []
-    reading: بضم الطاء
-    cite: wafi 213
-    book: wafi
-    base: true
-  - readers: [qalun, warsh, bazzi, duri_abuamr, susi, shuba, khalaf_an_hamzah, khallad, ibn_wardan, ibn_jammaz, ruways, rawh, ishaq, idris]
-    khulf: []
-    reading: بإسكان الطاء
-    cite: wafi 213
-    book: wafi
-    as_asl: [ibn_wardan, ibn_jammaz, ruways, rawh, ishaq, idris]
 - place: ['2:210:11']
   words: وَٱلۡمَلَٰٓئِكَةُ
   where: here
@@ -1976,19 +1956,27 @@
   words: يَخَافَآ
   where: here
   options:
-  - readers: [khalaf_an_hamzah, khallad, ishaq, idris]
+  - readers: [khalaf_an_hamzah, khallad]
     khulf: []
     reading: بضم الياء
     cite: wafi 219
     book: wafi
-    as_asl: [ishaq, idris]
-  - readers: [qalun, warsh, bazzi, qunbul, duri_abuamr, susi, hisham, ibn_dhakwan, shuba, hafs, abul_harith, duri_kisai, ibn_wardan, ibn_jammaz, ruways, rawh]
+  - readers: [qalun, warsh, bazzi, qunbul, duri_abuamr, susi, hisham, ibn_dhakwan, shuba, hafs, abul_harith, duri_kisai]
     khulf: []
     reading: بفتح الياء
     cite: wafi 219
     book: wafi
-    as_asl: [ibn_wardan, ibn_jammaz, ruways, rawh]
     base: true
+  - readers: [ibn_wardan, ibn_jammaz, ruways, rawh]
+    khulf: []
+    reading: بضم الياء
+    cite: idah 215
+    book: idah
+  - readers: [ishaq, idris]
+    khulf: []
+    reading: بفتح الياء
+    cite: idah 215
+    book: idah
 - place: ['2:233:23']
   words: تُضَآرَّ
   where: here
@@ -2177,12 +2165,12 @@
   where: here
   options:
   - readers: [qalun, warsh, bazzi, ibn_dhakwan, shuba, khallad, abul_harith, duri_kisai]
-    khulf: []
+    khulf: [ibn_dhakwan, khallad]
     reading: بالصاد
     cite: wafi 220
     book: wafi
   - readers: [qunbul, duri_abuamr, susi, hisham, ibn_dhakwan, hafs, khalaf_an_hamzah, khallad]
-    khulf: []
+    khulf: [ibn_dhakwan, khallad]
     reading: بالسين
     cite: wafi 220
     book: wafi
@@ -2622,16 +2610,18 @@
     cite: wafi 227
     book: wafi
     as_asl: [ibn_wardan, ibn_jammaz, ruways, rawh, ishaq, idris]
-  - readers: [qalun, warsh, khalaf_an_hamzah, khallad, abul_harith, duri_kisai]
+  - readers: [qalun, warsh, khalaf_an_hamzah, khallad, abul_harith, duri_kisai, ibn_wardan, ibn_jammaz, ishaq, idris]
     khulf: []
     reading: بجزم الراء
     cite: wafi 227
     book: wafi
-  - readers: [bazzi, qunbul, duri_abuamr, susi, hisham, ibn_dhakwan, shuba, hafs]
+    as_asl: [ibn_wardan, ibn_jammaz, ishaq, idris]
+  - readers: [bazzi, qunbul, duri_abuamr, susi, hisham, ibn_dhakwan, shuba, hafs, ruways, rawh]
     khulf: []
     reading: برفع الراء
     cite: wafi 227
     book: wafi
+    as_asl: [ruways, rawh]
     base: true
 - place: ['2:273:12']
   words: يَحۡسَبُهُمُ

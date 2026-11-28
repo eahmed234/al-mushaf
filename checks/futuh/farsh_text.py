@@ -19,6 +19,7 @@ word) are compared with his written text(s), after folding what mushaf_data.diff
 from __future__ import annotations
 
 import argparse
+import re
 from collections import Counter, defaultdict
 
 from mushaf_data.ruwat import RUWAT
@@ -53,7 +54,9 @@ def printed(surah: int) -> dict[tuple[str, str], set[tuple[str, bool]]]:
 
 
 def same(text: str, form: str, last: bool) -> bool:
-    """No farsh difference between the written text and the printed form."""
+    """No farsh difference between the written text and the printed form. KFGQPC's ṣād with a small
+    sīn above (وَيَبۡصُۜطُ 2:245) is read with the sīn, as al-Futūḥ writes it (وَيَبۡسُطُ)."""
+    text, form = (re.sub("\u0635([\u064b-\u0652]*)\u06dc", "\u0633\\1", x) for x in (text, form))
     return not differs(prep(text), prep(form), final=not last)
 
 

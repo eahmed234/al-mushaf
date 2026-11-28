@@ -44,24 +44,6 @@
   case: k002
   status: written
   groups:
-  - text: ٱلسِّرَٰطَ
-    readers:
-    - qunbul
-    - ruways
-    from:
-    - '001#1 wafi 50: بالسين'
-    - '001#1 idah 53: بالسين كقنبل'
-  - text: null
-    readers:
-    - khalaf_an_hamzah
-    - khallad
-    khulf:
-    - khallad
-    from:
-    - '001#1 wafi 50: بإشمام الصاد صوت الزاي'
-    - '001#2 wafi 50: بإشمام الصاد صوت الزاي'
-    - '001#2 wafi 51: بإشمام الصاد صوت الزاي'
-    note: 'ishmām of ṣād with zāy sound: no written form given by the book'
   - text: ٱلصِّرَٰطَ
     readers:
     - qalun
@@ -85,11 +67,28 @@
     - khallad
     base: true
     from:
-    - '001#1 wafi 51: بالصاد الخالصة'
     - '001#1 idah 53: بالصاد الخالصة'
     - '001#2 wafi 51: بالصاد الخالصة'
+    note: الباقون بالصاد الخالصة؛ خلاد له وجه الصاد الخالصة أيضا (خلف في الوجهين)
+  - text: ٱلسِّرَٰطَ
+    readers:
+    - qunbul
+    - ruways
+    from:
+    - '001#1 wafi 50: بالسين'
+    - '001#1 idah 53: بالسين كقنبل'
+    note: قنبل ورويس بالسين (الخيار 7 يذكرهما في الباقين لكنه عام وخيار 1 و5 يخصانهما)
+  - text: null
+    readers:
+    - khalaf_an_hamzah
+    - khallad
+    khulf:
+    - khallad
+    from:
+    - '001#1 wafi 50: بإشمام الصاد صوت الزاي'
+    - '001#2 wafi 50: بإشمام الصاد صوت الزاي'
     - '001#2 wafi 51: بإشمام الصاد صوت الزاي'
-    note: 'Khallad: pure ṣād as one of his two (khulf)'
+    note: 'إشمام الصاد صوت الزاي: لا يبينه الكتاب بحروف؛ لا نص'
 '1:7:1':
   hafs: صِرَٰطَ
   case: k003
