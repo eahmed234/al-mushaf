@@ -96,6 +96,15 @@ def farsh_index(source: str = "books") -> dict[str, list[dict]]:
 
 
 @lru_cache(maxsize=1)
+def text_index() -> dict[str, dict]:
+    """slot → {hafs, groups: [{text, readers, khulf, base, from}]} (data/farsh_text: option text)."""
+    out = {}
+    for f in sorted((DATA / "farsh_text").glob("*.yaml")):
+        out.update(yaml.safe_load(f.read_text(encoding="utf-8")) or {})
+    return out
+
+
+@lru_cache(maxsize=1)
 def tahrir_index() -> tuple[dict[str, list[dict]], dict[str, list[dict]]]:
     """(slot → al-Budūr's taḥrīr statements there, category → al-Ḍabbāʿ's rows about it)."""
     by_slot, by_cat = {}, {}
@@ -131,12 +140,13 @@ class Rule:
 class Word:
     slot: str
     hafs: str
-    text: str | None                    # None: a farsh reading stored only as the book's words
+    text: str | None                    # None: a farsh reading with no written text
     farsh: list[dict] = field(default_factory=list)   # the rāwī's options here: reading, cite, base
     rules: list[Rule] = field(default_factory=list)
     stop: bool = False
     waqf: str | None = None             # the waqf form taken (Ḥamzah's ruwāt, Hishām)
     tahrir: list[dict] = field(default_factory=list)  # al-Budūr's statements at this word
+    source: str = "hafs"                # the word's text before the uṣūl: hafs | farsh_text | none
 
 
 class Mushaf:
@@ -160,6 +170,31 @@ class Mushaf:
                              "entry": e["file"] + ":" + " ".join(e["place"][:3])})
         return opts, (not opts or all(o["base"] for o in opts))
 
+    def _texts(self, rawi: str, slot: str) -> dict[str, list[str]]:
+        """The rāwī's farsh texts at the slot (data/farsh_text, books source only): text → its
+        options; two for a khulf. {} where nothing is written."""
+        if self.source != "books":
+            return {}
+        e = text_index().get(slot)
+        if not e:
+            return {}
+        return {g["text"]: g.get("from") or [] for g in e["groups"] if rawi in g["readers"] and g.get("text")}
+
+    def _base_texts(self, rawi: str, sl: list[str], choice: dict) -> dict[str, tuple[str | None, str]]:
+        """slot → (the word before the uṣūl, where it came from) for the rāwī's farsh words."""
+        out = {}
+        for s in sl:
+            opts, base = self._farsh(rawi, s)
+            if base:
+                continue
+            ts = self._texts(rawi, s)
+            if ts:
+                pick = choice.get(f"farsh:{s}")
+                out[s] = ((pick if pick in ts else next(iter(ts))), "farsh_text")
+            else:
+                out[s] = (None, "none")
+        return out
+
     def _wujuh(self, rawi: str, cat: str, slot: str) -> dict:
         for p in self.places:
             if p["rawi"] == rawi and p["category"] == cat:
@@ -170,7 +205,7 @@ class Mushaf:
             w = (self.profiles[rawi].get("silah_mim") or {}).get("wujuh")
         return dict(w) if w else {WUJUH[cat][0]: ["as_hafs"]}
 
-    def _context(self, rawi: str, ref: str, stop: bool | None):
+    def _context(self, rawi: str, ref: str, stop: bool | None, choice: dict | None = None):
         sl = span(rawi, ref)
         allw = list(words())
         nxt = None
@@ -181,8 +216,11 @@ class Mushaf:
         # stop on the last word: asked, or by default when the span ends an āyah's end
         if stop is None:
             stop = nxt is None or wid(nxt)[1] != wid(sl[-1].rstrip("abcdefgh"))[1] if sl else False
-        ws = [(s, hafs_text(s)) for s in sl] + ([] if stop or nxt is None else [(nxt, words()[nxt])])
-        return sl, ws, (sl[-1] if stop and sl else None)
+        sub = self._base_texts(rawi, sl, choice or {})
+        # a farsh word with no text keeps the Ḥafṣ text for detection (its own rules are dropped later)
+        ws = [(s, (sub[s][0] if s in sub and sub[s][0] else hafs_text(s))) for s in sl]
+        ws += [] if stop or nxt is None else [(nxt, words()[nxt])]
+        return sl, ws, (sl[-1] if stop and sl else None), sub
 
     def _occs(self, rawi: str, ws, stop):
         occs = [o for o in detect(ws, stop=stop) if book_gate(o.cat, o.word, o.nxt)]
@@ -192,12 +230,18 @@ class Mushaf:
 
     def choices(self, rawi: str, ref: str, stop: bool | None = None) -> dict[str, dict]:
         """category → {wajh: cites} for every category the span holds (one choice each per reading)."""
-        sl, ws, st = self._context(rawi, ref, stop)
+        sl, ws, st, sub = self._context(rawi, ref, stop)
         out = {}
         for o in self._occs(rawi, ws, st):
+            if sub.get(o.word, ("", ""))[1] == "none":
+                continue
             if o.cat in TEXT_CATS or o.cat in CHOICE_FEATURES or o.cat in FEATURE_ONLY:
                 if o.cat not in out:
                     out[o.cat] = self._wujuh(rawi, o.cat, o.word)
+        for s in sl:  # a khulf in a farsh word: its texts, each with the options it realises
+            ts = self._texts(rawi, s)
+            if len(ts) > 1:
+                out[f"farsh:{s}"] = ts
         return out
 
     def count(self, rawi: str, ref: str, stop: bool | None = None, limit: int = 200_000) -> dict:
@@ -209,7 +253,8 @@ class Mushaf:
         if n <= limit:
             keys = list(ch)
             res["exact"] = sum(1 for combo in itertools.product(*[list(ch[k]) for k in keys])
-                               if allowed(rawi, dict(zip(keys, combo)), self.constraints))
+                               if allowed(rawi, {k: v for k, v in zip(keys, combo) if not k.startswith("farsh:")},
+                                          self.constraints))
         return res
 
     def read(self, rawi: str, ref: str, choice: dict | None = None, stop: bool | None = None) -> list[Word]:
@@ -217,8 +262,14 @@ class Mushaf:
         if rawi not in RUWAT:
             raise ValueError(f"unknown rāwī {rawi}")
         choice = dict(choice or {})
-        sl, ws, st = self._context(rawi, ref, stop)
-        occs = self._occs(rawi, ws, st)
+        sl, ws, st, sub = self._context(rawi, ref, stop, choice)
+        for k, v in choice.items():
+            if k.startswith("farsh:") and v not in self._texts(rawi, k[6:]):
+                raise ValueError(f"{rawi} has no text {v!r} at {k[6:]}; has {list(self._texts(rawi, k[6:]))}")
+        farsh = {s: self._farsh(rawi, s) for s in sl}
+        # the rules run on the word as the rāwī reads it (Ḥafṣ's, or his farsh text); a farsh word
+        # with no written text keeps no rule
+        occs = [o for o in self._occs(rawi, ws, st) if sub.get(o.word, ("", ""))[1] != "none"]
         avail = {}
         for o in occs:
             avail.setdefault(o.cat, self._wujuh(rawi, o.cat, o.word))
@@ -226,15 +277,13 @@ class Mushaf:
         bad = [c for c in choice if c in avail and choice[c] not in avail[c]]
         if bad:
             raise ValueError(f"{rawi} has no {[(c, choice[c]) for c in bad]} here; has {[(c, list(avail[c])) for c in bad]}")
-        farsh = {s: self._farsh(rawi, s) for s in sl}
-        # the rules run on the Ḥafṣ text; a word read with another farsh reading keeps no rule
-        live = [o for o in occs if farsh.get(o.word, ([], True))[1]]
+        live = occs
         txt = apply(ws, live, ch)
         where = usul_tables.where()
         by_slot, _ = tahrir_index()
         out = []
         for s in sl:
-            opts, base = farsh[s]
+            opts, _ = farsh[s]
             rules = []
             for o in live:
                 if o.word != s:
@@ -242,8 +291,9 @@ class Mushaf:
                 t, k = where.get(o.cat, ("", 0))
                 case = usul_tables.tables()[t]["cases"][k]["case"] if t else ""
                 rules.append(Rule(o.cat, t, case, avail[o.cat], ch[o.cat], o.cat not in FEATURE_ONLY))
-            w = Word(s, hafs_text(s), txt.get(s) if base else None, opts, rules, stop=(s == st),
-                     tahrir=by_slot.get(s, []))
+            src = sub[s][1] if s in sub else "hafs"
+            w = Word(s, hafs_text(s), None if src == "none" else txt.get(s), opts, rules, stop=(s == st),
+                     tahrir=by_slot.get(s, []), source=src)
             if w.stop and rawi in WAQF_RAWI and w.text:
                 fs = waqf_forms(w.text, rawi)
                 if fs:
@@ -257,7 +307,12 @@ class Mushaf:
     # -- one word ------------------------------------------------------------------------------
 
     def who(self, slot: str) -> list[dict]:
-        """The twenty grouped by reading at the slot: farsh options, and the muṣḥaf's own for the rest."""
+        """The twenty grouped by reading at the slot: by written text where data/farsh_text has it,
+        else by the farsh options' words, and the muṣḥaf's own for the rest."""
+        e = text_index().get(slot) if self.source == "books" else None
+        if e:
+            return [{"text": g["text"], "readers": g["readers"], "khulf": g.get("khulf", []), "base": bool(g.get("base")),
+                     "from": g.get("from", []), "note": g.get("note")} for g in e["groups"]]
         groups: dict[tuple, dict] = {}
         for r in RUWAT:
             if slot not in projection(r):

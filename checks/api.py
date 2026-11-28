@@ -45,7 +45,7 @@ def check(rawi: str, surah: int, m: Mushaf) -> dict:
     hafs = {w.slot: w.hafs for w in m.read(rawi, ref, stop=False)}
     A = [kskel(hafs[s]) for s in slots]
     B = [kskel(w) for w in kw]
-    res, rows = Counter(), []
+    res, rows, status = Counter(), [], {}
     for tag, i1, i2, j1, j2 in difflib.SequenceMatcher(None, A, B, autojunk=False).get_opcodes():
         if tag != "equal" and i2 - i1 != j2 - j1:
             res["unaligned"] += i2 - i1
@@ -56,10 +56,12 @@ def check(rawi: str, surah: int, m: Mushaf) -> dict:
                 continue
             if key(k) in {key(t) for t in cand[s]}:
                 res["agree"] += 1
+                status[s] = ("agree", k)
             else:
                 res["differ"] += 1
+                status[s] = ("differ", k)
                 rows.append((rawi, s, hafs[s], " / ".join(sorted(cand[s])), k))
-    return {**res, "rows": rows}
+    return {**res, "rows": rows, "status": status}
 
 
 def main():
@@ -73,7 +75,7 @@ def main():
     for s in a.surah:
         for rawi in FILES:
             r = check(rawi, s, m)
-            tot.update({k: v for k, v in r.items() if k != "rows"})
+            tot.update({k: v for k, v in r.items() if k not in ("rows", "status")})
             print(f"{s:3} {rawi:12} agree {r.get('agree', 0):5}  differ {r.get('differ', 0):4}  unknown {r.get('unknown', 0):3}"
                   f"  unaligned {r.get('unaligned', 0)}")
             for x in r["rows"][: a.show]:
