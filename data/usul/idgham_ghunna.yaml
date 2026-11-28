@@ -354,6 +354,26 @@ listed:
   note: the book's examples for Khalaf al-ʿĀshir
   cite:
   - idah 137
+  anchor: all
+  places:
+  - '2:8:3'
+  - '2:8:4'
+  - 2:200:13
+  - 2:200:14
+  - 2:201:2
+  - 2:201:3
+  - '9:49:2'
+  - '9:49:3'
+  - 9:124:6
+  - 9:124:7
+  - '13:11:34'
+  - '13:11:35'
+  - '29:10:3'
+  - '29:10:4'
+  - '30:43:15'
+  - '30:43:16'
+  - '69:16:4'
+  - '69:16:5'
 filled_notes:
 - 'case the final nūn / tanwīn before lām or rāʾ: no row speaks of ibn_wardan, ibn_jammaz, ruways, rawh, ishaq, idris (left empty; wafi 138)'
 - 'case before nūn or mīm: no row speaks of ibn_wardan, ibn_jammaz, ruways, rawh, ishaq, idris (left empty; wafi 138)'

@@ -405,9 +405,43 @@
     from:
     - '002#11 idah 194: بالرفع والتنوين (من الموافقة)'
     - '002#11 idah 194: كحفص (غير مذكورين)'
+'2:48:10':
+  hafs: يُقۡبَلُ
+  case: k015
+  status: written
+  groups:
+  - text: يُقۡبَلُ
+    readers:
+    - qalun
+    - warsh
+    - hisham
+    - ibn_dhakwan
+    - shuba
+    - hafs
+    - khalaf_an_hamzah
+    - khallad
+    - abul_harith
+    - duri_kisai
+    - ibn_wardan
+    - ibn_jammaz
+    - ishaq
+    - idris
+    base: true
+    from:
+    - '002#12 wafi 202: بياء التذكير'
+  - text: تُقۡبَلُ
+    readers:
+    - bazzi
+    - qunbul
+    - duri_abuamr
+    - susi
+    - ruways
+    - rawh
+    from:
+    - '002#12 wafi 202: بتاء التأنيث'
 '2:51:2':
   hafs: وَٰعَدۡنَا
-  case: k015
+  case: k016
   status: written
   groups:
   - text: وَعَدۡنَا
@@ -419,9 +453,9 @@
     - ruways
     - rawh
     from:
-    - '002#12 wafi 202: بحذف الألف بعد الواو'
-    - '002#12 idah 195: بحذف الألف بعد الواو'
-    - '002#12 idah 195: بحذف الألف (على أصله)'
+    - '002#13 wafi 202: بحذف الألف بعد الواو'
+    - '002#13 idah 195: بحذف الألف بعد الواو'
+    - '002#13 idah 195: بحذف الألف (على أصله)'
     note: Alif after wāw dropped (وَعَدۡنَا).
   - text: وَٰعَدۡنَا
     readers:
@@ -441,11 +475,11 @@
     - idris
     base: true
     from:
-    - '002#12 wafi 202: بإثبات الألف بعد الواو'
-    - '002#12 idah 195: بإثبات الألف (على أصله)'
+    - '002#13 wafi 202: بإثبات الألف بعد الواو'
+    - '002#13 idah 195: بإثبات الألف (على أصله)'
 '2:54:13':
   hafs: بَارِئِكُمۡ
-  case: k016
+  case: k017
   status: written
   groups: &id003
   - text: بَارِئۡكُمۡ
@@ -457,7 +491,7 @@
     khulf:
     - duri_abuamr
     from:
-    - '002#13 wafi 202: بإسكان الهمزة'
+    - '002#14 wafi 202: بإسكان الهمزة'
     note: Sukūn on the hamzah.
   - text: null
     readers:
@@ -465,7 +499,7 @@
     khulf:
     - duri_abuamr
     from:
-    - '002#13 wafi 203: باختلاس كسرة الهمزة'
+    - '002#14 wafi 203: باختلاس كسرة الهمزة'
     note: 'Ikhtilās of the hamzah''s kasrah: no spelling for it in the book.'
   - text: بَارِئِكُمۡ
     readers:
@@ -487,10 +521,10 @@
     - idris
     base: true
     from:
-    - '002#13 wafi 202: كحفص (غير مذكورين)'
+    - '002#14 wafi 202: كحفص (غير مذكورين)'
 '2:54:20':
   hafs: بَارِئِكُمۡ
-  case: k016
+  case: k017
   status: written
   groups: *id003
 '2:54:24':
@@ -500,7 +534,7 @@
   groups: *id002
 '2:58:16':
   hafs: نَّغۡفِرۡ
-  case: k017
+  case: k018
   status: written
   groups:
   - text: نَّغۡفِرۡ
@@ -521,7 +555,7 @@
     - idris
     base: true
     from:
-    - '002#14 wafi 203: بنون مفتوحة وكسر الفاء'
+    - '002#15 wafi 203: بنون مفتوحة وكسر الفاء'
   - text: يُغۡفَرۡ
     readers:
     - qalun
@@ -529,14 +563,14 @@
     - ibn_wardan
     - ibn_jammaz
     from:
-    - '002#14 wafi 203: بياء مضمومة وفتح الفاء'
+    - '002#15 wafi 203: بياء مضمومة وفتح الفاء'
     note: Yāʾ ḍammah, fāʾ fatḥah. The Ḥafṣ shaddah on the nūn (idghām of the tanwīn before it) is not carried over.
   - text: تُغۡفَرۡ
     readers:
     - hisham
     - ibn_dhakwan
     from:
-    - '002#14 wafi 203: بتاء مضمومة وفتح الفاء'
+    - '002#15 wafi 203: بتاء مضمومة وفتح الفاء'
     note: Tāʾ ḍammah, fāʾ fatḥah. The Ḥafṣ shaddah on the nūn (idghām) is not carried over.
 '2:59:7':
   hafs: قِيلَ
@@ -545,7 +579,7 @@
   groups: *id001
 2:61:26:
   hafs: هُوَ
-  case: k018
+  case: k019
   status: written
   groups: &id004
   - text: هُوَ
@@ -577,12 +611,12 @@
     - '002#4 idah 193: بالضم (على أصله)'
 2:61:29:
   hafs: هُوَ
-  case: k018
+  case: k019
   status: written
   groups: *id004
 2:61:52:
   hafs: ٱلنَّبِيِّـۧنَ
-  case: k019
+  case: k020
   status: written
   groups: &id014
   - text: null
@@ -590,7 +624,7 @@
     - qalun
     - warsh
     from:
-    - '002#15 wafi 204: بالهمز'
+    - '002#16 wafi 204: بالهمز'
     note: book says only بالهمز; the written form is not given
   - text: ٱلنَّبِيِّـۧنَ
     readers:
@@ -614,10 +648,10 @@
     - idris
     base: true
     from:
-    - '002#15 wafi 204: بإبدال الهمزة ياء مع الإدغام'
+    - '002#16 wafi 204: بإبدال الهمزة ياء مع الإدغام'
 2:62:7:
   hafs: وَٱلصَّٰبِـِٔينَ
-  case: k020
+  case: k021
   status: written
   groups:
   - text: وَٱلصَّٰبِينَ
@@ -627,7 +661,7 @@
     - ibn_wardan
     - ibn_jammaz
     from:
-    - '002#16 wafi 204: بترك الهمز'
+    - '002#17 wafi 204: بترك الهمز'
     note: 'Hamzah (with its tatweel) dropped: الصابين.'
   - text: وَٱلصَّٰبِـِٔينَ
     readers:
@@ -649,7 +683,7 @@
     - idris
     base: true
     from:
-    - '002#16 wafi 204: بهمزة مكسورة بعد الباء'
+    - '002#17 wafi 204: بهمزة مكسورة بعد الباء'
 2:62:20:
   hafs: خَوۡفٌ
   case: k014
@@ -657,7 +691,7 @@
   groups: *id005
 2:67:7:
   hafs: يَأۡمُرُكُمۡ
-  case: k021
+  case: k022
   status: written
   groups:
   - text: يَأۡمُرۡكُمۡ
@@ -667,7 +701,7 @@
     khulf:
     - duri_abuamr
     from:
-    - '002#17 wafi 202: بإسكان الراء'
+    - '002#18 wafi 202: بإسكان الراء'
     note: Sukūn on the rāʾ.
   - text: null
     readers:
@@ -675,7 +709,7 @@
     khulf:
     - duri_abuamr
     from:
-    - '002#17 wafi 203: باختلاس ضمة الراء'
+    - '002#18 wafi 203: باختلاس ضمة الراء'
     note: 'Ikhtilās of the rāʾ''s ḍammah: no spelling for it in the book.'
   - text: يَأۡمُرُكُمۡ
     readers:
@@ -699,12 +733,12 @@
     - idris
     base: true
     from:
-    - '002#17 idah 195: بإتمام حركة الراء'
-    - '002#17 idah 196: بإتمام حركة الراء (من الوفاق)'
-    - '002#17 wafi 202: كحفص (غير مذكورين)'
+    - '002#18 idah 195: بإتمام حركة الراء'
+    - '002#18 idah 196: بإتمام حركة الراء (من الوفاق)'
+    - '002#18 wafi 202: كحفص (غير مذكورين)'
 2:67:13:
   hafs: هُزُوٗاۖ
-  case: k022
+  case: k023
   status: written
   groups:
   - text: هُزُوٗاۖ
@@ -712,8 +746,8 @@
     - hafs
     base: true
     from:
-    - '002#18 wafi 204: بضم الزاي'
-    - '002#18 wafi 205: بإبدال الهمزة واوا'
+    - '002#19 wafi 204: بضم الزاي'
+    - '002#19 wafi 205: بإبدال الهمزة واوا'
     note: حفص يبدل الهمزة واوا
   - text: هُزۡءٗاۖ
     readers:
@@ -722,7 +756,7 @@
     - ishaq
     - idris
     from:
-    - '002#18 wafi 204: بإسكان الزاي'
+    - '002#19 wafi 204: بإسكان الزاي'
     note: إسكان الزاي مع الهمز (الباقون بالهمز)
   - text: هُزُؤٗاۖ
     readers:
@@ -742,12 +776,12 @@
     - ruways
     - rawh
     from:
-    - '002#18 wafi 204: بضم الزاي'
-    - '002#18 wafi 205: بالهمز'
+    - '002#19 wafi 204: بضم الزاي'
+    - '002#19 wafi 205: بالهمز'
     note: بضم الزاي مع الهمز
 2:68:8:
   hafs: هِيَۚ
-  case: k023
+  case: k024
   status: written
   groups:
   - text: هِيَۚ
@@ -774,12 +808,12 @@
     - idris
     base: true
     from:
-    - '002#19 wafi 202: بكسر الهاء'
-    - '002#19 idah 192: تحريك الهاء بالكسر'
-    - '002#19 idah 193: بالكسر (على أصله)'
+    - '002#20 wafi 202: بكسر الهاء'
+    - '002#20 idah 192: تحريك الهاء بالكسر'
+    - '002#20 idah 193: بالكسر (على أصله)'
 2:70:8:
   hafs: هِيَ
-  case: k024
+  case: k025
   status: written
   groups: &id009
   - text: هِيَ
@@ -806,12 +840,12 @@
     - idris
     base: true
     from:
-    - '002#19 wafi 202: بكسر الهاء'
-    - '002#19 idah 192: تحريك الهاء بالكسر'
-    - '002#19 idah 193: بالكسر (على أصله)'
+    - '002#20 wafi 202: بكسر الهاء'
+    - '002#20 idah 192: تحريك الهاء بالكسر'
+    - '002#20 idah 193: بالكسر (على أصله)'
 2:74:7:
   hafs: فَهِيَ
-  case: k025
+  case: k026
   status: written
   groups:
   - text: فَهۡيَ
@@ -824,8 +858,8 @@
     - ibn_wardan
     - ibn_jammaz
     from:
-    - '002#20 wafi 201: بإسكان الهاء إذا قرنت بالواو أو الفاء أو اللام'
-    - '002#20 idah 192: إسكان الهاء بعد الواو والفاء واللام'
+    - '002#21 wafi 201: بإسكان الهاء إذا قرنت بالواو أو الفاء أو اللام'
+    - '002#21 idah 192: إسكان الهاء بعد الواو والفاء واللام'
     note: سكون الهاء بعد الواو/الفاء
   - text: فَهِيَ
     readers:
@@ -844,12 +878,12 @@
     - idris
     base: true
     from:
-    - '002#21 wafi 202: بكسر الهاء'
-    - '002#21 idah 192: تحريك الهاء بالكسر'
-    - '002#21 idah 193: بالكسر (على أصله)'
+    - '002#22 wafi 202: بكسر الهاء'
+    - '002#22 idah 192: تحريك الهاء بالكسر'
+    - '002#22 idah 193: بالكسر (على أصله)'
 2:74:37:
   hafs: تَعۡمَلُونَ
-  case: k026
+  case: k027
   status: written
   groups:
   - text: يَعۡمَلُونَ
@@ -857,7 +891,7 @@
     - bazzi
     - qunbul
     from:
-    - '002#22 wafi 205: بياء الغيب'
+    - '002#23 wafi 205: بياء الغيب'
     note: Yāʾ in place of the tāʾ.
   - text: تَعۡمَلُونَ
     readers:
@@ -881,10 +915,10 @@
     - idris
     base: true
     from:
-    - '002#22 wafi 205: بتاء الخطاب'
+    - '002#23 wafi 205: بتاء الخطاب'
 2:78:7:
   hafs: أَمَانِيَّ
-  case: k027
+  case: k028
   status: written
   groups:
   - text: أَمَانِيَ
@@ -892,7 +926,7 @@
     - ibn_wardan
     - ibn_jammaz
     from:
-    - '002#23 idah 196: بتخفيف الياء'
+    - '002#24 idah 196: بتخفيف الياء'
     note: Shaddah of the yāʾ removed (تخفيف الياء).
   - text: أَمَانِيَّ
     readers:
@@ -916,11 +950,11 @@
     - idris
     base: true
     from:
-    - '002#23 idah 197: بالتشديد (من الموافقة)'
-    - '002#23 idah 196: كحفص (غير مذكورين)'
+    - '002#24 idah 197: بالتشديد (من الموافقة)'
+    - '002#24 idah 196: كحفص (غير مذكورين)'
 2:81:7:
   hafs: خَطِيٓـَٔتُهُۥ
-  case: k028
+  case: k029
   status: written
   groups:
   - text: خَطِيٓـَٰٔتُهُۥ
@@ -930,7 +964,7 @@
     - ibn_wardan
     - ibn_jammaz
     from:
-    - '002#24 wafi 205: بالجمع بزيادة ألف بعد الهمزة'
+    - '002#25 wafi 205: بالجمع بزيادة ألف بعد الهمزة'
     note: 'Plural: alif (dagger alif) after the hamzah.'
   - text: خَطِيٓـَٔتُهُۥ
     readers:
@@ -952,10 +986,10 @@
     - idris
     base: true
     from:
-    - '002#24 wafi 205: بالتوحيد'
+    - '002#25 wafi 205: بالتوحيد'
 2:83:7:
   hafs: تَعۡبُدُونَ
-  case: k029
+  case: k030
   status: written
   groups:
   - text: يَعۡبُدُونَ
@@ -967,7 +1001,7 @@
     - abul_harith
     - duri_kisai
     from:
-    - '002#25 wafi 205: بياء الغيب'
+    - '002#26 wafi 205: بياء الغيب'
     note: Yāʾ in place of the tāʾ.
   - text: تَعۡبُدُونَ
     readers:
@@ -987,12 +1021,12 @@
     - idris
     base: true
     from:
-    - '002#25 wafi 205: بتاء الخطاب'
-    - '002#25 idah 197: بتاء الخطاب'
-    - '002#25 idah 197: بتاء الخطاب (من الموافقة)'
+    - '002#26 wafi 205: بتاء الخطاب'
+    - '002#26 idah 197: بتاء الخطاب'
+    - '002#26 idah 197: بتاء الخطاب (من الموافقة)'
 2:83:18:
   hafs: حُسۡنٗا
-  case: k030
+  case: k031
   status: written
   groups:
   - text: حَسَنٗا
@@ -1006,9 +1040,9 @@
     - ishaq
     - idris
     from:
-    - '002#26 wafi 205: بفتح الحاء والسين'
-    - '002#26 idah 198: بفتح الحاء والسين'
-    - '002#26 idah 198: بفتح الحاء والسين (من الموافقة)'
+    - '002#27 wafi 205: بفتح الحاء والسين'
+    - '002#27 idah 198: بفتح الحاء والسين'
+    - '002#27 idah 198: بفتح الحاء والسين (من الموافقة)'
     note: Ḥāʾ and sīn with fatḥah (حَسَنٗا).
   - text: حُسۡنٗا
     readers:
@@ -1026,11 +1060,11 @@
     - ibn_jammaz
     base: true
     from:
-    - '002#26 wafi 205: بضم الحاء وسكون السين'
-    - '002#26 idah 198: بضم الحاء وسكون السين (من الموافقة)'
+    - '002#27 wafi 205: بضم الحاء وسكون السين'
+    - '002#27 idah 198: بضم الحاء وسكون السين (من الموافقة)'
 2:85:11:
   hafs: تَظَٰهَرُونَ
-  case: k031
+  case: k032
   status: written
   groups:
   - text: تَظَّٰهَرُونَ
@@ -1048,7 +1082,7 @@
     - ruways
     - rawh
     from:
-    - '002#27 wafi 205: بتشديد الظاء'
+    - '002#28 wafi 205: بتشديد الظاء'
     note: Shaddah on the ẓāʾ.
   - text: تَظَٰهَرُونَ
     readers:
@@ -1062,10 +1096,10 @@
     - idris
     base: true
     from:
-    - '002#27 wafi 205: بتخفيف الظاء'
+    - '002#28 wafi 205: بتخفيف الظاء'
 2:85:17:
   hafs: أُسَٰرَىٰ
-  case: k032
+  case: k033
   status: written
   groups:
   - text: أَسۡرَىٰ
@@ -1073,7 +1107,7 @@
     - khalaf_an_hamzah
     - khallad
     from:
-    - '002#28 wafi 206: أسرى بفتح الهمزة وسكون السين'
+    - '002#29 wafi 206: أسرى بفتح الهمزة وسكون السين'
     note: Hamzah fatḥah, sīn sukūn, no alif (أَسۡرَىٰ).
   - text: أُسَٰرَىٰ
     readers:
@@ -1097,12 +1131,12 @@
     - idris
     base: true
     from:
-    - '002#28 wafi 206: أسارى بضم الهمزة وفتح السين وألف بعدها'
-    - '002#28 idah 196: بضم الهمزة وفتح السين وألف بعدها'
-    - '002#28 idah 196: بضم الهمزة وفتح السين وألف بعدها (من الموافقة)'
+    - '002#29 wafi 206: أسارى بضم الهمزة وفتح السين وألف بعدها'
+    - '002#29 idah 196: بضم الهمزة وفتح السين وألف بعدها'
+    - '002#29 idah 196: بضم الهمزة وفتح السين وألف بعدها (من الموافقة)'
 2:85:18:
   hafs: تُفَٰدُوهُمۡ
-  case: k033
+  case: k034
   status: written
   groups:
   - text: تَفۡدُوهُمۡ
@@ -1118,8 +1152,8 @@
     - ishaq
     - idris
     from:
-    - '002#29 wafi 206: بفتح التاء وسكون الفاء'
-    - '002#29 idah 198: بفتح التاء وسكون الفاء وحذف الألف (من الموافقة)'
+    - '002#30 wafi 206: بفتح التاء وسكون الفاء'
+    - '002#30 idah 198: بفتح التاء وسكون الفاء وحذف الألف (من الموافقة)'
     note: Tāʾ fatḥah, fāʾ sukūn, no alif (تَفۡدُوهُمۡ).
   - text: تُفَٰدُوهُمۡ
     readers:
@@ -1135,9 +1169,9 @@
     - rawh
     base: true
     from:
-    - '002#29 wafi 206: بضم التاء وفتح الفاء وألف بعدها'
-    - '002#29 idah 198: بضم التاء وفتح الفاء وألف بعدها'
-    - '002#29 idah 198: بضم التاء وفتح الفاء وألف بعدها (من الموافقة)'
+    - '002#30 wafi 206: بضم التاء وفتح الفاء وألف بعدها'
+    - '002#30 idah 198: بضم التاء وفتح الفاء وألف بعدها'
+    - '002#30 idah 198: بضم التاء وفتح الفاء وألف بعدها (من الموافقة)'
 2:85:19:
   hafs: وَهُوَ
   case: k009
@@ -1145,7 +1179,7 @@
   groups: *id006
 2:85:49:
   hafs: تَعۡمَلُونَ
-  case: k034
+  case: k035
   status: written
   groups:
   - text: يَعۡمَلُونَ
@@ -1160,8 +1194,8 @@
     - ishaq
     - idris
     from:
-    - '002#30 wafi 205: بياء الغيبة'
-    - '002#30 idah 198: بياء الغيب'
+    - '002#31 wafi 205: بياء الغيبة'
+    - '002#31 idah 198: بياء الغيب'
     note: Yāʾ in place of the tāʾ.
   - text: تَعۡمَلُونَ
     readers:
@@ -1178,11 +1212,11 @@
     - ibn_jammaz
     base: true
     from:
-    - '002#30 wafi 205: بتاء الخطاب'
-    - '002#30 idah 197: بتاء الخطاب'
+    - '002#31 wafi 205: بتاء الخطاب'
+    - '002#31 idah 197: بتاء الخطاب'
 2:87:16:
   hafs: ٱلۡقُدُسِۗ
-  case: k035
+  case: k036
   status: written
   groups: &id019
   - text: ٱلۡقُدۡسِۗ
@@ -1190,7 +1224,7 @@
     - bazzi
     - qunbul
     from:
-    - '002#31 wafi 206: بإسكان الدال'
+    - '002#32 wafi 206: بإسكان الدال'
     note: Sukūn on the dāl.
   - text: ٱلۡقُدُسِۗ
     readers:
@@ -1214,10 +1248,10 @@
     - idris
     base: true
     from:
-    - '002#31 wafi 206: بضم الدال'
+    - '002#32 wafi 206: بضم الدال'
 2:90:12:
   hafs: يُنَزِّلَ
-  case: k036
+  case: k037
   status: written
   groups:
   - text: يُنۡزِلَ
@@ -1229,7 +1263,7 @@
     - ruways
     - rawh
     from:
-    - '002#32 wafi 206: بتخفيف الزاي وسكون النون'
+    - '002#33 wafi 206: بتخفيف الزاي وسكون النون'
     note: Nūn sukūn, zāy without shaddah.
   - text: يُنَزِّلَ
     readers:
@@ -1249,7 +1283,7 @@
     - idris
     base: true
     from:
-    - '002#32 wafi 206: بتشديد الزاي وفتح النون'
+    - '002#33 wafi 206: بتشديد الزاي وفتح النون'
 2:91:2:
   hafs: قِيلَ
   case: k006
@@ -1257,7 +1291,7 @@
   groups: *id001
 2:91:16:
   hafs: وَهُوَ
-  case: k037
+  case: k038
   status: written
   groups: &id007
   - text: وَهۡوَ
@@ -1295,7 +1329,7 @@
     - '002#6 idah 193: بالضم (على أصله)'
 2:91:24:
   hafs: أَنۢبِيَآءَ
-  case: k038
+  case: k039
   status: written
   groups:
   - text: أَنۢبِيَآءَ
@@ -1312,24 +1346,25 @@
     - khallad
     - abul_harith
     - duri_kisai
-    - ibn_wardan
-    - ibn_jammaz
     - ruways
     - rawh
     - ishaq
     - idris
     base: true
     from:
-    - '002#15 wafi 204: بإبدال الهمزة ياء مع الإدغام'
+    - '002#34 wafi 204: بإبدال الهمزة ياء مع الإدغام'
   - text: أَنۢبِئَآءَ
     readers:
     - qalun
     - warsh
+    - ibn_wardan
+    - ibn_jammaz
     from:
-    - '002#15 wafi 204: بالهمز'
+    - '002#34 wafi 204: بالهمز'
+    note: Hamzah restored for the yā' (hamzah on a yā' seat), fatḥah kept.
 2:93:22:
   hafs: يَأۡمُرُكُم
-  case: k039
+  case: k040
   status: written
   groups: &id008
   - text: يَأۡمُرۡكُم
@@ -1339,7 +1374,7 @@
     khulf:
     - duri_abuamr
     from:
-    - '002#17 wafi 202: بإسكان الراء'
+    - '002#18 wafi 202: بإسكان الراء'
     note: Sukūn on the rāʾ.
   - text: null
     readers:
@@ -1347,7 +1382,7 @@
     khulf:
     - duri_abuamr
     from:
-    - '002#17 wafi 203: باختلاس ضمة الراء'
+    - '002#18 wafi 203: باختلاس ضمة الراء'
     note: 'Ikhtilās of the rāʾ''s ḍammah: no spelling for it in the book.'
   - text: يَأۡمُرُكُم
     readers:
@@ -1371,17 +1406,17 @@
     - idris
     base: true
     from:
-    - '002#17 idah 195: بإتمام حركة الراء'
-    - '002#17 idah 196: بإتمام حركة الراء (من الوفاق)'
-    - '002#17 wafi 202: كحفص (غير مذكورين)'
+    - '002#18 idah 195: بإتمام حركة الراء'
+    - '002#18 idah 196: بإتمام حركة الراء (من الوفاق)'
+    - '002#18 wafi 202: كحفص (غير مذكورين)'
 2:96:16:
   hafs: هُوَ
-  case: k018
+  case: k019
   status: written
   groups: *id004
 2:96:25:
   hafs: يَعۡمَلُونَ
-  case: k040
+  case: k041
   status: written
   groups:
   - text: يَعۡمَلُونَ
@@ -1406,18 +1441,18 @@
     - idris
     base: true
     from:
-    - '002#33 idah 197: بالغيب (من الموافقة)'
-    - '002#33 idah 197: كحفص (غير مذكورين)'
+    - '002#35 idah 197: بالغيب (من الموافقة)'
+    - '002#35 idah 197: كحفص (غير مذكورين)'
     note: ابن وردان وابن جماز وإسحاق وإدريس بالغيب من الموافقة
   - text: تَعۡمَلُونَ
     readers:
     - ruways
     - rawh
     from:
-    - '002#33 idah 197: بتاء الخطاب'
+    - '002#35 idah 197: بتاء الخطاب'
 2:97:5:
   hafs: لِّجِبۡرِيلَ
-  case: k041
+  case: k042
   status: written
   groups:
   - text: لِّجَبۡرَئِيلَ
@@ -1429,20 +1464,20 @@
     - ishaq
     - idris
     from:
-    - '002#34 wafi 207: بفتح الجيم والراء وهمزة مكسورة بعد الراء مع إثبات الياء'
+    - '002#36 wafi 207: بفتح الجيم والراء وهمزة مكسورة بعد الراء مع إثبات الياء'
     note: جَبۡرَئِيلَ
   - text: لِّجَبۡرَئِلَ
     readers:
     - shuba
     from:
-    - '002#34 wafi 207: بفتح الجيم والراء وهمزة مكسورة بعد الراء مع حذف الياء'
+    - '002#36 wafi 207: بفتح الجيم والراء وهمزة مكسورة بعد الراء مع حذف الياء'
     note: جَبۡرَئِلَ (yāʾ after the hamzah dropped)
   - text: لِّجَبۡرِيلَ
     readers:
     - bazzi
     - qunbul
     from:
-    - '002#34 wafi 207: بفتح الجيم'
+    - '002#36 wafi 207: بفتح الجيم'
     note: Only the jīm changes to fatḥah.
   - text: لِّجِبۡرِيلَ
     readers:
@@ -1459,10 +1494,10 @@
     - rawh
     base: true
     from:
-    - '002#34 wafi 207: بكسر الجيم'
+    - '002#36 wafi 207: بكسر الجيم'
 2:98:7:
   hafs: وَجِبۡرِيلَ
-  case: k042
+  case: k043
   status: written
   groups:
   - text: وَجَبۡرَئِيلَ
@@ -1474,20 +1509,20 @@
     - ishaq
     - idris
     from:
-    - '002#34 wafi 207: بفتح الجيم والراء وهمزة مكسورة بعد الراء مع إثبات الياء'
+    - '002#36 wafi 207: بفتح الجيم والراء وهمزة مكسورة بعد الراء مع إثبات الياء'
     note: جَبۡرَئِيلَ
   - text: وَجَبۡرَئِلَ
     readers:
     - shuba
     from:
-    - '002#34 wafi 207: بفتح الجيم والراء وهمزة مكسورة بعد الراء مع حذف الياء'
+    - '002#36 wafi 207: بفتح الجيم والراء وهمزة مكسورة بعد الراء مع حذف الياء'
     note: جَبۡرَئِلَ (yāʾ after the hamzah dropped)
   - text: وَجَبۡرِيلَ
     readers:
     - bazzi
     - qunbul
     from:
-    - '002#34 wafi 207: بفتح الجيم'
+    - '002#36 wafi 207: بفتح الجيم'
     note: Only the jīm changes to fatḥah.
   - text: وَجِبۡرِيلَ
     readers:
@@ -1504,10 +1539,10 @@
     - rawh
     base: true
     from:
-    - '002#34 wafi 207: بكسر الجيم'
+    - '002#36 wafi 207: بكسر الجيم'
 2:102:11:
   hafs: وَلَٰكِنَّ
-  case: k043
+  case: k044
   status: written
   groups:
   - text: وَلَٰكِنِ
@@ -1521,7 +1556,7 @@
     - ishaq
     - idris
     from:
-    - '002#35 wafi 207: بتخفيف النون'
+    - '002#37 wafi 207: بتخفيف النون'
     note: noon sakin read with kasrah in wasl before alif wasla
   - text: وَلَٰكِنَّ
     readers:
@@ -1539,10 +1574,10 @@
     - rawh
     base: true
     from:
-    - '002#35 wafi 207: بتشديد النون مع فتحها'
+    - '002#37 wafi 207: بتشديد النون مع فتحها'
 2:102:12:
   hafs: ٱلشَّيَٰطِينَ
-  case: k044
+  case: k045
   status: written
   groups:
   - text: ٱلشَّيَٰطِينُ
@@ -1556,7 +1591,7 @@
     - ishaq
     - idris
     from:
-    - '002#36 wafi 207: برفع النون'
+    - '002#38 wafi 207: برفع النون'
     note: Final nūn ḍammah (rafʿ).
   - text: ٱلشَّيَٰطِينَ
     readers:
@@ -1574,10 +1609,10 @@
     - rawh
     base: true
     from:
-    - '002#36 wafi 207: بنصب النون'
+    - '002#38 wafi 207: بنصب النون'
 2:105:11:
   hafs: يُنَزَّلَ
-  case: k045
+  case: k046
   status: written
   groups:
   - text: يُنۡزَلَ
@@ -1589,7 +1624,7 @@
     - ruways
     - rawh
     from:
-    - '002#32 wafi 206: بتخفيف الزاي وسكون النون'
+    - '002#33 wafi 206: بتخفيف الزاي وسكون النون'
     note: Nūn sukūn, zāy without shaddah.
   - text: يُنَزَّلَ
     readers:
@@ -1609,10 +1644,10 @@
     - idris
     base: true
     from:
-    - '002#32 wafi 206: بتشديد الزاي وفتح النون'
+    - '002#33 wafi 206: بتشديد الزاي وفتح النون'
 2:106:2:
   hafs: نَنسَخۡ
-  case: k046
+  case: k047
   status: written
   groups:
   - text: نُنسِخۡ
@@ -1620,7 +1655,7 @@
     - hisham
     - ibn_dhakwan
     from:
-    - '002#37 wafi 208: بضم النون الأولى وكسر السين'
+    - '002#39 wafi 208: بضم النون الأولى وكسر السين'
     note: First nūn ḍammah, sīn kasrah (نُنسِخۡ).
   - text: نَنسَخۡ
     readers:
@@ -1644,10 +1679,10 @@
     - idris
     base: true
     from:
-    - '002#37 wafi 208: بفتح النون والسين'
+    - '002#39 wafi 208: بفتح النون والسين'
 2:106:6:
   hafs: نُنسِهَا
-  case: k047
+  case: k048
   status: written
   groups:
   - text: نَنسَأۡهَا
@@ -1657,7 +1692,7 @@
     - duri_abuamr
     - susi
     from:
-    - '002#38 wafi 208: بفتح النون والسين وزيادة همز ساكن بعدها'
+    - '002#40 wafi 208: بفتح النون والسين وزيادة همز ساكن بعدها'
     note: 'نَنسَأۡهَا: nūn and sīn fatḥah, sākin hamzah on an alif seat after the sīn.'
   - text: نُنسِهَا
     readers:
@@ -1679,12 +1714,12 @@
     - idris
     base: true
     from:
-    - '002#38 wafi 208: بضم النون الأولى وكسر السين من غير همز'
-    - '002#38 idah 198: بضم النون الأولى وكسر السين وترك الهمز'
-    - '002#38 idah 198: بضم النون الأولى وكسر السين وترك الهمز (من الموافقة)'
+    - '002#40 wafi 208: بضم النون الأولى وكسر السين من غير همز'
+    - '002#40 idah 198: بضم النون الأولى وكسر السين وترك الهمز'
+    - '002#40 idah 198: بضم النون الأولى وكسر السين وترك الهمز (من الموافقة)'
 2:111:12:
   hafs: أَمَانِيُّهُمۡۗ
-  case: k048
+  case: k049
   status: written
   groups:
   - text: أَمَانِيُّهُمۡۗ
@@ -1709,14 +1744,14 @@
     - idris
     base: true
     from:
-    - '002#23 idah 197: بالتشديد (من الموافقة)'
-    - '002#23 idah 196: كحفص (غير مذكورين)'
+    - '002#24 idah 197: بالتشديد (من الموافقة)'
+    - '002#24 idah 196: كحفص (غير مذكورين)'
   - text: أَمَانِيهِمۡۗ
     readers:
     - ibn_wardan
     - ibn_jammaz
     from:
-    - '002#23 idah 196: بتخفيف الياء'
+    - '002#24 idah 196: بتخفيف الياء'
     note: 'Takhfīf of the yāʾ: idah 197 says the yāʾ is made sākin and the hāʾ after it takes a kasrah in تلك أمانيهم (after a sākin yāʾ).'
 2:112:6:
   hafs: وَهُوَ
@@ -1730,7 +1765,7 @@
   groups: *id005
 2:116:1:
   hafs: وَقَالُواْ
-  case: k049
+  case: k050
   status: written
   groups:
   - text: قَالُواْ
@@ -1738,7 +1773,7 @@
     - hisham
     - ibn_dhakwan
     from:
-    - '002#39 wafi 208: بحذف الواو'
+    - '002#41 wafi 208: بحذف الواو'
     note: Initial wāw dropped (قَالُواْ).
   - text: وَقَالُواْ
     readers:
@@ -1762,10 +1797,10 @@
     - idris
     base: true
     from:
-    - '002#39 wafi 208: كحفص (غير مذكورين)'
+    - '002#41 wafi 208: كحفص (غير مذكورين)'
 2:117:11:
   hafs: فَيَكُونُ
-  case: k050
+  case: k051
   status: written
   groups:
   - text: فَيَكُونَ
@@ -1773,7 +1808,7 @@
     - hisham
     - ibn_dhakwan
     from:
-    - '002#40 wafi 208: بنصب النون'
+    - '002#42 wafi 208: بنصب النون'
     note: Nūn with fatḥah.
   - text: فَيَكُونُ
     readers:
@@ -1797,10 +1832,10 @@
     - idris
     base: true
     from:
-    - '002#40 wafi 208: كحفص (غير مذكورين)'
+    - '002#42 wafi 208: كحفص (غير مذكورين)'
 2:119:2:
   hafs: أَرۡسَلۡنَٰكَ
-  case: k051
+  case: k052
   status: written
   groups:
   - text: أَرۡسَلۡنَٰكَ
@@ -1827,12 +1862,12 @@
     - idris
     base: true
     from:
-    - '002#41 idah 212: بضم السين'
-    - '002#41 idah 212: كحفص (غير مذكورين)'
+    - '002#43 idah 212: بضم السين'
+    - '002#43 idah 212: كحفص (غير مذكورين)'
     note: The ḍamm of the sīn is for رُسُل when joined to نون العظمة; this word is أَرۡسَلۡنَٰكَ, so everyone reads the Ḥafṣ word.
 2:119:7:
   hafs: تُسۡـَٔلُ
-  case: k052
+  case: k053
   status: written
   groups:
   - text: تَسۡـَٔلۡ
@@ -1842,8 +1877,8 @@
     - ruways
     - rawh
     from:
-    - '002#42 wafi 209: بفتح التاء وسكون اللام'
-    - '002#42 idah 199: بفتح التاء وجزم اللام'
+    - '002#44 wafi 209: بفتح التاء وسكون اللام'
+    - '002#44 idah 199: بفتح التاء وجزم اللام'
     note: Tāʾ fatḥah, lām sukūn (jazm).
   - text: تُسۡـَٔلُ
     readers:
@@ -1865,9 +1900,9 @@
     - idris
     base: true
     from:
-    - '002#42 wafi 209: بضم التاء ورفع اللام'
-    - '002#42 idah 199: بضم التاء ورفع اللام'
-    - '002#42 idah 199: بضم التاء ورفع اللام (من الموافقة)'
+    - '002#44 wafi 209: بضم التاء ورفع اللام'
+    - '002#44 idah 199: بضم التاء ورفع اللام'
+    - '002#44 idah 199: بضم التاء ورفع اللام (من الموافقة)'
 2:120:14:
   hafs: هُوَ
   case: k008
@@ -1875,7 +1910,7 @@
   groups: *id002
 2:125:7:
   hafs: وَٱتَّخِذُواْ
-  case: k053
+  case: k054
   status: written
   groups:
   - text: وَٱتَّخَذُواْ
@@ -1885,7 +1920,7 @@
     - hisham
     - ibn_dhakwan
     from:
-    - '002#43 wafi 211: بفتح الخاء'
+    - '002#45 wafi 211: بفتح الخاء'
     note: Khāʾ fatḥah.
   - text: وَٱتَّخِذُواْ
     readers:
@@ -1907,12 +1942,47 @@
     - idris
     base: true
     from:
-    - '002#43 wafi 211: بكسر الخاء'
-    - '002#43 idah 199: بكسر الخاء'
-    - '002#43 idah 199: بكسر الخاء (من الموافقة)'
+    - '002#45 wafi 211: بكسر الخاء'
+    - '002#45 idah 199: بكسر الخاء'
+    - '002#45 idah 199: بكسر الخاء (من الموافقة)'
+2:126:22:
+  hafs: فَأُمَتِّعُهُۥ
+  case: k055
+  status: written
+  groups:
+  - text: فَأُمَتِّعُهُۥ
+    readers:
+    - qalun
+    - warsh
+    - bazzi
+    - qunbul
+    - duri_abuamr
+    - susi
+    - shuba
+    - hafs
+    - khalaf_an_hamzah
+    - khallad
+    - abul_harith
+    - duri_kisai
+    - ibn_wardan
+    - ibn_jammaz
+    - ruways
+    - rawh
+    - ishaq
+    - idris
+    base: true
+    from:
+    - '002#46 wafi 211: بفتح الميم وتشديد التاء'
+  - text: فَأُمۡتِعُهُۥ
+    readers:
+    - hisham
+    - ibn_dhakwan
+    from:
+    - '002#46 wafi 211: بتخفيف التاء وسكون الميم'
+    note: Tā' without shaddah, mīm sākin.
 2:128:10:
   hafs: وَأَرِنَا
-  case: k054
+  case: k056
   status: written
   groups:
   - text: وَأَرۡنَا
@@ -1923,14 +1993,14 @@
     - ruways
     - rawh
     from:
-    - '002#44 wafi 211: بسكون الراء'
-    - '002#44 idah 199: بإسكان الراء'
+    - '002#47 wafi 211: بسكون الراء'
+    - '002#47 idah 199: بإسكان الراء'
     note: Sukūn on the rāʾ.
   - text: null
     readers:
     - duri_abuamr
     from:
-    - '002#44 wafi 211: باختلاس كسرة الراء'
+    - '002#47 wafi 211: باختلاس كسرة الراء'
     note: 'Ikhtilās of the rāʾ''s kasrah: no spelling for it in the book.'
   - text: وَأَرِنَا
     readers:
@@ -1950,11 +2020,11 @@
     - idris
     base: true
     from:
-    - '002#44 wafi 211: بإشباع كسر الراء'
-    - '002#44 idah 200: بإتمام الكسرة'
+    - '002#47 wafi 211: بإشباع كسر الراء'
+    - '002#47 idah 200: بإتمام الكسرة'
 2:132:1:
   hafs: وَوَصَّىٰ
-  case: k055
+  case: k057
   status: written
   groups:
   - text: وَأَوۡصَىٰ
@@ -1966,7 +2036,7 @@
     - ibn_wardan
     - ibn_jammaz
     from:
-    - '002#45 wafi 211: بألف بين الواوين وسكون الواو الثانية وتخفيف الصاد'
+    - '002#48 wafi 211: بألف بين الواوين وسكون الواو الثانية وتخفيف الصاد'
     note: Alif between the two wāws (وَأَوۡصَىٰ), second wāw sukūn, ṣād without shaddah.
   - text: وَوَصَّىٰ
     readers:
@@ -1986,10 +2056,10 @@
     - idris
     base: true
     from:
-    - '002#45 wafi 211: بحذف الألف وفتح الواو الثانية وتشديد الصاد'
+    - '002#48 wafi 211: بحذف الألف وفتح الواو الثانية وتشديد الصاد'
 2:137:17:
   hafs: وَهُوَ
-  case: k037
+  case: k038
   status: written
   groups: *id007
 2:139:5:
@@ -1999,7 +2069,7 @@
   groups: *id006
 2:140:2:
   hafs: تَقُولُونَ
-  case: k056
+  case: k058
   status: written
   groups:
   - text: تَقُولُونَ
@@ -2016,9 +2086,9 @@
     - idris
     base: true
     from:
-    - '002#46 wafi 211: بتاء الخطاب'
-    - '002#46 idah 200: بتاء الخطاب'
-    - '002#46 idah 200: بالتاء'
+    - '002#49 wafi 211: بتاء الخطاب'
+    - '002#49 idah 200: بتاء الخطاب'
+    - '002#49 idah 200: بالتاء'
   - text: يَقُولُونَ
     readers:
     - qalun
@@ -2032,11 +2102,11 @@
     - ibn_jammaz
     - rawh
     from:
-    - '002#46 wafi 211: بياء الغيبة'
-    - '002#46 idah 200: بالياء'
+    - '002#49 wafi 211: بياء الغيبة'
+    - '002#49 idah 200: بالياء'
 2:142:20:
   hafs: صِرَٰطٖ
-  case: k057
+  case: k059
   status: written
   groups: &id015
   - text: سِرَٰطٖ
@@ -2044,14 +2114,14 @@
     - qunbul
     - ruways
     from:
-    - '002#47 wafi 50: بالسين'
-    - '002#47 idah 53: بالسين كقنبل'
+    - '002#50 wafi 50: بالسين'
+    - '002#50 idah 53: بالسين كقنبل'
     note: Sīn for ṣād (سِرَٰطٖ); Ruways like Qunbul.
   - text: null
     readers:
     - khalaf_an_hamzah
     from:
-    - '002#47 wafi 50: بإشمام الصاد صوت الزاي'
+    - '002#50 wafi 50: بإشمام الصاد صوت الزاي'
     note: 'Ishmām of the ṣād with the sound of zāy: a pronounced blend, the book gives no written form, so no text.'
   - text: صِرَٰطٖ
     readers:
@@ -2074,11 +2144,11 @@
     - idris
     base: true
     from:
-    - '002#47 wafi 51: بالصاد الخالصة'
-    - '002#47 idah 53: بالصاد الخالصة'
+    - '002#50 wafi 51: بالصاد الخالصة'
+    - '002#50 idah 53: بالصاد الخالصة'
 2:143:44:
   hafs: لَرَءُوفٞ
-  case: k058
+  case: k060
   status: written
   groups:
   - text: لَرَءُفٞ
@@ -2095,7 +2165,7 @@
     - ishaq
     - idris
     from:
-    - '002#48 wafi 211: بالقصر أي حذف حرف المد بعد الهمزة'
+    - '002#51 wafi 211: بالقصر أي حذف حرف المد بعد الهمزة'
     note: 'Qaṣr: the book says the madd letter after the hamzah is dropped (لَرَءُفٞ).'
   - text: لَرَءُوفٞ
     readers:
@@ -2110,10 +2180,10 @@
     - ibn_jammaz
     base: true
     from:
-    - '002#48 wafi 211: بالمد أي إثبات حرف المد بعد الهمزة'
+    - '002#51 wafi 211: بالمد أي إثبات حرف المد بعد الهمزة'
 2:144:34:
   hafs: يَعۡمَلُونَ
-  case: k059
+  case: k061
   status: written
   groups:
   - text: يَعۡمَلُونَ
@@ -2131,9 +2201,9 @@
     - idris
     base: true
     from:
-    - '002#49 wafi 211: بياء الغيبة'
-    - '002#49 idah 201: بالغيب'
-    - '002#49 idah 201: بياء الغيب (على الأصل)'
+    - '002#52 wafi 211: بياء الغيبة'
+    - '002#52 idah 201: بالغيب'
+    - '002#52 idah 201: بياء الغيب (على الأصل)'
     note: رويس بالغيب على الأصل؛ إسحاق وإدريس بالغيب
   - text: تَعۡمَلُونَ
     readers:
@@ -2147,16 +2217,16 @@
     - ibn_jammaz
     - rawh
     from:
-    - '002#49 wafi 211: بتاء الخطاب'
-    - '002#49 idah 200: بتاء الخطاب'
+    - '002#52 wafi 211: بتاء الخطاب'
+    - '002#52 idah 200: بتاء الخطاب'
 2:148:3:
   hafs: هُوَ
-  case: k018
+  case: k019
   status: written
   groups: *id004
 2:148:4:
   hafs: مُوَلِّيهَاۖ
-  case: k060
+  case: k062
   status: written
   groups:
   - text: مُوَلَّاهَاۖ
@@ -2164,7 +2234,7 @@
     - hisham
     - ibn_dhakwan
     from:
-    - '002#50 wafi 212: بفتح اللام (مولاها)'
+    - '002#53 wafi 212: بفتح اللام (مولاها)'
     note: Fatḥah on the lām, the yāʾ read as alif (مولاها); the book gives the form مولاها, the exact written orthography (ىٰ) is not stated.
   - text: مُوَلِّيهَاۖ
     readers:
@@ -2188,10 +2258,10 @@
     - idris
     base: true
     from:
-    - '002#50 wafi 212: بكسر اللام وياء ساكنة مدية بعدها'
+    - '002#53 wafi 212: بكسر اللام وياء ساكنة مدية بعدها'
 2:149:17:
   hafs: تَعۡمَلُونَ
-  case: k061
+  case: k063
   status: written
   groups:
   - text: يَعۡمَلُونَ
@@ -2199,7 +2269,7 @@
     - duri_abuamr
     - susi
     from:
-    - '002#51 wafi 212: بياء الغيب'
+    - '002#54 wafi 212: بياء الغيب'
     note: Yāʾ al-ghayb (يَعۡمَلُونَ).
   - text: تَعۡمَلُونَ
     readers:
@@ -2223,12 +2293,12 @@
     - idris
     base: true
     from:
-    - '002#51 wafi 212: بتاء الخطاب'
-    - '002#51 idah 200: بتاء الخطاب'
+    - '002#54 wafi 212: بتاء الخطاب'
+    - '002#54 idah 200: بتاء الخطاب'
     note: 'Ruways/Rawh: the quote concerns another verse but the reading stated is tāʾ al-khiṭāb, the Ḥafṣ word.'
 2:151:2:
   hafs: أَرۡسَلۡنَا
-  case: k062
+  case: k064
   status: written
   groups:
   - text: أَرۡسَلۡنَا
@@ -2255,13 +2325,13 @@
     - idris
     base: true
     from:
-    - '002#41 idah 212: بضم السين'
-    - '002#41 idah 212: كحفص (غير مذكورين)'
+    - '002#43 idah 212: بضم السين'
+    - '002#43 idah 212: كحفص (غير مذكورين)'
     note: 'Option 1 (ḍamm of sīn) is for the noun رُسُل added to nūn al-ʿaẓamah; here the word is the verb أَرۡسَلۡنَا with sākin sīn, so the
       condition does not hold: Ḥafṣ word.'
 2:158:19:
   hafs: تَطَوَّعَ
-  case: k063
+  case: k065
   status: written
   groups:
   - text: يَطَّوَّعۡ
@@ -2275,9 +2345,9 @@
     - ishaq
     - idris
     from:
-    - '002#52 wafi 212: بالياء المفتوحة وتشديد الطاء وسكون العين'
-    - '002#53 idah 202: بياء الغيب وتشديد الطاء وجزم العين'
-    - '002#53 idah 202: بياء الغيب وتشديد الطاء وجزم العين (من الوفاق)'
+    - '002#55 wafi 212: بالياء المفتوحة وتشديد الطاء وسكون العين'
+    - '002#56 idah 202: بياء الغيب وتشديد الطاء وجزم العين'
+    - '002#56 idah 202: بياء الغيب وتشديد الطاء وجزم العين (من الوفاق)'
     note: Yāʾ, shaddah on ṭāʾ, sukūn on ʿayn.
   - text: تَطَوَّعَ
     readers:
@@ -2295,9 +2365,9 @@
     - ibn_jammaz
     base: true
     from:
-    - '002#52 wafi 212: كحفص (غير مذكورين)'
-    - '002#53 idah 203: بالفعل الماضي'
-    - '002#53 idah 202: كحفص (غير مذكورين)'
+    - '002#55 wafi 212: كحفص (غير مذكورين)'
+    - '002#56 idah 203: بالفعل الماضي'
+    - '002#56 idah 202: كحفص (غير مذكورين)'
     note: 'Abū Jaʿfar: past tense, as the Ḥafṣ word.'
 2:163:7:
   hafs: هُوَ
@@ -2306,7 +2376,7 @@
   groups: *id002
 2:164:35:
   hafs: ٱلرِّيَٰحِ
-  case: k064
+  case: k066
   status: written
   groups:
   - text: ٱلرِّيۡحِ
@@ -2318,7 +2388,7 @@
     - ishaq
     - idris
     from:
-    - '002#54 wafi 212: بتوحيد اللفظ (الريح) بحذف الألف'
+    - '002#57 wafi 212: بتوحيد اللفظ (الريح) بحذف الألف'
     note: 'Singular: alif dropped, yāʾ sākin (ٱلرِّيۡحِ).'
   - text: ٱلرِّيَٰحِ
     readers:
@@ -2338,10 +2408,10 @@
     - rawh
     base: true
     from:
-    - '002#54 wafi 212: كحفص (غير مذكورين)'
+    - '002#57 wafi 212: كحفص (غير مذكورين)'
 2:165:18:
   hafs: يَرَى
-  case: k065
+  case: k067
   status: written
   groups:
   - text: تَرَى
@@ -2353,8 +2423,8 @@
     - ruways
     - rawh
     from:
-    - '002#55 wafi 213: بتاء الخطاب'
-    - '002#55 idah 201: بتاء الخطاب'
+    - '002#58 wafi 213: بتاء الخطاب'
+    - '002#58 idah 201: بتاء الخطاب'
     note: Tāʾ al-khiṭāb (تَرَى).
   - text: يَرَى
     readers:
@@ -2374,12 +2444,12 @@
     - idris
     base: true
     from:
-    - '002#55 wafi 213: بياء الغيب'
-    - '002#55 idah 201: بياء الغيب'
-    - '002#55 idah 201: بياء الغيب (من الموافقة)'
+    - '002#58 wafi 213: بياء الغيب'
+    - '002#58 idah 201: بياء الغيب'
+    - '002#58 idah 201: بياء الغيب (من الموافقة)'
 2:165:22:
   hafs: يَرَوۡنَ
-  case: k066
+  case: k068
   status: written
   groups:
   - text: يُرَوۡنَ
@@ -2387,7 +2457,7 @@
     - hisham
     - ibn_dhakwan
     from:
-    - '002#56 wafi 213: بضم الياء'
+    - '002#59 wafi 213: بضم الياء'
     note: Ḍamm of the yāʾ (يُرَوۡنَ).
   - text: يَرَوۡنَ
     readers:
@@ -2411,10 +2481,10 @@
     - idris
     base: true
     from:
-    - '002#56 wafi 213: بفتح الياء'
+    - '002#59 wafi 213: بفتح الياء'
 2:165:24:
   hafs: أَنَّ
-  case: k067
+  case: k069
   status: written
   groups:
   - text: إِنَّ
@@ -2424,7 +2494,7 @@
     - ruways
     - rawh
     from:
-    - '002#57 idah 201: بكسر الهمزة'
+    - '002#60 idah 201: بكسر الهمزة'
     note: Kasr of the hamzah (إِنَّ).
   - text: أَنَّ
     readers:
@@ -2446,11 +2516,11 @@
     - idris
     base: true
     from:
-    - '002#57 idah 201: بالفتح (على أصله)'
-    - '002#57 idah 201: كحفص (غير مذكورين)'
+    - '002#60 idah 201: بالفتح (على أصله)'
+    - '002#60 idah 201: كحفص (غير مذكورين)'
 2:165:28:
   hafs: وَأَنَّ
-  case: k068
+  case: k070
   status: written
   groups:
   - text: وَإِنَّ
@@ -2460,7 +2530,7 @@
     - ruways
     - rawh
     from:
-    - '002#58 idah 201: بكسر الهمزة'
+    - '002#61 idah 201: بكسر الهمزة'
     note: Kasr of the hamzah (وَإِنَّ).
   - text: وَأَنَّ
     readers:
@@ -2482,11 +2552,11 @@
     - idris
     base: true
     from:
-    - '002#58 idah 201: بالفتح (على أصله)'
-    - '002#58 idah 201: كحفص (غير مذكورين)'
+    - '002#61 idah 201: بالفتح (على أصله)'
+    - '002#61 idah 201: كحفص (غير مذكورين)'
 2:168:11:
   hafs: خُطُوَٰتِ
-  case: k069
+  case: k071
   status: written
   groups: &id013
   - text: خُطُوَٰتِ
@@ -2503,8 +2573,8 @@
     - rawh
     base: true
     from:
-    - '002#59 wafi 213: بضم الطاء'
-    - '002#59 idah 210: بضم الطاء'
+    - '002#62 wafi 213: بضم الطاء'
+    - '002#62 idah 210: بضم الطاء'
   - text: خُطۡوَٰتِ
     readers:
     - qalun
@@ -2518,11 +2588,11 @@
     - ishaq
     - idris
     from:
-    - '002#59 wafi 213: بإسكان الطاء'
-    - '002#59 idah 210: بالإسكان'
+    - '002#62 wafi 213: بإسكان الطاء'
+    - '002#62 idah 210: بالإسكان'
 2:169:2:
   hafs: يَأۡمُرُكُم
-  case: k039
+  case: k040
   status: written
   groups: *id008
 2:170:2:
@@ -2532,7 +2602,7 @@
   groups: *id001
 2:173:4:
   hafs: ٱلۡمَيۡتَةَ
-  case: k070
+  case: k072
   status: written
   groups:
   - text: ٱلۡمَيِّتَةَ
@@ -2540,8 +2610,8 @@
     - ibn_wardan
     - ibn_jammaz
     from:
-    - '002#60 idah 203: بتشديد الياء وكسرها'
-    - '002#60 idah 205: بتشديد الياء'
+    - '002#63 idah 203: بتشديد الياء وكسرها'
+    - '002#63 idah 205: بتشديد الياء'
     note: Tashdīd and kasr of the yāʾ (ٱلۡمَيِّتَةَ).
   - text: ٱلۡمَيۡتَةَ
     readers:
@@ -2565,12 +2635,12 @@
     - idris
     base: true
     from:
-    - '002#60 idah 205: بالتخفيف'
-    - '002#60 idah 203: كحفص (غير مذكورين)'
+    - '002#63 idah 205: بالتخفيف'
+    - '002#63 idah 203: كحفص (غير مذكورين)'
     note: Ruways/Rawh read with takhfīf, as the Ḥafṣ word.
 2:173:14:
   hafs: ٱضۡطُرَّ
-  case: k071
+  case: k073
   status: written
   groups:
   - text: ٱضۡطِرَّ
@@ -2578,7 +2648,7 @@
     - ibn_wardan
     - ibn_jammaz
     from:
-    - '002#61 idah 206: بكسر الطاء'
+    - '002#64 idah 206: بكسر الطاء'
     note: Kasr of the ṭāʾ.
   - text: ٱضۡطُرَّ
     readers:
@@ -2602,10 +2672,10 @@
     - idris
     base: true
     from:
-    - '002#61 idah 206: كحفص (غير مذكورين)'
+    - '002#64 idah 206: كحفص (غير مذكورين)'
 2:177:2:
   hafs: ٱلۡبِرَّ
-  case: k072
+  case: k074
   status: written
   groups:
   - text: ٱلۡبِرَّ
@@ -2615,7 +2685,7 @@
     - khallad
     base: true
     from:
-    - '002#62 wafi 216: بنصب الراء'
+    - '002#65 wafi 216: بنصب الراء'
   - text: ٱلۡبِرُّ
     readers:
     - qalun
@@ -2636,11 +2706,11 @@
     - ishaq
     - idris
     from:
-    - '002#62 wafi 216: برفع الراء'
-    - '002#62 idah 207: برفع الراء'
+    - '002#65 wafi 216: برفع الراء'
+    - '002#65 idah 207: برفع الراء'
 2:177:9:
   hafs: وَلَٰكِنَّ
-  case: k073
+  case: k075
   status: written
   groups: &id010
   - text: وَلَٰكِنِ
@@ -2650,7 +2720,7 @@
     - hisham
     - ibn_dhakwan
     from:
-    - '002#63 wafi 217: بتخفيف النون وكسرها'
+    - '002#66 wafi 217: بتخفيف النون وكسرها'
     note: Takhfīf of the nūn, kasrah (joined to the alif waṣlah of the next word).
   - text: وَلَٰكِنَّ
     readers:
@@ -2672,11 +2742,11 @@
     - idris
     base: true
     from:
-    - '002#63 wafi 217: بتشديد النون ونصبها'
-    - '002#63 idah 207: بتشديد النون ونصب البر'
+    - '002#66 wafi 217: بتشديد النون ونصبها'
+    - '002#66 idah 207: بتشديد النون ونصب البر'
 2:177:10:
   hafs: ٱلۡبِرَّ
-  case: k074
+  case: k076
   status: written
   groups: &id011
   - text: ٱلۡبِرُّ
@@ -2686,7 +2756,7 @@
     - hisham
     - ibn_dhakwan
     from:
-    - '002#64 wafi 217: برفع راء البر'
+    - '002#67 wafi 217: برفع راء البر'
     note: رفع راء البر
   - text: ٱلۡبِرَّ
     readers:
@@ -2708,12 +2778,12 @@
     - idris
     base: true
     from:
-    - '002#64 wafi 217: بنصب راء البر'
-    - '002#64 idah 207: بتشديد النون ونصب البر'
+    - '002#67 wafi 217: بنصب راء البر'
+    - '002#67 idah 207: بتشديد النون ونصب البر'
     note: نصب البر (ولكنَّ بالتشديد)
 2:177:18:
   hafs: وَٱلنَّبِيِّـۧنَ
-  case: k075
+  case: k077
   status: written
   groups:
   - text: null
@@ -2721,7 +2791,7 @@
     - qalun
     - warsh
     from:
-    - '002#15 wafi 204: بالهمز'
+    - '002#16 wafi 204: بالهمز'
     note: 'The book says only "بالهمز": it does not give the written form of the hamzed word, so no text.'
   - text: وَٱلنَّبِيِّـۧنَ
     readers:
@@ -2745,10 +2815,10 @@
     - idris
     base: true
     from:
-    - '002#15 wafi 204: بإبدال الهمزة ياء مع الإدغام'
+    - '002#16 wafi 204: بإبدال الهمزة ياء مع الإدغام'
 2:182:4:
   hafs: مُّوصٖ
-  case: k076
+  case: k078
   status: written
   groups:
   - text: مُّوَصّٖ
@@ -2763,8 +2833,8 @@
     - ishaq
     - idris
     from:
-    - '002#65 wafi 217: بتثقيل الصاد'
-    - '002#65 idah 208: بتشديد الصاد'
+    - '002#68 wafi 217: بتثقيل الصاد'
+    - '002#68 idah 208: بتشديد الصاد'
     note: 'Tashdīd of the ṣād (the wāw takes fatḥah, as the book says): مُّوَصِّٖ.'
   - text: مُّوصٖ
     readers:
@@ -2781,11 +2851,11 @@
     - ibn_jammaz
     base: true
     from:
-    - '002#65 wafi 217: بتخفيف الصاد'
-    - '002#65 idah 208: بتخفيف الصاد'
+    - '002#68 wafi 217: بتخفيف الصاد'
+    - '002#68 idah 208: بتخفيف الصاد'
 2:184:17:
   hafs: فِدۡيَةٞ
-  case: k077
+  case: k079
   status: written
   groups:
   - text: فِدۡيَةُ
@@ -2796,7 +2866,7 @@
     - ibn_wardan
     - ibn_jammaz
     from:
-    - '002#66 wafi 217: بحذف التنوين'
+    - '002#69 wafi 217: بحذف التنوين'
     note: 'Tanwīn dropped (iḍāfah): the ḍammah stays.'
   - text: فِدۡيَةٞ
     readers:
@@ -2817,10 +2887,10 @@
     - idris
     base: true
     from:
-    - '002#66 wafi 217: بتنوين فدية'
+    - '002#69 wafi 217: بتنوين فدية'
 2:184:18:
   hafs: طَعَامُ
-  case: k078
+  case: k080
   status: written
   groups:
   - text: طَعَامِ
@@ -2831,7 +2901,7 @@
     - ibn_wardan
     - ibn_jammaz
     from:
-    - '002#67 wafi 217: بخفض الميم'
+    - '002#70 wafi 217: بخفض الميم'
     note: Khafḍ of the mīm (طَعَامِ).
   - text: طَعَامُ
     readers:
@@ -2852,10 +2922,10 @@
     - idris
     base: true
     from:
-    - '002#67 wafi 217: برفع الميم'
+    - '002#70 wafi 217: برفع الميم'
 2:184:19:
   hafs: مِسۡكِينٖۖ
-  case: k079
+  case: k081
   status: written
   groups:
   - text: مَسَٰكِينَۖ
@@ -2867,7 +2937,7 @@
     - ibn_wardan
     - ibn_jammaz
     from:
-    - '002#68 wafi 217: مساكين بالجمع وترك التنوين وفتح النون'
+    - '002#71 wafi 217: مساكين بالجمع وترك التنوين وفتح النون'
     note: Plural without tanwīn, nūn fatḥah (مَسَٰكِينَ); the ۖ sign kept from the Ḥafṣ word.
   - text: مِسۡكِينٖۖ
     readers:
@@ -2887,10 +2957,10 @@
     - idris
     base: true
     from:
-    - '002#68 wafi 217: مسكين بالإفراد وإثبات التنوين'
+    - '002#71 wafi 217: مسكين بالإفراد وإثبات التنوين'
 2:184:21:
   hafs: تَطَوَّعَ
-  case: k080
+  case: k082
   status: written
   groups:
   - text: يَطَّوَّعۡ
@@ -2902,8 +2972,8 @@
     - ishaq
     - idris
     from:
-    - '002#69 wafi 212: بالياء المفتوحة وتشديد الطاء وسكون العين'
-    - '002#70 idah 202: بالغيب والتشديد والجزم'
+    - '002#72 wafi 212: بالياء المفتوحة وتشديد الطاء وسكون العين'
+    - '002#73 idah 202: بالغيب والتشديد والجزم'
     note: Yāʾ, shaddah on ṭāʾ, sukūn on ʿayn.
   - text: تَطَوَّعَ
     readers:
@@ -2923,13 +2993,13 @@
     - rawh
     base: true
     from:
-    - '002#69 wafi 212: كحفص (غير مذكورين)'
-    - '002#70 idah 202: على الماضي'
-    - '002#70 idah 202: كحفص (غير مذكورين)'
+    - '002#72 wafi 212: كحفص (غير مذكورين)'
+    - '002#73 idah 202: على الماضي'
+    - '002#73 idah 202: كحفص (غير مذكورين)'
     note: 'Abū Jaʿfar and Yaʿqūb: past tense, as the Ḥafṣ word.'
 2:184:23:
   hafs: فَهُوَ
-  case: k081
+  case: k083
   status: written
   groups: &id020
   - text: فَهۡوَ
@@ -2967,7 +3037,7 @@
     - '002#6 idah 193: بالضم (على أصله)'
 2:185:6:
   hafs: ٱلۡقُرۡءَانُ
-  case: k082
+  case: k084
   status: written
   groups:
   - text: ٱلۡقُرَانُ
@@ -2975,7 +3045,7 @@
     - bazzi
     - qunbul
     from:
-    - '002#71 wafi 217: بنقل حركة الهمزة إلى الراء وحذف الهمزة'
+    - '002#74 wafi 217: بنقل حركة الهمزة إلى الراء وحذف الهمزة'
     note: Hamzah dropped, its fatḥah moved to the rāʾ (ٱلۡقُرَانُ).
   - text: ٱلۡقُرۡءَانُ
     readers:
@@ -2999,10 +3069,10 @@
     - idris
     base: true
     from:
-    - '002#71 wafi 217: بإثبات الهمز وسكون الراء'
+    - '002#74 wafi 217: بإثبات الهمز وسكون الراء'
 2:185:31:
   hafs: ٱلۡيُسۡرَ
-  case: k083
+  case: k085
   status: written
   groups:
   - text: ٱلۡيُسُرَ
@@ -3010,7 +3080,7 @@
     - ibn_wardan
     - ibn_jammaz
     from:
-    - '002#72 idah 208: بضم السين'
+    - '002#75 idah 208: بضم السين'
     note: Ḍamm of the sīn.
   - text: ٱلۡيُسۡرَ
     readers:
@@ -3034,11 +3104,11 @@
     - idris
     base: true
     from:
-    - '002#72 idah 208: كحفص (غير مذكورين)'
-    - '002#72 idah 208: بإسكان السين'
+    - '002#75 idah 208: كحفص (غير مذكورين)'
+    - '002#75 idah 208: بإسكان السين'
 2:185:35:
   hafs: ٱلۡعُسۡرَ
-  case: k084
+  case: k086
   status: written
   groups:
   - text: ٱلۡعُسُرَ
@@ -3046,7 +3116,7 @@
     - ibn_wardan
     - ibn_jammaz
     from:
-    - '002#73 idah 208: بضم السين'
+    - '002#76 idah 208: بضم السين'
     note: Ḍamm of the sīn.
   - text: ٱلۡعُسۡرَ
     readers:
@@ -3070,11 +3140,11 @@
     - idris
     base: true
     from:
-    - '002#73 idah 208: كحفص (غير مذكورين)'
-    - '002#73 idah 208: بإسكان السين'
+    - '002#76 idah 208: كحفص (غير مذكورين)'
+    - '002#76 idah 208: بإسكان السين'
 2:185:36:
   hafs: وَلِتُكۡمِلُواْ
-  case: k085
+  case: k087
   status: written
   groups:
   - text: وَلِتُكَمِّلُواْ
@@ -3083,8 +3153,8 @@
     - ruways
     - rawh
     from:
-    - '002#74 wafi 217: بتشديد الميم وفتح الكاف'
-    - '002#74 idah 208: بتشديد الميم'
+    - '002#77 wafi 217: بتشديد الميم وفتح الكاف'
+    - '002#77 idah 208: بتشديد الميم'
     note: 'Tashdīd of the mīm (fatḥah on the kāf follows): وَلِتُكَمِّلُواْ.'
   - text: وَلِتُكۡمِلُواْ
     readers:
@@ -3107,16 +3177,16 @@
     - idris
     base: true
     from:
-    - '002#74 wafi 217: بتخفيف الميم وسكون الكاف'
-    - '002#74 idah 208: بتخفيف الميم'
+    - '002#77 wafi 217: بتخفيف الميم وسكون الكاف'
+    - '002#77 idah 208: بتخفيف الميم'
 2:189:5:
   hafs: هِيَ
-  case: k024
+  case: k025
   status: written
   groups: *id009
 2:189:13:
   hafs: ٱلۡبُيُوتَ
-  case: k086
+  case: k088
   status: written
   groups: &id012
   - text: ٱلۡبِيُوتَ
@@ -3134,8 +3204,8 @@
     - ishaq
     - idris
     from:
-    - '002#75 wafi 218: بكسر الباء'
-    - '002#75 idah 213: بالكسر'
+    - '002#78 wafi 218: بكسر الباء'
+    - '002#78 idah 213: بالكسر'
     note: Kasr of the bāʾ.
   - text: ٱلۡبُيُوتَ
     readers:
@@ -3149,26 +3219,26 @@
     - rawh
     base: true
     from:
-    - '002#75 wafi 218: بضم الباء'
-    - '002#75 idah 213: بضم الباء'
+    - '002#78 wafi 218: بضم الباء'
+    - '002#78 idah 213: بضم الباء'
 2:189:16:
   hafs: وَلَٰكِنَّ
-  case: k073
+  case: k075
   status: written
   groups: *id010
 2:189:17:
   hafs: ٱلۡبِرَّ
-  case: k074
+  case: k076
   status: written
   groups: *id011
 2:189:21:
   hafs: ٱلۡبُيُوتَ
-  case: k086
+  case: k088
   status: written
   groups: *id012
 2:191:13:
   hafs: تُقَٰتِلُوهُمۡ
-  case: k087
+  case: k089
   status: written
   groups:
   - text: تَقۡتُلُوهُمۡ
@@ -3180,7 +3250,7 @@
     - ishaq
     - idris
     from:
-    - '002#78 wafi 218: بفتح التاء/الياء وإسكان القاف وضم التاء مع القصر'
+    - '002#81 wafi 218: بفتح التاء/الياء وإسكان القاف وضم التاء مع القصر'
     note: Fatḥah on tāʾ, sukūn on qāf, no alif, ḍamm on tāʾ.
   - text: تُقَٰتِلُوهُمۡ
     readers:
@@ -3200,10 +3270,10 @@
     - rawh
     base: true
     from:
-    - '002#78 wafi 218: بضم التاء/الياء وفتح القاف وكسر التاء مع المد'
+    - '002#81 wafi 218: بضم التاء/الياء وفتح القاف وكسر التاء مع المد'
 2:191:18:
   hafs: يُقَٰتِلُوكُمۡ
-  case: k088
+  case: k090
   status: written
   groups:
   - text: يَقۡتُلُوكُمۡ
@@ -3215,7 +3285,7 @@
     - ishaq
     - idris
     from:
-    - '002#79 wafi 218: بفتح التاء/الياء وإسكان القاف وضم التاء مع القصر'
+    - '002#82 wafi 218: بفتح التاء/الياء وإسكان القاف وضم التاء مع القصر'
     note: Fatḥah on yāʾ, sukūn on qāf, no alif, ḍamm on tāʾ.
   - text: يُقَٰتِلُوكُمۡ
     readers:
@@ -3235,10 +3305,10 @@
     - rawh
     base: true
     from:
-    - '002#79 wafi 218: بضم التاء/الياء وفتح القاف وكسر التاء مع المد'
+    - '002#82 wafi 218: بضم التاء/الياء وفتح القاف وكسر التاء مع المد'
 2:191:21:
   hafs: قَٰتَلُوكُمۡ
-  case: k089
+  case: k091
   status: written
   groups:
   - text: قَتَلُوكُمۡ
@@ -3250,7 +3320,7 @@
     - ishaq
     - idris
     from:
-    - '002#80 wafi 218: بفتح التاء/الياء وإسكان القاف وضم التاء مع القصر'
+    - '002#83 wafi 218: بفتح التاء/الياء وإسكان القاف وضم التاء مع القصر'
     note: Alif dropped (قَتَلُوكُمۡ); the book gives the qaṣr for the three words together.
   - text: قَٰتَلُوكُمۡ
     readers:
@@ -3270,10 +3340,10 @@
     - rawh
     base: true
     from:
-    - '002#80 wafi 218: بضم التاء/الياء وفتح القاف وكسر التاء مع المد'
+    - '002#83 wafi 218: بضم التاء/الياء وفتح القاف وكسر التاء مع المد'
 2:197:9:
   hafs: رَفَثَ
-  case: k090
+  case: k092
   status: written
   groups:
   - text: رَفَثٌ
@@ -3287,9 +3357,9 @@
     - ruways
     - rawh
     from:
-    - '002#81 wafi 218: برفع الثاء وتنوينها'
-    - '002#81 idah 213: برفع الثاء مع التنوين'
-    - '002#81 idah 213: بالرفع والتنوين'
+    - '002#84 wafi 218: برفع الثاء وتنوينها'
+    - '002#84 idah 213: برفع الثاء مع التنوين'
+    - '002#84 idah 213: بالرفع والتنوين'
     note: Raf and tanwīn (رَفَثٌ).
   - text: رَفَثَ
     readers:
@@ -3307,11 +3377,11 @@
     - idris
     base: true
     from:
-    - '002#81 wafi 218: بفتح الثاء بلا تنوين'
-    - '002#81 idah 214: بالفتح بلا تنوين'
+    - '002#84 wafi 218: بفتح الثاء بلا تنوين'
+    - '002#84 idah 214: بالفتح بلا تنوين'
 2:197:11:
   hafs: فُسُوقَ
-  case: k091
+  case: k093
   status: written
   groups:
   - text: فُسُوقٌ
@@ -3325,9 +3395,9 @@
     - ruways
     - rawh
     from:
-    - '002#82 wafi 218: برفع القاف وتنوينها'
-    - '002#82 idah 213: برفع القاف مع التنوين'
-    - '002#82 idah 213: بالرفع والتنوين'
+    - '002#85 wafi 218: برفع القاف وتنوينها'
+    - '002#85 idah 213: برفع القاف مع التنوين'
+    - '002#85 idah 213: بالرفع والتنوين'
     note: Raf and tanwīn.
   - text: فُسُوقَ
     readers:
@@ -3345,11 +3415,11 @@
     - idris
     base: true
     from:
-    - '002#82 wafi 218: بفتح القاف بلا تنوين'
-    - '002#82 idah 214: بالفتح بلا تنوين'
+    - '002#85 wafi 218: بفتح القاف بلا تنوين'
+    - '002#85 idah 214: بالفتح بلا تنوين'
 2:197:13:
   hafs: جِدَالَ
-  case: k092
+  case: k094
   status: written
   groups:
   - text: جِدَالٌ
@@ -3357,7 +3427,7 @@
     - ibn_wardan
     - ibn_jammaz
     from:
-    - '002#83 idah 213: برفع اللام مع التنوين'
+    - '002#86 idah 213: برفع اللام مع التنوين'
     note: Raf and tanwīn.
   - text: جِدَالَ
     readers:
@@ -3381,9 +3451,9 @@
     - idris
     base: true
     from:
-    - '002#83 idah 213: كحفص (غير مذكورين)'
-    - '002#83 idah 214: بالفتح بدون تنوين'
-    - '002#83 idah 214: بالفتح بلا تنوين'
+    - '002#86 idah 213: كحفص (غير مذكورين)'
+    - '002#86 idah 214: بالفتح بدون تنوين'
+    - '002#86 idah 214: بالفتح بلا تنوين'
 2:204:15:
   hafs: وَهُوَ
   case: k009
@@ -3396,7 +3466,7 @@
   groups: *id001
 2:207:10:
   hafs: رَءُوفُۢ
-  case: k093
+  case: k095
   status: written
   groups:
   - text: رَءُفُۢ
@@ -3413,7 +3483,7 @@
     - ishaq
     - idris
     from:
-    - '002#48 wafi 211: بالقصر أي حذف حرف المد بعد الهمزة'
+    - '002#51 wafi 211: بالقصر أي حذف حرف المد بعد الهمزة'
     note: 'Qaṣr: the book says the madd letter after the hamzah is dropped.'
   - text: رَءُوفُۢ
     readers:
@@ -3428,10 +3498,10 @@
     - ibn_jammaz
     base: true
     from:
-    - '002#48 wafi 211: بالمد أي إثبات حرف المد بعد الهمزة'
+    - '002#51 wafi 211: بالمد أي إثبات حرف المد بعد الهمزة'
 2:208:6:
   hafs: ٱلسِّلۡمِ
-  case: k094
+  case: k096
   status: written
   groups:
   - text: ٱلسَّلۡمِ
@@ -3445,7 +3515,7 @@
     - ibn_wardan
     - ibn_jammaz
     from:
-    - '002#84 wafi 218: بفتح السين'
+    - '002#87 wafi 218: بفتح السين'
     note: Fatḥ of the sīn.
   - text: ٱلسِّلۡمِ
     readers:
@@ -3463,15 +3533,15 @@
     - idris
     base: true
     from:
-    - '002#84 wafi 218: بكسر السين'
+    - '002#87 wafi 218: بكسر السين'
 2:208:10:
   hafs: خُطُوَٰتِ
-  case: k069
+  case: k071
   status: written
   groups: *id013
 2:210:11:
   hafs: وَٱلۡمَلَٰٓئِكَةُ
-  case: k095
+  case: k097
   status: written
   groups:
   - text: وَٱلۡمَلَٰٓئِكَةِ
@@ -3479,7 +3549,7 @@
     - ibn_wardan
     - ibn_jammaz
     from:
-    - '002#85 idah 214: بخفض التاء'
+    - '002#88 idah 214: بخفض التاء'
     note: Khafḍ of the tāʾ marbūṭah.
   - text: وَٱلۡمَلَٰٓئِكَةُ
     readers:
@@ -3503,11 +3573,11 @@
     - idris
     base: true
     from:
-    - '002#85 idah 214: كحفص (غير مذكورين)'
-    - '002#85 idah 214: بالرفع'
+    - '002#88 idah 214: كحفص (غير مذكورين)'
+    - '002#88 idah 214: بالرفع'
 2:210:16:
   hafs: تُرۡجَعُ
-  case: k096
+  case: k098
   status: written
   groups:
   - text: تَرۡجِعُ
@@ -3523,8 +3593,8 @@
     - ishaq
     - idris
     from:
-    - '002#86 wafi 219: بفتح التاء وكسر الجيم'
-    - '002#87 idah 191: بفتح حرف المضارعة وكسر الجيم (للأخرى)'
+    - '002#89 wafi 219: بفتح التاء وكسر الجيم'
+    - '002#90 idah 191: بفتح حرف المضارعة وكسر الجيم (للأخرى)'
     note: Fatḥ of the prefix, kasr of the jīm.
   - text: تُرۡجَعُ
     readers:
@@ -3540,15 +3610,15 @@
     - ibn_jammaz
     base: true
     from:
-    - '002#86 wafi 219: بضم التاء وفتح الجيم'
+    - '002#89 wafi 219: بضم التاء وفتح الجيم'
 2:213:7:
   hafs: ٱلنَّبِيِّـۧنَ
-  case: k019
+  case: k020
   status: written
   groups: *id014
 2:213:14:
   hafs: لِيَحۡكُمَ
-  case: k097
+  case: k099
   status: written
   groups:
   - text: لِيُحۡكَمَ
@@ -3556,7 +3626,7 @@
     - ibn_wardan
     - ibn_jammaz
     from:
-    - '002#88 idah 214: بضم الياء وفتح الكاف على البناء للمجهول'
+    - '002#91 idah 214: بضم الياء وفتح الكاف على البناء للمجهول'
     note: 'Passive: yāʾ ḍammah, kāf fatḥah.'
   - text: لِيَحۡكُمَ
     readers:
@@ -3580,16 +3650,16 @@
     - idris
     base: true
     from:
-    - '002#88 idah 214: كحفص (غير مذكورين)'
-    - '002#88 idah 214: بالتسمية للفاعل'
+    - '002#91 idah 214: كحفص (غير مذكورين)'
+    - '002#91 idah 214: بالتسمية للفاعل'
 2:213:48:
   hafs: صِرَٰطٖ
-  case: k057
+  case: k059
   status: written
   groups: *id015
 2:214:18:
   hafs: يَقُولَ
-  case: k098
+  case: k100
   status: written
   groups:
   - text: يَقُولُ
@@ -3597,7 +3667,7 @@
     - qalun
     - warsh
     from:
-    - '002#89 wafi 218: برفع اللام'
+    - '002#92 wafi 218: برفع اللام'
     note: Raf of the lām (يَقُولُ).
   - text: يَقُولَ
     readers:
@@ -3621,8 +3691,8 @@
     - idris
     base: true
     from:
-    - '002#89 wafi 218: بنصب اللام'
-    - '002#89 idah 215: بنصب اللام'
+    - '002#92 wafi 218: بنصب اللام'
+    - '002#92 idah 215: بنصب اللام'
 2:216:4:
   hafs: وَهُوَ
   case: k009
@@ -3645,7 +3715,7 @@
   groups: *id006
 2:219:8:
   hafs: كَبِيرٞ
-  case: k099
+  case: k101
   status: written
   groups:
   - text: كَثِيرٞ
@@ -3655,7 +3725,7 @@
     - abul_harith
     - duri_kisai
     from:
-    - '002#90 wafi 219: بالثاء المثلثة'
+    - '002#93 wafi 219: بالثاء المثلثة'
     note: Thāʾ for bāʾ (كَثِيرٞ).
   - text: كَبِيرٞ
     readers:
@@ -3677,11 +3747,11 @@
     - idris
     base: true
     from:
-    - '002#90 wafi 219: بالباء الموحدة'
-    - '002#90 idah 215: بالباء الموحدة'
+    - '002#93 wafi 219: بالباء الموحدة'
+    - '002#93 idah 215: بالباء الموحدة'
 2:219:19:
   hafs: ٱلۡعَفۡوَۗ
-  case: k100
+  case: k102
   status: written
   groups:
   - text: ٱلۡعَفۡوَۗ
@@ -3706,18 +3776,18 @@
     - idris
     base: true
     from:
-    - '002#91 wafi 219: بنصب الواو'
-    - '002#91 idah 215: بنصب الواو'
+    - '002#94 wafi 219: بنصب الواو'
+    - '002#94 idah 215: بنصب الواو'
   - text: ٱلۡعَفۡوُۗ
     readers:
     - duri_abuamr
     - susi
     from:
-    - '002#91 wafi 219: برفع الواو'
+    - '002#94 wafi 219: برفع الواو'
     note: Wāw ḍammah (rafʿ).
 2:220:22:
   hafs: لَأَعۡنَتَكُمۡۚ
-  case: k101
+  case: k103
   status: written
   groups:
   - text: لَأَعۡنَتَكُمۡۚ
@@ -3746,23 +3816,23 @@
     - bazzi
     base: true
     from:
-    - '002#92 wafi 219: بتحقيق الهمزة'
+    - '002#95 wafi 219: بتحقيق الهمزة'
   - text: null
     readers:
     - bazzi
     khulf:
     - bazzi
     from:
-    - '002#92 wafi 219: بتسهيل الهمزة بين بين'
+    - '002#95 wafi 219: بتسهيل الهمزة بين بين'
     note: Tashīl of the hamzah bayna bayna has no written form; the book gives no text for it (khulf for Bazzī).
 2:222:5:
   hafs: هُوَ
-  case: k018
+  case: k019
   status: written
   groups: *id004
 2:222:14:
   hafs: يَطۡهُرۡنَۖ
-  case: k102
+  case: k104
   status: written
   groups:
   - text: يَطۡهُرۡنَۖ
@@ -3782,7 +3852,7 @@
     - rawh
     base: true
     from:
-    - '002#93 wafi 219: بسكون الطاء'
+    - '002#96 wafi 219: بسكون الطاء'
   - text: يَطَّهَّرۡنَۖ
     readers:
     - shuba
@@ -3793,11 +3863,11 @@
     - ishaq
     - idris
     from:
-    - '002#93 wafi 219: بفتح الطاء والهاء وتشديدهما'
+    - '002#96 wafi 219: بفتح الطاء والهاء وتشديدهما'
     note: Ṭāʾ and hāʾ with fatḥah and shaddah.
 2:229:18:
   hafs: يَخَافَآ
-  case: k103
+  case: k105
   status: written
   groups:
   - text: يُخَافَآ
@@ -3809,8 +3879,8 @@
     - ruways
     - rawh
     from:
-    - '002#94 wafi 219: بضم الياء'
-    - '002#94 idah 215: بضم الياء'
+    - '002#97 wafi 219: بضم الياء'
+    - '002#97 idah 215: بضم الياء'
     note: ضم الياء
   - text: يَخَافَآ
     readers:
@@ -3830,12 +3900,12 @@
     - idris
     base: true
     from:
-    - '002#94 wafi 219: بفتح الياء'
-    - '002#94 idah 215: بفتح الياء'
+    - '002#97 wafi 219: بفتح الياء'
+    - '002#97 idah 215: بفتح الياء'
     note: فتح الياء؛ إسحاق وإدريس يفتحان مخالفين أصلهما
 2:231:25:
   hafs: هُزُوٗاۚ
-  case: k104
+  case: k106
   status: written
   groups:
   - text: هُزۡءٗاۚ
@@ -3845,7 +3915,7 @@
     - ishaq
     - idris
     from:
-    - '002#18 wafi 204: بإسكان الزاي'
+    - '002#19 wafi 204: بإسكان الزاي'
     note: 'Iskān of the zāy (option 1). wafi 204-205: Ḥamzah hamzes in waṣl (his naql is in waqf, uṣūl), so the hamzah stays on the line after
       the sākin zāy; option 4''s الباقون.'
   - text: هُزُوٗاۚ
@@ -3853,8 +3923,8 @@
     - hafs
     base: true
     from:
-    - '002#18 wafi 204: بضم الزاي'
-    - '002#18 wafi 205: بإبدال الهمزة واوا'
+    - '002#19 wafi 204: بضم الزاي'
+    - '002#19 wafi 205: بإبدال الهمزة واوا'
     note: ضم الزاي وإبدال الهمزة واوا
   - text: هُزُؤٗاۚ
     readers:
@@ -3874,12 +3944,12 @@
     - ruways
     - rawh
     from:
-    - '002#18 wafi 204: بضم الزاي'
-    - '002#18 wafi 205: بالهمز'
+    - '002#19 wafi 204: بضم الزاي'
+    - '002#19 wafi 205: بالهمز'
     note: ضم الزاي والهمز
 2:233:23:
   hafs: تُضَآرَّ
-  case: k105
+  case: k107
   status: written
   groups:
   - text: تُضَآرَّ
@@ -3898,8 +3968,8 @@
     - idris
     base: true
     from:
-    - '002#95 wafi 219: بفتح الراء (مشددة)'
-    - '002#95 idah 215: بالفتح والتشديد'
+    - '002#98 wafi 219: بفتح الراء (مشددة)'
+    - '002#98 idah 215: بالفتح والتشديد'
   - text: تُضَآرُّ
     readers:
     - bazzi
@@ -3909,19 +3979,19 @@
     - ruways
     - rawh
     from:
-    - '002#95 wafi 219: بضم الراء (مشددة)'
-    - '002#95 idah 215: بالرفع والتشديد'
+    - '002#98 wafi 219: بضم الراء (مشددة)'
+    - '002#98 idah 215: بالرفع والتشديد'
     note: Rāʾ ḍammah with shaddah (rafʿ).
   - text: تُضَآرۡ
     readers:
     - ibn_wardan
     - ibn_jammaz
     from:
-    - '002#95 idah 215: بتخفيف الراء ساكنة مع إشباع المد'
+    - '002#98 idah 215: بتخفيف الراء ساكنة مع إشباع المد'
     note: Rāʾ sākin without shaddah; the madd on the alif is kept as in the Ḥafṣ word (the lengthening is the engine's).
 2:233:55:
   hafs: ءَاتَيۡتُم
-  case: k106
+  case: k108
   status: written
   groups:
   - text: ءَاتَيۡتُم
@@ -3946,17 +4016,17 @@
     - idris
     base: true
     from:
-    - '002#96 wafi 220: بالمد (إثبات الألف)'
+    - '002#99 wafi 220: بالمد (إثبات الألف)'
   - text: أَتَيۡتُم
     readers:
     - bazzi
     - qunbul
     from:
-    - '002#96 wafi 220: بقصر الهمزة (حذف الألف)'
+    - '002#99 wafi 220: بقصر الهمزة (حذف الألف)'
     note: Alif after the hamzah dropped (أَتَيۡتُم).
 2:236:9:
   hafs: تَمَسُّوهُنَّ
-  case: k107
+  case: k109
   status: written
   groups: &id017
   - text: تَمَسُّوهُنَّ
@@ -3977,7 +4047,7 @@
     - rawh
     base: true
     from:
-    - '002#97 wafi 220: بفتح التاء وحذف الألف بعد الميم'
+    - '002#100 wafi 220: بفتح التاء وحذف الألف بعد الميم'
   - text: تُمَٰسُّوهُنَّ
     readers:
     - khalaf_an_hamzah
@@ -3987,11 +4057,11 @@
     - ishaq
     - idris
     from:
-    - '002#97 wafi 220: بضم التاء وإثبات ألف بعد الميم'
+    - '002#100 wafi 220: بضم التاء وإثبات ألف بعد الميم'
     note: Tāʾ ḍammah and a (dagger) alif after the mīm.
 2:236:17:
   hafs: قَدَرُهُۥ
-  case: k108
+  case: k110
   status: written
   groups: &id016
   - text: قَدَرُهُۥ
@@ -4008,8 +4078,8 @@
     - idris
     base: true
     from:
-    - '002#98 wafi 220: بفتح الدال'
-    - '002#98 idah 216: بفتح الدال'
+    - '002#101 wafi 220: بفتح الدال'
+    - '002#101 idah 216: بفتح الدال'
   - text: قَدۡرُهُۥ
     readers:
     - qalun
@@ -4023,22 +4093,22 @@
     - ruways
     - rawh
     from:
-    - '002#98 wafi 220: بإسكان الدال'
-    - '002#98 idah 216: بإسكان الدال'
+    - '002#101 wafi 220: بإسكان الدال'
+    - '002#101 idah 216: بإسكان الدال'
     note: Sukūn on the dāl.
 2:236:20:
   hafs: قَدَرُهُۥ
-  case: k108
+  case: k110
   status: written
   groups: *id016
 2:237:6:
   hafs: تَمَسُّوهُنَّ
-  case: k107
+  case: k109
   status: written
   groups: *id017
 2:240:6:
   hafs: وَصِيَّةٗ
-  case: k109
+  case: k111
   status: written
   groups:
   - text: وَصِيَّةٗ
@@ -4052,7 +4122,7 @@
     - khallad
     base: true
     from:
-    - '002#100 wafi 220: بنصب التاء'
+    - '002#103 wafi 220: بنصب التاء'
   - text: وَصِيَّةٞ
     readers:
     - qalun
@@ -4069,12 +4139,12 @@
     - ishaq
     - idris
     from:
-    - '002#100 wafi 220: برفع التاء'
-    - '002#100 idah 216: برفع التاء'
+    - '002#103 wafi 220: برفع التاء'
+    - '002#103 idah 216: برفع التاء'
     note: 'Rafʿ: the hidden fatḥatān mark becomes the hidden ḍammatān mark.'
 2:245:8:
   hafs: فَيُضَٰعِفَهُۥ
-  case: k110
+  case: k112
   status: written
   groups:
   - text: فَيُضَٰعِفَهُۥ
@@ -4083,8 +4153,8 @@
     - hafs
     base: true
     from:
-    - '002#101 wafi 221: بنصب الفاء'
-    - '002#102 wafi 221: بتخفيف العين وإثبات الألف قبلها'
+    - '002#104 wafi 221: بنصب الفاء'
+    - '002#105 wafi 221: بتخفيف العين وإثبات الألف قبلها'
   - text: فَيُضَٰعِفُهُۥ
     readers:
     - qalun
@@ -4098,10 +4168,10 @@
     - ishaq
     - idris
     from:
-    - '002#101 wafi 221: برفع الفاء'
-    - '002#101 idah 216: برفع الفاء'
-    - '002#101 idah 216: بتخفيف العين مع إثبات الألف'
-    - '002#102 wafi 221: بتخفيف العين وإثبات الألف قبلها'
+    - '002#104 wafi 221: برفع الفاء'
+    - '002#104 idah 216: برفع الفاء'
+    - '002#104 idah 216: بتخفيف العين مع إثبات الألف'
+    - '002#105 wafi 221: بتخفيف العين وإثبات الألف قبلها'
     note: Fāʾ ḍammah (rafʿ); the alif and the light ʿayn stay as in Ḥafṣ (entry 106 option 8, or option 6 for Khalaf).
   - text: فَيُضَعِّفُهُۥ
     readers:
@@ -4110,10 +4180,10 @@
     - ibn_wardan
     - ibn_jammaz
     from:
-    - '002#101 wafi 221: برفع الفاء'
-    - '002#101 idah 216: برفع الفاء'
-    - '002#101 idah 216: بحذف الألف وتشديد العين'
-    - '002#102 wafi 221: بتشديد العين وحذف الألف قبلها'
+    - '002#104 wafi 221: برفع الفاء'
+    - '002#104 idah 216: برفع الفاء'
+    - '002#104 idah 216: بحذف الألف وتشديد العين'
+    - '002#105 wafi 221: بتشديد العين وحذف الألف قبلها'
     note: Rafʿ (fāʾ ḍammah) together with ʿayn shaddah and no alif.
   - text: فَيُضَعِّفَهُۥ
     readers:
@@ -4122,14 +4192,14 @@
     - ruways
     - rawh
     from:
-    - '002#101 wafi 221: بنصب الفاء'
-    - '002#101 idah 216: بنصب الفاء'
-    - '002#101 idah 216: بحذف الألف وتشديد العين'
-    - '002#102 wafi 221: بتشديد العين وحذف الألف قبلها'
+    - '002#104 wafi 221: بنصب الفاء'
+    - '002#104 idah 216: بنصب الفاء'
+    - '002#104 idah 216: بحذف الألف وتشديد العين'
+    - '002#105 wafi 221: بتشديد العين وحذف الألف قبلها'
     note: Nasb as Ḥafṣ; ʿayn shaddah with kasrah, alif dropped (فَيُضَعِّفَهُۥ).
 2:245:14:
   hafs: وَيَبۡصُۜطُ
-  case: k111
+  case: k113
   status: written
   groups:
   - text: وَيَبۡصُطُ
@@ -4149,8 +4219,8 @@
     - ibn_dhakwan
     - khallad
     from:
-    - '002#103 wafi 220: بالصاد'
-    - '002#103 idah 217: بالصاد'
+    - '002#106 wafi 220: بالصاد'
+    - '002#106 idah 217: بالصاد'
     note: 'بالصاد: الحرف صاد بلا سين صغيرة'
   - text: وَيَبۡصُۜطُ
     readers:
@@ -4170,8 +4240,8 @@
     - khallad
     base: true
     from:
-    - '002#103 wafi 220: بالسين'
-    - '002#103 idah 217: بالسين'
+    - '002#106 wafi 220: بالسين'
+    - '002#106 idah 217: بالسين'
     note: 'بالسين: صاد وفوقها سين صغيرة'
 2:245:16:
   hafs: تُرۡجَعُونَ
@@ -4180,7 +4250,7 @@
   groups: *id018
 2:246:13:
   hafs: لِنَبِيّٖ
-  case: k112
+  case: k114
   status: written
   groups:
   - text: لِنَبِيّٖ
@@ -4205,17 +4275,17 @@
     - idris
     base: true
     from:
-    - '002#15 wafi 204: بإبدال الهمزة ياء مع الإدغام'
+    - '002#16 wafi 204: بإبدال الهمزة ياء مع الإدغام'
   - text: null
     readers:
     - qalun
     - warsh
     from:
-    - '002#15 wafi 204: بالهمز'
+    - '002#16 wafi 204: بالهمز'
     note: Read with hamzah; the book says only بالهمز and gives no written form.
 2:246:24:
   hafs: عَسَيۡتُمۡ
-  case: k113
+  case: k115
   status: written
   groups:
   - text: عَسَيۡتُمۡ
@@ -4240,18 +4310,18 @@
     - idris
     base: true
     from:
-    - '002#104 wafi 221: بفتح السين'
-    - '002#104 idah 218: بفتح السين'
+    - '002#107 wafi 221: بفتح السين'
+    - '002#107 idah 218: بفتح السين'
   - text: عَسِيۡتُمۡ
     readers:
     - qalun
     - warsh
     from:
-    - '002#104 wafi 221: بكسر السين'
+    - '002#107 wafi 221: بكسر السين'
     note: Sīn kasrah.
 2:247:32:
   hafs: بَسۡطَةٗ
-  case: k114
+  case: k116
   status: written
   groups:
   - text: بَسۡطَةٗ
@@ -4278,12 +4348,12 @@
     - idris
     base: true
     from:
-    - '002#105 idah 217: بالسين'
-    - '002#105 idah 217: كحفص (غير مذكورين)'
+    - '002#108 idah 217: بالسين'
+    - '002#108 idah 217: كحفص (غير مذكورين)'
     note: Both options give sīn, which is the Ḥafṣ word here (Abū Jaʿfar's ṣād is for the other place).
 2:249:23:
   hafs: غُرۡفَةَۢ
-  case: k115
+  case: k117
   status: written
   groups:
   - text: غُرۡفَةَۢ
@@ -4302,8 +4372,8 @@
     - idris
     base: true
     from:
-    - '002#106 wafi 222: بضم الغين'
-    - '002#106 idah 218: بضم الغين'
+    - '002#109 wafi 222: بضم الغين'
+    - '002#109 idah 218: بضم الغين'
     note: Ghayn ḍammah as Ḥafṣ. Yaʿqūb's quote also shows a ḍammatān on the tāʾ marbūṭah, but the option says only ḍammah of the ghayn, so the
       rest is as Ḥafṣ.
   - text: غَرۡفَةَۢ
@@ -4317,17 +4387,17 @@
     - ibn_wardan
     - ibn_jammaz
     from:
-    - '002#106 wafi 222: بفتح الغين'
-    - '002#106 idah 218: بالفتح'
+    - '002#109 wafi 222: بفتح الغين'
+    - '002#109 idah 218: بالفتح'
     note: Ghayn fatḥah.
 2:249:32:
   hafs: هُوَ
-  case: k018
+  case: k019
   status: written
   groups: *id004
 2:251:15:
   hafs: دَفۡعُ
-  case: k116
+  case: k118
   status: written
   groups:
   - text: دَفۡعُ
@@ -4348,8 +4418,8 @@
     - idris
     base: true
     from:
-    - '002#107 wafi 221: بفتح الدال وسكون الفاء بلا ألف'
-    - '002#107 idah 218: بفتح الدال وإسكان الفاء'
+    - '002#110 wafi 221: بفتح الدال وسكون الفاء بلا ألف'
+    - '002#110 idah 218: بفتح الدال وإسكان الفاء'
   - text: دِفَٰعُ
     readers:
     - qalun
@@ -4359,17 +4429,17 @@
     - ruways
     - rawh
     from:
-    - '002#107 wafi 222: بكسر الدال وفتح الفاء وألف بعدها'
-    - '002#107 idah 218: بكسر الدال وفتح الفاء وإثبات ألف بعدها'
+    - '002#110 wafi 222: بكسر الدال وفتح الفاء وألف بعدها'
+    - '002#110 idah 218: بكسر الدال وفتح الفاء وإثبات ألف بعدها'
     note: Dāl kasrah, fāʾ fatḥah and a (dagger) alif after it (دِفَاع).
 2:253:21:
   hafs: ٱلۡقُدُسِۗ
-  case: k035
+  case: k036
   status: written
   groups: *id019
 2:254:13:
   hafs: بَيۡعٞ
-  case: k117
+  case: k119
   status: written
   groups:
   - text: بَيۡعٞ
@@ -4390,7 +4460,7 @@
     - idris
     base: true
     from:
-    - '002#108 wafi 222: بالرفع والتنوين'
+    - '002#111 wafi 222: بالرفع والتنوين'
   - text: بَيۡعَ
     readers:
     - bazzi
@@ -4400,11 +4470,11 @@
     - ruways
     - rawh
     from:
-    - '002#108 wafi 222: بالفتح بلا تنوين'
+    - '002#111 wafi 222: بالفتح بلا تنوين'
     note: Fatḥah without tanwīn (the hidden dammatān mark replaced by fatḥah).
 2:254:16:
   hafs: خُلَّةٞ
-  case: k118
+  case: k120
   status: written
   groups:
   - text: خُلَّةٞ
@@ -4425,7 +4495,7 @@
     - idris
     base: true
     from:
-    - '002#109 wafi 222: بالرفع والتنوين'
+    - '002#112 wafi 222: بالرفع والتنوين'
   - text: خُلَّةَ
     readers:
     - bazzi
@@ -4435,11 +4505,11 @@
     - ruways
     - rawh
     from:
-    - '002#109 wafi 222: بالفتح بلا تنوين'
+    - '002#112 wafi 222: بالفتح بلا تنوين'
     note: Fatḥah without tanwīn (the hidden dammatān mark replaced by fatḥah).
 2:254:18:
   hafs: شَفَٰعَةٞۗ
-  case: k119
+  case: k121
   status: written
   groups:
   - text: شَفَٰعَةٞۗ
@@ -4460,7 +4530,7 @@
     - idris
     base: true
     from:
-    - '002#110 wafi 222: بالرفع والتنوين'
+    - '002#113 wafi 222: بالرفع والتنوين'
   - text: شَفَٰعَةَۗ
     readers:
     - bazzi
@@ -4470,7 +4540,7 @@
     - ruways
     - rawh
     from:
-    - '002#110 wafi 222: بالفتح بلا تنوين'
+    - '002#113 wafi 222: بالفتح بلا تنوين'
     note: Fatḥah without tanwīn (the hidden dammatān mark replaced by fatḥah).
 2:255:5:
   hafs: هُوَ
@@ -4479,12 +4549,12 @@
   groups: *id002
 2:255:48:
   hafs: وَهُوَ
-  case: k037
+  case: k038
   status: written
   groups: *id007
 2:258:21:
   hafs: أَنَا۠
-  case: k120
+  case: k122
   status: written
   groups:
   - text: أَنَا۠
@@ -4507,7 +4577,7 @@
     - idris
     base: true
     from:
-    - '002#111 wafi 222: كحفص (غير مذكورين)'
+    - '002#114 wafi 222: كحفص (غير مذكورين)'
   - text: أَنَا
     readers:
     - qalun
@@ -4515,11 +4585,11 @@
     - ibn_wardan
     - ibn_jammaz
     from:
-    - '002#111 wafi 222: بإثبات ألف أنا وصلا قبل همزة قطع مضمومة أو مفتوحة'
+    - '002#114 wafi 222: بإثبات ألف أنا وصلا قبل همزة قطع مضمومة أو مفتوحة'
     note: 'Alif of أنا is pronounced in waṣl: the Ḥafṣ zero mark removed. Condition holds: the next word starts with a ḍammah hamzah (أُحۡيِۦ).'
 2:258:23:
   hafs: وَأُمِيتُۖ
-  case: k121
+  case: k123
   status: written
   groups:
   - text: وَأُمِيتُۖ
@@ -4546,13 +4616,13 @@
     - idris
     base: true
     from:
-    - '002#112 idah 205: بالتشديد'
-    - '002#112 idah 205: بالتخفيف'
-    - '002#112 idah 205: كحفص (غير مذكورين)'
+    - '002#115 idah 205: بالتشديد'
+    - '002#115 idah 205: بالتخفيف'
+    - '002#115 idah 205: كحفص (غير مذكورين)'
     note: Options 1-2 are for المَيِّت / الْمَيْتَة; this word is أُمِيتُ, so everyone reads the Ḥafṣ word.
 2:259:6:
   hafs: وَهِيَ
-  case: k122
+  case: k124
   status: written
   groups:
   - text: وَهِيَ
@@ -4572,9 +4642,9 @@
     - idris
     base: true
     from:
-    - '002#21 wafi 202: بكسر الهاء'
-    - '002#21 idah 192: تحريك الهاء بالكسر'
-    - '002#21 idah 193: بالكسر (على أصله)'
+    - '002#22 wafi 202: بكسر الهاء'
+    - '002#22 idah 192: تحريك الهاء بالكسر'
+    - '002#22 idah 193: بالكسر (على أصله)'
   - text: وَهۡيَ
     readers:
     - qalun
@@ -4585,12 +4655,12 @@
     - ibn_wardan
     - ibn_jammaz
     from:
-    - '002#20 wafi 201: بإسكان الهاء إذا قرنت بالواو أو الفاء أو اللام'
-    - '002#20 idah 192: إسكان الهاء بعد الواو والفاء واللام'
+    - '002#21 wafi 201: بإسكان الهاء إذا قرنت بالواو أو الفاء أو اللام'
+    - '002#21 idah 192: إسكان الهاء بعد الواو والفاء واللام'
     note: 'Sukūn on the hāʾ. Condition holds: the word follows a wāw (وَهِيَ).'
 2:259:42:
   hafs: يَتَسَنَّهۡۖ
-  case: k123
+  case: k125
   status: written
   groups:
   - text: يَتَسَنَّهۡۖ
@@ -4611,7 +4681,7 @@
     - rawh
     base: true
     from:
-    - '002#113 wafi 223: بإثبات الهاء'
+    - '002#116 wafi 223: بإثبات الهاء'
   - text: يَتَسَنَّۖ
     readers:
     - khalaf_an_hamzah
@@ -4621,11 +4691,11 @@
     - ishaq
     - idris
     from:
-    - '002#113 wafi 223: بحذف الهاء'
+    - '002#116 wafi 223: بحذف الهاء'
     note: Final hāʾ dropped (the word ends on the nūn with shaddah).
 2:259:53:
   hafs: نُنشِزُهَا
-  case: k124
+  case: k126
   status: written
   groups:
   - text: نُنشِزُهَا
@@ -4642,7 +4712,7 @@
     - idris
     base: true
     from:
-    - '002#114 wafi 223: بالزاي المعجمة'
+    - '002#117 wafi 223: بالزاي المعجمة'
   - text: نُنشِرُهَا
     readers:
     - qalun
@@ -4656,11 +4726,11 @@
     - ruways
     - rawh
     from:
-    - '002#114 wafi 223: بالراء المهملة'
+    - '002#117 wafi 223: بالراء المهملة'
     note: Rāʾ in place of the zāy.
 2:259:61:
   hafs: أَعۡلَمُ
-  case: k125
+  case: k127
   status: written
   groups:
   - text: أَعۡلَمُ
@@ -4683,8 +4753,8 @@
     - idris
     base: true
     from:
-    - '002#115 wafi 223: بهمزة قطع مفتوحة ورفع الميم'
-    - '002#115 idah 218: بقطع الهمزة مفتوحة ورفع الميم'
+    - '002#118 wafi 223: بهمزة قطع مفتوحة ورفع الميم'
+    - '002#118 idah 218: بقطع الهمزة مفتوحة ورفع الميم'
   - text: ٱعۡلَمۡ
     readers:
     - khalaf_an_hamzah
@@ -4692,11 +4762,11 @@
     - abul_harith
     - duri_kisai
     from:
-    - '002#115 wafi 223: بوصل الهمزة وجزم الميم'
+    - '002#118 wafi 223: بوصل الهمزة وجزم الميم'
     note: Alif waṣlah (hamzah of wasl) and mīm sākin (jazm, imperative).
 2:260:5:
   hafs: أَرِنِي
-  case: k126
+  case: k128
   status: written
   groups:
   - text: أَرِنِي
@@ -4717,8 +4787,8 @@
     - idris
     base: true
     from:
-    - '002#116 wafi 211: بإشباع كسر الراء'
-    - '002#116 idah 200: بإتمام الكسرة'
+    - '002#119 wafi 211: بإشباع كسر الراء'
+    - '002#119 idah 200: بإتمام الكسرة'
   - text: أَرۡنِي
     readers:
     - bazzi
@@ -4727,18 +4797,18 @@
     - ruways
     - rawh
     from:
-    - '002#116 wafi 211: بسكون الراء'
-    - '002#116 idah 199: بإسكان الراء'
+    - '002#119 wafi 211: بسكون الراء'
+    - '002#119 idah 199: بإسكان الراء'
     note: Sukūn on the rāʾ.
   - text: null
     readers:
     - duri_abuamr
     from:
-    - '002#116 wafi 211: باختلاس كسرة الراء'
+    - '002#119 wafi 211: باختلاس كسرة الراء'
     note: 'Ikhtilās of the rāʾ''s kasrah: no spelling for it in the book.'
 2:260:22:
   hafs: فَصُرۡهُنَّ
-  case: k127
+  case: k129
   status: written
   groups:
   - text: فَصُرۡهُنَّ
@@ -4758,8 +4828,8 @@
     - rawh
     base: true
     from:
-    - '002#117 wafi 223: بضم الصاد'
-    - '002#117 idah 218: بضم الصاد'
+    - '002#120 wafi 223: بضم الصاد'
+    - '002#120 idah 218: بضم الصاد'
   - text: فَصِرۡهُنَّ
     readers:
     - khalaf_an_hamzah
@@ -4770,12 +4840,12 @@
     - ishaq
     - idris
     from:
-    - '002#117 wafi 223: بكسر الصاد'
-    - '002#117 idah 218: بكسر الصاد'
+    - '002#120 wafi 223: بكسر الصاد'
+    - '002#120 idah 218: بكسر الصاد'
     note: Ṣād kasrah.
 2:260:30:
   hafs: جُزۡءٗا
-  case: k128
+  case: k130
   status: written
   groups:
   - text: جُزۡءٗا
@@ -4801,16 +4871,16 @@
     - idris
     base: true
     from:
-    - '002#118 wafi 223: بإسكان الزاي'
+    - '002#121 wafi 223: بإسكان الزاي'
   - text: جُزُءٗا
     readers:
     - shuba
     from:
-    - '002#118 wafi 223: بضم الزاي'
+    - '002#121 wafi 223: بضم الزاي'
     note: Zāy ḍammah.
 2:261:19:
   hafs: يُضَٰعِفُ
-  case: k129
+  case: k131
   status: written
   groups:
   - text: يُضَٰعِفُ
@@ -4829,8 +4899,8 @@
     - idris
     base: true
     from:
-    - '002#102 wafi 221: بتخفيف العين وإثبات الألف قبلها'
-    - '002#119 idah 216: بتخفيف العين مع إثبات الألف'
+    - '002#105 wafi 221: بتخفيف العين وإثبات الألف قبلها'
+    - '002#122 idah 216: بتخفيف العين مع إثبات الألف'
   - text: يُضَعِّفُ
     readers:
     - bazzi
@@ -4842,8 +4912,8 @@
     - ruways
     - rawh
     from:
-    - '002#102 wafi 221: بتشديد العين وحذف الألف قبلها'
-    - '002#119 idah 216: بحذف الألف وتشديد العين'
+    - '002#105 wafi 221: بتشديد العين وحذف الألف قبلها'
+    - '002#122 idah 216: بحذف الألف وتشديد العين'
     note: ʿAyn with shaddah and kasrah, alif dropped (يُضَعِّفُ).
 2:262:20:
   hafs: خَوۡفٌ
@@ -4852,7 +4922,7 @@
   groups: *id005
 2:265:13:
   hafs: بِرَبۡوَةٍ
-  case: k130
+  case: k132
   status: written
   groups:
   - text: بِرَبۡوَةٍ
@@ -4863,7 +4933,7 @@
     - hafs
     base: true
     from:
-    - '002#120 wafi 224: بفتح الراء'
+    - '002#123 wafi 224: بفتح الراء'
   - text: بِرُبۡوَةٍ
     readers:
     - qalun
@@ -4883,11 +4953,11 @@
     - ishaq
     - idris
     from:
-    - '002#120 wafi 224: بضم الراء'
+    - '002#123 wafi 224: بضم الراء'
     note: Rāʾ ḍammah.
 2:265:17:
   hafs: أُكُلَهَا
-  case: k131
+  case: k133
   status: written
   groups:
   - text: أُكُلَهَا
@@ -4908,8 +4978,8 @@
     - idris
     base: true
     from:
-    - '002#121 wafi 223: بضم الكاف'
-    - '002#121 idah 210: بضم الكاف'
+    - '002#124 wafi 223: بضم الكاف'
+    - '002#124 idah 210: بضم الكاف'
   - text: أُكۡلَهَا
     readers:
     - qalun
@@ -4919,11 +4989,11 @@
     - duri_abuamr
     - susi
     from:
-    - '002#121 wafi 223: بإسكان الكاف'
+    - '002#124 wafi 223: بإسكان الكاف'
     note: Sukūn on the kāf.
 2:267:15:
   hafs: تَيَمَّمُواْ
-  case: k132
+  case: k134
   status: written
   groups:
   - text: تَيَمَّمُواْ
@@ -4949,16 +5019,16 @@
     - idris
     base: true
     from:
-    - '002#122 wafi 225: بتخفيف التاء'
+    - '002#125 wafi 225: بتخفيف التاء'
   - text: تَّيَمَّمُواْ
     readers:
     - bazzi
     from:
-    - '002#122 wafi 225: بتشديد التاء وصلا'
+    - '002#125 wafi 225: بتشديد التاء وصلا'
     note: Tāʾ with shaddah (joined to the word before it in waṣl).
 2:268:4:
   hafs: وَيَأۡمُرُكُم
-  case: k133
+  case: k135
   status: written
   groups:
   - text: وَيَأۡمُرُكُم
@@ -4983,9 +5053,9 @@
     - idris
     base: true
     from:
-    - '002#17 idah 195: بإتمام حركة الراء'
-    - '002#17 idah 196: بإتمام حركة الراء (من الوفاق)'
-    - '002#17 wafi 202: كحفص (غير مذكورين)'
+    - '002#18 idah 195: بإتمام حركة الراء'
+    - '002#18 idah 196: بإتمام حركة الراء (من الوفاق)'
+    - '002#18 wafi 202: كحفص (غير مذكورين)'
   - text: وَيَأۡمُرۡكُم
     readers:
     - duri_abuamr
@@ -4993,7 +5063,7 @@
     khulf:
     - duri_abuamr
     from:
-    - '002#17 wafi 202: بإسكان الراء'
+    - '002#18 wafi 202: بإسكان الراء'
     note: Sukūn on the rāʾ.
   - text: null
     readers:
@@ -5001,11 +5071,11 @@
     khulf:
     - duri_abuamr
     from:
-    - '002#17 wafi 203: باختلاس ضمة الراء'
+    - '002#18 wafi 203: باختلاس ضمة الراء'
     note: 'Ikhtilās of the rāʾ''s ḍammah: no spelling for it in the book. Dūrī Abī ʿAmr has this and the sukūn as his two (khulf).'
 2:271:4:
   hafs: فَنِعِمَّا
-  case: k134
+  case: k136
   status: written
   groups:
   - text: فَنِعِمَّا
@@ -5018,9 +5088,9 @@
     - rawh
     base: true
     from:
-    - '002#123 wafi 227: بكسر النون'
-    - '002#123 wafi 227: بإتمام كسر العين'
-    - '002#123 idah 219: بكسر العين كسرا كاملا'
+    - '002#126 wafi 227: بكسر النون'
+    - '002#126 wafi 227: بإتمام كسر العين'
+    - '002#126 idah 219: بكسر العين كسرا كاملا'
     note: Nūn and ʿayn kasrah as Ḥafṣ.
   - text: فَنِعۡمَّا
     readers:
@@ -5036,9 +5106,9 @@
     - susi
     - shuba
     from:
-    - '002#123 wafi 227: بكسر النون'
-    - '002#123 wafi 227: بإسكان العين'
-    - '002#123 idah 219: بإسكان العين مع تشديد الميم'
+    - '002#126 wafi 227: بكسر النون'
+    - '002#126 wafi 227: بإسكان العين'
+    - '002#126 idah 219: بإسكان العين مع تشديد الميم'
     note: Sukūn on the ʿayn (mīm keeps its shaddah). Two texts for Qālūn, Abū ʿAmr (Dūrī, Sūsī) and Shuʿbah (sukūn / ikhtilās). Abū Jaʿfar's is
       an unconditional sukūn.
   - text: null
@@ -5053,8 +5123,8 @@
     - susi
     - shuba
     from:
-    - '002#123 wafi 227: بكسر النون'
-    - '002#123 wafi 227: بإخفاء (اختلاس) كسر العين'
+    - '002#126 wafi 227: بكسر النون'
+    - '002#126 wafi 227: بإخفاء (اختلاس) كسر العين'
     note: 'Ikhtilās of the ʿayn''s kasrah: no spelling for it in the book.'
   - text: فَنَعِمَّا
     readers:
@@ -5067,13 +5137,13 @@
     - ishaq
     - idris
     from:
-    - '002#123 wafi 227: بفتح النون'
-    - '002#123 wafi 227: بإتمام كسر العين'
-    - '002#123 idah 219: بفتح النون وكسر العين'
+    - '002#126 wafi 227: بفتح النون'
+    - '002#126 wafi 227: بإتمام كسر العين'
+    - '002#126 idah 219: بفتح النون وكسر العين'
     note: Nūn fatḥah, ʿayn full kasrah (فَنَعِمَّا); for Ishāq and Idrīs, option 8.
 2:271:5:
   hafs: هِيَۖ
-  case: k135
+  case: k137
   status: written
   groups:
   - text: هِيَۖ
@@ -5100,17 +5170,17 @@
     - idris
     base: true
     from:
-    - '002#19 wafi 202: بكسر الهاء'
-    - '002#19 idah 192: تحريك الهاء بالكسر'
-    - '002#19 idah 193: بالكسر (على أصله)'
+    - '002#20 wafi 202: بكسر الهاء'
+    - '002#20 idah 192: تحريك الهاء بالكسر'
+    - '002#20 idah 193: بالكسر (على أصله)'
 2:271:10:
   hafs: فَهُوَ
-  case: k081
+  case: k083
   status: written
   groups: *id020
 2:271:13:
   hafs: وَيُكَفِّرُ
-  case: k136
+  case: k138
   status: written
   groups:
   - text: وَيُكَفِّرُ
@@ -5120,8 +5190,8 @@
     - hafs
     base: true
     from:
-    - '002#124 wafi 227: بالياء'
-    - '002#124 wafi 227: برفع الراء'
+    - '002#127 wafi 227: بالياء'
+    - '002#127 wafi 227: برفع الراء'
     note: ياء ورفع
   - text: وَنُكَفِّرۡ
     readers:
@@ -5136,8 +5206,8 @@
     - ishaq
     - idris
     from:
-    - '002#124 wafi 227: بالنون'
-    - '002#124 wafi 227: بجزم الراء'
+    - '002#127 wafi 227: بالنون'
+    - '002#127 wafi 227: بجزم الراء'
     note: نون وجزم
   - text: وَنُكَفِّرُ
     readers:
@@ -5149,12 +5219,12 @@
     - ruways
     - rawh
     from:
-    - '002#124 wafi 227: بالنون'
-    - '002#124 wafi 227: برفع الراء'
+    - '002#127 wafi 227: بالنون'
+    - '002#127 wafi 227: برفع الراء'
     note: نون ورفع
 2:273:12:
   hafs: يَحۡسَبُهُمُ
-  case: k137
+  case: k139
   status: written
   groups:
   - text: يَحۡسَبُهُمُ
@@ -5169,8 +5239,8 @@
     - ibn_jammaz
     base: true
     from:
-    - '002#125 wafi 228: بفتح السين'
-    - '002#125 idah 219: بفتح السين'
+    - '002#128 wafi 228: بفتح السين'
+    - '002#128 idah 219: بفتح السين'
   - text: يَحۡسِبُهُمُ
     readers:
     - qalun
@@ -5186,9 +5256,9 @@
     - ishaq
     - idris
     from:
-    - '002#125 wafi 227: بكسر السين'
-    - '002#125 idah 219: بكسر السين'
-    - '002#125 idah 220: بكسر السين'
+    - '002#128 wafi 227: بكسر السين'
+    - '002#128 idah 219: بكسر السين'
+    - '002#128 idah 220: بكسر السين'
     note: Sīn kasrah.
 2:274:13:
   hafs: خَوۡفٌ
@@ -5202,7 +5272,7 @@
   groups: *id005
 2:279:4:
   hafs: فَأۡذَنُواْ
-  case: k138
+  case: k140
   status: written
   groups:
   - text: فَأۡذَنُواْ
@@ -5226,19 +5296,19 @@
     - idris
     base: true
     from:
-    - '002#126 wafi 228: بهمزة ساكنة وفتح الذال'
-    - '002#126 idah 220: بسكون الهمزة وفتح الذال'
+    - '002#129 wafi 228: بهمزة ساكنة وفتح الذال'
+    - '002#129 idah 220: بسكون الهمزة وفتح الذال'
   - text: فَأَٰذِنُواْ
     readers:
     - shuba
     - khalaf_an_hamzah
     - khallad
     from:
-    - '002#126 wafi 228: بالمد وكسر الذال'
+    - '002#129 wafi 228: بالمد وكسر الذال'
     note: Alif (dagger alif) after the hamzah, dhāl kasrah.
 2:280:7:
   hafs: مَيۡسَرَةٖۚ
-  case: k139
+  case: k141
   status: written
   groups:
   - text: مَيۡسَرَةٖۚ
@@ -5263,18 +5333,18 @@
     - idris
     base: true
     from:
-    - '002#127 wafi 228: بفتح السين'
-    - '002#127 idah 219: بفتح السين'
+    - '002#130 wafi 228: بفتح السين'
+    - '002#130 idah 219: بفتح السين'
   - text: مَيۡسُرَةٖۚ
     readers:
     - qalun
     - warsh
     from:
-    - '002#127 wafi 228: بضم السين'
+    - '002#130 wafi 228: بضم السين'
     note: Sīn ḍammah.
 2:280:9:
   hafs: تَصَدَّقُواْ
-  case: k140
+  case: k142
   status: written
   groups:
   - text: تَصَدَّقُواْ
@@ -5283,7 +5353,7 @@
     - hafs
     base: true
     from:
-    - '002#128 wafi 229: بتخفيف الصاد'
+    - '002#131 wafi 229: بتخفيف الصاد'
   - text: تَصَّدَّقُواْ
     readers:
     - qalun
@@ -5305,11 +5375,11 @@
     - ishaq
     - idris
     from:
-    - '002#128 wafi 229: بتشديد الصاد'
+    - '002#131 wafi 229: بتشديد الصاد'
     note: Shaddah on the ṣād (تَصَّدَّقُواْ).
 2:281:3:
   hafs: تُرۡجَعُونَ
-  case: k141
+  case: k143
   status: written
   groups:
   - text: تُرۡجَعُونَ
@@ -5332,7 +5402,7 @@
     - idris
     base: true
     from:
-    - '002#129 wafi 229: بضم التاء وفتح الجيم'
+    - '002#132 wafi 229: بضم التاء وفتح الجيم'
   - text: تَرۡجِعُونَ
     readers:
     - duri_abuamr
@@ -5340,13 +5410,13 @@
     - ruways
     - rawh
     from:
-    - '002#87 idah 191: بفتح حرف المضارعة وكسر الجيم (للأخرى)'
-    - '002#129 wafi 229: بفتح التاء وكسر الجيم'
+    - '002#90 idah 191: بفتح حرف المضارعة وكسر الجيم (للأخرى)'
+    - '002#132 wafi 229: بفتح التاء وكسر الجيم'
     note: Tāʾ fatḥah, jīm kasrah. For Ruways and Rawḥ the book words it as a general rule for the verb yarjiʿ (marked للأخرى); applied here to
       this place.
 2:282:48:
   hafs: هُوَ
-  case: k142
+  case: k144
   status: written
   groups:
   - text: هُوَ
@@ -5374,17 +5444,17 @@
     - '002#6 wafi 202: بضم الهاء'
     - '002#6 idah 192: تحريك الهاء بالضم'
     - '002#6 idah 193: بالضم (على أصله)'
-    - '002#130 wafi 202: بضم الهاء'
+    - '002#133 wafi 202: بضم الهاء'
   - text: هۡوَ
     readers:
     - ibn_wardan
     - ibn_jammaz
     from:
-    - '002#130 idah 192: بإسكان الهاء'
+    - '002#133 idah 192: بإسكان الهاء'
     note: Sukūn on the hāʾ.
 2:282:66:
   hafs: أَن
-  case: k143
+  case: k145
   status: written
   groups:
   - text: إِن
@@ -5394,7 +5464,7 @@
     - ishaq
     - idris
     from:
-    - '002#131 wafi 229: بكسر الهمزة'
+    - '002#134 wafi 229: بكسر الهمزة'
   - text: أَن
     readers:
     - qalun
@@ -5415,10 +5485,10 @@
     - rawh
     base: true
     from:
-    - '002#131 wafi 229: بفتح الهمزة'
+    - '002#134 wafi 229: بفتح الهمزة'
 2:282:67:
   hafs: تَضِلَّ
-  case: k144
+  case: k146
   status: written
   groups:
   - text: تَضِلَّ
@@ -5445,12 +5515,12 @@
     - idris
     base: true
     from:
-    - '002#132 idah 220: بفتح الهمزة'
-    - '002#132 idah 220: كحفص (غير مذكورين)'
+    - '002#135 idah 220: بفتح الهمزة'
+    - '002#135 idah 220: كحفص (غير مذكورين)'
     note: The options concern the hamzah of the previous word (k165); this word itself is unchanged for everyone.
 2:282:69:
   hafs: فَتُذَكِّرَ
-  case: k145
+  case: k147
   status: written
   groups:
   - text: فَتُذۡكِرَ
@@ -5462,17 +5532,17 @@
     - ruways
     - rawh
     from:
-    - '002#133 wafi 229: بتخفيف الكاف وسكون الذال'
-    - '002#133 wafi 229: بنصب الراء'
-    - '002#133 idah 220: بنصب الراء'
-    - '002#133 idah 220: بالتخفيف'
+    - '002#136 wafi 229: بتخفيف الكاف وسكون الذال'
+    - '002#136 wafi 229: بنصب الراء'
+    - '002#136 idah 220: بنصب الراء'
+    - '002#136 idah 220: بالتخفيف'
   - text: فَتُذَكِّرُ
     readers:
     - khalaf_an_hamzah
     - khallad
     from:
-    - '002#133 wafi 229: بتشديد الكاف وفتح الذال'
-    - '002#133 wafi 229: برفع الراء'
+    - '002#136 wafi 229: بتشديد الكاف وفتح الذال'
+    - '002#136 wafi 229: برفع الراء'
   - text: فَتُذَكِّرَ
     readers:
     - qalun
@@ -5489,13 +5559,13 @@
     - idris
     base: true
     from:
-    - '002#133 wafi 229: بتشديد الكاف وفتح الذال'
-    - '002#133 wafi 229: بنصب الراء'
-    - '002#133 idah 220: بنصب الراء'
-    - '002#133 idah 220: بالتشديد'
+    - '002#136 wafi 229: بتشديد الكاف وفتح الذال'
+    - '002#136 wafi 229: بنصب الراء'
+    - '002#136 idah 220: بنصب الراء'
+    - '002#136 idah 220: بالتشديد'
 2:282:99:
   hafs: تِجَٰرَةً
-  case: k146
+  case: k148
   status: written
   groups:
   - text: تِجَٰرَةً
@@ -5504,7 +5574,7 @@
     - hafs
     base: true
     from:
-    - '002#134 wafi 229: بالنصب'
+    - '002#137 wafi 229: بالنصب'
   - text: تِجَٰرَةٌ
     readers:
     - qalun
@@ -5526,10 +5596,10 @@
     - ishaq
     - idris
     from:
-    - '002#134 wafi 229: بالرفع'
+    - '002#137 wafi 229: بالرفع'
 2:282:100:
   hafs: حَاضِرَةٗ
-  case: k147
+  case: k149
   status: written
   groups:
   - text: حَاضِرَةٗ
@@ -5538,7 +5608,7 @@
     - hafs
     base: true
     from:
-    - '002#135 wafi 229: بالنصب'
+    - '002#138 wafi 229: بالنصب'
   - text: حَاضِرَةٞ
     readers:
     - qalun
@@ -5560,10 +5630,10 @@
     - ishaq
     - idris
     from:
-    - '002#135 wafi 229: بالرفع'
+    - '002#138 wafi 229: بالرفع'
 2:282:112:
   hafs: يُضَآرَّ
-  case: k148
+  case: k150
   status: written
   groups:
   - text: يُضَآرۡ
@@ -5571,7 +5641,7 @@
     - ibn_wardan
     - ibn_jammaz
     from:
-    - '002#136 idah 215: بتخفيف الراء ساكنة مع إشباع المد'
+    - '002#139 idah 215: بتخفيف الراء ساكنة مع إشباع المد'
     note: تخفيف الراء ساكنة; the madd sign of the Hafs word is kept
   - text: يُضَآرَّ
     readers:
@@ -5595,12 +5665,12 @@
     - idris
     base: true
     from:
-    - '002#136 idah 215: بالفتح والتشديد'
-    - '002#136 idah 215: كحفص (غير مذكورين)'
+    - '002#139 idah 215: بالفتح والتشديد'
+    - '002#139 idah 215: كحفص (غير مذكورين)'
     note: Yaqub and Khalaf read as Hafs (فتح وتشديد)
 2:283:8:
   hafs: فَرِهَٰنٞ
-  case: k149
+  case: k151
   status: written
   groups:
   - text: فَرُهُنٞ
@@ -5610,7 +5680,7 @@
     - duri_abuamr
     - susi
     from:
-    - '002#137 wafi 229: برهن بضم الراء والهاء وحذف الألف'
+    - '002#140 wafi 229: برهن بضم الراء والهاء وحذف الألف'
   - text: فَرِهَٰنٞ
     readers:
     - qalun
@@ -5631,11 +5701,11 @@
     - idris
     base: true
     from:
-    - '002#137 wafi 229: برهان بكسر الراء وفتح الهاء وألف بعدها'
-    - '002#137 idah 221: بكسر الراء وفتح الهاء وألف بعدها'
+    - '002#140 wafi 229: برهان بكسر الراء وفتح الهاء وألف بعدها'
+    - '002#140 idah 221: بكسر الراء وفتح الهاء وألف بعدها'
 2:284:18:
   hafs: فَيَغۡفِرُ
-  case: k150
+  case: k152
   status: written
   groups:
   - text: فَيَغۡفِرۡ
@@ -5653,8 +5723,8 @@
     - ishaq
     - idris
     from:
-    - '002#138 wafi 229: بالجزم'
-    - '002#138 idah 221: بالجزم'
+    - '002#141 wafi 229: بالجزم'
+    - '002#141 idah 221: بالجزم'
     note: jazm of the ra
   - text: فَيَغۡفِرُ
     readers:
@@ -5668,11 +5738,11 @@
     - rawh
     base: true
     from:
-    - '002#138 wafi 229: بالرفع'
-    - '002#138 idah 221: بالرفع'
+    - '002#141 wafi 229: بالرفع'
+    - '002#141 idah 221: بالرفع'
 2:284:21:
   hafs: وَيُعَذِّبُ
-  case: k151
+  case: k153
   status: written
   groups:
   - text: وَيُعَذِّبۡ
@@ -5690,8 +5760,8 @@
     - ishaq
     - idris
     from:
-    - '002#139 wafi 229: بالجزم'
-    - '002#139 idah 221: بالجزم'
+    - '002#142 wafi 229: بالجزم'
+    - '002#142 idah 221: بالجزم'
     note: jazm of the ba
   - text: وَيُعَذِّبُ
     readers:
@@ -5705,11 +5775,11 @@
     - rawh
     base: true
     from:
-    - '002#139 wafi 229: بالرفع'
-    - '002#139 idah 221: بالرفع'
+    - '002#142 wafi 229: بالرفع'
+    - '002#142 idah 221: بالرفع'
 2:285:13:
   hafs: وَكُتُبِهِۦ
-  case: k152
+  case: k154
   status: written
   groups:
   - text: وَكِتَٰبِهِۦ
@@ -5721,7 +5791,7 @@
     - ishaq
     - idris
     from:
-    - '002#140 wafi 229: بكسر الكاف وفتح التاء وألف بعدها على التوحيد'
+    - '002#143 wafi 229: بكسر الكاف وفتح التاء وألف بعدها على التوحيد'
   - text: وَكُتُبِهِۦ
     readers:
     - qalun
@@ -5740,10 +5810,10 @@
     - rawh
     base: true
     from:
-    - '002#140 wafi 229: بضم الكاف والتاء وحذف الألف على الجمع'
+    - '002#143 wafi 229: بضم الكاف والتاء وحذف الألف على الجمع'
 2:285:16:
   hafs: نُفَرِّقُ
-  case: k153
+  case: k155
   status: written
   groups:
   - text: يُفَرِّقُ
@@ -5751,7 +5821,7 @@
     - ruways
     - rawh
     from:
-    - '002#141 idah 221: بالياء التحتية'
+    - '002#144 idah 221: بالياء التحتية'
   - text: نُفَرِّقُ
     readers:
     - qalun
@@ -5774,5 +5844,5 @@
     - idris
     base: true
     from:
-    - '002#141 idah 221: بالنون'
-    - '002#141 idah 221: كحفص (غير مذكورين)'
+    - '002#144 idah 221: بالنون'
+    - '002#144 idah 221: كحفص (غير مذكورين)'

@@ -366,6 +366,10 @@ listed:
     - tashil_ula
   cite:
   - wafi 92
+  anchor: all
+  places:
+  - '12:53:7'
+  - '12:53:8'
 - words:
   - هؤلاء إن
   - البغاء إن
@@ -375,6 +379,12 @@ listed:
     - ibdal_thaniya_ya
   cite:
   - wafi 94
+  anchor: all
+  places:
+  - '2:31:12'
+  - '2:31:13'
+  - '24:33:32'
+  - '24:33:33'
 filled_notes:
 - 'Durrah ruwāt for the waqf case (stopping on the first hamzah): no row of al-Īḍāḥ speaks of it (asl: Ibn Wardān, Ibn Jammāz, Ruways, Rawḥ, Isḥāq,
   Idrīs left empty).'

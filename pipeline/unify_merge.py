@@ -20,7 +20,7 @@ from mushaf_data.paths import DATA
 from mushaf_data.profiles import load as reviewed
 from mushaf_data.ruwat import RUWAT
 
-from .anchor import TABLES as ANCHORED, anchor
+from .anchor import anchor
 from .unify_profiles import DIR, where
 
 OUT = DATA / "usul"
@@ -119,8 +119,8 @@ def merge() -> dict[str, int]:
     OUT.mkdir(parents=True, exist_ok=True)
     for c, t in tables.items():
         sort_open(c, t, s)
-        if c in ANCHORED:  # the word-by-word chapters: listed words → places
-            anchor(t)
+        if t.get("listed"):  # every table's listed words → places (pipeline.anchor, 2026-11-28)
+            anchor(t, c)
         if c == "idgham_kabir":  # noise: iẓhār in al-Sūsī's sub-cases follows from the stated iẓhār
             first = t["cases"][0]["ruwat"]
             for case in t["cases"][4:]:

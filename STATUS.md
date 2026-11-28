@@ -1,6 +1,6 @@
 # Status and next steps
 
-Last updated 2026-11-28 (the extractor's labels: من اندرج bounded by the madd wajh, unread heads, typos). Read this first in a new session (the overview for newcomers is `README.md`), then
+Last updated 2026-11-28 (step 1 done: the engine picks the table case per word, every listed entry stores its slots, `recurs` stores slots, the ambiguous farsh rows pinned; next is milestone 4, al-Nisāʾ on). Read this first in a new session (the overview for newcomers is `README.md`), then
 `docs/02-spike-reading-model.md` (the spike plan with day-by-day results) and
 `docs/03-usul-sources.md` (uṣūl books).
 
@@ -315,8 +315,8 @@ tables; review list empty.
     base word. وكأين's tas-hīl likewise (idah 112).
   - 3:195 وقاتلوا وقتلوا: al-Futūḥ prints Abū l-Ḥārith and Isḥāq the other way round from al-Dūrī ʿan
     al-Kisāʾī and Idrīs; wafi 242 names Ḥamzah and al-Kisāʾī together.
-  - Still ambiguous (not anchored, pre-existing): يقبل منها (wafi 202), فأمتعه (wafi 211), كن فيكون
-    (wafi 208), وضعت (wafi 232), أن الله يبشرك (wafi 233); asl_differs at 3:66 / 3:119 for Abū Jaʿfar.
+  - ~~Still ambiguous: يقبل منها (wafi 202), فأمتعه (wafi 211), كن فيكون (wafi 208), وضعت (wafi 232),
+    أن الله يبشرك (wafi 233); asl_differs at 3:66 / 3:119 for Abū Jaʿfar.~~ Pinned 2026-11-28 (below).
 - **al-Futūḥ coverage: inferred agreement (2026-11-28)**. 1,202 of the 1,340 no-row pairs were jamʿ
   labels that don't name everyone ("قالون واندرج من اندرج: بالتوسط", "أصحاب التوسط"): the extractor
   gives them who surely reads (ruwat_min) and who may (ruwat_max), and the check used only the sure.
@@ -396,12 +396,94 @@ tables; review list empty.
       assumption.
     - v1-p162 (2:165) is anchored to 3:179.
 
+- **Per-word table cases, anchored lists, `recurs` slots, pinned rows (2026-11-28, docs/06 §3 items
+  2-4).** Before → after: `checks.api` (KFGQPC) 76,226 / 76,968 → **76,251 / 76,970 (99.1%)**, unknown
+  32 → 30; scored with the check's new fold for both, 76,109 → 76,251 and no word agree → differ.
+  `checks.farsh --books` 8 / 382 / 257 → 8 / 386 / 258 (kfgqpc-only 28 → 24, 11 → 10).
+  `pipeline.crosscheck_budur` 1,693 / 64 → 1,700 / 57. al-Futūḥ uṣūl (`checks.futuh.readings`)
+  unchanged: 679 pairs, 18 not reproduced; from the books alone 656 / 669. `checks.futuh.farsh_text`
+  (pairs 6,280 → 6,340): agree 4,858 → 4,888, agree_inferred 873 → 891, differ 121 → 122, no_row
+  321 → 334, no_text 78 → 76. Tests: tests/test_cases.py (new) and test_farsh's Anchors / RecursSlots,
+  each with a planted error; `python3 -m unittest`: 120 tests pass.
+  - **The case from the word** (`mushaf_data/cases.py`, moved from the crosscheck, which imports it):
+    `case_for` gives hamzatayn maftūḥah / maksūrah / maḍmūmah, the sākin hamzah as fāʾ / ʿayn / lām,
+    imālah after a rāʾ, on wafi 150's faʿlā words, and before a sākin in waṣl (wafi 155-156).
+    `refine` moves each detected occurrence to its case's engine category (`SUBCATS`:
+    `hamzatayn_madmumah`, `ibdal_sakin_ayn`, `imala_alif_tanith`, `imala_wasl_sakin`…; `o.base` keeps
+    the transform). A sub-category with the same wujūh as its category is one choice with it (as
+    silah_mim with silah_mim_hamza); a constraint written for the category binds it
+    (`constraints.as_base`: Warsh's badal × dhawāt al-yāʾ on the faʿlā words, as before), except the
+    waṣl-before-a-sākin cases. Hishām at 3:15 أَؤُنَبِّئُكُم now reads the maḍmūmah's taḥqīq with
+    idkhāl or taḥqīq (wafi 90-91); the detector didn't see a second hamzah on ؤ/ئ/ء before.
+    Faults found and fixed on the way: the first hamzah taken for the sākin one (أَنۢبِئۡهُم: fāʾ),
+    the bāʾ of بِئۡسَ stripped as a preposition, a hamzah on an alif dropped by the skeleton (نَشَأۡ,
+    أَدۡنَىٰ taken for الدنيا), استسقى taken for سقيا, العليا matching عَلَىٰ, the faʿlā words written
+    with an alif not detected (ٱلدُّنۡيَا), and the imālah exceptions (إلى، على… wafi 142-143) applied
+    only inside 1:1-2:20 (`generate.book_gate` read the spike's passage). KFGQPC's al-Dūrī and
+    al-Sūsī mark taqlīl with U+06ED (مُوسۭيٰ); checks.kfgqpc now folds it, which also showed the
+    detector gaps above. Warsh gains the lām-case taḥqīq (شِئۡتُمۡ, جِئۡتَ: 17 words), al-Dūrī and
+    al-Sūsī the faʿlā taqlīl (~60 each).
+  - **Every listed entry stores its slots** (`pipeline/anchor.py`, every table, run by
+    unify_merge): 396 entries, 280 fully anchored, 72 partly, 44 no Ḥafṣ match; **54 flagged**
+    (no `places`, only `candidates`: nothing reads them until pinned). A phrase stores all its words
+    (ويولج النهار: النهار after يولج only, never 2:164's). Narrowing from the entry: a sūrah in
+    brackets, "(قبل X)", sūrahs and āyāt in the note, "the first", a count checked. Words of three
+    letters or fewer also match by an alif key (آلآن had matched لن, أنت كنت, وال ولا). `PINS` from
+    the page: بئس "حيث جاء وكيف أتى" with لـ and بئسما (wafi 102), الآن with and without the
+    istifhām for Ibn Wardān's naql (idah 118), أحيا with wāw (wafi 144), المحراب in the jarr (wafi
+    155), صلى at a verse end (wafi 172), زاد 2:10 (wafi 151). The engine reads an entry at its slots as
+    that word's own choice (`usul_tables.listed_wujuh`, key `cat@slot`; mushaf_data.api only, not
+    the al-Futūḥ checks' generate). The crosscheck reads the slots from data/usul (pipeline/unified's
+    tables have none), farsh_books.usul_covers the slots (a flagged entry: its candidates).
+  - **`recurs` stores slots**: pipeline.farsh writes `recurs.slots` (skip applied); checks.farsh,
+    farsh_class.recurs_from and the API (budur source, which now reaches recurring places) read them.
+  - **Rows pinned from their quotes, each read on the page** (`farsh_books.PINS`, filtered by the
+    sūrah combined): يقبل منها 2:48 (wafi 202, "للاحتراز عن الثانية"), فأمتعه 2:126 (wafi 211), كن
+    فيكون 2:117, 3:47 ("الكلمة الأولى"), 19:35, 40:68 (wafi 208), وضعت 3:36:11 بِمَا وَضَعَتۡ (wafi 232
+    "لفظ وضعت"), أن الله يبشرك 3:39 (wafi 233 "بعد فنادته"). **3:66 / 3:119 ها أنتم**: Abū Jaʿfar
+    "بالتسهيل مع إثبات الألف" (idah 113) and Yaʿqūb "بتحقيق الهمزة وإثبات الألف … ويخالف يعقوب أصله"
+    (idah 114) are now rows of their own (`EXTRA`), not the split aṣl fill (Yaʿqūb had been given Abū
+    ʿAmr's tas-hīl).
+  - farsh_books: 2 sūrahs changed; farsh_text 253 cases, 245 carried over, 8 re-written (Sonnet),
+    k188 (ها أنتم) by hand to the earlier convention (the easing is uṣūl: one text per alif); validate
+    clean, 23 groups null.
+  - **Waits on Eisa** (each with its page; nothing below is guessed in the data):
+    - idah 115 names Abū Jaʿfar's ibdāl in "لفظ النبي، النبيون، النبيين … الأنبياء", with the
+      article. Do نبي 3:146 and أنبياء 2:91 (no article) take it? Now: the aṣl fill, Nāfiʿ's hamz
+      (the slots no longer reach them; the old bare-word match did). al-Futūḥ prints نَّبِيّٖ for
+      him at 3:146.
+    - The 54 flagged listed entries, with their cites: the side-session notes file
+      anchor-flags-2026-11-28.md, or `python3 -m pipeline.anchor --flags`. With an effect on a
+      reading: ونأى "Shuʿbah only in al-Isrāʾ" (wafi 147); جعل "the eight places of al-Naḥl", 9
+      match (idah 63-64); هل ترى (wafi 133, idah 128); بيتي listed with "(نوح)" and bare (ya_idafa);
+      the yāʾāt rows "eight places; seven extracted" and "four places; three" (wafi 186); هو, رب, ثم
+      and أنت as short words (wafi 57-58, 167, idah 152, wafi 85).
+    - ٱطۡمَأۡنَنتُمۡ (4:103): a hamzah of a four-letter root; the word logic calls it ʿayn.
+    - Yaʿqūb at 2:48 يقبل: the aṣl fill gives Abū ʿAmr's تُقۡبَلُ (al-Īḍāḥ silent there, idah 226);
+      al-Futūḥ prints يُقۡبَلُ for Ruways and Rawḥ.
+    - The writer's spelling of Nāfiʿ's hamz where the quote says only "بالهمز": أَنۢبِئَآءَ 2:91,
+      نَّبِيۡءٖ 3:146 (k039, k214).
+  - **Engine gaps left** (not data): ها أنتم isn't detected as hamzatayn (its tas-hīl never reaches
+    the text); a faʿlā word with a pronoun (إِحۡدَىٰهُمَا) isn't detected; the al-Futūḥ checks'
+    `generate` doesn't read listed entries.
+
 Next, in order:
-1. Per-word table cases in the engine and anchored lists (docs/06 §4); pin the ambiguous rows above
-   from their quotes when their sūrah's farsh text is next checked.
-2. docs/05 milestone 4, continued from the books: al-Nisāʾ onward (wafi 243-, idah 231-), in batches (al-Budūr, then the farsh chapters
-   as the second reading); new slots go to data/spine/slots.yaml as they turn up.
-3. Then milestones 5- (occurrences, constraints, marks and counts, the engine's API).
+1. docs/05 milestone 4, continued from the books: al-Nisāʾ onward (wafi 243-, idah 231-), in batches
+   (al-Budūr, then the farsh chapters as the second reading); new slots go to data/spine/slots.yaml
+   as they turn up. Per batch, as for 1-3:
+   - al-Budūr pages → `python3 -m pipeline.farsh budur PAGES` (stores `recurs.slots` itself);
+   - al-Wāfī / al-Īḍāḥ farsh pages (`pipeline/prompt_farsh.md`, Sonnet) → `pipeline.farsh_books validate`,
+     then `combine N` per sūrah (run sūrahs in parallel: sūrah 2 takes ~5 min). Read its `ambiguous`
+     problems on the page and pin them in `farsh_books.PINS` (a pin may list places in several sūrahs:
+     wafi 208's كن فيكون already holds 19:35 and 40:68), and its `asl_differs` (a Durrah rāwī whose aṣl
+     is split: look for his own statement in al-Īḍāḥ's uṣūl chapter, as idah 113-114 for ها أنتم);
+   - `pipeline.farsh_text pack N…`, carry the unchanged cases over by their options (the way
+     2026-11-28 did: old keys.json and kNNN.json kept, matched by Ḥafṣ word + options), Sonnet
+     writers for the rest (`pipeline/prompt_farsh_text.md`), `validate`, `build`;
+   - the checks: `checks.api --surah N`, `checks.farsh --books --surah N`, `checks.futuh.farsh_text`.
+   The listed words of data/usul already hold their slots for the whole Qurʾān; a flagged entry
+   met in the batch's sūrahs is a question for Eisa (list below), not something to guess.
+2. Then milestones 5- (occurrences, constraints, marks and counts, the engine's API).
 
 Working notes: subagents get their own scratch folders; reviewed data stands until Eisa rules;
 book text is never committed here (pipeline/out and pipeline/work are gitignored; pipeline/out is backed up to the private al-mushaf-extractions repo, pipeline/work is rebuilt by `pack`).

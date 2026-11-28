@@ -379,6 +379,12 @@ listed:
     - jahr
   cite:
   - wafi 44
+  anchor: none
+  unanchored:
+  - أول الفاتحة
+  flag: no Ḥafṣ words match (a description or a spelling the skeleton misses)
+  candidates: []
+  places: []
 filled_notes:
 - 'al-Īḍāḥ has no istiʿādhah row: the six Durrah ruwāt are empty in every case.'
 notes:

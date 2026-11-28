@@ -18,6 +18,7 @@ from pathlib import Path
 
 import yaml
 
+from mushaf_data import usul_tables
 from mushaf_data.occurrences import skel
 from mushaf_data.spine import words
 
@@ -41,66 +42,10 @@ KEYWORDS = {
     "hamz_waqf_mid": [("إلا التحقيق", "tahqiq"), ("لا شيء فيه", "tahqiq")],
     "taghliz_lam": [("ترقيق", "tarqiq"), ("غلظ", "taghliz"), ("تغليظ", "taghliz"), ("تفخيم", "taghliz")],
 }
-# al-Wāfī p. 150: the words on fuʿlā, faʿlā and fiʿlā (alif al-taʾnīth), Abū ʿAmr's taqlīl
-FAALA = """موسى أنثى الدنيا قربى الوسطى القصوى العزى الوثقى الحسنى الأولى السفلى العليا الرؤيا طوبى المثلى
-السوأى زلفى سقيا الرجعى عقبى السلوى الموتى التقوى النجوى القتلى مرضى دعوى شتى صرعى طغوى يحيى سيما إحدى
-ضيزى عيسى""".split()
-SUFFIX = re.compile(r"(?:هما|هم|ها|ه|كم)$")
+# the table case from the word: shared with the engine (mushaf_data.cases, 2026-11-28)
+from mushaf_data.cases import FAALA, SUFFIX, WASL_SAKIN, case_for, faala, key, stem  # noqa: E402,F401
+
 REFERENCE = ("كحكم", "حكمها", "ومثله", "مثله", "مثل ", "وكذلك")  # a row pointing at another word's rule
-
-
-def key(word: str) -> tuple[str, bool]:
-    """Skeleton plus whether the word starts with an alif or hamzah (skel drops both: أزكى ≠ زكى)."""
-    from tools import book
-    return skel(word), book.fold(word).lstrip("وفبل")[:1] in ("ا", "ء")
-
-
-def stem(word: str) -> str:
-    """The skeleton without a pronoun suffix (prefixes are left: matching is by the word's end)."""
-    return SUFFIX.sub("", skel(word))
-
-
-FAALA_SK = {skel(w[2:] if w.startswith("ال") else w) for w in FAALA}
-
-
-def faala(word: str) -> bool:
-    st = stem(word)
-    return any(st.endswith(f) and len(st) - len(f) <= 3 for f in FAALA_SK)
-
-
-WASL_SAKIN = 11  # imala: the alif before a sākin in the next word, in waṣl (wafi 156)
-
-
-def case_for(cat: str, word: str, k: int, nxt: str = "") -> int:
-    """The table case the word belongs to, where the category alone doesn't say: imālah (after a
-    rāʾ: ذوات الراء; on fuʿlā/faʿlā/fiʿlā: alif al-taʾnīth, wafi 150), the sākin hamzah (fāʾ, ʿayn,
-    lām of the word), the second hamzah of two in a word (its vowel)."""
-    if cat.startswith("imala") and nxt.startswith("ٱ") and re.search("[ىا][\u0670]?[\u064b-\u065f\u06d6-\u06ed]*$", word):
-        return WASL_SAKIN + (stem(word)[-2:-1] == "ر")  # a final alif; after a rāʾ, al-Sūsī's khulf
-    if cat == "imala_ya":
-        st = stem(word)
-        if st[-2:-1] == "ر":
-            return 4
-        if faala(word):
-            return 9
-    if cat == "ibdal_sakin":
-        st = re.sub(r"^(?:[وفبل]*ل(?=.{3})|[وفب])?[يتنم]?", "", stem(word))  # article, conjunction, imperfect or participle prefix
-        i = st.find("ء")
-        if i == 0:
-            return 0
-        if i == len(st) - 1 or (i >= 0 and i == len(st) - 2 and st[-1] in "تن"):
-            return 2
-        if i > 0:
-            return 1
-    if cat == "hamzatayn":
-        m = re.search("[ءأ][\u064e]?[\u0670]?[ءأإؤئ]([\u064e\u064f\u0650])?", word)
-        second = m.group(0)[-2:] if m else ""
-        if "إ" in second or "ئ" in second or "\u0650" in second:
-            return 1
-        if "ؤ" in second or "\u064f" in second:
-            return 2
-    return k
-
 
 IMALA = [("لا إمالة", "fath"), ("لا تقليل", "fath"), ("قلل", "taqlil"), ("تقليل", "taqlil"), ("أمال", "imala"), ("إمالة", "imala"), ("بالإمالة", "imala"), ("فتح", "fath")]
 
@@ -145,10 +90,10 @@ def check(show: int = 0, last: int = 75) -> dict:
         t = tables.setdefault(tname, yaml.safe_load((DIR / f"{tname}.yaml").read_text(encoding="utf-8")))
         case = t["cases"][k]
         vocab = [w["id"] for w in t.get("wujuh") or []]
-        sk = {key(h[w]) for w in r["place"] if w in h}
-        sk |= {(k[1:], False) for k, _ in sk if k[:1] in "وفبل" and len(k) > 3}  # وَبِئۡسَ, وَمَأۡوَىٰهُمُ
-        entries = [x for x in t.get("listed") or []
-                   if {k for w in x.get("words") or [] for k in (key(str(w)), key(str(w).split()[0]))} & sk]
+        # the listed entries anchored at the row's words (pipeline.anchor's slots; no word matching here)
+        # (data/usul's: the merged tables hold the slots; pipeline/unified's are before the merge)
+        merged = usul_tables.tables().get(tname) or {}
+        entries = [x for x in merged.get("listed") or [] if set(x.get("places") or []) & set(r["place"])]
         kws = IMALA if cat.startswith("imala") else KEYWORDS.get(cat)
         hit = next(((kw, w) for kw, w in kws if kw in r["reading"]), None) if kws else None
         if hit and hit[1] is None:

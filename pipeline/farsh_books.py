@@ -268,17 +268,45 @@ FORMS = {("idah", 191, "يرجع"): re.compile("^[وف]?[تي]ُرۡجَعُ"),
 # "ولا يحسبن الذين كفروا، ولا يحسبن الذين يبخلون ... فيهما" (the row names the first only).
 PINS = {("wafi", 211, ("م", "يقولون")): ["2:140:2"],
         ("wafi", 216, ("ليس", "لبر")): ["2:177:2"],
-        ("wafi", 240, ("ول", "يحسبن", "لذين", "كفرو")): ["3:178:2", "3:180:2"]}
+        ("wafi", 240, ("ول", "يحسبن", "لذين", "كفرو")): ["3:178:2", "3:180:2"],
+        # 2026-11-28, each from its quote, read on the page:
+        # wafi 202 "ولا يقبل منها شفاعة … والتقييد بالأولى للاحتراز عن الثانية وهي ولا يقبل منها عدل" → 2:48, not 2:123
+        ("wafi", 202, ("يقبل", "منه")): ["2:48:10"],
+        # wafi 211 "وقرأ ابن عامر فأمتعه بتخفيف التاء": 2:126 فَأُمَتِّعُهُۥ
+        ("wafi", 211, ("فمتعه",)): ["2:126:22"],
+        # wafi 208: al-Baqarah "إذا قضى أمرا فإنما يقول له كن فيكون، وقال الذين لا يعلمون" (2:117); Āl ʿImrān
+        # "في الكلمة الأولى فيها وهي كن فيكون ويعلمه" (3:47, not 3:59); Maryam "كن فيكون وإن الله ربي" (19:35);
+        # Ghāfir "كن فيكون ألم تر إلى الذين يجادلون" (40:68). Each row keeps its own sūrah's place.
+        ("wafi", 208, ("كن", "فيكون")): ["2:117:11", "3:47:23", "19:35:16", "40:68:12"],
+        # wafi 232 "لفظ وضعت" (no pronoun): 3:36 بِمَا وَضَعَتۡ, not وَضَعَتۡهَا / وَضَعۡتُهَآ
+        ("wafi", 232, ("وضعت",)): ["3:36:11"],
+        # wafi 233 "أن الله الواقع في التلاوة بعد فنادته وهو: أن الله يبشرك بيحيى" → 3:39 (3:45 is إن in Ḥafṣ)
+        ("wafi", 233, ("ن", "لله", "يبشرك")): ["3:39:8"]}
 
 # Farsh an uṣūl chapter states and the farsh chapters don't repeat: idah 112 (hamz mufrad), Abū
 # Jaʿfar's وكأين "قرأها كابن كثير" (his tas-hīl of its hamzah is data/usul's hamz_mufrad).
 EXTRA = [{"sura": 3, "ayah": 146, "word": "وكأين", "words": "وكأين", "where": "all", "sites": None,
           "readers": ["ibn_wardan", "ibn_jammaz"], "khulf": [], "reading": "قرأها كابن كثير", "condition": None,
-          "quote": "قرأها كابن كثير", "book": "idah", "page": 112}]
+          "quote": "قرأها كابن كثير", "book": "idah", "page": 112},
+         # ها أنتم, from the Durrah's uṣūl chapter (2026-11-28; it was the aṣl fill's asl_differs at 3:66 /
+         # 3:119: Abū Jaʿfar's aṣl Nāfiʿ is split there, and Yaʿqūb leaves his aṣl Abū ʿAmr):
+         # idah 113, Abū Jaʿfar's fifth word "هأنتم … فيقرؤها بالتسهيل مع إثبات الألف قبلها"
+         {"sura": 3, "ayah": 66, "word": "هأنتم", "words": "هأنتم", "where": "all", "sites": None,
+          "readers": ["ibn_wardan", "ibn_jammaz"], "khulf": [], "reading": "بالتسهيل مع إثبات الألف",
+          "condition": None, "quote": "فيقرؤها بالتسهيل مع اثبات الالف قبلها", "book": "idah", "page": 113},
+         # idah 114 "أمر بتحقيق همزتي التي وهأنتم حيث وقعتا ليعقوب … وإثبات الألف بعد الهاء في هأنتم.
+         # ويخالف يعقوب أصله في الكلمتين معا"
+         {"sura": 3, "ayah": 66, "word": "هأنتم", "words": "هأنتم", "where": "all", "sites": None,
+          "readers": ["ruways", "rawh"], "khulf": [], "reading": "بتحقيق الهمزة وإثبات الألف",
+          "condition": None, "quote": "امر بتحقيق همزتي التي وهانتم حيث وقعتا ليعقوب", "book": "idah", "page": 114}]
 
 
-def _pin(r: dict) -> list[str] | None:
-    return PINS.get((r.get("book"), r.get("page"), tuple(k for t in str(r["words"]).split() if (k := _key(t)))))
+def _pin(r: dict, sura: int | None = None) -> list[str] | None:
+    """The row's pinned places (PINS), those in `sura` when given; None when it has none there."""
+    ps = PINS.get((r.get("book"), r.get("page"), tuple(k for t in str(r["words"]).split() if (k := _key(t)))))
+    if ps and sura is not None:
+        ps = [p for p in ps if int(p.split(":")[0]) == sura]
+    return ps or None
 
 
 def _forms(r: dict) -> re.Pattern | None:
@@ -316,7 +344,7 @@ def _usul_entries() -> list[dict]:
             ws = [w for v in x.get("words") or [] for w in ARABIC.findall(str(v))]
             out.append({"table": t, "case": str(x.get("case", "")), "keys": {_flat(_key(w)) for w in ws} - {""},
                         "cites": set(x.get("cite") or []), "ruwat": set(x.get("ruwat") or {}), "listed": True,
-                        "places": set(x.get("places") or [])})
+                        "places": set(x.get("places") or x.get("candidates") or [])})
     return out
 
 
@@ -334,15 +362,14 @@ def usul_row(r: dict) -> str | None:
 def usul_covers(slot: str, hafs: str, rawi: str, reading: str) -> str | None:
     """"table: case" when a listed entry of data/usul gives this rāwī's reading of the word on the
     matter the farsh reading speaks of (Abū Jaʿfar's النبيء family: hamz_mufrad, idah 115). An
-    entry anchored to places (pipeline.anchor: the yāʾāt) covers those places only (يكذبون is a
-    yāʾ zāʾidah in al-Qaṣaṣ, not at 2:10)."""
+    entry covers its stored places only (pipeline.anchor; a flagged entry its candidates): يكذبون
+    is a yāʾ zāʾidah in al-Qaṣaṣ, not at 2:10."""
     from .farsh_class import END  # how a yāʾ word ends: the anchored places match any form
-    k = _flat(_key(hafs))
     for e in _usul_entries():
         if e["table"] in END and not re.search(END[e["table"]], hafs):
             continue
         if e["listed"] and rawi in e["ruwat"] and re.search(USUL_TOPIC[e["table"]], reading) and \
-                (slot in e["places"] if e["places"] else any(_same(x, k) for x in e["keys"] if len(x) >= 3)):
+                slot in e["places"]:  # stored slots (pipeline.anchor); a flagged entry: its candidates
             return f"{e['table']}: {e['case']}"
     return None
 
@@ -375,7 +402,7 @@ def combine(sura: int, wafi_pages: list[int] | None = None, idah_pages: list[int
     every = [r for r in every if not (r["where"] == "all" and re.search("السكت|بسكت", r["reading"]))]
     allrows = [r for r in every if r["sura"] == sura]
     general = [r for r in every if r["where"] == "all" and r["sura"] != sura]  # its sūrah: the first the book names
-    anchors = {id(r): _pin(r) or anchor(r, sura) for r in allrows}
+    anchors = {id(r): _pin(r, sura) or anchor(r, sura) for r in allrows}
     order_ids = list(h)
     nxt = {w: h[order_ids[i + 1]] for i, w in enumerate(order_ids[:-1])}
     # a row whose words fit several places takes the one nearest the rows that share its quote
@@ -432,7 +459,7 @@ def combine(sura: int, wafi_pages: list[int] | None = None, idah_pages: list[int
         if re.search("السكت|بسكت", r["reading"]):
             continue  # the sakt of the opening letters is uṣūl (sakt_huruf), not farsh
         t = topics(r["reading"])
-        for w in _pin(r) if _pin(r) and any(int(x.split(":")[0]) == sura for x in _pin(r)) else anchor({**r, "ayah": None}, sura):
+        for w in _pin(r, sura) or anchor({**r, "ayah": None}, sura):
             if not (before_ok(r["reading"], nxt.get(w, "")) and prefix_ok(r["reading"], h[w])):
                 continue
             # the sūrah's own rows win for the readers they name about the same thing (ينزل's

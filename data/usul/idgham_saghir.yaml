@@ -2129,9 +2129,10 @@ listed:
   cite:
   - wafi 131
   note: Hishām izhār here, idghām elsewhere in the class
+  anchor: all
   places:
   - '38:24:2'
-  anchor: all
+  - '38:24:3'
 - words:
   - ولقد زينا السماء الدنيا
   case: قد before ذ ز
@@ -2141,9 +2142,12 @@ listed:
     - izhar
   cite:
   - wafi 131
+  anchor: all
   places:
   - '67:5:1'
-  anchor: all
+  - '67:5:2'
+  - '67:5:3'
+  - '67:5:4'
 - words:
   - لهدمت صوامع
   case: تاء التأنيث before ص
@@ -2152,9 +2156,10 @@ listed:
     - izhar
   cite:
   - wafi 132
+  anchor: all
   places:
   - '22:40:18'
-  anchor: all
+  - '22:40:19'
 - words:
   - وجبت جنوبها
   case: تاء التأنيث before ج ز س
@@ -2164,9 +2169,10 @@ listed:
     - idgham
   cite:
   - wafi 132
+  anchor: all
   places:
   - '22:36:16'
-  anchor: all
+  - '22:36:17'
 - words:
   - هل ترى من فطور
   - فهل ترى لهم من باقية
@@ -2185,10 +2191,19 @@ listed:
   - wafi 133
   - idah 128
   note: Abū ʿAmr idghām only in these two places; Yaʿqūb izhār of هل ترى in the two places
-  places:
-  - '67:3:15'
-  - '69:8:1'
   anchor: all
+  flag: 'the note names a condition: Abū ʿAmr idghām only in these two places; Yaʿqūb izhār of هل ترى in the two places'
+  candidates:
+  - '67:3:15'
+  - '67:3:16'
+  - '67:3:17'
+  - '67:3:18'
+  - '69:8:1'
+  - '69:8:2'
+  - '69:8:3'
+  - '69:8:4'
+  - '69:8:5'
+  places: []
 - words:
   - أم هل تستوى الظلمات (الرعد)
   case: لام هل وبل before ت
@@ -2197,9 +2212,12 @@ listed:
     - izhar
   cite:
   - wafi 133
+  anchor: all
   places:
   - '13:16:24'
-  anchor: all
+  - '13:16:25'
+  - '13:16:26'
+  - '13:16:27'
 - words:
   - بل طبع الله عليها
   case: لام هل وبل before the three other letters of the eight (not named in the rows)
@@ -2211,9 +2229,12 @@ listed:
   - wafi 133
   - wafi 134
   note: Khalaf ʿan Ḥamzah izhār only (wafi 134), as his case
+  anchor: all
   places:
   - 4:155:14
-  anchor: all
+  - 4:155:15
+  - 4:155:16
+  - 4:155:17
 - words:
   - قالوا وأقبلوا
   - في يتامى النساء
@@ -2250,10 +2271,13 @@ listed:
   cite:
   - wafi 135
   note: 'first of the two is a letter of madd: izhār'
+  anchor: all
   places:
   - 4:127:13
+  - 4:127:14
+  - 4:127:15
   - 12:71:1
-  anchor: all
+  - 12:71:2
 - words:
   - ماليه هلك
   case: حرفان متماثلان أولهما ساكن (mithlayn)
@@ -2303,9 +2327,10 @@ listed:
   cite:
   - wafi 135
   note: 'in waṣl (condition: wasl)'
+  anchor: all
   places:
   - '69:28:4'
-  anchor: all
+  - '69:29:1'
 - words:
   - وَالصَّتَفْتِ صَفًا
   - فَالزَّاجِرَاتِ زَجْرًا
@@ -2321,14 +2346,18 @@ listed:
   cite:
   - idah 68
   note: izhār of the tāʾ before ص ز ذ ص; only Khalaf al-ʿĀshir is stated
-  places:
-  - '37:2:1'
-  - '37:3:1'
-  - '51:1:1'
-  - '100:3:1'
   anchor: some
   unanchored:
   - وَالصَّتَفْتِ صَفًا
+  places:
+  - '37:2:1'
+  - '37:2:2'
+  - '37:3:1'
+  - '37:3:2'
+  - '51:1:1'
+  - '51:1:2'
+  - '100:3:1'
+  - '100:3:2'
 - words:
   - بَيَّتَ طَائِفَةٌ
   case: named words with no general class (each word below states its own readers)
@@ -2352,9 +2381,10 @@ listed:
   cite:
   - idah 69
   note: Abū Jaʿfar izhār by "الموافقة" (as his aṣl), not by an explicit row
+  anchor: all
   places:
   - 4:81:7
-  anchor: all
+  - 4:81:8
 - words:
   - أَخَذْتُ
   - أَخَذْتهم
@@ -2409,6 +2439,7 @@ listed:
   - idah 131
   - idah 132
   note: Rawḥ, Abū Jaʿfar and Khalaf idghām (idah 132); Ruways izhār (idah 131); the Wāfī words are اتخذتم، أخذتم
+  anchor: all
   places:
   - '2:51:7'
   - 2:80:9
@@ -2439,7 +2470,6 @@ listed:
   - '41:17:8'
   - '45:35:3'
   - '51:44:5'
-  anchor: all
 - words:
   - عذت
   - عُذْتُ
@@ -2490,10 +2520,10 @@ listed:
   - idah 132
   - idah 133
   note: Hishām not named in the extracted rows; included with "الباقون" (izhār)
+  anchor: all
   places:
   - '40:27:4'
   - '44:20:2'
-  anchor: all
 - words:
   - فنبذتها
   case: named words with no general class (each word below states its own readers)
@@ -2542,9 +2572,9 @@ listed:
   - wafi 136
   - idah 130
   note: Abū Jaʿfar izhār as his aṣl (idah 130); Hishām as "الباقون"
+  anchor: all
   places:
   - 20:96:12
-  anchor: all
 - words:
   - أورثتموها
   case: named words with no general class (each word below states its own readers)
@@ -2593,10 +2623,10 @@ listed:
   - wafi 136
   - idah 132
   note: Abū Jaʿfar izhār as his aṣl (idah 132)
+  anchor: all
   places:
   - '7:43:33'
   - 43:72:4
-  anchor: all
 - words:
   - لبثت
   - لبثتم
@@ -2645,6 +2675,7 @@ listed:
   cite:
   - wafi 137
   - idah 132
+  anchor: all
   places:
   - 2:259:25
   - 2:259:27
@@ -2660,7 +2691,6 @@ listed:
   - 23:114:3
   - '26:18:6'
   - '30:56:7'
-  anchor: all
 - words:
   - كهيعص
   case: named words with no general class (each word below states its own readers)
@@ -2708,9 +2738,9 @@ listed:
   cite:
   - wafi 137
   - idah 131
+  anchor: all
   places:
   - '19:1:1'
-  anchor: all
 - words:
   - يرد ثواب الدنيا
   - يرد ثواب الآخرة
@@ -2760,10 +2790,14 @@ listed:
   cite:
   - wafi 137
   - idah 130
+  anchor: all
   places:
   - 3:145:12
+  - 3:145:13
+  - 3:145:14
   - 3:145:18
-  anchor: all
+  - 3:145:19
+  - 3:145:20
 - words:
   - يس والقرآن الحكيم
   case: named words with no general class (each word below states its own readers)
@@ -2814,10 +2848,12 @@ listed:
   - idah 133
   - idah 134
   note: Warsh idghām, no khulf here
-  places: []
   anchor: none
   unanchored:
   - يس والقرآن الحكيم
+  flag: no Ḥafṣ words match (a description or a spelling the skeleton misses)
+  candidates: []
+  places: []
 - words:
   - ن والقلم
   case: named words with no general class (each word below states its own readers)
@@ -2868,9 +2904,10 @@ listed:
   - wafi 137
   - idah 133
   - idah 134
+  anchor: all
   places:
   - '68:1:1'
-  anchor: all
+  - '68:1:2'
 - words:
   - طسم
   case: named words with no general class (each word below states its own readers)
@@ -2919,10 +2956,10 @@ listed:
   - wafi 137
   - idah 134
   note: Yaʿqūb idghām "كأصله" (via Abū ʿAmr); Abū Jaʿfar izhār (idah 134, because of his sakt on the letters)
+  anchor: all
   places:
   - '26:1:1'
   - '28:1:1'
-  anchor: all
 - words:
   - يلهث ذلك
   case: named words with no general class (each word below states its own readers)
@@ -2971,9 +3008,10 @@ listed:
   cite:
   - wafi 137
   - idah 134
+  anchor: all
   places:
   - 7:176:20
-  anchor: all
+  - 7:176:21
 - words:
   - اركب معنا
   case: named words with no general class (each word below states its own readers)
@@ -3025,9 +3063,10 @@ listed:
   - wafi 137
   - idah 134
   - idah 135
+  anchor: all
   places:
   - '11:42:14'
-  anchor: all
+  - '11:42:15'
 - words:
   - يعذب من يشاء
   - ويعذب من يشاء
@@ -3078,14 +3117,26 @@ listed:
   - idah 135
   note: 'Hishām, Ibn Dhakwan, Shuʿbah, Ḥafṣ: izhār only (wafi 137); Abū Jaʿfar and Yaʿqūb read the rāʾ and bāʾ raised, so no idghām (idah 135);
     Khalaf al-ʿĀshir idghām as his aṣl'
+  anchor: all
   places:
   - 2:284:21
+  - 2:284:22
+  - 2:284:23
   - 3:129:11
+  - 3:129:12
+  - 3:129:13
   - '5:18:20'
+  - '5:18:21'
+  - '5:18:22'
   - '5:40:9'
+  - '5:40:10'
+  - '5:40:11'
   - '29:21:1'
+  - '29:21:2'
+  - '29:21:3'
   - '48:14:8'
-  anchor: all
+  - '48:14:9'
+  - '48:14:10'
 - words:
   - فيغفر لمن يشاء
   case: named words with no general class (each word below states its own readers)
@@ -3101,9 +3152,11 @@ listed:
   cite:
   - idah 135
   note: 'Khalaf al-ʿĀshir: only "جزم الراء" stated, no izhār/idghām'
+  anchor: all
   places:
   - 2:284:18
-  anchor: all
+  - 2:284:19
+  - 2:284:20
 - words:
   - أو يغلب فسوف
   - وإن تعجب فعجب
@@ -3159,17 +3212,22 @@ listed:
   - wafi 135
   - idah 129
   note: bāʾ majzūmah before فاء, four places; Abū Jaʿfar and Khalaf izhār "كأصلهما"
-  places:
-  - 4:74:16
-  - 4:74:17
-  - '13:5:1'
-  - '13:5:2'
-  - 17:63:2
-  - 17:63:3
-  - 20:97:2
   anchor: some
   unanchored:
   - فإن لك في الحياة
+  places:
+  - 4:74:16
+  - 4:74:17
+  - 4:74:18
+  - '13:5:1'
+  - '13:5:2'
+  - '13:5:3'
+  - 17:63:2
+  - 17:63:3
+  - 17:63:4
+  - 17:63:5
+  - 20:97:2
+  - 20:97:3
 - words:
   - ومن لم يتب فأولئك
   - يتب فأولئك
@@ -3220,10 +3278,12 @@ listed:
   - wafi 135
   - idah 129
   note: 'fifth place: Khallad has both'
+  anchor: all
   places:
   - '49:11:34'
+  - '49:11:35'
   - '49:11:36'
-  anchor: all
+  - '49:11:37'
 - words:
   - يفعل ذلك
   case: named words with no general class (each word below states its own readers)
@@ -3272,15 +3332,22 @@ listed:
   - wafi 135
   - wafi 136
   - idah 136
+  anchor: all
   places:
   - 2:85:31
+  - 2:85:32
   - 2:231:16
+  - 2:231:17
   - '3:28:10'
+  - '3:28:11'
   - '4:30:2'
+  - '4:30:3'
   - 4:114:18
+  - 4:114:19
   - 25:68:19
+  - 25:68:20
   - '63:9:13'
-  anchor: all
+  - '63:9:14'
 - words:
   - نخسف بهم
   - تخسف بهم
@@ -3330,11 +3397,12 @@ listed:
   - wafi 136
   - idah 136
   note: the Wāfī names Kisāʾī (both of his ruwāt as extracted)
-  places:
-  - '34:9:14'
   anchor: some
   unanchored:
   - تخسف بهم
+  places:
+  - '34:9:14'
+  - '34:9:15'
 - words:
   - واصبر لحكم ربك
   - واصبر لحكم
@@ -3364,21 +3432,35 @@ listed:
   - wafi 136
   - idah 130
   note: rāʾ sākinah before lām; the rows give no reading for the other readers
+  anchor: all
   places:
   - '2:58:16'
+  - '2:58:17'
   - 2:286:41
+  - 2:286:42
   - '3:16:6'
+  - '3:16:7'
   - 3:147:8
+  - 3:147:9
   - 3:193:12
+  - 3:193:13
   - 7:155:36
+  - 7:155:37
   - 7:161:16
+  - 7:161:17
   - 23:109:9
+  - 23:109:10
   - '31:14:13'
+  - '31:14:14'
   - '52:48:1'
+  - '52:48:2'
+  - '52:48:3'
   - '59:10:7'
+  - '59:10:8'
   - '60:5:7'
+  - '60:5:8'
   - '66:8:39'
-  anchor: all
+  - '66:8:40'
 filled_notes:
 - 'Agreed idghām cases (إذ before ذ, دال قد before ت د, تاء التأنيث before ت د ط, mithlayn): al-Īḍāḥ has no row for the six ruwāt of the Durrah
   (wafi 134 only); left empty.'

@@ -23,7 +23,7 @@ from mushaf_data.ruwat import RUWAT
 from mushaf_data.spine import words
 
 from .anchor import find
-from .farsh_class import CHAPTERS, RECUR, classify
+from .farsh_class import CHAPTERS, RECUR, classify, recur_slots
 from .gold import GOLD
 from .pack import parse_pages
 from .score import rows
@@ -272,7 +272,8 @@ HEADER = """# Farsh of surah {s}: each place's options, read from {book} ({pages
 #   the same way, elsewhere in the surah (prefixed forms are not matched yet).
 # Option text per slot (the reading written out) comes next; `reading` is the book's own words.
 # base: the option that is the muṣḥaf text's own reading (Ḥafṣ's); farsh is the other options.
-# recurs: the books give the farsh wherever the word occurs (forms, page).
+# recurs: the books give the farsh wherever the word occurs (forms, page; slots: every place the
+#   forms match in the Qurʾān, stored when the table is built and the only thing read).
 # aspect: a further aspect of the word, its own set of options (أني: the hamzah, then the yāʾ);
 #   a rāwī reads one option of each aspect that names him.
 # second: ruwāt al-Budūr leaves unstated (or a khulf it leaves out), added to an option from al-Wāfī / al-Īḍāḥ (pages).
@@ -296,8 +297,9 @@ def main():
                 e["class"] = classify(e, f"{s:03d}")
         for e in entries:
             mark_base(e)
-            if e["place"][0] in RECUR:
-                e["recurs"] = RECUR[e["place"][0]]
+            if e["place"][0] in RECUR:  # the forms' places, stored once (docs/06 §3 item 4)
+                rec = {k: v for k, v in RECUR[e["place"][0]].items() if k != "skip"}
+                e["recurs"] = {**rec, "slots": recur_slots(RECUR[e["place"][0]])}
         f = OUT / f"{s:03d}.yaml"
         f.write_text(HEADER.format(s=s, book=a.slug, pages=a.pages)
                      + yaml.safe_dump(entries, allow_unicode=True, sort_keys=False, width=200, default_flow_style=None), encoding="utf-8")

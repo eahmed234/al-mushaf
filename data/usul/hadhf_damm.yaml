@@ -130,6 +130,12 @@ listed:
     - hadhf
   cite:
   - idah 110
+  anchor: none
+  unanchored:
+  - المنشئون
+  flag: no Ḥafṣ words match (a description or a spelling the skeleton misses)
+  candidates: []
+  places: []
 - words:
   - يطئون
   - تطئوها
@@ -142,6 +148,14 @@ listed:
     - hadhf
   cite:
   - idah 108
+  anchor: none
+  unanchored:
+  - يطئون
+  - تطئوها
+  - تطئوهم
+  flag: no Ḥafṣ words match (a description or a spelling the skeleton misses)
+  candidates: []
+  places: []
 - words:
   - متكا
   case: hamzah maftūḥah after a fatḥah
@@ -152,6 +166,9 @@ listed:
     - hadhf
   cite:
   - idah 108
+  anchor: all
+  places:
+  - '12:31:8'
 - words:
   - خاطئين
   - متكئين
@@ -164,6 +181,12 @@ listed:
     - hadhf
   cite:
   - idah 109
+  anchor: some
+  unanchored:
+  - خاطئين
+  - متكئين
+  places:
+  - 15:95:3
 filled_notes:
 - The readings of the 14 of al-Wāfī and of Ruways, Rawḥ, Isḥāq, Idrīs (taḥqīq) come only from the reviewed profile rows (wafi 98-103 states no
   such rule in bāb al-hamz al-mufrad; idah 109 n. 1 for the four); no row of the books speaks of them.

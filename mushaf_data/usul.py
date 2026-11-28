@@ -63,6 +63,8 @@ class Occ:
     cat: str
     word: str  # word id
     nxt: str | None  # next word id (for transforms that touch it)
+    base: str | None = None  # the detector's category when `cat` is a finer table case (cases.refine)
+    key: str | None = None  # its own choice key where a listed entry gives this place its own wujūh (api)
 
 
 # ---------------------------------------------------------------------------------------------
@@ -75,10 +77,11 @@ WAQF_CATS = {"ibdal_sakin", "hamzatayn"}  # hamz categories that a stop changes 
 def detect(words: list[tuple[str, str]], stop: str | None = None) -> list[Occ]:
     """Occurrences in `words`. `stop` is the word the reader stops on (waqf): a hamz category
     there becomes `<cat>_waqf`, and a hamza in that word gets `hamz_waqf_final` / `hamz_waqf_mid`."""
-    out = _detect(words)
+    from .cases import refine
+    out = refine(_detect(words), words, stop)
     for o in out:
-        if o.word == stop and o.cat in WAQF_CATS:
-            o.cat += "_waqf"
+        if o.word == stop and (o.base or o.cat) in WAQF_CATS:
+            o.cat, o.base = (o.base or o.cat) + "_waqf", None  # the waqf table has its own cases
     if stop:
         w = dict(words).get(stop, "")
         cls = [c for c in (_core(c) for c in clusters(w)) if c]
@@ -163,8 +166,9 @@ def _detect(words: list[tuple[str, str]]) -> list[Occ]:
                 if (SUKUN in plast or set(plast[1:]) & TANWIN) and MADDAH not in plast:
                     out.append(Occ("naql_word", wid, nid))
         # two hamzas at the start of a word (ءَأَنذَرۡتَهُمۡ)
-        if len(cls) >= 2 and cls[0][0] in "\u0621\u0623" and FATHA in cls[0] and cls[1][0] in "\u0623\u0625" \
-                and set(cls[1][1:]) & VOWELS:
+        # (the second maksūrah or maḍmūmah too: أَئِنَّكُمۡ, أَؤُنَبِّئُكُم, أَءُنزِلَ; cases.refine)
+        if len(cls) >= 2 and cls[0][0] in "\u0621\u0623" and FATHA in cls[0] and cls[1][0] in "\u0621\u0623\u0625\u0624\u0626" \
+                and set(cls[1][1:]) & {FATHA, DAMMA, KASRA}:
             out.append(Occ("hamzatayn", wid, nid))
         # idgham of nun sakinah / tanwin into ya' or waw, which Hafs writes without a shadda
         tanwin = set(last[1:]) & TANWIN
@@ -191,6 +195,10 @@ def _detect(words: list[tuple[str, str]]) -> list[Occ]:
         if alif_maqsura and not tanwin and not set(cls[-2][1:]) & TANWIN:  # dhawat al-ya'
             ra = len(cls) >= 2 and cls[-2][0] == "\u0631"  # after rāʾ (ذِكۡرَىٰ): its own rule (wafi 147-148)
             out.append(Occ("imala_ya_ra" if ra else "imala_ya", wid, nid))
+        elif last.replace(MADDAH, "") in ("\u0627", "\u0622") and len(cls) >= 2 and cls[-2][0] == "\u064a" and FATHA in cls[-2]:
+            from .cases import faala  # the faʿlā words written with an alif after the yāʾ (ٱلدُّنۡيَا, ٱلۡعُلۡيَا: wafi 150)
+            if faala(w):
+                out.append(Occ("imala_ya", wid, nid))
         # a maḍmūmah hamzah after a kasrah inside the word (مُسۡتَهۡزِءُونَ): Abū Jaʿfar drops it (idah 110)
         if any(c[0] == "\u0621" and DAMMA in c and KASRA in cls[k - 1] for k, c in enumerate(cls[1:-1], 1)):
             out.append(Occ("hadhf_damm", wid, nid))
@@ -251,6 +259,11 @@ WUJUH = {
     "imala_duri_kisai": ["fath", "imala"],
     **FEATURE_ONLY,
 }
+# the finer table cases (mushaf_data.cases): the same wujūh as the category they refine
+WUJUH.update({"hamzatayn_maksurah": WUJUH["hamzatayn"], "hamzatayn_madmumah": WUJUH["hamzatayn"],
+              "ibdal_sakin_ayn": WUJUH["ibdal_sakin"], "ibdal_sakin_lam": WUJUH["ibdal_sakin"],
+              "imala_alif_tanith": WUJUH["imala_ya"], "imala_wasl_sakin": WUJUH["imala_ya"],
+              "imala_wasl_sakin_ra": WUJUH["imala_ya"]})
 
 
 _SUF = "(?:وا|ت|تا)?(?:هم|هما|كم|كما|نا|ه|ها|ك|ني|هن|كن)?$"
@@ -305,8 +318,8 @@ def apply(words: list[tuple[str, str]], occs: list[Occ], choice: dict[str, str])
     for wid, w in words:
         cls = clusters(text[wid])
         for o in by_word.get(wid, []):
-            wj = choice.get(o.cat)
-            base_cat = o.cat[: -len("_waqf")] if o.cat.endswith("_waqf") and o.cat[: -len("_waqf")] in WAQF_CATS else o.cat
+            wj = choice.get(o.key) if o.key else choice.get(o.cat)
+            base_cat = o.cat[: -len("_waqf")] if o.cat.endswith("_waqf") and o.cat[: -len("_waqf")] in WAQF_CATS else (o.base or o.cat)
             if o.cat == "munfasil" and wj == "qasr":
                 k = len(cls) - 1 if MADDAH in cls[-1] else len(cls) - 2
                 cls[k] = cls[k].replace(MADDAH, "")
@@ -338,7 +351,7 @@ def apply(words: list[tuple[str, str]], occs: list[Occ], choice: dict[str, str])
                             rest = rest.replace(MADDAH, "")  # the badal's qasr shows once the hamza is gone
                         cls[k + 1] = "ا" + rest  # otherwise the maddah stays (badal)
                         break
-            elif o.cat == "idgham_kabir" and wj == "idgham" and o.nxt:
+            elif base_cat == "idgham_kabir" and wj == "idgham" and o.nxt:
                 cls[-1] = "".join(c for c in cls[-1] if c not in VOWELS)
                 ncl = clusters(text[o.nxt])
                 ncl[0] = ncl[0][0] + SHADDA + ncl[0][1:]
@@ -353,7 +366,8 @@ def apply(words: list[tuple[str, str]], occs: list[Occ], choice: dict[str, str])
                 if wj in ("tashil_idkhal", "tahqiq_idkhal"):
                     first = first + DAGGER  # idkhal: an alif between the two hamzas
                 if wj in ("tashil", "tashil_idkhal"):
-                    second = "\u0627" + TASHIL  # the second hamza softened
+                    # the second hamza softened, written on the seat of its vowel (KFGQPC al-Bazzī: أَو۬نَبِّئُكُمُۥ 3:15)
+                    second = ("\u064a" if KASRA in cls[1] else "\u0648" if DAMMA in cls[1] else "\u0627") + TASHIL
                 elif wj == "ibdal":
                     second = "\u0627" + MADDAH  # the second hamza turned into a long alif
                 cls[0], cls[1] = first, second
@@ -383,7 +397,7 @@ def apply(words: list[tuple[str, str]], occs: list[Occ], choice: dict[str, str])
                 ncl[0] = ncl[0][0] + SHADDA + ncl[0][1:]
                 text[o.nxt] = "".join(ncl)
             elif o.cat.startswith("imala_") and wj in ("taqlil", "imala"):
-                cls = _imala(o.cat, cls)
+                cls = _imala(base_cat, cls)
             elif o.cat == "sakt_huruf" and wj == "sakt":
                 cls = [c + SMALL_SIN if k < len(cls) - 1 else c for k, c in enumerate(cls)]
         text[wid] = "".join(cls)

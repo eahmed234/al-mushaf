@@ -133,6 +133,58 @@ listed:
     - qasr
   cite:
   - wafi 76
+  anchor: all
+  places:
+  - '2:40:2'
+  - '2:47:2'
+  - '2:48:14'
+  - 2:83:5
+  - 2:122:2
+  - 2:211:3
+  - 2:246:7
+  - '3:49:4'
+  - 3:93:6
+  - 3:93:10
+  - '5:12:6'
+  - '5:32:7'
+  - 5:70:5
+  - 5:72:14
+  - 5:78:6
+  - 5:110:50
+  - 6:70:30
+  - 7:105:18
+  - 7:134:22
+  - 7:137:18
+  - 7:138:3
+  - 7:169:20
+  - 10:90:3
+  - 10:90:24
+  - 10:93:4
+  - 16:61:2
+  - '17:2:7'
+  - '17:4:4'
+  - 17:101:9
+  - 17:104:5
+  - '19:58:18'
+  - '20:47:9'
+  - 20:80:2
+  - 20:94:15
+  - '26:17:5'
+  - '26:22:8'
+  - '26:59:4'
+  - 26:197:9
+  - 27:76:7
+  - '32:23:14'
+  - '35:45:2'
+  - '40:53:7'
+  - '43:59:10'
+  - '44:30:4'
+  - '45:16:4'
+  - '46:10:14'
+  - '55:41:4'
+  - '57:15:3'
+  - '61:6:7'
+  - '61:14:26'
 - words:
   - القرآن
   - الظمآن
@@ -145,6 +197,15 @@ listed:
   cite:
   - wafi 76
   why: hamzah after a ṣaḥīḥ sākin in the same word
+  anchor: some
+  unanchored:
+  - القرآن
+  - مسئولا
+  places:
+  - '17:18:17'
+  - '17:22:8'
+  - '24:39:7'
+  - '68:49:10'
 - words:
   - إيذن لي
   - إيت بقرآن
@@ -157,6 +218,14 @@ listed:
   cite:
   - wafi 77
   why: madd letter after hamzat al-waṣl when starting
+  anchor: some
+  unanchored:
+  - إيت بقرآن
+  - إيتوا صفاً
+  - إيتونى بكتاب
+  places:
+  - 12:80:28
+  - 12:80:29
 - words:
   - دعاء
   - نداء
@@ -169,6 +238,19 @@ listed:
   cite:
   - wafi 77
   why: the letter replacing tanwīn, at waqf
+  anchor: some
+  unanchored:
+  - غناء
+  - خطأ
+  places:
+  - 2:171:11
+  - 2:171:12
+  - '13:14:23'
+  - '14:40:9'
+  - '19:3:4'
+  - 24:63:3
+  - '41:49:5'
+  - '41:51:12'
 - words:
   - را القمر
   - تراء الجمعان
@@ -182,6 +264,14 @@ listed:
   cite:
   - wafi 77
   why: original madd letter after a hamzah dropped in waṣl for two sākins (same as the case)
+  anchor: some
+  unanchored:
+  - را القمر
+  places:
+  - 26:61:2
+  - 26:61:3
+  - '59:9:2'
+  - '59:9:3'
 - words:
   - آلآن وقد كنتم
   - آلآن وقد عصيت قبل
@@ -192,6 +282,13 @@ listed:
   cite:
   - wafi 77
   why: the last alif after the lām, in the istifhām form
+  anchor: none
+  unanchored:
+  - آلآن وقد كنتم
+  - آلآن وقد عصيت قبل
+  flag: no Ḥafṣ words match (a description or a spelling the skeleton misses)
+  candidates: []
+  places: []
 - words:
   - الآن جنت بالحق
   - الآن حصحص الحق
@@ -204,6 +301,13 @@ listed:
   cite:
   - wafi 78
   why: alif of الآن, non-istifhām
+  anchor: some
+  unanchored:
+  - الآن جنت بالحق
+  places:
+  - '12:51:20'
+  - '12:51:21'
+  - '12:51:22'
 - words:
   - عاداً الأولى
   case: madd letter after a hamzah
@@ -215,6 +319,10 @@ listed:
   cite:
   - wafi 78
   why: see open
+  anchor: all
+  places:
+  - '53:50:3'
+  - '53:50:4'
 filled_notes: []
 options:
 - id: aadan_ula_qasr

@@ -343,6 +343,19 @@ listed:
     - tahqiq
   cite:
   - wafi 99
+  anchor: some
+  unanchored:
+  - مأواه
+  - مأواهم
+  - مأواكم
+  - فأووا
+  - تؤوى
+  - تؤويه
+  places:
+  - '32:19:8'
+  - '53:15:3'
+  - '79:39:4'
+  - '79:41:4'
 - words:
   - تسؤ
   - نشأ
@@ -356,6 +369,26 @@ listed:
     - tahqiq
   cite:
   - wafi 100
+  anchor: some
+  unanchored:
+  - تسؤ
+  places:
+  - 2:106:6
+  - 4:133:2
+  - '6:39:9'
+  - '6:39:13'
+  - 6:133:6
+  - '14:19:10'
+  - '17:54:5'
+  - '17:54:9'
+  - '18:16:15'
+  - '26:4:2'
+  - '34:9:13'
+  - '35:16:2'
+  - '36:43:2'
+  - '42:24:8'
+  - '42:33:2'
+  - '53:36:3'
 - words:
   - يشأ
   case: sākin hamzah as lām al-kalimah (جئت), in wasl before a sākin that has been moved
@@ -366,6 +399,18 @@ listed:
     - tahqiq
   cite:
   - idah 103
+  anchor: all
+  places:
+  - 4:133:2
+  - '6:39:9'
+  - '6:39:13'
+  - 6:133:6
+  - '14:19:10'
+  - '17:54:5'
+  - '17:54:9'
+  - '35:16:2'
+  - '42:24:8'
+  - '42:33:2'
 - words:
   - هيء
   - أنبئهم
@@ -380,6 +425,24 @@ listed:
     - tahqiq
   cite:
   - wafi 100
+  anchor: some
+  unanchored:
+  - ونبهم
+  places:
+  - '2:33:3'
+  - 2:91:24
+  - 3:112:28
+  - 3:181:16
+  - 4:155:8
+  - '5:20:13'
+  - '12:36:22'
+  - '15:51:1'
+  - '17:14:1'
+  - '18:10:12'
+  - '54:28:1'
+  - '69:17:3'
+  - '96:1:1'
+  - '96:3:1'
 - words:
   - أنبئهم
   - نبئهم
@@ -391,6 +454,11 @@ listed:
     - tahqiq
   cite:
   - idah 103
+  anchor: all
+  places:
+  - '2:33:3'
+  - '15:51:1'
+  - '54:28:1'
 - words:
   - نبئنا
   - نبأتكما
@@ -402,6 +470,11 @@ listed:
     - ibdal
   cite:
   - idah 103
+  anchor: all
+  places:
+  - '12:36:22'
+  - '12:37:7'
+  - '71:17:2'
 - words:
   - تؤوى
   - تؤويه
@@ -411,6 +484,13 @@ listed:
     - tahqiq
   cite:
   - wafi 101
+  anchor: none
+  unanchored:
+  - تؤوى
+  - تؤويه
+  flag: no Ḥafṣ words match (a description or a spelling the skeleton misses)
+  candidates: []
+  places: []
 - words:
   - رئيا
   case: sākin hamzah as ʿayn al-kalimah (بئر, الذئب)
@@ -419,6 +499,9 @@ listed:
     - tahqiq
   cite:
   - wafi 101
+  anchor: all
+  places:
+  - 19:74:9
 - words:
   - مؤصدة
   case: sākin hamzah as fāʾ al-kalimah (يؤمن)
@@ -427,6 +510,10 @@ listed:
     - tahqiq
   cite:
   - wafi 101
+  anchor: all
+  places:
+  - '90:20:3'
+  - '104:8:3'
 - words:
   - بارئكم
   case: sākin hamzah as lām al-kalimah (جئت)
@@ -435,6 +522,10 @@ listed:
     - tahqiq
   cite:
   - wafi 102
+  anchor: all
+  places:
+  - '2:54:13'
+  - '2:54:20'
 - words:
   - بئر
   - بئس
@@ -444,6 +535,56 @@ listed:
     - ibdal
   cite:
   - wafi 102
+  anchor: all
+  places:
+  - 2:90:1
+  - 2:93:21
+  - 2:102:67
+  - 2:102:68
+  - 2:126:29
+  - 2:206:11
+  - '3:12:8'
+  - 3:151:17
+  - 3:162:12
+  - 3:187:19
+  - 3:187:20
+  - 3:197:6
+  - 5:62:10
+  - 5:62:11
+  - 5:63:10
+  - 5:63:11
+  - 5:79:7
+  - 5:79:8
+  - 5:80:7
+  - 5:80:8
+  - 7:150:9
+  - '8:16:19'
+  - 9:73:10
+  - 11:98:7
+  - 11:99:7
+  - '13:18:26'
+  - '14:29:3'
+  - '16:29:6'
+  - '18:29:25'
+  - '18:50:24'
+  - '22:13:7'
+  - '22:13:9'
+  - '22:28:19'
+  - '22:45:11'
+  - 22:72:28
+  - '24:57:10'
+  - '38:56:3'
+  - 38:60:10
+  - 39:72:7
+  - 40:76:6
+  - '43:38:10'
+  - '49:11:29'
+  - '57:15:14'
+  - '58:8:37'
+  - '62:5:12'
+  - '64:10:10'
+  - '66:9:10'
+  - '67:6:6'
 - words:
   - الذئب
   case: sākin hamzah as ʿayn al-kalimah (بئر, الذئب)
@@ -459,6 +600,11 @@ listed:
   cite:
   - wafi 102
   - idah 115
+  anchor: all
+  places:
+  - '12:13:10'
+  - '12:14:4'
+  - '12:17:11'
 - words:
   - لؤلؤ
   case: sākin hamzah as ʿayn al-kalimah (بئر, الذئب)
@@ -467,6 +613,13 @@ listed:
     - ibdal
   cite:
   - wafi 102
+  anchor: all
+  places:
+  - '22:23:19'
+  - '35:33:10'
+  - '52:24:6'
+  - '55:22:3'
+  - '76:19:8'
 - words:
   - يأجوج
   - مأجوج
@@ -478,6 +631,12 @@ listed:
     - ibdal
   cite:
   - idah 102
+  anchor: all
+  places:
+  - 18:94:5
+  - 18:94:6
+  - 21:96:4
+  - 21:96:5
 - words:
   - الملأ
   - امرئ
@@ -491,6 +650,31 @@ listed:
     - tahqiq
   cite:
   - idah 103
+  anchor: some
+  unanchored:
+  - امرئ
+  - شاطئ
+  places:
+  - 2:246:4
+  - 7:60:2
+  - 7:66:2
+  - 7:75:2
+  - 7:88:2
+  - 7:90:2
+  - 7:109:2
+  - 7:127:2
+  - '11:27:2'
+  - '12:43:17'
+  - '22:23:19'
+  - '23:33:2'
+  - '28:20:10'
+  - '28:38:4'
+  - '35:33:10'
+  - '37:8:4'
+  - '38:6:2'
+  - '52:24:6'
+  - '55:22:3'
+  - '76:19:8'
 filled_notes:
 - 'Rest of the fourteen (taḥqīq) and Warsh''s taḥqīq in the ʿayn and lām cases come from the reviewed profile rows (wafi 98-101: Warsh ''only
   a hamzah that is fāʾ al-fiʿl''); no row states them. Isḥāq and Idrīs: from the aṣl (profile, idah 40-43), no row.'

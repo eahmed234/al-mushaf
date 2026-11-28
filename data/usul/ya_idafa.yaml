@@ -741,9 +741,13 @@ listed:
   cite:
   - wafi 184
   note: Abū Jaʿfar = Qālūn (idah 161, 167)
+  anchor: some
+  unanchored:
+  - بي شيئا
   places:
   - 7:181:2
   - '14:36:7'
+  - '14:36:8'
   - '14:36:12'
   - '15:26:2'
   - 15:85:2
@@ -772,9 +776,6 @@ listed:
   - '76:2:2'
   - '90:4:2'
   - '95:4:2'
-  anchor: some
-  unanchored:
-  - بي شيئا
 - words:
   - بلغني الكبر
   - نعمتي التي
@@ -816,13 +817,18 @@ listed:
   cite:
   - wafi 184
   note: Abū Jaʿfar = Qālūn (idah 161, 167)
+  anchor: all
   places:
   - '2:40:4'
+  - '2:40:5'
   - '2:47:4'
+  - '2:47:5'
   - 2:122:4
+  - 2:122:5
   - '3:40:8'
+  - '3:40:9'
   - '34:27:2'
-  anchor: all
+  - '34:27:3'
 - words:
   - أرني أنظر
   - تفتني ألا
@@ -865,12 +871,16 @@ listed:
   cite:
   - wafi 185
   note: Abū Jaʿfar = Qālūn (idah 161, 167)
+  anchor: all
   places:
   - 7:143:9
+  - 7:143:10
   - '9:49:7'
+  - '9:49:8'
   - '11:47:16'
+  - '11:47:17'
   - '19:43:10'
-  anchor: all
+  - '19:43:11'
 - words:
   - ذروني اقتل
   - ادعوني أستجب لكم
@@ -909,11 +919,15 @@ listed:
   - wafi 185
   - wafi 186
   note: Abū Jaʿfar = Qālūn (idah 161, 167)
+  anchor: all
   places:
   - 2:152:1
+  - 2:152:2
   - '40:26:3'
+  - '40:26:4'
   - 40:60:3
-  anchor: all
+  - 40:60:4
+  - 40:60:5
 - words:
   - أوزعني أن أشكر
   case: yāʾ al-iḍāfah before hamzat al-qaṭʿ maftūḥah
@@ -949,10 +963,14 @@ listed:
   cite:
   - wafi 186
   note: Abū Jaʿfar = Qālūn (idah 161, 167)
+  anchor: all
   places:
   - '27:19:7'
+  - '27:19:8'
+  - '27:19:9'
   - '46:15:23'
-  anchor: all
+  - '46:15:24'
+  - '46:15:25'
 - words:
   - ليبلوني أشكر
   - سبيلي أدعو
@@ -961,11 +979,12 @@ listed:
   cite:
   - wafi 186
   note: Nāfiʿ only (the others not stated); Abū Jaʿfar = Qālūn (idah 161, 167)
-  places:
-  - 12:108:3
   anchor: some
   unanchored:
   - ليبلوني أشكر
+  places:
+  - 12:108:3
+  - 12:108:4
 - words:
   - قال أحدهما إني
   - قال الآخر إلي
@@ -979,16 +998,28 @@ listed:
   cite:
   - wafi 186
   note: the book says eight places; seven words extracted; Abū Jaʿfar = Qālūn (idah 161, 167)
-  places:
-  - 11:78:21
-  - '12:36:5'
-  - 12:80:27
-  - 18:102:7
-  - '20:26:1'
   anchor: some
   unanchored:
   - قال الآخر إلي
   - اجعل لي آية
+  flag: 'the note names a condition: the book says eight places; seven words extracted; Abū Jaʿfar = Qālūn (idah 161, 167)'
+  candidates:
+  - 11:78:21
+  - 11:78:22
+  - 11:78:23
+  - '12:36:5'
+  - '12:36:6'
+  - '12:36:7'
+  - 12:80:27
+  - 12:80:28
+  - 12:80:29
+  - 18:102:7
+  - 18:102:8
+  - 18:102:9
+  - '20:26:1'
+  - '20:26:2'
+  - '20:26:3'
+  places: []
 - words:
   - ولكني أراكم
   - من تحتي أفلا
@@ -998,12 +1029,16 @@ listed:
   cite:
   - wafi 186
   note: the book says four places; three words extracted; Abū Jaʿfar = Qālūn (idah 161, 167)
-  places:
-  - '43:51:14'
   anchor: some
   unanchored:
   - ولكني أراكم
   - إلي أراكم بخير
+  flag: 'the note names a condition: the book says four places; three words extracted; Abū Jaʿfar = Qālūn (idah 161, 167)'
+  candidates:
+  - '43:51:14'
+  - '43:51:15'
+  - '43:51:16'
+  places: []
 - words:
   - فطرني أفلا
   case: yāʾ al-iḍāfah before hamzat al-qaṭʿ maftūḥah
@@ -1011,9 +1046,10 @@ listed:
   cite:
   - wafi 186
   note: Abū Jaʿfar = Qālūn (idah 161, 167)
+  anchor: all
   places:
   - '11:51:11'
-  anchor: all
+  - '11:51:12'
 - words:
   - ليحزنني أن
   - أتعداني أن
@@ -1024,15 +1060,16 @@ listed:
   cite:
   - wafi 187
   note: Abū Jaʿfar = Qālūn (idah 161, 167)
+  anchor: some
+  unanchored:
+  - أتعداني أن
   places:
-  - 7:70:13
-  - 7:77:11
-  - '11:32:9'
   - '12:13:3'
+  - '12:13:4'
   - 20:125:4
+  - 20:125:5
   - 39:64:4
-  - '46:22:8'
-  anchor: all
+  - 39:64:5
 - words:
   - أرهطي أعز
   case: yāʾ al-iḍāfah before hamzat al-qaṭʿ maftūḥah
@@ -1042,9 +1079,10 @@ listed:
   cite:
   - wafi 187
   note: Abū Jaʿfar = Qālūn (idah 161, 167)
+  anchor: all
   places:
   - 11:92:3
-  anchor: all
+  - 11:92:4
 - words:
   - مالي أدعوكم
   case: yāʾ al-iḍāfah before hamzat al-qaṭʿ maftūḥah
@@ -1054,10 +1092,12 @@ listed:
   cite:
   - wafi 187
   note: Abū Jaʿfar = Qālūn (idah 161, 167)
-  places: []
   anchor: none
   unanchored:
   - مالي أدعوكم
+  flag: no Ḥafṣ words match (a description or a spelling the skeleton misses)
+  candidates: []
+  places: []
 - words:
   - لعلي
   case: yāʾ al-iḍāfah before hamzat al-qaṭʿ maftūḥah
@@ -1069,6 +1109,7 @@ listed:
   cite:
   - wafi 187
   note: Abū Jaʿfar = Qālūn (idah 161, 167)
+  anchor: all
   places:
   - 2:255:49
   - '9:40:40'
@@ -1103,7 +1144,6 @@ listed:
   - '79:24:4'
   - '87:1:4'
   - '92:20:5'
-  anchor: all
 - words:
   - معي أبدا
   - معي أو رحمنا
@@ -1128,10 +1168,13 @@ listed:
   cite:
   - wafi 187
   note: Abū Jaʿfar = Qālūn (idah 161, 167)
+  anchor: all
   places:
   - 9:83:12
+  - 9:83:13
   - '67:28:7'
-  anchor: all
+  - '67:28:8'
+  - '67:28:9'
 - words:
   - عندي أولم
   case: yāʾ al-iḍāfah before hamzat al-qaṭʿ maftūḥah
@@ -1145,9 +1188,10 @@ listed:
   cite:
   - wafi 187
   note: Bazzī and Qunbul both wujūh (wafi 187, "ظاهر النظم"); Abū Jaʿfar = Qālūn (idah 161, 167)
+  anchor: all
   places:
   - 28:78:6
-  anchor: all
+  - 28:78:7
 - words:
   - بناتي إن
   - أنصاري إلى
@@ -1159,20 +1203,24 @@ listed:
   cite:
   - wafi 188
   note: Abū Jaʿfar = Qālūn (idah 161, 167)
+  anchor: all
   places:
   - '3:52:8'
-  - 3:126:11
-  - 7:192:4
-  - '8:10:10'
-  - 8:72:35
+  - '3:52:9'
   - 15:71:3
+  - 15:71:4
   - 18:69:2
+  - 18:69:3
   - '26:52:6'
+  - '26:52:7'
   - '28:27:24'
+  - '28:27:25'
   - 37:102:21
+  - 37:102:22
   - 38:78:3
+  - 38:78:4
   - '61:14:14'
-  anchor: all
+  - '61:14:15'
 - words:
   - إخوتي إن
   - إِخْوَتِى إِنَّ
@@ -1182,9 +1230,10 @@ listed:
   - wafi 188
   - idah 162
   note: Warsh alone in the Wāfī; Abū Jaʿfar opens it by name (idah 162), unlike Qālūn
+  anchor: all
   places:
   - 12:100:37
-  anchor: all
+  - 12:100:38
 - words:
   - يدي إليك
   case: yāʾ al-iḍāfah before hamzat al-qaṭʿ maksūrah
@@ -1194,9 +1243,10 @@ listed:
   cite:
   - wafi 188
   note: Abū Jaʿfar = Qālūn (idah 161, 167)
+  anchor: all
   places:
   - '5:28:9'
-  anchor: all
+  - '5:28:10'
 - words:
   - ورسلي إن
   case: yāʾ al-iḍāfah before hamzat al-qaṭʿ maksūrah
@@ -1208,9 +1258,10 @@ listed:
   cite:
   - wafi 188
   note: Abū Jaʿfar = Qālūn (idah 161, 167)
+  anchor: all
   places:
   - '58:21:5'
-  anchor: all
+  - '58:21:6'
 - words:
   - وأمي إلهين
   - أجري إلا
@@ -1232,20 +1283,30 @@ listed:
     - sukun
   cite:
   - wafi 188
+  anchor: all
   places:
   - 5:116:11
+  - 5:116:12
   - 10:72:8
+  - 10:72:9
   - '11:29:7'
+  - '11:29:8'
   - '11:51:7'
+  - '11:51:8'
   - '25:57:6'
+  - '25:57:7'
   - 26:109:7
+  - 26:109:8
   - 26:127:7
+  - 26:127:8
   - 26:145:7
+  - 26:145:8
   - 26:164:7
+  - 26:164:8
   - 26:180:7
+  - 26:180:8
   - '34:47:9'
-  - '42:23:14'
-  anchor: all
+  - '34:47:10'
 - words:
   - دعائي
   - آبائي
@@ -1265,11 +1326,12 @@ listed:
     - sukun
   cite:
   - wafi 188
+  anchor: some
+  unanchored:
+  - آبائي
   places:
   - 2:171:11
   - '3:38:15'
-  - 3:162:6
-  - '8:16:13'
   - '13:14:23'
   - '14:39:13'
   - '14:40:9'
@@ -1283,7 +1345,6 @@ listed:
   - '41:49:5'
   - '41:51:12'
   - '71:6:3'
-  anchor: all
 - words:
   - حزني إلى
   - توفيقي إلا
@@ -1307,11 +1368,12 @@ listed:
     - sukun
   cite:
   - wafi 188
-  places:
-  - 9:92:19
-  - 11:88:29
-  - 12:86:5
   anchor: all
+  places:
+  - 11:88:29
+  - 11:88:30
+  - 12:86:5
+  - 12:86:6
 - words:
   - يصدقني
   - أنظرني
@@ -1356,6 +1418,7 @@ listed:
   cite:
   - wafi 188
   note: Abū Jaʿfar = Qālūn (idah 161, 167)
+  anchor: all
   places:
   - 2:104:8
   - 2:124:14
@@ -1377,7 +1440,6 @@ listed:
   - '46:15:39'
   - '51:1:1'
   - '63:10:14'
-  anchor: all
 - words:
   - رَبِّ إِنَّ
   case: yāʾ al-iḍāfah before hamzat al-qaṭʿ maksūrah
@@ -1385,32 +1447,40 @@ listed:
   cite:
   - idah 162
   note: فصلت 50
+  anchor: all
   places:
   - '3:35:5'
+  - '3:35:6'
   - '3:36:4'
-  - '3:40:2'
-  - '3:47:2'
+  - '3:36:5'
   - '5:25:2'
-  - 7:68:3
+  - '5:25:3'
   - '11:45:5'
+  - '11:45:6'
   - '11:47:2'
+  - '11:47:3'
   - '12:37:15'
+  - '12:37:16'
   - '12:53:11'
-  - '18:40:2'
+  - '12:53:12'
   - '19:4:2'
-  - '19:8:2'
-  - 23:98:3
+  - '19:4:3'
   - '26:12:2'
+  - '26:12:3'
   - 26:117:2
+  - 26:117:3
   - '27:44:19'
+  - '27:44:20'
   - '28:16:2'
-  - '28:22:7'
+  - '28:16:3'
   - '28:24:8'
+  - '28:24:9'
   - '28:33:2'
+  - '28:33:3'
   - '41:50:19'
-  - '66:11:10'
+  - '41:50:20'
   - '71:5:2'
-  anchor: all
+  - '71:5:3'
 - words:
   - إني أعيذها
   - إلي أريد
@@ -1426,21 +1496,29 @@ listed:
   cite:
   - wafi 189
   note: Abū Jaʿfar = Qālūn (idah 161, 167)
-  places:
-  - '3:36:18'
-  - '5:29:1'
-  - 5:115:10
-  - 7:117:4
-  - 7:156:13
-  - '11:54:9'
-  - 11:88:22
-  - '12:59:12'
-  - '27:29:4'
-  - '28:27:2'
   anchor: some
   unanchored:
   - إلي أريد
   - إلي أمرت
+  places:
+  - '3:36:18'
+  - '3:36:19'
+  - '5:29:1'
+  - '5:29:2'
+  - 5:115:10
+  - 5:115:11
+  - 7:156:13
+  - 7:156:14
+  - '11:54:9'
+  - '11:54:10'
+  - 11:88:22
+  - 11:88:23
+  - '12:59:12'
+  - '12:59:13'
+  - '27:29:4'
+  - '27:29:5'
+  - '28:27:2'
+  - '28:27:3'
 - words:
   - بعهدي أوف
   - آتوني أفرغ
@@ -1457,11 +1535,12 @@ listed:
   cite:
   - wafi 189
   note: Abū Jaʿfar = Qālūn (idah 161, 167)
-  places:
-  - '2:40:9'
   anchor: some
   unanchored:
   - آتوني أفرغ
+  places:
+  - '2:40:9'
+  - '2:40:10'
 - words:
   - عهدي الظالمين
   case: yāʾ al-iḍāfah before hamzat waṣl with lām al-taʿrīf
@@ -1470,9 +1549,10 @@ listed:
     - sukun
   cite:
   - wafi 189
+  anchor: all
   places:
   - 2:124:18
-  anchor: all
+  - 2:124:19
 - words:
   - قل لعبادي الذين آمنوا
   - قُل لِعِبَادِيَ الَّذِينَ ءَامَنُوا يُقِيمُوا الصَّلَوٰةَ
@@ -1493,11 +1573,16 @@ listed:
   - idah 165
   - idah 168
   note: Ruways and Khalaf open it; Rawḥ sukūn (idah 165)
-  places:
-  - '14:31:1'
   anchor: some
   unanchored:
   - قل لعبادي الذين آمنوا
+  places:
+  - '14:31:1'
+  - '14:31:2'
+  - '14:31:3'
+  - '14:31:4'
+  - '14:31:5'
+  - '14:31:6'
 - words:
   - يا عبادي الذين آمنوا
   - يا عبادي الذين أسرفوا
@@ -1528,12 +1613,14 @@ listed:
   - idah 168
   - idah 169
   note: the vocative words, sukūn even for those who open the class
-  places:
-  - '39:53:2'
   anchor: some
   unanchored:
   - يا عبادي الذين آمنوا
   - يَنعِبَادِيَ الَّذِينَ ءَامَنُوا
+  places:
+  - '39:53:2'
+  - '39:53:3'
+  - '39:53:4'
 - words:
   - آياتي الذين يتكبرون
   case: yāʾ al-iḍāfah before hamzat waṣl with lām al-taʿrīf
@@ -1544,10 +1631,12 @@ listed:
     - sukun
   cite:
   - wafi 190
-  places: []
   anchor: none
   unanchored:
   - آياتي الذين يتكبرون
+  flag: no Ḥafṣ words match (a description or a spelling the skeleton misses)
+  candidates: []
+  places: []
 - words:
   - أخي اشدد
   - إني اصطفيتك
@@ -1563,10 +1652,12 @@ listed:
     - opened
   cite:
   - wafi 190
+  anchor: all
   places:
   - 7:144:3
+  - 7:144:4
   - '20:30:2'
-  anchor: all
+  - '20:31:1'
 - words:
   - ياليتني اتخذت
   case: yāʾ al-iḍāfah before hamzat waṣl without lām al-taʿrīf
@@ -1577,9 +1668,10 @@ listed:
     - opened
   cite:
   - wafi 190
+  anchor: all
   places:
   - '25:27:7'
-  anchor: all
+  - '25:27:8'
 - words:
   - واصطنعتك لنفسي اذهب
   - ذكري اذهبا
@@ -1604,10 +1696,13 @@ listed:
   cite:
   - wafi 190
   note: Abū Jaʿfar = Qālūn (idah 161, 167)
+  anchor: all
   places:
   - '20:41:1'
+  - '20:41:2'
+  - '20:42:1'
   - '20:42:8'
-  anchor: all
+  - '20:43:1'
 - words:
   - إن قومي اتخذوا
   - إِنَّ قَوْمِي اتَّخَذُوا
@@ -1634,9 +1729,11 @@ listed:
   - idah 164
   - idah 168
   note: Rawḥ opens, Ruways keeps the sukūn (idah 164, 168); Abū Jaʿfar = Qālūn (idah 161, 167)
+  anchor: all
   places:
   - '25:30:4'
-  anchor: all
+  - '25:30:5'
+  - '25:30:6'
 - words:
   - من بعدي اسمه
   - مِنْ بَعْدِي اسْمُهُ أَحْمَدُ
@@ -1669,9 +1766,12 @@ listed:
   - idah 164
   - idah 168
   note: Yaʿqūb follows Abū ʿAmr here (idah 164); Abū Jaʿfar = Qālūn (idah 161, 167)
+  anchor: all
   places:
   - '61:6:21'
-  anchor: all
+  - '61:6:22'
+  - '61:6:23'
+  - '61:6:24'
 - words:
   - محياي
   - وَمَحْيَايَ
@@ -1724,11 +1824,11 @@ listed:
   - idah 168
   - idah 169
   note: the second yāʾ of محياي; Abū Jaʿfar = Qālūn (idah 161, 167)
+  anchor: all
   places:
   - 6:162:5
   - 16:77:9
   - '54:50:5'
-  anchor: all
 - words:
   - وجهي
   case: yāʾ al-iḍāfah not before a hamzah (the thirty)
@@ -1750,6 +1850,7 @@ listed:
   cite:
   - wafi 191
   note: Abū Jaʿfar = Qālūn (idah 161, 167)
+  anchor: all
   places:
   - 2:115:7
   - 2:272:18
@@ -1764,7 +1865,6 @@ listed:
   - '55:27:2'
   - '76:9:3'
   - '92:20:3'
-  anchor: all
 - words:
   - بيتي (نوح)
   - بيتي
@@ -1776,7 +1876,9 @@ listed:
     - opened
   cite:
   - wafi 191
-  places:
+  anchor: all
+  flag: 'بيتي: listed with a sūrah in brackets and without'
+  candidates:
   - '2:41:14'
   - 2:61:49
   - 2:125:3
@@ -1843,7 +1945,7 @@ listed:
   - '66:11:14'
   - '71:28:7'
   - '106:3:4'
-  anchor: all
+  places: []
 - words:
   - بيتي للطائفين
   - بيتي للطائفين والقائمين
@@ -1864,10 +1966,13 @@ listed:
   cite:
   - wafi 191
   note: Abū Jaʿfar = Qālūn (idah 161, 167)
+  anchor: all
   places:
   - 2:125:18
+  - 2:125:19
   - '22:26:12'
-  anchor: all
+  - '22:26:13'
+  - '22:26:14'
 - words:
   - شركائي
   - وراثي
@@ -1879,6 +1984,7 @@ listed:
     - opened
   cite:
   - wafi 192
+  anchor: all
   places:
   - 2:233:31
   - 4:12:71
@@ -1900,7 +2006,6 @@ listed:
   - '41:47:22'
   - '42:21:3'
   - '68:41:3'
-  anchor: all
 - words:
   - ولي دين
   - وَلِيَ دِينِ
@@ -1925,9 +2030,10 @@ listed:
   - wafi 192
   - idah 161
   note: Abū Jaʿfar sukūn here, unlike Qālūn
+  anchor: all
   places:
   - '109:6:3'
-  anchor: all
+  - '109:6:4'
 - words:
   - ومماتي
   case: yāʾ al-iḍāfah not before a hamzah (the thirty)
@@ -1943,9 +2049,9 @@ listed:
   cite:
   - wafi 192
   note: Abū Jaʿfar = Qālūn (idah 161, 167)
+  anchor: all
   places:
   - 6:162:6
-  anchor: all
 - words:
   - أرضي واسعة
   - صراطي
@@ -1957,6 +2063,7 @@ listed:
     - opened
   cite:
   - wafi 192
+  anchor: all
   places:
   - '1:6:2'
   - '1:7:1'
@@ -1988,6 +2095,7 @@ listed:
   - 23:74:7
   - '24:46:10'
   - '29:56:5'
+  - '29:56:6'
   - '34:6:14'
   - '36:4:2'
   - 36:61:4
@@ -2003,7 +2111,6 @@ listed:
   - '48:2:14'
   - '48:20:17'
   - '67:22:11'
-  anchor: all
 - words:
   - مالي لا أرى الهدهد
   case: yāʾ al-iḍāfah not before a hamzah (the thirty)
@@ -2024,9 +2131,12 @@ listed:
     - opened
   cite:
   - wafi 192
+  anchor: all
   places:
   - '27:20:4'
-  anchor: all
+  - '27:20:5'
+  - '27:20:6'
+  - '27:20:7'
 - words:
   - ولي نعجة
   - ما كان لي عليكم
@@ -2040,17 +2150,27 @@ listed:
     - opened
   cite:
   - wafi 192
-  places:
-  - 18:67:5
-  - 18:72:7
-  - 18:75:8
-  - 26:62:4
-  - '28:34:8'
-  - '38:23:8'
-  - 38:69:1
   anchor: some
   unanchored:
   - ما كان لي عليكم
+  places:
+  - 18:67:5
+  - 18:67:6
+  - 18:72:7
+  - 18:72:8
+  - 18:75:8
+  - 18:75:9
+  - 26:62:4
+  - 26:62:5
+  - '28:34:8'
+  - '28:34:9'
+  - '38:23:8'
+  - '38:23:9'
+  - 38:69:1
+  - 38:69:2
+  - 38:69:3
+  - 38:69:4
+  - 38:69:5
 - words:
   - ومن معي من المؤمنين
   case: yāʾ al-iḍāfah not before a hamzah (the thirty)
@@ -2061,9 +2181,12 @@ listed:
     - opened
   cite:
   - wafi 192
+  anchor: all
   places:
   - 26:118:6
-  anchor: all
+  - 26:118:7
+  - 26:118:8
+  - 26:118:9
 - words:
   - لي فاعتزلون
   - بي (البقرة)
@@ -2073,73 +2196,11 @@ listed:
     - opened
   cite:
   - wafi 192
-  places:
-  - '2:34:9'
-  - 2:186:15
-  - 5:111:7
-  - 7:61:4
-  - 7:67:4
-  - 7:150:33
-  - 7:185:19
-  - 12:78:6
-  - 12:80:30
-  - 12:93:7
-  - 12:100:21
-  - '15:31:3'
-  - 17:89:10
-  - 17:99:20
-  - '19:47:9'
-  - '20:56:6'
-  - 20:116:9
-  - '22:26:9'
-  - '24:55:30'
-  - '25:50:5'
-  - 26:86:2
-  - '28:25:8'
-  - '29:8:8'
-  - '31:15:6'
-  - '31:34:21'
-  - '33:40:4'
-  - '34:10:7'
-  - '44:21:4'
-  - '45:6:7'
-  - '46:9:11'
-  - '53:55:1'
-  - '55:13:1'
-  - '55:16:1'
-  - '55:18:1'
-  - '55:21:1'
-  - '55:23:1'
-  - '55:25:1'
-  - '55:28:1'
-  - '55:30:1'
-  - '55:32:1'
-  - '55:34:1'
-  - '55:36:1'
-  - '55:38:1'
-  - '55:40:1'
-  - '55:42:1'
-  - '55:45:1'
-  - '55:47:1'
-  - '55:49:1'
-  - '55:51:1'
-  - '55:53:1'
-  - '55:55:1'
-  - '55:57:1'
-  - '55:59:1'
-  - 55:61:1
-  - 55:63:1
-  - 55:65:1
-  - 55:67:1
-  - 55:69:1
-  - 55:71:1
-  - 55:73:1
-  - 55:75:1
-  - 55:77:1
-  - '77:50:1'
-  - '81:9:1'
-  - '111:1:3'
   anchor: all
+  places:
+  - 2:186:15
+  - '44:21:4'
+  - '44:21:5'
 - words:
   - يا عبادي لا خوف
   - يَنعِبَادِ لَا خَوْفٌ عَلَيْكُمْ
@@ -2161,11 +2222,14 @@ listed:
   - idah 169
   note: Shuʿbah opens it in waṣl only; Rawḥ drops the yāʾ in both states; Ruways keeps it with sukūn in both states; Khalaf al-ʿĀshir drops it
     in both states
-  places:
-  - 43:68:1
   anchor: some
   unanchored:
   - يَنعِبَادِ لَا خَوْفٌ عَلَيْكُمْ
+  places:
+  - 43:68:1
+  - 43:68:2
+  - 43:68:3
+  - 43:68:4
 - words:
   - ولي فيها مآرب
   case: yāʾ al-iḍāfah not before a hamzah (the thirty)
@@ -2176,9 +2240,11 @@ listed:
     - opened
   cite:
   - wafi 192
+  anchor: all
   places:
   - '20:18:10'
-  anchor: all
+  - '20:18:11'
+  - '20:18:12'
 - words:
   - ومالي لا أعبد
   case: yāʾ al-iḍāfah not before a hamzah (the thirty)
@@ -2213,9 +2279,11 @@ listed:
     - opened
   cite:
   - wafi 192
+  anchor: all
   places:
   - '36:22:1'
-  anchor: all
+  - '36:22:2'
+  - '36:22:3'
 filled_notes:
 - al-Wāfī states the opened-readers of the hamzat qatʿ classes (maftūḥah, maksūrah) and then lists exceptions word by word; for the readers it
   does not name in a class the rows give no default, so they stay empty in the case (wafi 185, 188). Where a word row says 'الباقون' / names the

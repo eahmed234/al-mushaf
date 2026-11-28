@@ -774,6 +774,12 @@ listed:
     - sakt
   cite:
   - idah 51
+  anchor: none
+  unanchored:
+  - الأربع الزهر
+  flag: no Ḥafṣ words match (a description or a spelling the skeleton misses)
+  candidates: []
+  places: []
 - words:
   - آخر الضحى وأول الشرح
   case: between two surahs
@@ -782,6 +788,12 @@ listed:
     - sakt
   cite:
   - wafi 46
+  anchor: none
+  unanchored:
+  - آخر الضحى وأول الشرح
+  flag: no Ḥafṣ words match (a description or a spelling the skeleton misses)
+  candidates: []
+  places: []
 filled_notes:
 - 'Start of Barāʾah: no basmalah (wafi 48). No Durrah row, so the six are empty.'
 - 'Obligatory-basmalah case: no Durrah row, so the six are empty.'

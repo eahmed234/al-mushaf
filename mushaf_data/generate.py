@@ -17,7 +17,7 @@ import itertools
 from .constraints import allowed
 from .occurrences import imala_excluded
 from .profiles import place_wujuh
-from .spine import passage
+from .spine import passage, words
 from .usul import FEATURE_ONLY, WUJUH, apply, detect
 from .waqf import forms as waqf_forms
 
@@ -32,7 +32,8 @@ def book_gate(cat: str, word: str, nxt: str | None = None) -> bool:
     """The books' rule where we have it: imālah everywhere the detector finds it except the five
     words al-Wāfī excepts (pp. 142-143). Other categories: every detected place."""
     if cat.startswith("imala_"):
-        return not imala_excluded(passage().get(word, ""), word)
+        # (the whole Qurʾān's words: the spike's passage alone left إِلَىٰ mumāl outside 1:1-2:20)
+        return not imala_excluded(passage().get(word) or words().get(word, ""), word)
     return True
 
 
@@ -71,17 +72,23 @@ def generate(rawi: str, span: list[str], profiles: dict, *, farsh: dict[str, str
     text = {**hafs, **(farsh or {})}
     places = [e for e in (place_wujuh() if places is None else places) if e["rawi"] == rawi]
 
+    parent: dict[str, str] = {}  # a finer table case → the category it refines (in this span)
+
     def base_wujuh(c):
         w = profiles[rawi].get(c, {}).get("wujuh")
         if not w and c == "silah_mim_hamza":  # one category in the books; detected apart
             w = profiles[rawi].get("silah_mim", {}).get("wujuh")
+        if not w and c in parent:  # a profile without the table's finer cases (data/profiles.yaml)
+            w = profiles[rawi].get(parent[c], {}).get("wujuh")
         # nothing known for this rāwī here: the category's first wajh (the Ḥafṣ text)
         return list(w or [WUJUH[c][0]])
 
     out = []
     own_waqf = rawi in WAQF_RAWI
     for words, stop in contexts(span, hafs, text):
-        occs = [o for o in detect(words, stop=stop) if gate(o.cat, o.word, o.nxt)]
+        occs = [o for o in detect(words, stop=stop) if gate(o.base or o.cat, o.word, o.nxt)]
+        parent.clear()
+        parent.update({o.cat: o.base for o in occs if o.base})
         if own_waqf:
             occs = [o for o in occs if o.cat not in WAQF_HAMZ_CATS]
         cats = sorted({o.cat for o in occs if o.cat in TEXT_CATS or o.cat in CHOICE_FEATURES})
@@ -98,12 +105,15 @@ def generate(rawi: str, span: list[str], profiles: dict, *, farsh: dict[str, str
                 return list(elsewhere[c]["elsewhere"])
             return base_wujuh(c)
 
-        tie = "silah_mim" in cats and "silah_mim_hamza" in cats and set(wujuh("silah_mim")) == set(wujuh("silah_mim_hamza"))
-        free = [c for c in cats if not (tie and c == "silah_mim_hamza")]
+        # one choice for two categories with the same wujūh: silah_mim before a hamzah or not, and a
+        # finer table case with the category it refines (the khulf convention: one wajh per span)
+        pairs = [("silah_mim_hamza", "silah_mim")] + list(parent.items())
+        tied = {c: p for c, p in pairs if c in cats and p in cats and set(wujuh(c)) == set(wujuh(p))}
+        free = [c for c in cats if c not in tied]
         for combo in itertools.product(*[wujuh(c) for c in free]):
             ch = dict(zip(free, combo))
-            if tie:
-                ch["silah_mim_hamza"] = ch["silah_mim"]
+            for c, p in tied.items():
+                ch[c] = ch[p]
             if not allowed(rawi, ch, constraints):
                 continue
             txt = apply(words, occs, ch)

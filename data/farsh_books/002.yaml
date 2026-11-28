@@ -234,6 +234,23 @@
     cite: idah 194
     from: implied
     base: true
+- place: ['2:48:10']
+  words: يُقۡبَلُ
+  where: here
+  options:
+  - readers: [bazzi, qunbul, duri_abuamr, susi, ruways, rawh]
+    khulf: []
+    reading: بتاء التأنيث
+    cite: wafi 202
+    book: wafi
+    as_asl: [ruways, rawh]
+  - readers: [qalun, warsh, hisham, ibn_dhakwan, shuba, hafs, khalaf_an_hamzah, khallad, abul_harith, duri_kisai, ibn_wardan, ibn_jammaz, ishaq, idris]
+    khulf: []
+    reading: بياء التذكير
+    cite: wafi 202
+    book: wafi
+    as_asl: [ibn_wardan, ibn_jammaz, ishaq, idris]
+    base: true
 - place: ['2:51:2']
   words: وَٰعَدۡنَا
   where: all
@@ -307,8 +324,8 @@
     reading: بتاء مضمومة وفتح الفاء
     cite: wafi 203
     book: wafi
-- place: ['2:61:52', '2:91:24', '2:177:18', '2:213:7', '2:246:13']
-  words: ٱلنَّبِيِّـۧنَ أَنۢبِيَآءَ وَٱلنَّبِيِّـۧنَ ٱلنَّبِيِّـۧنَ لِنَبِيّٖ
+- place: ['2:61:52', '2:177:18', '2:213:7', '2:246:13']
+  words: ٱلنَّبِيِّـۧنَ وَٱلنَّبِيِّـۧنَ ٱلنَّبِيِّـۧنَ لِنَبِيّٖ
   where: all
   options:
   - readers: [bazzi, qunbul, duri_abuamr, susi, hisham, ibn_dhakwan, shuba, hafs, khalaf_an_hamzah, khallad, abul_harith, duri_kisai, ibn_wardan, ibn_jammaz, ruways, rawh, ishaq, idris]
@@ -695,6 +712,23 @@
     book: wafi
     as_asl: [ibn_wardan, ibn_jammaz, ishaq, idris]
     base: true
+- place: ['2:91:24']
+  words: أَنۢبِيَآءَ
+  where: all
+  options:
+  - readers: [bazzi, qunbul, duri_abuamr, susi, hisham, ibn_dhakwan, shuba, hafs, khalaf_an_hamzah, khallad, abul_harith, duri_kisai, ruways, rawh, ishaq, idris]
+    khulf: []
+    reading: بإبدال الهمزة ياء مع الإدغام
+    cite: wafi 204
+    book: wafi
+    as_asl: [ruways, rawh, ishaq, idris]
+    base: true
+  - readers: [qalun, warsh, ibn_wardan, ibn_jammaz]
+    khulf: []
+    reading: بالهمز
+    cite: wafi 204
+    book: wafi
+    as_asl: [ibn_wardan, ibn_jammaz]
 - place: ['2:96:25']
   words: يَعۡمَلُونَ
   where: here
@@ -918,6 +952,22 @@
     reading: بكسر الخاء (من الموافقة)
     cite: idah 199
     book: idah
+- place: ['2:126:22']
+  words: فَأُمَتِّعُهُۥ
+  where: here
+  options:
+  - readers: [hisham, ibn_dhakwan]
+    khulf: []
+    reading: بتخفيف التاء وسكون الميم
+    cite: wafi 211
+    book: wafi
+  - readers: [qalun, warsh, bazzi, qunbul, duri_abuamr, susi, shuba, hafs, khalaf_an_hamzah, khallad, abul_harith, duri_kisai, ibn_wardan, ibn_jammaz, ruways, rawh, ishaq, idris]
+    khulf: []
+    reading: بفتح الميم وتشديد التاء
+    cite: wafi 211
+    book: wafi
+    as_asl: [ibn_wardan, ibn_jammaz, ruways, rawh, ishaq, idris]
+    base: true
 - place: ['2:128:10']
   words: وَأَرِنَا
   where: here

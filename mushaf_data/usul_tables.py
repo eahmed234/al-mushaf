@@ -12,7 +12,9 @@ An extra with `adds` ({category, wujuh}) adds those wujūh to that engine catego
 one without is recorded but not modelled yet, and `active` says so (`modelled: False`).
 
 Each engine category (mushaf_data.usul.WUJUH) is one case of a table: the case named after it, or
-CASE, or the first (data/categories.yaml says which table holds it). Only wujūh ids the engine
+CASE, or the first (data/categories.yaml says which table holds it). A table's finer cases are
+engine categories of their own (mushaf_data.cases.SUBCATS: hamzatayn_madmumah is the hamzatayn
+table's third case), which the engine gives a word by its letters (cases.refine). Only wujūh ids the engine
 knows are kept. The engine still reads data/profiles.yaml; tests hold the two to the same rules.
 """
 from __future__ import annotations
@@ -23,6 +25,7 @@ from functools import lru_cache
 import yaml
 
 from .paths import DATA
+from .cases import SUBCATS
 from .ruwat import RUWAT
 from .usul import WUJUH
 
@@ -53,6 +56,8 @@ def where() -> dict[str, tuple[str, int]]:
                 out[old] = (c, next((i for i, n in enumerate(names) if n.startswith(old + ":")), CASE.get(old, 0)))
     for old, ck in ENGINE_ONLY.items():
         out.setdefault(old, ck)
+    for sub, (t, k, _) in SUBCATS.items():  # the finer cases the engine picks per word (mushaf_data.cases)
+        out.setdefault(sub, (t, k))
     return out
 
 
@@ -70,6 +75,32 @@ def _profiles() -> dict:
                     e["option"] = True
                 out[r][old] = e
     return out
+
+
+@lru_cache(maxsize=1)
+def listed_at() -> dict[str, list[dict]]:
+    """slot → the listed entries anchored there (pipeline.anchor's `places`; a flagged entry has
+    none): [{table, case, ruwat, cite, words}]. Bare words are never matched here."""
+    out: dict[str, list[dict]] = {}
+    for t, tab in tables().items():
+        for x in tab.get("listed") or []:
+            e = {"table": t, "case": x.get("case"), "ruwat": x.get("ruwat") or {}, "cite": list(x.get("cite") or []),
+                 "words": x.get("words")}
+            for p in x.get("places") or []:
+                out.setdefault(p, []).append(e)
+    return out
+
+
+def listed_wujuh(rawi: str, cat: str, slot: str) -> dict | None:
+    """{wajh: cites} a listed entry gives the rāwī for the engine category at the slot (the entry
+    of the category's table that names him there; its wujūh the engine knows), else None."""
+    t = where().get(cat, (None,))[0]
+    for e in listed_at().get(slot, []):
+        if e["table"] == t and rawi in e["ruwat"]:
+            ws = [w for w in e["ruwat"][rawi] or [] if w in WUJUH.get(cat, [])]
+            if ws:
+                return {w: e["cite"] or [f"usul/{t} listed"] for w in ws}
+    return None
 
 
 EDITIONS = ("sughra", "kubra")

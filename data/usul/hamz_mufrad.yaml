@@ -179,6 +179,9 @@ listed:
   cite:
   - idah 104
   - idah 105
+  anchor: all
+  places:
+  - '3:13:20'
 - words:
   - قرئ
   - استهزئ
@@ -198,6 +201,24 @@ listed:
   cite:
   - idah 105
   - idah 106
+  anchor: all
+  places:
+  - 2:264:12
+  - '4:38:4'
+  - 4:72:4
+  - '6:10:2'
+  - 7:204:2
+  - '8:47:8'
+  - '13:32:2'
+  - '16:41:9'
+  - '18:18:20'
+  - '21:41:2'
+  - '29:58:5'
+  - '67:4:8'
+  - '72:8:5'
+  - '73:6:2'
+  - '84:21:2'
+  - '108:3:2'
 - words:
   - الخاطئة
   - مائة
@@ -210,6 +231,24 @@ listed:
     - ibdal_ya
   cite:
   - idah 106
+  anchor: all
+  places:
+  - 2:249:51
+  - 2:249:54
+  - 2:259:19
+  - 2:259:35
+  - 2:261:16
+  - '3:13:8'
+  - '8:16:11'
+  - '8:45:6'
+  - 8:65:17
+  - 8:66:12
+  - '18:25:5'
+  - '18:43:4'
+  - '24:2:7'
+  - 28:81:9
+  - 37:147:3
+  - '69:9:6'
 - words:
   - موطئا
   case: hamzah after a kasrah
@@ -222,6 +261,9 @@ listed:
     - tahqiq
   cite:
   - idah 107
+  anchor: all
+  places:
+  - 9:120:33
 - words:
   - جزءا
   - جزء
@@ -233,6 +275,11 @@ listed:
     - hadhf_tashdid_zay
   cite:
   - idah 110
+  anchor: all
+  places:
+  - 2:260:30
+  - '15:44:7'
+  - '43:15:5'
 - words:
   - كهيئة
   - النسيء
@@ -244,6 +291,11 @@ listed:
     - ibdal_ya_idgham
   cite:
   - idah 111
+  anchor: some
+  unanchored:
+  - كهيئة
+  places:
+  - '9:37:2'
 - words:
   - النسيء
   case: hamzah after a yāʾ
@@ -252,6 +304,9 @@ listed:
     - ibdal_ya_idgham
   cite:
   - wafi 103
+  anchor: all
+  places:
+  - '9:37:2'
 - words:
   - أرأيت
   case: hamzah in the word
@@ -262,6 +317,12 @@ listed:
     - tashil
   cite:
   - idah 112
+  anchor: none
+  unanchored:
+  - أرأيت
+  flag: no Ḥafṣ words match (a description or a spelling the skeleton misses)
+  candidates: []
+  places: []
 - words:
   - إسرائيل
   - كأين
@@ -273,6 +334,58 @@ listed:
     - tashil_thaniya
   cite:
   - idah 112
+  anchor: all
+  places:
+  - '2:40:2'
+  - '2:47:2'
+  - 2:83:5
+  - 2:122:2
+  - 2:211:3
+  - 2:246:7
+  - '3:49:4'
+  - 3:93:6
+  - 3:93:10
+  - 3:146:1
+  - '5:12:6'
+  - '5:32:7'
+  - 5:70:5
+  - 5:72:14
+  - 5:78:6
+  - 5:110:50
+  - 7:105:18
+  - 7:134:22
+  - 7:137:18
+  - 7:138:3
+  - 10:90:3
+  - 10:90:24
+  - 10:93:4
+  - 12:105:1
+  - '17:2:7'
+  - '17:4:4'
+  - 17:101:9
+  - 17:104:5
+  - '19:58:18'
+  - '20:47:9'
+  - 20:80:2
+  - 20:94:15
+  - '22:45:1'
+  - '22:48:1'
+  - '26:17:5'
+  - '26:22:8'
+  - '26:59:4'
+  - 26:197:9
+  - 27:76:7
+  - 29:60:1
+  - '32:23:14'
+  - '40:53:7'
+  - '43:59:10'
+  - '44:30:4'
+  - '45:16:4'
+  - '46:10:14'
+  - '47:13:1'
+  - '61:6:7'
+  - '61:14:26'
+  - '65:8:1'
 - words:
   - التى
   case: hamzah of اللائي
@@ -283,6 +396,12 @@ listed:
     - tahqiq
   cite:
   - idah 114
+  anchor: none
+  unanchored:
+  - التى
+  flag: no Ḥafṣ words match (a description or a spelling the skeleton misses)
+  candidates: []
+  places: []
 - words:
   - واللائى ينسن
   case: hamzah of اللائي after the yāʾ is dropped
@@ -297,6 +416,12 @@ listed:
     - ibdal_ya_sakina
   cite:
   - wafi 58
+  anchor: none
+  unanchored:
+  - واللائى ينسن
+  flag: no Ḥafṣ words match (a description or a spelling the skeleton misses)
+  candidates: []
+  places: []
 - words:
   - لئلا
   case: hamzah after a lām-alif
@@ -310,6 +435,11 @@ listed:
   cite:
   - wafi 103
   - idah 114
+  anchor: all
+  places:
+  - 2:150:15
+  - 4:165:4
+  - '57:29:1'
 - words:
   - النبوة
   case: hamzah of النبيء family
@@ -320,6 +450,13 @@ listed:
     - ibdal_waw_idgham
   cite:
   - idah 115
+  anchor: all
+  places:
+  - 3:79:9
+  - 6:89:6
+  - '29:27:8'
+  - '45:16:7'
+  - '57:26:8'
 - words:
   - النبي
   - النبيون
@@ -332,6 +469,61 @@ listed:
     - ibdal_ya_idgham
   cite:
   - idah 115
+  anchor: all
+  places:
+  - 2:61:52
+  - 2:136:21
+  - 2:177:18
+  - 2:213:7
+  - 2:246:13
+  - '3:21:7'
+  - 3:68:8
+  - 3:80:6
+  - 3:81:5
+  - 3:84:19
+  - 3:161:3
+  - 4:69:12
+  - 4:163:8
+  - '5:44:9'
+  - 5:81:5
+  - 7:157:4
+  - 7:158:23
+  - 8:64:2
+  - 8:65:2
+  - 8:67:3
+  - 8:70:2
+  - 9:61:4
+  - 9:73:2
+  - 9:113:3
+  - 9:117:5
+  - '17:55:10'
+  - '19:58:7'
+  - '22:5:25'
+  - '33:1:2'
+  - '33:6:1'
+  - '33:7:4'
+  - '33:13:14'
+  - '33:28:2'
+  - '33:30:2'
+  - '33:32:2'
+  - '33:38:4'
+  - '33:40:12'
+  - '33:45:2'
+  - '33:50:2'
+  - '33:50:33'
+  - '33:50:36'
+  - '33:53:7'
+  - '33:53:31'
+  - '33:56:6'
+  - '33:59:2'
+  - 39:69:8
+  - '49:2:9'
+  - '60:12:2'
+  - '65:1:2'
+  - '66:1:2'
+  - '66:3:3'
+  - '66:8:25'
+  - '66:9:2'
 - words:
   - الأنبياء
   case: hamzah of النبيء family
@@ -342,6 +534,11 @@ listed:
     - ibdal_ya_maftuha
   cite:
   - idah 115
+  anchor: all
+  places:
+  - 3:112:28
+  - 3:181:16
+  - 4:155:8
 - words:
   - عادا الأولى
   case: the wāw of الأولى, read with naql
@@ -355,6 +552,10 @@ listed:
   cite:
   - idah 117
   - wafi 108
+  anchor: all
+  places:
+  - '53:50:3'
+  - '53:50:4'
 - words:
   - يلتكم
   case: the added hamzah
@@ -390,6 +591,9 @@ listed:
   cite:
   - wafi 102
   - wafi 103
+  anchor: all
+  places:
+  - '49:14:20'
 filled_notes:
 - 'In the one case (hamzah maftūḥah as fāʾ after ḍammah) only Warsh (wafi 99) and Ibn Wardān/Ibn Jammaz (idah 105) are spoken of by the rows;
   the other seventeen are left empty, not filled with taḥqīq. The same for every listed word: only the ruwāt named by the row are listed.'

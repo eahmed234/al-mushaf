@@ -383,6 +383,15 @@ listed:
   cite:
   - wafi 104
   why: 'the sākin is in the middle of the word: no naql (Warsh)'
+  anchor: some
+  unanchored:
+  - القرآن
+  - مسئولا
+  places:
+  - '17:18:17'
+  - '17:22:8'
+  - '24:39:7'
+  - '68:49:10'
 - words:
   - ميم الجمع
   case: naql to a sākin at the end of a word before a hamzah beginning the next word (waṣl)
@@ -390,6 +399,12 @@ listed:
   cite:
   - wafi 104
   why: no naql for Warsh after mīm al-jamʿ (it is joined with a wāw)
+  anchor: none
+  unanchored:
+  - ميم الجمع
+  flag: no Ḥafṣ words match (a description or a spelling the skeleton misses)
+  candidates: []
+  places: []
 - words:
   - آلآن
   case: naql to a sākin at the end of a word before a hamzah beginning the next word (waṣl)
@@ -403,6 +418,15 @@ listed:
   cite:
   - wafi 107
   - idah 118
+  anchor: all
+  places:
+  - 2:71:18
+  - 2:187:24
+  - '4:18:14'
+  - 8:66:1
+  - '10:51:7'
+  - 10:91:1
+  - '12:51:20'
 - words:
   - ردءا
   case: naql to a sākin at the end of a word before a hamzah beginning the next word (waṣl)
@@ -419,6 +443,9 @@ listed:
   - wafi 109
   - idah 119
   why: naql to the dāl
+  anchor: all
+  places:
+  - '28:34:9'
 - words:
   - عاداً الأولى
   case: naql to a sākin at the end of a word before a hamzah beginning the next word (waṣl)
@@ -434,6 +461,10 @@ listed:
   cite:
   - wafi 107
   why: naql to the lām in waṣl with idghām of the tanwīn; the other ten read the lām sākin and kasr of the tanwīn
+  anchor: all
+  places:
+  - '53:50:3'
+  - '53:50:4'
 - words:
   - كتابيه إني
   case: naql to a sākin at the end of a word before a hamzah beginning the next word (waṣl)
@@ -444,6 +475,10 @@ listed:
   cite:
   - wafi 109
   why: the hāʾ of كتابيه (al-Ḥāqqah) sākin with the hamzah kept, or naql to the hāʾ; both for Warsh in waṣl
+  anchor: all
+  places:
+  - '69:19:9'
+  - '69:20:1'
 - words:
   - ملء
   case: naql to a sākin at the end of a word before a hamzah beginning the next word (waṣl)
@@ -452,6 +487,9 @@ listed:
     - naql
   cite:
   - idah 120
+  anchor: all
+  places:
+  - 3:91:11
 - words:
   - إستبرق
   case: naql to a sākin at the end of a word before a hamzah beginning the next word (waṣl)
@@ -460,6 +498,12 @@ listed:
     - naql
   cite:
   - idah 120
+  anchor: all
+  places:
+  - '18:31:20'
+  - '44:53:4'
+  - '55:54:6'
+  - '76:21:5'
 - words:
   - واسأل
   - فاسأل
@@ -473,6 +517,13 @@ listed:
   - idah 120
   - idah 121
   why: imperative of سأل after wāw or fāʾ
+  anchor: none
+  unanchored:
+  - واسأل
+  - فاسأل
+  flag: no Ḥafṣ words match (a description or a spelling the skeleton misses)
+  candidates: []
+  places: []
 - words:
   - من أجل
   case: naql to a sākin at the end of a word before a hamzah beginning the next word (waṣl)
@@ -484,6 +535,10 @@ listed:
   cite:
   - idah 117
   - idah 119
+  anchor: all
+  places:
+  - '5:32:1'
+  - '5:32:2'
 - words:
   - ماليه هلك
   case: hāʾ of ماليه before hāʾ of هلك (not naql; idghām)
@@ -533,6 +588,10 @@ listed:
   cite:
   - wafi 110
   why: in waṣl, all fourteen
+  anchor: all
+  places:
+  - '69:28:4'
+  - '69:29:1'
 filled_notes:
 - The general case (waṣl) for the six of the Durrah rests on the reviewed profile (idah 118-120) and on idah 119 ("بالتحقيق على الأصل", "كابن
   جماز موافقة لأصليهما"); no row states a general none for Ibn Wardān, so it is the listed words only that are his naql.

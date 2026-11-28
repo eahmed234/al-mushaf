@@ -50,6 +50,9 @@ def norm(w: str) -> str:
     w = w.replace("\u0652", "\u06e1").replace("\u06d2", "\u064a").replace("\u0649", "\u064a")
     w = re.sub("^([\u0648\u0641\u0628\u0644\u0643]?[\u064e\u0650]?)\u0627[\u064e\u064f\u0650]?[\u06ec\u06ea]", "\\1\u0671", w)  # اَ۬لْكِتَٰبُ
     w = w.replace("\u0670\u06ea", "\u065c").replace("\u06ea", "\u065c")  # KFGQPC's imālah mark
+    # al-Dūrī's and al-Sūsī's taqlīl: a small low mīm on the letter before the alif (مُوسۭيٰ, ٱلدُّنۡيۭا);
+    # elsewhere U+06ED is the iqlāb of a kasr tanwīn, which isn't before an alif
+    w = re.sub("\u06ed(?=[\u0670]?[\u064a\u0649\u0627\u0670])|(?<=\u0670)\u06ed", "\u065c", w)  # (بِسِيمٰۭهُمۡ)
     w = w.replace("\u0635\u0650\u06dc", "\u0633\u0650").replace("\u0635\u06dc", "\u0633")  # صۜ: read with sīn
     w = w.replace("\u064a\u0654", "\u0626")
     return w

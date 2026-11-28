@@ -63,8 +63,9 @@ PAGES = {"001": {"1:4:1": ["wafi 50", "idah 52", "idah 53"], "1:6:2": ["wafi 50"
                  "2:91:24": ["wafi 204"], "2:273:12": ["wafi 227", "wafi 228", "idah 219"], "2:280:4": ["idah 208"],
                  "2:214:18": ["wafi 218", "idah 215"], "2:258:21": ["wafi 222"]}}
 # Farsh the books state for every occurrence ("حيث وقع"); al-Budūr gives it at the first place
-# (checked by hand, 2026-11-27): place → the forms it covers and the page. Expanded to places by
-# pipeline.anchor.find wherever the farsh is read (checks.farsh; the engine later).
+# (checked by hand, 2026-11-27): place → the forms it covers and the page. pipeline.farsh stores
+# the forms' places over the whole Qurʾān as the entry's `recurs.slots` (recur_slots, once, when the
+# table is built: docs/06 §3 item 4); what reads the table reads the slots, never the forms.
 RECUR = {
     "2:29:16": {"forms": ["وهو", "فهو", "لهو"], "cite": ["wafi 201"]},     # وها هو بعد الواو والفا ولامها
     "2:74:7": {"forms": ["وهي", "فهي", "لهي"], "cite": ["wafi 201"]},
@@ -199,7 +200,7 @@ def anchored() -> dict[str, str]:
     for t in ("ya_idafa", "ya_zaida", "idgham_saghir"):
         tab = yaml.safe_load((DATA / "usul" / f"{t}.yaml").read_text(encoding="utf-8"))
         for x in tab.get("listed") or []:
-            for p in x.get("places") or []:
+            for p in x.get("places") or x.get("candidates") or []:  # (a lead: a flagged entry's matches too)
                 out.setdefault(p, f"{t}: {x.get('case', '')}")
     return out
 
@@ -229,18 +230,25 @@ def scope_all(e: dict) -> dict:
     return {"forms": sorted({h[p] for p in e["place"]}), "cite": sorted({o["cite"] for o in e["options"]})}
 
 
+def recur_slots(rec: dict) -> list[str]:
+    """The word ids a `recurs` covers: every Ḥafṣ word its forms match (pipeline.anchor.find, no
+    yāʾ allowance), less those its `skip` names (a rāʾ already sākin in Ḥafṣ: إِن يَنصُرۡكُمُ)."""
+    from .anchor import find
+    h = words()
+    out = {w for form in rec.get("forms", []) for w in find(form, ya=False)
+           if not (rec.get("skip") and re.search(rec["skip"], h[w]))}
+    return sorted(out, key=lambda w: tuple(int(x) for x in w.split(":")))
+
+
 def recurs_from(entry: dict) -> tuple[str, list[str]] | None:
     """An entry elsewhere whose farsh the books give wherever the word occurs (`recurs`) covers the
-    place: (its first word id, its cites)."""
-    from .anchor import find
-
+    place: (its first word id, its cites). Read from the stored slots."""
     for f in sorted((DATA / "farsh").glob("*.yaml")):
         for e in yaml.safe_load(f.read_text(encoding="utf-8")) or []:
             rec = e.get("recurs") or (scope_all(e) if e.get("scope") == "all" else None)
             if not rec or e["place"] == entry["place"]:
                 continue
-            hits = {w for form in rec["forms"] for w in find(form, ya=False)}
-            if set(entry["place"]) & hits:
+            if set(entry["place"]) & set(rec.get("slots") or recur_slots(rec)):
                 return e["place"][0], list(rec["cite"])
     return None
 

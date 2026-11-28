@@ -71,22 +71,23 @@ word (al-Sūsī خَلَقكُّمۡ), أَلَا with KFGQPC's sign.
    farsh tables can't be compared for the Durrah readers: Yaʿqūb's "بالألف" at مالك is Ḥafṣ's own,
    but nothing says so. **Needed: each option's text per slot** (`text: {slot: …}`), written from the
    book's words and checked against KFGQPC wherever one of its readers has a file.
-2. **One table case per engine category.** The tables have finer cases (hamzatayn: maftūḥah,
-   maksūrah, maḍmūmah…) but the engine reads one (`usul_tables.where`), so Hishām's fix above
-   doesn't reach a reading yet. The case-from-the-word logic exists, but in a check
-   (`pipeline/crosscheck_budur.case_for`). **Needed: the engine picks the case per word.**
-3. **Listed words are bare words, matched at run time.** One bare word in a list (النهار) changed
-   every occurrence. `pipeline/anchor.py` ties three tables' lists to slots; **all listed entries
-   should store their slots**.
-4. **al-Budūr's `recurs` stores word forms**, expanded by searching the Qurʾān when a check runs;
-   the books' tables store slots. Store slots.
+2. ~~**One table case per engine category.**~~ Done 2026-11-28: `mushaf_data/cases.py` (moved from
+   the crosscheck, which now imports it) gives each word its table case, and the finer cases are
+   engine categories of their own (`hamzatayn_madmumah`, `ibdal_sakin_ayn`, `imala_alif_tanith`,
+   `imala_wasl_sakin`…), tied to the category they refine where a rāwī's wujūh are the same.
+   Hishām's maḍmūmah (wafi 90-91) reaches 3:15.
+3. ~~**Listed words are bare words, matched at run time.**~~ Done 2026-11-28: every table's listed
+   entries store their slots (`pipeline/anchor.py`, run by unify_merge); an entry whose place a note
+   or a short word leaves open is flagged and reaches nothing until pinned from its page. The
+   engine reads an entry at its slots as that word's own choice (`usul_tables.listed_wujuh`).
+4. ~~**al-Budūr's `recurs` stores word forms.**~~ Done 2026-11-28: `recurs.slots`, stored when
+   pipeline.farsh builds the table; checks.farsh, farsh_class and the API read the slots.
 5. **Taḥrīr candidates use ids the engine doesn't have** (madd degrees, specific places' features:
    `alan_alif1`, `farsh_haantum`). They're served as statements; enforcing them needs the
    categories, then Eisa's review.
 
 ## 4. Next
 
-In order of what unblocks most: (1) option text for the farsh of 1-3 (a model writes it from the
-book's words; KFGQPC checks the eight; Eisa reviews the rest); (2) per-word case selection in the
-engine; (3) anchor every listed entry; then milestone 4 continues (al-Nisāʾ on) with the text in
-the extraction from the start.
+In order of what unblocks most: (1) option text for the farsh of 1-3 (done 2026-11-27); (2)
+per-word case selection in the engine and (3) anchor every listed entry (both done 2026-11-28,
+§3); then milestone 4 continues (al-Nisāʾ on) with the text in the extraction from the start.

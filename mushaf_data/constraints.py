@@ -20,9 +20,24 @@ def load(path=PATH) -> list[dict]:
 CONSTRAINTS = load()
 
 
+def as_base(choice: dict) -> dict:
+    """A finer table case (mushaf_data.cases.SUBCATS) also counts as the category a constraint was
+    written for, where the span doesn't have that category itself: Warsh's badal × dhawāt al-yāʾ
+    binds the faʿlā words (imala_alif_tanith) as it did before they were a case of their own. The
+    waṣl-before-a-sākin cases don't (the alif isn't read there)."""
+    from .cases import SUBCATS
+    out = dict(choice)
+    for k, v in choice.items():
+        to = SUBCATS.get(k, (None, None, None))[2]
+        if to and to not in out:
+            out[to] = v
+    return out
+
+
 def allowed(rawi: str, choice: dict, constraints: list[dict] | None = None) -> bool:
     """False if the choice breaks a taḥrīr constraint for this rāwī. A constraint binds only when
     the choice has every category it names, and only if it is enforced."""
+    choice = as_base(choice)
     for c in CONSTRAINTS if constraints is None else constraints:
         if "cats" not in c or c.get("enforced") is False:
             continue

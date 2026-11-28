@@ -82,15 +82,11 @@ def differs(a: str, b: str, final: bool = False) -> bool:
 
 def entries(surah: int) -> dict[str, list[dict]]:
     """word id → every farsh entry at it (its own place or `also`, and each recurring one)."""
-    from pipeline.anchor import find
-
     out: dict[str, list[dict]] = defaultdict(list)
     for f in sorted((FARSH).glob("*.yaml")):
         for e in yaml.safe_load(f.read_text(encoding="utf-8")) or []:
             ws = set(e["place"] + e.get("also", []))
-            rec = e.get("recurs") or {}
-            ws |= {w for form in rec.get("forms", []) for w in find(form, ya=False)
-                   if not (rec.get("skip") and re.search(rec["skip"], words()[w]))}
+            ws |= set((e.get("recurs") or {}).get("slots") or [])  # stored slots, not forms
             for w in ws:
                 if int(w.split(":")[0]) == surah and e not in out[w]:
                     out[w].append(e)
@@ -100,18 +96,15 @@ def entries(surah: int) -> dict[str, list[dict]]:
 def places(surah: int) -> dict[str, dict]:
     """word id → its farsh entry: the surah's places and `also`, then the occurrences of every
     entry (any surah) that `recurs` (the book's "حيث وقع") not already a place of its own."""
-    from pipeline.anchor import find
-
     out: dict[str, dict] = {}
     for e in yaml.safe_load((FARSH / f"{surah:03d}.yaml").read_text(encoding="utf-8")) or []:
         for w in e["place"] + e.get("also", []):
             out.setdefault(w, e)
     for f in sorted((FARSH).glob("*.yaml")):
         for e in yaml.safe_load(f.read_text(encoding="utf-8")) or []:
-            for form in (e.get("recurs") or {}).get("forms", []):
-                for w in find(form, ya=False):
-                    if int(w.split(":")[0]) == surah:
-                        out.setdefault(w, e)
+            for w in (e.get("recurs") or {}).get("slots") or []:
+                if int(w.split(":")[0]) == surah:
+                    out.setdefault(w, e)
     return out
 
 

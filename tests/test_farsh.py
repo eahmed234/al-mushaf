@@ -156,22 +156,130 @@ class CrosscheckCases(unittest.TestCase):
 
 
 class Anchors(unittest.TestCase):
-    """The word-by-word chapters' listed words anchored to Ḥafṣ places (2026-11-27)."""
+    """Every table's listed words anchored to Ḥafṣ places, once (pipeline.anchor; the word-by-word
+    chapters 2026-11-27, every table 2026-11-28, docs/06 §3 item 3)."""
 
-    def test_most_entries_anchor(self):
-        n = {"all": 0, "some": 0, "none": 0}
-        for c in ("ya_idafa", "ya_zaida", "idgham_saghir"):
-            for x in yaml.safe_load((DATA / "usul" / f"{c}.yaml").read_text(encoding="utf-8"))["listed"]:
-                n[x["anchor"]] += 1
-                self.assertEqual(bool(x["places"]), x["anchor"] != "none")
-        self.assertGreaterEqual(n["all"], 96)
+    def listed(self):
+        for f in sorted((DATA / "usul").glob("*.yaml")):
+            for x in yaml.safe_load(f.read_text(encoding="utf-8")).get("listed") or []:
+                yield f.stem, x
+
+    def test_every_entry_stores_slots_or_a_flag(self):
+        n = {"all": 0, "some": 0, "none": 0, "flagged": 0}
+        for c, x in self.listed():
+            n[x["anchor"]] += 1
+            self.assertIn("places", x, (c, x["words"]))
+            if x.get("flag"):
+                n["flagged"] += 1
+                self.assertEqual(x["places"], [], (c, x["words"]))  # a flagged entry reaches no place
+            else:
+                self.assertEqual(bool(x["places"]), x["anchor"] != "none", (c, x["words"]))
+        self.assertGreaterEqual(n["all"], 270)
+        self.assertLessEqual(n["flagged"], 60)
+
+    def test_the_word_chapters_still_anchor(self):
+        n = 0
+        for c, x in self.listed():
+            if c in ("ya_idafa", "ya_zaida", "idgham_saghir") and x["anchor"] == "all":
+                n += 1
+        self.assertGreaterEqual(n, 90)
 
     def test_phrases(self):
         from pipeline.anchor import find
         self.assertTrue(find("ولا تخزون في ضيفي"))            # a phrase
         self.assertTrue(find("يا عبادي لا خوف"))             # the vocative joined in Ḥafṣ
         self.assertTrue(find("فارهبون"))                      # Ḥafṣ without the zāʾidah yāʾ
+        from pipeline.anchor import matches
+        self.assertTrue(matches("وماكنت", ya=False, joined=True))  # written joined, two Ḥafṣ words
+        self.assertFalse(matches("وماكنت", ya=False))              # (find and the rest: as before)
         self.assertEqual(find("ولا تخزون في الأرض"), [])      # planted: no such phrase
+
+    def test_short_words_match_themselves(self):
+        from mushaf_data.spine import words
+        from pipeline.anchor import matches
+        h = words()
+
+        def find(w, ya=False):
+            return [m[0] for m in matches(w, ya, strict=True)]
+        self.assertFalse([w for w in find("أنت", ya=False) if "كُنت" in h[w]])  # not كنت (prefix ك)
+        self.assertFalse([w for w in find("وال", ya=False) if h[w].startswith("وَلَا")])
+        self.assertFalse([w for w in find("أنى", ya=False) if "أَنِّي" in h[w]])
+        self.assertLess(len(find("آلآن", ya=False)), 10)
+
+    def test_the_books_doubled_ya(self):
+        # idah 115's النبيين: Ḥafṣ writes the second yāʾ small (ٱلنَّبِيِّـۧنَ), which the skeleton drops
+        x = next(x for c, x in self.listed() if c == "hamz_mufrad" and "النبيين" in x["words"])
+        self.assertIn("2:61:52", x["places"])
+        self.assertNotIn("unanchored", x)
+
+    def test_a_phrase_reaches_its_own_words_only(self):
+        # wafi 152: ويولج النهار, not every النهار (the bug that once changed every occurrence)
+        from mushaf_data.spine import words
+        h = words()
+        x = next(x for c, x in self.listed() if c == "imala" and "ويولج النهار" in x["words"])
+        from mushaf_data.occurrences import skel
+        nahar = [p for p in x["places"] if skel(h[p]) == "لنهر"]
+        self.assertTrue(nahar)
+        self.assertNotIn("2:164:9", x["places"])  # ٱلنَّهَارِ in 2:164, after ٱلَّيۡلِ
+        order = list(h)
+        pos = {w: i for i, w in enumerate(order)}
+        for p in nahar:
+            self.assertEqual(skel(h[order[pos[p] - 1]]), "ويولج")
+
+    def test_a_surah_in_brackets_narrows(self):
+        from pipeline.anchor import resolve
+        r = resolve("ya_idafa", {"words": ["بيتي (نوح)"]})
+        self.assertTrue(r["places"])
+        self.assertEqual({p.split(":")[0] for p in r["places"]}, {"71"})
+        # the same word also listed bare: which one the entry means is a question (flagged)
+        x = next(x for c, x in self.listed() if c == "ya_idafa" and any("(نوح)" in str(w) for w in x["words"]))
+        self.assertTrue(x.get("flag"))
+
+    def test_planted_note_with_a_condition_is_flagged(self):
+        from pipeline.anchor import resolve
+        r = resolve("imala", {"words": ["موسى"], "note": "only in al-Kahf when joined with wāw"})
+        self.assertTrue(r.get("flag"))
+        self.assertEqual(r["places"], [])
+        r = resolve("imala", {"words": ["موسى"]})
+        self.assertGreater(len(r["places"]), 100)
+
+
+class RecursSlots(unittest.TestCase):
+    """al-Budūr's `recurs` (the books' "حيث وقع") stores slots, read as slots (docs/06 §3 item 4)."""
+
+    def recurring(self):
+        for f in sorted((DATA / "farsh").glob("*.yaml")):
+            for e in yaml.safe_load(f.read_text(encoding="utf-8")) or []:
+                if e.get("recurs"):
+                    yield e
+
+    def test_every_recurs_stores_its_slots(self):
+        from pipeline.farsh_class import RECUR, recur_slots
+        n = 0
+        for e in self.recurring():
+            n += 1
+            self.assertEqual(e["recurs"]["slots"], recur_slots(RECUR[e["place"][0]]), e["place"])
+            self.assertIn(e["place"][0], e["recurs"]["slots"] + e["place"])
+        self.assertGreaterEqual(n, 9)  # every RECUR entry (nine, 2026-11-28)
+
+    def test_skip_is_applied_when_stored(self):
+        # wafi 202-203: يأمركم and the like, but not a rāʾ already sākin in Ḥafṣ (إِن يَنصُرۡكُمُ 3:160)
+        e = next(e for e in self.recurring() if "يأمركم" in e["recurs"]["forms"])
+        self.assertNotIn("3:160:2", e["recurs"]["slots"])
+
+    def test_readers_dont_search_forms(self):
+        # planted: the forms searched when a check runs would raise
+        from checks import farsh as cf
+        with mock.patch("pipeline.anchor.find", side_effect=AssertionError("searched a form")):
+            cf.entries(3)
+            cf.places(3)
+
+    def test_the_api_reaches_a_recurring_place(self):
+        from mushaf_data.api import farsh_index
+        e = next(e for e in self.recurring() if "وهو" in e["recurs"]["forms"])
+        far = [w for w in e["recurs"]["slots"] if w.startswith("6:")]
+        self.assertTrue(far)
+        self.assertTrue(any(x.get("recurs") for x in farsh_index("budur")[far[0]]))
 
 
 class AlImran(unittest.TestCase):

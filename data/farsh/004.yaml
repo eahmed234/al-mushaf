@@ -6,7 +6,8 @@
 #   the same way, elsewhere in the surah (prefixed forms are not matched yet).
 # Option text per slot (the reading written out) comes next; `reading` is the book's own words.
 # base: the option that is the muṣḥaf text's own reading (Ḥafṣ's); farsh is the other options.
-# recurs: the books give the farsh wherever the word occurs (forms, page).
+# recurs: the books give the farsh wherever the word occurs (forms, page; slots: every place the
+#   forms match in the Qurʾān, stored when the table is built and the only thing read).
 # aspect: a further aspect of the word, its own set of options (أني: the hamzah, then the yāʾ);
 #   a rāwī reads one option of each aspect that names him.
 # second: ruwāt al-Budūr leaves unstated (or a khulf it leaves out), added to an option from al-Wāfī / al-Īḍāḥ (pages).

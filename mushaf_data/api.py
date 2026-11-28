@@ -84,13 +84,19 @@ def hafs_text(slot: str) -> str:
 
 @lru_cache(maxsize=2)
 def farsh_index(source: str = "books") -> dict[str, list[dict]]:
-    """slot → farsh entries at it (their `place` and `also`). al-Budūr's `recurs` (forms the books
-    give "حيث وقع") are not expanded: the table stores forms, not slots (see the report)."""
+    """slot → farsh entries at it (their `place` and `also`, and al-Budūr's `recurs`: the slots the
+    books give "حيث وقع", stored when the table is built)."""
     out: dict[str, list[dict]] = {}
+    rec = []
     for f in sorted((DATA / FARSH_SOURCES[source]).glob("*.yaml")):
         for e in yaml.safe_load(f.read_text(encoding="utf-8")) or []:
             e = {**e, "file": f.name}
+            rec.append(e)
             for w in dict.fromkeys(e["place"] + e.get("also", [])):
+                out.setdefault(w, []).append(e)
+    for e in rec:  # a recurring entry's other places, where no entry of their own stands
+        for w in (e.get("recurs") or {}).get("slots") or []:
+            if w not in out:
                 out.setdefault(w, []).append(e)
     return out
 
@@ -122,6 +128,13 @@ def tahrir_index() -> tuple[dict[str, list[dict]], dict[str, list[dict]]]:
 def options_for(entry: dict, rawi: str) -> list[dict]:
     """The rāwī's options at a farsh entry (more than one: a khulf, or one per aspect)."""
     return [o for o in entry["options"] if rawi in o["readers"]]
+
+
+def tied(occs, avail: dict) -> dict[str, str]:
+    """Finer table cases (mushaf_data.cases) read with the category they refine: where the span has
+    both and the rāwī's wujūh are the same, one choice serves both (the khulf convention)."""
+    return {o.cat: o.base for o in occs if o.base and not o.key and o.cat in avail and o.base in avail
+            and set(avail[o.cat]) == set(avail[o.base])}
 
 
 # --- results ------------------------------------------------------------------------------------
@@ -195,11 +208,27 @@ class Mushaf:
                 out[s] = (None, "none")
         return out
 
-    def _wujuh(self, rawi: str, cat: str, slot: str) -> dict:
-        for p in self.places:
-            if p["rawi"] == rawi and p["category"] == cat:
-                ws = p["wujuh"] if p["word"] == slot else p.get("elsewhere") or []
-                return {w: [p.get("cite", "place_wujuh")] for w in ws}
+    def _key(self, rawi: str, o) -> None:
+        """An occurrence a listed entry of data/usul gives its own wujūh (pipeline.anchor: stored
+        slots) is its own choice, `cat@slot`, where they differ from the category's."""
+        lw = usul_tables.listed_wujuh(rawi, o.cat, o.word)
+        if lw and set(lw) != set(self._wujuh(rawi, o.cat, o.word, listed=False)):
+            o.key = f"{o.cat}@{o.word}"
+
+    def _wujuh(self, rawi: str, cat: str, slot: str, listed: bool = True) -> dict:
+        """The rāwī's wujūh for the category at the slot: a reviewed place entry (data/place_wujuh)
+        for this very word, then a listed entry of data/usul anchored here, then the place entry's
+        `elsewhere`, then the table case."""
+        own = [p for p in self.places if p["rawi"] == rawi and p["category"] == cat]
+        for p in own:
+            if p["word"] == slot:
+                return {w: [p.get("cite", "place_wujuh")] for w in p["wujuh"]}
+        if listed:
+            lw = usul_tables.listed_wujuh(rawi, cat, slot)
+            if lw:
+                return lw
+        for p in own:
+            return {w: [p.get("cite", "place_wujuh")] for w in p.get("elsewhere") or []}
         w = (self.profiles[rawi].get(cat) or {}).get("wujuh")
         if not w and cat == "silah_mim_hamza":
             w = (self.profiles[rawi].get("silah_mim") or {}).get("wujuh")
@@ -223,7 +252,7 @@ class Mushaf:
         return sl, ws, (sl[-1] if stop and sl else None), sub
 
     def _occs(self, rawi: str, ws, stop):
-        occs = [o for o in detect(ws, stop=stop) if book_gate(o.cat, o.word, o.nxt)]
+        occs = [o for o in detect(ws, stop=stop) if book_gate(o.base or o.cat, o.word, o.nxt)]
         if rawi in WAQF_RAWI:
             occs = [o for o in occs if o.cat not in WAQF_HAMZ_CATS]
         return [o for o in occs if o.cat in WUJUH]
@@ -236,8 +265,11 @@ class Mushaf:
             if sub.get(o.word, ("", ""))[1] == "none":
                 continue
             if o.cat in TEXT_CATS or o.cat in CHOICE_FEATURES or o.cat in FEATURE_ONLY:
-                if o.cat not in out:
-                    out[o.cat] = self._wujuh(rawi, o.cat, o.word)
+                self._key(rawi, o)
+                if (o.key or o.cat) not in out:
+                    out[o.key or o.cat] = self._wujuh(rawi, o.cat, o.word)
+        for c in tied(self._occs(rawi, ws, st), out):  # a finer case read with the category it refines
+            out.pop(c, None)
         for s in sl:  # a khulf in a farsh word: its texts, each with the options it realises
             ts = self._texts(rawi, s)
             if len(ts) > 1:
@@ -272,8 +304,11 @@ class Mushaf:
         occs = [o for o in self._occs(rawi, ws, st) if sub.get(o.word, ("", ""))[1] != "none"]
         avail = {}
         for o in occs:
-            avail.setdefault(o.cat, self._wujuh(rawi, o.cat, o.word))
+            self._key(rawi, o)
+            avail.setdefault(o.key or o.cat, self._wujuh(rawi, o.cat, o.word))
         ch = {c: (choice[c] if choice.get(c) in v else next(iter(v))) for c, v in avail.items()}
+        for c, p in tied(occs, avail).items():
+            ch[c] = ch[p]
         bad = [c for c in choice if c in avail and choice[c] not in avail[c]]
         if bad:
             raise ValueError(f"{rawi} has no {[(c, choice[c]) for c in bad]} here; has {[(c, list(avail[c])) for c in bad]}")
@@ -290,7 +325,7 @@ class Mushaf:
                     continue
                 t, k = where.get(o.cat, ("", 0))
                 case = usul_tables.tables()[t]["cases"][k]["case"] if t else ""
-                rules.append(Rule(o.cat, t, case, avail[o.cat], ch[o.cat], o.cat not in FEATURE_ONLY))
+                rules.append(Rule(o.cat, t, case, avail[o.key or o.cat], ch[o.key or o.cat], o.cat not in FEATURE_ONLY))
             src = sub[s][1] if s in sub else "hafs"
             w = Word(s, hafs_text(s), None if src == "none" else txt.get(s), opts, rules, stop=(s == st),
                      tahrir=by_slot.get(s, []), source=src)
