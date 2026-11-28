@@ -68,6 +68,7 @@ class Row:
     full: list[Word] = field(default_factory=list)
     base: str | None = None  # id of the row it builds on, or "hafs"
     flags: list[str] = field(default_factory=list)
+    parse: dict = field(default_factory=dict)  # the extractor's readers_parse
 
 
 # al-Futuh prints the khilaf of farsh in red, but uses the same red (#ff0000) on the madd of the
@@ -202,6 +203,7 @@ def load_rows(pred=in_passage) -> list[Row]:
             id=r["id"], segment=r["group"], n=r["n"], label=r["readers"].strip(),
             reading=r["reading"], elided=bool(r.get("elided")),
             ruwat=r.get("ruwat"), ruwat_min=r.get("ruwat_min") or [], ruwat_max=r.get("ruwat_max") or [],
+            parse=r.get("readers_parse") or {},
             quoted=_quoted_words(r, flags), flags=flags,
         ))
         for e in PRINT_ERRORS.get(r["id"], []):  # print errors Eisa confirmed

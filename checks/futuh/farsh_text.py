@@ -23,8 +23,9 @@ which don't name everyone they cover: the extractor gives each such row who sure
 (ruwat_min) and who may (ruwat_max). Every rāwī reads some row of the box, so when all the rows that
 may name him print the same farsh form, that is his form even if his row isn't known. Not where a
 row whose names the extractor couldn't all read also quotes the word: that row may be his, so the
-pair stays no_row. (At 2:184 "قالون واندرج أبو عمر وأبو جعفر" misspells Abū ʿAmr; the extractor stops
-at the unknown word and calls the row Qālūn's alone, which left Abū ʿAmr out of every candidate row.)
+pair stays no_row. (At 2:184 "قالون واندرج أبو عمر وأبو جعفر" misspells Abū ʿAmr; the extractor used to stop
+at the unknown word and call the row Qālūn's alone. It now reads the typo, and a head with a word it can't
+read is never "resolved": readers_parse.unparsed.)
 """
 from __future__ import annotations
 
@@ -52,7 +53,7 @@ def _unread():
         sys.path.insert(0, str(MUSHAF))
     from futuh.readers import Lexicon, head_of, parse_head
     lex = Lexicon()
-    return lambda label: ":" in label and bool(parse_head(lex, head_of(label))["unparsed"])
+    return lambda label: ":" in label and bool(parse_head(lex, head_of(label))["unread"])
 
 
 def printed(surah: int) -> tuple[dict, dict]:
@@ -71,17 +72,19 @@ def printed(surah: int) -> tuple[dict, dict]:
     for r in rows:
         # "الجميع عدا من سيأتي": everyone no other row of the box names (ruwat_max); otherwise only
         # the ruwāt the label surely names
-        readers = r.ruwat or (r.ruwat_max if r.label.startswith("الجميع") else r.ruwat_min)
+        # ("الجميع عدا وجهاً لورش": Warsh only may read it, readers_parse.excluded_maybe)
+        readers = r.ruwat or (sorted(set(r.ruwat_max) - set(r.parse.get("excluded_maybe", []))) if r.label.startswith("الجميع") else r.ruwat_min)
         q = [w for w in (r.full or r.quoted) if w.id]
-        anyone = not (r.ruwat or r.ruwat_min or r.ruwat_max) or unread(r.label)
+        anyone = not (r.ruwat or r.ruwat_min or r.ruwat_max) or unread(r.label) or "unparsed" in r.parse
         for i, w in enumerate(q):
             for t in w.alts or [w.t]:
                 for x in readers:
                     out[(w.id, x)].add((t, i == len(q) - 1))
                 if anyone:
                     blind.add(w.id)
-                elif not r.ruwat and not r.label.startswith("الجميع"):
-                    for x in set(r.ruwat_max) - set(r.ruwat_min):
+                elif not r.ruwat:
+                    may = (set(r.parse.get("excluded_maybe", [])) if r.label.startswith("الجميع") else set(r.ruwat_max) - set(r.ruwat_min)) & set(r.ruwat_max)
+                    for x in may:
                         maybe[(w.id, x)][r.id].add((t, i == len(q) - 1))
     return out, {k: v for k, v in maybe.items() if k[0] not in blind}
 

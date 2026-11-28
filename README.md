@@ -191,8 +191,8 @@ word, a broken waqf rule, shuffled lists) and checks that it's caught. Tests tha
 `../mushaf` or `books/` skip without them. The checks also run on their own:
 
 ```bash
-python3 -m checks.futuh.readings --upto 20 --book          # every row of 1:1–2:20: 666/676 (sughrā)
-python3 -m checks.futuh.readings --upto 0 --test 1-20 --book   # from the books alone: 653/666 (sughrā)
+python3 -m checks.futuh.readings --upto 20 --book          # every row of 1:1–2:20: 669/679 (sughrā)
+python3 -m checks.futuh.readings --upto 0 --test 1-20 --book   # from the books alone: 656/669 (sughrā)
 python3 -m checks.waqf                                     # waqf chapter vs al-Futūḥ vols 1–6: 806/871
 python3 -m checks.kfgqpc                                   # vs KFGQPC's eight riwāyāt: 2,047/2,056
 python3 -m mushaf_data.occurrences                         # imālah lists vs detectors: 171/175 tied

@@ -61,8 +61,14 @@ class FarshText(unittest.TestCase):
         self.assertEqual(j(["مَٰلِكِ"], {b}, {"r1": {a}}), "differ")  # a sure row wins
 
     def test_unread_name_blocks_inference(self):
-        """2:184 "قالون واندرج أبو عمر وأبو جعفر" misspells Abū ʿAmr, so the extractor reads the row as
-        Qālūn's alone; that row may be his, so فهو 2:184:23 isn't inferred for him."""
+        """2:184 "قالون واندرج أبو عمر وأبو جعفر" misspells Abū ʿAmr. The extractor used to stop there
+        and read the row as Qālūn's alone; it now reads the typo (readers.yaml), so فهو 2:184:23 is
+        surely theirs. A head with a word it still can't read (planted: أبوعمر) makes the row's
+        words blind: that row may hold anyone."""
         from pipeline.farsh_text import entries
         res = self.ft.check((2,), {2: {"2:184:23": entries()[2]["2:184:23"]}})
-        self.assertEqual(self.kinds(res, "2:184:23")["duri_abuamr"], "no_row")
+        k = self.kinds(res, "2:184:23")
+        self.assertEqual((k["duri_abuamr"], k["ibn_wardan"]), ("agree", "agree"))
+        unread = self.ft._unread()
+        self.assertFalse(unread("قالون واندرج أبو عمر وأبو جعفر: بالقصر."))
+        self.assertTrue(unread("قالون واندرج أبوعمر وأبو جعفر: بالقصر."))

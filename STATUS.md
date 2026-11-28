@@ -1,6 +1,6 @@
 # Status and next steps
 
-Last updated 2026-11-28 (al-Futūḥ check: inferred agreement; the extractor label job next). Read this first in a new session (the overview for newcomers is `README.md`), then
+Last updated 2026-11-28 (the extractor's labels: من اندرج bounded by the madd wajh, unread heads, typos). Read this first in a new session (the overview for newcomers is `README.md`), then
 `docs/02-spike-reading-model.md` (the spike plan with day-by-day results) and
 `docs/03-usul-sources.md` (uṣūl books).
 
@@ -329,13 +329,74 @@ tables; review list empty.
   row's waqf hāʾ), وصى 2:132 and يميز 3:179 (the extraction cut the word), فيكون 2:117 and فهو 2:271
   (box membership).
 
+- **The extractor's labels (2026-11-28, ../mushaf futuh/readers.py, readers.yaml, madd.py)**. Vol 1:
+  resolved 7,780 → 7,855, partial 941 → 945, contextual 79 → 13, unresolved 23 → 10 (whole book: 89.0%
+  resolved, 10.8% partial). What was done, and what the book does and doesn't say (details in
+  ../mushaf docs/known-gaps.md):
+  - **"X واندرج من اندرج" has no definition in the book**. It isn't in the terms table (v1 p11), the
+    method pages (v1 pp12-18), the symbols table (v1 p42) or any footnote. Its usage is "X and whoever
+    else reads so", not "whoever was folded in with X before". At 2:29 (v1 p68) "قالون واندرج من اندرج:
+    بالتوسط" must hold Ibn ʿĀmir and ʿĀṣim, who are in no other row and were never folded in with
+    Qālūn. So folds aren't tracked. Each such row's "may" set is now the readers of the madd wajh its
+    description states ("بالتوسط", "بالقصر، والإسكان"), from the tables of v1 pp52-53 (433 of 614
+    rows); only X is sure. They are not filled by elimination, because the book sometimes leaves a
+    reader out of his row:
+    - 5:5 (v1 p540): "ابن كثير: بضم هاء (وَهُوَ)" names Ibn Kathīr alone, and Ibn ʿĀmir, ʿĀṣim, Yaʿqūb
+      and Isḥāq are in no row.
+    - 5:29 (v1 p562): Ḥafṣ, the same way.
+  - **Madd groups** (أصحاب القصر/التوسط/الإشباع) are filled by elimination only against the rows that
+    quote the same words (2:5, v1 p53, was blocked by the next piece's row); such members are in
+    `readers_parse.by_elimination`. madd.py fixes:
+    - U+0652 is KFGQPC's silent-letter sign, not a sukūn (ءَامَنُوٓاْ أَشَدُّ is a separated madd).
+    - يا / ها before a hamzah (يَٰٓأَيُّهَا، هَٰٓؤُلَآءِ) is separated. The book prints أصحاب القصر there
+      (v1 pp63, 123, 155, 339, 468, 544), and a connected madd has no qaṣr (p53).
+  - **A label head with an unread word is never "resolved"** (`readers_parse.unparsed`, `ruwat_max`
+    widened). These were wrongly resolved before:
+    - 2:184 أبو عمر.
+    - "الجميع عدا ورشاً / أبا عمرو / أبو جعر / ورشاً وحمزة", read as all 20.
+    - "ويعقوب وصلاً ووقفاً", which dropped Yaʿqūb.
+    - "من له وجه البسملة".
+  - **New in readers.yaml:** typos (أبو عمر، أبيوعمرو، حلف حمزة، قالو، حمزةواندرج، واْ، الجيمع، واندراج
+    …); وصلاً; wajh qualifiers ("عدا وجهاً لورش": Warsh becomes possible, `excluded_maybe`).
+  - **"صحاب" isn't a typo for أصحاب.** It is the Shāṭibiyyah symbol, defined on v1 p42 (رموز الاجتماع:
+    حمزة والكسائي وحفص), as is صحبة (with Shuʿbah). They name the seven only, so the Durrah three stay
+    possible.
+  - **Boxes that leave readers out:** 11 in vol 1. Each one's reading is written down from the box's
+    footnote in known-gaps (e.g. 3:166 v1 p382: Ibn ʿĀmir, ʿĀṣim, al-Kisāʾī and Khalaf have no row,
+    and read as row 5). There is no book rule, so no code. 78 such boxes book-wide; 1,349 boxes have
+    a reader that is only possibly placed.
+  - **al-mushaf:** `checks.futuh.rows` keeps `readers_parse`. `farsh_text` skips the words of a row
+    with unread names, and doesn't count an `excluded_maybe` reader as sure.
+  - **`checks.futuh.farsh_text`**, before → after:
+
+    | | agree | agree_inferred | differ | differ_inferred | no_row |
+    | --- | --- | --- | --- | --- | --- |
+    | before | 4,726 | 981 | 121 | 16 | 343 |
+    | after | 4,858 | 873 | 121 | 16 | 321 |
+
+    (6,280 pairs.) Pair by pair against the old extractor output and the old check, nothing
+    moved into differ, differ_inferred or extra:
+    - 114 agree_inferred → agree.
+    - 16 no_row → agree, among them 2:184 فَهۡوَ for Abū ʿAmr and Abū Jaʿfar: the أبو عمر row had
+      been skipped as unread.
+    - 15 no_row → agree_inferred.
+    - 2 extra → agree (2:149).
+    - 9 agree_inferred → no_row: 3:36, 3:151. The من اندرج row there may now hold only qaṣr
+      readers, and the box leaves Ḥafṣ, Shuʿbah and Khalaf al-ʿĀshir out, so the old inference had
+      come from a bound of "anyone".
+  - **`checks.futuh.readings` (tests.test_futuh):**
+    - Every row of 1:1–2:20: 669 / 679 row/rāwī pairs (was 666 / 676).
+    - From the books alone: 656 / 669 (was 653 / 666).
+    - Kubrā: 677 / 679 (was 674 / 676).
+    The three new sure pairs all reproduce, and `--vs-rows` is unchanged.
+  - **Open:**
+    - Madd-group elimination still assumes the box lists everyone who reads those words (the
+      5:5 kind of omission would mislead it).
+    - `farsh_text` takes `ruwat_max` of a "الجميع عدا من سيأتي" row as sure, which is the same
+      assumption.
+    - v1-p162 (2:165) is anchored to 3:179.
+
 Next, in order:
-0. The extractor's labels (../mushaf futuh/readers.py, its own session): of vol 1's 8,823 rows,
-   1,043 aren't resolved; 614 are "من اندرج", 348 madd groups, 50 الجميع/الباقون. Track who was folded
-   in with whom through the passage (cite the book's own statement of the convention); a label
-   head with an unread word is never "resolved" (13 in vol 1: أبو عمر, أبيوعمرو, حلف حمزة, قالو,
-   صحاب, حمزةواندرج), add the misspellings to readers.yaml as typos; check what the 127 segments
-   that don't surely list all 20 leave out, on the page. Then rerun both al-Futūḥ checks.
 1. Per-word table cases in the engine and anchored lists (docs/06 §4); pin the ambiguous rows above
    from their quotes when their sūrah's farsh text is next checked.
 2. docs/05 milestone 4, continued from the books: al-Nisāʾ onward (wafi 243-, idah 231-), in batches (al-Budūr, then the farsh chapters
