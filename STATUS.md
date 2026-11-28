@@ -1,6 +1,6 @@
 # Status and next steps
 
-Last updated 2026-11-28 (the al-Futūḥ items in the farsh table for 1-3 fixed). Read this first in a new session (the overview for newcomers is `README.md`), then
+Last updated 2026-11-28 (al-Futūḥ check: inferred agreement; the extractor label job next). Read this first in a new session (the overview for newcomers is `README.md`), then
 `docs/02-spike-reading-model.md` (the spike plan with day-by-day results) and
 `docs/03-usul-sources.md` (uṣūl books).
 
@@ -317,8 +317,25 @@ tables; review list empty.
     al-Kisāʾī and Idrīs; wafi 242 names Ḥamzah and al-Kisāʾī together.
   - Still ambiguous (not anchored, pre-existing): يقبل منها (wafi 202), فأمتعه (wafi 211), كن فيكون
     (wafi 208), وضعت (wafi 232), أن الله يبشرك (wafi 233); asl_differs at 3:66 / 3:119 for Abū Jaʿfar.
+- **al-Futūḥ coverage: inferred agreement (2026-11-28)**. 1,202 of the 1,340 no-row pairs were jamʿ
+  labels that don't name everyone ("قالون واندرج من اندرج: بالتوسط", "أصحاب التوسط"): the extractor
+  gives them who surely reads (ruwat_min) and who may (ruwat_max), and the check used only the sure.
+  `checks.futuh.farsh_text` now adds `agree_inferred` / `differ_inferred`: no row surely names him,
+  and every row that may name him prints / doesn't print his text. Not where a row that may hold
+  anyone quotes the word (resolved to nobody, or a label head with a name the extractor couldn't
+  read: 2:184 "أبو عمر" made it call the row Qālūn's alone). Weaker than agree: al-Futūḥ's boxes
+  don't always list all 20 (2:117: Ibn ʿĀmir's فيكونَ isn't in that box). Now 4,726 agree / 981
+  agree_inferred / 121 differ / 16 differ_inferred / 343 no row of 6,280. The 16: يتسنه 2:259 (the
+  row's waqf hāʾ), وصى 2:132 and يميز 3:179 (the extraction cut the word), فيكون 2:117 and فهو 2:271
+  (box membership).
 
 Next, in order:
+0. The extractor's labels (../mushaf futuh/readers.py, its own session): of vol 1's 8,823 rows,
+   1,043 aren't resolved; 614 are "من اندرج", 348 madd groups, 50 الجميع/الباقون. Track who was folded
+   in with whom through the passage (cite the book's own statement of the convention); a label
+   head with an unread word is never "resolved" (13 in vol 1: أبو عمر, أبيوعمرو, حلف حمزة, قالو,
+   صحاب, حمزةواندرج), add the misspellings to readers.yaml as typos; check what the 127 segments
+   that don't surely list all 20 leave out, on the page. Then rerun both al-Futūḥ checks.
 1. Per-word table cases in the engine and anchored lists (docs/06 §4); pin the ambiguous rows above
    from their quotes when their sūrah's farsh text is next checked.
 2. docs/05 milestone 4, continued from the books: al-Nisāʾ onward (wafi 243-, idah 231-), in batches (al-Budūr, then the farsh chapters

@@ -13,8 +13,18 @@ word) are compared with his written text(s), after folding what mushaf_data.diff
   differ        al-Futūḥ prints him at the word, never with his text
   extra         his text is printed, and also a farsh form we don't have (a khulf missed?)
   khulf_unseen  a khulf: one text printed, the other not (al-Futūḥ's boxes aren't exhaustive)
-  no_row        no row names him and quotes the word (elided rows, labels it can't resolve)
+  agree_inferred   no row surely names him, but every row that may name him prints his text
+  differ_inferred  no row surely names him, and no row that may name him prints his text
+  no_row        no row names him and quotes the word, or the rows that may name him split
   no_text       the writer left his group's text empty
+
+The inferred kinds come from al-Futūḥ's jamʿ labels ("قالون واندرج من اندرج: بالتوسط", "أصحاب التوسط"),
+which don't name everyone they cover: the extractor gives each such row who surely reads it
+(ruwat_min) and who may (ruwat_max). Every rāwī reads some row of the box, so when all the rows that
+may name him print the same farsh form, that is his form even if his row isn't known. Not where a
+row whose names the extractor couldn't all read also quotes the word: that row may be his, so the
+pair stays no_row. (At 2:184 "قالون واندرج أبو عمر وأبو جعفر" misspells Abū ʿAmr; the extractor stops
+at the unknown word and calls the row Qālūn's alone, which left Abū ʿAmr out of every candidate row.)
 """
 from __future__ import annotations
 
@@ -30,15 +40,32 @@ from ..farsh import differs, prep
 # KFGQPC publishes these eight; al-Futūḥ is the only independent check for the other twelve
 KFGQPC = {"hafs", "shuba", "qalun", "warsh", "bazzi", "qunbul", "duri_abuamr", "susi"}
 TWELVE = [r for r in RUWAT if r not in KFGQPC]
-KINDS = ("agree", "differ", "extra", "khulf_unseen", "no_row", "no_text")
+KINDS = ("agree", "differ", "extra", "khulf_unseen", "agree_inferred", "differ_inferred", "no_row", "no_text")
 
 
-def printed(surah: int) -> dict[tuple[str, str], set[tuple[str, bool]]]:
-    """(slot, rāwī) → {(form, last)}: every form al-Futūḥ gives him at the word (elided rows rebuilt); `last` when it
-    is the row's last quoted word (where the row may stop, so its last vowel isn't compared)."""
+def _unread():
+    """A test for rows whose label head (before ":") has words ../mushaf's reader lexicon can't read: names the
+    extractor dropped. Without ":" the unread words are the description, which is normal."""
+    import sys
+    from .rows import MUSHAF
+    if str(MUSHAF) not in sys.path:
+        sys.path.insert(0, str(MUSHAF))
+    from futuh.readers import Lexicon, head_of, parse_head
+    lex = Lexicon()
+    return lambda label: ":" in label and bool(parse_head(lex, head_of(label))["unparsed"])
+
+
+def printed(surah: int) -> tuple[dict, dict]:
+    """Two maps from (slot, rāwī). The first: {(form, last)}, every form al-Futūḥ surely gives him at the word
+    (elided rows rebuilt); `last` when it is the row's last quoted word (where the row may stop, so its last
+    vowel isn't compared). The second: {row id: {(form, last)}} for the rows that only may name him, left out
+    where a row that may hold anyone quotes the word."""
     from .rows import load_rows, rebuild
 
     out = defaultdict(set)
+    maybe = defaultdict(lambda: defaultdict(set))
+    blind = set()  # words quoted by a row that may hold anyone: resolved to nobody, or with names unread
+    unread = _unread()
     rows = load_rows(lambda s, a: s == surah)
     rebuild(rows, words())  # a "…" row repeats the row above and changes only what it quotes
     for r in rows:
@@ -46,11 +73,17 @@ def printed(surah: int) -> dict[tuple[str, str], set[tuple[str, bool]]]:
         # the ruwāt the label surely names
         readers = r.ruwat or (r.ruwat_max if r.label.startswith("الجميع") else r.ruwat_min)
         q = [w for w in (r.full or r.quoted) if w.id]
+        anyone = not (r.ruwat or r.ruwat_min or r.ruwat_max) or unread(r.label)
         for i, w in enumerate(q):
-            for x in readers:
-                for t in w.alts or [w.t]:
+            for t in w.alts or [w.t]:
+                for x in readers:
                     out[(w.id, x)].add((t, i == len(q) - 1))
-    return out
+                if anyone:
+                    blind.add(w.id)
+                elif not r.ruwat and not r.label.startswith("الجميع"):
+                    for x in set(r.ruwat_max) - set(r.ruwat_min):
+                        maybe[(w.id, x)][r.id].add((t, i == len(q) - 1))
+    return out, {k: v for k, v in maybe.items() if k[0] not in blind}
 
 
 def same(text: str, form: str, last: bool) -> bool:
@@ -60,10 +93,16 @@ def same(text: str, form: str, last: bool) -> bool:
     return not differs(prep(text), prep(form), final=not last)
 
 
-def judge(texts: list[str], forms: set[tuple[str, bool]]) -> str:
+def judge(texts: list[str], forms: set[tuple[str, bool]], maybe: dict | None = None) -> str:
+    """`maybe`: {row id: forms} of the rows that may name him, used only when no row surely does."""
     if not texts:
         return "no_text"
     if not forms:
+        ok = [any(same(t, f, l) for t in texts for f, l in fs) for fs in (maybe or {}).values()]
+        if ok and all(ok):
+            return "agree_inferred"
+        if ok and not any(ok):
+            return "differ_inferred"
         return "no_row"
     seen = [t for t in texts if any(same(t, f, l) for f, l in forms)]
     other = [f for f, l in forms if not any(same(t, f, l) for t in texts)]
@@ -84,15 +123,17 @@ def check(surahs=(1, 2, 3), entries: dict | None = None) -> list[dict]:
         e = entries.get(su) or {}
         if not e:
             continue
-        pr = printed(su)
+        pr, mb = printed(su)
         for slot, ent in e.items():
             for rawi in RUWAT:
                 texts = [g["text"] for g in ent["groups"] if rawi in g["readers"] and g.get("text")]
                 if not any(rawi in g["readers"] for g in ent["groups"]):
                     continue
                 forms = pr.get((slot, rawi), set())
-                out.append({"slot": slot, "rawi": rawi, "kind": judge(texts, forms), "texts": texts,
-                            "forms": sorted(f for f, _ in forms), "hafs": ent["hafs"]})
+                cand = mb.get((slot, rawi), {})
+                shown = forms or {x for fs in cand.values() for x in fs}
+                out.append({"slot": slot, "rawi": rawi, "kind": judge(texts, forms, cand), "texts": texts,
+                            "forms": sorted(f for f, _ in shown), "hafs": ent["hafs"]})
     return out
 
 
@@ -119,7 +160,7 @@ def main():
     print(f"farsh words with written text: {words_n}, (word, rāwī) pairs: {len(res)}")
     for k in ("all", "twelve"):
         print(f"  {k:7}", "  ".join(f"{x} {s[k][x]}" for x in KINDS))
-    for kind in ("differ", "extra", "khulf_unseen"):
+    for kind in ("differ", "extra", "khulf_unseen", "differ_inferred"):
         rows = [r for r in res if r["kind"] == kind]
         for r in rows[: a.show]:
             print(f"  {kind:12} {r['slot']:9} {r['rawi']:16} {r['hafs']}  written {' / '.join(r['texts'])}"

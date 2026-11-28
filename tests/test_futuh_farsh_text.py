@@ -51,3 +51,18 @@ class FarshText(unittest.TestCase):
         self.assertEqual(j(["مَٰلِكِ"], {("مَلِكِ", False)}), "differ")
         self.assertEqual(j(["مَٰلِكِ"], {("مَٰلِكِ", False), ("مَلِكِ", False)}), "extra")
         self.assertEqual(j(["مَٰلِكِ", "مَلِكِ"], {("مَلِكِ", False)}), "khulf_unseen")
+
+    def test_judge_inferred(self):
+        """No row surely names him: the rows that may name him decide only when they all agree."""
+        j, a, b = self.ft.judge, ("مَٰلِكِ", False), ("مَلِكِ", False)
+        self.assertEqual(j(["مَٰلِكِ"], set(), {"r1": {a}, "r2": {a}}), "agree_inferred")
+        self.assertEqual(j(["مَٰلِكِ"], set(), {"r1": {b}, "r2": {b}}), "differ_inferred")
+        self.assertEqual(j(["مَٰلِكِ"], set(), {"r1": {a}, "r2": {b}}), "no_row")
+        self.assertEqual(j(["مَٰلِكِ"], {b}, {"r1": {a}}), "differ")  # a sure row wins
+
+    def test_unread_name_blocks_inference(self):
+        """2:184 "قالون واندرج أبو عمر وأبو جعفر" misspells Abū ʿAmr, so the extractor reads the row as
+        Qālūn's alone; that row may be his, so فهو 2:184:23 isn't inferred for him."""
+        from pipeline.farsh_text import entries
+        res = self.ft.check((2,), {2: {"2:184:23": entries()[2]["2:184:23"]}})
+        self.assertEqual(self.kinds(res, "2:184:23")["duri_abuamr"], "no_row")
