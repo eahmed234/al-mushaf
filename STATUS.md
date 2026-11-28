@@ -6,7 +6,7 @@ Last updated 2026-11-24 (after the books were pulled and the profile table built
 
 ## Where things are
 
-Two local git repos (no remotes, nothing pushed):
+Three git repos on GitHub (eahmed234): `al-mushaf` (**public**: never commit book text), `mushaf` (private), and `al-mushaf-extractions` (private: `pipeline/out/` is its own repo, because the model outputs quote the books; commit and push there after each extraction run):
 
 - **`~/Projects/al-mushaf`** (this repo). Docs; the engine in `mushaf_data/`, checks in `checks/`,
   facts in `data/`, tests in `tests/` (Python 3.12 + PyYAML; commands in the README). The spike's
@@ -234,7 +234,7 @@ Next, in order:
 3. Then milestones 5- (occurrences, constraints, marks and counts, the engine's API).
 
 Working notes: subagents get their own scratch folders; reviewed data stands until Eisa rules;
-book text is never committed (quotes are offsets; pipeline/out and pipeline/work are gitignored).
+book text is never committed here (pipeline/out and pipeline/work are gitignored; pipeline/out is backed up to the private al-mushaf-extractions repo, pipeline/work is rebuilt by `pack`).
 
 ## Next steps, in order (older list)
 
